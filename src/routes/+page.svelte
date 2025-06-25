@@ -12,7 +12,7 @@
 
 <Hero
 	title="Transforming teamwork, effortlessly"
-	subtitle="A new kind of workplace teammate quietly catching misalignment early, so your company stays focused, clear, and moving fast."
+	subtitle="A new kind of workplace teammat quietly catching misalignment early, so your company stays focused, clear, and moving fast."
 	imageSrc="/generated/image-a-diverse-group-of-people-sitting-around.webp"
 	centered={true}
 />
