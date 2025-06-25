@@ -183,7 +183,7 @@ const financeUseCase: UseCase = {
 			"Schedule a demo to see how we can help you improve efficiency and customer satisfaction.",
 		callsToAction: [
 			{ href: "/demo", label: "Request Demo", variant: "primary" },
-			{ href: "/pricing", label: "View Solutions", variant: "secondary" }
+			{ href: "/_pricing", label: "View Solutions", variant: "secondary" }
 		]
 	}
 };
