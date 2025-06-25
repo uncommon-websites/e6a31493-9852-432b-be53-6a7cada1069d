@@ -1,5 +1,5 @@
 export const CONFIG = {
-	companyName: "Company",
+	companyName: "Sentra",
 	description: "Description",
 	image: "/og.png",
 	url: "https://example.com",
