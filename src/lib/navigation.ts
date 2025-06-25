@@ -54,7 +54,7 @@ export const cta = {
 export const navigation: NavItem[] = [
 	{
 		label: "Pricing",
-		href: "/_pricing",
+		href: "/pricing",
 		showInNav: true,
 		showInFooter: false
 	},
@@ -118,14 +118,8 @@ export const navigation: NavItem[] = [
 			},
 			{
 				label: "Pricing",
-				href: "/_pricing",
+				href: "/pricing",
 				showInNav: false,
-				showInFooter: true
-			},
-			{
-				label: "Manifesto",
-				href: "/manifesto",
-				showInNav: true,
 				showInFooter: true
 			},
 			{
