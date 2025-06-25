@@ -7,16 +7,23 @@
 	import CallToAction from "$lib/components/layout/CallToAction.svelte";
 	import AboutTeaser from "$lib/components/layout/AboutTeaser.svelte";
 	import LogoScroller from "$lib/components/layout/LogoScroller.svelte";
-	import Hero from "$lib/components/layout/hero-sections/Hero.svelte";
+	import CenteredTextOnlyHero from "$lib/components/layout/hero-sections/CenteredTextOnlyHero.svelte";
 </script>
 
-<Hero
-	title="Elevate your business with thoughtful design"
-	subtitle="Solutions that enhance user experience, and improve visual communication."
-	imageSrc="/sample.png"
-	generating
+<CenteredTextOnlyHero
+	title="Keep teams in sync, without chasing status"
+	subtitle="A new kind of workplace teammate—quietly catching misalignment early, so your company stays focused, clear, and moving fast."
+	imageSrc="/generated/image-a-diverse-group-of-people-sitting-around.webp"
 />
-<LogoScroller label="" generating />
+<LogoScroller 
+	label="Trusted by fast-growing companies" 
+	logoUrls={[
+		'https://logo.clearbit.com/notion.so',
+		'https://logo.clearbit.com/figma.com',
+		'https://logo.clearbit.com/airtable.com',
+		'https://logo.clearbit.com/linear.app'
+	]}
+/>
 
 <Summary
 	generating
