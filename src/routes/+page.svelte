@@ -7,13 +7,14 @@
 	import CallToAction from "$lib/components/layout/CallToAction.svelte";
 	import AboutTeaser from "$lib/components/layout/AboutTeaser.svelte";
 	import LogoScroller from "$lib/components/layout/LogoScroller.svelte";
-	import CenteredTextOnlyHero from "$lib/components/layout/hero-sections/CenteredTextOnlyHero.svelte";
+	import Hero from "$lib/components/layout/hero-sections/Hero.svelte";
 </script>
 
-<CenteredTextOnlyHero
+<Hero
 	title="Keep teams in sync, without chasing status"
 	subtitle="A new kind of workplace teammate—quietly catching misalignment early, so your company stays focused, clear, and moving fast."
 	imageSrc="/generated/image-a-diverse-group-of-people-sitting-around.webp"
+	centered={true}
 />
 <LogoScroller 
 	label="Trusted by fast-growing companies" 
