@@ -10,47 +10,57 @@
 	onMount(() => {
 		const items = [...heroContainer.querySelectorAll("[data-item]")];
 		console.log(items);
-		items.forEach((item) => {
-			scroll(
-				animate(item, {
-					opacity: [0, 1, 1, 0],
-					y: ["10em", 0, 0, "-10em"]
-				}),
-				{
-					target: heroContainer,
-					// container: heroContainer,
-					offset: ["start end", "end end", "start start", "end start"]
-				}
-			);
-		});
+		
+		// First slide: visible initially, fades out as we scroll
+		scroll(
+			animate(items[0], {
+				opacity: [1, 0]
+			}),
+			{
+				target: heroContainer,
+				offset: ["start start", "center start"]
+			}
+		);
+
+		// Second slide: hidden initially, fades in as we scroll
+		scroll(
+			animate(items[1], {
+				opacity: [0, 1]
+			}),
+			{
+				target: heroContainer,
+				offset: ["center start", "end start"]
+			}
+		);
 	});
 </script>
 
 <section
 	data-hero
 	bind:this={heroContainer}
-	class="relative grid h-[100dvh] place-items-center overflow-hidden bg-gray-50 text-center"
+	class="relative h-[200vh] overflow-hidden bg-gray-50 text-center"
 >
-	<div class="py-1/2 grid min-h-screen w-full place-content-center place-items-center gap-[25%]">
-		<!-- Text content that animates in and out -->
-		<div data-item class="sticky top-0 left-0">
+	<div class="sticky top-0 h-[100vh] w-full flex items-center justify-center">
+		<!-- First slide - centered and sticky -->
+		<div data-item class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl px-8">
 			<h1 class="text-display text-balance" bind:this={slide1Heading}>
 				<AnimateText
 					text="When teams scale rapidly, everyone ends up on different pages of the same book."
 				/>
-				<!-- When teams scale rapidly, everyone ends up on different pages of the same book. -->
 			</h1>
 		</div>
 
-		<div data-item class="sticky top-0 left-0 grid gap-4">
-			<h1 bind:this={slide2Heading} class="text-display text-balance">
-				<AnimateText text="Sentra keeps everyone aligned." />
-				<!-- Sentra keeps everyone <span class="highlight">aligned</span>. -->
-			</h1>
+		<!-- Second slide - centered and sticky -->
+		<div data-item class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl px-8 opacity-0">
+			<div class="grid gap-4">
+				<h1 bind:this={slide2Heading} class="text-display text-balance">
+					<AnimateText text="Sentra keeps everyone aligned." />
+				</h1>
 
-			<p bind:this={slide2Subtext} class="text-title2 text-emphasis-medium">
-				A proactive teammate that doesn't let you down.
-			</p>
+				<p bind:this={slide2Subtext} class="text-title2 text-emphasis-medium">
+					A proactive teammate that doesn't let you down.
+				</p>
+			</div>
 
 			<!-- Background animations for second text -->
 			<div class="pulse-rings absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
