@@ -2,9 +2,7 @@
 	import { scroll, animate } from 'motion';
 	
 	let heroContainer: HTMLElement;
-	let slide1Text: HTMLElement;
 	let slide1Heading: HTMLElement;
-	let slide2Text: HTMLElement;
 	let slide2Heading: HTMLElement;
 	let slide2Subtext: HTMLElement;
 	let currentSlide = $state(0);
@@ -76,41 +74,28 @@
 	bind:this={heroContainer}
 	class="slideshow-hero"
 >
-	<!-- Slide 1: Problem -->
-	<div 
-		class="slide slide-1"
-		data-slide="0"
-		class:active={currentSlide === 0}
-		bind:this={slide1Text}
-	>
-		<div class="slide-content">
-			<div class="background-pattern"></div>
-			<h1 class="text-balance slide-text" bind:this={slide1Heading}>When teams scale rapidly, everyone ends up on different pages of the same book</h1>
-			<div class="floating-elements">
-				<div class="float-element" style="--delay: 0s; --x: -20%; --y: -30%;"></div>
-				<div class="float-element" style="--delay: 1s; --x: 80%; --y: -10%;"></div>
-				<div class="float-element" style="--delay: 2s; --x: -10%; --y: 70%;"></div>
-				<div class="float-element" style="--delay: 3s; --x: 90%; --y: 80%;"></div>
-			</div>
+	<div class="hero-content">
+		<div class="background-pattern"></div>
+		<div class="background-glow"></div>
+		
+		<!-- Text content that animates in and out -->
+		<h1 class="text-balance slide-text slide-1-text" bind:this={slide1Heading}>When teams scale rapidly, everyone ends up on different pages of the same book.</h1>
+		
+		<h1 class="big-text text-balance slide-text slide-2-text" bind:this={slide2Heading}>Sentra keeps everyone <span class="highlight">aligned</span>.</h1>
+		<p class="small-text text-pretty slide-text slide-2-text" bind:this={slide2Subtext}>A proactive teammate that doesn't let you down.</p>
+		
+		<!-- Background animations for second text -->
+		<div class="pulse-rings">
+			<div class="pulse-ring" style="--delay: 0s;"></div>
+			<div class="pulse-ring" style="--delay: 0.5s;"></div>
+			<div class="pulse-ring" style="--delay: 1s;"></div>
 		</div>
-	</div>
-
-	<!-- Slide 2: Solution -->
-	<div 
-		class="slide slide-2"
-		data-slide="1"
-		class:active={currentSlide === 1}
-		bind:this={slide2Text}
-	>
-		<div class="slide-content">
-			<div class="background-glow"></div>
-			<h1 class="big-text text-balance slide-text" bind:this={slide2Heading}>Sentra keeps everyone <span class="highlight">aligned</span></h1>
-			<p class="small-text text-pretty slide-text" bind:this={slide2Subtext}>A proactive teammate that doesn't let you down</p>
-			<div class="pulse-rings">
-				<div class="pulse-ring" style="--delay: 0s;"></div>
-				<div class="pulse-ring" style="--delay: 0.5s;"></div>
-				<div class="pulse-ring" style="--delay: 1s;"></div>
-			</div>
+		
+		<div class="floating-elements">
+			<div class="float-element" style="--delay: 0s; --x: -20%; --y: -30%;"></div>
+			<div class="float-element" style="--delay: 1s; --x: 80%; --y: -10%;"></div>
+			<div class="float-element" style="--delay: 2s; --x: -10%; --y: 70%;"></div>
+			<div class="float-element" style="--delay: 3s; --x: 90%; --y: 80%;"></div>
 		</div>
 	</div>
 </section>
@@ -118,12 +103,12 @@
 <style>
 	.slideshow-hero {
 		height: 200vh;
-		background: #f9fafb;
+		background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(249, 250, 251, 0.8) 70%);
 		color: #111827;
 		position: relative;
 	}
 
-	.slide {
+	.hero-content {
 		height: 100vh;
 		display: flex;
 		align-items: center;
@@ -131,43 +116,28 @@
 		position: sticky;
 		top: 0;
 		overflow: hidden;
-	}
-
-	.slide::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background: rgba(249, 250, 251, 0.02);
-		z-index: 1;
-		pointer-events: none;
-	}
-
-	.slide-content {
 		text-align: center;
 		max-width: 1000px;
+		margin: 0 auto;
 		padding: 0 2rem;
-		position: relative;
 		z-index: 2;
 		backdrop-filter: blur(0.5px);
 		-webkit-backdrop-filter: blur(0.5px);
 	}
 
-	/* Slide 1 Styles */
-	.slide-1 {
-		background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(249, 250, 251, 0.8) 70%);
-	}
-
-	.slide-1 h1 {
+	/* Text Styles */
+	.slide-1-text {
 		font-size: clamp(2.5rem, 5vw, 4rem);
 		font-weight: 600;
 		line-height: 1.2;
 		margin: 0;
 		letter-spacing: -0.02em;
 		color: #1f2937;
-		text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
 	}
 
 	.background-pattern {
@@ -207,11 +177,6 @@
 		animation-delay: var(--delay);
 	}
 
-	/* Slide 2 Styles */
-	.slide-2 {
-		background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(249, 250, 251, 0.9) 70%);
-	}
-
 	.big-text {
 		font-size: clamp(3rem, 6vw, 5rem);
 		font-weight: 700;
@@ -219,7 +184,11 @@
 		margin: 0 0 1.5rem 0;
 		letter-spacing: -0.03em;
 		color: #111827;
-		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
 	}
 
 	.highlight {
@@ -228,23 +197,22 @@
 		display: inline-block;
 	}
 
-	.highlight::after {
-		content: '';
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		height: 3px;
-		background: var(--color-primary-400);
-	}
-
 	.small-text {
 		font-size: clamp(1.25rem, 2.5vw, 1.75rem);
 		font-weight: 400;
 		margin: 0;
 		letter-spacing: -0.01em;
 		color: #4b5563;
-		text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+		position: absolute;
+		top: 60%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+	}
+
+	.slide-2-text {
+		opacity: 0;
+		transform: translate(-50%, -40%);
 	}
 
 	.background-glow {
@@ -287,18 +255,6 @@
 		backface-visibility: hidden;
 		-webkit-font-smoothing: antialiased;
 	}
-	
-	/* First slide text starts visible */
-	.slide-1 .slide-text {
-		opacity: 1;
-		transform: translateY(0);
-	}
-	
-	/* Second slide text starts hidden */
-	.slide-2 .slide-text {
-		opacity: 0;
-		transform: translateY(40px);
-	}
 
 	/* Animations */
 
@@ -330,11 +286,11 @@
 
 	/* Mobile adjustments */
 	@media (max-width: 768px) {
-		.slide-content {
+		.hero-content {
 			padding: 0 1.5rem;
 		}
 
-		.slide-1 h1 {
+		.slide-1-text {
 			font-size: clamp(2rem, 8vw, 3rem);
 		}
 
