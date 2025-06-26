@@ -1,78 +1,29 @@
 <script lang="ts">
-	let currentSlide = $state(0);
-	let isScrolling = $state(false);
 	let heroContainer: HTMLElement;
-	let hasCompletedSlideshow = $state(false);
-	let isInSlideshow = $state(true);
-
-	function handleScroll(event: WheelEvent) {
-		if (!isInSlideshow) return;
-		
-		event.preventDefault();
-		
-		if (isScrolling) return;
-		
-		isScrolling = true;
-		
-		if (event.deltaY > 0) {
-			// Scrolling down
-			if (currentSlide < 1) {
-				currentSlide++;
-			} else {
-				// On last slide, exit slideshow
-				isInSlideshow = false;
-				hasCompletedSlideshow = true;
-				document.body.style.overflow = 'auto';
-			}
-		} else {
-			// Scrolling up
-			if (currentSlide > 0) {
-				currentSlide--;
-			}
-		}
-		
-		setTimeout(() => {
-			isScrolling = false;
-		}, 800);
-	}
-
-	function handleKeydown(event: KeyboardEvent) {
-		if (!isInSlideshow) return;
-		
-		if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
-			event.preventDefault();
-			if (currentSlide < 1 && !isScrolling) {
-				isScrolling = true;
-				currentSlide++;
-				setTimeout(() => { isScrolling = false; }, 800);
-			}
-		} else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
-			event.preventDefault();
-			if (currentSlide > 0 && !isScrolling) {
-				isScrolling = true;
-				currentSlide--;
-				setTimeout(() => { isScrolling = false; }, 800);
-			}
-		} else if (event.key === 'Escape') {
-			isInSlideshow = false;
-			hasCompletedSlideshow = true;
-			document.body.style.overflow = 'auto';
-		}
-	}
+	let currentSlide = $state(0);
 
 	$effect(() => {
-		if (typeof window !== 'undefined') {
-			// Disable scrolling initially
-			document.body.style.overflow = 'hidden';
-			
-			// Add event listeners
-			window.addEventListener('wheel', handleScroll, { passive: false });
-			window.addEventListener('keydown', handleKeydown);
-			
+		if (typeof window !== 'undefined' && heroContainer) {
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							const slideIndex = parseInt(entry.target.getAttribute('data-slide') || '0');
+							currentSlide = slideIndex;
+						}
+					});
+				},
+				{
+					threshold: 0.5,
+					rootMargin: '-10% 0px -10% 0px'
+				}
+			);
+
+			const slides = heroContainer.querySelectorAll('.slide');
+			slides.forEach((slide) => observer.observe(slide));
+
 			return () => {
-				window.removeEventListener('wheel', handleScroll);
-				window.removeEventListener('keydown', handleKeydown);
-				document.body.style.overflow = 'auto';
+				slides.forEach((slide) => observer.unobserve(slide));
 			};
 		}
 	});
@@ -81,109 +32,75 @@
 <section 
 	bind:this={heroContainer}
 	class="slideshow-hero"
-	class:completed={hasCompletedSlideshow}
 >
 	<!-- Slide 1: Problem -->
 	<div 
 		class="slide slide-1"
+		data-slide="0"
 		class:active={currentSlide === 0}
-		class:exit={currentSlide > 0}
 	>
 		<div class="slide-content">
+			<div class="background-pattern"></div>
 			<h1 class="text-balance">When teams scale rapidly, everyone ends up on different pages of the same book</h1>
+			<div class="floating-elements">
+				<div class="float-element" style="--delay: 0s; --x: -20%; --y: -30%;"></div>
+				<div class="float-element" style="--delay: 1s; --x: 80%; --y: -10%;"></div>
+				<div class="float-element" style="--delay: 2s; --x: -10%; --y: 70%;"></div>
+				<div class="float-element" style="--delay: 3s; --x: 90%; --y: 80%;"></div>
+			</div>
 		</div>
 	</div>
 
 	<!-- Slide 2: Solution -->
 	<div 
 		class="slide slide-2"
+		data-slide="1"
 		class:active={currentSlide === 1}
-		class:enter={currentSlide >= 1}
 	>
 		<div class="slide-content">
-			<h1 class="big-text text-balance">Sentra keeps everyone <span style="color: var(--color-primary-400)">aligned</span></h1>
+			<div class="background-glow"></div>
+			<h1 class="big-text text-balance">Sentra keeps everyone <span class="highlight">aligned</span></h1>
 			<p class="small-text text-pretty">A proactive teammate that doesn't let you down</p>
+			<div class="pulse-rings">
+				<div class="pulse-ring" style="--delay: 0s;"></div>
+				<div class="pulse-ring" style="--delay: 0.5s;"></div>
+				<div class="pulse-ring" style="--delay: 1s;"></div>
+			</div>
 		</div>
 	</div>
-
-	<!-- Navigation indicators -->
-	<div class="slide-nav">
-		<button 
-			class="nav-dot" 
-			class:active={currentSlide === 0}
-			onclick={() => { if (!isScrolling) { currentSlide = 0; } }}
-			aria-label="Go to slide 1"
-		></button>
-		<button 
-			class="nav-dot" 
-			class:active={currentSlide === 1}
-			onclick={() => { if (!isScrolling) { currentSlide = 1; } }}
-			aria-label="Go to slide 2"
-		></button>
-	</div>
-
-	<!-- Scroll indicator -->
-	{#if isInSlideshow}
-		<div class="scroll-indicator">
-			{#if currentSlide === 0}
-				<div class="scroll-arrow">↓</div>
-				<span class="text-pretty">Scroll to continue</span>
-			{:else if currentSlide === 1}
-				<div class="scroll-controls">
-					<div class="scroll-arrow up">↑</div>
-					<span class="text-pretty">Scroll up or down</span>
-					<div class="scroll-arrow">↓</div>
-				</div>
-			{/if}
-		</div>
-	{/if}
 </section>
 
 <style>
 	.slideshow-hero {
-		position: relative;
-		height: 100vh;
-		background: linear-gradient(135deg, #000 0%, #111 100%);
+		height: 200vh;
+		scroll-snap-type: y mandatory;
+		overflow-y: auto;
+		background: linear-gradient(135deg, #000 0%, #111 50%, #000 100%);
 		color: white;
-		overflow: hidden;
-		display: flex;
-		align-items: center;
-		justify-content: center;
 	}
 
 	.slide {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
+		height: 100vh;
+		scroll-snap-align: start;
+		scroll-snap-stop: always;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		opacity: 0;
-		transform: translateY(50px);
-		transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-	}
-
-	.slide.active {
-		opacity: 1;
-		transform: translateY(0);
-	}
-
-	.slide.exit {
-		opacity: 0;
-		transform: translateY(-50px);
-	}
-
-	.slide.enter {
-		opacity: 1;
-		transform: translateY(0);
+		position: relative;
+		overflow: hidden;
 	}
 
 	.slide-content {
 		text-align: center;
 		max-width: 1000px;
 		padding: 0 2rem;
+		position: relative;
+		z-index: 2;
+	}
+
+	/* Slide 1 Styles */
+	.slide-1 {
+		background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
 	}
 
 	.slide-1 h1 {
@@ -192,6 +109,51 @@
 		line-height: 1.2;
 		margin: 0;
 		letter-spacing: -0.02em;
+		opacity: 0;
+		transform: translateY(30px);
+		animation: slideInUp 1s ease-out 0.5s forwards;
+	}
+
+	.background-pattern {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-image: 
+			radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+			radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+			radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+		background-size: 100px 100px, 150px 150px, 80px 80px;
+		animation: patternFloat 20s ease-in-out infinite;
+		z-index: 1;
+	}
+
+	.floating-elements {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		z-index: 1;
+	}
+
+	.float-element {
+		position: absolute;
+		width: 4px;
+		height: 4px;
+		background: rgba(255, 255, 255, 0.2);
+		border-radius: 50%;
+		left: var(--x);
+		top: var(--y);
+		animation: float 6s ease-in-out infinite;
+		animation-delay: var(--delay);
+	}
+
+	/* Slide 2 Styles */
+	.slide-2 {
+		background: radial-gradient(ellipse at center, rgba(var(--color-primary-400-rgb), 0.1) 0%, transparent 70%);
 	}
 
 	.big-text {
@@ -200,98 +162,114 @@
 		line-height: 1.1;
 		margin: 0 0 1.5rem 0;
 		letter-spacing: -0.03em;
+		opacity: 0;
+		transform: translateY(30px);
+		animation: slideInUp 1s ease-out 0.3s forwards;
+	}
+
+	.highlight {
+		color: var(--color-primary-400);
+		position: relative;
+		display: inline-block;
+	}
+
+	.highlight::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0;
+		height: 3px;
+		background: var(--color-primary-400);
+		animation: underlineExpand 1s ease-out 1.5s forwards;
 	}
 
 	.small-text {
 		font-size: clamp(1.25rem, 2.5vw, 1.75rem);
 		font-weight: 400;
-		opacity: 0.8;
+		opacity: 0;
 		margin: 0;
 		letter-spacing: -0.01em;
+		animation: fadeIn 1s ease-out 1s forwards;
 	}
 
-	.slide-nav {
+	.background-glow {
 		position: absolute;
-		right: 2rem;
 		top: 50%;
-		transform: translateY(-50%);
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-		z-index: 10;
-	}
-
-	.nav-dot {
-		width: 12px;
-		height: 12px;
-		border-radius: 50%;
-		border: 2px solid rgba(255, 255, 255, 0.3);
-		background: transparent;
-		cursor: pointer;
-		transition: all 0.3s ease;
-	}
-
-	.nav-dot:hover {
-		border-color: rgba(255, 255, 255, 0.6);
-		transform: scale(1.1);
-	}
-
-	.nav-dot.active {
-		background: var(--color-primary-400);
-		border-color: var(--color-primary-400);
-		box-shadow: 0 0 12px color-mix(in oklch, var(--color-primary-400), transparent 60%);
-	}
-
-	.scroll-indicator {
-		position: absolute;
-		bottom: 3rem;
 		left: 50%;
-		transform: translateX(-50%);
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 0.5rem;
-		opacity: 0.6;
-		animation: pulse 2s infinite;
+		width: 600px;
+		height: 600px;
+		background: radial-gradient(circle, rgba(var(--color-primary-400-rgb), 0.15) 0%, transparent 70%);
+		transform: translate(-50%, -50%);
+		animation: pulse 4s ease-in-out infinite;
+		z-index: 1;
 	}
 
-	.scroll-controls {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 0.5rem;
+	.pulse-rings {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 1;
 	}
 
-	.scroll-arrow {
-		font-size: 1.5rem;
-		animation: bounce 2s infinite;
+	.pulse-ring {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 200px;
+		height: 200px;
+		border: 1px solid rgba(var(--color-primary-400-rgb), 0.3);
+		border-radius: 50%;
+		transform: translate(-50%, -50%);
+		animation: pulseRing 3s ease-out infinite;
+		animation-delay: var(--delay);
 	}
 
-	.scroll-arrow.up {
-		animation: bounceUp 2s infinite;
+	/* Animations */
+	@keyframes slideInUp {
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
 
-	.scroll-indicator span {
-		font-size: 0.875rem;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
+	@keyframes fadeIn {
+		to {
+			opacity: 0.8;
+		}
+	}
+
+	@keyframes underlineExpand {
+		to {
+			width: 100%;
+		}
+	}
+
+	@keyframes patternFloat {
+		0%, 100% { transform: translateY(0px) rotate(0deg); }
+		50% { transform: translateY(-20px) rotate(180deg); }
+	}
+
+	@keyframes float {
+		0%, 100% { transform: translateY(0px) scale(1); opacity: 0.2; }
+		50% { transform: translateY(-20px) scale(1.2); opacity: 0.6; }
 	}
 
 	@keyframes pulse {
-		0%, 100% { opacity: 0.6; }
-		50% { opacity: 1; }
+		0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.15; }
+		50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.25; }
 	}
 
-	@keyframes bounce {
-		0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-		40% { transform: translateY(-10px); }
-		60% { transform: translateY(-5px); }
-	}
-
-	@keyframes bounceUp {
-		0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-		40% { transform: translateY(10px); }
-		60% { transform: translateY(5px); }
+	@keyframes pulseRing {
+		0% {
+			transform: translate(-50%, -50%) scale(0.5);
+			opacity: 1;
+		}
+		100% {
+			transform: translate(-50%, -50%) scale(2);
+			opacity: 0;
+		}
 	}
 
 	/* Mobile adjustments */
@@ -313,17 +291,26 @@
 			font-size: clamp(1.125rem, 4vw, 1.5rem);
 		}
 
-		.scroll-indicator {
-			bottom: 2rem;
+		.background-glow {
+			width: 400px;
+			height: 400px;
 		}
 
-		.slide-nav {
-			right: 1rem;
+		.pulse-ring {
+			width: 150px;
+			height: 150px;
 		}
 
-		.nav-dot {
-			width: 10px;
-			height: 10px;
+		.float-element {
+			width: 3px;
+			height: 3px;
+		}
+	}
+
+	/* Smooth scrolling for better experience */
+	@media (prefers-reduced-motion: no-preference) {
+		.slideshow-hero {
+			scroll-behavior: smooth;
 		}
 	}
 </style>
