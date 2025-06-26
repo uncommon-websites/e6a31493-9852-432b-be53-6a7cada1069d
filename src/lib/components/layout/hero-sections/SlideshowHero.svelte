@@ -8,97 +8,115 @@
 	let slide2Subtext: HTMLElement;
 	let currentSlide = $state(0);
 
+	// onMount(() => {
+	// 	if (typeof window !== "undefined" && heroContainer && slide1Heading && slide2Heading) {
+	// 		// Set initial state - first slide visible, second slide hidden
+	// 		slide1Heading.style.opacity = "1";
+	// 		slide1Heading.style.transform = "translate(-50%, -50%) translate3d(0, 0px, 0)";
+	// 		slide2Heading.style.opacity = "0";
+	// 		slide2Heading.style.transform = "translate(-50%, -50%) translate3d(0, 50px, 0)";
+	// 		if (slide2Subtext) {
+	// 			slide2Subtext.style.opacity = "0";
+	// 			slide2Subtext.style.transform = "translate(-50%, -50%) translate3d(0, 30px, 0)";
+	// 		}
+
+	// 		// Track scroll progress for the entire hero section
+	// 		const heroAnimation = scroll(
+	// 			(progress) => {
+	// 				// Use requestAnimationFrame for smoother animations
+	// 				requestAnimationFrame(() => {
+	// 					// Slide 1 animations (fade out from 0 to 0.35 progress)
+	// 					if (slide1Heading) {
+	// 						const slide1Progress = Math.min(progress * 2.85, 1);
+	// 						// Smooth fade out with better easing
+	// 						const headingOpacity = Math.max(0, 1 - Math.pow(slide1Progress, 1.5) * 1.1);
+	// 						const headingY = -25 * Math.pow(slide1Progress, 0.8); // Gentler slide up
+	// 						slide1Heading.style.opacity = headingOpacity.toString();
+	// 						slide1Heading.style.transform = `translate(-50%, -50%) translate3d(0, ${headingY}px, 0)`;
+	// 					}
+
+	// 					// Slide 2 animations (fade in from 0.15 to 0.5 progress - fully visible by center)
+	// 					if (slide2Heading && slide2Subtext) {
+	// 						const slide2Progress = Math.max(0, Math.min(1, (progress - 0.15) / 0.35));
+
+	// 						// Heading animation with smoother easing
+	// 						const headingOpacity = Math.min(1, Math.pow(slide2Progress, 0.6) * 1.2);
+	// 						const headingY = 40 * Math.pow(1 - slide2Progress, 1.2);
+	// 						slide2Heading.style.opacity = headingOpacity.toString();
+	// 						slide2Heading.style.transform = `translate(-50%, -50%) translate3d(0, ${headingY}px, 0)`;
+
+	// 						// Subtext animation with slight delay and smoother motion
+	// 						const subtextDelay = 0.1;
+	// 						const subtextProgress = Math.max(0, slide2Progress - subtextDelay);
+	// 						const subtextOpacity = Math.max(0, Math.min(1, Math.pow(subtextProgress, 0.5) * 1.1));
+	// 						const subtextY = 25 * Math.pow(1 - subtextProgress, 1.1);
+	// 						slide2Subtext.style.opacity = subtextOpacity.toString();
+	// 						slide2Subtext.style.transform = `translate(-50%, -50%) translate3d(0, ${subtextY}px, 0)`;
+	// 					}
+
+	// 					// Update current slide state based on scroll progress
+	// 					currentSlide = progress < 0.35 ? 0 : 1;
+	// 				});
+	// 			},
+	// 			{
+	// 				target: heroContainer,
+	// 				offset: ["start start", "end start"]
+	// 			}
+	// 		);
+
+	// 		return () => {
+	// 			heroAnimation();
+	// 		};
+	// 	}
+	// });
+
 	onMount(() => {
-		if (typeof window !== "undefined" && heroContainer && slide1Heading && slide2Heading) {
-			// Set initial state - first slide visible, second slide hidden
-			slide1Heading.style.opacity = "1";
-			slide1Heading.style.transform = "translate(-50%, -50%) translate3d(0, 0px, 0)";
-			slide2Heading.style.opacity = "0";
-			slide2Heading.style.transform = "translate(-50%, -50%) translate3d(0, 50px, 0)";
-			if (slide2Subtext) {
-				slide2Subtext.style.opacity = "0";
-				slide2Subtext.style.transform = "translate(-50%, -50%) translate3d(0, 30px, 0)";
-			}
-
-			// Track scroll progress for the entire hero section
-			const heroAnimation = scroll(
-				(progress) => {
-					// Use requestAnimationFrame for smoother animations
-					requestAnimationFrame(() => {
-						// Slide 1 animations (fade out from 0 to 0.35 progress)
-						if (slide1Heading) {
-							const slide1Progress = Math.min(progress * 2.85, 1);
-							// Smooth fade out with better easing
-							const headingOpacity = Math.max(0, 1 - Math.pow(slide1Progress, 1.5) * 1.1);
-							const headingY = -25 * Math.pow(slide1Progress, 0.8); // Gentler slide up
-							slide1Heading.style.opacity = headingOpacity.toString();
-							slide1Heading.style.transform = `translate(-50%, -50%) translate3d(0, ${headingY}px, 0)`;
-						}
-
-						// Slide 2 animations (fade in from 0.15 to 0.5 progress - fully visible by center)
-						if (slide2Heading && slide2Subtext) {
-							const slide2Progress = Math.max(0, Math.min(1, (progress - 0.15) / 0.35));
-
-							// Heading animation with smoother easing
-							const headingOpacity = Math.min(1, Math.pow(slide2Progress, 0.6) * 1.2);
-							const headingY = 40 * Math.pow(1 - slide2Progress, 1.2);
-							slide2Heading.style.opacity = headingOpacity.toString();
-							slide2Heading.style.transform = `translate(-50%, -50%) translate3d(0, ${headingY}px, 0)`;
-
-							// Subtext animation with slight delay and smoother motion
-							const subtextDelay = 0.1;
-							const subtextProgress = Math.max(0, slide2Progress - subtextDelay);
-							const subtextOpacity = Math.max(0, Math.min(1, Math.pow(subtextProgress, 0.5) * 1.1));
-							const subtextY = 25 * Math.pow(1 - subtextProgress, 1.1);
-							slide2Subtext.style.opacity = subtextOpacity.toString();
-							slide2Subtext.style.transform = `translate(-50%, -50%) translate3d(0, ${subtextY}px, 0)`;
-						}
-
-						// Update current slide state based on scroll progress
-						currentSlide = progress < 0.35 ? 0 : 1;
-					});
-				},
-				{
-					target: heroContainer,
-					offset: ["start start", "end start"]
-				}
-			);
-
-			return () => {
-				heroAnimation();
-			};
-		}
+		document.querySelectorAll("[data-hero] [data-item]").forEach((item) => {
+			scroll(animate(item, { opacity: [0, 1, 1, 0] }), {
+				target: item,
+				container: heroContainer,
+				offset: ["start end", "end end", "start start", "end start"]
+			});
+		});
 	});
 </script>
 
 <section
+	data-hero
 	bind:this={heroContainer}
 	class="grid max-h-screen place-items-center overflow-hidden bg-gray-50 text-center"
 >
-	<div class="hero-content place-items-cneter center">
-		<div class="background-pattern"></div>
-		<div class="background-glow"></div>
+	<div class="grid min-h-screen w-full place-content-center place-items-center">
+		<!-- <div
+			class="background-pattern absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+		></div>
+		<div class="background-glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div> -->
 
 		<!-- Text content that animates in and out -->
-		<h1 class="text-display text-balance" bind:this={slide1Heading}>
-			When teams scale rapidly, everyone ends up on different pages of the same book.
-		</h1>
+		<div data-item>
+			<h1 class="text-display text-balance" bind:this={slide1Heading}>
+				When teams scale rapidly, everyone ends up on different pages of the same book.
+			</h1>
+		</div>
 
-		<h1 class="big-text slide-text slide-2-text text-balance" bind:this={slide2Heading}>
-			Sentra keeps everyone <span class="highlight">aligned</span>.
-		</h1>
-		<p class="small-text slide-text slide-2-text text-pretty" bind:this={slide2Subtext}>
-			A proactive teammate that doesn't let you down.
-		</p>
+		<div class="grid gap-4" data-item>
+			<h1 bind:this={slide2Heading} class="text-display text-balance">
+				Sentra keeps everyone <span class="highlight">aligned</span>.
+			</h1>
+
+			<p bind:this={slide2Subtext} class="text-title2 text-emphasis-medium">
+				A proactive teammate that doesn't let you down.
+			</p>
+		</div>
 
 		<!-- Background animations for second text -->
-		<div class="pulse-rings">
+		<div class="pulse-rings absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
 			<div class="pulse-ring" style="--delay: 0s;"></div>
 			<div class="pulse-ring" style="--delay: 0.5s;"></div>
 			<div class="pulse-ring" style="--delay: 1s;"></div>
 		</div>
 
-		<div class="floating-elements">
+		<div class="floating-elements absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
 			<div class="float-element" style="--delay: 0s; --x: -20%; --y: -30%;"></div>
 			<div class="float-element" style="--delay: 1s; --x: 80%; --y: -10%;"></div>
 			<div class="float-element" style="--delay: 2s; --x: -10%; --y: 70%;"></div>
@@ -108,7 +126,7 @@
 </section>
 
 <style>
-	.slideshow-hero {
+	/* .slideshow-hero {
 		height: 200vh;
 		background: radial-gradient(
 			ellipse at center,
@@ -117,7 +135,7 @@
 		);
 		color: #111827;
 		position: relative;
-	}
+	} */
 
 	.hero-content {
 		height: 100vh;
