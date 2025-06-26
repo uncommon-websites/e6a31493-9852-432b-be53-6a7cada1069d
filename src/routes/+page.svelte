@@ -11,6 +11,7 @@
 </script>
 
 <Hero
+	centered={true}
 	title="Your AI teammate for organizational alignment"
 	subtitle="Sentra proactively detects misalignment across your organization, helping leaders intervene before small issues become big problems."
 	imageSrc="/generated/image-a-diverse-group-of-people-sitting-around.webp"

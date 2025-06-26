@@ -161,16 +161,27 @@
 	}: Props = $props();
 </script>
 
-<div class="bg-background relative" {...rest}>
+<div class="bg-background relative overflow-hidden" {...rest}>
+	{#if imageSrc}
+		<div class="absolute inset-0 z-0" data-enter>
+			<img
+				src={imageSrc}
+				alt="Customer"
+				class="size-full object-cover"
+				onerror={handleImageError}
+			/>
+		</div>
+	{/if}
+
 	<header
 		class={[
-			"section-px container mx-auto grid items-end gap-16 gap-y-9 py-12 pt-24 text-balance relative z-10",
+			"section-px container mx-auto grid items-center gap-16 gap-y-9 py-12 pt-24 text-balance relative z-10 min-h-[70vh]",
 			centered ? "place-items-center text-center" : " xl:grid-cols-[1fr_auto]"
 		]}
 		data-enter-container
 	>
 		<div class="grid gap-6" class:max-w-prose={centered}>
-			<h1 class="text-display w-full" data-enter>
+			<h1 class="text-display w-full text-white drop-shadow-lg" data-enter>
 				<span class="block"><AnimateText text={title} /></span>
 				{#if !centered}
 					<span class="text-emphasis-dim block"><AnimateText text={subtitle} /></span>
@@ -181,7 +192,7 @@
 				<p
 					data-enter
 					class={[
-						"text-muted-foreground text-headline mx-auto block max-w-[45ch] transition duration-500 ease-out"
+						"text-white/90 text-headline mx-auto block max-w-[45ch] transition duration-500 ease-out drop-shadow-md"
 						// isTitleComplete ? "opacity-100" : "translate-y-2 opacity-0 blur-sm"
 					]}
 				>
@@ -208,53 +219,42 @@
 				{/each}
 			</div>
 		{/if}
-
-		<!-- iOS-style notification stack -->
-		<div class="absolute right-8 top-1/2 -translate-y-1/2 pointer-events-none hidden xl:block">
-			<div class="relative">
-				{#each visibleNotifications as { notification, id, isLeaving }, index (id)}
-					<div 
-						class="absolute right-0 bg-white/95 backdrop-blur-sm border border-gray-200 rounded-xl shadow-lg w-80 p-4 transition-all duration-300 ease-out"
-						style:transform="translateY({index * 8}px) scale({1 - index * 0.02})"
-						style:z-index={100 - index}
-						class:opacity-100={!isLeaving}
-						class:opacity-0={isLeaving}
-						class:translate-x-full={isLeaving}
-					>
-						<div class="flex items-start gap-3">
-							<div class="text-lg flex-shrink-0 mt-0.5">
-								{notification.icon}
-							</div>
-							
-							<div class="flex-1 min-w-0">
-								<div class="flex items-center justify-between gap-2 mb-1">
-									<h3 class="font-semibold text-gray-900 text-sm truncate">
-										{notification.title}
-									</h3>
-									<span class="text-xs text-gray-500 flex-shrink-0">
-										{notification.time}
-									</span>
-								</div>
-								
-								<p class="text-xs text-gray-600 leading-relaxed line-clamp-2">
-									{notification.description}
-								</p>
-							</div>
-						</div>
-					</div>
-				{/each}
-			</div>
-		</div>
 	</header>
 
-	{#if imageSrc}
-		<div class="col-span-full aspect-video relative z-0" data-enter>
-			<img
-				src={imageSrc}
-				alt="Customer"
-				class="size-full object-cover"
-				onerror={handleImageError}
-			/>
+	<!-- iOS-style notification stack - centered over image -->
+	<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none hidden xl:block z-20">
+		<div class="relative">
+			{#each visibleNotifications as { notification, id, isLeaving }, index (id)}
+				<div 
+					class="absolute left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-sm border border-gray-200 rounded-xl shadow-lg w-80 p-4 transition-all duration-300 ease-out"
+					style:transform="translateY({index * 8}px) scale({1 - index * 0.02})"
+					style:z-index={100 - index}
+					class:opacity-100={!isLeaving}
+					class:opacity-0={isLeaving}
+					class:translate-y-full={isLeaving}
+				>
+					<div class="flex items-start gap-3">
+						<div class="text-lg flex-shrink-0 mt-0.5">
+							{notification.icon}
+						</div>
+						
+						<div class="flex-1 min-w-0">
+							<div class="flex items-center justify-between gap-2 mb-1">
+								<h3 class="font-semibold text-gray-900 text-sm truncate">
+									{notification.title}
+								</h3>
+								<span class="text-xs text-gray-500 flex-shrink-0">
+									{notification.time}
+								</span>
+							</div>
+							
+							<p class="text-xs text-gray-600 leading-relaxed line-clamp-2">
+								{notification.description}
+							</p>
+						</div>
+					</div>
+				</div>
+			{/each}
 		</div>
-	{/if}
+	</div>
 </div>
