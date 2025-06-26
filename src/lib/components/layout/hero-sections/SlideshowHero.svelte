@@ -6,7 +6,6 @@
 	let slide1Heading: HTMLElement;
 	let slide2Heading: HTMLElement;
 	let slide2Subtext: HTMLElement;
-	let currentSlide = $state(0);
 
 	// onMount(() => {
 	// 	if (typeof window !== "undefined" && heroContainer && slide1Heading && slide2Heading) {
@@ -84,7 +83,7 @@
 <section
 	data-hero
 	bind:this={heroContainer}
-	class="grid max-h-screen place-items-center overflow-hidden bg-gray-50 text-center"
+	class="relative grid max-h-screen place-items-center overflow-hidden bg-gray-50 text-center"
 >
 	<div class="grid min-h-screen w-full place-content-center place-items-center">
 		<!-- <div

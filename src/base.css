@@ -295,3 +295,7 @@
 		}
 	}
 }
+
+strong {
+	@apply font-[550];
+}
