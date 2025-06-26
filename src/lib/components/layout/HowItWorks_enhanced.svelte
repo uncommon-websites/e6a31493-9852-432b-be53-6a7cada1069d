@@ -128,20 +128,29 @@
 		activeTab = tab;
 	}
 
-	// Intersection observer for timeline animations
+	// Intersection observer for timeline animations and scaling
 	onMount(() => {
 		if (typeof window !== "undefined") {
 			observerRef = new IntersectionObserver(
 				(entries) => {
 					entries.forEach((entry) => {
+						const card = entry.target.querySelector('.timeline-content');
 						if (entry.isIntersecting) {
 							entry.target.classList.add("animate-in");
+							// Scale to 100% when in center of screen
+							if (entry.intersectionRatio > 0.7) {
+								card?.classList.add("scale-full");
+							} else {
+								card?.classList.remove("scale-full");
+							}
+						} else {
+							card?.classList.remove("scale-full");
 						}
 					});
 				},
 				{
-					threshold: 0.3,
-					rootMargin: "-10% 0px -10% 0px"
+					threshold: [0.3, 0.7, 1.0],
+					rootMargin: "-20% 0px -20% 0px"
 				}
 			);
 
@@ -187,17 +196,17 @@
 		<div class="timeline-container" bind:this={timelineContainer}>
 			{#each currentSteps as step, index (step.id)}
 				<div class="timeline-item" data-step={step.id}>
-					<div class="timeline-content">
-						<div class="step-details">
-							<h3 class="text-title3 text-foreground mb-[1em]">{step.title}</h3>
-							<p class="text-body text-emphasis-medium mb-6">{step.description}</p>
-							<div class="step-badges">
-								{#each step.badges as badge}
-									<span class="badge">{badge}</span>
-								{/each}
-							</div>
+					{#if index > 0}
+						<div class="timeline-separator"></div>
+					{/if}
+					<div class="timeline-content text-center grid place-items-center max-w-prose mx-auto">
+						<h1 class="text-title3 text-foreground mb-4">{step.title}</h1>
+						<div class="step-badges mb-6">
+							{#each step.badges as badge}
+								<span class="badge">{badge}</span>
+							{/each}
 						</div>
-						<div class="step-visual">
+						<div class="step-visual mb-6">
 							<div class="visual-placeholder {step.visual}">
 								<div class="visual-content">
 									{#if step.visual === "platform-selection"}
@@ -329,6 +338,7 @@
 								</div>
 							</div>
 						</div>
+						<p class="text-body text-emphasis-medium">{step.description}</p>
 					</div>
 				</div>
 			{/each}
@@ -396,16 +406,18 @@
 	@reference '../../../app.css';
 
 	.timeline-container {
-		max-width: 1000px;
+		max-width: 800px;
 		margin: 0 auto;
 		padding: 2rem 0;
+		position: relative;
 	}
 
 	.timeline-item {
-		margin-bottom: 2rem;
+		margin-bottom: 4rem;
 		opacity: 0;
 		transform: translateY(30px);
 		transition: all 0.6s ease;
+		position: relative;
 	}
 
 	.timeline-item.animate-in {
@@ -413,16 +425,40 @@
 		transform: translateY(0);
 	}
 
+	.timeline-separator {
+		width: 2px;
+		height: 3rem;
+		background: var(--color-border);
+		margin: 0 auto 2rem auto;
+		position: relative;
+	}
+
+	.timeline-separator::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 8px;
+		height: 8px;
+		background: var(--color-muted-foreground);
+		border-radius: 50%;
+	}
+
 	.timeline-content {
-		display: grid;
-		grid-template-columns: 1fr auto;
-		gap: 3rem;
-		align-items: center;
 		background: var(--color-background);
 		border-radius: var(--radius-lg);
 		padding: 2.5rem;
 		border: 1px solid var(--color-border);
 		position: relative;
+		transform: scale(0.8);
+		transition: all 0.4s ease;
+		box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+	}
+
+	.timeline-content.scale-full {
+		transform: scale(1);
+		box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 	}
 
 	.step-details {
@@ -448,9 +484,11 @@
 	}
 
 	.step-visual {
-		width: 300px;
-		height: 200px;
+		width: 100%;
+		max-width: 500px;
+		height: 300px;
 		flex-shrink: 0;
+		margin: 0 auto;
 	}
 
 	.visual-placeholder {
@@ -753,15 +791,17 @@
 
 	/* Responsive Design */
 	@media (max-width: 768px) {
+		.timeline-container {
+			max-width: 100%;
+			padding: 1rem 0;
+		}
+
 		.timeline-content {
-			grid-template-columns: 1fr;
-			gap: 1.5rem;
-			text-align: center;
+			padding: 1.5rem;
 		}
 
 		.step-visual {
-			width: 100%;
-			height: 150px;
+			height: 200px;
 		}
 
 		.life-organization-visual {
