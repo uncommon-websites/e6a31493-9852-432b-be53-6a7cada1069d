@@ -162,8 +162,13 @@
 </script>
 
 <div class="bg-background relative overflow-hidden" {...rest}>
+	<!-- Background glow - all the way in the background -->
+	<div class="absolute inset-0 z-0">
+		<div class="absolute inset-0 bg-gradient-radial from-primary-500/20 via-primary-600/10 to-transparent"></div>
+	</div>
+	
 	{#if imageSrc}
-		<div class="absolute inset-0 z-0" data-enter>
+		<div class="absolute inset-0 z-10" data-enter>
 			<img
 				src={imageSrc}
 				alt="Customer"
@@ -175,7 +180,7 @@
 
 	<header
 		class={[
-			"section-px container mx-auto grid items-center gap-16 gap-y-9 py-12 pt-24 text-balance relative z-10 min-h-[70vh]",
+			"section-px container mx-auto grid items-center gap-16 gap-y-9 py-12 pt-24 text-balance relative z-20 min-h-[70vh]",
 			centered ? "place-items-center text-center" : " xl:grid-cols-[1fr_auto]"
 		]}
 		data-enter-container
@@ -222,7 +227,7 @@
 	</header>
 
 	<!-- iOS-style notification stack - centered over image -->
-	<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none hidden xl:block z-20">
+	<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none hidden xl:block z-30">
 		<div class="relative">
 			{#each visibleNotifications as { notification, id, isLeaving }, index (id)}
 				<div 
