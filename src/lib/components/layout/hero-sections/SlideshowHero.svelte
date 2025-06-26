@@ -7,37 +7,73 @@
 	let heroContainer: HTMLElement;
 	let scrollY = $state(0);
 	let innerHeight = $state(0);
+	
+	// Debug values
+	let debugInfo = $derived.by(() => {
+		if (!heroContainer || !browser) return null;
+		
+		const containerHeight = heroContainer.offsetHeight;
+		const containerTop = heroContainer.offsetTop;
+		const scrollIntoContainer = scrollY - containerTop;
+		const scrollProgress = Math.max(0, Math.min(1, scrollIntoContainer / containerHeight));
+		
+		return {
+			scrollY,
+			containerTop,
+			containerHeight,
+			scrollIntoContainer,
+			scrollProgress,
+			currentSlide
+		};
+	});
 
 	// Calculate which slide should be shown based on scroll position
 	let currentSlide = $derived.by(() => {
 		if (!heroContainer || !browser) return 0;
 
-		const containerHeight = heroContainer.offsetHeight;
+		const containerHeight = heroContainer.offsetHeight; // 200vh
 		const containerTop = heroContainer.offsetTop;
 		
-		// Calculate scroll progress through the container
-		const scrollProgress = Math.max(0, Math.min(1, (scrollY - containerTop) / (containerHeight - innerHeight)));
+		// Ensure we have valid dimensions
+		if (containerHeight === 0) return 0;
+		
+		// Calculate how far we've scrolled into the container
+		const scrollIntoContainer = scrollY - containerTop;
+		
+		// Calculate scroll progress as a percentage of container height
+		const scrollProgress = Math.max(0, Math.min(1, scrollIntoContainer / containerHeight));
 
-		// Switch to slide 2 when we're about 50% through the scroll
-		return scrollProgress > 0.5 ? 1 : 0;
+		// Switch to slide 2 when we're 25% through the scroll (earlier transition)
+		return scrollProgress > 0.25 ? 1 : 0;
 	});
 
 	function handleScroll() {
-		scrollY = window.scrollY;
+		requestAnimationFrame(() => {
+			scrollY = window.scrollY;
+		});
 	}
 
 	function handleResize() {
 		innerHeight = window.innerHeight;
+		// Force recalculation by updating scroll position
+		scrollY = window.scrollY;
 	}
 
 	onMount(() => {
 		if (!browser) return;
 
+		// Set initial values
 		innerHeight = window.innerHeight;
 		scrollY = window.scrollY;
 		
+		// Add event listeners
 		window.addEventListener("scroll", handleScroll, { passive: true });
 		window.addEventListener("resize", handleResize);
+		
+		// Force initial calculation after a frame
+		requestAnimationFrame(() => {
+			scrollY = window.scrollY;
+		});
 	});
 
 	onDestroy(() => {
@@ -49,6 +85,18 @@
 </script>
 
 <section data-hero bind:this={heroContainer} class="relative h-[200vh] bg-gray-50 text-center">
+	<!-- Debug info - remove this later -->
+	{#if debugInfo && browser}
+		<div class="fixed top-4 right-4 bg-black text-white p-2 text-xs z-50 rounded">
+			<div>ScrollY: {debugInfo.scrollY}</div>
+			<div>Container Top: {debugInfo.containerTop}</div>
+			<div>Container Height: {debugInfo.containerHeight}</div>
+			<div>Scroll Into Container: {debugInfo.scrollIntoContainer}</div>
+			<div>Scroll Progress: {debugInfo.scrollProgress.toFixed(3)}</div>
+			<div>Current Slide: {debugInfo.currentSlide}</div>
+		</div>
+	{/if}
+	
 	<div class=" sticky top-0 left-0 grid h-1/2 w-full items-center justify-center">
 		<!-- First slide - centered and sticky -->
 		{#if currentSlide === 0}
@@ -59,6 +107,7 @@
 				<h1 class="text-display text-balance">
 					<AnimateText
 						text="When teams scale rapidly, everyone ends up on different pages of the same book."
+						show={true}
 					/>
 				</h1>
 			</div>
@@ -72,7 +121,7 @@
 			>
 				<div class="grid gap-4">
 					<h1 class="text-display text-balance">
-						<AnimateText text="Sentra keeps everyone aligned." />
+						<AnimateText text="Sentra keeps everyone aligned." show={true} />
 					</h1>
 
 					<p class="text-title2 text-emphasis-medium">
