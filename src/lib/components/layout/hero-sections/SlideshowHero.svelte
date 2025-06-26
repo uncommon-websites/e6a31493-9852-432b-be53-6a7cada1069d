@@ -106,20 +106,20 @@
 			<p bind:this={slide2Subtext} class="text-title2 text-emphasis-medium">
 				A proactive teammate that doesn't let you down.
 			</p>
-		</div>
 
-		<!-- Background animations for second text -->
-		<div class="pulse-rings absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-			<div class="pulse-ring" style="--delay: 0s;"></div>
-			<div class="pulse-ring" style="--delay: 0.5s;"></div>
-			<div class="pulse-ring" style="--delay: 1s;"></div>
-		</div>
+			<!-- Background animations for second text -->
+			<div class="pulse-rings absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+				<div class="pulse-ring" style="--delay: 0s;"></div>
+				<div class="pulse-ring" style="--delay: 0.5s;"></div>
+				<div class="pulse-ring" style="--delay: 1s;"></div>
+			</div>
 
-		<div class="floating-elements absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-			<div class="float-element" style="--delay: 0s; --x: -20%; --y: -30%;"></div>
-			<div class="float-element" style="--delay: 1s; --x: 80%; --y: -10%;"></div>
-			<div class="float-element" style="--delay: 2s; --x: -10%; --y: 70%;"></div>
-			<div class="float-element" style="--delay: 3s; --x: 90%; --y: 80%;"></div>
+			<div class="floating-elements absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+				<div class="float-element" style="--delay: 0s; --x: -20%; --y: -30%;"></div>
+				<div class="float-element" style="--delay: 1s; --x: 80%; --y: -10%;"></div>
+				<div class="float-element" style="--delay: 2s; --x: -10%; --y: 70%;"></div>
+				<div class="float-element" style="--delay: 3s; --x: 90%; --y: 80%;"></div>
+			</div>
 		</div>
 	</div>
 </section>
