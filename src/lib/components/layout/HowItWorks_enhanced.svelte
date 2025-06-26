@@ -176,7 +176,7 @@
 	<div class="section-px section-py container mx-auto">
 		<div class="mx-auto grid place-items-center text-center">
 			<SectionHeader
-				title="What it's like to work with Sentra (test)"
+				title="What it's like to work with Sentra"
 				subtitle="Keeping everything together"
 			/>
 		</div>
