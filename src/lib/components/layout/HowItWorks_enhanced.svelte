@@ -156,7 +156,7 @@
 	});
 </script>
 
-<section class="bg-background">
+<section class="bg-muted">
 	<div class="section-px section-py container mx-auto">
 		<div class="mx-auto grid place-items-center text-center">
 			<SectionHeader
@@ -402,7 +402,7 @@
 	}
 
 	.timeline-item {
-		margin-bottom: 4rem;
+		margin-bottom: 2rem;
 		opacity: 0;
 		transform: translateY(30px);
 		transition: all 0.6s ease;
@@ -418,7 +418,7 @@
 		grid-template-columns: 1fr auto;
 		gap: 2rem;
 		align-items: center;
-		background: var(--color-card);
+		background: var(--color-background);
 		border-radius: var(--radius-lg);
 		padding: 2rem;
 		border: 1px solid var(--color-border);
