@@ -12,14 +12,14 @@
 	let currentSlide = $derived.by(() => {
 		if (!heroContainer || !browser) return 0;
 
-		const rect = heroContainer.getBoundingClientRect();
 		const containerHeight = heroContainer.offsetHeight;
+		const containerTop = heroContainer.offsetTop;
 		
-		// Calculate how much of the container has been scrolled past
-		const scrollProgress = Math.max(0, Math.min(1, -rect.top / (containerHeight - innerHeight)));
+		// Calculate scroll progress through the container
+		const scrollProgress = Math.max(0, Math.min(1, (scrollY - containerTop) / (containerHeight - innerHeight)));
 
-		// Switch to slide 2 when we're about 30% through the scroll
-		return scrollProgress > 0.3 ? 1 : 0;
+		// Switch to slide 2 when we're about 50% through the scroll
+		return scrollProgress > 0.5 ? 1 : 0;
 	});
 
 	function handleScroll() {
