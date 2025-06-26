@@ -181,7 +181,7 @@
 			/>
 		</div>
 		<!-- Tab Navigation -->
-		<div class="sticky top-16 left-0 z-50 mb-40 flex justify-center">
+		<div class="sticky top-18 left-0 z-50 mb-40 flex justify-center">
 			<div
 				class="bg-muted inline-flex items-center gap-0.5 rounded-full p-0.5 shadow-xl shadow-gray-300/20"
 			>
