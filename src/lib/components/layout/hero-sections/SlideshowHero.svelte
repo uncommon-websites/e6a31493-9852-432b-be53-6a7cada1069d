@@ -75,30 +75,31 @@
 	bind:this={heroContainer}
 	class="grid max-h-screen place-items-center overflow-hidden bg-gray-50 text-center"
 >
-	<div class="hero-content place-items-cneter center">
-		<div class="background-pattern"></div>
-		<div class="background-glow"></div>
+	<div class="grid min-h-screen w-full place-content-center place-items-center">
+		<!-- <div
+			class="background-pattern absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+		></div>
+		<div class="background-glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div> -->
 
 		<!-- Text content that animates in and out -->
 		<h1 class="text-display text-balance" bind:this={slide1Heading}>
 			When teams scale rapidly, everyone ends up on different pages of the same book.
 		</h1>
 
-		<h1 class="big-text slide-text slide-2-text text-balance" bind:this={slide2Heading}>
+		<h1 bind:this={slide2Heading}>
 			Sentra keeps everyone <span class="highlight">aligned</span>.
 		</h1>
-		<p class="small-text slide-text slide-2-text text-pretty" bind:this={slide2Subtext}>
-			A proactive teammate that doesn't let you down.
-		</p>
+
+		<p bind:this={slide2Subtext}>A proactive teammate that doesn't let you down.</p>
 
 		<!-- Background animations for second text -->
-		<div class="pulse-rings">
+		<div class="pulse-rings absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
 			<div class="pulse-ring" style="--delay: 0s;"></div>
 			<div class="pulse-ring" style="--delay: 0.5s;"></div>
 			<div class="pulse-ring" style="--delay: 1s;"></div>
 		</div>
 
-		<div class="floating-elements">
+		<div class="floating-elements absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
 			<div class="float-element" style="--delay: 0s; --x: -20%; --y: -30%;"></div>
 			<div class="float-element" style="--delay: 1s; --x: 80%; --y: -10%;"></div>
 			<div class="float-element" style="--delay: 2s; --x: -10%; --y: 70%;"></div>
@@ -108,7 +109,7 @@
 </section>
 
 <style>
-	.slideshow-hero {
+	/* .slideshow-hero {
 		height: 200vh;
 		background: radial-gradient(
 			ellipse at center,
@@ -117,7 +118,7 @@
 		);
 		color: #111827;
 		position: relative;
-	}
+	} */
 
 	.hero-content {
 		height: 100vh;
