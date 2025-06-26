@@ -23,8 +23,7 @@ A minimalist teaser for the about page.
 	const teamMember: TeamMember = {
 		name: "Jae Park",
 		role: "Co-founder & CEO",
-		image:
-			"https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+		image: "https://pbs.twimg.com/profile_images/1918915681229152256/RuRjBmDu_400x400.jpg"
 	};
 </script>
 

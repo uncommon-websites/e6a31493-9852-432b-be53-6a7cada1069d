@@ -392,17 +392,15 @@ This psychological barrier becomes even more significant in the L3 to L4 transit
 					</p>
 				</div>
 
-				<div class="section-py section-px">
-					<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
-						Why L3 is the breakthrough
-					</h3>
-					<p class="text-body" style="color: var(--color-muted-foreground);">
-						We firmly believe we are among the first companies to make the great leap forward from
-						L2 to L3. The first company to create an L3 AI will dominate the market, because its
-						existence dramatically reduces the value and demand for technology at previous levels.
-						All existing "AI Employee" companies are currently building at L2 or below.
-					</p>
-				</div>
+				<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
+					Why L3 is the breakthrough
+				</h3>
+				<p class="text-body" style="color: var(--color-muted-foreground);">
+					We firmly believe we are among the first companies to make the great leap forward from L2
+					to L3. The first company to create an L3 AI will dominate the market, because its
+					existence dramatically reduces the value and demand for technology at previous levels. All
+					existing "AI Employee" companies are currently building at L2 or below.
+				</p>
 			</div>
 		</div>
 	</section>
