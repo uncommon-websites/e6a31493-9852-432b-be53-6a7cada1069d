@@ -26,35 +26,37 @@
 				(progress) => {
 					// Use requestAnimationFrame for smoother animations
 					requestAnimationFrame(() => {
-						// Slide 1 animations (fade out from 0 to 0.4 progress)
+						// Slide 1 animations (fade out from 0 to 0.35 progress)
 						if (slide1Heading) {
-							const slide1Progress = Math.min(progress * 2.5, 1);
-							// Fade out the first slide as we scroll
-							const headingOpacity = Math.max(0, 1 - slide1Progress * 1.2);
-							const headingY = -30 * slide1Progress; // Slide up as it fades out
+							const slide1Progress = Math.min(progress * 2.85, 1);
+							// Smooth fade out with better easing
+							const headingOpacity = Math.max(0, 1 - Math.pow(slide1Progress, 1.5) * 1.1);
+							const headingY = -25 * Math.pow(slide1Progress, 0.8); // Gentler slide up
 							slide1Heading.style.opacity = headingOpacity.toString();
 							slide1Heading.style.transform = `translate3d(0, ${headingY}px, 0)`;
 						}
 						
-						// Slide 2 animations (fade in from 0.2 to 0.6 progress - fully visible by center)
+						// Slide 2 animations (fade in from 0.15 to 0.5 progress - fully visible by center)
 						if (slide2Heading && slide2Subtext) {
-							const slide2Progress = Math.max(0, Math.min(1, (progress - 0.2) / 0.4));
+							const slide2Progress = Math.max(0, Math.min(1, (progress - 0.15) / 0.35));
 							
-							// Heading animation - fully visible by 50% scroll
-							const headingOpacity = Math.min(1, slide2Progress * 1.5);
-							const headingY = 50 * (1 - slide2Progress);
+							// Heading animation with smoother easing
+							const headingOpacity = Math.min(1, Math.pow(slide2Progress, 0.6) * 1.2);
+							const headingY = 40 * Math.pow(1 - slide2Progress, 1.2);
 							slide2Heading.style.opacity = headingOpacity.toString();
 							slide2Heading.style.transform = `translate3d(0, ${headingY}px, 0)`;
 							
-							// Subtext animation (slightly delayed but also fully visible by center)
-							const subtextOpacity = Math.max(0, Math.min(1, slide2Progress * 1.3 - 0.15));
-							const subtextY = 30 * (1 - Math.max(0, slide2Progress - 0.1));
+							// Subtext animation with slight delay and smoother motion
+							const subtextDelay = 0.1;
+							const subtextProgress = Math.max(0, slide2Progress - subtextDelay);
+							const subtextOpacity = Math.max(0, Math.min(1, Math.pow(subtextProgress, 0.5) * 1.1));
+							const subtextY = 25 * Math.pow(1 - subtextProgress, 1.1);
 							slide2Subtext.style.opacity = subtextOpacity.toString();
 							slide2Subtext.style.transform = `translate3d(0, ${subtextY}px, 0)`;
 						}
 						
 						// Update current slide state based on scroll progress
-						currentSlide = progress < 0.4 ? 0 : 1;
+						currentSlide = progress < 0.35 ? 0 : 1;
 					});
 				},
 				{
@@ -116,8 +118,8 @@
 <style>
 	.slideshow-hero {
 		height: 200vh;
-		background: linear-gradient(135deg, #000 0%, #111 50%, #000 100%);
-		color: white;
+		background: #f9fafb;
+		color: #111827;
 		position: relative;
 	}
 
@@ -131,17 +133,31 @@
 		overflow: hidden;
 	}
 
+	.slide::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(249, 250, 251, 0.02);
+		z-index: 1;
+		pointer-events: none;
+	}
+
 	.slide-content {
 		text-align: center;
 		max-width: 1000px;
 		padding: 0 2rem;
 		position: relative;
 		z-index: 2;
+		backdrop-filter: blur(0.5px);
+		-webkit-backdrop-filter: blur(0.5px);
 	}
 
 	/* Slide 1 Styles */
 	.slide-1 {
-		background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+		background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(249, 250, 251, 0.8) 70%);
 	}
 
 	.slide-1 h1 {
@@ -150,6 +166,8 @@
 		line-height: 1.2;
 		margin: 0;
 		letter-spacing: -0.02em;
+		color: #1f2937;
+		text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 	}
 
 	.background-pattern {
@@ -159,9 +177,9 @@
 		width: 100%;
 		height: 100%;
 		background-image: 
-			radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-			radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-			radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+			radial-gradient(circle at 20% 30%, rgba(17, 24, 39, 0.04) 1px, transparent 1px),
+			radial-gradient(circle at 80% 70%, rgba(17, 24, 39, 0.04) 1px, transparent 1px),
+			radial-gradient(circle at 40% 80%, rgba(17, 24, 39, 0.03) 1px, transparent 1px);
 		background-size: 100px 100px, 150px 150px, 80px 80px;
 		animation: patternFloat 20s ease-in-out infinite;
 		z-index: 1;
@@ -181,7 +199,7 @@
 		position: absolute;
 		width: 4px;
 		height: 4px;
-		background: rgba(255, 255, 255, 0.2);
+		background: rgba(17, 24, 39, 0.15);
 		border-radius: 50%;
 		left: var(--x);
 		top: var(--y);
@@ -191,7 +209,7 @@
 
 	/* Slide 2 Styles */
 	.slide-2 {
-		background: radial-gradient(ellipse at center, rgba(var(--color-primary-400-rgb), 0.1) 0%, transparent 70%);
+		background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(249, 250, 251, 0.9) 70%);
 	}
 
 	.big-text {
@@ -200,6 +218,8 @@
 		line-height: 1.1;
 		margin: 0 0 1.5rem 0;
 		letter-spacing: -0.03em;
+		color: #111827;
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
 	}
 
 	.highlight {
@@ -223,6 +243,8 @@
 		font-weight: 400;
 		margin: 0;
 		letter-spacing: -0.01em;
+		color: #4b5563;
+		text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 	}
 
 	.background-glow {
@@ -231,7 +253,7 @@
 		left: 50%;
 		width: 600px;
 		height: 600px;
-		background: radial-gradient(circle, rgba(var(--color-primary-400-rgb), 0.15) 0%, transparent 70%);
+		background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
 		transform: translate(-50%, -50%);
 		animation: pulse 4s ease-in-out infinite;
 		z-index: 1;
@@ -251,7 +273,7 @@
 		left: 50%;
 		width: 200px;
 		height: 200px;
-		border: 1px solid rgba(var(--color-primary-400-rgb), 0.3);
+		border: 1px solid rgba(139, 92, 246, 0.2);
 		border-radius: 50%;
 		transform: translate(-50%, -50%);
 		animation: pulseRing 3s ease-out infinite;
@@ -260,8 +282,10 @@
 
 	/* Scroll-linked text animations */
 	.slide-text {
-		transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 		will-change: opacity, transform;
+		backface-visibility: hidden;
+		-webkit-font-smoothing: antialiased;
 	}
 	
 	/* First slide text starts visible */
@@ -284,13 +308,13 @@
 	}
 
 	@keyframes float {
-		0%, 100% { transform: translateY(0px) scale(1); opacity: 0.2; }
-		50% { transform: translateY(-20px) scale(1.2); opacity: 0.6; }
+		0%, 100% { transform: translateY(0px) scale(1); opacity: 0.15; }
+		50% { transform: translateY(-20px) scale(1.2); opacity: 0.4; }
 	}
 
 	@keyframes pulse {
-		0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.15; }
-		50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.25; }
+		0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.08; }
+		50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.15; }
 	}
 
 	@keyframes pulseRing {

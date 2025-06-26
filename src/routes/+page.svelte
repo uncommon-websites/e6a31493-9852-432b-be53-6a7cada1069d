@@ -12,7 +12,7 @@
 </script>
 
 <SlideshowHero />
-<LogoScroller 
+<!-- <LogoScroller 
 	label="Trusted by fast-growing companies" 
 	logoUrls={[
 		'https://logo.clearbit.com/notion.so',
@@ -20,14 +20,14 @@
 		'https://logo.clearbit.com/airtable.com',
 		'https://logo.clearbit.com/linear.app'
 	]}
-/>
+/> -->
 
 <Summary
 	title="What we do"
 	text="Our technology delivers measurable results through secure, adaptable solutions that directly increase productivity and drive growth."
 />
 
-<Testimonials
+<!-- <Testimonials
 	testimonials={[
 		{
 			name: "Jane Smith",
@@ -57,9 +57,9 @@
 				"https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=3687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 		}
 	]}
-/>
+/> -->
 
-<Features
+<!-- <Features
 	title="Features"
 	subtitle="Some features"
 	features={[
@@ -79,11 +79,11 @@
 				"Work together seamlessly while maintaining strict data privacy standards with our zero-knowledge architecture and military-grade encryption."
 		}
 	]}
-/>
+/> -->
 
 <HowItWorks />
 
-<UseCases
+<!-- <UseCases
 	title="Use Cases"
 	subtitle="Real-world applications for your business needs"
 	useCases={[
@@ -121,7 +121,7 @@
 			}
 		}
 	]}
-/>
+/> -->
 
-<AboutTeaser />
-<CallToAction />
+<!-- <AboutTeaser /> -->
+<!-- <CallToAction /> -->
