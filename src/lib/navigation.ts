@@ -69,12 +69,12 @@ export const navigation: NavItem[] = [
 				showInNav: true,
 				showInFooter: true
 			},
-			{
-				label: "Pricing",
-				href: "/pricing",
-				showInNav: false,
-				showInFooter: true
-			},
+			// {
+			// 	label: "Pricing",
+			// 	href: "/pricing",
+			// 	showInNav: false,
+			// 	showInFooter: true
+			// },
 			// {
 			// 	label: "Careers",
 			// 	href: "/careers",

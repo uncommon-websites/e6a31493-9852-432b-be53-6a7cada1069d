@@ -7,8 +7,9 @@
 	let {
 		text = "",
 		oncomplete = () => {},
+		delay = 0,
 		show = $bindable(true)
-	}: { text: string; show?: boolean; oncomplete?: () => void } = $props();
+	}: { text: string; show?: boolean; oncomplete?: () => void; delay?: number } = $props();
 
 	// State
 	let words = $derived(text.split(" "));
@@ -37,7 +38,7 @@
 	{#each (text || "").split(" ") as word, i}
 		<span
 			class="animated-word inline-block origin-left"
-			style:--delay="{i * 100}ms"
+			style:--delay="{i * 100 + delay}ms"
 			onanimationstart={() => handleWordIntroEnd(i)}
 		>
 			{word}

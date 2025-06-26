@@ -123,5 +123,5 @@
 	]}
 /> -->
 
-<!-- <AboutTeaser /> -->
-<!-- <CallToAction /> -->
+<AboutTeaser />
+<CallToAction />

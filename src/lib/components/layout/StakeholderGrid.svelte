@@ -123,17 +123,6 @@
 			{#each stakeholders as member, index}
 				{@render card(member, index)}
 			{/each}
-
-			{#if stakeholderType === "team"}
-				{@render card(
-					{
-						name: "You?",
-						position: "Join us",
-						type: "join"
-					},
-					stakeholders.length
-				)}
-			{/if}
 		</div>
 	</div>
 </section>

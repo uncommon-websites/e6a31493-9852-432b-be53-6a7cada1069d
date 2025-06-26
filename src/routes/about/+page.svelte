@@ -142,7 +142,8 @@ This psychological barrier becomes even more significant in the L3 to L4 transit
 	<!-- Hero Section -->
 	<SecondaryHero
 		title="Building the future of organizational intelligence"
-		imageSrc="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+		subtitle="Intelligent alignment for growing teams."
+		imageSrc="https://images.unsplash.com/photo-1750658659691-1f7b2bd37337?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 	/>
 
 	<!-- Our Mission Section -->
