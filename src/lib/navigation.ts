@@ -127,6 +127,12 @@ export const navigation: NavItem[] = [
 				href: "/careers",
 				showInNav: true,
 				showInFooter: true
+			},
+			{
+				label: "Manifesto",
+				href: "/manifesto",
+				showInNav: true,
+				showInFooter: true
 			}
 		]
 	},
