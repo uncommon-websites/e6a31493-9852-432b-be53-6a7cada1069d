@@ -139,19 +139,11 @@ This psychological barrier becomes even more significant in the L3 to L4 transit
 
 <main>
 	<!-- Hero Section -->
-	<section class="section-py" style="background-color: var(--color-background);">
-		<div class="container-sm section-px mx-auto text-center">
-			<h1 class="text-display section-mb-sm" style="color: var(--color-foreground);">
-				Building the future of organizational intelligence
-			</h1>
-			<p
-				class="text-title3 section-mb"
-				style="color: var(--color-muted-foreground); max-width: 48rem; margin-left: auto; margin-right: auto;"
-			>
-				How we see the AI space evolving, how Sentra will evolve, and the team making it happen.
-			</p>
-		</div>
-	</section>
+	<SecondaryHero
+		title="Building the future of organizational intelligence"
+		subtitle="How we see the AI space evolving, how Sentra will evolve, and the team making it happen."
+		imageSrc="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+	/>
 
 	<!-- Our Mission Section -->
 	<section class="section-py" style="background-color: var(--color-background);">

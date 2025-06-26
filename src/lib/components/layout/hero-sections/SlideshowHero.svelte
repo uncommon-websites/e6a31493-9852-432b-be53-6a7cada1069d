@@ -29,7 +29,8 @@
 			}),
 			{
 				// target: heroContainer,
-				offset: ["start center", "center center"]
+				offset: ["start start", "80% start"]
+				// offset: ["start center", "center center"]
 			}
 		);
 	});
