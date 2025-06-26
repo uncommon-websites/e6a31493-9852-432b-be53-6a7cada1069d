@@ -48,7 +48,7 @@ A minimalist teaser for the about page.
 						<div class="text-callout">{teamMember.name}</div>
 						<div class="text-caption text-emphasis-low">{teamMember.role}</div>
 					</div>
-					<Button href="/about" variant="secondary" size="sm" class="ml-8">Read more</Button>
+					<Button href="/careers" variant="secondary" size="sm" class="ml-8">Join our team</Button>
 				</div>
 			</div>
 		</div>

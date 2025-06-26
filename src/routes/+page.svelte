@@ -94,7 +94,7 @@
 			image:
 				"https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
 			link: {
-				href: "/use-cases/workflows",
+				href: "/pricing",
 				label: "Learn more"
 			}
 		},
@@ -105,7 +105,7 @@
 			image:
 				"https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2488&q=80",
 			link: {
-				href: "/use-cases/data-analysis",
+				href: "/pricing",
 				label: "Explore analytics"
 			}
 		},
@@ -116,7 +116,7 @@
 			image:
 				"https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
 			link: {
-				href: "/use-cases/collaboration",
+				href: "/pricing",
 				label: "See security features"
 			}
 		}
