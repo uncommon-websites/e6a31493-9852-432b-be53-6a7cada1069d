@@ -50,9 +50,9 @@
 
 	// Props
 	const {
-		title = "Get started today",
-		subtitle = "Join now",
-		description = "Ready to experience the difference? Join our community of satisfied customers and see how our solution can transform your workflow. ",
+		title = "Join our private beta",
+		subtitle = "Be among the first",
+		description = "Ready to transform how your organization stays aligned? Join fast-growing companies who are already using Sentra to proactively detect and resolve misalignments before they become costly problems.",
 		imageSrc = "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
 		callsToAction = [cta],
 		...rest

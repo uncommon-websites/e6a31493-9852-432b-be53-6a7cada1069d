@@ -411,7 +411,7 @@
 		</div>
 
 		<!-- CTA Section -->
-		<div class="mt-24">
+		<div class="mt-24 hidden">
 			{#if activeTab === "organizations"}
 				<div class="mx-auto max-w-4xl">
 					<!-- Header Section -->
@@ -420,8 +420,8 @@
 							Catch misalignment before it costs you
 						</h1>
 						<p class="text-body text-emphasis-medium mx-auto max-w-3xl">
-							Sentra is your AI teammate that listens, learns, and alerts you when your company drifts
-							— before you even notice.
+							Sentra is your AI teammate that listens, learns, and alerts you when your company
+							drifts — before you even notice.
 						</p>
 					</div>
 
@@ -439,9 +439,7 @@
 										<span class="text-foreground mb-2 block text-lg !font-medium"
 											>Sarah waiting on approvals</span
 										>
-										<span class="text-muted-foreground"
-											>Budget increase for cloud resources</span
-										>
+										<span class="text-muted-foreground">Budget increase for cloud resources</span>
 									</div>
 									<span class="text-muted-foreground text-sm">3d ago</span>
 								</div>
@@ -462,7 +460,9 @@
 									class="flex items-center gap-4 rounded-2xl border-l-4 border-blue-500 bg-blue-50 p-6"
 								>
 									<div class="flex-1">
-										<span class="text-foreground mb-2 block text-lg !font-medium">Team velocity dropping</span>
+										<span class="text-foreground mb-2 block text-lg !font-medium"
+											>Team velocity dropping</span
+										>
 										<span class="text-muted-foreground"
 											>Frontend team missed sprint goals 2x in a row</span
 										>
@@ -473,7 +473,7 @@
 
 							<!-- CTA Button -->
 							<div class="text-center">
-								<Button variant="primary" size="lg" class="text-xl px-8 py-4 !font-medium">
+								<Button variant="primary" size="lg" class="px-8 py-4 text-xl !font-medium">
 									Hire Sentra today
 								</Button>
 							</div>
@@ -524,7 +524,7 @@
 
 							<!-- CTA Button -->
 							<div class="text-center">
-								<Button variant="primary" size="lg" class="text-xl px-8 py-4 !font-medium">
+								<Button variant="primary" size="lg" class="px-8 py-4 text-xl !font-medium">
 									Hire Sentra today
 								</Button>
 							</div>
