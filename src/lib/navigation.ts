@@ -59,12 +59,6 @@ export const navigation: NavItem[] = [
 		showInFooter: false
 	},
 	{
-		label: "About",
-		href: "/about",
-		showInNav: true,
-		showInFooter: false
-	},
-	{
 		label: "Company",
 		showInNav: true,
 		showInFooter: true,
@@ -72,7 +66,7 @@ export const navigation: NavItem[] = [
 			{
 				label: "About",
 				href: "/about",
-				showInNav: false,
+				showInNav: true,
 				showInFooter: true
 			},
 			{
