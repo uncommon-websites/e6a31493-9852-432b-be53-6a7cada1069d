@@ -1,29 +1,59 @@
 <script lang="ts">
+	import { scroll, animate } from 'motion';
+	
 	let heroContainer: HTMLElement;
+	let slide1Text: HTMLElement;
+	let slide1Heading: HTMLElement;
+	let slide2Text: HTMLElement;
+	let slide2Heading: HTMLElement;
+	let slide2Subtext: HTMLElement;
 	let currentSlide = $state(0);
 
 	$effect(() => {
-		if (typeof window !== 'undefined' && heroContainer) {
-			const observer = new IntersectionObserver(
-				(entries) => {
-					entries.forEach((entry) => {
-						if (entry.isIntersecting) {
-							const slideIndex = parseInt(entry.target.getAttribute('data-slide') || '0');
-							currentSlide = slideIndex;
+		if (typeof window !== 'undefined' && heroContainer && slide1Heading && slide2Heading) {
+			// Track scroll progress for the entire hero section
+			const heroAnimation = scroll(
+				(progress) => {
+					// Use requestAnimationFrame for smoother animations
+					requestAnimationFrame(() => {
+						// Slide 1 animations (0 to 0.5 progress)
+						if (slide1Heading) {
+							const slide1Progress = Math.min(progress * 2, 1);
+							const headingOpacity = Math.max(0, Math.min(1, slide1Progress * 1.2));
+							const headingY = 50 * (1 - slide1Progress);
+							slide1Heading.style.opacity = headingOpacity.toString();
+							slide1Heading.style.transform = `translate3d(0, ${headingY}px, 0)`;
 						}
+						
+						// Slide 2 animations (0.5 to 1 progress)
+						if (slide2Heading && slide2Subtext) {
+							const slide2Progress = Math.max(0, (progress - 0.5) * 2);
+							
+							// Heading animation
+							const headingOpacity = Math.max(0, Math.min(1, slide2Progress * 1.2));
+							const headingY = 50 * (1 - slide2Progress);
+							slide2Heading.style.opacity = headingOpacity.toString();
+							slide2Heading.style.transform = `translate3d(0, ${headingY}px, 0)`;
+							
+							// Subtext animation (delayed)
+							const subtextOpacity = Math.max(0, Math.min(1, slide2Progress * 1.2 - 0.25));
+							const subtextY = 30 * (1 - Math.max(0, slide2Progress - 0.2));
+							slide2Subtext.style.opacity = subtextOpacity.toString();
+							slide2Subtext.style.transform = `translate3d(0, ${subtextY}px, 0)`;
+						}
+						
+						// Update current slide state based on scroll progress
+						currentSlide = progress < 0.5 ? 0 : 1;
 					});
 				},
 				{
-					threshold: 0.5,
-					rootMargin: '-10% 0px -10% 0px'
+					target: heroContainer,
+					offset: ['start start', 'end start']
 				}
 			);
 
-			const slides = heroContainer.querySelectorAll('.slide');
-			slides.forEach((slide) => observer.observe(slide));
-
 			return () => {
-				slides.forEach((slide) => observer.unobserve(slide));
+				heroAnimation();
 			};
 		}
 	});
@@ -38,10 +68,11 @@
 		class="slide slide-1"
 		data-slide="0"
 		class:active={currentSlide === 0}
+		bind:this={slide1Text}
 	>
 		<div class="slide-content">
 			<div class="background-pattern"></div>
-			<h1 class="text-balance">When teams scale rapidly, everyone ends up on different pages of the same book</h1>
+			<h1 class="text-balance slide-text" bind:this={slide1Heading}>When teams scale rapidly, everyone ends up on different pages of the same book</h1>
 			<div class="floating-elements">
 				<div class="float-element" style="--delay: 0s; --x: -20%; --y: -30%;"></div>
 				<div class="float-element" style="--delay: 1s; --x: 80%; --y: -10%;"></div>
@@ -56,11 +87,12 @@
 		class="slide slide-2"
 		data-slide="1"
 		class:active={currentSlide === 1}
+		bind:this={slide2Text}
 	>
 		<div class="slide-content">
 			<div class="background-glow"></div>
-			<h1 class="big-text text-balance">Sentra keeps everyone <span class="highlight">aligned</span></h1>
-			<p class="small-text text-pretty">A proactive teammate that doesn't let you down</p>
+			<h1 class="big-text text-balance slide-text" bind:this={slide2Heading}>Sentra keeps everyone <span class="highlight">aligned</span></h1>
+			<p class="small-text text-pretty slide-text" bind:this={slide2Subtext}>A proactive teammate that doesn't let you down</p>
 			<div class="pulse-rings">
 				<div class="pulse-ring" style="--delay: 0s;"></div>
 				<div class="pulse-ring" style="--delay: 0.5s;"></div>
@@ -73,20 +105,19 @@
 <style>
 	.slideshow-hero {
 		height: 200vh;
-		scroll-snap-type: y mandatory;
-		overflow-y: auto;
 		background: linear-gradient(135deg, #000 0%, #111 50%, #000 100%);
 		color: white;
+		position: relative;
+		scroll-snap-align: start;
 	}
 
 	.slide {
 		height: 100vh;
-		scroll-snap-align: start;
-		scroll-snap-stop: always;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		position: relative;
+		position: sticky;
+		top: 0;
 		overflow: hidden;
 	}
 
@@ -109,9 +140,6 @@
 		line-height: 1.2;
 		margin: 0;
 		letter-spacing: -0.02em;
-		opacity: 0;
-		transform: translateY(30px);
-		animation: slideInUp 1s ease-out 0.5s forwards;
 	}
 
 	.background-pattern {
@@ -162,9 +190,6 @@
 		line-height: 1.1;
 		margin: 0 0 1.5rem 0;
 		letter-spacing: -0.03em;
-		opacity: 0;
-		transform: translateY(30px);
-		animation: slideInUp 1s ease-out 0.3s forwards;
 	}
 
 	.highlight {
@@ -178,19 +203,16 @@
 		position: absolute;
 		bottom: 0;
 		left: 0;
-		width: 0;
+		width: 100%;
 		height: 3px;
 		background: var(--color-primary-400);
-		animation: underlineExpand 1s ease-out 1.5s forwards;
 	}
 
 	.small-text {
 		font-size: clamp(1.25rem, 2.5vw, 1.75rem);
 		font-weight: 400;
-		opacity: 0;
 		margin: 0;
 		letter-spacing: -0.01em;
-		animation: fadeIn 1s ease-out 1s forwards;
 	}
 
 	.background-glow {
@@ -226,25 +248,15 @@
 		animation-delay: var(--delay);
 	}
 
+	/* Scroll-linked text animations */
+	.slide-text {
+		opacity: 0;
+		transform: translateY(40px);
+		transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		will-change: opacity, transform;
+	}
+
 	/* Animations */
-	@keyframes slideInUp {
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
-
-	@keyframes fadeIn {
-		to {
-			opacity: 0.8;
-		}
-	}
-
-	@keyframes underlineExpand {
-		to {
-			width: 100%;
-		}
-	}
 
 	@keyframes patternFloat {
 		0%, 100% { transform: translateY(0px) rotate(0deg); }
