@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Summary from '$lib/components/layout/Summary.svelte';
-	import StakeholderGrid from '$lib/components/layout/StakeholderGrid.svelte';
-	import Footer from '$lib/components/layout/Footer.svelte';
+	import Summary from "$lib/components/layout/Summary.svelte";
+	import StakeholderGrid from "$lib/components/layout/StakeholderGrid.svelte";
+	import Footer from "$lib/components/layout/Footer.svelte";
 
 	// Our Mission content
 	const missionContent = `Our three big bets on what will win in the age of AI powered work:
@@ -71,13 +71,15 @@ This psychological barrier becomes even more significant in the L3 to L4 transit
 		{
 			name: "Jae Gwan Park",
 			position: "Co-founder, CEO",
-			description: "AI engineer, MIT research, international AI hackathon winner, previous ecommerce founder",
+			description:
+				"AI engineer, MIT research, international AI hackathon winner, previous ecommerce founder",
 			image: "/generated/image-a-professional-headshot-of-a-ceo-capture.webp"
 		},
 		{
-			name: "Andrey Starenky", 
+			name: "Andrey Starenky",
 			position: "Co-founder, CTO",
-			description: "AI infrastructure at IBM WatsonX, defense contracting, previous mobile app founder (acquired)",
+			description:
+				"AI infrastructure at IBM WatsonX, defense contracting, previous mobile app founder (acquired)",
 			image: "/generated/image-a-professional-headshot-of-a-cto-capture.webp"
 		},
 		{
@@ -98,7 +100,7 @@ This psychological barrier becomes even more significant in the L3 to L4 transit
 		},
 		{
 			name: "Sanjay Jha",
-			position: "Advisor", 
+			position: "Advisor",
 			description: "Former COO Qualcomm, former CEO Motorola",
 			image: "/generated/image-a-professional-headshot-of-a-male-execut.webp"
 		}
@@ -113,7 +115,7 @@ This psychological barrier becomes even more significant in the L3 to L4 transit
 			image: "/generated/image-a-professional-headshot-of-a-female-inve.webp"
 		},
 		{
-			name: "Shaad Khan", 
+			name: "Shaad Khan",
 			position: "Seven Story Capital",
 			description: "Investment Partner",
 			image: "/generated/image-a-professional-headshot-of-a-male-invest.webp"
@@ -129,7 +131,10 @@ This psychological barrier becomes even more significant in the L3 to L4 transit
 
 <svelte:head>
 	<title>About - Sentra</title>
-	<meta name="description" content="Learn about Sentra's mission to build the first AI teammate that improves organizational alignment through autonomous intelligence." />
+	<meta
+		name="description"
+		content="Learn about Sentra's mission to build the first AI teammate that improves organizational alignment through autonomous intelligence."
+	/>
 </svelte:head>
 
 <main>
@@ -139,7 +144,10 @@ This psychological barrier becomes even more significant in the L3 to L4 transit
 			<h1 class="text-display section-mb-sm" style="color: var(--color-foreground);">
 				Building the future of organizational intelligence
 			</h1>
-			<p class="text-title3 section-mb" style="color: var(--color-muted-foreground); max-width: 48rem; margin-left: auto; margin-right: auto;">
+			<p
+				class="text-title3 section-mb"
+				style="color: var(--color-muted-foreground); max-width: 48rem; margin-left: auto; margin-right: auto;"
+			>
 				How we see the AI space evolving, how Sentra will evolve, and the team making it happen.
 			</p>
 		</div>
@@ -148,43 +156,61 @@ This psychological barrier becomes even more significant in the L3 to L4 transit
 	<!-- Our Mission Section -->
 	<section class="section-py" style="background-color: var(--color-background);">
 		<div class="container-sm section-px mx-auto">
-			<h2 class="text-title1 section-mb" style="color: var(--color-foreground);">
-				Our mission
-			</h2>
+			<h2 class="text-title1 section-mb" style="color: var(--color-foreground);">Our mission</h2>
 			<div class="prose prose-lg" style="color: var(--color-foreground); max-width: none;">
-				<p style="color: var(--color-muted-foreground); font-size: 1.125rem; line-height: 1.7; margin-bottom: 2rem;">
+				<p
+					style="color: var(--color-muted-foreground); font-size: 1.125rem; line-height: 1.7; margin-bottom: 2rem;"
+				>
 					Our three big bets on what will win in the age of AI powered work:
 				</p>
-				
+
 				<div style="margin-bottom: 2rem;">
-					<h3 style="color: var(--color-foreground); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">
+					<h3
+						style="color: var(--color-foreground); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;"
+					>
 						Human-like interfaces that feel natural
 					</h3>
 					<p style="color: var(--color-muted-foreground); line-height: 1.7; margin-bottom: 0;">
-						We believe the future of work tools lies in systems that understand context, nuance, and the human elements that make organizations thrive. No more robotic or transactional interactions.
+						We believe the future of work tools lies in systems that understand context, nuance, and
+						the human elements that make organizations thrive. No more robotic or transactional
+						interactions.
 					</p>
 				</div>
 
 				<div style="margin-bottom: 2rem;">
-					<h3 style="color: var(--color-foreground); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">
+					<h3
+						style="color: var(--color-foreground); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;"
+					>
 						Autonomous, unsupervised work
 					</h3>
 					<p style="color: var(--color-muted-foreground); line-height: 1.7; margin-bottom: 0;">
-						Rather than requiring constant human oversight, truly powerful AI systems should work independently while maintaining alignment with organizational goals and values.
+						Rather than requiring constant human oversight, truly powerful AI systems should work
+						independently while maintaining alignment with organizational goals and values.
 					</p>
 				</div>
 
 				<div style="margin-bottom: 0;">
-					<h3 style="color: var(--color-foreground); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">
+					<h3
+						style="color: var(--color-foreground); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;"
+					>
 						Privacy first approaches
 					</h3>
 					<p style="color: var(--color-muted-foreground); line-height: 1.7; margin-bottom: 0;">
-						We reject surveillance culture entirely, focusing instead on aggregate insights that protect individual autonomy while strengthening collective understanding.
+						We reject surveillance culture entirely, focusing instead on aggregate insights that
+						protect individual autonomy while strengthening collective understanding.
 					</p>
 				</div>
 			</div>
 		</div>
 	</section>
+
+	<!-- Team Section -->
+	<StakeholderGrid
+		title="Who we are"
+		subtitle="The team building the future of organizational intelligence"
+		stakeholders={teamMembers}
+		stakeholderType="team"
+	/>
 
 	<!-- Sentra's Future Section -->
 	<section class="section-py" style="background-color: var(--color-muted);">
@@ -194,49 +220,79 @@ This psychological barrier becomes even more significant in the L3 to L4 transit
 			</h2>
 			<div class="prose prose-lg" style="color: var(--color-foreground); max-width: none;">
 				<div style="margin-bottom: 2.5rem;">
-					<h3 style="color: var(--color-foreground); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">
+					<h3
+						style="color: var(--color-foreground); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;"
+					>
 						V1: Understanding organizational communication
 					</h3>
 					<p style="color: var(--color-muted-foreground); line-height: 1.7; margin-bottom: 0;">
-						In our current form, there is significant emphasis on nailing the mirroring and piecing together of tribal communication patterns. Sentra learns how your organization communicates, identifies gaps, and surfaces potential misalignments before they become problems.
+						In our current form, there is significant emphasis on nailing the mirroring and piecing
+						together of tribal communication patterns. Sentra learns how your organization
+						communicates, identifies gaps, and surfaces potential misalignments before they become
+						problems.
 					</p>
 				</div>
 
 				<div style="margin-bottom: 2.5rem;">
-					<h3 style="color: var(--color-foreground); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">
+					<h3
+						style="color: var(--color-foreground); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;"
+					>
 						V2: The autopilot for work
 					</h3>
 					<p style="color: var(--color-muted-foreground); line-height: 1.7; margin-bottom: 1.5rem;">
-						We will make Sentra capable of automating away more busywork. We are building the autopilot for work, designed for everyone in the company. This involves Sentra integrating with all the knowledge connectors of your organization: Google Drive, Slack, project management tools, and more.
+						We will make Sentra capable of automating away more busywork. We are building the
+						autopilot for work, designed for everyone in the company. This involves Sentra
+						integrating with all the knowledge connectors of your organization: Google Drive, Slack,
+						project management tools, and more.
 					</p>
 					<p style="color: var(--color-muted-foreground); line-height: 1.7; margin-bottom: 0;">
-						Imagine mentioning in a meeting that you plan to send someone specific documents. Sentra could autonomously extract the relevant pieces and prepare them for your review, allowing you to simply approve and send rather than doing the manual work yourself.
+						Imagine mentioning in a meeting that you plan to send someone specific documents. Sentra
+						could autonomously extract the relevant pieces and prepare them for your review,
+						allowing you to simply approve and send rather than doing the manual work yourself.
 					</p>
 				</div>
 
 				<div style="margin-bottom: 2.5rem;">
-					<h3 style="color: var(--color-foreground); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">
+					<h3
+						style="color: var(--color-foreground); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;"
+					>
 						Beyond automation: Your AI ally
 					</h3>
 					<p style="color: var(--color-muted-foreground); line-height: 1.7; margin-bottom: 1.5rem;">
-						Sentra could even take certain meetings for you as it develops its own voice and understanding of your communication style. This allows you to stay in the zone while not missing anything important from critical discussions.
+						Sentra could even take certain meetings for you as it develops its own voice and
+						understanding of your communication style. This allows you to stay in the zone while not
+						missing anything important from critical discussions.
 					</p>
 					<p style="color: var(--color-muted-foreground); line-height: 1.7; margin-bottom: 0;">
-						During performance reviews, Sentra can become any employee's ally, helping them articulate their contributions beyond just deliverables—things like how they spoke up during meetings, facilitated discussions, or supported team dynamics. It helps everyone make their case rather than being the judge.
+						During performance reviews, Sentra can become any employee's ally, helping them
+						articulate their contributions beyond just deliverables—things like how they spoke up
+						during meetings, facilitated discussions, or supported team dynamics. It helps everyone
+						make their case rather than being the judge.
 					</p>
 				</div>
 
 				<div style="margin-bottom: 0;">
-					<h3 style="color: var(--color-foreground); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">
+					<h3
+						style="color: var(--color-foreground); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;"
+					>
 						The ultimate vision
 					</h3>
 					<p style="color: var(--color-muted-foreground); line-height: 1.7; margin-bottom: 0;">
-						Ultimately, Sentra becomes the cultural human glue that maintains startup ethos while companies scale. Our vision: "Run a large company at the speed of a small company."
+						Ultimately, Sentra becomes the cultural human glue that maintains startup ethos while
+						companies scale. Our vision: "Run a large company at the speed of a small company."
 					</p>
 				</div>
 			</div>
 		</div>
 	</section>
+
+	<!-- Advisors Section -->
+	<StakeholderGrid
+		title="Advisors"
+		subtitle="Management experts and enterprise leaders guiding our mission"
+		stakeholders={advisors}
+		stakeholderType="team"
+	/>
 
 	<!-- Where AI is Headed Section -->
 	<section class="section-py" style="background-color: var(--color-background);">
@@ -245,115 +301,141 @@ This psychological barrier becomes even more significant in the L3 to L4 transit
 				Where we think AI is headed
 			</h2>
 			<div class="prose prose-lg" style="color: var(--color-foreground); max-width: none;">
-				<p style="color: var(--color-muted-foreground); font-size: 1.125rem; line-height: 1.7; margin-bottom: 2.5rem;">
-					The evolution from co-pilots to autonomous organizational intelligence follows a clear progression. We see clear parallels to the SAE standards for self-driving car autonomy levels.
+				<p
+					style="color: var(--color-muted-foreground); font-size: 1.125rem; line-height: 1.7; margin-bottom: 2.5rem;"
+				>
+					The evolution from co-pilots to autonomous organizational intelligence follows a clear
+					progression. We see clear parallels to the SAE standards for self-driving car autonomy
+					levels.
 				</p>
 
 				<div style="margin-bottom: 2.5rem;">
-					<h3 style="color: var(--color-foreground); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">
+					<h3
+						style="color: var(--color-foreground); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;"
+					>
 						L0: Generic co-pilots
 					</h3>
 					<p style="color: var(--color-muted-foreground); line-height: 1.7; margin-bottom: 1rem;">
-						These include chat-style LLMs like ChatGPT, Gemini, and Co-Pilot. They save seconds of cognitive friction through faster recall and lookup, eliminating tab-hopping and documentation searches.
+						These include chat-style LLMs like ChatGPT, Gemini, and Co-Pilot. They save seconds of
+						cognitive friction through faster recall and lookup, eliminating tab-hopping and
+						documentation searches.
 					</p>
-					<p style="color: var(--color-muted-foreground); line-height: 1.7; margin-bottom: 0; font-style: italic;">
+					<p
+						style="color: var(--color-muted-foreground); line-height: 1.7; margin-bottom: 0; font-style: italic;"
+					>
 						Impact: Enhances the speed of a single person's work.
 					</p>
 				</div>
 
 				<div style="margin-bottom: 2.5rem;">
-					<h3 style="color: var(--color-foreground); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">
+					<h3
+						style="color: var(--color-foreground); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;"
+					>
 						L1: Task agents
 					</h3>
 					<p style="color: var(--color-muted-foreground); line-height: 1.7; margin-bottom: 1rem;">
-						They automate specific narrow tasks, like Superhuman AI for drafting emails or code auto-completion in Cursor. They save minutes from common tasks that humans typically perform.
+						They automate specific narrow tasks, like Superhuman AI for drafting emails or code
+						auto-completion in Cursor. They save minutes from common tasks that humans typically
+						perform.
 					</p>
-					<p style="color: var(--color-muted-foreground); line-height: 1.7; margin-bottom: 0; font-style: italic;">
+					<p
+						style="color: var(--color-muted-foreground); line-height: 1.7; margin-bottom: 0; font-style: italic;"
+					>
 						Impact: Reduces the total workload of a single person.
 					</p>
 				</div>
 
 				<div style="margin-bottom: 2.5rem;">
-					<h3 style="color: var(--color-foreground); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">
+					<h3
+						style="color: var(--color-foreground); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;"
+					>
 						L2: Role agents
 					</h3>
 					<p style="color: var(--color-muted-foreground); line-height: 1.7; margin-bottom: 1rem;">
-						These agents automate workflows and seek to replace (at least partially) a seat on the org chart long term. Examples include Devin for autonomous software engineering and Fireflies for note-taking.
+						These agents automate workflows and seek to replace (at least partially) a seat on the
+						org chart long term. Examples include Devin for autonomous software engineering and
+						Fireflies for note-taking.
 					</p>
-					<p style="color: var(--color-muted-foreground); line-height: 1.7; margin-bottom: 0; font-style: italic;">
+					<p
+						style="color: var(--color-muted-foreground); line-height: 1.7; margin-bottom: 0; font-style: italic;"
+					>
 						Impact: Can impact up to a whole team's work.
 					</p>
 				</div>
 
 				<div style="margin-bottom: 2.5rem;">
-					<h3 style="color: var(--color-foreground); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">
+					<h3
+						style="color: var(--color-foreground); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;"
+					>
 						L3: Goal agents (current Sentra)
 					</h3>
 					<p style="color: var(--color-muted-foreground); line-height: 1.7; margin-bottom: 1rem;">
-						This is a new class of AI that we are among the first to define. These agents work towards continuous business mandates like maintaining alignment, security compliance, eliminating busywork, and ensuring employee satisfaction.
+						This is a new class of AI that we are among the first to define. These agents work
+						towards continuous business mandates like maintaining alignment, security compliance,
+						eliminating busywork, and ensuring employee satisfaction.
 					</p>
 					<p style="color: var(--color-muted-foreground); line-height: 1.7; margin-bottom: 1rem;">
-						L3 agents work towards unbounded metrics, promising ongoing outcomes like "always compliant," "team never misaligned," or "everyone is satisfied" rather than discrete deliverables.
+						L3 agents work towards unbounded metrics, promising ongoing outcomes like "always
+						compliant," "team never misaligned," or "everyone is satisfied" rather than discrete
+						deliverables.
 					</p>
-					<p style="color: var(--color-muted-foreground); line-height: 1.7; margin-bottom: 0; font-style: italic;">
+					<p
+						style="color: var(--color-muted-foreground); line-height: 1.7; margin-bottom: 0; font-style: italic;"
+					>
 						Impact: Affects the whole organization, not just a single task, person, or team.
 					</p>
 				</div>
 
 				<div style="margin-bottom: 2.5rem;">
-					<h3 style="color: var(--color-foreground); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">
+					<h3
+						style="color: var(--color-foreground); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;"
+					>
 						L4: High autonomy goal agents (future Sentra)
 					</h3>
 					<p style="color: var(--color-muted-foreground); line-height: 1.7; margin-bottom: 0;">
-						The key jump from L3 to L4 occurs when humans are no longer in the loop for decision-making processes. Future Sentra could resolve misalignment by contacting individuals directly to address miscommunications, without requiring manager intervention.
+						The key jump from L3 to L4 occurs when humans are no longer in the loop for
+						decision-making processes. Future Sentra could resolve misalignment by contacting
+						individuals directly to address miscommunications, without requiring manager
+						intervention.
 					</p>
 				</div>
 
 				<div style="margin-bottom: 2.5rem;">
-					<h3 style="color: var(--color-foreground); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">
+					<h3
+						style="color: var(--color-foreground); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;"
+					>
 						L5: Full automation (AGI)
 					</h3>
 					<p style="color: var(--color-muted-foreground); line-height: 1.7; margin-bottom: 0;">
-						AI that independently manages complex tasks across large contexts without human intervention. Our future vision includes AI CEOs managing strategic decision-making, autonomous corporate legal counsel, and complete operational oversight.
+						AI that independently manages complex tasks across large contexts without human
+						intervention. Our future vision includes AI CEOs managing strategic decision-making,
+						autonomous corporate legal counsel, and complete operational oversight.
 					</p>
 				</div>
 
-				<div style="padding: 2rem; background-color: var(--color-muted); border-radius: var(--radius-lg); margin-bottom: 0;">
-					<h3 style="color: var(--color-foreground); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">
+				<div
+					style="padding: 2rem; background-color: var(--color-muted); border-radius: var(--radius-lg); margin-bottom: 0;"
+				>
+					<h3
+						style="color: var(--color-foreground); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;"
+					>
 						Why L3 is the breakthrough
 					</h3>
 					<p style="color: var(--color-muted-foreground); line-height: 1.7; margin-bottom: 0;">
-						We firmly believe we are among the first companies to make the great leap forward from L2 to L3. The first company to create an L3 AI will dominate the market, because its existence dramatically reduces the value and demand for technology at previous levels. All existing "AI Employee" companies are currently building at L2 or below.
+						We firmly believe we are among the first companies to make the great leap forward from
+						L2 to L3. The first company to create an L3 AI will dominate the market, because its
+						existence dramatically reduces the value and demand for technology at previous levels.
+						All existing "AI Employee" companies are currently building at L2 or below.
 					</p>
 				</div>
 			</div>
 		</div>
 	</section>
-
-	<!-- Team Section -->
-	<StakeholderGrid 
-		title="Who we are" 
-		subtitle="The team building the future of organizational intelligence"
-		stakeholders={teamMembers}
-		stakeholderType="team"
-	/>
-
-	<!-- Advisors Section -->
-	<StakeholderGrid 
-		title="Advisors" 
-		subtitle="Management experts and enterprise leaders guiding our mission"
-		stakeholders={advisors}
-		stakeholderType="investor"
-	/>
-
 	<!-- Early Supporters Section -->
-	<StakeholderGrid 
-		title="Our earliest supporters" 
+	<StakeholderGrid
+		title="Our earliest supporters"
 		subtitle="Investors and partners who believe in our vision"
 		stakeholders={supporters}
-		stakeholderType="investor"
+		stakeholderType="team"
 	/>
 </main>
-
-<!-- Footer -->
-<Footer />

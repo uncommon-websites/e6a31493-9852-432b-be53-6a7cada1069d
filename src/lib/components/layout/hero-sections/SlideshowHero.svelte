@@ -10,7 +10,7 @@
 	onMount(() => {
 		const items = [...heroContainer.querySelectorAll("[data-item]")];
 		console.log(items);
-		
+
 		// First slide: visible initially, exits completely before second appears
 		scroll(
 			animate(items[0], {
@@ -18,7 +18,7 @@
 			}),
 			{
 				target: heroContainer,
-				offset: ["start start", "40% start"]
+				offset: ["start start", "80% start"]
 			}
 		);
 
@@ -28,8 +28,8 @@
 				opacity: [0, 1]
 			}),
 			{
-				target: heroContainer,
-				offset: ["60% start", "end start"]
+				// target: heroContainer,
+				offset: ["start center", "center center"]
 			}
 		);
 	});
@@ -40,9 +40,9 @@
 	bind:this={heroContainer}
 	class="relative h-[200vh] overflow-hidden bg-gray-50 text-center"
 >
-	<div class="sticky top-0 h-[100vh] w-full flex items-center justify-center">
+	<div class="debug grid h-full w-full items-center justify-center">
 		<!-- First slide - centered and sticky -->
-		<div data-item class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl px-8">
+		<div data-item class="mx-auto w-full max-w-4xl px-8">
 			<h1 class="text-display text-balance" bind:this={slide1Heading}>
 				<AnimateText
 					text="When teams scale rapidly, everyone ends up on different pages of the same book."
@@ -51,7 +51,7 @@
 		</div>
 
 		<!-- Second slide - centered and sticky -->
-		<div data-item class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl px-8 opacity-0">
+		<div data-item class="mx-auto w-full max-w-4xl px-8 opacity-0">
 			<div class="grid gap-4">
 				<h1 bind:this={slide2Heading} class="text-display text-balance">
 					<AnimateText text="Sentra keeps everyone aligned." />
@@ -69,7 +69,9 @@
 				<div class="pulse-ring" style="--delay: 1s;"></div>
 			</div>
 
-			<div class="floating-elements absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+			<div
+				class="floating-elements pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+			>
 				<div class="float-element" style="--delay: 0s; --x: -20%; --y: -30%;"></div>
 				<div class="float-element" style="--delay: 1s; --x: 80%; --y: -10%;"></div>
 				<div class="float-element" style="--delay: 2s; --x: -10%; --y: 70%;"></div>
