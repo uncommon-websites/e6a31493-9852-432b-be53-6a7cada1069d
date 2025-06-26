@@ -11,23 +11,34 @@
 
 	$effect(() => {
 		if (typeof window !== 'undefined' && heroContainer && slide1Heading && slide2Heading) {
+			// Set initial state - first slide visible, second slide hidden
+			slide1Heading.style.opacity = '1';
+			slide1Heading.style.transform = 'translate3d(0, 0px, 0)';
+			slide2Heading.style.opacity = '0';
+			slide2Heading.style.transform = 'translate3d(0, 50px, 0)';
+			if (slide2Subtext) {
+				slide2Subtext.style.opacity = '0';
+				slide2Subtext.style.transform = 'translate3d(0, 30px, 0)';
+			}
+			
 			// Track scroll progress for the entire hero section
 			const heroAnimation = scroll(
 				(progress) => {
 					// Use requestAnimationFrame for smoother animations
 					requestAnimationFrame(() => {
-						// Slide 1 animations (0 to 0.5 progress)
+						// Slide 1 animations (fade out from 0 to 0.5 progress)
 						if (slide1Heading) {
 							const slide1Progress = Math.min(progress * 2, 1);
-							const headingOpacity = Math.max(0, Math.min(1, slide1Progress * 1.2));
-							const headingY = 50 * (1 - slide1Progress);
+							// Fade out the first slide as we scroll
+							const headingOpacity = Math.max(0, 1 - slide1Progress * 1.5);
+							const headingY = -30 * slide1Progress; // Slide up as it fades out
 							slide1Heading.style.opacity = headingOpacity.toString();
 							slide1Heading.style.transform = `translate3d(0, ${headingY}px, 0)`;
 						}
 						
-						// Slide 2 animations (0.5 to 1 progress)
+						// Slide 2 animations (fade in from 0.3 to 1 progress)
 						if (slide2Heading && slide2Subtext) {
-							const slide2Progress = Math.max(0, (progress - 0.5) * 2);
+							const slide2Progress = Math.max(0, (progress - 0.3) / 0.7);
 							
 							// Heading animation
 							const headingOpacity = Math.max(0, Math.min(1, slide2Progress * 1.2));
@@ -250,10 +261,20 @@
 
 	/* Scroll-linked text animations */
 	.slide-text {
-		opacity: 0;
-		transform: translateY(40px);
 		transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 		will-change: opacity, transform;
+	}
+	
+	/* First slide text starts visible */
+	.slide-1 .slide-text {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	
+	/* Second slide text starts hidden */
+	.slide-2 .slide-text {
+		opacity: 0;
+		transform: translateY(40px);
 	}
 
 	/* Animations */
