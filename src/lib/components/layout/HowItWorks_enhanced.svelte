@@ -199,14 +199,14 @@
 					{#if index > 0}
 						<div class="timeline-separator"></div>
 					{/if}
-					<div class="timeline-content text-center grid place-items-center max-w-prose mx-auto">
-						<h1 class="text-title3 text-foreground mb-4">{step.title}</h1>
-						<div class="step-badges mb-6">
+					<div class="timeline-content text-center">
+						<h1 class="text-title3 text-foreground mb-6">{step.title}</h1>
+						<div class="step-badges">
 							{#each step.badges as badge}
 								<span class="badge">{badge}</span>
 							{/each}
 						</div>
-						<div class="step-visual mb-6">
+						<div class="step-visual mb-8">
 							<div class="visual-placeholder {step.visual}">
 								<div class="visual-content">
 									{#if step.visual === "platform-selection"}
@@ -338,7 +338,7 @@
 								</div>
 							</div>
 						</div>
-						<p class="text-body text-emphasis-medium">{step.description}</p>
+						<p class="text-body text-emphasis-medium mt-6">{step.description}</p>
 					</div>
 				</div>
 			{/each}
@@ -413,7 +413,7 @@
 	}
 
 	.timeline-item {
-		margin-bottom: 4rem;
+		margin-bottom: 6rem;
 		opacity: 0;
 		transform: translateY(30px);
 		transition: all 0.6s ease;
@@ -426,39 +426,27 @@
 	}
 
 	.timeline-separator {
-		width: 2px;
-		height: 3rem;
+		width: 1px;
+		height: 4rem;
 		background: var(--color-border);
-		margin: 0 auto 2rem auto;
+		margin: 0 auto 3rem auto;
 		position: relative;
-	}
-
-	.timeline-separator::before {
-		content: '';
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		width: 8px;
-		height: 8px;
-		background: var(--color-muted-foreground);
-		border-radius: 50%;
 	}
 
 	.timeline-content {
 		background: var(--color-background);
 		border-radius: var(--radius-lg);
-		padding: 2.5rem;
+		padding: 3rem;
 		border: 1px solid var(--color-border);
 		position: relative;
 		transform: scale(0.8);
 		transition: all 0.4s ease;
-		box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+		max-width: 65ch;
+		margin: 0 auto;
 	}
 
 	.timeline-content.scale-full {
 		transform: scale(1);
-		box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 	}
 
 	.step-details {
@@ -470,7 +458,8 @@
 		display: flex;
 		gap: 0.75rem;
 		flex-wrap: wrap;
-		margin-top: 0.5rem;
+		justify-content: center;
+		margin-bottom: 2rem;
 	}
 
 	.badge {
@@ -485,8 +474,8 @@
 
 	.step-visual {
 		width: 100%;
-		max-width: 500px;
-		height: 300px;
+		max-width: 600px;
+		height: 400px;
 		flex-shrink: 0;
 		margin: 0 auto;
 	}
@@ -797,11 +786,11 @@
 		}
 
 		.timeline-content {
-			padding: 1.5rem;
+			padding: 2rem;
 		}
 
 		.step-visual {
-			height: 200px;
+			height: 300px;
 		}
 
 		.life-organization-visual {
