@@ -1,24 +1,25 @@
 <script lang="ts">
-	import { scroll, animate } from 'motion';
-	
+	import { scroll, animate } from "motion";
+	import { onMount } from "svelte";
+
 	let heroContainer: HTMLElement;
 	let slide1Heading: HTMLElement;
 	let slide2Heading: HTMLElement;
 	let slide2Subtext: HTMLElement;
 	let currentSlide = $state(0);
 
-	$effect(() => {
-		if (typeof window !== 'undefined' && heroContainer && slide1Heading && slide2Heading) {
+	onMount(() => {
+		if (typeof window !== "undefined" && heroContainer && slide1Heading && slide2Heading) {
 			// Set initial state - first slide visible, second slide hidden
-			slide1Heading.style.opacity = '1';
-			slide1Heading.style.transform = 'translate(-50%, -50%) translate3d(0, 0px, 0)';
-			slide2Heading.style.opacity = '0';
-			slide2Heading.style.transform = 'translate(-50%, -50%) translate3d(0, 50px, 0)';
+			slide1Heading.style.opacity = "1";
+			slide1Heading.style.transform = "translate(-50%, -50%) translate3d(0, 0px, 0)";
+			slide2Heading.style.opacity = "0";
+			slide2Heading.style.transform = "translate(-50%, -50%) translate3d(0, 50px, 0)";
 			if (slide2Subtext) {
-				slide2Subtext.style.opacity = '0';
-				slide2Subtext.style.transform = 'translate(-50%, -50%) translate3d(0, 30px, 0)';
+				slide2Subtext.style.opacity = "0";
+				slide2Subtext.style.transform = "translate(-50%, -50%) translate3d(0, 30px, 0)";
 			}
-			
+
 			// Track scroll progress for the entire hero section
 			const heroAnimation = scroll(
 				(progress) => {
@@ -33,17 +34,17 @@
 							slide1Heading.style.opacity = headingOpacity.toString();
 							slide1Heading.style.transform = `translate(-50%, -50%) translate3d(0, ${headingY}px, 0)`;
 						}
-						
+
 						// Slide 2 animations (fade in from 0.15 to 0.5 progress - fully visible by center)
 						if (slide2Heading && slide2Subtext) {
 							const slide2Progress = Math.max(0, Math.min(1, (progress - 0.15) / 0.35));
-							
+
 							// Heading animation with smoother easing
 							const headingOpacity = Math.min(1, Math.pow(slide2Progress, 0.6) * 1.2);
 							const headingY = 40 * Math.pow(1 - slide2Progress, 1.2);
 							slide2Heading.style.opacity = headingOpacity.toString();
 							slide2Heading.style.transform = `translate(-50%, -50%) translate3d(0, ${headingY}px, 0)`;
-							
+
 							// Subtext animation with slight delay and smoother motion
 							const subtextDelay = 0.1;
 							const subtextProgress = Math.max(0, slide2Progress - subtextDelay);
@@ -52,14 +53,14 @@
 							slide2Subtext.style.opacity = subtextOpacity.toString();
 							slide2Subtext.style.transform = `translate(-50%, -50%) translate3d(0, ${subtextY}px, 0)`;
 						}
-						
+
 						// Update current slide state based on scroll progress
 						currentSlide = progress < 0.35 ? 0 : 1;
 					});
 				},
 				{
 					target: heroContainer,
-					offset: ['start start', 'end start']
+					offset: ["start start", "end start"]
 				}
 			);
 
@@ -70,27 +71,30 @@
 	});
 </script>
 
-<section 
-	bind:this={heroContainer}
-	class="slideshow-hero"
->
+<section bind:this={heroContainer} class="slideshow-hero max-h-screen overflow-hidden">
 	<div class="hero-content">
 		<div class="background-pattern"></div>
 		<div class="background-glow"></div>
-		
+
 		<!-- Text content that animates in and out -->
-		<h1 class="text-balance slide-text slide-1-text" bind:this={slide1Heading}>When teams scale rapidly, everyone ends up on different pages of the same book.</h1>
-		
-		<h1 class="big-text text-balance slide-text slide-2-text" bind:this={slide2Heading}>Sentra keeps everyone <span class="highlight">aligned</span>.</h1>
-		<p class="small-text text-pretty slide-text slide-2-text" bind:this={slide2Subtext}>A proactive teammate that doesn't let you down.</p>
-		
+		<h1 class="slide-text slide-1-text text-balance" bind:this={slide1Heading}>
+			When teams scale rapidly, everyone ends up on different pages of the same book.
+		</h1>
+
+		<h1 class="big-text slide-text slide-2-text text-balance" bind:this={slide2Heading}>
+			Sentra keeps everyone <span class="highlight">aligned</span>.
+		</h1>
+		<p class="small-text slide-text slide-2-text text-pretty" bind:this={slide2Subtext}>
+			A proactive teammate that doesn't let you down.
+		</p>
+
 		<!-- Background animations for second text -->
 		<div class="pulse-rings">
 			<div class="pulse-ring" style="--delay: 0s;"></div>
 			<div class="pulse-ring" style="--delay: 0.5s;"></div>
 			<div class="pulse-ring" style="--delay: 1s;"></div>
 		</div>
-		
+
 		<div class="floating-elements">
 			<div class="float-element" style="--delay: 0s; --x: -20%; --y: -30%;"></div>
 			<div class="float-element" style="--delay: 1s; --x: 80%; --y: -10%;"></div>
@@ -103,7 +107,11 @@
 <style>
 	.slideshow-hero {
 		height: 200vh;
-		background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(249, 250, 251, 0.8) 70%);
+		background: radial-gradient(
+			ellipse at center,
+			rgba(255, 255, 255, 1) 0%,
+			rgba(249, 250, 251, 0.8) 70%
+		);
 		color: #111827;
 		position: relative;
 	}
@@ -147,11 +155,14 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-image: 
+		background-image:
 			radial-gradient(circle at 20% 30%, rgba(17, 24, 39, 0.04) 1px, transparent 1px),
 			radial-gradient(circle at 80% 70%, rgba(17, 24, 39, 0.04) 1px, transparent 1px),
 			radial-gradient(circle at 40% 80%, rgba(17, 24, 39, 0.03) 1px, transparent 1px);
-		background-size: 100px 100px, 150px 150px, 80px 80px;
+		background-size:
+			100px 100px,
+			150px 150px,
+			80px 80px;
 		animation: patternFloat 20s ease-in-out infinite;
 		z-index: 1;
 	}
@@ -252,7 +263,9 @@
 
 	/* Scroll-linked text animations */
 	.slide-text {
-		transition: opacity 0.6s cubic-bezier(0.23, 1, 0.32, 1), transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+		transition:
+			opacity 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+			transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 		will-change: opacity, transform;
 		backface-visibility: hidden;
 		-webkit-font-smoothing: antialiased;
@@ -262,18 +275,37 @@
 	/* Animations */
 
 	@keyframes patternFloat {
-		0%, 100% { transform: translateY(0px) rotate(0deg); }
-		50% { transform: translateY(-20px) rotate(180deg); }
+		0%,
+		100% {
+			transform: translateY(0px) rotate(0deg);
+		}
+		50% {
+			transform: translateY(-20px) rotate(180deg);
+		}
 	}
 
 	@keyframes float {
-		0%, 100% { transform: translateY(0px) scale(1); opacity: 0.15; }
-		50% { transform: translateY(-20px) scale(1.2); opacity: 0.4; }
+		0%,
+		100% {
+			transform: translateY(0px) scale(1);
+			opacity: 0.15;
+		}
+		50% {
+			transform: translateY(-20px) scale(1.2);
+			opacity: 0.4;
+		}
 	}
 
 	@keyframes pulse {
-		0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.08; }
-		50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.15; }
+		0%,
+		100% {
+			transform: translate(-50%, -50%) scale(1);
+			opacity: 0.08;
+		}
+		50% {
+			transform: translate(-50%, -50%) scale(1.1);
+			opacity: 0.15;
+		}
 	}
 
 	@keyframes pulseRing {
