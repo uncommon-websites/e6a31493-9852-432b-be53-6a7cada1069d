@@ -70,12 +70,18 @@
 	// });
 
 	onMount(() => {
-		document.querySelectorAll("[data-hero] [data-item]").forEach((item) => {
-			scroll(animate(item, { opacity: [0, 1, 1, 0] }), {
-				target: item,
-				container: heroContainer,
-				offset: ["start end", "end end", "start start", "end start"]
-			});
+		heroContainer.querySelectorAll("[data-item]").forEach((item) => {
+			scroll(
+				animate(item, {
+					opacity: [0, 1, 1, 0],
+					y: ["1em", 0, 0, "-1em"]
+				}),
+				{
+					target: item,
+					container: heroContainer,
+					offset: ["start end", "end end", "start start", "end start"]
+				}
+			);
 		});
 	});
 </script>
@@ -83,22 +89,22 @@
 <section
 	data-hero
 	bind:this={heroContainer}
-	class="relative grid max-h-screen place-items-center overflow-hidden bg-gray-50 text-center"
+	class="relative grid h-[200vh] place-items-center overflow-hidden bg-gray-50 text-center"
 >
-	<div class="grid min-h-screen w-full place-content-center place-items-center">
+	<div class="grid min-h-screen w-full place-content-center place-items-center gap-[50%]">
 		<!-- <div
 			class="background-pattern absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
 		></div>
 		<div class="background-glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div> -->
 
 		<!-- Text content that animates in and out -->
-		<div data-item>
+		<div data-item class="sticky top-0 left-0">
 			<h1 class="text-display text-balance" bind:this={slide1Heading}>
 				When teams scale rapidly, everyone ends up on different pages of the same book.
 			</h1>
 		</div>
 
-		<div class="grid gap-4" data-item>
+		<div data-item class="sticky top-0 left-0 grid gap-4">
 			<h1 bind:this={slide2Heading} class="text-display text-balance">
 				Sentra keeps everyone <span class="highlight">aligned</span>.
 			</h1>

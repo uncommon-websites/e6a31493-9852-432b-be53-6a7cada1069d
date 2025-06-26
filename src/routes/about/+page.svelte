@@ -1,73 +1,127 @@
 <script lang="ts">
-	import Story from './Story.svelte';
+	import Summary from '$lib/components/layout/Summary.svelte';
 	import StakeholderGrid from '$lib/components/layout/StakeholderGrid.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
 
-	// About story paragraphs
-	const storyParagraphs = [
-		"Sentra was born from a simple question: what if your organization had an always-on teammate—not a dashboard, not a tracker, but an active participant in the company who noticed misalignment before you felt its effects?",
-		
-		"We were second-time founders, AI engineers, systems thinkers working in fast-moving startups. We'd seen speed turn into silos. Growing teams that suddenly didn't know if they were still heading in the same direction. Great leadership losing visibility not because they weren't paying attention—but because nobody can be everywhere at once.",
-		
-		"We noticed something: high-performing teams aren't always the best at documenting what's going wrong. By the time the weekly sync rolls around, real issues have slipped. Politics creep in. Morale drops. Whole quarters go sideways because warning signs go unnoticed for just a few weeks.",
-		
-		"So we asked: what if misalignment could be visible the moment it starts? What if risk wasn't something you found out after the fact? What if technology supported trust, rather than replaced it?",
-		
-		"That's why we're building Sentra—the first AI teammate whose job is to improve alignment across your organization. It participates like an employee would: it reads public messages, attends core meetings, digests the canon of your tooling. And then, quietly, it illuminates where sync begins to break. Where incentives diverge. Where realities don't match meeting updates. It surfaces issues—not to shame individuals, but to show leaders where they can step in early.",
-		
-		"Alignment isn't about more process or performance measurement. It's about shared clarity. And we believe software can strengthen that, without surveillance or friction.",
-		
-		"Sentra is the foundation of a new company operating system—one built on active listening, continuous reflection, and human-centered AI. Less overhead. More insight. And a clearer path forward, even as everything moves fast."
-	];
+	// Our Mission content
+	const missionContent = `Our three big bets on what will win in the age of AI powered work:
 
-	// Team data for StakeholderGrid
+Human-human like interfaces that feel natural and conversational, not robotic or transactional. We believe the future of work tools lies in systems that understand context, nuance, and the human elements that make organizations thrive.
+
+Autonomous, unsupervised work that operates intelligently in the background. Rather than requiring constant human oversight, truly powerful AI systems should work independently while maintaining alignment with organizational goals and values.
+
+Privacy first approaches that build trust rather than erode it. We reject surveillance culture entirely, focusing instead on aggregate insights that protect individual autonomy while strengthening collective understanding.`;
+
+	// Sentra's Future content
+	const futureContent = `In our current V1 form, there is significant emphasis on nailing the mirroring and piecing together of tribal communication patterns. Sentra learns how your organization communicates, identifies gaps, and surfaces potential misalignments before they become problems.
+
+In V2, we will make Sentra capable of automating away more busywork. We are building the autopilot for work, designed for everyone in the company. This involves Sentra integrating with all the knowledge connectors of your organization: Google Drive, Slack, project management tools, and more, with increasingly proactive and autonomous features.
+
+The types of tasks we imagine Sentra handling include scenarios like this: if you mention in a meeting that you plan to send someone specific documents, Sentra could autonomously extract the relevant pieces and prepare them for your review, allowing you to simply approve and send rather than doing the manual work yourself.
+
+Sentra could even take certain meetings for you as it develops its own voice and understanding of your communication style. This allows you to stay in the zone while not missing anything important from critical discussions.
+
+During meetings, Sentra could automatically fetch relevant information about topics being discussed and send it to you via direct message, or even contribute directly to the conversation when appropriate.
+
+Sentra can become any employee's ally during performance reviews, helping them articulate their contributions to the company beyond just code or deliverables—things like how they spoke up during meetings, facilitated discussions, or supported team dynamics. It helps everyone make their case rather than being the judge, fundamentally changing the psychological relationship with AI from something performative to something genuinely supportive.
+
+From there, Sentra could naturally evolve into a performance coach. If you have goals around improving certain skillsets or becoming a better communicator, it could help you work towards company objectives alongside your personal professional development.
+
+Ultimately, Sentra becomes the cultural human glue that maintains startup ethos while companies scale. Our vision: "Run a large company at the speed of a small company."`;
+
+	// AI Evolution content
+	const aiEvolutionContent = `**L0: Generic co-pilots.** These include chat-style LLMs like ChatGPT, Gemini, and Co-Pilot.
+• ROI: Saves seconds of cognitive friction through faster recall and lookup, eliminating tab-hopping and documentation searches while reducing mental context switches.
+• Direct impact scope: Enhances the speed of a single person's work.
+• Human involvement: A human creates the prompt and reviews the output.
+
+**L1: Task agents.** They automate specific narrow tasks, like Superhuman AI for drafting emails or code auto-completion in Cursor.
+• ROI: Save minutes from common tasks that humans typically perform.
+• Direct impact scope: Reduces the total workload of a single person.
+• Human involvement: Instructions are still defined by humans, and outputs are still reviewed.
+
+**L2: Role agents.** These agents automate workflows and seek to replace (at least partially) a seat on the org chart long term. Examples include Devin for autonomous software engineering, Parloa for call center operations, and Fireflies for note-taking.
+• ROI: These save hours of labor.
+• Direct impact scope: Can impact up to a whole team's work.
+• Human involvement: The workflow is defined by humans, and outputs are still reviewed.
+
+**L3: Goal agents (current Sentra).** This is a new class of AI that we are among the first to define. These agents work towards continuous business mandates. For example, alignment is a continuous goal in any business, as are maintaining security compliance, eliminating busywork, and ensuring employee satisfaction.
+• ROI: L3 agents work towards unbounded metrics, promising ongoing outcomes like "always compliant," "team never misaligned," or "everyone is satisfied" rather than discrete deliverables. They eliminate the need for traditional audits.
+• Direct impact scope: Impacts the whole organization, not just a single task, person, or team.
+• Human involvement: Goals come pre-defined and actions are autonomously initiated. Outputs like recommendations and alerts are still reviewed.
+
+To work towards continuous goals that affect entire organizations, L3 agents need a stateful, immutable, org-wide understanding of what's happening—a memory—to do their job effectively. Sentra must be among the first L3 AI systems because we solve the data fragmentation, human incentives, and accuracy problems that other systems struggle with. All other L3 agents would rely on Sentra's high-resolution understanding of organizational dynamics.
+
+**L4: High autonomy goal agents (future Sentra).** The key jump from L3 to L4 occurs when humans are no longer in the loop for decision-making processes. With L4, humans no longer need to review outputs, and the agent directly "resolves" issues. For example, future Sentra could resolve misalignment by contacting individuals directly to address miscommunications, without requiring manager or leader intervention.
+
+**L5: Full automation (AGI).** AI that independently manages complex tasks across large contexts without human intervention or oversight. Our future vision includes AI CEOs managing strategic decision-making, autonomous corporate legal counsel, and complete operational oversight without human review. It would run entire companies independently.
+
+We see clear parallels to the SAE standards for self-driving car autonomy levels. In the context of autonomous vehicles, the company that first reaches the next level typically dominates the entire market, because its existence dramatically reduces the value and demand for technology at previous levels. Products stuck in previous eras quickly become commoditized.
+
+Similarly, the first company to create an L3 AI will dominate the market. All existing "AI Employee" companies are currently building at L2 or below, horizontally expanding across countless verticals with "AI tutors," "AI market researchers," "AI software engineers," and similar role-specific tools.
+
+We firmly believe we are among the first companies to make the great leap forward from L2 to L3. This is largely why Sentra can provide what were previously L0-L2 products—like note-taking, enterprise search, and busywork drafting—as trivially commoditized features within a much more powerful system.
+
+The challenge of leaping from L2 to L3 isn't solely a technology hurdle around robust memory systems. The adoption of L3 agents marks the first time a single AI has direct impact on entire organizations at once, requiring careful consideration of cooperation mechanisms and human incentives.
+
+This psychological barrier becomes even more significant in the L3 to L4 transition, since entire labor divisions will likely flatten or be fully replaced by AI. An L4 agent continually optimizing for "employee satisfaction" and "legal compliance" will likely eliminate the need for traditional HR departments.`;
+
+	// Team data
 	const teamMembers = [
 		{
 			name: "Jae Gwan Park",
 			position: "Co-founder, CEO",
+			description: "AI engineer, MIT research, international AI hackathon winner, previous ecommerce founder",
 			image: "/generated/image-a-professional-headshot-of-a-ceo-capture.webp"
 		},
 		{
 			name: "Andrey Starenky", 
 			position: "Co-founder, CTO",
+			description: "AI infrastructure at IBM WatsonX, defense contracting, previous mobile app founder (acquired)",
 			image: "/generated/image-a-professional-headshot-of-a-cto-capture.webp"
 		},
 		{
 			name: "Ashwin Gopinath",
 			position: "Co-founder, Advisor",
+			description: "MIT professor, Caltech & Google X alum, successful biotech founder (acquired)",
 			image: "/generated/image-a-professional-headshot-of-an-advisor-pr.webp"
 		}
 	];
 
-	// Advisors data for StakeholderGrid
+	// Advisors data
 	const advisors = [
 		{
 			name: "Lakshmi Sankar",
-			position: "Advisor, fmr VP Google, fmr CoS Twitter",
+			position: "Advisor",
+			description: "Former VP Google, former Chief of Staff Twitter",
 			image: "/generated/image-a-professional-headshot-of-a-female-exec.webp"
 		},
 		{
 			name: "Sanjay Jha",
-			position: "Advisor, fmr COO Qualcomm, fmr CEO Motorola",
+			position: "Advisor", 
+			description: "Former COO Qualcomm, former CEO Motorola",
 			image: "/generated/image-a-professional-headshot-of-a-male-execut.webp"
 		}
 	];
 
-	// Early supporters data for StakeholderGrid
+	// Early supporters data
 	const supporters = [
 		{
 			name: "Anne Lee Skates",
-			position: "Parable VC, fmr A16Z",
+			position: "Parable VC",
+			description: "Former A16Z",
 			image: "/generated/image-a-professional-headshot-of-a-female-inve.webp"
 		},
 		{
 			name: "Shaad Khan", 
 			position: "Seven Story Capital",
+			description: "Investment Partner",
 			image: "/generated/image-a-professional-headshot-of-a-male-invest.webp"
 		},
 		{
 			name: "Alex Yang",
-			position: "Principal PM MSFT",
+			position: "Principal PM",
+			description: "Microsoft",
 			image: "/generated/image-a-professional-headshot-of-a-tech-execut.webp"
 		}
 	];
@@ -83,16 +137,28 @@
 	<section class="section-py" style="background-color: var(--color-background);">
 		<div class="container-sm section-px mx-auto text-center">
 			<h1 class="text-display section-mb-sm" style="color: var(--color-foreground);">
-				The first AI teammate, designed for alignment
+				Building the future of organizational intelligence
 			</h1>
 			<p class="text-title3 section-mb" style="color: var(--color-muted-foreground); max-width: 48rem; margin-left: auto; margin-right: auto;">
-				We're building the future of organizational intelligence—starting with the question of how technology can strengthen trust, not replace it.
+				How we see the AI space evolving, how Sentra will evolve, and the team making it happen.
 			</p>
 		</div>
 	</section>
 
-	<!-- Company Story Section -->
-	<Story paragraphs={storyParagraphs} />
+	<!-- Our Mission Section -->
+	<section class="section-py" style="background-color: var(--color-background);">
+		<div class="container-sm section-px mx-auto">
+			<div class="text-center section-mb">
+				<h2 class="text-title1 section-mb-xs" style="color: var(--color-foreground);">
+					Our mission
+				</h2>
+				<p class="text-body" style="color: var(--color-muted-foreground); max-width: 32rem; margin-left: auto; margin-right: auto;">
+					Our three big bets on what will win in the age of AI powered work
+				</p>
+			</div>
+			<Summary text={missionContent} />
+		</div>
+	</section>
 
 	<!-- Visual Break -->
 	<section class="section-py" style="background-color: var(--color-muted);">
@@ -108,7 +174,37 @@
 		</div>
 	</section>
 
-	<!-- Team Section using StakeholderGrid -->
+	<!-- Sentra's Future Section -->
+	<section class="section-py" style="background-color: var(--color-background);">
+		<div class="container-sm section-px mx-auto">
+			<div class="text-center section-mb">
+				<h2 class="text-title1 section-mb-xs" style="color: var(--color-foreground);">
+					Sentra's future
+				</h2>
+				<p class="text-body" style="color: var(--color-muted-foreground); max-width: 32rem; margin-left: auto; margin-right: auto;">
+					From organizational alignment to the autopilot for work
+				</p>
+			</div>
+			<Summary text={futureContent} />
+		</div>
+	</section>
+
+	<!-- Where AI is Headed Section -->
+	<section class="section-py" style="background-color: var(--color-muted);">
+		<div class="container-sm section-px mx-auto">
+			<div class="text-center section-mb">
+				<h2 class="text-title1 section-mb-xs" style="color: var(--color-foreground);">
+					Where we think AI is headed
+				</h2>
+				<p class="text-body" style="color: var(--color-muted-foreground); max-width: 32rem; margin-left: auto; margin-right: auto;">
+					The evolution from co-pilots to autonomous organizational intelligence
+				</p>
+			</div>
+			<Summary text={aiEvolutionContent} />
+		</div>
+	</section>
+
+	<!-- Team Section -->
 	<StakeholderGrid 
 		title="Who we are" 
 		subtitle="The team building the future of organizational intelligence"
@@ -116,7 +212,7 @@
 		stakeholderType="team"
 	/>
 
-	<!-- Advisors Section using StakeholderGrid -->
+	<!-- Advisors Section -->
 	<StakeholderGrid 
 		title="Advisors" 
 		subtitle="Management experts and enterprise leaders guiding our mission"
@@ -124,7 +220,7 @@
 		stakeholderType="investor"
 	/>
 
-	<!-- Early Supporters Section using StakeholderGrid -->
+	<!-- Early Supporters Section -->
 	<StakeholderGrid 
 		title="Our earliest supporters" 
 		subtitle="Investors and partners who believe in our vision"
