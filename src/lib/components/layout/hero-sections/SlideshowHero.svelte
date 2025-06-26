@@ -11,25 +11,25 @@
 		const items = [...heroContainer.querySelectorAll("[data-item]")];
 		console.log(items);
 		
-		// First slide: visible initially, fades out as we scroll
+		// First slide: visible initially, exits completely before second appears
 		scroll(
 			animate(items[0], {
 				opacity: [1, 0]
 			}),
 			{
 				target: heroContainer,
-				offset: ["start start", "center start"]
+				offset: ["start start", "40% start"]
 			}
 		);
 
-		// Second slide: hidden initially, fades in as we scroll
+		// Second slide: enters only after first has exited
 		scroll(
 			animate(items[1], {
 				opacity: [0, 1]
 			}),
 			{
 				target: heroContainer,
-				offset: ["center start", "end start"]
+				offset: ["60% start", "end start"]
 			}
 		);
 	});
