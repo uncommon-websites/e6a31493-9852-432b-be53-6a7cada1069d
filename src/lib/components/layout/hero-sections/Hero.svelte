@@ -29,12 +29,110 @@
 -->
 
 <script lang="ts">
+	import { onMount } from 'svelte';
+	
 	// Components
 	import AnimateText from "$lib/components/animation/AnimateText.svelte";
 	import Button from "$lib/components/ui/Button.svelte";
 
 	// Constants
 	import { cta } from "$lib/navigation";
+
+	type Notification = {
+		icon: string;
+		title: string;
+		time: string;
+		description: string;
+	};
+
+	const notifications: Notification[] = [
+		{
+			icon: '🎯',
+			title: 'Goal drift detected',
+			time: '3m ago',
+			description: 'Ops team priorities misaligned with OKRs for Q2'
+		},
+		{
+			icon: '😶‍🌫️',
+			title: 'Silent resignation detected',
+			time: 'Just now',
+			description: "Ashley hasn't updated progress or attended standups in 9 days"
+		},
+		{
+			icon: '🧃',
+			title: 'VP still thinks launch is next week',
+			time: 'Now',
+			description: 'Jane shared outdated go-live timeline in all-hands'
+		},
+		{
+			icon: '⛔',
+			title: 'Jamie facing blocker',
+			time: '1m ago',
+			description: 'PR #4: Authentication flow needs review by senior'
+		},
+		{
+			icon: '💰',
+			title: 'Sarah waiting on approvals',
+			time: '3d ago',
+			description: 'Budget increase for cloud resources'
+		},
+		{
+			icon: '♻️',
+			title: 'Redundant work in progress',
+			time: '15m ago',
+			description: 'Two teams implementing the same user settings flow separately'
+		},
+		{
+			icon: '📉',
+			title: 'Team velocity dropping',
+			time: '15m ago',
+			description: 'Frontend team missed sprint goals 2x in a row'
+		},
+		{
+			icon: '📝',
+			title: 'Project cancelled memo missed',
+			time: '1h ago',
+			description: 'John still working on the old marketing campaign'
+		}
+	];
+
+	let visibleNotifications = $state<Array<{ notification: Notification; id: number; isLeaving: boolean }>>([]);
+	let notificationId = $state(0);
+	let currentIndex = $state(0);
+
+	onMount(() => {
+		// Add first notification immediately
+		visibleNotifications.push({
+			notification: notifications[currentIndex],
+			id: notificationId++,
+			isLeaving: false
+		});
+		currentIndex = (currentIndex + 1) % notifications.length;
+
+		const interval = setInterval(() => {
+			// Mark oldest notification as leaving if we have 3 or more
+			if (visibleNotifications.length >= 3) {
+				visibleNotifications[0].isLeaving = true;
+				
+				// Remove it after animation
+				setTimeout(() => {
+					visibleNotifications = visibleNotifications.slice(1);
+				}, 300);
+			}
+
+			// Add new notification
+			setTimeout(() => {
+				visibleNotifications.push({
+					notification: notifications[currentIndex],
+					id: notificationId++,
+					isLeaving: false
+				});
+				currentIndex = (currentIndex + 1) % notifications.length;
+			}, visibleNotifications.length >= 3 ? 300 : 0);
+		}, 2500);
+
+		return () => clearInterval(interval);
+	});
 
 	function handleImageError(e: Event) {
 		const target = e.currentTarget as HTMLImageElement;
@@ -63,10 +161,10 @@
 	}: Props = $props();
 </script>
 
-<div class="bg-background" {...rest}>
+<div class="bg-background relative" {...rest}>
 	<header
 		class={[
-			"section-px container mx-auto grid items-end gap-16 gap-y-9 py-12 pt-24 text-balance",
+			"section-px container mx-auto grid items-end gap-16 gap-y-9 py-12 pt-24 text-balance relative z-10",
 			centered ? "place-items-center text-center" : " xl:grid-cols-[1fr_auto]"
 		]}
 		data-enter-container
@@ -110,10 +208,47 @@
 				{/each}
 			</div>
 		{/if}
+
+		<!-- iOS-style notification stack -->
+		<div class="absolute right-8 top-1/2 -translate-y-1/2 pointer-events-none hidden xl:block">
+			<div class="relative">
+				{#each visibleNotifications as { notification, id, isLeaving }, index (id)}
+					<div 
+						class="absolute right-0 bg-white/95 backdrop-blur-sm border border-gray-200 rounded-xl shadow-lg w-80 p-4 transition-all duration-300 ease-out"
+						style:transform="translateY({index * 8}px) scale({1 - index * 0.02})"
+						style:z-index={100 - index}
+						class:opacity-100={!isLeaving}
+						class:opacity-0={isLeaving}
+						class:translate-x-full={isLeaving}
+					>
+						<div class="flex items-start gap-3">
+							<div class="text-lg flex-shrink-0 mt-0.5">
+								{notification.icon}
+							</div>
+							
+							<div class="flex-1 min-w-0">
+								<div class="flex items-center justify-between gap-2 mb-1">
+									<h3 class="font-semibold text-gray-900 text-sm truncate">
+										{notification.title}
+									</h3>
+									<span class="text-xs text-gray-500 flex-shrink-0">
+										{notification.time}
+									</span>
+								</div>
+								
+								<p class="text-xs text-gray-600 leading-relaxed line-clamp-2">
+									{notification.description}
+								</p>
+							</div>
+						</div>
+					</div>
+				{/each}
+			</div>
+		</div>
 	</header>
 
 	{#if imageSrc}
-		<div class="col-span-full aspect-video" data-enter>
+		<div class="col-span-full aspect-video relative z-0" data-enter>
 			<img
 				src={imageSrc}
 				alt="Customer"

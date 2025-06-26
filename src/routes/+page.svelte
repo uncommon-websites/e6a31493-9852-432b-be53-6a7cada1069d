@@ -7,24 +7,14 @@
 	import CallToAction from "$lib/components/layout/CallToAction.svelte";
 	import AboutTeaser from "$lib/components/layout/AboutTeaser.svelte";
 	import LogoScroller from "$lib/components/layout/LogoScroller.svelte";
-	import CenteredTextOnlyHero from "$lib/components/layout/hero-sections/CenteredTextOnlyHero.svelte";
-	import NotificationLoop from "$lib/components/ui/NotificationLoop.svelte";
+	import Hero from "$lib/components/layout/hero-sections/Hero.svelte";
 </script>
 
-<div class="relative">
-	<CenteredTextOnlyHero
-		title="Your AI teammate for organizational alignment"
-		subtitle="Sentra proactively detects misalignment across your organization, helping leaders intervene before small issues become big problems."
-		imageSrc="/generated/image-a-diverse-group-of-people-sitting-around.webp"
-	/>
-	
-	<!-- Notification component overlay -->
-	<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-		<div class="pointer-events-auto">
-			<NotificationLoop />
-		</div>
-	</div>
-</div>
+<Hero
+	title="Your AI teammate for organizational alignment"
+	subtitle="Sentra proactively detects misalignment across your organization, helping leaders intervene before small issues become big problems."
+	imageSrc="/generated/image-a-diverse-group-of-people-sitting-around.webp"
+/>
 <LogoScroller 
 	label="Trusted by fast-growing companies" 
 	logoUrls={[
