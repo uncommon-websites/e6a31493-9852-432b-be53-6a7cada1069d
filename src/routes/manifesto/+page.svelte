@@ -14,8 +14,10 @@
 	<section class="section-pt section-px section-pb">
 		<div class="container-sm container mx-auto">
 			<!-- Letter Header -->
-			<div class="mb-16 text-center">
-				<h1 class="text-title1 text-foreground mb-4">A Letter to the Future of Work</h1>
+			<div class="mb-16 text-center text-balance">
+				<h1 class="text-display text-foreground mb-4">
+					A new contract between humans and technology
+				</h1>
 				<p class="text-body text-muted-foreground italic">From the team at Sentra</p>
 			</div>
 

@@ -1,44 +1,24 @@
 <script lang="ts">
-	import Mission from './Mission.svelte';
-	import Future from './Future.svelte';
+	import Story from './Story.svelte';
 	import StakeholderGrid from '$lib/components/layout/StakeholderGrid.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
 
-	// Mission data
-	const missionData = {
-		title: "Our mission",
-		subtitle: "Three big bets on what will win in the age of AI powered work",
-		bets: [
-			{
-				title: "Human-like interfaces",
-				description: "AI should communicate and interact with us naturally, not force us to adapt to rigid systems and dashboards."
-			},
-			{
-				title: "Autonomous, unsupervised work",
-				description: "The future belongs to AI that can work independently towards continuous goals without constant human oversight."
-			},
-			{
-				title: "Privacy first",
-				description: "Building trust through transparency and rejecting surveillance culture in favor of empowering human autonomy."
-			}
-		]
-	};
-
-	// Future vision data
-	const futureData = {
-		title: "Sentra's evolution",
-		content: `
-			<p class="section-mb-sm">In our current V1 form, we focus on nailing the mirroring and piecing together of tribal communication across your organization.</p>
-			
-			<p class="section-mb-sm">In V2, Sentra will automate away more busywork. We're building the autopilot for work, for everyone in the company. This involves integrating with all knowledge connectors like Google Drive and adding more proactive, autonomous features.</p>
-			
-			<p class="section-mb-sm">Imagine Sentra extracting relevant documents for your review when you mention sending materials in a meeting. Or having Sentra attend certain meetings for you, developing its own voice while keeping you in the zone without missing anything important.</p>
-			
-			<p class="section-mb-sm">Sentra becomes your ally during performance reviews, helping you make your case by understanding contributions beyond code—how you spoke up in meetings and discussions. It's designed to help everyone, not judge them.</p>
-			
-			<p>Ultimately, Sentra becomes the cultural human glue that maintains startup ethos while companies scale. Run a large company at the speed of a small company.</p>
-		`
-	};
+	// About story paragraphs
+	const storyParagraphs = [
+		"Sentra was born from a simple question: what if your organization had an always-on teammate—not a dashboard, not a tracker, but an active participant in the company who noticed misalignment before you felt its effects?",
+		
+		"We were second-time founders, AI engineers, systems thinkers working in fast-moving startups. We'd seen speed turn into silos. Growing teams that suddenly didn't know if they were still heading in the same direction. Great leadership losing visibility not because they weren't paying attention—but because nobody can be everywhere at once.",
+		
+		"We noticed something: high-performing teams aren't always the best at documenting what's going wrong. By the time the weekly sync rolls around, real issues have slipped. Politics creep in. Morale drops. Whole quarters go sideways because warning signs go unnoticed for just a few weeks.",
+		
+		"So we asked: what if misalignment could be visible the moment it starts? What if risk wasn't something you found out after the fact? What if technology supported trust, rather than replaced it?",
+		
+		"That's why we're building Sentra—the first AI teammate whose job is to improve alignment across your organization. It participates like an employee would: it reads public messages, attends core meetings, digests the canon of your tooling. And then, quietly, it illuminates where sync begins to break. Where incentives diverge. Where realities don't match meeting updates. It surfaces issues—not to shame individuals, but to show leaders where they can step in early.",
+		
+		"Alignment isn't about more process or performance measurement. It's about shared clarity. And we believe software can strengthen that, without surveillance or friction.",
+		
+		"Sentra is the foundation of a new company operating system—one built on active listening, continuous reflection, and human-centered AI. Less overhead. More insight. And a clearer path forward, even as everything moves fast."
+	];
 
 	// Team data for StakeholderGrid
 	const teamMembers = [
@@ -103,37 +83,27 @@
 	<section class="section-py" style="background-color: var(--color-background);">
 		<div class="container-sm section-px mx-auto text-center">
 			<h1 class="text-display section-mb-sm" style="color: var(--color-foreground);">
-				Building the future of work
+				The first AI teammate, designed for alignment
 			</h1>
 			<p class="text-title3 section-mb" style="color: var(--color-muted-foreground); max-width: 48rem; margin-left: auto; margin-right: auto;">
-				We're creating the first AI employee whose job is to improve alignment across organizations, 
-				leading the evolution from reactive tools to proactive organizational intelligence.
+				We're building the future of organizational intelligence—starting with the question of how technology can strengthen trust, not replace it.
 			</p>
 		</div>
 	</section>
 
-	<!-- Mission Section -->
-	<Mission {...missionData} />
+	<!-- Company Story Section -->
+	<Story paragraphs={storyParagraphs} />
 
-	<!-- Future Section -->
-	<Future {...futureData} />
-
-	<!-- AI Evolution Section - Simple Text Only -->
+	<!-- Visual Break -->
 	<section class="section-py" style="background-color: var(--color-muted);">
 		<div class="container-sm section-px mx-auto">
-			<div class="text-center section-mb">
-				<h2 class="text-title1 section-mb-sm" style="color: var(--color-foreground);">Where we think AI is headed</h2>
-				<p class="text-headline" style="color: var(--color-muted-foreground);">The evolution from basic assistance to autonomous organizational intelligence</p>
-			</div>
-
-			<div class="prose prose-lg mx-auto" style="color: var(--color-foreground);">
-				<p>We believe AI will evolve through distinct levels of capability and autonomy. Starting from basic chat assistants like ChatGPT that save seconds of cognitive friction, moving through task agents that automate specific workflows, to role agents that can replace entire functions.</p>
-				
-				<p>Sentra represents the next evolution: goal agents that work towards continuous business mandates like alignment, compliance, and satisfaction. This is a new class of AI that impacts the whole organization, not just individual tasks or teams.</p>
-				
-				<p>Eventually, we envision high autonomy goal agents where humans are no longer in the decision-making loop, and ultimately full automation where AI independently manages complex organizational tasks without any human intervention.</p>
-				
-				<p>We're building towards this future, starting with organizational alignment as the foundation for autonomous organizational intelligence.</p>
+			<div class="relative overflow-hidden" style="border-radius: var(--radius-lg);">
+				<img 
+					src="/generated/image-a-diverse-group-of-professionals-engaged.webp" 
+					alt="Team collaboration in modern office space"
+					class="w-full h-auto"
+					style="aspect-ratio: 16/9; object-fit: cover;"
+				/>
 			</div>
 		</div>
 	</section>
