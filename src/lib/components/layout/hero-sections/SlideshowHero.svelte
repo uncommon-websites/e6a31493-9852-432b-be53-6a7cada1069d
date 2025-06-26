@@ -3,28 +3,60 @@
 	let isScrolling = $state(false);
 	let heroContainer: HTMLElement;
 	let hasCompletedSlideshow = $state(false);
+	let isInSlideshow = $state(true);
 
 	function handleScroll(event: WheelEvent) {
-		if (hasCompletedSlideshow) return;
+		if (!isInSlideshow) return;
 		
 		event.preventDefault();
 		
 		if (isScrolling) return;
 		
-		if (event.deltaY > 0 && currentSlide < 1) {
-			isScrolling = true;
-			currentSlide++;
-			
-			setTimeout(() => {
-				isScrolling = false;
-				if (currentSlide === 1) {
-					// Wait a moment then enable normal scrolling
-					setTimeout(() => {
-						hasCompletedSlideshow = true;
-						document.body.style.overflow = 'auto';
-					}, 1000);
-				}
-			}, 800);
+		isScrolling = true;
+		
+		if (event.deltaY > 0) {
+			// Scrolling down
+			if (currentSlide < 1) {
+				currentSlide++;
+			} else {
+				// On last slide, exit slideshow
+				isInSlideshow = false;
+				hasCompletedSlideshow = true;
+				document.body.style.overflow = 'auto';
+			}
+		} else {
+			// Scrolling up
+			if (currentSlide > 0) {
+				currentSlide--;
+			}
+		}
+		
+		setTimeout(() => {
+			isScrolling = false;
+		}, 800);
+	}
+
+	function handleKeydown(event: KeyboardEvent) {
+		if (!isInSlideshow) return;
+		
+		if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
+			event.preventDefault();
+			if (currentSlide < 1 && !isScrolling) {
+				isScrolling = true;
+				currentSlide++;
+				setTimeout(() => { isScrolling = false; }, 800);
+			}
+		} else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
+			event.preventDefault();
+			if (currentSlide > 0 && !isScrolling) {
+				isScrolling = true;
+				currentSlide--;
+				setTimeout(() => { isScrolling = false; }, 800);
+			}
+		} else if (event.key === 'Escape') {
+			isInSlideshow = false;
+			hasCompletedSlideshow = true;
+			document.body.style.overflow = 'auto';
 		}
 	}
 
@@ -33,11 +65,13 @@
 			// Disable scrolling initially
 			document.body.style.overflow = 'hidden';
 			
-			// Add scroll listener
+			// Add event listeners
 			window.addEventListener('wheel', handleScroll, { passive: false });
+			window.addEventListener('keydown', handleKeydown);
 			
 			return () => {
 				window.removeEventListener('wheel', handleScroll);
+				window.removeEventListener('keydown', handleKeydown);
 				document.body.style.overflow = 'auto';
 			};
 		}
@@ -56,7 +90,7 @@
 		class:exit={currentSlide > 0}
 	>
 		<div class="slide-content">
-			<h1>When teams scale rapidly, everyone ends up on different pages of the same book</h1>
+			<h1 class="text-balance">When teams scale rapidly, everyone ends up on different pages of the same book</h1>
 		</div>
 	</div>
 
@@ -67,16 +101,40 @@
 		class:enter={currentSlide >= 1}
 	>
 		<div class="slide-content">
-			<h1 class="big-text">Sentra keeps everyone aligned</h1>
-			<p class="small-text">A proactive teammate that doesn't let you down</p>
+			<h1 class="big-text text-balance">Sentra keeps everyone <span class="text-primary-400">aligned</span></h1>
+			<p class="small-text text-pretty">A proactive teammate that doesn't let you down</p>
 		</div>
 	</div>
 
-	<!-- Scroll indicator (only show on first slide) -->
-	{#if currentSlide === 0}
+	<!-- Navigation indicators -->
+	<div class="slide-nav">
+		<button 
+			class="nav-dot" 
+			class:active={currentSlide === 0}
+			onclick={() => { if (!isScrolling) { currentSlide = 0; } }}
+			aria-label="Go to slide 1"
+		></button>
+		<button 
+			class="nav-dot" 
+			class:active={currentSlide === 1}
+			onclick={() => { if (!isScrolling) { currentSlide = 1; } }}
+			aria-label="Go to slide 2"
+		></button>
+	</div>
+
+	<!-- Scroll indicator -->
+	{#if isInSlideshow}
 		<div class="scroll-indicator">
-			<div class="scroll-arrow">↓</div>
-			<span>Scroll to continue</span>
+			{#if currentSlide === 0}
+				<div class="scroll-arrow">↓</div>
+				<span class="text-pretty">Scroll to continue</span>
+			{:else if currentSlide === 1}
+				<div class="scroll-controls">
+					<div class="scroll-arrow up">↑</div>
+					<span class="text-pretty">Scroll up or down</span>
+					<div class="scroll-arrow">↓</div>
+				</div>
+			{/if}
 		</div>
 	{/if}
 </section>
@@ -85,7 +143,7 @@
 	.slideshow-hero {
 		position: relative;
 		height: 100vh;
-		background: #000;
+		background: linear-gradient(135deg, #000 0%, #111 100%);
 		color: white;
 		overflow: hidden;
 		display: flex;
@@ -152,6 +210,38 @@
 		letter-spacing: -0.01em;
 	}
 
+	.slide-nav {
+		position: absolute;
+		right: 2rem;
+		top: 50%;
+		transform: translateY(-50%);
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		z-index: 10;
+	}
+
+	.nav-dot {
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		border: 2px solid rgba(255, 255, 255, 0.3);
+		background: transparent;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+
+	.nav-dot:hover {
+		border-color: rgba(255, 255, 255, 0.6);
+		transform: scale(1.1);
+	}
+
+	.nav-dot.active {
+		background: theme(colors.primary.400);
+		border-color: theme(colors.primary.400);
+		box-shadow: 0 0 12px theme(colors.primary.400 / 0.4);
+	}
+
 	.scroll-indicator {
 		position: absolute;
 		bottom: 3rem;
@@ -165,9 +255,20 @@
 		animation: pulse 2s infinite;
 	}
 
+	.scroll-controls {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
 	.scroll-arrow {
 		font-size: 1.5rem;
 		animation: bounce 2s infinite;
+	}
+
+	.scroll-arrow.up {
+		animation: bounceUp 2s infinite;
 	}
 
 	.scroll-indicator span {
@@ -185,6 +286,12 @@
 		0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
 		40% { transform: translateY(-10px); }
 		60% { transform: translateY(-5px); }
+	}
+
+	@keyframes bounceUp {
+		0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+		40% { transform: translateY(10px); }
+		60% { transform: translateY(5px); }
 	}
 
 	/* Mobile adjustments */
@@ -208,6 +315,15 @@
 
 		.scroll-indicator {
 			bottom: 2rem;
+		}
+
+		.slide-nav {
+			right: 1rem;
+		}
+
+		.nav-dot {
+			width: 10px;
+			height: 10px;
 		}
 	}
 </style>
