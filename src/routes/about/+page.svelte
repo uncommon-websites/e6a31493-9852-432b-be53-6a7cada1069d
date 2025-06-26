@@ -2,6 +2,7 @@
 	import Summary from "$lib/components/layout/Summary.svelte";
 	import StakeholderGrid from "$lib/components/layout/StakeholderGrid.svelte";
 	import Footer from "$lib/components/layout/Footer.svelte";
+	import SecondaryHero from "$lib/components/layout/hero-sections/SecondaryHero.svelte";
 
 	// Our Mission content
 	const missionContent = `Our three big bets on what will win in the age of AI powered work:
