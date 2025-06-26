@@ -2,7 +2,6 @@
 	import Mission from './Mission.svelte';
 	import Future from './Future.svelte';
 	import StakeholderGrid from '$lib/components/layout/StakeholderGrid.svelte';
-	import Footer from '$lib/components/layout/Footer.svelte';
 
 	// Mission data
 	const missionData = {
@@ -162,6 +161,3 @@
 		stakeholderType="investor"
 	/>
 </main>
-
-<!-- Footer -->
-<Footer />

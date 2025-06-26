@@ -16,28 +16,27 @@
 		<div class="text-center section-mb">
 			<h2 class="text-title1 section-mb-sm" style="color: var(--color-foreground);">{title}</h2>
 			{#if subtitle}
-				<p class="text-headline" style="color: var(--color-muted-foreground);">{subtitle}</p>
+				<p class="text-headline section-mb" style="color: var(--color-muted-foreground); max-width: 48rem; margin-left: auto; margin-right: auto;">{subtitle}</p>
 			{/if}
 		</div>
 		
-		<div class="grid md:grid-cols-3 gap-6">
-			{#each bets as bet}
-				<div 
-					class="section-py section-px" 
-					style="
-						background-color: var(--color-background); 
-						border-radius: var(--radius-lg); 
-						border: 1px solid var(--color-border);
-						transition: border-color 0.2s ease;
-					"
-					role="article"
-					onmouseenter={(e) => e.currentTarget.style.borderColor = 'var(--color-primary)'}
-					onmouseleave={(e) => e.currentTarget.style.borderColor = 'var(--color-border)'}
-				>
-					<h3 class="text-title3 section-mb-sm" style="color: var(--color-foreground);">{bet.title}</h3>
-					<p class="text-body" style="color: var(--color-muted-foreground); line-height: 1.6;">{bet.description}</p>
+		<div class="prose prose-lg mx-auto" style="max-width: 42rem;">
+			{#each bets as bet, index}
+				<div class="section-mb" style="margin-bottom: {index === bets.length - 1 ? '0' : '3rem'};">
+					<h3 class="text-title2 section-mb-sm" style="color: var(--color-foreground); font-weight: 600; letter-spacing: -0.02em;">
+						{bet.title}
+					</h3>
+					<p class="text-body" style="color: var(--color-muted-foreground); line-height: 1.7; font-size: 1.125rem;">
+						{bet.description}
+					</p>
 				</div>
 			{/each}
+		</div>
+		
+		<div class="section-mt text-center">
+			<p class="text-body" style="color: var(--color-muted-foreground); font-style: italic; max-width: 36rem; margin-left: auto; margin-right: auto;">
+				These principles guide every decision we make as we build the future of organizational intelligence.
+			</p>
 		</div>
 	</div>
 </section>
