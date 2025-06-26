@@ -10,14 +10,16 @@
 
 	// Calculate which slide should be shown based on scroll position
 	let currentSlide = $derived.by(() => {
-		if (!heroContainer) return 0;
+		if (!heroContainer || !browser) return 0;
 
 		const rect = heroContainer.getBoundingClientRect();
 		const containerHeight = heroContainer.offsetHeight;
+		
+		// Calculate how much of the container has been scrolled past
 		const scrollProgress = Math.max(0, Math.min(1, -rect.top / (containerHeight - innerHeight)));
 
-		// Switch to slide 2 when we're about 50% through the scroll
-		return scrollProgress > 0.5 ? 1 : 0;
+		// Switch to slide 2 when we're about 30% through the scroll
+		return scrollProgress > 0.3 ? 1 : 0;
 	});
 
 	function handleScroll() {
@@ -32,18 +34,22 @@
 		if (!browser) return;
 
 		innerHeight = window.innerHeight;
+		scrollY = window.scrollY;
+		
 		window.addEventListener("scroll", handleScroll, { passive: true });
 		window.addEventListener("resize", handleResize);
+	});
 
-		return () => {
-			window.removeEventListener("scroll", handleScroll);
-			window.removeEventListener("resize", handleResize);
-		};
+	onDestroy(() => {
+		if (!browser) return;
+		
+		window.removeEventListener("scroll", handleScroll);
+		window.removeEventListener("resize", handleResize);
 	});
 </script>
 
 <section data-hero bind:this={heroContainer} class="relative h-[200vh] bg-gray-50 text-center">
-	<div class="debug sticky top-0 left-0 grid h-1/2 w-full items-center justify-center">
+	<div class=" sticky top-0 left-0 grid h-1/2 w-full items-center justify-center">
 		<!-- First slide - centered and sticky -->
 		{#if currentSlide === 0}
 			<div
