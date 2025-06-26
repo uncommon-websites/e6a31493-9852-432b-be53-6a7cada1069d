@@ -70,28 +70,40 @@
 	// });
 
 	onMount(() => {
-		heroContainer.querySelectorAll("[data-item]").forEach((item) => {
+		const items = [...heroContainer.querySelectorAll("[data-item]")];
+		console.log(items);
+		items.forEach((item) => {
 			scroll(
 				animate(item, {
-					opacity: [0, 1, 1, 0],
+					opacity: [0, 1],
 					y: ["1em", 0, 0, "-1em"]
 				}),
 				{
-					target: item,
-					container: heroContainer,
+					target: heroContainer,
+					// container: heroContainer,
 					offset: ["start end", "end end", "start start", "end start"]
 				}
 			);
 		});
+
+		// Animate gallery horizontally during vertical scroll
+		// scroll(
+		// 	animate(items, {
+		// 		transform: ["none", `translateY(-${items.length - 1}00vh)`]
+		// 	}),
+		// 	{
+		// 		// target: document.querySelector(".img-group-container")
+		// 	}
+		// );
 	});
 </script>
 
 <section
 	data-hero
 	bind:this={heroContainer}
-	class="relative grid h-[200vh] place-items-center overflow-hidden bg-gray-50 text-center"
+	class="relative grid h-[100dvh] place-items-center overflow-hidden bg-gray-50 text-center"
 >
-	<div class="grid min-h-screen w-full place-content-center place-items-center gap-[50%]">
+	<div class="py-1/2 grid min-h-screen w-full place-content-center place-items-center gap-[25%]">
 		<!-- <div
 			class="background-pattern absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
 		></div>
