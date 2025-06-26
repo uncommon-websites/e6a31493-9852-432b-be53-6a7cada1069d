@@ -134,8 +134,8 @@
 			observerRef = new IntersectionObserver(
 				(entries) => {
 					entries.forEach((entry) => {
-						const card = entry.target.querySelector('.timeline-content');
-						const visual = entry.target.querySelector('.visual-placeholder');
+						const card = entry.target.querySelector(".timeline-content");
+						const visual = entry.target.querySelector(".visual-placeholder");
 						if (entry.isIntersecting) {
 							entry.target.classList.remove("opacity-0", "translate-y-8");
 							entry.target.classList.add("opacity-100", "translate-y-0");
@@ -172,7 +172,7 @@
 	});
 </script>
 
-<section class="bg-muted">
+<section class="bg-gray-50">
 	<div class="section-px section-py container mx-auto">
 		<div class="mx-auto grid place-items-center text-center">
 			<SectionHeader
@@ -183,15 +183,21 @@
 
 		<!-- Tab Navigation -->
 		<div class="mb-8 flex justify-center">
-			<div class="inline-flex items-center rounded-full bg-muted p-0.5 gap-0.5">
+			<div class="bg-muted inline-flex items-center gap-0.5 rounded-full p-0.5">
 				<button
-					class="rounded-full px-4 py-1.5 text-sm font-semibold transition-all duration-200 {activeTab === 'organizations' ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}"
+					class="rounded-full px-4 py-1.5 text-sm font-semibold transition-all duration-200 {activeTab ===
+					'organizations'
+						? 'bg-background text-foreground shadow-sm'
+						: 'text-muted-foreground hover:text-foreground'}"
 					onclick={() => switchTab("organizations")}
 				>
 					For organizations
 				</button>
 				<button
-					class="rounded-full px-4 py-1.5 text-sm font-semibold transition-all duration-200 {activeTab === 'individuals' ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}"
+					class="rounded-full px-4 py-1.5 text-sm font-semibold transition-all duration-200 {activeTab ===
+					'individuals'
+						? 'bg-background text-foreground shadow-sm'
+						: 'text-muted-foreground hover:text-foreground'}"
 					onclick={() => switchTab("individuals")}
 				>
 					For individuals
@@ -200,45 +206,73 @@
 		</div>
 
 		<!-- Timeline Container -->
-		<div class="max-w-4xl mx-auto py-4 md:py-8 relative" bind:this={timelineContainer}>
+		<div
+			class="relative mx-auto max-w-prose py-4 text-balance md:py-8"
+			bind:this={timelineContainer}
+		>
 			{#each currentSteps as step, index (step.id)}
-				<div class="mb-24 opacity-0 translate-y-8 transition-all duration-500 ease-out relative timeline-item" data-step={step.id}>
+				<div
+					class="timeline-item relative mb-24 translate-y-8 opacity-0 transition-all duration-500 ease-out"
+					data-step={step.id}
+				>
 					{#if index > 0}
-						<div class="w-px h-16 bg-border mx-auto mb-12 relative"></div>
+						<div class="relative mx-auto mb-12 h-20 w-px bg-gray-300"></div>
 					{/if}
-					
+
 					<!-- Heading and badges above the card -->
-					<div class="text-center mb-8">
-						<h1 class="text-title3 text-foreground mb-6">{step.title}</h1>
-						<div class="flex gap-3 flex-wrap justify-center mb-8">
+					<div class="mx-auto mb-10 grid max-w-xl gap-1 text-center">
+						<h1 class="text-title1 text-foreground mx-auto mb-6 !font-medium">
+							{step.title}
+						</h1>
+						<!-- <p class="text-body text-emphasis-medium">{step.description}</p> -->
+						<div class="flex flex-wrap justify-center gap-3">
 							{#each step.badges as badge}
-								<span class="bg-muted text-muted-foreground px-4 py-1.5 rounded-full text-sm font-medium tracking-wide">{badge}</span>
+								<span
+									class="bg-muted text-muted-foreground rounded-full px-4 py-1.5 text-sm font-medium tracking-wide"
+									>{badge}</span
+								>
 							{/each}
 						</div>
 					</div>
 
-					<div class="bg-background rounded-lg p-8 md:p-12 border border-border relative transform scale-75 transition-all duration-300 ease-out max-w-4xl mx-auto timeline-content text-center">
-						<div class="w-full max-w-2xl h-80 md:h-96 flex-shrink-0 mx-auto mb-8">
-							<div class="w-full h-full bg-muted rounded-lg flex items-center justify-center border border-border transition-transform duration-300 ease-out visual-placeholder {step.visual}">
-								<div class="w-[90%] h-[90%] flex items-center justify-center flex-col">
+					<div
+						class="border-border timeline-content bg-whitetext-center relative mx-auto max-w-prose scale-90 transform rounded-3xl border bg-white transition-all duration-750 ease-out"
+					>
+						<div class="mx-auto w-full flex-shrink-0">
+							<div
+								class="section-py section-px visual-placeholder flex h-full w-full items-center justify-center rounded-lg transition-transform duration-300 ease-out {step.visual}"
+							>
+								<div class="flex h-[90%] w-[90%] flex-col items-center justify-center">
 									{#if step.visual === "platform-selection"}
-										<div class="grid grid-cols-2 gap-2 w-full">
-											<div class="bg-primary border border-primary rounded-sm px-3 py-2 text-center text-sm font-medium text-primary-foreground flex items-center justify-center gap-1">
+										<div class="grid w-full grid-cols-2 gap-2">
+											<div
+												class="bg-primary border-primary text-primary-foreground flex items-center justify-center gap-1 rounded-sm border px-3 py-2 text-center text-sm font-medium"
+											>
 												Slack
 											</div>
-											<div class="bg-primary border border-primary rounded-sm px-3 py-2 text-center text-sm font-medium text-primary-foreground flex items-center justify-center gap-1">
+											<div
+												class="bg-primary border-primary text-primary-foreground flex items-center justify-center gap-1 rounded-sm border px-3 py-2 text-center text-sm font-medium"
+											>
 												Teams
 											</div>
-											<div class="bg-background border border-border rounded-sm px-3 py-2 text-center text-sm font-medium text-muted-foreground flex items-center justify-center gap-1">
+											<div
+												class="bg-background border-border text-muted-foreground flex items-center justify-center gap-1 rounded-sm border px-3 py-2 text-center text-sm font-medium"
+											>
 												Zoom
 											</div>
-											<div class="bg-primary border border-primary rounded-sm px-3 py-2 text-center text-sm font-medium text-primary-foreground flex items-center justify-center gap-1">
+											<div
+												class="bg-primary border-primary text-primary-foreground flex items-center justify-center gap-1 rounded-sm border px-3 py-2 text-center text-sm font-medium"
+											>
 												Google Meet
 											</div>
-											<div class="bg-background border border-border rounded-sm px-3 py-2 text-center text-sm font-medium text-muted-foreground flex items-center justify-center gap-1">
+											<div
+												class="bg-background border-border text-muted-foreground flex items-center justify-center gap-1 rounded-sm border px-3 py-2 text-center text-sm font-medium"
+											>
 												Calendar
 											</div>
-											<div class="bg-primary border border-primary rounded-sm px-3 py-2 text-center text-sm font-medium text-primary-foreground flex items-center justify-center gap-1">
+											<div
+												class="bg-primary border-primary text-primary-foreground flex items-center justify-center gap-1 rounded-sm border px-3 py-2 text-center text-sm font-medium"
+											>
 												Gmail
 											</div>
 										</div>
@@ -246,11 +280,11 @@
 										<img
 											src="/generated/image-a-modern-office-space-with-a-blend-of-sl.webp"
 											alt="Modern office workspace"
-											class="w-full h-full object-cover rounded-lg"
+											class="h-full w-full rounded-lg object-cover"
 										/>
 									{:else if step.visual === "meeting-briefing"}
-										<div class="bg-background rounded-lg p-4 border border-border w-full">
-											<div class="flex justify-between items-center mb-2">
+										<div class="bg-background border-border w-full rounded-lg border p-4">
+											<div class="mb-2 flex items-center justify-between">
 												<span class="text-caption font-medium">Meeting Brief</span>
 												<span class="text-footnote">9:30 AM</span>
 											</div>
@@ -258,9 +292,15 @@
 												<p><strong>User research review with Sarah</strong></p>
 												<p>Last discussed: Q4 roadmap priorities</p>
 												<p>Participants: You, Sarah, Mike</p>
-												<div class="flex gap-2 mt-2">
-													<span class="bg-muted text-muted-foreground px-2 py-0.5 rounded-lg text-xs font-medium">Research</span>
-													<span class="bg-muted text-muted-foreground px-2 py-0.5 rounded-lg text-xs font-medium">Planning</span>
+												<div class="mt-2 flex gap-2">
+													<span
+														class="bg-muted text-muted-foreground rounded-lg px-2 py-0.5 text-xs font-medium"
+														>Research</span
+													>
+													<span
+														class="bg-muted text-muted-foreground rounded-lg px-2 py-0.5 text-xs font-medium"
+														>Planning</span
+													>
 												</div>
 											</div>
 										</div>
@@ -268,21 +308,25 @@
 										<img
 											src="/generated/image-a-business-professional-sitting-at-a-des.webp"
 											alt="Professional reviewing documents"
-											class="w-full h-full object-cover rounded-lg"
+											class="h-full w-full rounded-lg object-cover"
 										/>
 									{:else if step.visual === "todo-tracking" || step.visual === "personal-todos"}
 										<div class="w-full">
-											<div class="bg-background rounded-lg p-4 mb-2 border border-border">
-												<span class="block text-caption font-medium mb-1">Follow up with client by Friday</span>
+											<div class="bg-background border-border mb-2 rounded-lg border p-4">
+												<span class="text-caption mb-1 block font-medium"
+													>Follow up with client by Friday</span
+												>
 												<span class="text-footnote">From: Team standup</span>
 											</div>
-											<div class="bg-secondary border border-border rounded-lg p-2 text-center text-secondary-foreground">
+											<div
+												class="bg-secondary border-border text-secondary-foreground rounded-lg border p-2 text-center"
+											>
 												<span class="text-footnote">Reminder: Due tomorrow</span>
 											</div>
 										</div>
 									{:else if step.visual === "contact-history"}
-										<div class="bg-background rounded-lg p-4 border border-border w-full">
-											<div class="flex justify-between items-center mb-2">
+										<div class="bg-background border-border w-full rounded-lg border p-4">
+											<div class="mb-2 flex items-center justify-between">
 												<span class="text-caption font-medium">AstraZeneca Meeting</span>
 												<span class="text-footnote">1 month ago</span>
 											</div>
@@ -293,23 +337,25 @@
 											</div>
 										</div>
 									{:else if step.visual === "key-alerts"}
-										<div class="bg-background rounded-lg p-4 border border-border w-full">
-											<div class="flex items-center gap-2 mb-2">
+										<div class="bg-background border-border w-full rounded-lg border p-4">
+											<div class="mb-2 flex items-center gap-2">
 												<span class="text-caption font-medium">Deadline moved to next Friday</span>
 											</div>
-											<div class="text-footnote italic">From: Leadership meeting (you weren't invited)</div>
+											<div class="text-footnote italic">
+												From: Leadership meeting (you weren't invited)
+											</div>
 										</div>
 									{:else if step.visual === "company-memory"}
 										<div class="w-full">
-											<div class="flex justify-between items-center py-2 border-b border-border">
+											<div class="border-border flex items-center justify-between border-b py-2">
 												<span class="text-footnote">3 months ago</span>
 												<span class="text-caption font-medium">Project X initiated</span>
 											</div>
-											<div class="flex justify-between items-center py-2 border-b border-border">
+											<div class="border-border flex items-center justify-between border-b py-2">
 												<span class="text-footnote">2 months ago</span>
 												<span class="text-caption font-medium">Architecture decision</span>
 											</div>
-											<div class="flex justify-between items-center py-2">
+											<div class="flex items-center justify-between py-2">
 												<span class="text-footnote">1 month ago</span>
 												<span class="text-caption font-medium">Scope refinement</span>
 											</div>
@@ -318,15 +364,23 @@
 										<img
 											src="/generated/image-a-diverse-group-of-professionals-in-a-so.webp"
 											alt="Team collaboration"
-											class="w-full h-full object-cover rounded-lg"
+											class="h-full w-full rounded-lg object-cover"
 										/>
 									{:else if step.visual === "personal-setup"}
-										<div class="flex flex-col md:flex-row items-center gap-4 w-full justify-center">
-											<div class="flex flex-col items-center gap-2 bg-background rounded-lg p-4 border border-border min-w-[120px]">
+										<div class="flex w-full flex-col items-center justify-center gap-4 md:flex-row">
+											<div
+												class="bg-background border-border flex min-w-[120px] flex-col items-center gap-2 rounded-lg border p-4"
+											>
 												<span class="text-caption font-medium">Calendar Connected</span>
 											</div>
-											<div class="text-2xl text-muted-foreground transform md:transform-none rotate-90 md:rotate-0">→</div>
-											<div class="flex flex-col items-center gap-2 bg-background rounded-lg p-4 border border-border min-w-[120px]">
+											<div
+												class="text-muted-foreground rotate-90 transform text-2xl md:rotate-0 md:transform-none"
+											>
+												→
+											</div>
+											<div
+												class="bg-background border-border flex min-w-[120px] flex-col items-center gap-2 rounded-lg border p-4"
+											>
 												<span class="text-caption font-medium">Direct Line: (555) 123-4567</span>
 											</div>
 										</div>
@@ -334,13 +388,13 @@
 										<img
 											src="/generated/image-an-individual-sitting-quietly-in-a-home-.webp"
 											alt="Personal goal planning"
-											class="w-full h-full object-cover rounded-lg"
+											class="h-full w-full rounded-lg object-cover"
 										/>
 									{:else if step.visual === "daily-reflections"}
 										<img
 											src="/generated/image-a-person-sitting-at-a-wooden-table-surro.webp"
 											alt="Daily reflection"
-											class="w-full h-full object-cover rounded-lg"
+											class="h-full w-full rounded-lg object-cover"
 										/>
 									{:else}
 										<div class="text-center">
@@ -350,46 +404,57 @@
 								</div>
 							</div>
 						</div>
-						<p class="text-body text-emphasis-medium mt-6">{step.description}</p>
 					</div>
 				</div>
 			{/each}
 		</div>
 
 		<!-- CTA Section -->
-		<div class="mt-16 bg-card rounded-lg p-8 text-center">
+		<div class="bg-card mt-16 rounded-lg p-8 text-center">
 			{#if activeTab === "organizations"}
 				<div>
 					<h2 class="text-title2 text-foreground mb-4">Catch misalignment before it costs you</h2>
-					<p class="text-body text-emphasis-medium mb-8 max-w-2xl mx-auto">
+					<p class="text-body text-emphasis-medium mx-auto mb-8 max-w-2xl">
 						Sentra is your AI teammate that listens, learns, and alerts you when your company drifts
 						— before you even notice.
 					</p>
-					<div class="max-w-lg mx-auto my-8 text-left">
-						<div class="flex items-center gap-4 p-4 bg-red-50 rounded-lg mb-2 border-l-4 border-red-500">
+					<div class="mx-auto my-8 max-w-lg text-left">
+						<div
+							class="mb-2 flex items-center gap-4 rounded-lg border-l-4 border-red-500 bg-red-50 p-4"
+						>
 							<div class="flex-1">
-								<span class="block font-semibold text-foreground mb-1">Sarah waiting on approvals</span>
-								<span class="text-sm text-muted-foreground">Budget increase for cloud resources</span>
+								<span class="text-foreground mb-1 block font-semibold"
+									>Sarah waiting on approvals</span
+								>
+								<span class="text-muted-foreground text-sm"
+									>Budget increase for cloud resources</span
+								>
 							</div>
-							<span class="text-xs text-muted-foreground">3d ago</span>
+							<span class="text-muted-foreground text-xs">3d ago</span>
 						</div>
-						<div class="flex items-center gap-4 p-4 bg-yellow-50 rounded-lg mb-2 border-l-4 border-yellow-500">
+						<div
+							class="mb-2 flex items-center gap-4 rounded-lg border-l-4 border-yellow-500 bg-yellow-50 p-4"
+						>
 							<div class="flex-1">
-								<span class="block font-semibold text-foreground mb-1">Redundant work in progress</span>
-								<span class="text-sm text-muted-foreground"
+								<span class="text-foreground mb-1 block font-semibold"
+									>Redundant work in progress</span
+								>
+								<span class="text-muted-foreground text-sm"
 									>Two teams implementing the same user settings flow separately</span
 								>
 							</div>
-							<span class="text-xs text-muted-foreground">15m ago</span>
+							<span class="text-muted-foreground text-xs">15m ago</span>
 						</div>
-						<div class="flex items-center gap-4 p-4 bg-blue-50 rounded-lg mb-2 border-l-4 border-blue-500">
+						<div
+							class="mb-2 flex items-center gap-4 rounded-lg border-l-4 border-blue-500 bg-blue-50 p-4"
+						>
 							<div class="flex-1">
-								<span class="block font-semibold text-foreground mb-1">Team velocity dropping</span>
-								<span class="text-sm text-muted-foreground"
+								<span class="text-foreground mb-1 block font-semibold">Team velocity dropping</span>
+								<span class="text-muted-foreground text-sm"
 									>Frontend team missed sprint goals 2x in a row</span
 								>
 							</div>
-							<span class="text-xs text-muted-foreground">15m ago</span>
+							<span class="text-muted-foreground text-xs">15m ago</span>
 						</div>
 					</div>
 					<Button variant="primary" size="lg">Hire Sentra today</Button>
@@ -397,15 +462,31 @@
 			{:else}
 				<div>
 					<h2 class="text-title2 text-foreground mb-4">Organize your life towards your goals</h2>
-					<p class="text-body text-emphasis-medium mb-8 max-w-2xl mx-auto">
+					<p class="text-body text-emphasis-medium mx-auto mb-8 max-w-2xl">
 						Let Sentra provide a sense of order to your busy life, helping you stay aligned with
 						what matters most.
 					</p>
-					<div class="flex flex-col md:flex-row items-center justify-center gap-4 my-8">
-						<div class="bg-muted border border-border rounded-full px-4 py-2 text-sm text-muted-foreground">Launch side project</div>
-						<div class="bg-muted border border-border rounded-full px-4 py-2 text-sm text-muted-foreground">Read 12 books this year</div>
-						<div class="bg-muted border border-border rounded-full px-4 py-2 text-sm text-muted-foreground">Exercise 3x per week</div>
-						<div class="bg-primary text-primary-foreground rounded-full w-15 h-15 flex items-center justify-center font-semibold text-lg">AI</div>
+					<div class="my-8 flex flex-col items-center justify-center gap-4 md:flex-row">
+						<div
+							class="bg-muted border-border text-muted-foreground rounded-full border px-4 py-2 text-sm"
+						>
+							Launch side project
+						</div>
+						<div
+							class="bg-muted border-border text-muted-foreground rounded-full border px-4 py-2 text-sm"
+						>
+							Read 12 books this year
+						</div>
+						<div
+							class="bg-muted border-border text-muted-foreground rounded-full border px-4 py-2 text-sm"
+						>
+							Exercise 3x per week
+						</div>
+						<div
+							class="bg-primary text-primary-foreground flex h-15 w-15 items-center justify-center rounded-full text-lg font-semibold"
+						>
+							AI
+						</div>
 					</div>
 					<Button variant="primary" size="lg">Hire Sentra today</Button>
 				</div>
