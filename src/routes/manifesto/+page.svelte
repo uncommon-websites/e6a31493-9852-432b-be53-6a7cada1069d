@@ -1,5 +1,5 @@
 <script lang="ts">
-	// No props needed for this static manifesto page
+	import IconChevronRight from "~icons/lucide/chevron-right";
 </script>
 
 <svelte:head>
@@ -28,8 +28,8 @@
 			<div class="space-y-16">
 				<!-- Principle 1 -->
 				<div class="">
-					<h2 class="text-title2 text-foreground mb-6">
-						<!-- Alignment <IconChevronRight /> surveillance -->
+					<h2 class="text-title2 text-foreground mb-6 flex items-center">
+						Alignment <IconChevronRight class="mx-1 size-6" /> surveillance
 					</h2>
 					<p class="text-body text-muted-foreground mx-auto leading-relaxed">
 						The future isn't asking how much more you can extract. It's asking how much faster you
@@ -40,7 +40,9 @@
 
 				<!-- Principle 2 -->
 				<div class="">
-					<h2 class="text-title2 text-foreground mb-6">Dialogue > dashboards</h2>
+					<h2 class="text-title2 text-foreground mb-6 flex items-center">
+						Dialogue<IconChevronRight class="mx-1 size-6" />dashboards
+					</h2>
 					<p class="text-body text-muted-foreground mx-auto leading-relaxed">
 						Humans weren't made for endless charts and checklists. They were made to talk. Ask.
 						Reflect. Shift. Sentra speaks in the cadence of conversation because alignment begins
@@ -50,7 +52,9 @@
 
 				<!-- Principle 3 -->
 				<div class="">
-					<h2 class="text-title2 text-foreground mb-6">Coherence > control</h2>
+					<h2 class="text-title2 text-foreground mb-6 flex items-center">
+						Coherence<IconChevronRight class="mx-1 size-6" />control
+					</h2>
 					<p class="text-body text-muted-foreground mx-auto leading-relaxed">
 						The best systems don't control. They adapt. Sentra helps your company reflect in
 						real-time so trust scales as fast as speed. A coherent org doesn't micromanage—it steers
@@ -90,7 +94,7 @@
 				<!-- Closing Statement -->
 				<div class="section-pt-sm">
 					<div class="border-border border-t pt-12">
-						<p class="text-callout text-muted-foreground mx-auto max-w-xl leading-relaxed italic">
+						<p class="text-callout text-muted-foreground mx-auto leading-relaxed italic">
 							Every company needs a memory. A pulse. A quiet current that keeps the system steady.<br
 							/>
 							That's what we're building. One check-in at a time.
