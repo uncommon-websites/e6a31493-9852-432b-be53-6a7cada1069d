@@ -1,7 +1,8 @@
 <script lang="ts">
 	import Mission from './Mission.svelte';
 	import Future from './Future.svelte';
-	import AIEvolution from './AIEvolution.svelte';
+	import StakeholderGrid from '$lib/components/layout/StakeholderGrid.svelte';
+	import Footer from '$lib/components/layout/Footer.svelte';
 
 	// Mission data
 	const missionData = {
@@ -39,118 +40,57 @@
 		`
 	};
 
-	// AI Evolution levels data
-	const aiLevelsData = {
-		title: "Where we think AI is headed",
-		levels: [
-			{
-				level: "L0",
-				name: "Generic co-pilots",
-				description: "Chat-style LLMs like ChatGPT, Gemini, and Co-Pilot that provide basic assistance.",
-				roi: "Saves seconds of cognitive friction through faster recall and fewer context switches",
-				scope: "Enhances the speed of a single person's work",
-				involvement: "Human creates prompts and reviews outputs",
-				examples: "ChatGPT, Gemini, GitHub Copilot"
-			},
-			{
-				level: "L1",
-				name: "Task agents",
-				description: "Automate specific narrow tasks with defined parameters and workflows.",
-				roi: "Saves minutes from common, repetitive tasks",
-				scope: "Reduces the total load of a single person's work",
-				involvement: "Instructions defined by humans, outputs reviewed",
-				examples: "Superhuman AI email drafting, Cursor code completion"
-			},
-			{
-				level: "L2",
-				name: "Role agents",
-				description: "Automate workflows and seek to partially replace specific roles on the org chart.",
-				roi: "Saves hours of labor through workflow automation",
-				scope: "Can impact up to a whole team's work",
-				involvement: "Workflow defined by humans, outputs still reviewed",
-				examples: "Devin autonomous SWE, Parloa call center agents, Fireflies note-taking"
-			},
-			{
-				level: "L3",
-				name: "Goal agents (current Sentra)",
-				description: "Work towards continuous business mandates like alignment, compliance, and satisfaction. This is a new class of AI that Sentra is first to define.",
-				roi: "Work towards unbounded metrics with ongoing outcomes, removing need for audits",
-				scope: "Impacts the whole organization, not just tasks or teams",
-				involvement: "Goals come pre-defined, actions autonomously initiated, outputs reviewed",
-				examples: "Sentra's organizational alignment, continuous compliance monitoring"
-			},
-			{
-				level: "L4",
-				name: "High autonomy goal agents",
-				description: "Humans no longer in the decision-making loop. AI directly resolves issues without human review.",
-				roi: "Complete automation of organizational processes",
-				scope: "Full organizational impact with autonomous decision-making",
-				involvement: "No human review required for standard operations",
-				examples: "Future Sentra resolving misalignment directly, autonomous HR processes"
-			},
-			{
-				level: "L5",
-				name: "Full automation (AGI)",
-				description: "AI independently manages complex tasks across large contexts without any human intervention.",
-				roi: "Complete organizational autonomy",
-				scope: "Entire company operations",
-				involvement: "Zero human oversight required",
-				examples: "AI CEOs, autonomous corporate legal counsel, complete operational oversight"
-			}
-		]
-	};
+	// Team data for StakeholderGrid
+	const teamMembers = [
+		{
+			name: "Jae Gwan Park",
+			position: "Co-founder, CEO",
+			image: "/generated/image-a-professional-headshot-of-a-ceo-capture.webp"
+		},
+		{
+			name: "Andrey Starenky", 
+			position: "Co-founder, CTO",
+			image: "/generated/image-a-professional-headshot-of-a-cto-capture.webp"
+		},
+		{
+			name: "Ashwin Gopinath",
+			position: "Co-founder, Advisor",
+			image: "/generated/image-a-professional-headshot-of-an-advisor-pr.webp"
+		}
+	];
 
-	// Team data
-	const teamData = {
-		title: "Who we are",
-		subtitle: "The team building the future of organizational intelligence",
-		founders: [
-			{
-				name: "Jae Gwan Park",
-				role: "Co-founder, CEO",
-				bio: "AI engineer, MIT research, international AI hackathon winner, previous ecommerce founder"
-			},
-			{
-				name: "Andrey Starenky", 
-				role: "Co-founder, CTO",
-				bio: "AI infrastructure at IBM WatsonX, defense contracting, previous mobile app founder (acquired)"
-			},
-			{
-				name: "Ashwin Gopinath",
-				role: "Co-founder, Advisor", 
-				bio: "MIT professor, Caltech & Google X alum, successful biotech founder (acquired)"
-			}
-		],
-		advisors: [
-			{
-				name: "Lakshmi Sankar",
-				role: "Advisor",
-				bio: "Former VP Google, former Chief of Staff Twitter"
-			},
-			{
-				name: "Sanjay Jha",
-				role: "Advisor",
-				bio: "Former COO Qualcomm, former CEO Motorola"
-			}
-		],
-		supporters: [
-			{
-				name: "Anne Lee Skates",
-				role: "Parable VC",
-				bio: "Former Andreessen Horowitz"
-			},
-			{
-				name: "Shaad Khan", 
-				role: "Seven Story Capital",
-				bio: ""
-			},
-			{
-				name: "Alex Yang",
-				role: "Principal PM Microsoft",
-				bio: ""
-			}
-		]
-	};
+	// Advisors data for StakeholderGrid
+	const advisors = [
+		{
+			name: "Lakshmi Sankar",
+			position: "Advisor, fmr VP Google, fmr CoS Twitter",
+			image: "/generated/image-a-professional-headshot-of-a-female-exec.webp"
+		},
+		{
+			name: "Sanjay Jha",
+			position: "Advisor, fmr COO Qualcomm, fmr CEO Motorola",
+			image: "/generated/image-a-professional-headshot-of-a-male-execut.webp"
+		}
+	];
+
+	// Early supporters data for StakeholderGrid
+	const supporters = [
+		{
+			name: "Anne Lee Skates",
+			position: "Parable VC, fmr A16Z",
+			image: "/generated/image-a-professional-headshot-of-a-female-inve.webp"
+		},
+		{
+			name: "Shaad Khan", 
+			position: "Seven Story Capital",
+			image: "/generated/image-a-professional-headshot-of-a-male-invest.webp"
+		},
+		{
+			name: "Alex Yang",
+			position: "Principal PM MSFT",
+			image: "/generated/image-a-professional-headshot-of-a-tech-execut.webp"
+		}
+	];
 </script>
 
 <svelte:head>
@@ -178,93 +118,50 @@
 	<!-- Future Section -->
 	<Future {...futureData} />
 
-	<!-- AI Evolution Section -->
-	<AIEvolution {...aiLevelsData} />
-
-	<!-- Team Section -->
-	<section class="section-py" style="background-color: var(--color-background);">
+	<!-- AI Evolution Section - Simple Text Only -->
+	<section class="section-py" style="background-color: var(--color-muted);">
 		<div class="container-sm section-px mx-auto">
 			<div class="text-center section-mb">
-				<h2 class="text-title1 section-mb-sm" style="color: var(--color-foreground);">{teamData.title}</h2>
-				<p class="text-headline" style="color: var(--color-muted-foreground);">{teamData.subtitle}</p>
+				<h2 class="text-title1 section-mb-sm" style="color: var(--color-foreground);">Where we think AI is headed</h2>
+				<p class="text-headline" style="color: var(--color-muted-foreground);">The evolution from basic assistance to autonomous organizational intelligence</p>
 			</div>
 
-			<!-- Founders -->
-			<div class="section-mb">
-				<h3 class="text-title2 section-mb-sm" style="color: var(--color-foreground);">Founders</h3>
-				<div class="grid md:grid-cols-3 gap-6">
-					{#each teamData.founders as founder}
-						<div 
-							class="section-py section-px text-center" 
-							style="
-								background-color: var(--color-card); 
-								border-radius: var(--radius-lg); 
-								border: 1px solid var(--color-border);
-								transition: border-color 0.2s ease;
-							"
-							role="article"
-							onmouseenter={(e) => e.currentTarget.style.borderColor = 'var(--color-primary)'}
-							onmouseleave={(e) => e.currentTarget.style.borderColor = 'var(--color-border)'}
-						>
-							<h4 class="text-title3 section-mb-sm" style="color: var(--color-foreground);">{founder.name}</h4>
-							<p class="text-callout section-mb-sm" style="color: var(--color-primary);">{founder.role}</p>
-							<p class="text-body" style="color: var(--color-muted-foreground); line-height: 1.6;">{founder.bio}</p>
-						</div>
-					{/each}
-				</div>
-			</div>
-
-			<!-- Advisors -->
-			<div class="section-mb">
-				<h3 class="text-title2 section-mb-sm" style="color: var(--color-foreground);">Advisors</h3>
-				<div class="grid md:grid-cols-2 gap-6">
-					{#each teamData.advisors as advisor}
-						<div 
-							class="section-py section-px" 
-							style="
-								background-color: var(--color-card); 
-								border-radius: var(--radius-lg); 
-								border: 1px solid var(--color-border);
-								transition: border-color 0.2s ease;
-							"
-							role="article"
-							onmouseenter={(e) => e.currentTarget.style.borderColor = 'var(--color-primary)'}
-							onmouseleave={(e) => e.currentTarget.style.borderColor = 'var(--color-border)'}
-						>
-							<h4 class="text-headline section-mb-sm" style="color: var(--color-foreground);">{advisor.name}</h4>
-							<p class="text-callout section-mb-sm" style="color: var(--color-primary);">{advisor.role}</p>
-							<p class="text-body" style="color: var(--color-muted-foreground); line-height: 1.6;">{advisor.bio}</p>
-						</div>
-					{/each}
-				</div>
-			</div>
-
-			<!-- Early Supporters -->
-			<div>
-				<h3 class="text-title2 section-mb-sm" style="color: var(--color-foreground);">Our earliest supporters</h3>
-				<div class="grid md:grid-cols-3 gap-6">
-					{#each teamData.supporters as supporter}
-						<div 
-							class="section-py section-px" 
-							style="
-								background-color: var(--color-card); 
-								border-radius: var(--radius-lg); 
-								border: 1px solid var(--color-border);
-								transition: border-color 0.2s ease;
-							"
-							role="article"
-							onmouseenter={(e) => e.currentTarget.style.borderColor = 'var(--color-primary)'}
-							onmouseleave={(e) => e.currentTarget.style.borderColor = 'var(--color-border)'}
-						>
-							<h4 class="text-headline section-mb-sm" style="color: var(--color-foreground);">{supporter.name}</h4>
-							<p class="text-callout" style="color: var(--color-primary);">{supporter.role}</p>
-							{#if supporter.bio}
-								<p class="text-body section-mt-sm" style="color: var(--color-muted-foreground); line-height: 1.6;">{supporter.bio}</p>
-							{/if}
-						</div>
-					{/each}
-				</div>
+			<div class="prose prose-lg mx-auto" style="color: var(--color-foreground);">
+				<p>We believe AI will evolve through distinct levels of capability and autonomy. Starting from basic chat assistants like ChatGPT that save seconds of cognitive friction, moving through task agents that automate specific workflows, to role agents that can replace entire functions.</p>
+				
+				<p>Sentra represents the next evolution: goal agents that work towards continuous business mandates like alignment, compliance, and satisfaction. This is a new class of AI that impacts the whole organization, not just individual tasks or teams.</p>
+				
+				<p>Eventually, we envision high autonomy goal agents where humans are no longer in the decision-making loop, and ultimately full automation where AI independently manages complex organizational tasks without any human intervention.</p>
+				
+				<p>We're building towards this future, starting with organizational alignment as the foundation for autonomous organizational intelligence.</p>
 			</div>
 		</div>
 	</section>
+
+	<!-- Team Section using StakeholderGrid -->
+	<StakeholderGrid 
+		title="Who we are" 
+		subtitle="The team building the future of organizational intelligence"
+		stakeholders={teamMembers}
+		stakeholderType="team"
+	/>
+
+	<!-- Advisors Section using StakeholderGrid -->
+	<StakeholderGrid 
+		title="Advisors" 
+		subtitle="Management experts and enterprise leaders guiding our mission"
+		stakeholders={advisors}
+		stakeholderType="investor"
+	/>
+
+	<!-- Early Supporters Section using StakeholderGrid -->
+	<StakeholderGrid 
+		title="Our earliest supporters" 
+		subtitle="Investors and partners who believe in our vision"
+		stakeholders={supporters}
+		stakeholderType="investor"
+	/>
 </main>
+
+<!-- Footer -->
+<Footer />

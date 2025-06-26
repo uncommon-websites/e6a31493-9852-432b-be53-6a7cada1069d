@@ -71,13 +71,16 @@
 	});
 </script>
 
-<section bind:this={heroContainer} class="slideshow-hero max-h-screen overflow-hidden">
-	<div class="hero-content">
+<section
+	bind:this={heroContainer}
+	class="grid max-h-screen place-items-center overflow-hidden bg-gray-50 text-center"
+>
+	<div class="hero-content place-items-cneter center">
 		<div class="background-pattern"></div>
 		<div class="background-glow"></div>
 
 		<!-- Text content that animates in and out -->
-		<h1 class="slide-text slide-1-text text-balance" bind:this={slide1Heading}>
+		<h1 class="text-display text-balance" bind:this={slide1Heading}>
 			When teams scale rapidly, everyone ends up on different pages of the same book.
 		</h1>
 
@@ -134,7 +137,7 @@
 	}
 
 	/* Text Styles */
-	.slide-1-text {
+	/* .slide-1-text {
 		font-size: clamp(2.5rem, 5vw, 4rem);
 		font-weight: 600;
 		line-height: 1.2;
@@ -147,7 +150,7 @@
 		transform: translate(-50%, -50%);
 		width: 100%;
 		max-width: 900px;
-	}
+	} */
 
 	.background-pattern {
 		position: absolute;
@@ -189,7 +192,7 @@
 		animation-delay: var(--delay);
 	}
 
-	.big-text {
+	/* .big-text {
 		font-size: clamp(3rem, 6vw, 5rem);
 		font-weight: 700;
 		line-height: 1.1;
@@ -202,14 +205,14 @@
 		transform: translate(-50%, -50%);
 		width: 100%;
 		max-width: 900px;
-	}
+	} */
 
 	.highlight {
 		color: var(--color-primary-400);
 		position: relative;
 		display: inline-block;
 	}
-
+	/* 
 	.small-text {
 		font-size: clamp(1.25rem, 2.5vw, 1.75rem);
 		font-weight: 400;
@@ -222,7 +225,7 @@
 		transform: translate(-50%, -50%);
 		width: 100%;
 		max-width: 800px;
-	}
+	} */
 
 	.slide-2-text {
 		opacity: 0;

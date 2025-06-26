@@ -59,10 +59,22 @@ export const navigation: NavItem[] = [
 		showInFooter: false
 	},
 	{
+		label: "About",
+		href: "/about",
+		showInNav: true,
+		showInFooter: false
+	},
+	{
 		label: "Company",
 		showInNav: true,
 		showInFooter: true,
 		children: [
+			{
+				label: "About",
+				href: "/about",
+				showInNav: false,
+				showInFooter: true
+			},
 			{
 				label: "Pricing",
 				href: "/pricing",

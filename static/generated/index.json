@@ -46,5 +46,37 @@
   {
     "prompt": "A diverse group of business professionals collaborating in a shared workspace. The color palette is softly cool and elegant, with primary accents of Neural Purple and Signal Cyan appearing subtly in wardrobe details. The environment features natural skin tones and off-whites. The lighting is gentle, creating a reflective and anticipatory mood. The individuals are engaged in a business strategy discussion, showing groundedness and clarity through eye contact and subtle expressions. The setting includes a kitchen table used for work, with a focus on interpersonal dynamics and the human presence.",
     "filename": "/generated/image-a-diverse-group-of-business-professional.webp"
+  },
+  {
+    "prompt": "A professional headshot of a CEO, captured in a softly cool and elegant style. The image features natural skin tones with gentle directional lighting, creating a depth that reflects a grounded and thoughtful presence. The CEO is portrayed in a hybrid work environment, perhaps a quiet shared workspace or a home kitchen table, wearing light clothing in soft neutrals. The background is blurred, with a hint of atmospheric haze, and there are no devices visible. The mood is reflective, capturing a moment of contemplation.",
+    "filename": "/generated/image-a-professional-headshot-of-a-ceo-capture.webp"
+  },
+  {
+    "prompt": "A professional headshot of a CTO, captured with a focus on editorial realism. The CTO is depicted in a natural moment, perhaps discussing or listening with intention. The lighting is gentle and directional, with low-contrast shadows, enhancing the natural skin tones and soft charcoal hues. The setting is a lived-in environment with neutral, natural textures, avoiding any clean-wall backdrops. The image evokes psychological intimacy and calm intelligence, with the CTO's eyes cast off-frame, thinking through a decision.",
+    "filename": "/generated/image-a-professional-headshot-of-a-cto-capture.webp"
+  },
+  {
+    "prompt": "A professional headshot of an advisor professor, embodying contemporary portraiture. The professor is in a reflective pose, with a softly cool color palette and gentle lighting. The environment is a hybrid work space, like a living room used as a desk, with natural ambient tones. The professor's attire is in slate gray and off-whites, signaling clarity and thoughtfulness. The composition uses negative space to create a sense of openness, with no devices visible, emphasizing the professor's humane and anticipatory mood.",
+    "filename": "/generated/image-a-professional-headshot-of-an-advisor-pr.webp"
+  },
+  {
+    "prompt": "A professional headshot of a female executive advisor, captured in an editorial realism style. The advisor is portrayed in a moment of quiet reflection, with a softly cool and grounded color palette. The setting is a shaded interior, with natural ambient tones and gentle lighting. Her attire is in darker indigos and linen whites, reflecting clarity and groundedness. The image focuses on capturing micro-expressions and careful eye contact, evoking a calm and emotionally intelligent atmosphere, with no devices in sight.",
+    "filename": "/generated/image-a-professional-headshot-of-a-female-exec.webp"
+  },
+  {
+    "prompt": "A professional headshot of a male executive advisor, captured with an emphasis on psychological realism. The advisor is depicted in a moment of stillness, with gentle directional lighting creating depth and low-contrast shadows. The environment is a contemplative space, perhaps a home kitchen table, using early dusk tones and natural textures. The advisor's clothing is in soft neutrals, and the composition uses negative space to evoke openness and possibility. The mood is reflective and grounded, with the advisor's eyes cast off-frame.",
+    "filename": "/generated/image-a-professional-headshot-of-a-male-execut.webp"
+  },
+  {
+    "prompt": "A professional headshot of a female investor, captured in a contemporary portraiture style. The investor is depicted in a natural moment, with softly cool and elegant color tones. The lighting is gentle and directional, enhancing natural skin tones and creating a depth that reflects a grounded presence. The setting is a hybrid work environment with neutral textures and no visible devices. The investor's attire is in light clothing, suggesting clarity and intention. The mood is calmly attuned, with a focus on psychological intimacy.",
+    "filename": "/generated/image-a-professional-headshot-of-a-female-inve.webp"
+  },
+  {
+    "prompt": "A professional headshot of a male investor, captured with an emphasis on editorial realism. The investor is shown in a moment of quiet thought, with a softly cool color palette and gentle ambient lighting. The environment is a lived-in space, avoiding clean-wall backdrops, and using natural textures. The investor's clothing is in off-whites and soft charcoal, reflecting a grounded and reflective presence. The composition leverages negative space, allowing the image to feel open and full of possibility.",
+    "filename": "/generated/image-a-professional-headshot-of-a-male-invest.webp"
+  },
+  {
+    "prompt": "A professional headshot of a tech executive, captured in a style that whispers intelligence and presence. The executive is depicted in a thoughtful moment, with a softly cool and grounded color palette. The lighting is gentle and directional, creating depth and enhancing natural skin tones. The setting is a hybrid work environment, like a quiet shared workspace, with no visible devices. The executive's attire is in soft neutrals, reflecting clarity and intention. The mood is reflective and humane, with a focus on emotional intelligence.",
+    "filename": "/generated/image-a-professional-headshot-of-a-tech-execut.webp"
   }
 ]
