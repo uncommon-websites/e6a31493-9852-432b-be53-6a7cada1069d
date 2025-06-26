@@ -17,11 +17,11 @@
 <section
 	data-hero
 	bind:this={heroContainer}
-	class="relative h-screen text-center transition {currentSlide === 1
+	class="relative h-[200vh] text-center transition {currentSlide === 1
 		? 'bg-primary-50'
 		: 'bg-white'}"
 >
-	<div class="sticky top-0 left-0 grid h-1/2 w-full items-center justify-center">
+	<div class="sticky top-0 left-0 grid h-screen w-full items-center justify-center">
 		<!-- First slide - centered and sticky -->
 		{#if currentSlide === 0}
 			<div
