@@ -1,4 +1,5 @@
 <script lang="ts">
+	import AnimateText from "$lib/components/animation/AnimateText.svelte";
 	import { scroll, animate } from "motion";
 	import { onMount } from "svelte";
 
@@ -34,13 +35,17 @@
 		<!-- Text content that animates in and out -->
 		<div data-item class="sticky top-0 left-0">
 			<h1 class="text-display text-balance" bind:this={slide1Heading}>
-				When teams scale rapidly, everyone ends up on different pages of the same book.
+				<AnimateText
+					text="When teams scale rapidly, everyone ends up on different pages of the same book."
+				/>
+				<!-- When teams scale rapidly, everyone ends up on different pages of the same book. -->
 			</h1>
 		</div>
 
 		<div data-item class="sticky top-0 left-0 grid gap-4">
 			<h1 bind:this={slide2Heading} class="text-display text-balance">
-				Sentra keeps everyone <span class="highlight">aligned</span>.
+				<AnimateText text="Sentra keeps everyone aligned." />
+				<!-- Sentra keeps everyone <span class="highlight">aligned</span>. -->
 			</h1>
 
 			<p bind:this={slide2Subtext} class="text-title2 text-emphasis-medium">
