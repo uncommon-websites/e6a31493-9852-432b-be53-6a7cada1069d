@@ -180,10 +180,11 @@
 				subtitle="Keeping everything together"
 			/>
 		</div>
-
 		<!-- Tab Navigation -->
-		<div class="mb-8 flex justify-center">
-			<div class="bg-muted inline-flex items-center gap-0.5 rounded-full p-0.5">
+		<div class="sticky top-16 left-0 z-50 mb-40 flex justify-center">
+			<div
+				class="bg-muted inline-flex items-center gap-0.5 rounded-full p-0.5 shadow-xl shadow-gray-300/20"
+			>
 				<button
 					class="rounded-full px-4 py-1.5 text-sm font-semibold transition-all duration-200 {activeTab ===
 					'organizations'
