@@ -189,8 +189,8 @@
 				<div class="timeline-item" data-step={step.id}>
 					<div class="timeline-content">
 						<div class="step-details">
-							<h3 class="text-title3 text-foreground mb-2">{step.title}</h3>
-							<p class="text-body text-emphasis-medium mb-4">{step.description}</p>
+							<h3 class="text-title3 text-foreground mb-[1em]">{step.title}</h3>
+							<p class="text-body text-emphasis-medium mb-6">{step.description}</p>
 							<div class="step-badges">
 								{#each step.badges as badge}
 									<span class="badge">{badge}</span>
@@ -416,32 +416,36 @@
 	.timeline-content {
 		display: grid;
 		grid-template-columns: 1fr auto;
-		gap: 2rem;
+		gap: 3rem;
 		align-items: center;
 		background: var(--color-background);
 		border-radius: var(--radius-lg);
-		padding: 2rem;
+		padding: 2.5rem;
 		border: 1px solid var(--color-border);
 		position: relative;
+		box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 	}
 
 	.step-details {
 		min-width: 0;
+		line-height: 1.6;
 	}
 
 	.step-badges {
 		display: flex;
-		gap: 0.5rem;
+		gap: 0.75rem;
 		flex-wrap: wrap;
+		margin-top: 0.5rem;
 	}
 
 	.badge {
 		background: var(--color-muted);
 		color: var(--color-muted-foreground);
-		padding: 4px 12px;
+		padding: 6px 16px;
 		border-radius: var(--radius-xl);
-		font-size: 0.8rem;
+		font-size: 0.85rem;
 		font-weight: 500;
+		letter-spacing: 0.025em;
 	}
 
 	.step-visual {
