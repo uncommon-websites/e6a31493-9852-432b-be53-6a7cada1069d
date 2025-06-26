@@ -411,85 +411,125 @@
 		</div>
 
 		<!-- CTA Section -->
-		<div class="bg-card mt-16 rounded-lg p-8 text-center">
+		<div class="mt-24">
 			{#if activeTab === "organizations"}
-				<div>
-					<h2 class="text-title2 text-foreground mb-4">Catch misalignment before it costs you</h2>
-					<p class="text-body text-emphasis-medium mx-auto mb-8 max-w-2xl">
-						Sentra is your AI teammate that listens, learns, and alerts you when your company drifts
-						— before you even notice.
-					</p>
-					<div class="mx-auto my-8 max-w-lg text-left">
-						<div
-							class="mb-2 flex items-center gap-4 rounded-lg border-l-4 border-red-500 bg-red-50 p-4"
-						>
-							<div class="flex-1">
-								<span class="text-foreground mb-1 block font-semibold"
-									>Sarah waiting on approvals</span
+				<div class="mx-auto max-w-4xl">
+					<!-- Header Section -->
+					<div class="mb-16 text-center">
+						<h1 class="text-title1 text-foreground mx-auto mb-8 !font-medium">
+							Catch misalignment before it costs you
+						</h1>
+						<p class="text-body text-emphasis-medium mx-auto max-w-3xl">
+							Sentra is your AI teammate that listens, learns, and alerts you when your company drifts
+							— before you even notice.
+						</p>
+					</div>
+
+					<!-- Main CTA Card -->
+					<div
+						class="border-border relative mx-auto max-w-4xl transform rounded-3xl border bg-white transition-all duration-300 ease-out"
+					>
+						<div class="section-py section-px">
+							<!-- Alert Examples -->
+							<div class="mx-auto mb-12 max-w-2xl space-y-4">
+								<div
+									class="flex items-center gap-4 rounded-2xl border-l-4 border-red-500 bg-red-50 p-6"
 								>
-								<span class="text-muted-foreground text-sm"
-									>Budget increase for cloud resources</span
+									<div class="flex-1">
+										<span class="text-foreground mb-2 block text-lg !font-medium"
+											>Sarah waiting on approvals</span
+										>
+										<span class="text-muted-foreground"
+											>Budget increase for cloud resources</span
+										>
+									</div>
+									<span class="text-muted-foreground text-sm">3d ago</span>
+								</div>
+								<div
+									class="flex items-center gap-4 rounded-2xl border-l-4 border-yellow-500 bg-yellow-50 p-6"
 								>
+									<div class="flex-1">
+										<span class="text-foreground mb-2 block text-lg !font-medium"
+											>Redundant work in progress</span
+										>
+										<span class="text-muted-foreground"
+											>Two teams implementing the same user settings flow separately</span
+										>
+									</div>
+									<span class="text-muted-foreground text-sm">15m ago</span>
+								</div>
+								<div
+									class="flex items-center gap-4 rounded-2xl border-l-4 border-blue-500 bg-blue-50 p-6"
+								>
+									<div class="flex-1">
+										<span class="text-foreground mb-2 block text-lg !font-medium">Team velocity dropping</span>
+										<span class="text-muted-foreground"
+											>Frontend team missed sprint goals 2x in a row</span
+										>
+									</div>
+									<span class="text-muted-foreground text-sm">15m ago</span>
+								</div>
 							</div>
-							<span class="text-muted-foreground text-xs">3d ago</span>
-						</div>
-						<div
-							class="mb-2 flex items-center gap-4 rounded-lg border-l-4 border-yellow-500 bg-yellow-50 p-4"
-						>
-							<div class="flex-1">
-								<span class="text-foreground mb-1 block font-semibold"
-									>Redundant work in progress</span
-								>
-								<span class="text-muted-foreground text-sm"
-									>Two teams implementing the same user settings flow separately</span
-								>
+
+							<!-- CTA Button -->
+							<div class="text-center">
+								<Button variant="primary" size="lg" class="text-xl px-8 py-4 !font-medium">
+									Hire Sentra today
+								</Button>
 							</div>
-							<span class="text-muted-foreground text-xs">15m ago</span>
-						</div>
-						<div
-							class="mb-2 flex items-center gap-4 rounded-lg border-l-4 border-blue-500 bg-blue-50 p-4"
-						>
-							<div class="flex-1">
-								<span class="text-foreground mb-1 block font-semibold">Team velocity dropping</span>
-								<span class="text-muted-foreground text-sm"
-									>Frontend team missed sprint goals 2x in a row</span
-								>
-							</div>
-							<span class="text-muted-foreground text-xs">15m ago</span>
 						</div>
 					</div>
-					<Button variant="primary" size="lg">Hire Sentra today</Button>
 				</div>
 			{:else}
-				<div>
-					<h2 class="text-title2 text-foreground mb-4">Organize your life towards your goals</h2>
-					<p class="text-body text-emphasis-medium mx-auto mb-8 max-w-2xl">
-						Let Sentra provide a sense of order to your busy life, helping you stay aligned with
-						what matters most.
-					</p>
-					<div class="my-8 flex flex-col items-center justify-center gap-4 md:flex-row">
-						<div
-							class="bg-muted border-border text-muted-foreground rounded-full border px-4 py-2 text-sm"
-						>
-							Launch side project
-						</div>
-						<div
-							class="bg-muted border-border text-muted-foreground rounded-full border px-4 py-2 text-sm"
-						>
-							Read 12 books this year
-						</div>
-						<div
-							class="bg-muted border-border text-muted-foreground rounded-full border px-4 py-2 text-sm"
-						>
-							Exercise 3x per week
-						</div>
-						<div
-							class="bg-primary text-primary-foreground flex h-15 w-15 items-center justify-center rounded-full text-lg font-semibold"
-						>
-							AI
+				<div class="mx-auto max-w-4xl">
+					<!-- Header Section -->
+					<div class="mb-16 text-center">
+						<h1 class="text-title1 text-foreground mx-auto mb-8 !font-medium">
+							Organize your life towards your goals
+						</h1>
+						<p class="text-body text-emphasis-medium mx-auto max-w-3xl">
+							Let Sentra provide a sense of order to your busy life, helping you stay aligned with
+							what matters most.
+						</p>
+					</div>
+
+					<!-- Main CTA Card -->
+					<div
+						class="border-border relative mx-auto max-w-4xl transform rounded-3xl border bg-white transition-all duration-300 ease-out"
+					>
+						<div class="section-py section-px">
+							<!-- Goal Examples -->
+							<div class="mb-12 flex flex-col items-center justify-center gap-6 md:flex-row">
+								<div
+									class="bg-muted border-border text-muted-foreground rounded-2xl border px-6 py-4 text-lg !font-medium"
+								>
+									Launch side project
+								</div>
+								<div
+									class="bg-muted border-border text-muted-foreground rounded-2xl border px-6 py-4 text-lg !font-medium"
+								>
+									Read 12 books this year
+								</div>
+								<div
+									class="bg-muted border-border text-muted-foreground rounded-2xl border px-6 py-4 text-lg !font-medium"
+								>
+									Exercise 3x per week
+								</div>
+								<div
+									class="bg-primary text-primary-foreground flex h-20 w-20 items-center justify-center rounded-2xl text-2xl !font-medium"
+								>
+									AI
+								</div>
+							</div>
+
+							<!-- CTA Button -->
+							<div class="text-center">
+								<Button variant="primary" size="lg" class="text-xl px-8 py-4 !font-medium">
+									Hire Sentra today
+								</Button>
+							</div>
 						</div>
 					</div>
-					<Button variant="primary" size="lg">Hire Sentra today</Button>
 				</div>
 			{/if}
 		</div>
