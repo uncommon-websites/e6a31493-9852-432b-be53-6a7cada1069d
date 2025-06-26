@@ -101,7 +101,7 @@
 		class:enter={currentSlide >= 1}
 	>
 		<div class="slide-content">
-			<h1 class="big-text text-balance">Sentra keeps everyone <span class="text-primary-400">aligned</span></h1>
+			<h1 class="big-text text-balance">Sentra keeps everyone <span style="color: var(--color-primary-400)">aligned</span></h1>
 			<p class="small-text text-pretty">A proactive teammate that doesn't let you down</p>
 		</div>
 	</div>
@@ -237,9 +237,9 @@
 	}
 
 	.nav-dot.active {
-		background: theme(colors.primary.400);
-		border-color: theme(colors.primary.400);
-		box-shadow: 0 0 12px theme(colors.primary.400 / 0.4);
+		background: var(--color-primary-400);
+		border-color: var(--color-primary-400);
+		box-shadow: 0 0 12px color-mix(in oklch, var(--color-primary-400), transparent 60%);
 	}
 
 	.scroll-indicator {

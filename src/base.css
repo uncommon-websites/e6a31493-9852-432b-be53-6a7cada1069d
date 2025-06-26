@@ -25,6 +25,11 @@
 
 	/* Background colors */
 	--color-bg-primary: var(--color-background);
+	--color-bg-secondary: var(--color-card);
+	--color-bg-tertiary: var(--color-muted);
+	--color-bg-accent: var(--color-accent);
+	--color-bg-hover: var(--color-card-hover);
+	--color-bg-active: var(--color-accent);
 }
 
 :where([data-theme="dark"], [data-theme="dark"] *) {
