@@ -94,7 +94,7 @@
 				<!-- Closing Statement -->
 				<div class="section-pt-sm">
 					<div class="border-border border-t pt-12">
-						<p class="text-callout text-muted-foreground mx-auto leading-relaxed italic">
+						<p class="text-callout text-muted-foreground mx-auto">
 							Every company needs a memory. A pulse. A quiet current that keeps the system steady.<br
 							/>
 							That's what we're building. One check-in at a time.
