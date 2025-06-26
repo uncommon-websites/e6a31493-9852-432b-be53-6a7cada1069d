@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { browser } from "$app/environment";
 	import AnimateText from "$lib/components/animation/AnimateText.svelte";
 	import { onMount, onDestroy } from "svelte";
 	import { fade } from "svelte/transition";
@@ -6,15 +7,15 @@
 	let heroContainer: HTMLElement;
 	let scrollY = $state(0);
 	let innerHeight = $state(0);
-	
+
 	// Calculate which slide should be shown based on scroll position
-	let currentSlide = $derived(() => {
+	let currentSlide = $derived.by(() => {
 		if (!heroContainer) return 0;
-		
+
 		const rect = heroContainer.getBoundingClientRect();
 		const containerHeight = heroContainer.offsetHeight;
 		const scrollProgress = Math.max(0, Math.min(1, -rect.top / (containerHeight - innerHeight)));
-		
+
 		// Switch to slide 2 when we're about 50% through the scroll
 		return scrollProgress > 0.5 ? 1 : 0;
 	});
@@ -28,21 +29,21 @@
 	}
 
 	onMount(() => {
-		innerHeight = window.innerHeight;
-		window.addEventListener('scroll', handleScroll, { passive: true });
-		window.addEventListener('resize', handleResize);
-	});
+		if (!browser) return;
 
-	onDestroy(() => {
-		if (typeof window !== 'undefined') {
-			window.removeEventListener('scroll', handleScroll);
-			window.removeEventListener('resize', handleResize);
-		}
+		innerHeight = window.innerHeight;
+		window.addEventListener("scroll", handleScroll, { passive: true });
+		window.addEventListener("resize", handleResize);
+
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+			window.removeEventListener("resize", handleResize);
+		};
 	});
 </script>
 
 <section data-hero bind:this={heroContainer} class="relative h-[200vh] bg-gray-50 text-center">
-	<div class="sticky top-0 left-0 grid h-screen w-full items-center justify-center">
+	<div class="debug sticky top-0 left-0 grid h-1/2 w-full items-center justify-center">
 		<!-- First slide - centered and sticky -->
 		{#if currentSlide === 0}
 			<div
