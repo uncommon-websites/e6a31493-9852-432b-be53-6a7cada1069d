@@ -11,12 +11,12 @@
 		if (typeof window !== 'undefined' && heroContainer && slide1Heading && slide2Heading) {
 			// Set initial state - first slide visible, second slide hidden
 			slide1Heading.style.opacity = '1';
-			slide1Heading.style.transform = 'translate3d(0, 0px, 0)';
+			slide1Heading.style.transform = 'translate(-50%, -50%) translate3d(0, 0px, 0)';
 			slide2Heading.style.opacity = '0';
-			slide2Heading.style.transform = 'translate3d(0, 50px, 0)';
+			slide2Heading.style.transform = 'translate(-50%, -50%) translate3d(0, 50px, 0)';
 			if (slide2Subtext) {
 				slide2Subtext.style.opacity = '0';
-				slide2Subtext.style.transform = 'translate3d(0, 30px, 0)';
+				slide2Subtext.style.transform = 'translate(-50%, -50%) translate3d(0, 30px, 0)';
 			}
 			
 			// Track scroll progress for the entire hero section
@@ -31,7 +31,7 @@
 							const headingOpacity = Math.max(0, 1 - Math.pow(slide1Progress, 1.5) * 1.1);
 							const headingY = -25 * Math.pow(slide1Progress, 0.8); // Gentler slide up
 							slide1Heading.style.opacity = headingOpacity.toString();
-							slide1Heading.style.transform = `translate3d(0, ${headingY}px, 0)`;
+							slide1Heading.style.transform = `translate(-50%, -50%) translate3d(0, ${headingY}px, 0)`;
 						}
 						
 						// Slide 2 animations (fade in from 0.15 to 0.5 progress - fully visible by center)
@@ -42,7 +42,7 @@
 							const headingOpacity = Math.min(1, Math.pow(slide2Progress, 0.6) * 1.2);
 							const headingY = 40 * Math.pow(1 - slide2Progress, 1.2);
 							slide2Heading.style.opacity = headingOpacity.toString();
-							slide2Heading.style.transform = `translate3d(0, ${headingY}px, 0)`;
+							slide2Heading.style.transform = `translate(-50%, -50%) translate3d(0, ${headingY}px, 0)`;
 							
 							// Subtext animation with slight delay and smoother motion
 							const subtextDelay = 0.1;
@@ -50,7 +50,7 @@
 							const subtextOpacity = Math.max(0, Math.min(1, Math.pow(subtextProgress, 0.5) * 1.1));
 							const subtextY = 25 * Math.pow(1 - subtextProgress, 1.1);
 							slide2Subtext.style.opacity = subtextOpacity.toString();
-							slide2Subtext.style.transform = `translate3d(0, ${subtextY}px, 0)`;
+							slide2Subtext.style.transform = `translate(-50%, -50%) translate3d(0, ${subtextY}px, 0)`;
 						}
 						
 						// Update current slide state based on scroll progress
@@ -115,7 +115,7 @@
 		justify-content: center;
 		position: sticky;
 		top: 0;
-		overflow: hidden;
+		overflow: visible;
 		text-align: center;
 		max-width: 1000px;
 		margin: 0 auto;
@@ -138,6 +138,7 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		width: 100%;
+		max-width: 900px;
 	}
 
 	.background-pattern {
@@ -189,6 +190,7 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		width: 100%;
+		max-width: 900px;
 	}
 
 	.highlight {
@@ -208,11 +210,11 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		width: 100%;
+		max-width: 800px;
 	}
 
 	.slide-2-text {
 		opacity: 0;
-		transform: translate(-50%, -40%);
 	}
 
 	.background-glow {
@@ -250,10 +252,11 @@
 
 	/* Scroll-linked text animations */
 	.slide-text {
-		transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+		transition: opacity 0.6s cubic-bezier(0.23, 1, 0.32, 1), transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 		will-change: opacity, transform;
 		backface-visibility: hidden;
 		-webkit-font-smoothing: antialiased;
+		transform-origin: center center;
 	}
 
 	/* Animations */
