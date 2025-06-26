@@ -423,7 +423,6 @@
 		padding: 2.5rem;
 		border: 1px solid var(--color-border);
 		position: relative;
-		box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 	}
 
 	.step-details {
