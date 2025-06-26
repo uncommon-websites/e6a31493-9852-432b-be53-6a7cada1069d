@@ -3,6 +3,7 @@
 	import StakeholderGrid from "$lib/components/layout/StakeholderGrid.svelte";
 	import Footer from "$lib/components/layout/Footer.svelte";
 	import SecondaryHero from "$lib/components/layout/hero-sections/SecondaryHero.svelte";
+	import CallToAction from "$lib/components/layout/CallToAction.svelte";
 
 	// Our Mission content
 	const missionContent = `Our three big bets on what will win in the age of AI powered work:
@@ -147,16 +148,19 @@ This psychological barrier becomes even more significant in the L3 to L4 transit
 	/>
 
 	<!-- Our Mission Section -->
-	<section class="section-py" style="background-color: var(--color-background);">
-		<div class="container-sm section-px mx-auto">
-			<h2 class="text-title1 section-mb-sm" style="color: var(--color-foreground);">Our mission</h2>
+	<section
+		class="section-py section-px container mx-auto"
+		style="background-color: var(--color-background);"
+	>
+		<div class="max-w-prose">
+			<h2 class="text-title1 mb-[1em]" style="color: var(--color-foreground);">Our mission</h2>
 			<p class="text-headline section-mb" style="color: var(--color-muted-foreground);">
 				Our three big bets on what will win in the age of AI powered work:
 			</p>
 
 			<div class="space-y-8">
 				<div>
-					<h3 class="text-title3 section-mb-sm" style="color: var(--color-foreground);">
+					<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
 						Human-like interfaces that feel natural
 					</h3>
 					<p class="text-body" style="color: var(--color-muted-foreground);">
@@ -167,7 +171,7 @@ This psychological barrier becomes even more significant in the L3 to L4 transit
 				</div>
 
 				<div>
-					<h3 class="text-title3 section-mb-sm" style="color: var(--color-foreground);">
+					<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
 						Autonomous, unsupervised work
 					</h3>
 					<p class="text-body" style="color: var(--color-muted-foreground);">
@@ -177,7 +181,7 @@ This psychological barrier becomes even more significant in the L3 to L4 transit
 				</div>
 
 				<div>
-					<h3 class="text-title3 section-mb-sm" style="color: var(--color-foreground);">
+					<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
 						Privacy first approaches
 					</h3>
 					<p class="text-body" style="color: var(--color-muted-foreground);">
@@ -198,15 +202,18 @@ This psychological barrier becomes even more significant in the L3 to L4 transit
 	/>
 
 	<!-- Sentra's Future Section -->
-	<section class="section-py" style="background-color: var(--color-muted);">
-		<div class="container-sm section-px mx-auto">
+	<section
+		class="section-py section-px container mx-auto"
+		style="background-color: var(--color-background);"
+	>
+		<div class="max-w-prose">
 			<h2 class="text-title1 section-mb" style="color: var(--color-foreground);">
 				Sentra's future
 			</h2>
-			
+
 			<div class="space-y-10">
 				<div>
-					<h3 class="text-title3 section-mb-sm" style="color: var(--color-foreground);">
+					<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
 						V1: Understanding organizational communication
 					</h3>
 					<p class="text-body" style="color: var(--color-muted-foreground);">
@@ -218,45 +225,46 @@ This psychological barrier becomes even more significant in the L3 to L4 transit
 				</div>
 
 				<div>
-					<h3 class="text-title3 section-mb-sm" style="color: var(--color-foreground);">
+					<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
 						V2: The autopilot for work
 					</h3>
 					<div class="space-y-4">
 						<p class="text-body" style="color: var(--color-muted-foreground);">
 							We will make Sentra capable of automating away more busywork. We are building the
 							autopilot for work, designed for everyone in the company. This involves Sentra
-							integrating with all the knowledge connectors of your organization: Google Drive, Slack,
-							project management tools, and more.
+							integrating with all the knowledge connectors of your organization: Google Drive,
+							Slack, project management tools, and more.
 						</p>
 						<p class="text-body" style="color: var(--color-muted-foreground);">
-							Imagine mentioning in a meeting that you plan to send someone specific documents. Sentra
-							could autonomously extract the relevant pieces and prepare them for your review,
-							allowing you to simply approve and send rather than doing the manual work yourself.
+							Imagine mentioning in a meeting that you plan to send someone specific documents.
+							Sentra could autonomously extract the relevant pieces and prepare them for your
+							review, allowing you to simply approve and send rather than doing the manual work
+							yourself.
 						</p>
 					</div>
 				</div>
 
 				<div>
-					<h3 class="text-title3 section-mb-sm" style="color: var(--color-foreground);">
+					<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
 						Beyond automation: Your AI ally
 					</h3>
 					<div class="space-y-4">
 						<p class="text-body" style="color: var(--color-muted-foreground);">
 							Sentra could even take certain meetings for you as it develops its own voice and
-							understanding of your communication style. This allows you to stay in the zone while not
-							missing anything important from critical discussions.
+							understanding of your communication style. This allows you to stay in the zone while
+							not missing anything important from critical discussions.
 						</p>
 						<p class="text-body" style="color: var(--color-muted-foreground);">
 							During performance reviews, Sentra can become any employee's ally, helping them
 							articulate their contributions beyond just deliverables—things like how they spoke up
-							during meetings, facilitated discussions, or supported team dynamics. It helps everyone
-							make their case rather than being the judge.
+							during meetings, facilitated discussions, or supported team dynamics. It helps
+							everyone make their case rather than being the judge.
 						</p>
 					</div>
 				</div>
 
 				<div>
-					<h3 class="text-title3 section-mb-sm" style="color: var(--color-foreground);">
+					<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
 						The ultimate vision
 					</h3>
 					<p class="text-body" style="color: var(--color-muted-foreground);">
@@ -277,8 +285,11 @@ This psychological barrier becomes even more significant in the L3 to L4 transit
 	/>
 
 	<!-- Where AI is Headed Section -->
-	<section class="section-py" style="background-color: var(--color-background);">
-		<div class="container-sm section-px mx-auto">
+	<section
+		class="section-py section-px container mx-auto"
+		style="background-color: var(--color-background);"
+	>
+		<div class="max-w-prose">
 			<h2 class="text-title1 section-mb-sm" style="color: var(--color-foreground);">
 				Where we think AI is headed
 			</h2>
@@ -290,7 +301,7 @@ This psychological barrier becomes even more significant in the L3 to L4 transit
 
 			<div class="space-y-10">
 				<div>
-					<h3 class="text-title3 section-mb-sm" style="color: var(--color-foreground);">
+					<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
 						L0: Generic co-pilots
 					</h3>
 					<div class="space-y-4">
@@ -299,14 +310,14 @@ This psychological barrier becomes even more significant in the L3 to L4 transit
 							cognitive friction through faster recall and lookup, eliminating tab-hopping and
 							documentation searches.
 						</p>
-						<p class="text-callout" style="color: var(--color-primary); font-style: italic;">
+						<p class="text-callout text-emphasis-low">
 							Impact: Enhances the speed of a single person's work.
 						</p>
 					</div>
 				</div>
 
 				<div>
-					<h3 class="text-title3 section-mb-sm" style="color: var(--color-foreground);">
+					<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
 						L1: Task agents
 					</h3>
 					<div class="space-y-4">
@@ -315,14 +326,14 @@ This psychological barrier becomes even more significant in the L3 to L4 transit
 							auto-completion in Cursor. They save minutes from common tasks that humans typically
 							perform.
 						</p>
-						<p class="text-callout" style="color: var(--color-primary); font-style: italic;">
+						<p class="text-callout text-emphasis-low">
 							Impact: Reduces the total workload of a single person.
 						</p>
 					</div>
 				</div>
 
 				<div>
-					<h3 class="text-title3 section-mb-sm" style="color: var(--color-foreground);">
+					<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
 						L2: Role agents
 					</h3>
 					<div class="space-y-4">
@@ -331,14 +342,14 @@ This psychological barrier becomes even more significant in the L3 to L4 transit
 							org chart long term. Examples include Devin for autonomous software engineering and
 							Fireflies for note-taking.
 						</p>
-						<p class="text-callout" style="color: var(--color-primary); font-style: italic;">
+						<p class="text-callout text-emphasis-low">
 							Impact: Can impact up to a whole team's work.
 						</p>
 					</div>
 				</div>
 
 				<div>
-					<h3 class="text-title3 section-mb-sm" style="color: var(--color-foreground);">
+					<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
 						L3: Goal agents (current Sentra)
 					</h3>
 					<div class="space-y-4">
@@ -352,14 +363,14 @@ This psychological barrier becomes even more significant in the L3 to L4 transit
 							compliant," "team never misaligned," or "everyone is satisfied" rather than discrete
 							deliverables.
 						</p>
-						<p class="text-callout" style="color: var(--color-primary); font-style: italic;">
+						<p class="text-callout text-emphasis-low">
 							Impact: Affects the whole organization, not just a single task, person, or team.
 						</p>
 					</div>
 				</div>
 
 				<div>
-					<h3 class="text-title3 section-mb-sm" style="color: var(--color-foreground);">
+					<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
 						L4: High autonomy goal agents (future Sentra)
 					</h3>
 					<p class="text-body" style="color: var(--color-muted-foreground);">
@@ -371,7 +382,7 @@ This psychological barrier becomes even more significant in the L3 to L4 transit
 				</div>
 
 				<div>
-					<h3 class="text-title3 section-mb-sm" style="color: var(--color-foreground);">
+					<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
 						L5: Full automation (AGI)
 					</h3>
 					<p class="text-body" style="color: var(--color-muted-foreground);">
@@ -381,8 +392,8 @@ This psychological barrier becomes even more significant in the L3 to L4 transit
 					</p>
 				</div>
 
-				<div class="section-py section-px" style="background-color: var(--color-muted); border-radius: var(--radius-lg);">
-					<h3 class="text-title3 section-mb-sm" style="color: var(--color-foreground);">
+				<div class="section-py section-px">
+					<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
 						Why L3 is the breakthrough
 					</h3>
 					<p class="text-body" style="color: var(--color-muted-foreground);">
@@ -403,3 +414,5 @@ This psychological barrier becomes even more significant in the L3 to L4 transit
 		stakeholderType="team"
 	/>
 </main>
+
+<CallToAction />
