@@ -8,6 +8,7 @@
 	import AboutTeaser from "$lib/components/layout/AboutTeaser.svelte";
 	import LogoScroller from "$lib/components/layout/LogoScroller.svelte";
 	import SlideshowHero from "$lib/components/layout/hero-sections/SlideshowHero.svelte";
+	import HowItWorks from "$lib/components/layout/HowItWorks_enhanced.svelte";
 </script>
 
 <SlideshowHero />
@@ -79,6 +80,8 @@
 		}
 	]}
 />
+
+<HowItWorks />
 
 <UseCases
 	title="Use Cases"
