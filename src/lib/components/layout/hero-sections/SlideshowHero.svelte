@@ -29,21 +29,20 @@
 			}),
 			{
 				// target: heroContainer,
-				offset: ["start start", "80% start"]
+				offset: ["end end", "center end"]
 				// offset: ["start center", "center center"]
 			}
 		);
 	});
 </script>
 
-<section
-	data-hero
-	bind:this={heroContainer}
-	class="relative h-[200vh] overflow-hidden bg-gray-50 text-center"
->
-	<div class="debug grid h-full w-full items-center justify-center">
+<section data-hero bind:this={heroContainer} class="relative h-[200vh] bg-gray-50 text-center">
+	<div class="debug sticky top-0 left-0 grid h-screen w-full items-center justify-center">
 		<!-- First slide - centered and sticky -->
-		<div data-item class="mx-auto w-full max-w-4xl px-8">
+		<div
+			data-item
+			class="col-start-1 col-end-1 row-start-1 row-end-1 mx-auto w-full max-w-4xl px-8"
+		>
 			<h1 class="text-display text-balance" bind:this={slide1Heading}>
 				<AnimateText
 					text="When teams scale rapidly, everyone ends up on different pages of the same book."
@@ -52,7 +51,10 @@
 		</div>
 
 		<!-- Second slide - centered and sticky -->
-		<div data-item class="mx-auto w-full max-w-4xl px-8 opacity-0">
+		<div
+			data-item
+			class="col-start-1 col-end-1 row-start-1 row-end-1 mx-auto w-full max-w-4xl px-8 opacity-0"
+		>
 			<div class="grid gap-4">
 				<h1 bind:this={slide2Heading} class="text-display text-balance">
 					<AnimateText text="Sentra keeps everyone aligned." />
