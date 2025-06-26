@@ -5,15 +5,9 @@
 @import "./spacing.css";
 @import "./theme.css";
 
-/* Scroll snap styles */
+/* Smooth scrolling only */
 html {
-	scroll-snap-type: y mandatory;
 	scroll-behavior: smooth;
-}
-
-/* Ensure sections snap properly */
-section {
-	scroll-snap-align: start;
 }
 
 @theme {

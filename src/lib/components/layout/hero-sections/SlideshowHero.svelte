@@ -26,35 +26,35 @@
 				(progress) => {
 					// Use requestAnimationFrame for smoother animations
 					requestAnimationFrame(() => {
-						// Slide 1 animations (fade out from 0 to 0.5 progress)
+						// Slide 1 animations (fade out from 0 to 0.4 progress)
 						if (slide1Heading) {
-							const slide1Progress = Math.min(progress * 2, 1);
+							const slide1Progress = Math.min(progress * 2.5, 1);
 							// Fade out the first slide as we scroll
-							const headingOpacity = Math.max(0, 1 - slide1Progress * 1.5);
+							const headingOpacity = Math.max(0, 1 - slide1Progress * 1.2);
 							const headingY = -30 * slide1Progress; // Slide up as it fades out
 							slide1Heading.style.opacity = headingOpacity.toString();
 							slide1Heading.style.transform = `translate3d(0, ${headingY}px, 0)`;
 						}
 						
-						// Slide 2 animations (fade in from 0.3 to 1 progress)
+						// Slide 2 animations (fade in from 0.2 to 0.6 progress - fully visible by center)
 						if (slide2Heading && slide2Subtext) {
-							const slide2Progress = Math.max(0, (progress - 0.3) / 0.7);
+							const slide2Progress = Math.max(0, Math.min(1, (progress - 0.2) / 0.4));
 							
-							// Heading animation
-							const headingOpacity = Math.max(0, Math.min(1, slide2Progress * 1.2));
+							// Heading animation - fully visible by 50% scroll
+							const headingOpacity = Math.min(1, slide2Progress * 1.5);
 							const headingY = 50 * (1 - slide2Progress);
 							slide2Heading.style.opacity = headingOpacity.toString();
 							slide2Heading.style.transform = `translate3d(0, ${headingY}px, 0)`;
 							
-							// Subtext animation (delayed)
-							const subtextOpacity = Math.max(0, Math.min(1, slide2Progress * 1.2 - 0.25));
-							const subtextY = 30 * (1 - Math.max(0, slide2Progress - 0.2));
+							// Subtext animation (slightly delayed but also fully visible by center)
+							const subtextOpacity = Math.max(0, Math.min(1, slide2Progress * 1.3 - 0.15));
+							const subtextY = 30 * (1 - Math.max(0, slide2Progress - 0.1));
 							slide2Subtext.style.opacity = subtextOpacity.toString();
 							slide2Subtext.style.transform = `translate3d(0, ${subtextY}px, 0)`;
 						}
 						
 						// Update current slide state based on scroll progress
-						currentSlide = progress < 0.5 ? 0 : 1;
+						currentSlide = progress < 0.4 ? 0 : 1;
 					});
 				},
 				{
@@ -119,7 +119,6 @@
 		background: linear-gradient(135deg, #000 0%, #111 50%, #000 100%);
 		color: white;
 		position: relative;
-		scroll-snap-align: start;
 	}
 
 	.slide {
