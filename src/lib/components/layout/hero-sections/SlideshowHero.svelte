@@ -1,86 +1,95 @@
 <script lang="ts">
 	import AnimateText from "$lib/components/animation/AnimateText.svelte";
-	import { scroll, animate } from "motion";
-	import { onMount } from "svelte";
+	import { onMount, onDestroy } from "svelte";
+	import { fade } from "svelte/transition";
 
 	let heroContainer: HTMLElement;
-	let slide1Heading: HTMLElement;
-	let slide2Heading: HTMLElement;
-	let slide2Subtext: HTMLElement;
+	let scrollY = $state(0);
+	let innerHeight = $state(0);
+	
+	// Calculate which slide should be shown based on scroll position
+	let currentSlide = $derived(() => {
+		if (!heroContainer) return 0;
+		
+		const rect = heroContainer.getBoundingClientRect();
+		const containerHeight = heroContainer.offsetHeight;
+		const scrollProgress = Math.max(0, Math.min(1, -rect.top / (containerHeight - innerHeight)));
+		
+		// Switch to slide 2 when we're about 50% through the scroll
+		return scrollProgress > 0.5 ? 1 : 0;
+	});
+
+	function handleScroll() {
+		scrollY = window.scrollY;
+	}
+
+	function handleResize() {
+		innerHeight = window.innerHeight;
+	}
+
 	onMount(() => {
-		const items = [...heroContainer.querySelectorAll("[data-item]")];
-		console.log(items);
+		innerHeight = window.innerHeight;
+		window.addEventListener('scroll', handleScroll, { passive: true });
+		window.addEventListener('resize', handleResize);
+	});
 
-		// First slide: visible initially, exits completely before second appears
-		scroll(
-			animate(items[0], {
-				opacity: [1, 0]
-			}),
-			{
-				target: heroContainer,
-				offset: ["start start", "80% start"]
-			}
-		);
-
-		// Second slide: enters only after first has exited
-		scroll(
-			animate(items[1], {
-				opacity: [0, 1]
-			}),
-			{
-				// target: heroContainer,
-				offset: ["end end", "center end"]
-				// offset: ["start center", "center center"]
-			}
-		);
+	onDestroy(() => {
+		if (typeof window !== 'undefined') {
+			window.removeEventListener('scroll', handleScroll);
+			window.removeEventListener('resize', handleResize);
+		}
 	});
 </script>
 
 <section data-hero bind:this={heroContainer} class="relative h-[200vh] bg-gray-50 text-center">
-	<div class="debug sticky top-0 left-0 grid h-screen w-full items-center justify-center">
+	<div class="sticky top-0 left-0 grid h-screen w-full items-center justify-center">
 		<!-- First slide - centered and sticky -->
-		<div
-			data-item
-			class="col-start-1 col-end-1 row-start-1 row-end-1 mx-auto w-full max-w-4xl px-8"
-		>
-			<h1 class="text-display text-balance" bind:this={slide1Heading}>
-				<AnimateText
-					text="When teams scale rapidly, everyone ends up on different pages of the same book."
-				/>
-			</h1>
-		</div>
+		{#if currentSlide === 0}
+			<div
+				transition:fade={{ duration: 600 }}
+				class="col-start-1 col-end-1 row-start-1 row-end-1 mx-auto w-full max-w-4xl px-8"
+			>
+				<h1 class="text-display text-balance">
+					<AnimateText
+						text="When teams scale rapidly, everyone ends up on different pages of the same book."
+					/>
+				</h1>
+			</div>
+		{/if}
 
 		<!-- Second slide - centered and sticky -->
-		<div
-			data-item
-			class="col-start-1 col-end-1 row-start-1 row-end-1 mx-auto w-full max-w-4xl px-8 opacity-0"
-		>
-			<div class="grid gap-4">
-				<h1 bind:this={slide2Heading} class="text-display text-balance">
-					<AnimateText text="Sentra keeps everyone aligned." />
-				</h1>
-
-				<p bind:this={slide2Subtext} class="text-title2 text-emphasis-medium">
-					A proactive teammate that doesn't let you down.
-				</p>
-			</div>
-
-			<!-- Background animations for second text -->
-			<div class="pulse-rings absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-				<div class="pulse-ring" style="--delay: 0s;"></div>
-				<div class="pulse-ring" style="--delay: 0.5s;"></div>
-				<div class="pulse-ring" style="--delay: 1s;"></div>
-			</div>
-
+		{#if currentSlide === 1}
 			<div
-				class="floating-elements pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+				transition:fade={{ duration: 600 }}
+				class="col-start-1 col-end-1 row-start-1 row-end-1 mx-auto w-full max-w-4xl px-8"
 			>
-				<div class="float-element" style="--delay: 0s; --x: -20%; --y: -30%;"></div>
-				<div class="float-element" style="--delay: 1s; --x: 80%; --y: -10%;"></div>
-				<div class="float-element" style="--delay: 2s; --x: -10%; --y: 70%;"></div>
-				<div class="float-element" style="--delay: 3s; --x: 90%; --y: 80%;"></div>
+				<div class="grid gap-4">
+					<h1 class="text-display text-balance">
+						<AnimateText text="Sentra keeps everyone aligned." />
+					</h1>
+
+					<p class="text-title2 text-emphasis-medium">
+						A proactive teammate that doesn't let you down.
+					</p>
+				</div>
+
+				<!-- Background animations for second text -->
+				<div class="pulse-rings absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+					<div class="pulse-ring" style="--delay: 0s;"></div>
+					<div class="pulse-ring" style="--delay: 0.5s;"></div>
+					<div class="pulse-ring" style="--delay: 1s;"></div>
+				</div>
+
+				<div
+					class="floating-elements pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+				>
+					<div class="float-element" style="--delay: 0s; --x: -20%; --y: -30%;"></div>
+					<div class="float-element" style="--delay: 1s; --x: 80%; --y: -10%;"></div>
+					<div class="float-element" style="--delay: 2s; --x: -10%; --y: 70%;"></div>
+					<div class="float-element" style="--delay: 3s; --x: 90%; --y: 80%;"></div>
+				</div>
 			</div>
-		</div>
+		{/if}
 	</div>
 </section>
 
