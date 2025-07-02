@@ -11,6 +11,7 @@
 	import Hero from "$lib/components/layout/hero-sections/Hero.svelte";
 	import SplitHero from "$lib/components/layout/hero-sections/SplitHero.svelte";
 	import HowItWorks from "$lib/components/layout/HowItWorks_enhanced.svelte";
+	import Security from "$lib/components/layout/Security.svelte";
 </script>
 
 <SplitHero
@@ -121,4 +122,5 @@
 /> -->
 
 <AboutTeaser />
+<Security />
 <CallToAction />
