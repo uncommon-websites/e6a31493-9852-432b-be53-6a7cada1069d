@@ -270,12 +270,27 @@
 											</div>
 										</div>
 									{:else if step.visual === "key-alerts"}
-										<div class="bg-background border-border w-full rounded-lg border p-4">
-											<div class="mb-2 flex items-center gap-2">
-												<span class="text-caption font-medium">Deadline moved to next Friday</span>
+										<div class="w-full space-y-3">
+											<div class="bg-background border-border rounded-lg border p-4">
+												<div class="mb-2 flex items-center justify-between">
+													<span class="text-caption font-medium">Deadline moved to next Friday</span>
+													<span class="bg-red-100 text-red-800 rounded-full px-2 py-1 text-xs font-medium">High Priority</span>
+												</div>
+												<div class="text-footnote italic">From: Leadership meeting (you weren't invited)</div>
 											</div>
-											<div class="text-footnote italic">
-												From: Leadership meeting (you weren't invited)
+											<div class="bg-background border-border rounded-lg border p-4">
+												<div class="mb-2 flex items-center justify-between">
+													<span class="text-caption font-medium">Budget approved for Q1 hiring</span>
+													<span class="bg-green-100 text-green-800 rounded-full px-2 py-1 text-xs font-medium">Decision Made</span>
+												</div>
+												<div class="text-footnote italic">From: Board meeting (confidential)</div>
+											</div>
+											<div class="bg-background border-border rounded-lg border p-4">
+												<div class="mb-2 flex items-center justify-between">
+													<span class="text-caption font-medium">New security policy effective Monday</span>
+													<span class="bg-blue-100 text-blue-800 rounded-full px-2 py-1 text-xs font-medium">Policy Update</span>
+												</div>
+												<div class="text-footnote italic">From: Security team standup</div>
 											</div>
 										</div>
 									{:else if step.visual === "company-memory"}
