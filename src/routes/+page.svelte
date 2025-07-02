@@ -14,7 +14,7 @@
 
 <Hero 
 	centered={true}
-	title="Stop problems before they start"
+	title="Prevent issues before they arise"
 	subtitle="Sentra is your AI teammate that spots organizational misalignment before it becomes costly, keeping your fast-growing team in sync and on track."
 	callsToAction={[
 		{
