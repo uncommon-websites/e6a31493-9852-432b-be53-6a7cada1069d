@@ -19,17 +19,6 @@
 />
 
 <SlideshowHero />
-<LogoScroller 
-	label="Backed by industry leaders" 
-	logoUrls={[
-		'https://logo.clearbit.com/microsoft.com',
-		'https://logo.clearbit.com/notion.so',
-		'https://logo.clearbit.com/figma.com',
-		'https://logo.clearbit.com/airtable.com',
-		'https://logo.clearbit.com/linear.app',
-		'https://logo.clearbit.com/slack.com'
-	]}
-/>
 
 <Summary
 	title="What we do"

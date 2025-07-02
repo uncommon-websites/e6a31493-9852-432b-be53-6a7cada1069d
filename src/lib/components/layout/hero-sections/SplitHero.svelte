@@ -20,6 +20,7 @@
 	// Components
 	import AnimateText from "$lib/components/animation/AnimateText.svelte";
 	import Button from "$lib/components/ui/Button.svelte";
+	import LogoScroller from "$lib/components/layout/LogoScroller.svelte";
 
 	// Constants
 	import { cta } from "$lib/navigation";
@@ -154,6 +155,21 @@
 					</div>
 				</div>
 			</div>
+		</div>
+
+		<!-- Logo scroller at bottom of hero -->
+		<div class="mt-16 lg:mt-20">
+			<LogoScroller 
+				label="Backed by industry leaders" 
+				logoUrls={[
+					'https://logo.clearbit.com/microsoft.com',
+					'https://logo.clearbit.com/notion.so',
+					'https://logo.clearbit.com/figma.com',
+					'https://logo.clearbit.com/airtable.com',
+					'https://logo.clearbit.com/linear.app',
+					'https://logo.clearbit.com/slack.com'
+				]}
+			/>
 		</div>
 	</header>
 </div>
