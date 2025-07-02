@@ -38,7 +38,7 @@
 <div class="" {...rest}>
 	<section class="section-px section-py-sm container mx-auto">
 		<div class="bg-card border-border rounded-(--radius-lg) border p-8">
-			<div class="container-xs mx-auto">
+			<div class="max-w-prose mx-auto">
 				<h2 class="text-title2 mb-8 text-center">
 					<AnimateText text={title} />
 				</h2>
