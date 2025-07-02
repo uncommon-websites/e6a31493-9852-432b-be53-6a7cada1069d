@@ -66,14 +66,13 @@
 							]}
 						>
 							<div class="flex items-start gap-4">
-								<!-- Step Number -->
+								<!-- Step Dot -->
 								<div class={[
-									"flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-footnote font-semibold transition-colors duration-300",
+									"flex h-[1em] w-[1em] flex-shrink-0 items-center justify-center rounded-full transition-colors duration-300",
 									activeStep === step.id 
-										? "bg-primary text-white" 
-										: "bg-gray-200 text-gray-600 group-hover:bg-gray-300"
+										? "bg-primary" 
+										: "bg-gray-200 group-hover:bg-gray-300"
 								]}>
-									{String(index + 1).padStart(2, '0')}
 								</div>
 								
 								<!-- Step Content -->
