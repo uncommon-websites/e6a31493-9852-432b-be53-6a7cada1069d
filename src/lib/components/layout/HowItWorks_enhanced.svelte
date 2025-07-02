@@ -294,11 +294,32 @@
 											</div>
 										</div>
 									{:else if step.visual === "check-ins"}
-										<img
-											src="/generated/image-a-diverse-group-of-professionals-in-a-so.webp"
-											alt="Team collaboration"
-											class="h-full w-full rounded-lg object-cover"
-										/>
+										<div class="w-full space-y-4">
+											<div class="bg-background border-border rounded-lg border p-4">
+												<div class="mb-3 flex items-center justify-between">
+													<span class="text-caption font-medium">Sentra Check-in</span>
+													<span class="bg-green-100 text-green-800 rounded-full px-2 py-1 text-xs font-medium">Weekly</span>
+												</div>
+												<div class="space-y-3">
+													<div class="flex items-start gap-3">
+														<div class="bg-primary text-primary-foreground flex h-8 w-8 items-center justify-center rounded-full text-sm font-medium">S</div>
+														<div class="flex-1">
+															<p class="text-caption font-medium">How are you feeling about the Q4 roadmap progress?</p>
+															<p class="text-footnote text-muted-foreground">Any blockers or concerns I should know about?</p>
+														</div>
+													</div>
+													<div class="ml-11 space-y-2">
+														<div class="bg-muted rounded-lg p-3">
+															<p class="text-caption">Things are going well overall. The API integration is taking longer than expected though.</p>
+														</div>
+														<div class="flex gap-2">
+															<button class="bg-primary text-primary-foreground rounded-lg px-3 py-1 text-xs font-medium">Send update to team</button>
+															<button class="bg-secondary text-secondary-foreground rounded-lg px-3 py-1 text-xs font-medium">Schedule follow-up</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
 										<!-- Individual-specific visuals removed -->
 									{:else}
 										<div class="text-center">
