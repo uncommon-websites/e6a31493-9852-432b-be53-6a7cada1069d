@@ -9,11 +9,11 @@
 	import LogoScroller from "$lib/components/layout/LogoScroller.svelte";
 	import SlideshowHero from "$lib/components/layout/hero-sections/SlideshowHero.svelte";
 	import Hero from "$lib/components/layout/hero-sections/Hero.svelte";
+	import SplitHero from "$lib/components/layout/hero-sections/SplitHero.svelte";
 	import HowItWorks from "$lib/components/layout/HowItWorks_enhanced.svelte";
 </script>
 
-<Hero 
-	centered={true}
+<SplitHero 
 	title="Scale companies effectively with Sentra"
 	subtitle="Your AI teammate that improves alignment across your organization by proactively sensing when problems may occur and allowing leaders to intervene to intercept them."
 	callsToAction={[
@@ -36,7 +36,8 @@
 		'https://logo.clearbit.com/notion.so',
 		'https://logo.clearbit.com/figma.com',
 		'https://logo.clearbit.com/airtable.com',
-		'https://logo.clearbit.com/linear.app'
+		'https://logo.clearbit.com/linear.app',
+		'https://logo.clearbit.com/slack.com'
 	]}
 />
 
