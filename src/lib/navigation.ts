@@ -52,12 +52,12 @@ export const cta = {
 };
 
 export const navigation: NavItem[] = [
-	{
-		label: "Pricing",
-		href: "/pricing",
-		showInNav: true,
-		showInFooter: false
-	},
+	// {
+	// 	label: "Pricing",
+	// 	href: "/pricing",
+	// 	showInNav: true,
+	// 	showInFooter: false
+	// },
 	{
 		label: "Company",
 		showInNav: true,
