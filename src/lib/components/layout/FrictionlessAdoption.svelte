@@ -65,10 +65,10 @@
 									: "bg-white hover:bg-gray-50"
 							]}
 						>
-							<div class="flex items-start gap-4">
+							<div class="flex items-center gap-4">
 								<!-- Step Dot -->
 								<div class={[
-									"flex h-[1em] w-[1em] flex-shrink-0 items-center justify-center rounded-full transition-colors duration-300",
+									"flex h-3 w-3 flex-shrink-0 items-center justify-center rounded-full transition-colors duration-300",
 									activeStep === step.id 
 										? "bg-primary" 
 										: "bg-gray-200 group-hover:bg-gray-300"
