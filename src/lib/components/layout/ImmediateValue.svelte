@@ -40,13 +40,13 @@
 
 		<!-- Value Propositions Grid -->
 		<div class="mx-auto max-w-7xl">
-			<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+			<div class="grid grid-cols-1 gap-4 md:grid-cols-3">
 				{#each valueProps as prop, index}
 					<div class="group flex">
 						<!-- Card Container -->
 						<div class="relative flex w-full flex-col overflow-hidden rounded-3xl bg-white p-10 transition-all duration-300 hover:bg-gray-50 min-h-[400px]">
 							<!-- Visualization Container -->
-							<div class="mb-8 flex h-32 items-center justify-center">
+							<div class="mb-8 flex aspect-video items-center justify-center">
 								{#if prop.visualization === "memory"}
 									<!-- Memory/Timeline Visualization -->
 									<div class="relative flex items-center justify-center">
