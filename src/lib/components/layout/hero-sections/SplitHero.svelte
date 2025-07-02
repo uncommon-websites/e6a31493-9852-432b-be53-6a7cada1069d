@@ -35,12 +35,7 @@
 		}>;
 	};
 
-	let {
-		title,
-		subtitle,
-		callsToAction = [cta],
-		...rest
-	}: Props = $props();
+	let { title, subtitle, callsToAction = [cta], ...rest }: Props = $props();
 
 	// Notification data for the right side
 	const notifications = [
@@ -53,7 +48,7 @@
 		{
 			title: "Potential friction identified",
 			subtitle: "Engineering sprint planning needs attention",
-			time: "5m ago", 
+			time: "5m ago",
 			type: "warning"
 		},
 		{
@@ -66,31 +61,28 @@
 </script>
 
 <div class="bg-background relative overflow-hidden" {...rest}>
-	<header class="section-px container mx-auto relative z-20 min-h-[80vh] py-12 pt-24">
+	<header class="section-px relative z-20 container mx-auto py-12 pt-24">
 		<!-- Background glow -->
 		<div class="absolute inset-0 z-0">
-			<div class="absolute inset-0 bg-gradient-radial from-primary-500/10 via-primary-600/5 to-transparent"></div>
+			<div
+				class="bg-gradient-radial from-primary-500/10 via-primary-600/5 absolute inset-0 to-transparent"
+			></div>
 		</div>
-		<div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center h-full relative z-10">
+		<div class="relative z-10 grid h-full items-center gap-12 lg:grid-cols-2 lg:gap-16">
 			<!-- Left side - Text content -->
 			<div class="grid gap-8" data-enter-container>
 				<div class="grid gap-6">
 					<h1 class="text-display text-foreground" data-enter>
 						<AnimateText text={title} />
 					</h1>
-					
+
 					<p class="text-headline text-muted-foreground max-w-[50ch]" data-enter>
 						{subtitle}
 					</p>
 				</div>
 
-				<div class="flex flex-col sm:flex-row gap-4" data-enter>
-					<Button
-						href={cta.href}
-						size="lg"
-						variant="primary"
-						class="w-full sm:w-auto"
-					>
+				<div class="flex flex-col gap-4 sm:flex-row" data-enter>
+					<Button href={cta.href} size="lg" variant="primary" class="w-full sm:w-auto">
 						{cta.label}
 					</Button>
 				</div>
@@ -99,40 +91,48 @@
 			<!-- Right side - Notification block -->
 			<div class="relative" data-enter>
 				<!-- Gradient background block -->
-				<div class="relative rounded-2xl p-8 lg:p-12 min-h-[500px] flex items-center justify-center">
+				<div
+					class="relative flex min-h-[500px] items-center justify-center rounded-2xl p-8 lg:p-12"
+				>
 					<!-- Gradient background -->
-					<div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary-400/80 via-primary-500/70 to-primary-600/80"></div>
-					
+					<div
+						class="from-primary-400/80 via-primary-500/70 to-primary-600/80 absolute inset-0 rounded-2xl bg-gradient-to-br"
+					></div>
+
 					<!-- Notification cards container -->
 					<div class="relative z-10 w-full max-w-sm space-y-4">
 						{#each notifications as notification, index}
-							<div 
+							<div
 								class={[
-									"bg-white/95 backdrop-blur-sm rounded-lg p-4 border border-white/20",
+									"rounded-lg border border-white/20 bg-white/95 p-4 backdrop-blur-sm",
 									"transform transition-all duration-500 ease-out",
-									"hover:bg-white/100 hover:scale-105"
+									"hover:scale-105 hover:bg-white/100"
 								]}
 								style="animation-delay: {index * 200}ms"
 								data-enter
 							>
 								<div class="flex items-start justify-between gap-3">
-									<div class="flex-1 min-w-0">
-										<div class="flex items-center gap-2 mb-1">
-											<div class={[
-												"w-2 h-2 rounded-full",
-												notification.type === 'success' ? 'bg-green-500' :
-												notification.type === 'warning' ? 'bg-yellow-500' :
-												'bg-blue-500'
-											]}></div>
-											<h3 class="text-sm font-medium text-gray-900 truncate">
+									<div class="min-w-0 flex-1">
+										<div class="mb-1 flex items-center gap-2">
+											<div
+												class={[
+													"h-2 w-2 rounded-full",
+													notification.type === "success"
+														? "bg-green-500"
+														: notification.type === "warning"
+															? "bg-yellow-500"
+															: "bg-blue-500"
+												]}
+											></div>
+											<h3 class="truncate text-sm font-medium text-gray-900">
 												{notification.title}
 											</h3>
 										</div>
-										<p class="text-xs text-gray-600 leading-relaxed">
+										<p class="text-xs leading-relaxed text-gray-600">
 											{notification.subtitle}
 										</p>
 									</div>
-									<span class="text-xs text-gray-500 whitespace-nowrap">
+									<span class="text-xs whitespace-nowrap text-gray-500">
 										{notification.time}
 									</span>
 								</div>
@@ -140,13 +140,20 @@
 						{/each}
 
 						<!-- Add source card like in inspiration -->
-						<div class="bg-white/90 backdrop-blur-sm rounded-lg p-6 border border-white/20 mt-6">
+						<div class="mt-6 rounded-lg border border-white/20 bg-white/90 p-6 backdrop-blur-sm">
 							<div class="flex items-center justify-between">
-								<h4 class="text-sm font-medium text-gray-700 mb-3">Sources</h4>
+								<h4 class="mb-3 text-sm font-medium text-gray-700">Sources</h4>
 							</div>
-							<button class="w-full flex items-center justify-center gap-2 py-3 px-4 border-2 border-dashed border-gray-300 rounded-lg text-gray-500 hover:border-gray-400 hover:text-gray-600 transition-colors">
-								<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+							<button
+								class="flex w-full items-center justify-center gap-2 rounded-lg border-2 border-dashed border-gray-300 px-4 py-3 text-gray-500 transition-colors hover:border-gray-400 hover:text-gray-600"
+							>
+								<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+									></path>
 								</svg>
 								<span class="text-sm">Add source</span>
 							</button>
@@ -158,15 +165,15 @@
 
 		<!-- Logo scroller at bottom of hero -->
 		<div class="mt-16 lg:mt-20">
-			<LogoScroller 
-				label="Backed by industry leaders" 
+			<LogoScroller
+				label="Backed by industry leaders"
 				logoUrls={[
-					'https://logo.clearbit.com/microsoft.com',
-					'https://logo.clearbit.com/notion.so',
-					'https://logo.clearbit.com/figma.com',
-					'https://logo.clearbit.com/airtable.com',
-					'https://logo.clearbit.com/linear.app',
-					'https://logo.clearbit.com/slack.com'
+					"https://logo.clearbit.com/microsoft.com",
+					"https://logo.clearbit.com/notion.so",
+					"https://logo.clearbit.com/figma.com",
+					"https://logo.clearbit.com/airtable.com",
+					"https://logo.clearbit.com/linear.app",
+					"https://logo.clearbit.com/slack.com"
 				]}
 			/>
 		</div>

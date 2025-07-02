@@ -10,7 +10,7 @@
 	const steps = [
 		{
 			id: 1,
-			title: "Add Sentra to platforms your company use",
+			title: "Add Sentra to platforms your company uses",
 			description:
 				"Connect Sentra to your existing tools like Slack, Teams, Zoom, Google Meet, and Google Calendar to start building organizational awareness.",
 			badges: ["Leaders"],
@@ -285,7 +285,7 @@
 											alt="Team collaboration"
 											class="h-full w-full rounded-lg object-cover"
 										/>
-									<!-- Individual-specific visuals removed -->
+										<!-- Individual-specific visuals removed -->
 									{:else}
 										<div class="text-center">
 											<div class="text-caption text-emphasis-medium">{step.title}</div>
@@ -308,8 +308,8 @@
 						Catch misalignment before it costs you
 					</h1>
 					<p class="text-body text-emphasis-medium mx-auto max-w-3xl">
-						Sentra is your AI teammate that listens, learns, and alerts you when your company
-						drifts — before you even notice.
+						Sentra is your AI teammate that listens, learns, and alerts you when your company drifts
+						— before you even notice.
 					</p>
 				</div>
 

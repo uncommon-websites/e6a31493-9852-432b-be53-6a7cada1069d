@@ -13,17 +13,16 @@
 	import HowItWorks from "$lib/components/layout/HowItWorks_enhanced.svelte";
 </script>
 
-<SplitHero 
+<SplitHero
 	title="Scale companies effectively with Sentra"
 	subtitle="Your AI teammate that improves alignment across your organization by proactively sensing when problems may occur and allowing leaders to intervene to intercept them."
 />
-
-<SlideshowHero />
 
 <Summary
 	title="What we do"
 	text="Sentra is building an AI teammate that improves alignment across an organization by proactively sensing when problems may occur and allowing leaders to intervene to intercept them."
 />
+<SlideshowHero />
 
 <!-- <Testimonials
 	testimonials={[

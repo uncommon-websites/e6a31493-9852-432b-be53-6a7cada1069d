@@ -10,18 +10,19 @@
 	let currentSlide = $derived.by(() => {
 		if (!heroContainer) return 0;
 
-		return scrollY.current > heroContainer.offsetHeight / 3 ? 1 : 0;
+		return scrollY.current > heroContainer.offsetHeight / 1.5 ? 1 : 0;
 	});
 </script>
 
 <section
 	data-hero
 	bind:this={heroContainer}
-	class="relative h-[200vh] text-center transition {currentSlide === 1
+	class="relative grid min-h-screen place-items-center py-80 text-center transition {currentSlide ===
+	1
 		? 'bg-primary-50'
-		: 'bg-white'}"
+		: 'bg-gray-50'}"
 >
-	<div class="sticky top-0 left-0 grid h-screen w-full items-center justify-center">
+	<div class="sticky top-0 left-0 grid h-full w-full place-items-center">
 		<!-- First slide - centered and sticky -->
 		{#if currentSlide === 0}
 			<div
