@@ -8,26 +8,26 @@
 	const steps = [
 		{
 			id: 1,
-			title: "Connect to your calendar",
-			description: "Sentra becomes a great notetaker, unifying context across all meetings to your company data. Pre/post meeting briefs that don't invade your inbox or sore your eyes.",
+			title: "Connect your calendar",
+			description: "Sentra attends your meetings to capture context, decisions, and commitments—without clogging up inboxes or chasing notes across tools.",
 			image: "/generated/image-a-group-of-colleagues-engaged-in-a-refle.webp"
 		},
 		{
 			id: 2,
-			title: "Add to your workspace (slack/etc)",
-			description: "Add Sentra to channels that it should know about. You are in full control of sharing data.",
+			title: "Add your tools",
+			description: "Connect Slack and your existing systems so Sentra can surface breaks in context—without ever surveilling individuals.",
 			image: "/generated/image-a-group-of-colleagues-engaged-in-a-refle.webp"
 		},
 		{
 			id: 3,
-			title: "Contextualized work coach",
-			description: "Sentra periodically asks to do quick 1:1s. Helps people organize their work, keep track of their priorities/TODOs, and",
+			title: "Stay ahead of misalignment",
+			description: "Sentra checks in proactively when it spots drift, surfacing the signal leaders need to guide teams before friction spreads.",
 			image: "/generated/image-a-professional-coaching-session-between-.webp"
 		},
 		{
 			id: 4,
-			title: "Working in the background",
-			description: "Zero supervision required/no setup time, truly autonomous. agentic.",
+			title: "Quietly working in the background",
+			description: "Sentra listens across the company in real time. No micro-tracking—just a second brain for your org that helps you course-correct early.",
 			image: "/generated/image-an-individual-working-alone-in-a-serene-.webp"
 		}
 	];
@@ -59,16 +59,16 @@
 							onclick={() => selectStep(step.id)}
 							class={[
 								"group w-full text-left transition-all duration-300 ease-out",
-								"rounded-2xl border-2 p-6",
+								"rounded-2xl p-6",
 								activeStep === step.id 
-									? "border-primary bg-primary/5" 
-									: "border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50"
+									? "border-2 border-primary bg-primary/5" 
+									: "bg-white hover:bg-gray-50"
 							]}
 						>
 							<div class="flex items-start gap-4">
 								<!-- Step Number -->
 								<div class={[
-									"flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-sm font-semibold transition-colors duration-300",
+									"flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-footnote font-semibold transition-colors duration-300",
 									activeStep === step.id 
 										? "bg-primary text-white" 
 										: "bg-gray-200 text-gray-600 group-hover:bg-gray-300"
@@ -79,7 +79,7 @@
 								<!-- Step Content -->
 								<div class="flex-1 min-w-0">
 									<h3 class={[
-										"text-lg font-semibold transition-colors duration-300",
+										"text-headline font-semibold transition-colors duration-300",
 										activeStep === step.id 
 											? "text-primary" 
 											: "text-gray-900 group-hover:text-gray-700"
@@ -87,7 +87,7 @@
 										{step.title}
 									</h3>
 									<p class={[
-										"mt-2 text-sm leading-relaxed transition-colors duration-300",
+										"mt-2 text-caption leading-relaxed transition-colors duration-300",
 										activeStep === step.id 
 											? "text-gray-700" 
 											: "text-gray-600"
@@ -122,10 +122,10 @@
 							<div class="absolute bottom-6 left-6 right-6">
 								<div class="rounded-xl bg-white/90 p-4 backdrop-blur-sm">
 									<div class="flex items-center gap-3">
-										<div class="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
+										<div class="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-footnote font-bold text-white">
 											{activeStep}
 										</div>
-										<span class="text-sm font-medium text-gray-900">
+										<span class="text-caption font-medium text-gray-900">
 											{currentStep.title}
 										</span>
 									</div>
