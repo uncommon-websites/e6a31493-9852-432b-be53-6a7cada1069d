@@ -8,8 +8,25 @@
 	import AboutTeaser from "$lib/components/layout/AboutTeaser.svelte";
 	import LogoScroller from "$lib/components/layout/LogoScroller.svelte";
 	import SlideshowHero from "$lib/components/layout/hero-sections/SlideshowHero.svelte";
+	import Hero from "$lib/components/layout/hero-sections/Hero.svelte";
 	import HowItWorks from "$lib/components/layout/HowItWorks_enhanced.svelte";
 </script>
+
+<Hero 
+	centered={true}
+	title="Stop problems before they start"
+	subtitle="Sentra is your AI teammate that spots organizational misalignment before it becomes costly, keeping your fast-growing team in sync and on track."
+	callsToAction={[
+		{
+			href: "/contact",
+			label: "Join private beta"
+		},
+		{
+			href: "#how-it-works",
+			label: "See how it works"
+		}
+	]}
+/>
 
 <SlideshowHero />
 <!-- <LogoScroller 
