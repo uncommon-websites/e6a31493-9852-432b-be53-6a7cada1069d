@@ -17,6 +17,7 @@
 <script lang="ts">
 	// Components
 	import AnimateText from "../animation/AnimateText.svelte";
+	import Button from "../ui/Button.svelte";
 
 	// Props
 	const {
@@ -44,23 +45,38 @@
 				</h2>
 				
 				<!-- Trust indicators with actual compliance logos -->
-				<div class="flex flex-wrap items-center justify-center gap-6 mb-8 pb-6 border-b border-border">
-					<div class="flex items-center gap-2">
-						<img src="https://logo.clearbit.com/aicpa.org" alt="SOC2 Type 1" class="w-8 h-8 rounded" />
-						<span class="text-caption font-medium">SOC2 Type 1</span>
+				<div class="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-16 mb-8 pb-6 border-b border-border">
+					<div class="flex w-full flex-col items-center justify-center space-y-4">
+						<img width="200" height="200" decoding="async" data-nimg="1" class="w-40 object-contain opacity-75 invert md:w-48" style="color: transparent;" alt="Build SOC Type 2" src="/uploaded/build-soc2.webp" />
+						<div class="flex flex-col items-center justify-between gap-2">
+							<p>SOC2 II (In Observation)</p>
+							<a data-button-root="true" href="https://www.aicpa-cima.com/topic/audit-assurance/audit-and-assurance-greater-than-soc-2" aria-disabled="false" tabindex="0" target="_blank" class="inline-flex items-center ring-1 ring-white/15 ring-inset justify-center !font-medium transition ease-out duration-300 focus:outline-none focus:ring-0 active:brightness-[.9] active:scale-[.98] ring-0 focus-visible:ring-primary-500/20 dark:focus-visible:ring-primary-400/30 gap-3 [touch-action:manipulation] relative bg-transparent text-gray-900 hover:bg-gray-100 dark:text-gray-100 dark:hover:bg-gray-800 px-3 py-1.5 rounded text-sm gap-2" data-theme-mode="auto">
+								<span>Details</span>
+								<svg viewBox="0 0 24 24" width="1.2em" height="1.2em"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h10v10M7 17L17 7"></path></svg>
+							</a>
+						</div>
 					</div>
-					<div class="flex items-center gap-2">
-						<img src="https://logo.clearbit.com/aicpa.org" alt="SOC2 Type 2" class="w-8 h-8 rounded" />
-						<span class="text-caption font-medium">SOC2 Type 2 (In Progress)</span>
+					<div class="flex w-full flex-col items-center justify-center space-y-4">
+						<img width="200" height="200" decoding="async" data-nimg="1" class="w-40 object-contain opacity-75 invert md:w-48" style="color: transparent;" alt="Build GDPR" src="/uploaded/build-gdpr.webp" />
+						<div class="flex flex-col items-center justify-between gap-2">
+							<p>GDPR</p>
+							<a data-button-root="true" href="https://gdpr-info.eu/" aria-disabled="false" tabindex="0" target="_blank" class="inline-flex items-center ring-1 ring-white/15 ring-inset justify-center !font-medium transition ease-out duration-300 focus:outline-none focus:ring-0 active:brightness-[.9] active:scale-[.98] ring-0 focus-visible:ring-primary-500/20 dark:focus-visible:ring-primary-400/30 gap-3 [touch-action:manipulation] relative bg-transparent text-gray-900 hover:bg-gray-100 dark:text-gray-100 dark:hover:bg-gray-800 px-3 py-1.5 rounded text-sm gap-2" data-theme-mode="auto">
+								<span>Details</span>
+								<svg viewBox="0 0 24 24" width="1.2em" height="1.2em"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h10v10M7 17L17 7"></path></svg>
+							</a>
+						</div>
 					</div>
-					<div class="flex items-center gap-2">
-						<img src="https://logo.clearbit.com/iso.org" alt="ISO Compliant" class="w-8 h-8 rounded" />
-						<span class="text-caption font-medium">ISO Compliant</span>
+					<div class="flex w-full flex-col items-center justify-center space-y-4">
+						<img width="200" height="200" decoding="async" data-nimg="1" class="w-40 object-contain opacity-75 invert md:w-48" style="color: transparent;" alt="Build CCPA" src="/uploaded/build-ccpa.webp" />
+						<div class="flex flex-col items-center justify-between gap-2">
+							<p>CCPA</p>
+							<a data-button-root="true" href="https://oag.ca.gov/privacy/ccpa" aria-disabled="false" tabindex="0" target="_blank" class="inline-flex items-center ring-1 ring-white/15 ring-inset justify-center !font-medium transition ease-out duration-300 focus:outline-none focus:ring-0 active:brightness-[.9] active:scale-[.98] ring-0 focus-visible:ring-primary-500/20 dark:focus-visible:ring-primary-400/30 gap-3 [touch-action:manipulation] relative bg-transparent text-gray-900 hover:bg-gray-100 dark:text-gray-100 dark:hover:bg-gray-800 px-3 py-1.5 rounded text-sm gap-2" data-theme-mode="auto">
+								<span>Details</span>
+								<svg viewBox="0 0 24 24" width="1.2em" height="1.2em"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h10v10M7 17L17 7"></path></svg>
+							</a>
+						</div>
 					</div>
-					<div class="flex items-center gap-2">
-						<img src="https://logo.clearbit.com/gdpr.eu" alt="GDPR Compliant" class="w-8 h-8 rounded" />
-						<span class="text-caption font-medium">GDPR Compliant</span>
-					</div>
+				
 				</div>
 				
 				<div class="space-y-6 text-left">
