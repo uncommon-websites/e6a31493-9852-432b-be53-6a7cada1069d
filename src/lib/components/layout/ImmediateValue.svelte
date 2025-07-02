@@ -56,12 +56,7 @@
 								</p>
 							</div>
 
-							<!-- Step Number -->
-							<div class="absolute -top-3 -right-3">
-								<div class="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-footnote font-bold text-white">
-									{index + 1}
-								</div>
-							</div>
+							<!-- Step numbers removed as requested -->
 						</div>
 					</div>
 				{/each}
