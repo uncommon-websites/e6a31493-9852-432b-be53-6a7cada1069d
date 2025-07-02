@@ -370,15 +370,42 @@
 											</div>
 										</div>
 									{:else if step.visual === "contact-history"}
-										<div class="bg-background border-border w-full rounded-lg border p-4">
-											<div class="mb-2 flex items-center justify-between">
-												<span class="text-caption font-medium">AstraZeneca Meeting</span>
-												<span class="text-footnote">1 month ago</span>
+										<div class="w-full space-y-3">
+											<div class="bg-background border-border rounded-lg border p-4">
+												<div class="mb-2 flex items-center justify-between">
+													<span class="text-caption font-medium">AstraZeneca Meeting</span>
+													<span class="text-footnote">1 month ago</span>
+												</div>
+												<div class="space-y-1">
+													<p class="text-caption">NDA signed</p>
+													<p class="text-caption">Partnership discussion</p>
+													<p class="text-caption">Contact: Jae Park</p>
+												</div>
 											</div>
-											<div class="space-y-1">
-												<p class="text-caption">NDA signed</p>
-												<p class="text-caption">Partnership discussion</p>
-												<p class="text-caption">Contact: Jae Park</p>
+											<div class="bg-background border-border rounded-lg border p-4">
+												<div class="mb-2 flex items-center justify-between">
+													<span class="text-caption font-medium">Microsoft Teams Call</span>
+													<span class="text-footnote">2 weeks ago</span>
+												</div>
+												<div class="space-y-1">
+													<p class="text-caption">Product demo completed</p>
+													<p class="text-caption">Technical requirements discussed</p>
+													<p class="text-caption">Contact: Sarah Chen</p>
+												</div>
+											</div>
+											<div class="bg-background border-border rounded-lg border p-4">
+												<div class="mb-2 flex items-center justify-between">
+													<span class="text-caption font-medium">Google Workspace Integration</span>
+													<span class="text-footnote">3 days ago</span>
+												</div>
+												<div class="space-y-1">
+													<p class="text-caption">API access granted</p>
+													<p class="text-caption">Security review passed</p>
+													<p class="text-caption">Contact: Alex Rodriguez</p>
+												</div>
+											</div>
+											<div class="bg-muted border-border rounded-lg border p-3 text-center">
+												<span class="text-footnote text-muted-foreground">12 more contact interactions tracked</span>
 											</div>
 										</div>
 									{:else if step.visual === "key-alerts"}
