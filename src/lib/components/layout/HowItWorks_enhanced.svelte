@@ -120,7 +120,7 @@
 	});
 </script>
 
-<section class="bg-gray-50">
+<section class="bg-white">
 	<div class="section-px section-py container mx-auto">
 		<div class="mx-auto grid place-items-center text-center">
 			<SectionHeader
@@ -161,7 +161,7 @@
 					</div>
 
 					<div
-						class="border-border timeline-content relative mx-auto max-w-prose scale-90 transform rounded-3xl border bg-white text-center transition-all duration-750 ease-out"
+						class="border-border timeline-content relative mx-auto max-w-prose scale-90 transform rounded-3xl border bg-gray-50 text-center transition-all duration-750 ease-out"
 					>
 						<div class="mx-auto w-full flex-shrink-0">
 							<div
@@ -325,17 +325,48 @@
 											</div>
 										</div>
 									{:else if step.visual === "todo-tracking"}
-										<div class="w-full">
-											<div class="bg-background border-border mb-2 rounded-lg border p-4">
-												<span class="text-caption mb-1 block font-medium"
-													>Follow up with client by Friday</span
-												>
-												<span class="text-footnote">From: Team standup</span>
+										<div class="w-full space-y-3">
+											<div class="bg-background border-border rounded-lg border p-4">
+												<div class="mb-2 flex items-center justify-between">
+													<span class="text-caption font-medium">Follow up with client by Friday</span>
+													<span
+														class="rounded-full bg-red-100 px-2 py-1 text-xs font-medium text-red-800"
+														>Due tomorrow</span
+													>
+												</div>
+												<div class="flex items-center justify-between">
+													<span class="text-footnote text-muted-foreground">From: Team standup</span>
+													<span class="text-footnote text-muted-foreground">High priority</span>
+												</div>
 											</div>
-											<div
-												class="bg-secondary border-border text-secondary-foreground rounded-lg border p-2 text-center"
-											>
-												<span class="text-footnote">Reminder: Due tomorrow</span>
+											<div class="bg-background border-border rounded-lg border p-4">
+												<div class="mb-2 flex items-center justify-between">
+													<span class="text-caption font-medium">Review Q4 budget proposal</span>
+													<span
+														class="rounded-full bg-yellow-100 px-2 py-1 text-xs font-medium text-yellow-800"
+														>Due next week</span
+													>
+												</div>
+												<div class="flex items-center justify-between">
+													<span class="text-footnote text-muted-foreground">From: Leadership meeting</span>
+													<span class="text-footnote text-muted-foreground">Medium priority</span>
+												</div>
+											</div>
+											<div class="bg-background border-border rounded-lg border p-4">
+												<div class="mb-2 flex items-center justify-between">
+													<span class="text-caption font-medium">Update security documentation</span>
+													<span
+														class="rounded-full bg-green-100 px-2 py-1 text-xs font-medium text-green-800"
+														>Completed</span
+													>
+												</div>
+												<div class="flex items-center justify-between">
+													<span class="text-footnote text-muted-foreground">From: Security review</span>
+													<span class="text-footnote text-muted-foreground">Low priority</span>
+												</div>
+											</div>
+											<div class="bg-muted border-border rounded-lg border p-3 text-center">
+												<span class="text-footnote text-muted-foreground">3 more tasks tracked automatically</span>
 											</div>
 										</div>
 									{:else if step.visual === "contact-history"}

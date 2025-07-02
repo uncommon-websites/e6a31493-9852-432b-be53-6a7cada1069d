@@ -19,7 +19,7 @@
 	bind:this={heroContainer}
 	class="relative grid min-h-screen place-items-center py-80 text-center transition {currentSlide ===
 	1
-		? 'bg-primary-50'
+		? 'bg-white'
 		: 'bg-gray-50'}"
 >
 	<div class="sticky top-0 left-0 grid h-full w-full place-items-center">
