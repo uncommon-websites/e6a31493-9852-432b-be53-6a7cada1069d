@@ -43,22 +43,22 @@
 					<AnimateText text={title} />
 				</h2>
 				
-				<!-- Trust indicators with logos -->
+				<!-- Trust indicators with actual compliance logos -->
 				<div class="flex flex-wrap items-center justify-center gap-6 mb-8 pb-6 border-b border-border">
 					<div class="flex items-center gap-2">
-						<img src="/generated/image-a-team-of-colleagues-gathered-around-a-t.webp" alt="SOC2 Type 1" class="w-8 h-8 rounded" />
+						<img src="https://logo.clearbit.com/aicpa.org" alt="SOC2 Type 1" class="w-8 h-8 rounded" />
 						<span class="text-caption font-medium">SOC2 Type 1</span>
 					</div>
 					<div class="flex items-center gap-2">
-						<img src="/generated/image-a-close-up-shot-of-hands-in-motion-writi.webp" alt="SOC2 Type 2" class="w-8 h-8 rounded" />
+						<img src="https://logo.clearbit.com/aicpa.org" alt="SOC2 Type 2" class="w-8 h-8 rounded" />
 						<span class="text-caption font-medium">SOC2 Type 2 (In Progress)</span>
 					</div>
 					<div class="flex items-center gap-2">
-						<img src="/generated/image-an-individual-sitting-alone-at-a-kitchen.webp" alt="ISO Compliant" class="w-8 h-8 rounded" />
+						<img src="https://logo.clearbit.com/iso.org" alt="ISO Compliant" class="w-8 h-8 rounded" />
 						<span class="text-caption font-medium">ISO Compliant</span>
 					</div>
 					<div class="flex items-center gap-2">
-						<img src="/generated/image-a-candid-moment-of-two-people-sharing-a-.webp" alt="GDPR Compliant" class="w-8 h-8 rounded" />
+						<img src="https://logo.clearbit.com/gdpr.eu" alt="GDPR Compliant" class="w-8 h-8 rounded" />
 						<span class="text-caption font-medium">GDPR Compliant</span>
 					</div>
 				</div>
