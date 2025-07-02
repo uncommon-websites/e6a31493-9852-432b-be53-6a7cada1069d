@@ -37,29 +37,60 @@
 
 <div class="" {...rest}>
 	<section class="section-px section-py-sm container mx-auto">
-		<div class="bg-card border-border rounded-(--radius-lg) border p-8 text-center">
-			<h2 class="text-title2 mb-6">
-				<AnimateText text={title} />
-			</h2>
-			
-			<div class="container-xs mx-auto space-y-4">
-				<p class="text-body text-emphasis-low">
-					{description}
-				</p>
+		<div class="bg-card border-border rounded-(--radius-lg) border p-8">
+			<div class="container-xs mx-auto">
+				<h2 class="text-title2 mb-8 text-center">
+					<AnimateText text={title} />
+				</h2>
 				
-				<p class="text-body text-emphasis-low">
-					{onPremText}
-				</p>
+				<!-- Trust indicators with logos -->
+				<div class="flex flex-wrap items-center justify-center gap-6 mb-8 pb-6 border-b border-border">
+					<div class="flex items-center gap-2">
+						<img src="/generated/image-a-team-of-colleagues-gathered-around-a-t.webp" alt="SOC2 Type 1" class="w-8 h-8 rounded" />
+						<span class="text-caption font-medium">SOC2 Type 1</span>
+					</div>
+					<div class="flex items-center gap-2">
+						<img src="/generated/image-a-close-up-shot-of-hands-in-motion-writi.webp" alt="SOC2 Type 2" class="w-8 h-8 rounded" />
+						<span class="text-caption font-medium">SOC2 Type 2 (In Progress)</span>
+					</div>
+					<div class="flex items-center gap-2">
+						<img src="/generated/image-an-individual-sitting-alone-at-a-kitchen.webp" alt="ISO Compliant" class="w-8 h-8 rounded" />
+						<span class="text-caption font-medium">ISO Compliant</span>
+					</div>
+					<div class="flex items-center gap-2">
+						<img src="/generated/image-a-candid-moment-of-two-people-sharing-a-.webp" alt="GDPR Compliant" class="w-8 h-8 rounded" />
+						<span class="text-caption font-medium">GDPR Compliant</span>
+					</div>
+				</div>
 				
-				<div class="pt-4">
-					<a 
-						href={linkHref}
-						class="text-primary hover:text-primary/80 text-body font-medium transition-colors duration-200"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						{linkLabel} →
-					</a>
+				<div class="space-y-6 text-left">
+					<div>
+						<h3 class="text-headline font-medium mb-3">Enterprise-grade security</h3>
+						<p class="text-body text-muted-foreground">
+							Your data security is our top priority. Sentra maintains SOC2 Type 1 compliance and is currently undergoing SOC2 Type 2 certification. We also adhere to ISO standards and GDPR regulations, ensuring the highest levels of data protection and privacy for your organization.
+						</p>
+					</div>
+					
+					<div>
+						<h3 class="text-headline font-medium mb-3">On-premise deployment options</h3>
+						<p class="text-body text-muted-foreground">
+							For organizations with sensitive data requirements, we offer dedicated on-premise deployments. This ensures your data never leaves your infrastructure while still providing the full power of Sentra's AI-driven organizational intelligence.
+						</p>
+					</div>
+					
+					<div class="pt-2">
+						<a 
+							href={linkHref}
+							class="text-primary hover:text-primary/80 text-body font-medium transition-colors duration-200 inline-flex items-center gap-1"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							{linkLabel} 
+							<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+							</svg>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
