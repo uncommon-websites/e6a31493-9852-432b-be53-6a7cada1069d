@@ -110,7 +110,7 @@
 					<div class="relative w-full max-w-lg">
 						<!-- Main Visual Container -->
 						<div class="relative overflow-hidden rounded-3xl border border-gray-200 bg-white">
-							<div class="aspect-video w-full">
+							<div class="aspect-square w-full">
 								{#key activeStep}
 									<img
 										src={currentStep.image}
