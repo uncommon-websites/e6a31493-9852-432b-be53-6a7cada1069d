@@ -1,132 +1,65 @@
 <script lang="ts">
-	import Summary from "$lib/components/layout/Summary.svelte";
-	import StakeholderGrid from "$lib/components/layout/StakeholderGrid.svelte";
-	import Footer from "$lib/components/layout/Footer.svelte";
+	import CompactTeam from "$lib/components/layout/CompactTeam.svelte";
 	import SecondaryHero from "$lib/components/layout/hero-sections/SecondaryHero.svelte";
 	import CallToAction from "$lib/components/layout/CallToAction.svelte";
 
-	// Our Mission content
-	const missionContent = `Our three big bets on what will win in the age of AI powered work:
-
-Human-human like interfaces that feel natural and conversational, not robotic or transactional. We believe the future of work tools lies in systems that understand context, nuance, and the human elements that make organizations thrive.
-
-Autonomous, unsupervised work that operates intelligently in the background. Rather than requiring constant human oversight, truly powerful AI systems should work independently while maintaining alignment with organizational goals and values.
-
-Privacy first approaches that build trust rather than erode it. We reject surveillance culture entirely, focusing instead on aggregate insights that protect individual autonomy while strengthening collective understanding.`;
-
-	// Sentra's Future content
-	const futureContent = `In our current V1 form, there is significant emphasis on nailing the mirroring and piecing together of tribal communication patterns. Sentra learns how your organization communicates, identifies gaps, and surfaces potential misalignments before they become problems.
-
-In V2, we will make Sentra capable of automating away more busywork. We are building the autopilot for work, designed for everyone in the company. This involves Sentra integrating with all the knowledge connectors of your organization: Google Drive, Slack, project management tools, and more, with increasingly proactive and autonomous features.
-
-The types of tasks we imagine Sentra handling include scenarios like this: if you mention in a meeting that you plan to send someone specific documents, Sentra could autonomously extract the relevant pieces and prepare them for your review, allowing you to simply approve and send rather than doing the manual work yourself.
-
-Sentra could even take certain meetings for you as it develops its own voice and understanding of your communication style. This allows you to stay in the zone while not missing anything important from critical discussions.
-
-During meetings, Sentra could automatically fetch relevant information about topics being discussed and send it to you via direct message, or even contribute directly to the conversation when appropriate.
-
-Sentra can become any employee's ally during performance reviews, helping them articulate their contributions to the company beyond just code or deliverables—things like how they spoke up during meetings, facilitated discussions, or supported team dynamics. It helps everyone make their case rather than being the judge, fundamentally changing the psychological relationship with AI from something performative to something genuinely supportive.
-
-From there, Sentra could naturally evolve into a performance coach. If you have goals around improving certain skillsets or becoming a better communicator, it could help you work towards company objectives alongside your personal professional development.
-
-Ultimately, Sentra becomes the cultural human glue that maintains startup ethos while companies scale. Our vision: "Run a large company at the speed of a small company."`;
-
-	// AI Evolution content
-	const aiEvolutionContent = `**L0: Generic co-pilots.** These include chat-style LLMs like ChatGPT, Gemini, and Co-Pilot.
-• ROI: Saves seconds of cognitive friction through faster recall and lookup, eliminating tab-hopping and documentation searches while reducing mental context switches.
-• Direct impact scope: Enhances the speed of a single person's work.
-• Human involvement: A human creates the prompt and reviews the output.
-
-**L1: Task agents.** They automate specific narrow tasks, like Superhuman AI for drafting emails or code auto-completion in Cursor.
-• ROI: Save minutes from common tasks that humans typically perform.
-• Direct impact scope: Reduces the total workload of a single person.
-• Human involvement: Instructions are still defined by humans, and outputs are still reviewed.
-
-**L2: Role agents.** These agents automate workflows and seek to replace (at least partially) a seat on the org chart long term. Examples include Devin for autonomous software engineering, Parloa for call center operations, and Fireflies for note-taking.
-• ROI: These save hours of labor.
-• Direct impact scope: Can impact up to a whole team's work.
-• Human involvement: The workflow is defined by humans, and outputs are still reviewed.
-
-**L3: Goal agents (current Sentra).** This is a new class of AI that we are among the first to define. These agents work towards continuous business mandates. For example, alignment is a continuous goal in any business, as are maintaining security compliance, eliminating busywork, and ensuring employee satisfaction.
-• ROI: L3 agents work towards unbounded metrics, promising ongoing outcomes like "always compliant," "team never misaligned," or "everyone is satisfied" rather than discrete deliverables. They eliminate the need for traditional audits.
-• Direct impact scope: Impacts the whole organization, not just a single task, person, or team.
-• Human involvement: Goals come pre-defined and actions are autonomously initiated. Outputs like recommendations and alerts are still reviewed.
-
-To work towards continuous goals that affect entire organizations, L3 agents need a stateful, immutable, org-wide understanding of what's happening—a memory—to do their job effectively. Sentra must be among the first L3 AI systems because we solve the data fragmentation, human incentives, and accuracy problems that other systems struggle with. All other L3 agents would rely on Sentra's high-resolution understanding of organizational dynamics.
-
-**L4: High autonomy goal agents (future Sentra).** The key jump from L3 to L4 occurs when humans are no longer in the loop for decision-making processes. With L4, humans no longer need to review outputs, and the agent directly "resolves" issues. For example, future Sentra could resolve misalignment by contacting individuals directly to address miscommunications, without requiring manager or leader intervention.
-
-**L5: Full automation (AGI).** AI that independently manages complex tasks across large contexts without human intervention or oversight. Our future vision includes AI CEOs managing strategic decision-making, autonomous corporate legal counsel, and complete operational oversight without human review. It would run entire companies independently.
-
-We see clear parallels to the SAE standards for self-driving car autonomy levels. In the context of autonomous vehicles, the company that first reaches the next level typically dominates the entire market, because its existence dramatically reduces the value and demand for technology at previous levels. Products stuck in previous eras quickly become commoditized.
-
-Similarly, the first company to create an L3 AI will dominate the market. All existing "AI Employee" companies are currently building at L2 or below, horizontally expanding across countless verticals with "AI tutors," "AI market researchers," "AI software engineers," and similar role-specific tools.
-
-We firmly believe we are among the first companies to make the great leap forward from L2 to L3. This is largely why Sentra can provide what were previously L0-L2 products—like note-taking, enterprise search, and busywork drafting—as trivially commoditized features within a much more powerful system.
-
-The challenge of leaping from L2 to L3 isn't solely a technology hurdle around robust memory systems. The adoption of L3 agents marks the first time a single AI has direct impact on entire organizations at once, requiring careful consideration of cooperation mechanisms and human incentives.
-
-This psychological barrier becomes even more significant in the L3 to L4 transition, since entire labor divisions will likely flatten or be fully replaced by AI. An L4 agent continually optimizing for "employee satisfaction" and "legal compliance" will likely eliminate the need for traditional HR departments.`;
-
-	// Team data
+	// Team data with placeholder URLs
 	const teamMembers = [
 		{
 			name: "Jae Gwan Park",
 			position: "Co-founder, CEO",
-			description:
-				"AI engineer, MIT research, international AI hackathon winner, previous ecommerce founder",
-			image: "/generated/image-a-professional-headshot-of-a-ceo-capture.webp"
+			description: "AI engineer, MIT research, international AI hackathon winner, previous ecommerce founder",
+			image: "https://via.placeholder.com/100x100/6366f1/ffffff?text=JP"
 		},
 		{
 			name: "Andrey Starenky",
 			position: "Co-founder, CTO",
-			description:
-				"AI infrastructure at IBM WatsonX, defense contracting, previous mobile app founder (acquired)",
-			image: "/generated/image-a-professional-headshot-of-a-cto-capture.webp"
+			description: "AI infrastructure at IBM WatsonX, defense contracting, previous mobile app founder (acquired)",
+			image: "https://via.placeholder.com/100x100/6366f1/ffffff?text=AS"
 		},
 		{
 			name: "Ashwin Gopinath",
 			position: "Co-founder, Advisor",
 			description: "MIT professor, Caltech & Google X alum, successful biotech founder (acquired)",
-			image: "/generated/image-a-professional-headshot-of-an-advisor-pr.webp"
+			image: "https://via.placeholder.com/100x100/6366f1/ffffff?text=AG"
 		}
 	];
 
-	// Advisors data
+	// Advisors data with placeholder URLs
 	const advisors = [
 		{
 			name: "Lakshmi Sankar",
 			position: "Advisor",
 			description: "Former VP Google, former Chief of Staff Twitter",
-			image: "/generated/image-a-professional-headshot-of-a-female-exec.webp"
+			image: "https://via.placeholder.com/100x100/8b5cf6/ffffff?text=LS"
 		},
 		{
 			name: "Sanjay Jha",
 			position: "Advisor",
 			description: "Former COO Qualcomm, former CEO Motorola",
-			image: "/generated/image-a-professional-headshot-of-a-male-execut.webp"
+			image: "https://via.placeholder.com/100x100/8b5cf6/ffffff?text=SJ"
 		}
 	];
 
-	// Early supporters data
+	// Early supporters data with placeholder URLs
 	const supporters = [
 		{
 			name: "Anne Lee Skates",
 			position: "Parable VC",
 			description: "Former A16Z",
-			image: "/generated/image-a-professional-headshot-of-a-female-inve.webp"
+			image: "https://via.placeholder.com/100x100/10b981/ffffff?text=AS"
 		},
 		{
 			name: "Shaad Khan",
 			position: "Seven Story Capital",
 			description: "Investment Partner",
-			image: "/generated/image-a-professional-headshot-of-a-male-invest.webp"
+			image: "https://via.placeholder.com/100x100/10b981/ffffff?text=SK"
 		},
 		{
 			name: "Alex Yang",
 			position: "Principal PM",
 			description: "Microsoft",
-			image: "/generated/image-a-professional-headshot-of-a-tech-execut.webp"
+			image: "https://via.placeholder.com/100x100/10b981/ffffff?text=AY"
 		}
 	];
 </script>
@@ -194,82 +127,77 @@ This psychological barrier becomes even more significant in the L3 to L4 transit
 	</section>
 
 	<!-- Team Section -->
-	<StakeholderGrid
+	<CompactTeam
 		title="Who we are"
 		subtitle="The team building the future of organizational intelligence"
-		stakeholders={teamMembers}
-		stakeholderType="team"
+		members={teamMembers}
 	/>
 
-	<!-- Sentra's Future Section -->
+	<!-- The Future of Autonomous Enterprise - Unified Essay -->
 	<section
 		class="section-py section-px container mx-auto"
 		style="background-color: var(--color-background);"
 	>
 		<div class="max-w-prose">
-			<h2 class="text-title1 section-mb" style="color: var(--color-foreground);">
-				Sentra's future
+			<h2 class="text-title1 section-mb-sm" style="color: var(--color-foreground);">
+				The future of autonomous enterprise
 			</h2>
+			<p class="text-headline section-mb" style="color: var(--color-muted-foreground);">
+				We are building toward a world where organizations self-heal, self-reflect, and maintain perfect alignment as they scale. This is the journey from reactive management to autonomous organizational intelligence.
+			</p>
 
-			<div class="space-y-10">
+			<div class="space-y-8">
 				<div>
-					<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
-						V1: Understanding organizational communication
-					</h3>
 					<p class="text-body" style="color: var(--color-muted-foreground);">
-						In our current form, there is significant emphasis on nailing the mirroring and piecing
-						together of tribal communication patterns. Sentra learns how your organization
-						communicates, identifies gaps, and surfaces potential misalignments before they become
-						problems.
+						The evolution of AI in the workplace follows a clear progression, much like the SAE standards for autonomous vehicles. We see five distinct levels, each representing a fundamental shift in how technology integrates with human organizations.
 					</p>
 				</div>
 
 				<div>
-					<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
-						V2: The autopilot for work
-					</h3>
-					<div class="space-y-4">
-						<p class="text-body" style="color: var(--color-muted-foreground);">
-							We will make Sentra capable of automating away more busywork. We are building the
-							autopilot for work, designed for everyone in the company. This involves Sentra
-							integrating with all the knowledge connectors of your organization: Google Drive,
-							Slack, project management tools, and more.
-						</p>
-						<p class="text-body" style="color: var(--color-muted-foreground);">
-							Imagine mentioning in a meeting that you plan to send someone specific documents.
-							Sentra could autonomously extract the relevant pieces and prepare them for your
-							review, allowing you to simply approve and send rather than doing the manual work
-							yourself.
-						</p>
-					</div>
-				</div>
-
-				<div>
-					<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
-						Beyond automation: Your AI ally
-					</h3>
-					<div class="space-y-4">
-						<p class="text-body" style="color: var(--color-muted-foreground);">
-							Sentra could even take certain meetings for you as it develops its own voice and
-							understanding of your communication style. This allows you to stay in the zone while
-							not missing anything important from critical discussions.
-						</p>
-						<p class="text-body" style="color: var(--color-muted-foreground);">
-							During performance reviews, Sentra can become any employee's ally, helping them
-							articulate their contributions beyond just deliverables—things like how they spoke up
-							during meetings, facilitated discussions, or supported team dynamics. It helps
-							everyone make their case rather than being the judge.
-						</p>
-					</div>
-				</div>
-
-				<div>
-					<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
-						The ultimate vision
-					</h3>
 					<p class="text-body" style="color: var(--color-muted-foreground);">
-						Ultimately, Sentra becomes the cultural human glue that maintains startup ethos while
-						companies scale. Our vision: "Run a large company at the speed of a small company."
+						<strong>L0 and L1</strong> represent the current state: generic co-pilots and task agents that save seconds and minutes respectively. These tools enhance individual productivity but require constant human oversight. <strong>L2 role agents</strong> begin to automate entire workflows, potentially replacing specific roles but still operating within human-defined parameters.
+					</p>
+				</div>
+
+				<div>
+					<p class="text-body" style="color: var(--color-muted-foreground);">
+						<strong>L3 is where Sentra operates today</strong> - the first goal agents working toward continuous business mandates. Unlike discrete task completion, we work toward unbounded metrics: "team never misaligned," "always compliant," "everyone satisfied." This requires a stateful, immutable understanding of organizational dynamics that no other system possesses.
+					</p>
+				</div>
+
+				<div>
+					<p class="text-body" style="color: var(--color-muted-foreground);">
+						In our current form, Sentra mirrors and pieces together tribal communication patterns, learning how your organization communicates and identifying gaps before they become problems. We participate in meetings, read public channels, and digest project management tools to create a real-time map of your company's alignment.
+					</p>
+				</div>
+
+				<div>
+					<p class="text-body" style="color: var(--color-muted-foreground);">
+						The next evolution brings <strong>L4 autonomy</strong>, where humans are no longer in the decision-making loop. Future Sentra will resolve misalignment by directly contacting individuals, autonomously extracting and preparing documents when mentioned in meetings, and even taking certain meetings while you stay in the zone. It becomes every employee's ally during performance reviews, helping articulate contributions beyond deliverables.
+					</p>
+				</div>
+
+				<div>
+					<p class="text-body" style="color: var(--color-muted-foreground);">
+						<strong>L5 represents full automation</strong> - AI CEOs managing strategic decisions, autonomous corporate legal counsel, complete operational oversight without human review. This is the ultimate vision of organizations that run themselves.
+					</p>
+				</div>
+
+				<div>
+					<p class="text-body" style="color: var(--color-muted-foreground);">
+						What makes this progression inevitable is the same dynamic we see in autonomous vehicles: the first company to reach the next level dominates the entire market. Products stuck in previous eras become commoditized. We firmly believe we are among the first to make the great leap from L2 to L3, which is why Sentra can provide what were previously L0-L2 products as trivially commoditized features within a much more powerful system.
+					</p>
+				</div>
+
+				<div>
+					<p class="text-body" style="color: var(--color-muted-foreground);">
+						The challenge isn't solely technological. L3 adoption marks the first time a single AI has direct impact on entire organizations at once, requiring careful consideration of cooperation mechanisms and human incentives. The psychological barrier becomes even more significant in the L3 to L4 transition, as entire labor divisions will likely flatten or be replaced.
+					</p>
+				</div>
+
+				<div>
+					<p class="text-body" style="color: var(--color-muted-foreground);">
+						Ultimately, Sentra becomes the cultural human glue that maintains startup ethos while companies scale. Our vision is simple yet profound: <strong>"Run a large company at the speed of a small company."</strong> This is the future of autonomous enterprise - organizations that think, learn, and evolve as coherent entities while empowering every individual within them.
 					</p>
 				</div>
 			</div>
@@ -277,139 +205,17 @@ This psychological barrier becomes even more significant in the L3 to L4 transit
 	</section>
 
 	<!-- Advisors Section -->
-	<StakeholderGrid
+	<CompactTeam
 		title="Advisors"
 		subtitle="Management experts and enterprise leaders guiding our mission"
-		stakeholders={advisors}
-		stakeholderType="team"
+		members={advisors}
 	/>
 
-	<!-- Where AI is Headed Section -->
-	<section
-		class="section-py section-px container mx-auto"
-		style="background-color: var(--color-background);"
-	>
-		<div class="max-w-prose">
-			<h2 class="text-title1 section-mb-sm" style="color: var(--color-foreground);">
-				Where we think AI is headed
-			</h2>
-			<p class="text-headline section-mb" style="color: var(--color-muted-foreground);">
-				The evolution from co-pilots to autonomous organizational intelligence follows a clear
-				progression. We see clear parallels to the SAE standards for self-driving car autonomy
-				levels.
-			</p>
-
-			<div class="space-y-10">
-				<div>
-					<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
-						L0: Generic co-pilots
-					</h3>
-					<div class="space-y-4">
-						<p class="text-body" style="color: var(--color-muted-foreground);">
-							These include chat-style LLMs like ChatGPT, Gemini, and Co-Pilot. They save seconds of
-							cognitive friction through faster recall and lookup, eliminating tab-hopping and
-							documentation searches.
-						</p>
-						<p class="text-callout text-emphasis-low">
-							Impact: Enhances the speed of a single person's work.
-						</p>
-					</div>
-				</div>
-
-				<div>
-					<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
-						L1: Task agents
-					</h3>
-					<div class="space-y-4">
-						<p class="text-body" style="color: var(--color-muted-foreground);">
-							They automate specific narrow tasks, like Superhuman AI for drafting emails or code
-							auto-completion in Cursor. They save minutes from common tasks that humans typically
-							perform.
-						</p>
-						<p class="text-callout text-emphasis-low">
-							Impact: Reduces the total workload of a single person.
-						</p>
-					</div>
-				</div>
-
-				<div>
-					<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
-						L2: Role agents
-					</h3>
-					<div class="space-y-4">
-						<p class="text-body" style="color: var(--color-muted-foreground);">
-							These agents automate workflows and seek to replace (at least partially) a seat on the
-							org chart long term. Examples include Devin for autonomous software engineering and
-							Fireflies for note-taking.
-						</p>
-						<p class="text-callout text-emphasis-low">
-							Impact: Can impact up to a whole team's work.
-						</p>
-					</div>
-				</div>
-
-				<div>
-					<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
-						L3: Goal agents (current Sentra)
-					</h3>
-					<div class="space-y-4">
-						<p class="text-body" style="color: var(--color-muted-foreground);">
-							This is a new class of AI that we are among the first to define. These agents work
-							towards continuous business mandates like maintaining alignment, security compliance,
-							eliminating busywork, and ensuring employee satisfaction.
-						</p>
-						<p class="text-body" style="color: var(--color-muted-foreground);">
-							L3 agents work towards unbounded metrics, promising ongoing outcomes like "always
-							compliant," "team never misaligned," or "everyone is satisfied" rather than discrete
-							deliverables.
-						</p>
-						<p class="text-callout text-emphasis-low">
-							Impact: Affects the whole organization, not just a single task, person, or team.
-						</p>
-					</div>
-				</div>
-
-				<div>
-					<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
-						L4: High autonomy goal agents (future Sentra)
-					</h3>
-					<p class="text-body" style="color: var(--color-muted-foreground);">
-						The key jump from L3 to L4 occurs when humans are no longer in the loop for
-						decision-making processes. Future Sentra could resolve misalignment by contacting
-						individuals directly to address miscommunications, without requiring manager
-						intervention.
-					</p>
-				</div>
-
-				<div>
-					<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
-						L5: Full automation (AGI)
-					</h3>
-					<p class="text-body" style="color: var(--color-muted-foreground);">
-						AI that independently manages complex tasks across large contexts without human
-						intervention. Our future vision includes AI CEOs managing strategic decision-making,
-						autonomous corporate legal counsel, and complete operational oversight.
-					</p>
-				</div>
-
-				<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
-					Why L3 is the breakthrough
-				</h3>
-				<p class="text-body" style="color: var(--color-muted-foreground);">
-					We firmly believe we are among the first companies to make the great leap forward from L2
-					to L3. The first company to create an L3 AI will dominate the market, because its
-					existence dramatically reduces the value and demand for technology at previous levels. All
-					existing "AI Employee" companies are currently building at L2 or below.
-				</p>
-			</div>
-		</div>
-	</section>
 	<!-- Early Supporters Section -->
-	<StakeholderGrid
+	<CompactTeam
 		title="Our earliest supporters"
 		subtitle="Investors and partners who believe in our vision"
-		stakeholders={supporters}
-		stakeholderType="team"
+		members={supporters}
 	/>
 </main>
 
