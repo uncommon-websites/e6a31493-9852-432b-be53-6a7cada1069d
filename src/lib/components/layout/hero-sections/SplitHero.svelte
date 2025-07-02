@@ -84,20 +84,16 @@
 					</p>
 				</div>
 
-				{#if callsToAction.length > 0}
-					<div class="flex flex-col sm:flex-row gap-4" data-enter>
-						{#each callsToAction as cta, index}
-							<Button
-								href={cta.href}
-								size="lg"
-								variant={index % 2 === 0 ? "primary" : "secondary"}
-								class="w-full sm:w-auto"
-							>
-								{cta.label}
-							</Button>
-						{/each}
-					</div>
-				{/if}
+				<div class="flex flex-col sm:flex-row gap-4" data-enter>
+					<Button
+						href={cta.href}
+						size="lg"
+						variant="primary"
+						class="w-full sm:w-auto"
+					>
+						{cta.label}
+					</Button>
+				</div>
 			</div>
 
 			<!-- Right side - Notification block -->

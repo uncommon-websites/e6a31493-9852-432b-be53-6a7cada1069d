@@ -16,16 +16,6 @@
 <SplitHero 
 	title="Scale companies effectively with Sentra"
 	subtitle="Your AI teammate that improves alignment across your organization by proactively sensing when problems may occur and allowing leaders to intervene to intercept them."
-	callsToAction={[
-		{
-			href: "/contact",
-			label: "Join private beta"
-		},
-		{
-			href: "#how-it-works",
-			label: "See how it works"
-		}
-	]}
 />
 
 <SlideshowHero />
