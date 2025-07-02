@@ -13,6 +13,7 @@
 	import HowItWorks from "$lib/components/layout/HowItWorks_enhanced.svelte";
 	import Security from "$lib/components/layout/Security.svelte";
 	import FrictionlessAdoption from "$lib/components/layout/FrictionlessAdoption.svelte";
+	import ImmediateValue from "$lib/components/layout/ImmediateValue.svelte";
 </script>
 
 <SplitHero
@@ -25,6 +26,8 @@
 	text="Sentra is building an AI teammate that improves alignment across an organization by proactively sensing when problems may occur and allowing leaders to intervene to intercept them."
 />
 <SlideshowHero />
+
+<ImmediateValue />
 
 <!-- <Testimonials
 	testimonials={[
