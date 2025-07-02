@@ -80,52 +80,6 @@
 		imageSrc="https://images.unsplash.com/photo-1750658659691-1f7b2bd37337?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 	/>
 
-	<!-- Our Mission Section -->
-	<section
-		class="section-py section-px container mx-auto"
-		style="background-color: var(--color-background);"
-	>
-		<div class="max-w-prose">
-			<h2 class="text-title1 mb-[1em]" style="color: var(--color-foreground);">Our mission</h2>
-			<p class="text-headline section-mb" style="color: var(--color-muted-foreground);">
-				Our three big bets on what will win in the age of AI powered work:
-			</p>
-
-			<div class="space-y-8">
-				<div>
-					<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
-						Human-like interfaces that feel natural
-					</h3>
-					<p class="text-body" style="color: var(--color-muted-foreground);">
-						We believe the future of work tools lies in systems that understand context, nuance, and
-						the human elements that make organizations thrive. No more robotic or transactional
-						interactions.
-					</p>
-				</div>
-
-				<div>
-					<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
-						Autonomous, unsupervised work
-					</h3>
-					<p class="text-body" style="color: var(--color-muted-foreground);">
-						Rather than requiring constant human oversight, truly powerful AI systems should work
-						independently while maintaining alignment with organizational goals and values.
-					</p>
-				</div>
-
-				<div>
-					<h3 class="text-title3 mb-[1em]" style="color: var(--color-foreground);">
-						Privacy first approaches
-					</h3>
-					<p class="text-body" style="color: var(--color-muted-foreground);">
-						We reject surveillance culture entirely, focusing instead on aggregate insights that
-						protect individual autonomy while strengthening collective understanding.
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
 	<!-- Team Section -->
 	<CompactTeam
 		title="Who we are"
