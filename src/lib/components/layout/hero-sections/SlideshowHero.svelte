@@ -17,9 +17,9 @@
 <section
 	data-hero
 	bind:this={heroContainer}
-	class="relative grid min-h-screen place-items-center py-80 text-center transition {currentSlide ===
+	class="relative grid min-h-[70vh] place-items-center py-80 text-center transition {currentSlide ===
 	1
-		? 'bg-white'
+		? 'bg-primary-50'
 		: 'bg-gray-50'}"
 >
 	<div class="sticky top-0 left-0 grid h-full w-full place-items-center">
