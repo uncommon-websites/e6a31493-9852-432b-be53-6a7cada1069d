@@ -4,28 +4,25 @@
 	const valueProps = [
 		{
 			title: "Builds a memory of your company",
-			description: "Sentra connects to your existing tools—meetings, Slack, documents—creating a unified timeline of every decision, debate, and commitment across your organization.",
-			image: "/generated/image-a-calming-grounded-image-of-a-hybrid-wor.webp",
-			features: ["Captures meeting context", "Connects all your tools", "Creates unified timeline"]
+			description: "Sentra connects to your existing tools, creating a unified timeline of decisions and commitments.",
+			image: "/generated/image-a-calming-grounded-image-of-a-hybrid-wor.webp"
 		},
 		{
 			title: "Deeply understands your vision",
-			description: "Through ongoing conversations with leadership and team members, Sentra learns your priorities, goals, and the nuanced context behind every initiative.",
-			image: "/generated/image-a-group-of-business-leaders-in-a-strateg.webp",
-			features: ["Learns company priorities", "Understands team context", "Captures strategic nuance"]
+			description: "Through conversations with your team, Sentra learns your priorities and strategic context.",
+			image: "/generated/image-a-group-of-business-leaders-in-a-strateg.webp"
 		},
 		{
 			title: "Spots misalignment before it spreads",
-			description: "With real-time awareness across your organization, Sentra identifies conflicts, duplicate work, and communication breakdowns before they become costly problems.",
-			image: "/generated/image-a-close-up-shot-of-hands-in-motion-reach.webp",
-			features: ["Real-time monitoring", "Early warning system", "Prevents costly conflicts"]
+			description: "With real-time awareness, Sentra identifies conflicts and breakdowns before they become problems.",
+			image: "/generated/image-a-close-up-shot-of-hands-in-motion-reach.webp"
 		}
 	];
 </script>
 
 <section class="bg-gray-50">
 	<div class="section-px section-py container mx-auto">
-		<div class="mx-auto grid place-items-center text-center">
+		<div class="text-left">
 			<SectionHeader
 				title="Keep everyone on the same page"
 				subtitle="Sentra transforms organizational chaos into clarity through intelligent awareness and proactive intervention"
@@ -57,16 +54,6 @@
 								<p class="text-caption leading-relaxed text-gray-600">
 									{prop.description}
 								</p>
-
-								<!-- Feature List -->
-								<ul class="space-y-2">
-									{#each prop.features as feature}
-										<li class="flex items-center gap-3">
-											<div class="h-1.5 w-1.5 rounded-full bg-primary"></div>
-											<span class="text-footnote text-gray-700">{feature}</span>
-										</li>
-									{/each}
-								</ul>
 							</div>
 
 							<!-- Step Number -->
@@ -86,11 +73,5 @@
 			</div>
 		</div>
 
-		<!-- Bottom CTA -->
-		<div class="mx-auto mt-12 max-w-2xl text-center">
-			<p class="text-caption text-gray-600">
-				The result? Your team stays aligned, productive, and focused on what matters most—without the overhead of constant check-ins or surveillance.
-			</p>
-		</div>
 	</div>
 </section>
