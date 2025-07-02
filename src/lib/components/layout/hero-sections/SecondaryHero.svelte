@@ -4,7 +4,7 @@
 	let {
 		title,
 		subtitle,
-		imageSrc = "https://source.unsplash.com/random/?people",
+		imageSrc,
 		...rest
 	}: {
 		title: string;
