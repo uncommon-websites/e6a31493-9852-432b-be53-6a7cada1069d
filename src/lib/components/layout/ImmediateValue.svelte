@@ -56,24 +56,24 @@
 										</div>
 										
 										<!-- Connected nodes around it -->
-										<div class="absolute -left-8 -top-4 h-6 w-6 rounded-lg bg-gray-200 opacity-60 transition-all duration-300 group-hover:opacity-80">
-											<IconDatabase class="h-4 w-4 p-1 text-gray-500" />
+										<div class="absolute -left-12 -top-6 h-6 w-6 rounded-lg bg-gray-200 opacity-60 transition-all duration-300 group-hover:opacity-80 flex items-center justify-center">
+											<IconDatabase class="h-4 w-4 text-gray-500" />
 										</div>
-										<div class="absolute -right-8 -top-4 h-6 w-6 rounded-lg bg-gray-200 opacity-60 transition-all duration-300 group-hover:opacity-80">
-											<IconNetwork class="h-4 w-4 p-1 text-gray-500" />
+										<div class="absolute -right-12 -top-6 h-6 w-6 rounded-lg bg-gray-200 opacity-60 transition-all duration-300 group-hover:opacity-80 flex items-center justify-center">
+											<IconNetwork class="h-4 w-4 text-gray-500" />
 										</div>
-										<div class="absolute -left-8 bottom-4 h-6 w-6 rounded-lg bg-gray-200 opacity-60 transition-all duration-300 group-hover:opacity-80">
-											<IconGitBranch class="h-4 w-4 p-1 text-gray-500" />
+										<div class="absolute -left-12 bottom-2 h-6 w-6 rounded-lg bg-gray-200 opacity-60 transition-all duration-300 group-hover:opacity-80 flex items-center justify-center">
+											<IconGitBranch class="h-4 w-4 text-gray-500" />
 										</div>
-										<div class="absolute -right-8 bottom-4 h-6 w-6 rounded-lg bg-gray-200 opacity-60 transition-all duration-300 group-hover:opacity-80">
-											<IconShield class="h-4 w-4 p-1 text-gray-500" />
+										<div class="absolute -right-12 bottom-2 h-6 w-6 rounded-lg bg-gray-200 opacity-60 transition-all duration-300 group-hover:opacity-80 flex items-center justify-center">
+											<IconShield class="h-4 w-4 text-gray-500" />
 										</div>
 										
 										<!-- Connection lines -->
-										<div class="absolute h-px w-8 bg-gradient-to-r from-primary-300 to-transparent -left-8 top-1/2 transform -translate-y-1/2 opacity-40"></div>
-										<div class="absolute h-px w-8 bg-gradient-to-l from-primary-300 to-transparent -right-8 top-1/2 transform -translate-y-1/2 opacity-40"></div>
-										<div class="absolute w-px h-8 bg-gradient-to-b from-primary-300 to-transparent left-1/2 -top-8 transform -translate-x-1/2 opacity-40"></div>
-										<div class="absolute w-px h-8 bg-gradient-to-t from-primary-300 to-transparent left-1/2 -bottom-8 transform -translate-x-1/2 opacity-40"></div>
+										<div class="absolute h-px w-12 bg-gradient-to-r from-primary-300 to-transparent -left-12 top-1/2 transform -translate-y-1/2 opacity-40"></div>
+										<div class="absolute h-px w-12 bg-gradient-to-l from-primary-300 to-transparent -right-12 top-1/2 transform -translate-y-1/2 opacity-40"></div>
+										<div class="absolute w-px h-12 bg-gradient-to-b from-primary-300 to-transparent left-1/2 -top-12 transform -translate-x-1/2 opacity-40"></div>
+										<div class="absolute w-px h-12 bg-gradient-to-t from-primary-300 to-transparent left-1/2 -bottom-12 transform -translate-x-1/2 opacity-40"></div>
 									</div>
 								{:else if prop.visualization === "vision"}
 									<!-- Vision/Understanding Visualization -->
