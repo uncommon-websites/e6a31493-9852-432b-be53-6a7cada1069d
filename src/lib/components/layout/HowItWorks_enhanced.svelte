@@ -448,18 +448,55 @@
 											</div>
 										</div>
 									{:else if step.visual === "company-memory"}
-										<div class="w-full">
-											<div class="border-border flex items-center justify-between border-b py-2">
-												<span class="text-footnote">3 months ago</span>
-												<span class="text-caption font-medium">Project X initiated</span>
+										<div class="w-full space-y-6">
+											<!-- Timeline Item 1 -->
+											<div class="relative flex items-start gap-4">
+												<div class="relative flex flex-col items-center">
+													<div class="bg-primary h-3 w-3 rounded-full"></div>
+													<div class="bg-border mt-2 h-8 w-px"></div>
+												</div>
+												<div class="flex-1 pt-0">
+													<div class="bg-background border-border rounded-lg border p-3">
+														<div class="flex items-center justify-between">
+															<span class="text-caption font-medium">Project X initiated</span>
+															<span class="text-footnote text-muted-foreground">3 months ago</span>
+														</div>
+														<p class="text-footnote text-muted-foreground mt-1">Initial planning and team formation</p>
+													</div>
+												</div>
 											</div>
-											<div class="border-border flex items-center justify-between border-b py-2">
-												<span class="text-footnote">2 months ago</span>
-												<span class="text-caption font-medium">Architecture decision</span>
+
+											<!-- Timeline Item 2 -->
+											<div class="relative flex items-start gap-4">
+												<div class="relative flex flex-col items-center">
+													<div class="bg-secondary h-3 w-3 rounded-full"></div>
+													<div class="bg-border mt-2 h-8 w-px"></div>
+												</div>
+												<div class="flex-1 pt-0">
+													<div class="bg-background border-border rounded-lg border p-3">
+														<div class="flex items-center justify-between">
+															<span class="text-caption font-medium">Architecture decision</span>
+															<span class="text-footnote text-muted-foreground">2 months ago</span>
+														</div>
+														<p class="text-footnote text-muted-foreground mt-1">Technical stack and infrastructure choices</p>
+													</div>
+												</div>
 											</div>
-											<div class="flex items-center justify-between py-2">
-												<span class="text-footnote">1 month ago</span>
-												<span class="text-caption font-medium">Scope refinement</span>
+
+											<!-- Timeline Item 3 -->
+											<div class="relative flex items-start gap-4">
+												<div class="relative flex flex-col items-center">
+													<div class="bg-muted h-3 w-3 rounded-full"></div>
+												</div>
+												<div class="flex-1 pt-0">
+													<div class="bg-background border-border rounded-lg border p-3">
+														<div class="flex items-center justify-between">
+															<span class="text-caption font-medium">Scope refinement</span>
+															<span class="text-footnote text-muted-foreground">1 month ago</span>
+														</div>
+														<p class="text-footnote text-muted-foreground mt-1">Feature prioritization and timeline adjustment</p>
+													</div>
+												</div>
 											</div>
 										</div>
 									{:else if step.visual === "check-ins"}
