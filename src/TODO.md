@@ -1,11 +1,13 @@
-# Task: Redesign ImmediateValue Cards with Custom Visualizations
+# Task: Build /security Trust and Security Page
 
-- [x] Research icon usage patterns in codebase
-- [x] Design visualization for "Builds a memory" card (timeline/network concept)
-- [x] Design visualization for "Understands your vision" card (vision/target concept)  
-- [x] Design visualization for "Spots misalignment" card (detection/alignment concept)
-- [x] Increase card heights with better proportions
-- [x] Implement custom visualizations replacing images
-- [x] Ensure hover effects and transitions work with new design
-- [x] Polish visual hierarchy and spacing
+## Requirements
+- [x] Create /security route page
+- [x] Adapt Autograph security content for Sentra context
+- [x] Include certifications section (SOC 2 Type 1, GDPR, CCPA)
+- [x] Add resources section with downloadable documents
+- [x] Create PDF whitepaper download form
+- [x] Build security practices sections (encryption, infrastructure, monitoring)
+- [x] Add sub-processors section
+- [x] Include comprehensive FAQ section with dummy data
+- [x] Ensure professional design and user experience
 - [x] Final design system compliance check - verify design system classes prioritized over Tailwind, NO shadows, NO custom CSS, NO arbitrary values, check theme.css, app.css and typography.css
