@@ -16,7 +16,6 @@
 	centered={true}
 	title="Scale companies effectively with Sentra"
 	subtitle="Your AI teammate that improves alignment across your organization by proactively sensing when problems may occur and allowing leaders to intervene to intercept them."
-	imageSrc="/uploaded/1751456847103-j0mcxtl.webp"
 	callsToAction={[
 		{
 			href: "/contact",
