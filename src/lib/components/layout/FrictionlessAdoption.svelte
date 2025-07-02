@@ -61,32 +61,33 @@
 								"group w-full text-left transition-all duration-300 ease-out",
 								"rounded-2xl p-6",
 								activeStep === step.id 
-									? "border-2 border-primary bg-primary/5" 
+									? "bg-primary-50" 
 									: "bg-white hover:bg-gray-50"
 							]}
 						>
-							<div class="flex items-center gap-4">
-								<!-- Step Dot -->
-								<div class={[
-									"flex h-3 w-3 flex-shrink-0 items-center justify-center rounded-full transition-colors duration-300",
-									activeStep === step.id 
-										? "bg-primary" 
-										: "bg-gray-200 group-hover:bg-gray-300"
-								]}>
-								</div>
-								
-								<!-- Step Content -->
+							<div class="flex gap-4">
+								<!-- Step Content with Dot aligned to heading -->
 								<div class="flex-1 min-w-0">
-									<h3 class={[
-										"text-headline font-semibold transition-colors duration-300",
-										activeStep === step.id 
-											? "text-primary" 
-											: "text-gray-900 group-hover:text-gray-700"
-									]}>
-										{step.title}
-									</h3>
+									<div class="flex items-center gap-4">
+										<!-- Step Dot aligned to heading -->
+										<div class={[
+											"flex h-3 w-3 flex-shrink-0 items-center justify-center rounded-full transition-colors duration-300",
+											activeStep === step.id 
+												? "bg-primary" 
+												: "bg-gray-200 group-hover:bg-gray-300"
+										]}>
+										</div>
+										<h3 class={[
+											"text-headline font-semibold transition-colors duration-300",
+											activeStep === step.id 
+												? "text-primary" 
+												: "text-gray-900 group-hover:text-gray-700"
+										]}>
+											{step.title}
+										</h3>
+									</div>
 									<p class={[
-										"mt-2 text-caption leading-relaxed transition-colors duration-300",
+										"mt-2 ml-7 text-caption leading-relaxed transition-colors duration-300",
 										activeStep === step.id 
 											? "text-gray-700" 
 											: "text-gray-600"
