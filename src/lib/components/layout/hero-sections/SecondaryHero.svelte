@@ -9,7 +9,7 @@
 	}: {
 		title: string;
 		subtitle: string;
-		imageSrc: string;
+		imageSrc?: string;
 	} = $props();
 </script>
 
