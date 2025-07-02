@@ -66,13 +66,12 @@
 </script>
 
 <div class="bg-background relative overflow-hidden" {...rest}>
-	<!-- Background glow -->
-	<div class="absolute inset-0 z-0">
-		<div class="absolute inset-0 bg-gradient-radial from-primary-500/10 via-primary-600/5 to-transparent"></div>
-	</div>
-
 	<header class="section-px container mx-auto relative z-20 min-h-[80vh] py-12 pt-24">
-		<div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center h-full">
+		<!-- Background glow -->
+		<div class="absolute inset-0 z-0">
+			<div class="absolute inset-0 bg-gradient-radial from-primary-500/10 via-primary-600/5 to-transparent"></div>
+		</div>
+		<div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center h-full relative z-10">
 			<!-- Left side - Text content -->
 			<div class="grid gap-8" data-enter-container>
 				<div class="grid gap-6">
