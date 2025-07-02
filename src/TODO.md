@@ -1,9 +1,10 @@
-# Task: Update Security Component with Detailed Compliance Logos
+# Task: Create Frictionless Adoption Section
 
-- [x] View current Security.svelte component structure
-- [x] Replace existing logos section with 3-column grid layout
-- [x] Update logos to use uploaded images with proper styling (w-40/w-48, opacity-75, invert)
-- [x] Add certification details and external links
-- [x] Implement "Details" buttons with arrow icons
-- [x] Ensure responsive behavior (1 col mobile, 3 col desktop)
-- [ ] Final design system compliance check - verify design system classes prioritized over Tailwind, NO shadows, NO custom CSS, NO arbitrary values, check theme.css, app.css and typography.css
+- [x] Create new FrictionlessAdoption component with interactive step-based layout
+- [x] Generate appropriate images for each step's visual content  
+- [x] Add FrictionlessAdoption component to main page below AboutTeaser
+- [x] Design left sidebar with clickable steps and right content area that changes
+- [x] Implement the 4 specific sections: Connect to calendar, Add to workspace, Contextualized work coach, Working in the background
+- [x] Apply Apple-like design aesthetic using existing design system
+- [x] Test interactivity and ensure smooth transitions
+- [x] Final design system compliance check - verify design system classes prioritized over Tailwind, NO shadows, NO custom CSS, NO arbitrary values, check theme.css, app.css and typography.css

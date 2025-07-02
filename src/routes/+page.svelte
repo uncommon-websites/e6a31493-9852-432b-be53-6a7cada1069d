@@ -12,6 +12,7 @@
 	import SplitHero from "$lib/components/layout/hero-sections/SplitHero.svelte";
 	import HowItWorks from "$lib/components/layout/HowItWorks_enhanced.svelte";
 	import Security from "$lib/components/layout/Security.svelte";
+	import FrictionlessAdoption from "$lib/components/layout/FrictionlessAdoption.svelte";
 </script>
 
 <SplitHero
@@ -122,5 +123,6 @@
 /> -->
 
 <AboutTeaser />
+<FrictionlessAdoption />
 <Security />
 <CallToAction />
