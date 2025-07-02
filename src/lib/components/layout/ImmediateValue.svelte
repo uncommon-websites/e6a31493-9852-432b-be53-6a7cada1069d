@@ -33,9 +33,9 @@
 		<div class="mx-auto max-w-7xl">
 			<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
 				{#each valueProps as prop, index}
-					<div class="group relative">
+					<div class="group flex">
 						<!-- Card Container -->
-						<div class="relative overflow-hidden rounded-3xl bg-white p-8 transition-all duration-300 hover:bg-gray-50">
+						<div class="relative flex w-full flex-col overflow-hidden rounded-3xl bg-white p-8 transition-all duration-300 hover:bg-gray-50">
 							<!-- Image Container -->
 							<div class="mb-6 overflow-hidden rounded-2xl">
 								<img
@@ -46,7 +46,7 @@
 							</div>
 
 							<!-- Content -->
-							<div class="space-y-4">
+							<div class="flex-1 space-y-4">
 								<h3 class="text-headline font-semibold text-gray-900">
 									{prop.title}
 								</h3>
@@ -63,11 +63,6 @@
 								</div>
 							</div>
 						</div>
-
-						<!-- Connection Line (except for last item) -->
-						{#if index < valueProps.length - 1}
-							<div class="absolute -right-4 top-1/2 hidden h-0.5 w-8 -translate-y-1/2 bg-gradient-to-r from-primary to-primary/30 md:block"></div>
-						{/if}
 					</div>
 				{/each}
 			</div>
