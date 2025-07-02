@@ -48,7 +48,6 @@
 				<div class="flex justify-center mb-8 pb-6 border-b border-border">
 					<div class="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-16 max-w-2xl">
 						<div class="flex w-full flex-col items-center justify-center space-y-4">
-							<img width="200" height="200" decoding="async" data-nimg="1" class="w-40 object-contain opacity-75 invert md:w-48" style="color: transparent;" alt="Build SOC Type 2" src="/uploaded/build-soc2.webp" />
 							<div class="flex flex-col items-center justify-between gap-2">
 								<p class="text-center">SOC2 II (In Observation)</p>
 								<svg class="w-5 h-5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -57,7 +56,6 @@
 							</div>
 						</div>
 						<div class="flex w-full flex-col items-center justify-center space-y-4">
-							<img width="200" height="200" decoding="async" data-nimg="1" class="w-40 object-contain opacity-75 invert md:w-48" style="color: transparent;" alt="Build GDPR" src="/uploaded/build-gdpr.webp" />
 							<div class="flex flex-col items-center justify-between gap-2">
 								<p class="text-center">GDPR</p>
 								<svg class="w-5 h-5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -66,7 +64,6 @@
 							</div>
 						</div>
 						<div class="flex w-full flex-col items-center justify-center space-y-4">
-							<img width="200" height="200" decoding="async" data-nimg="1" class="w-40 object-contain opacity-75 invert md:w-48" style="color: transparent;" alt="Build CCPA" src="/uploaded/build-ccpa.webp" />
 							<div class="flex flex-col items-center justify-between gap-2">
 								<p class="text-center">CCPA</p>
 								<svg class="w-5 h-5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
