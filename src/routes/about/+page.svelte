@@ -92,7 +92,7 @@
 		class="section-py section-px container mx-auto"
 		style="background-color: var(--color-background);"
 	>
-		<div class="max-w-prose">
+		<div class="max-w-prose mx-auto">
 			<h2 class="text-title1 section-mb-sm" style="color: var(--color-foreground);">
 				The future of autonomous enterprise
 			</h2>
