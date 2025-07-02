@@ -1,8 +1,6 @@
-# Task: Decrease gap between cards and give illustrations more room
+# Task: Remove Card Hover Effects and Make Icons Round
 
-- [x] Examine HowItWorks component to locate the grid layout
-- [x] Reduce gap between cards from gap-8 to gap-4 or gap-6
-- [x] Change illustration container height from h-32 to higher value
-- [x] Add aspect-video class to illustration container
-- [x] Test that layout works properly on mobile and desktop
+- [x] Remove card hover background state (hover:bg-gray-50)
+- [x] Remove all scale effects (group-hover:scale-110, group-hover:scale-105)
+- [x] Change main centered icons from rounded-2xl to rounded-full
 - [x] Final design system compliance check - verify design system classes prioritized over Tailwind, NO shadows, NO custom CSS, NO arbitrary values, check theme.css, app.css and typography.css

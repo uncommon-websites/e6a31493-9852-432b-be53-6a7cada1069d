@@ -44,28 +44,28 @@
 				{#each valueProps as prop, index}
 					<div class="group flex">
 						<!-- Card Container -->
-						<div class="relative flex w-full flex-col overflow-hidden rounded-3xl bg-white p-10 transition-all duration-300 hover:bg-gray-50 min-h-[400px]">
+						<div class="relative flex w-full flex-col overflow-hidden rounded-3xl bg-white p-10 min-h-[400px]">
 							<!-- Visualization Container -->
 							<div class="mb-8 flex aspect-video items-center justify-center">
 								{#if prop.visualization === "memory"}
 									<!-- Memory/Timeline Visualization -->
 									<div class="relative flex items-center justify-center">
 										<!-- Central brain icon -->
-										<div class="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary-100 text-primary-600 transition-all duration-300 group-hover:scale-110 group-hover:bg-primary-200">
+										<div class="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-primary-100 text-primary-600">
 											<IconBrain class="h-8 w-8" />
 										</div>
 										
 										<!-- Connected nodes around it -->
-										<div class="absolute -left-12 -top-6 h-6 w-6 rounded-lg bg-gray-200 opacity-60 transition-all duration-300 group-hover:opacity-80 flex items-center justify-center">
+										<div class="absolute -left-12 -top-6 h-6 w-6 rounded-lg bg-gray-200 opacity-60 flex items-center justify-center">
 											<IconDatabase class="h-4 w-4 text-gray-500" />
 										</div>
-										<div class="absolute -right-12 -top-6 h-6 w-6 rounded-lg bg-gray-200 opacity-60 transition-all duration-300 group-hover:opacity-80 flex items-center justify-center">
+										<div class="absolute -right-12 -top-6 h-6 w-6 rounded-lg bg-gray-200 opacity-60 flex items-center justify-center">
 											<IconNetwork class="h-4 w-4 text-gray-500" />
 										</div>
-										<div class="absolute -left-12 bottom-2 h-6 w-6 rounded-lg bg-gray-200 opacity-60 transition-all duration-300 group-hover:opacity-80 flex items-center justify-center">
+										<div class="absolute -left-12 bottom-2 h-6 w-6 rounded-lg bg-gray-200 opacity-60 flex items-center justify-center">
 											<IconGitBranch class="h-4 w-4 text-gray-500" />
 										</div>
-										<div class="absolute -right-12 bottom-2 h-6 w-6 rounded-lg bg-gray-200 opacity-60 transition-all duration-300 group-hover:opacity-80 flex items-center justify-center">
+										<div class="absolute -right-12 bottom-2 h-6 w-6 rounded-lg bg-gray-200 opacity-60 flex items-center justify-center">
 											<IconShield class="h-4 w-4 text-gray-500" />
 										</div>
 										
@@ -79,14 +79,14 @@
 									<!-- Vision/Understanding Visualization -->
 									<div class="relative flex items-center justify-center">
 										<!-- Central eye icon with layered understanding -->
-										<div class="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary-100 text-secondary-600 transition-all duration-300 group-hover:scale-110 group-hover:bg-secondary-200">
+										<div class="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-secondary-100 text-secondary-600">
 											<IconEye class="h-8 w-8" />
 										</div>
 										
 										<!-- Concentric circles representing layers of understanding -->
-										<div class="absolute h-20 w-20 rounded-full border-2 border-secondary-200 opacity-30 transition-all duration-300 group-hover:scale-105"></div>
-										<div class="absolute h-28 w-28 rounded-full border border-secondary-200 opacity-20 transition-all duration-300 group-hover:scale-105"></div>
-										<div class="absolute h-36 w-36 rounded-full border border-secondary-200 opacity-10 transition-all duration-300 group-hover:scale-105"></div>
+										<div class="absolute h-20 w-20 rounded-full border-2 border-secondary-200 opacity-30"></div>
+										<div class="absolute h-28 w-28 rounded-full border border-secondary-200 opacity-20"></div>
+										<div class="absolute h-36 w-36 rounded-full border border-secondary-200 opacity-10"></div>
 										
 										<!-- Target points -->
 										<div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
@@ -100,7 +100,7 @@
 									<!-- Detection/Radar Visualization -->
 									<div class="relative flex items-center justify-center">
 										<!-- Central radar icon -->
-										<div class="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl bg-orange-100 text-orange-600 transition-all duration-300 group-hover:scale-110 group-hover:bg-orange-200">
+										<div class="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-orange-100 text-orange-600">
 											<IconRadar class="h-8 w-8" />
 										</div>
 										
@@ -110,13 +110,13 @@
 										</div>
 										
 										<!-- Warning indicators at different positions -->
-										<div class="absolute -top-4 -left-4 transition-all duration-300 group-hover:scale-110">
+										<div class="absolute -top-4 -left-4">
 											<IconAlertTriangle class="h-5 w-5 text-orange-400 opacity-70" />
 										</div>
-										<div class="absolute -top-4 -right-4 transition-all duration-300 group-hover:scale-110">
+										<div class="absolute -top-4 -right-4">
 											<IconAlertTriangle class="h-5 w-5 text-orange-400 opacity-50" />
 										</div>
-										<div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 transition-all duration-300 group-hover:scale-110">
+										<div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2">
 											<IconAlertTriangle class="h-5 w-5 text-orange-400 opacity-60" />
 										</div>
 										
