@@ -1,10 +1,12 @@
-# Task: Replace inline CSS variables with Tailwind classes
+# Task: Remove individuals/companies tab - keep only companies messaging
 
-- [x] View design system files to understand available classes
-- [x] Replace style="var(--color-*)" with proper Tailwind classes in CompactTeam.svelte
-- [x] Replace style="var(--color-*)" with proper Tailwind classes in Footer.svelte
-- [x] Replace style="var(--color-*)" with proper Tailwind classes in HowItWorks_enhanced.svelte (no inline styles found)
-- [x] Replace style="var(--color-*)" with proper Tailwind classes in Nav.svelte (no inline styles found)
-- [x] Replace style="var(--color-*)" with proper Tailwind classes in Pricing.svelte (no inline styles found)
-- [x] Replace style="var(--color-*)" with proper Tailwind classes in StakeholderGrid.svelte (no inline styles found)
-- [x] Final design system compliance check - verify design system classes prioritized over Tailwind, NO shadows, NO custom CSS, NO arbitrary values, check theme.css, app.css and typography.css
+- [x] Check which HowItWorks component is being used in main page
+- [x] Remove tab navigation UI completely
+- [x] Remove individualSteps data array and all individual-related content
+- [x] Remove activeTab state and tab switching logic
+- [x] Simplify currentSteps to only use organizationSteps
+- [x] Remove individual CTA section, keep only organization CTA
+- [x] Clean up unused imports and functions
+- [x] Update section header if needed (no changes needed)
+- [x] Test that organization content displays properly
+- [x] Final design system compliance check - verified design system classes are properly used (section-px, section-py, text-title1, text-body, etc.), no shadows used, no custom CSS, no arbitrary values, theme.css, app.css and typography.css all properly structured

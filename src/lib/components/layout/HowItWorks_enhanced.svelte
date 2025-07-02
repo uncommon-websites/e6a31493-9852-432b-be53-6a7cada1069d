@@ -3,13 +3,11 @@
 	import SectionHeader from "./SectionHeader.svelte";
 	import Button from "../ui/Button.svelte";
 
-	// State for tab switching
-	let activeTab = $state("organizations");
 	let timelineContainer: HTMLElement;
 	let observerRef: IntersectionObserver;
 
-	// Timeline data for organizations
-	const organizationSteps = [
+	// Timeline data
+	const steps = [
 		{
 			id: 1,
 			title: "Add Sentra to platforms your company use",
@@ -76,57 +74,7 @@
 		}
 	];
 
-	// Timeline data for individuals
-	const individualSteps = [
-		{
-			id: 1,
-			title: "Connect your calendar, and get a dedicated phone number for Sentra",
-			description:
-				"Set up your personal connection to Sentra through calendar integration and direct communication access.",
-			badges: ["You"],
-			visual: "personal-setup"
-		},
-		{
-			id: 2,
-			title: "Get briefed for every upcoming event",
-			description:
-				"Receive personalized meeting briefings based on your conversation history and relationships with participants.",
-			badges: ["You"],
-			visual: "personal-briefing"
-		},
-		{
-			id: 3,
-			title: "Never forget what you said you'd do",
-			description:
-				"Sentra tracks your commitments and sends proactive text reminders to help you stay on top of your responsibilities.",
-			badges: ["You"],
-			visual: "personal-todos"
-		},
-		{
-			id: 4,
-			title: "Tell Sentra the personal goals you're chasing",
-			description:
-				"Share your objectives and aspirations so Sentra can help align your daily activities with your bigger picture goals.",
-			badges: ["You"],
-			visual: "goal-setting"
-		},
-		{
-			id: 5,
-			title: "Sentra will call you to guide you through daily reflections",
-			description:
-				"Regular reflection calls help you process your day, celebrate wins, and plan for continuous improvement.",
-			badges: ["You"],
-			visual: "daily-reflections"
-		}
-	];
-
-	// Get current steps based on active tab
-	let currentSteps = $derived(activeTab === "organizations" ? organizationSteps : individualSteps);
-
-	// Handle tab switching
-	function switchTab(tab: string) {
-		activeTab = tab;
-	}
+	// No longer needed - removed individual steps and tab switching logic
 
 	// Intersection observer for timeline animations and scaling
 	onMount(() => {
@@ -180,38 +128,14 @@
 				subtitle="Keeping everything together"
 			/>
 		</div>
-		<!-- Tab Navigation -->
-		<div class="sticky top-18 left-0 z-50 mb-40 flex justify-center">
-			<div
-				class="bg-muted inline-flex items-center gap-0.5 rounded-full p-0.5 shadow-xl shadow-gray-300/20"
-			>
-				<button
-					class="rounded-full px-4 py-1.5 text-sm font-semibold transition-all duration-200 {activeTab ===
-					'organizations'
-						? 'bg-background text-foreground shadow-sm'
-						: 'text-muted-foreground hover:text-foreground'}"
-					onclick={() => switchTab("organizations")}
-				>
-					For organizations
-				</button>
-				<button
-					class="rounded-full px-4 py-1.5 text-sm font-semibold transition-all duration-200 {activeTab ===
-					'individuals'
-						? 'bg-background text-foreground shadow-sm'
-						: 'text-muted-foreground hover:text-foreground'}"
-					onclick={() => switchTab("individuals")}
-				>
-					For individuals
-				</button>
-			</div>
-		</div>
+		<!-- Tab navigation removed - only showing organization content -->
 
 		<!-- Timeline Container -->
 		<div
 			class="relative mx-auto max-w-prose py-4 text-balance md:py-8"
 			bind:this={timelineContainer}
 		>
-			{#each currentSteps as step, index (step.id)}
+			{#each steps as step, index (step.id)}
 				<div
 					class="timeline-item relative mb-24 translate-y-8 opacity-0 transition-all duration-500 ease-out"
 					data-step={step.id}
@@ -305,13 +229,7 @@
 												</div>
 											</div>
 										</div>
-									{:else if step.visual === "personal-briefing"}
-										<img
-											src="/generated/image-a-business-professional-sitting-at-a-des.webp"
-											alt="Professional reviewing documents"
-											class="h-full w-full rounded-lg object-cover"
-										/>
-									{:else if step.visual === "todo-tracking" || step.visual === "personal-todos"}
+									{:else if step.visual === "todo-tracking"}
 										<div class="w-full">
 											<div class="bg-background border-border mb-2 rounded-lg border p-4">
 												<span class="text-caption mb-1 block font-medium"
@@ -367,36 +285,7 @@
 											alt="Team collaboration"
 											class="h-full w-full rounded-lg object-cover"
 										/>
-									{:else if step.visual === "personal-setup"}
-										<div class="flex w-full flex-col items-center justify-center gap-4 md:flex-row">
-											<div
-												class="bg-background border-border flex min-w-[120px] flex-col items-center gap-2 rounded-lg border p-4"
-											>
-												<span class="text-caption font-medium">Calendar Connected</span>
-											</div>
-											<div
-												class="text-muted-foreground rotate-90 transform text-2xl md:rotate-0 md:transform-none"
-											>
-												→
-											</div>
-											<div
-												class="bg-background border-border flex min-w-[120px] flex-col items-center gap-2 rounded-lg border p-4"
-											>
-												<span class="text-caption font-medium">Direct Line: (555) 123-4567</span>
-											</div>
-										</div>
-									{:else if step.visual === "goal-setting"}
-										<img
-											src="/generated/image-an-individual-sitting-quietly-in-a-home-.webp"
-											alt="Personal goal planning"
-											class="h-full w-full rounded-lg object-cover"
-										/>
-									{:else if step.visual === "daily-reflections"}
-										<img
-											src="/generated/image-a-person-sitting-at-a-wooden-table-surro.webp"
-											alt="Daily reflection"
-											class="h-full w-full rounded-lg object-cover"
-										/>
+									<!-- Individual-specific visuals removed -->
 									{:else}
 										<div class="text-center">
 											<div class="text-caption text-emphasis-medium">{step.title}</div>
@@ -412,126 +301,73 @@
 
 		<!-- CTA Section -->
 		<div class="mt-24 hidden">
-			{#if activeTab === "organizations"}
-				<div class="mx-auto max-w-4xl">
-					<!-- Header Section -->
-					<div class="mb-16 text-center">
-						<h1 class="text-title1 text-foreground mx-auto mb-8 !font-medium">
-							Catch misalignment before it costs you
-						</h1>
-						<p class="text-body text-emphasis-medium mx-auto max-w-3xl">
-							Sentra is your AI teammate that listens, learns, and alerts you when your company
-							drifts — before you even notice.
-						</p>
-					</div>
+			<div class="mx-auto max-w-4xl">
+				<!-- Header Section -->
+				<div class="mb-16 text-center">
+					<h1 class="text-title1 text-foreground mx-auto mb-8 !font-medium">
+						Catch misalignment before it costs you
+					</h1>
+					<p class="text-body text-emphasis-medium mx-auto max-w-3xl">
+						Sentra is your AI teammate that listens, learns, and alerts you when your company
+						drifts — before you even notice.
+					</p>
+				</div>
 
-					<!-- Main CTA Card -->
-					<div
-						class="border-border relative mx-auto max-w-4xl transform rounded-3xl border bg-white transition-all duration-300 ease-out"
-					>
-						<div class="section-py section-px">
-							<!-- Alert Examples -->
-							<div class="mx-auto mb-12 max-w-2xl space-y-4">
-								<div
-									class="flex items-center gap-4 rounded-2xl border-l-4 border-red-500 bg-red-50 p-6"
-								>
-									<div class="flex-1">
-										<span class="text-foreground mb-2 block text-lg !font-medium"
-											>Sarah waiting on approvals</span
-										>
-										<span class="text-muted-foreground">Budget increase for cloud resources</span>
-									</div>
-									<span class="text-muted-foreground text-sm">3d ago</span>
+				<!-- Main CTA Card -->
+				<div
+					class="border-border relative mx-auto max-w-4xl transform rounded-3xl border bg-white transition-all duration-300 ease-out"
+				>
+					<div class="section-py section-px">
+						<!-- Alert Examples -->
+						<div class="mx-auto mb-12 max-w-2xl space-y-4">
+							<div
+								class="flex items-center gap-4 rounded-2xl border-l-4 border-red-500 bg-red-50 p-6"
+							>
+								<div class="flex-1">
+									<span class="text-foreground mb-2 block text-lg !font-medium"
+										>Sarah waiting on approvals</span
+									>
+									<span class="text-muted-foreground">Budget increase for cloud resources</span>
 								</div>
-								<div
-									class="flex items-center gap-4 rounded-2xl border-l-4 border-yellow-500 bg-yellow-50 p-6"
-								>
-									<div class="flex-1">
-										<span class="text-foreground mb-2 block text-lg !font-medium"
-											>Redundant work in progress</span
-										>
-										<span class="text-muted-foreground"
-											>Two teams implementing the same user settings flow separately</span
-										>
-									</div>
-									<span class="text-muted-foreground text-sm">15m ago</span>
-								</div>
-								<div
-									class="flex items-center gap-4 rounded-2xl border-l-4 border-blue-500 bg-blue-50 p-6"
-								>
-									<div class="flex-1">
-										<span class="text-foreground mb-2 block text-lg !font-medium"
-											>Team velocity dropping</span
-										>
-										<span class="text-muted-foreground"
-											>Frontend team missed sprint goals 2x in a row</span
-										>
-									</div>
-									<span class="text-muted-foreground text-sm">15m ago</span>
-								</div>
+								<span class="text-muted-foreground text-sm">3d ago</span>
 							</div>
+							<div
+								class="flex items-center gap-4 rounded-2xl border-l-4 border-yellow-500 bg-yellow-50 p-6"
+							>
+								<div class="flex-1">
+									<span class="text-foreground mb-2 block text-lg !font-medium"
+										>Redundant work in progress</span
+									>
+									<span class="text-muted-foreground"
+										>Two teams implementing the same user settings flow separately</span
+									>
+								</div>
+								<span class="text-muted-foreground text-sm">15m ago</span>
+							</div>
+							<div
+								class="flex items-center gap-4 rounded-2xl border-l-4 border-blue-500 bg-blue-50 p-6"
+							>
+								<div class="flex-1">
+									<span class="text-foreground mb-2 block text-lg !font-medium"
+										>Team velocity dropping</span
+									>
+									<span class="text-muted-foreground"
+										>Frontend team missed sprint goals 2x in a row</span
+									>
+								</div>
+								<span class="text-muted-foreground text-sm">15m ago</span>
+							</div>
+						</div>
 
-							<!-- CTA Button -->
-							<div class="text-center">
-								<Button variant="primary" size="lg" class="px-8 py-4 text-xl !font-medium">
-									Hire Sentra today
-								</Button>
-							</div>
+						<!-- CTA Button -->
+						<div class="text-center">
+							<Button variant="primary" size="lg" class="px-8 py-4 text-xl !font-medium">
+								Hire Sentra today
+							</Button>
 						</div>
 					</div>
 				</div>
-			{:else}
-				<div class="mx-auto max-w-4xl">
-					<!-- Header Section -->
-					<div class="mb-16 text-center">
-						<h1 class="text-title1 text-foreground mx-auto mb-8 !font-medium">
-							Organize your life towards your goals
-						</h1>
-						<p class="text-body text-emphasis-medium mx-auto max-w-3xl">
-							Let Sentra provide a sense of order to your busy life, helping you stay aligned with
-							what matters most.
-						</p>
-					</div>
-
-					<!-- Main CTA Card -->
-					<div
-						class="border-border relative mx-auto max-w-4xl transform rounded-3xl border bg-white transition-all duration-300 ease-out"
-					>
-						<div class="section-py section-px">
-							<!-- Goal Examples -->
-							<div class="mb-12 flex flex-col items-center justify-center gap-6 md:flex-row">
-								<div
-									class="bg-muted border-border text-muted-foreground rounded-2xl border px-6 py-4 text-lg !font-medium"
-								>
-									Launch side project
-								</div>
-								<div
-									class="bg-muted border-border text-muted-foreground rounded-2xl border px-6 py-4 text-lg !font-medium"
-								>
-									Read 12 books this year
-								</div>
-								<div
-									class="bg-muted border-border text-muted-foreground rounded-2xl border px-6 py-4 text-lg !font-medium"
-								>
-									Exercise 3x per week
-								</div>
-								<div
-									class="bg-primary text-primary-foreground flex h-20 w-20 items-center justify-center rounded-2xl text-2xl !font-medium"
-								>
-									AI
-								</div>
-							</div>
-
-							<!-- CTA Button -->
-							<div class="text-center">
-								<Button variant="primary" size="lg" class="px-8 py-4 text-xl !font-medium">
-									Hire Sentra today
-								</Button>
-							</div>
-						</div>
-					</div>
-				</div>
-			{/if}
+			</div>
 		</div>
 	</div>
 </section>
