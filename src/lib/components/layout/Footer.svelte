@@ -24,8 +24,7 @@
 			<Logo class="size-7" />
 			<div class="text-headline">
 				{CONFIG.companyName}<sup
-					class="ml-0.5 align-super text-[.25em]"
-					style="color: var(--color-foreground);">TM</sup
+					class="ml-0.5 align-super text-[.25em] text-foreground">TM</sup
 				>
 			</div>
 		</div>
@@ -59,8 +58,7 @@
 
 		<!-- Footer bottom section -->
 		<div
-			class="col-span-full border-t py-6"
-			style="border-color: var(--color-border); color: var(--color-muted-foreground);"
+			class="col-span-full border-t py-6 border-border text-muted-foreground"
 		>
 			<div class="grid grid-cols-2 items-start justify-between gap-4 gap-x-32 text-sm">
 				<div>
@@ -79,11 +77,10 @@
 	@reference '../../../app.css';
 
 	a {
-		@apply inline-block underline decoration-transparent transition-all duration-300 ease-out;
-		color: var(--color-foreground);
+		@apply inline-block underline decoration-transparent transition-all duration-300 ease-out text-foreground;
 
 		&:hover {
-			color: var(--color-muted-foreground);
+			@apply text-muted-foreground;
 		}
 	}
 </style>
