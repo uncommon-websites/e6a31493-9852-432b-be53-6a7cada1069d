@@ -137,7 +137,7 @@
 		>
 			{#each steps as step, index (step.id)}
 				<div
-					class="timeline-item relative mb-24 translate-y-8 opacity-0 transition-all duration-500 ease-out"
+					class="timeline-item relative mb-8 translate-y-8 opacity-0 transition-all duration-500 ease-out"
 					data-step={step.id}
 				>
 					{#if index > 0}
@@ -219,16 +219,94 @@
 											</div>
 										</div>
 									{:else if step.visual === "calendar-sharing"}
-										<img
-											src="/generated/image-a-modern-office-space-with-a-blend-of-sl.webp"
-											alt="Modern office workspace"
-											class="h-full w-full rounded-lg object-cover"
-										/>
+										<div class="w-full space-y-4">
+											<div class="bg-background border-border rounded-lg border p-4">
+												<div class="mb-3 flex items-center justify-between">
+													<span class="text-caption font-medium">Team Calendar Access</span>
+													<span
+														class="bg-primary text-primary-foreground rounded-full px-2 py-1 text-xs font-medium"
+														>8 calendars shared</span
+													>
+												</div>
+												<div class="space-y-3">
+													<div class="flex items-center justify-between">
+														<div class="flex items-center gap-3">
+															<div
+																class="bg-primary text-primary-foreground flex h-8 w-8 items-center justify-center rounded-full text-sm font-medium"
+															>
+																JP
+															</div>
+															<div>
+																<p class="text-caption font-medium">Jae Park</p>
+																<p class="text-footnote text-muted-foreground">CEO</p>
+															</div>
+														</div>
+														<span
+															class="rounded-full bg-green-100 px-2 py-1 text-xs font-medium text-green-800"
+															>Full access</span
+														>
+													</div>
+													<div class="flex items-center justify-between">
+														<div class="flex items-center gap-3">
+															<div
+																class="bg-secondary text-secondary-foreground flex h-8 w-8 items-center justify-center rounded-full text-sm font-medium"
+															>
+																AS
+															</div>
+															<div>
+																<p class="text-caption font-medium">Andrey Starenky</p>
+																<p class="text-footnote text-muted-foreground">CTO</p>
+															</div>
+														</div>
+														<span
+															class="rounded-full bg-green-100 px-2 py-1 text-xs font-medium text-green-800"
+															>Full access</span
+														>
+													</div>
+													<div class="flex items-center justify-between">
+														<div class="flex items-center gap-3">
+															<div
+																class="bg-muted text-muted-foreground flex h-8 w-8 items-center justify-center rounded-full text-sm font-medium"
+															>
+																AG
+															</div>
+															<div>
+																<p class="text-caption font-medium">Ashwin Gopinath</p>
+																<p class="text-footnote text-muted-foreground">Co-founder</p>
+															</div>
+														</div>
+														<span
+															class="rounded-full bg-blue-100 px-2 py-1 text-xs font-medium text-blue-800"
+															>View only</span
+														>
+													</div>
+												</div>
+											</div>
+											<div class="bg-background border-border rounded-lg border p-4">
+												<div class="mb-3 flex items-center justify-between">
+													<span class="text-caption font-medium">Calendar Insights</span>
+													<span class="text-footnote text-muted-foreground">This week</span>
+												</div>
+												<div class="grid grid-cols-2 gap-3">
+													<div class="text-center">
+														<p class="text-title3 font-medium">24</p>
+														<p class="text-footnote text-muted-foreground">Team meetings</p>
+													</div>
+													<div class="text-center">
+														<p class="text-title3 font-medium">6h</p>
+														<p class="text-footnote text-muted-foreground">Focus time</p>
+													</div>
+												</div>
+											</div>
+										</div>
 									{:else if step.visual === "meeting-briefing"}
 										<div class="bg-background border-border w-full rounded-lg border p-4">
 											<div class="mb-2 flex items-center justify-between">
 												<span class="text-headline font-medium">Meeting Brief</span>
-												<span class="bg-primary text-primary-foreground rounded-full px-3 py-1 text-xs font-medium">9:30 AM</span>
+												<span
+													class="bg-primary text-primary-foreground rounded-full px-3 py-1 text-xs font-medium"
+													>9:30 AM</span
+												>
 											</div>
 											<div class="space-y-1">
 												<p><strong>User research review with Sarah</strong></p>
