@@ -14,8 +14,9 @@
 
 <Hero 
 	centered={true}
-	title="Prevent issues before they arise"
-	subtitle="Sentra is your AI teammate that spots organizational misalignment before it becomes costly, keeping your fast-growing team in sync and on track."
+	title="Scale companies effectively with Sentra"
+	subtitle="Your AI teammate that improves alignment across your organization by proactively sensing when problems may occur and allowing leaders to intervene to intercept them."
+	imageSrc="/uploaded/1751456847103-j0mcxtl.webp"
 	callsToAction={[
 		{
 			href: "/contact",
@@ -29,15 +30,16 @@
 />
 
 <SlideshowHero />
-<!-- <LogoScroller 
-	label="Trusted by fast-growing companies" 
+<LogoScroller 
+	label="Backed by industry leaders" 
 	logoUrls={[
+		'https://logo.clearbit.com/microsoft.com',
 		'https://logo.clearbit.com/notion.so',
 		'https://logo.clearbit.com/figma.com',
 		'https://logo.clearbit.com/airtable.com',
 		'https://logo.clearbit.com/linear.app'
 	]}
-/> -->
+/>
 
 <Summary
 	title="What we do"

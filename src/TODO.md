@@ -1,8 +1,9 @@
-# Task: Fix Hero Component Issues
+# Task: Update Landing Page Hero with New Value Prop and Visual
 
-- [x] Remove all shadow classes from Hero component (drop-shadow-lg, drop-shadow-md)
-- [x] Fix white text on white background visibility issue
-- [x] Remove notification card functionality from this hero
-- [x] Look for other existing hero components to potentially use
-- [x] Update text colors for proper contrast
+- [x] Get MSFT logo URL using company logo tool
+- [x] Update Hero component title to "scale companies effectively with Sentra"
+- [x] Update Hero component subtitle to align with new value proposition
+- [x] Add uploaded image to Hero component
+- [x] Uncomment LogoScroller component
+- [x] Update LogoScroller with MSFT logo and other relevant company logos
 - [x] Final design system compliance check - verify design system classes prioritized over Tailwind, NO shadows, NO custom CSS, NO arbitrary values, check theme.css, app.css and typography.css
