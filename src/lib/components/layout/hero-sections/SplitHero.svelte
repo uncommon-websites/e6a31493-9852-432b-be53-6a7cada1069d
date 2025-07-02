@@ -72,7 +72,7 @@
 			<!-- Left side - Text content -->
 			<div class="grid gap-8" data-enter-container>
 				<div class="grid gap-6">
-					<h1 class="text-display text-foreground" data-enter>
+					<h1 class="text-display text-foreground text-balance" data-enter>
 						<AnimateText text={title} />
 					</h1>
 
