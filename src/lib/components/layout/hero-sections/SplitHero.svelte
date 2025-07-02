@@ -168,12 +168,12 @@
 			<LogoScroller
 				label="Backed by industry leaders"
 				logoUrls={[
-					"https://logo.clearbit.com/microsoft.com",
-					"https://logo.clearbit.com/notion.so",
-					"https://logo.clearbit.com/figma.com",
-					"https://logo.clearbit.com/airtable.com",
-					"https://logo.clearbit.com/linear.app",
-					"https://logo.clearbit.com/slack.com"
+					"https://cdn.brandfetch.io/microsoft.com/w/400/h/400/logo?c=1id_elLz2Bd5Ej-dWo7",
+					"https://cdn.brandfetch.io/notion.so/w/400/h/400/logo?c=1id_elLz2Bd5Ej-dWo7",
+					"https://cdn.brandfetch.io/figma.com/w/400/h/400/logo?c=1id_elLz2Bd5Ej-dWo7",
+					"https://cdn.brandfetch.io/airtable.com/w/400/h/400/logo?c=1id_elLz2Bd5Ej-dWo7",
+					"https://cdn.brandfetch.io/linear.app/w/400/h/400/logo?c=1id_elLz2Bd5Ej-dWo7",
+					"https://cdn.brandfetch.io/slack.com/w/400/h/400/logo?c=1id_elLz2Bd5Ej-dWo7"
 				]}
 			/>
 		</div>
