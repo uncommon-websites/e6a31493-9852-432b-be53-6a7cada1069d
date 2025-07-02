@@ -170,47 +170,49 @@
 								<div class="flex h-[90%] w-[90%] flex-col items-center justify-center">
 									{#if step.visual === "platform-selection"}
 										<div class="w-full space-y-4">
-						<div class="bg-background border-border rounded-lg border p-4">
-							<div class="mb-3 flex items-center justify-between">
-								<span class="text-caption font-medium">Platform Integration</span>
-								<span class="bg-primary text-primary-foreground rounded-full px-2 py-1 text-xs font-medium">6 connected</span>
-							</div>
-							<div class="grid grid-cols-2 gap-2">
-											<div
-												class="bg-primary border-primary text-primary-foreground flex items-center justify-center gap-1 rounded-sm border px-3 py-2 text-center text-sm font-medium"
-											>
-												<div class="h-2 w-2 rounded-full bg-green-400"></div>
-							Slack
-											</div>
-											<div
-												class="bg-primary border-primary text-primary-foreground flex items-center justify-center gap-1 rounded-sm border px-3 py-2 text-center text-sm font-medium"
-											>
-												<div class="h-2 w-2 rounded-full bg-green-400"></div>
-							Teams
-											</div>
-											<div
-												class="bg-background border-border text-muted-foreground flex items-center justify-center gap-1 rounded-sm border px-3 py-2 text-center text-sm font-medium"
-											>
-												<div class="h-2 w-2 rounded-full bg-gray-300"></div>
-							Zoom
-											</div>
-											<div
-												class="bg-primary border-primary text-primary-foreground flex items-center justify-center gap-1 rounded-sm border px-3 py-2 text-center text-sm font-medium"
-											>
-												<div class="h-2 w-2 rounded-full bg-green-400"></div>
-							Google Meet
-											</div>
-											<div
-												class="bg-background border-border text-muted-foreground flex items-center justify-center gap-1 rounded-sm border px-3 py-2 text-center text-sm font-medium"
-											>
-												<div class="h-2 w-2 rounded-full bg-gray-300"></div>
-							Calendar
-											</div>
-											<div
-												class="bg-primary border-primary text-primary-foreground flex items-center justify-center gap-1 rounded-sm border px-3 py-2 text-center text-sm font-medium"
-											>
-												<div class="h-2 w-2 rounded-full bg-green-400"></div>
-							Gmail
+											<div class="bg-background border-border rounded-lg border p-4">
+												<div class="mb-3 flex items-center justify-between">
+													<span class="text-caption font-medium">Platform Integration</span>
+													<span class="bg-primary text-primary-foreground rounded-full px-2 py-1 text-xs font-medium">6 connected</span>
+												</div>
+												<div class="grid grid-cols-2 gap-2">
+													<div
+														class="bg-primary border-primary text-primary-foreground flex items-center justify-center gap-1 rounded-sm border px-3 py-2 text-center text-sm font-medium"
+													>
+														<div class="h-2 w-2 rounded-full bg-green-400"></div>
+														Slack
+													</div>
+													<div
+														class="bg-primary border-primary text-primary-foreground flex items-center justify-center gap-1 rounded-sm border px-3 py-2 text-center text-sm font-medium"
+													>
+														<div class="h-2 w-2 rounded-full bg-green-400"></div>
+														Teams
+													</div>
+													<div
+														class="bg-background border-border text-muted-foreground flex items-center justify-center gap-1 rounded-sm border px-3 py-2 text-center text-sm font-medium"
+													>
+														<div class="h-2 w-2 rounded-full bg-gray-300"></div>
+														Zoom
+													</div>
+													<div
+														class="bg-primary border-primary text-primary-foreground flex items-center justify-center gap-1 rounded-sm border px-3 py-2 text-center text-sm font-medium"
+													>
+														<div class="h-2 w-2 rounded-full bg-green-400"></div>
+														Google Meet
+													</div>
+													<div
+														class="bg-background border-border text-muted-foreground flex items-center justify-center gap-1 rounded-sm border px-3 py-2 text-center text-sm font-medium"
+													>
+														<div class="h-2 w-2 rounded-full bg-gray-300"></div>
+														Calendar
+													</div>
+													<div
+														class="bg-primary border-primary text-primary-foreground flex items-center justify-center gap-1 rounded-sm border px-3 py-2 text-center text-sm font-medium"
+													>
+														<div class="h-2 w-2 rounded-full bg-green-400"></div>
+														Gmail
+													</div>
+												</div>
 											</div>
 										</div>
 									{:else if step.visual === "calendar-sharing"}
