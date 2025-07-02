@@ -137,7 +137,7 @@
 		>
 			{#each steps as step, index (step.id)}
 				<div
-					class="timeline-item relative mb-8 translate-y-8 opacity-0 transition-all duration-500 ease-out"
+					class="timeline-item relative mb-12 translate-y-8 opacity-0 transition-all duration-500 ease-out"
 					data-step={step.id}
 				>
 					{#if index > 0}
