@@ -161,7 +161,7 @@
 					</div>
 
 					<div
-						class="border-border timeline-content relative mx-auto max-w-prose scale-90 transform rounded-3xl border bg-gray-50 text-center transition-all duration-750 ease-out"
+						class="border-border timeline-content relative mx-auto max-w-prose scale-90 transform rounded-3xl border bg-gray-50 text-left transition-all duration-750 ease-out"
 					>
 						<div class="mx-auto w-full flex-shrink-0">
 							<div
@@ -180,37 +180,37 @@
 												</div>
 												<div class="grid grid-cols-2 gap-2">
 													<div
-														class="bg-primary border-primary text-primary-foreground flex items-center justify-center gap-1 rounded-sm border px-3 py-2 text-center text-sm font-medium"
+														class="bg-primary border-primary text-primary-foreground flex items-center justify-start gap-1 rounded-sm border px-3 py-2 text-left text-sm font-medium"
 													>
 														<div class="h-2 w-2 rounded-full bg-green-400"></div>
 														Slack
 													</div>
 													<div
-														class="bg-primary border-primary text-primary-foreground flex items-center justify-center gap-1 rounded-sm border px-3 py-2 text-center text-sm font-medium"
+														class="bg-primary border-primary text-primary-foreground flex items-center justify-start gap-1 rounded-sm border px-3 py-2 text-left text-sm font-medium"
 													>
 														<div class="h-2 w-2 rounded-full bg-green-400"></div>
 														Teams
 													</div>
 													<div
-														class="bg-background border-border text-muted-foreground flex items-center justify-center gap-1 rounded-sm border px-3 py-2 text-center text-sm font-medium"
+														class="bg-background border-border text-muted-foreground flex items-center justify-start gap-1 rounded-sm border px-3 py-2 text-left text-sm font-medium"
 													>
 														<div class="h-2 w-2 rounded-full bg-gray-300"></div>
 														Zoom
 													</div>
 													<div
-														class="bg-primary border-primary text-primary-foreground flex items-center justify-center gap-1 rounded-sm border px-3 py-2 text-center text-sm font-medium"
+														class="bg-primary border-primary text-primary-foreground flex items-center justify-start gap-1 rounded-sm border px-3 py-2 text-left text-sm font-medium"
 													>
 														<div class="h-2 w-2 rounded-full bg-green-400"></div>
 														Google Meet
 													</div>
 													<div
-														class="bg-background border-border text-muted-foreground flex items-center justify-center gap-1 rounded-sm border px-3 py-2 text-center text-sm font-medium"
+														class="bg-background border-border text-muted-foreground flex items-center justify-start gap-1 rounded-sm border px-3 py-2 text-left text-sm font-medium"
 													>
 														<div class="h-2 w-2 rounded-full bg-gray-300"></div>
 														Calendar
 													</div>
 													<div
-														class="bg-primary border-primary text-primary-foreground flex items-center justify-center gap-1 rounded-sm border px-3 py-2 text-center text-sm font-medium"
+														class="bg-primary border-primary text-primary-foreground flex items-center justify-start gap-1 rounded-sm border px-3 py-2 text-left text-sm font-medium"
 													>
 														<div class="h-2 w-2 rounded-full bg-green-400"></div>
 														Gmail
@@ -288,11 +288,11 @@
 													<span class="text-footnote text-muted-foreground">This week</span>
 												</div>
 												<div class="grid grid-cols-2 gap-3">
-													<div class="text-center">
+													<div class="text-left">
 														<p class="text-title3 font-medium">24</p>
 														<p class="text-footnote text-muted-foreground">Team meetings</p>
 													</div>
-													<div class="text-center">
+													<div class="text-left">
 														<p class="text-title3 font-medium">6h</p>
 														<p class="text-footnote text-muted-foreground">Focus time</p>
 													</div>
@@ -365,7 +365,7 @@
 													<span class="text-footnote text-muted-foreground">Low priority</span>
 												</div>
 											</div>
-											<div class="bg-muted border-border rounded-lg border p-3 text-center">
+											<div class="bg-muted border-border rounded-lg border p-3 text-left">
 												<span class="text-footnote text-muted-foreground">3 more tasks tracked automatically</span>
 											</div>
 										</div>
@@ -404,7 +404,7 @@
 													<p class="text-caption">Contact: Alex Rodriguez</p>
 												</div>
 											</div>
-											<div class="bg-muted border-border rounded-lg border p-3 text-center">
+											<div class="bg-muted border-border rounded-lg border p-3 text-left">
 												<span class="text-footnote text-muted-foreground">12 more contact interactions tracked</span>
 											</div>
 										</div>
@@ -548,7 +548,7 @@
 										</div>
 										<!-- Individual-specific visuals removed -->
 									{:else}
-										<div class="text-center">
+										<div class="text-left">
 											<div class="text-caption text-emphasis-medium">{step.title}</div>
 										</div>
 									{/if}
