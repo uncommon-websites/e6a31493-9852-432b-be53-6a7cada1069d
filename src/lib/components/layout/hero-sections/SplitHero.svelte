@@ -96,7 +96,7 @@
 				>
 					<!-- Gradient background -->
 					<div
-						class="from-primary-400/80 via-primary-500/70 to-primary-600/80 absolute inset-0 rounded-2xl bg-gradient-to-br"
+						class="from-primary-700 to-primary-400 absolute inset-0 rounded-2xl bg-radial from-40%"
 					></div>
 
 					<!-- Notification cards container -->

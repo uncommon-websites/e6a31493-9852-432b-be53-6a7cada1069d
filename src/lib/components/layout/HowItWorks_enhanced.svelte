@@ -161,7 +161,7 @@
 					</div>
 
 					<div
-						class="border-border timeline-content bg-whitetext-center relative mx-auto max-w-prose scale-90 transform rounded-3xl border bg-white transition-all duration-750 ease-out"
+						class="border-border timeline-content relative mx-auto max-w-prose scale-90 transform rounded-3xl border bg-white text-center transition-all duration-750 ease-out"
 					>
 						<div class="mx-auto w-full flex-shrink-0">
 							<div
@@ -173,7 +173,10 @@
 											<div class="bg-background border-border rounded-lg border p-4">
 												<div class="mb-3 flex items-center justify-between">
 													<span class="text-caption font-medium">Platform Integration</span>
-													<span class="bg-primary text-primary-foreground rounded-full px-2 py-1 text-xs font-medium">6 connected</span>
+													<span
+														class="bg-primary text-primary-foreground rounded-full px-2 py-1 text-xs font-medium"
+														>6 connected</span
+													>
 												</div>
 												<div class="grid grid-cols-2 gap-2">
 													<div
@@ -224,8 +227,8 @@
 									{:else if step.visual === "meeting-briefing"}
 										<div class="bg-background border-border w-full rounded-lg border p-4">
 											<div class="mb-2 flex items-center justify-between">
-												<span class="text-caption font-medium">Meeting Brief</span>
-												<span class="text-footnote">9:30 AM</span>
+												<span class="text-headline font-medium">Meeting Brief</span>
+												<span class="bg-primary text-primary-foreground rounded-full px-3 py-1 text-xs font-medium">9:30 AM</span>
 											</div>
 											<div class="space-y-1">
 												<p><strong>User research review with Sarah</strong></p>
@@ -273,22 +276,37 @@
 										<div class="w-full space-y-3">
 											<div class="bg-background border-border rounded-lg border p-4">
 												<div class="mb-2 flex items-center justify-between">
-													<span class="text-caption font-medium">Deadline moved to next Friday</span>
-													<span class="bg-red-100 text-red-800 rounded-full px-2 py-1 text-xs font-medium">High Priority</span>
+													<span class="text-caption font-medium">Deadline moved to next Friday</span
+													>
+													<span
+														class="rounded-full bg-red-100 px-2 py-1 text-xs font-medium text-red-800"
+														>High Priority</span
+													>
 												</div>
-												<div class="text-footnote italic">From: Leadership meeting (you weren't invited)</div>
+												<div class="text-footnote italic">
+													From: Leadership meeting (you weren't invited)
+												</div>
 											</div>
 											<div class="bg-background border-border rounded-lg border p-4">
 												<div class="mb-2 flex items-center justify-between">
-													<span class="text-caption font-medium">Budget approved for Q1 hiring</span>
-													<span class="bg-green-100 text-green-800 rounded-full px-2 py-1 text-xs font-medium">Decision Made</span>
+													<span class="text-caption font-medium">Budget approved for Q1 hiring</span
+													>
+													<span
+														class="rounded-full bg-green-100 px-2 py-1 text-xs font-medium text-green-800"
+														>Decision Made</span
+													>
 												</div>
 												<div class="text-footnote italic">From: Board meeting (confidential)</div>
 											</div>
 											<div class="bg-background border-border rounded-lg border p-4">
 												<div class="mb-2 flex items-center justify-between">
-													<span class="text-caption font-medium">New security policy effective Monday</span>
-													<span class="bg-blue-100 text-blue-800 rounded-full px-2 py-1 text-xs font-medium">Policy Update</span>
+													<span class="text-caption font-medium"
+														>New security policy effective Monday</span
+													>
+													<span
+														class="rounded-full bg-blue-100 px-2 py-1 text-xs font-medium text-blue-800"
+														>Policy Update</span
+													>
 												</div>
 												<div class="text-footnote italic">From: Security team standup</div>
 											</div>
@@ -313,23 +331,43 @@
 											<div class="bg-background border-border rounded-lg border p-4">
 												<div class="mb-3 flex items-center justify-between">
 													<span class="text-caption font-medium">Sentra Check-in</span>
-													<span class="bg-green-100 text-green-800 rounded-full px-2 py-1 text-xs font-medium">Weekly</span>
+													<span
+														class="rounded-full bg-green-100 px-2 py-1 text-xs font-medium text-green-800"
+														>Weekly</span
+													>
 												</div>
 												<div class="space-y-3">
 													<div class="flex items-start gap-3">
-														<div class="bg-primary text-primary-foreground flex h-8 w-8 items-center justify-center rounded-full text-sm font-medium">S</div>
+														<div
+															class="bg-primary text-primary-foreground flex h-8 w-8 items-center justify-center rounded-full text-sm font-medium"
+														>
+															S
+														</div>
 														<div class="flex-1">
-															<p class="text-caption font-medium">How are you feeling about the Q4 roadmap progress?</p>
-															<p class="text-footnote text-muted-foreground">Any blockers or concerns I should know about?</p>
+															<p class="text-caption font-medium">
+																How are you feeling about the Q4 roadmap progress?
+															</p>
+															<p class="text-footnote text-muted-foreground">
+																Any blockers or concerns I should know about?
+															</p>
 														</div>
 													</div>
 													<div class="ml-11 space-y-2">
 														<div class="bg-muted rounded-lg p-3">
-															<p class="text-caption">Things are going well overall. The API integration is taking longer than expected though.</p>
+															<p class="text-caption">
+																Things are going well overall. The API integration is taking longer
+																than expected though.
+															</p>
 														</div>
 														<div class="flex gap-2">
-															<button class="bg-primary text-primary-foreground rounded-lg px-3 py-1 text-xs font-medium">Send update to team</button>
-															<button class="bg-secondary text-secondary-foreground rounded-lg px-3 py-1 text-xs font-medium">Schedule follow-up</button>
+															<button
+																class="bg-primary text-primary-foreground rounded-lg px-3 py-1 text-xs font-medium"
+																>Send update to team</button
+															>
+															<button
+																class="bg-secondary text-secondary-foreground rounded-lg px-3 py-1 text-xs font-medium"
+																>Schedule follow-up</button
+															>
 														</div>
 													</div>
 												</div>
