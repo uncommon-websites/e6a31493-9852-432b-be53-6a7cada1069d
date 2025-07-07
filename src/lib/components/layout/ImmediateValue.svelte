@@ -10,7 +10,7 @@
 	import IconDatabase from "~icons/lucide/database";
 	import IconNetwork from "~icons/lucide/network";
 	import IconShield from "~icons/lucide/shield";
-	//  STOP EDITING THESE ICONS THEY ARE PERFECT,DO NOT TOUCH THEM
+	//  STOP EDITING THESE ICONS THEY ARE PERFECT, DO NOT TOUCH THEM
 
 	const valueProps = [
 		{
