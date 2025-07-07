@@ -59,41 +59,22 @@ export const navigation: NavItem[] = [
 	// 	showInFooter: false
 	// },
 	{
-		label: "Company",
+		label: "About",
+		href: "/about",
 		showInNav: true,
-		showInFooter: true,
-		children: [
-			{
-				label: "About",
-				href: "/about",
-				showInNav: true,
-				showInFooter: true
-			},
-			// {
-			// 	label: "Pricing",
-			// 	href: "/pricing",
-			// 	showInNav: false,
-			// 	showInFooter: true
-			// },
-			// {
-			// 	label: "Careers",
-			// 	href: "/careers",
-			// 	showInNav: true,
-			// 	showInFooter: true
-			// },
-			{
-				label: "Manifesto",
-				href: "/manifesto",
-				showInNav: true,
-				showInFooter: true
-			},
-			{
-				label: "Contact",
-				href: "/contact",
-				showInNav: false,
-				showInFooter: true
-			}
-		]
+		showInFooter: true
+	},
+	{
+		label: "Manifesto",
+		href: "/manifesto",
+		showInNav: true,
+		showInFooter: true
+	},
+	{
+		label: "Contact",
+		href: "/contact",
+		showInNav: true,
+		showInFooter: true
 	},
 	{
 		label: "Legal",
