@@ -61,7 +61,7 @@
 </script>
 
 <div class="bg-background relative overflow-hidden" {...rest}>
-	<header class="section-px relative z-20 container mx-auto py-12 pt-24">
+	<header class="section-px container-sm relative z-20 mx-auto py-12 pt-24">
 		<!-- Background glow -->
 		<div class="absolute inset-0 z-0">
 			<div

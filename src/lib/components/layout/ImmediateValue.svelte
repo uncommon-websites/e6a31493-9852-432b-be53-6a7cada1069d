@@ -13,24 +13,27 @@
 	const valueProps = [
 		{
 			title: "Builds a memory of your company",
-			description: "Sentra connects to your existing tools, creating a unified timeline of decisions and commitments.",
+			description:
+				"Sentra connects to your existing tools, creating a unified timeline of decisions and commitments.",
 			visualization: "memory"
 		},
 		{
 			title: "Deeply understands your vision",
-			description: "Through conversations with your team, Sentra learns your priorities and strategic context.",
+			description:
+				"Through conversations with your team, Sentra learns your priorities and strategic context.",
 			visualization: "vision"
 		},
 		{
 			title: "Spots misalignment before it spreads",
-			description: "With real-time awareness, Sentra identifies conflicts and breakdowns before they become problems.",
+			description:
+				"With real-time awareness, Sentra identifies conflicts and breakdowns before they become problems.",
 			visualization: "detection"
 		}
 	];
 </script>
 
 <section class="bg-gray-50">
-	<div class="section-px section-py container mx-auto">
+	<div class="section-px section-py container-sm mx-auto">
 		<div class="text-left">
 			<SectionHeader
 				title="Keep everyone on the same page"
@@ -44,71 +47,105 @@
 				{#each valueProps as prop, index}
 					<div class="group flex">
 						<!-- Card Container -->
-						<div class="relative flex w-full flex-col overflow-hidden rounded-3xl bg-white p-10 min-h-[400px]">
+						<div
+							class="relative flex min-h-[400px] w-full flex-col overflow-hidden rounded-3xl bg-white p-10"
+						>
 							<!-- Visualization Container -->
 							<div class="mb-8 flex aspect-video items-center justify-center">
 								{#if prop.visualization === "memory"}
 									<!-- Memory/Timeline Visualization -->
 									<div class="relative flex items-center justify-center">
 										<!-- Central brain icon -->
-										<div class="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-primary-100 text-primary-600">
+										<div
+											class="bg-primary-100 text-primary-600 relative z-10 flex h-16 w-16 items-center justify-center rounded-full"
+										>
 											<IconBrain class="h-8 w-8" />
 										</div>
-										
+
 										<!-- Connected nodes around it -->
-										<div class="absolute -left-12 -top-6 h-6 w-6 rounded-lg bg-gray-200 opacity-60 flex items-center justify-center">
+										<div
+											class="absolute -top-6 -left-12 flex h-6 w-6 items-center justify-center rounded-lg bg-gray-200 opacity-60"
+										>
 											<IconDatabase class="h-4 w-4 text-gray-500" />
 										</div>
-										<div class="absolute -right-12 -top-6 h-6 w-6 rounded-lg bg-gray-200 opacity-60 flex items-center justify-center">
+										<div
+											class="absolute -top-6 -right-12 flex h-6 w-6 items-center justify-center rounded-lg bg-gray-200 opacity-60"
+										>
 											<IconNetwork class="h-4 w-4 text-gray-500" />
 										</div>
-										<div class="absolute -left-12 bottom-2 h-6 w-6 rounded-lg bg-gray-200 opacity-60 flex items-center justify-center">
+										<div
+											class="absolute bottom-2 -left-12 flex h-6 w-6 items-center justify-center rounded-lg bg-gray-200 opacity-60"
+										>
 											<IconGitBranch class="h-4 w-4 text-gray-500" />
 										</div>
-										<div class="absolute -right-12 bottom-2 h-6 w-6 rounded-lg bg-gray-200 opacity-60 flex items-center justify-center">
+										<div
+											class="absolute -right-12 bottom-2 flex h-6 w-6 items-center justify-center rounded-lg bg-gray-200 opacity-60"
+										>
 											<IconShield class="h-4 w-4 text-gray-500" />
 										</div>
-										
+
 										<!-- Connection lines -->
-										<div class="absolute h-px w-12 bg-gradient-to-r from-primary-300 to-transparent -left-12 top-1/2 transform -translate-y-1/2 opacity-40"></div>
-										<div class="absolute h-px w-12 bg-gradient-to-l from-primary-300 to-transparent -right-12 top-1/2 transform -translate-y-1/2 opacity-40"></div>
-										<div class="absolute w-px h-12 bg-gradient-to-b from-primary-300 to-transparent left-1/2 -top-12 transform -translate-x-1/2 opacity-40"></div>
-										<div class="absolute w-px h-12 bg-gradient-to-t from-primary-300 to-transparent left-1/2 -bottom-12 transform -translate-x-1/2 opacity-40"></div>
+										<div
+											class="from-primary-300 absolute top-1/2 -left-12 h-px w-12 -translate-y-1/2 transform bg-gradient-to-r to-transparent opacity-40"
+										></div>
+										<div
+											class="from-primary-300 absolute top-1/2 -right-12 h-px w-12 -translate-y-1/2 transform bg-gradient-to-l to-transparent opacity-40"
+										></div>
+										<div
+											class="from-primary-300 absolute -top-12 left-1/2 h-12 w-px -translate-x-1/2 transform bg-gradient-to-b to-transparent opacity-40"
+										></div>
+										<div
+											class="from-primary-300 absolute -bottom-12 left-1/2 h-12 w-px -translate-x-1/2 transform bg-gradient-to-t to-transparent opacity-40"
+										></div>
 									</div>
 								{:else if prop.visualization === "vision"}
 									<!-- Vision/Understanding Visualization -->
 									<div class="relative flex items-center justify-center">
 										<!-- Central eye icon with layered understanding -->
-										<div class="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-secondary-100 text-secondary-600">
+										<div
+											class="bg-secondary-100 text-secondary-600 relative z-10 flex h-16 w-16 items-center justify-center rounded-full"
+										>
 											<IconEye class="h-8 w-8" />
 										</div>
-										
+
 										<!-- Concentric circles representing layers of understanding -->
-										<div class="absolute h-20 w-20 rounded-full border-2 border-secondary-200 opacity-30"></div>
-										<div class="absolute h-28 w-28 rounded-full border border-secondary-200 opacity-20"></div>
-										<div class="absolute h-36 w-36 rounded-full border border-secondary-200 opacity-10"></div>
-										
+										<div
+											class="border-secondary-200 absolute h-20 w-20 rounded-full border-2 opacity-30"
+										></div>
+										<div
+											class="border-secondary-200 absolute h-28 w-28 rounded-full border opacity-20"
+										></div>
+										<div
+											class="border-secondary-200 absolute h-36 w-36 rounded-full border opacity-10"
+										></div>
+
 										<!-- Target points -->
-										<div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
-											<IconTarget class="h-4 w-4 text-secondary-400 opacity-60" />
+										<div class="absolute -top-6 left-1/2 -translate-x-1/2 transform">
+											<IconTarget class="text-secondary-400 h-4 w-4 opacity-60" />
 										</div>
-										<div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2">
-											<IconTarget class="h-4 w-4 text-secondary-400 opacity-60" />
+										<div class="absolute -bottom-6 left-1/2 -translate-x-1/2 transform">
+											<IconTarget class="text-secondary-400 h-4 w-4 opacity-60" />
 										</div>
 									</div>
 								{:else if prop.visualization === "detection"}
 									<!-- Detection/Radar Visualization -->
 									<div class="relative flex items-center justify-center">
 										<!-- Central radar icon -->
-										<div class="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-orange-100 text-orange-600">
+										<div
+											class="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-orange-100 text-orange-600"
+										>
 											<IconRadar class="h-8 w-8" />
 										</div>
-										
+
 										<!-- Radar sweep animation -->
-										<div class="absolute h-24 w-24 rounded-full border-2 border-orange-200 opacity-40">
-											<div class="absolute top-0 left-1/2 h-12 w-px bg-gradient-to-b from-orange-400 to-transparent transform -translate-x-1/2 opacity-60 animate-pulse"></div>
+										<div
+											class="absolute h-24 w-24 rounded-full border-2 border-orange-200 opacity-40"
+										>
+											<div
+												class="absolute top-0 left-1/2 h-12 w-px -translate-x-1/2 transform animate-pulse bg-gradient-to-b from-orange-400 to-transparent opacity-60"
+											></div>
 										</div>
-										
+
 										<!-- Warning indicators at different positions -->
 										<div class="absolute -top-4 -left-4">
 											<IconAlertTriangle class="h-5 w-5 text-orange-400 opacity-70" />
@@ -116,13 +153,18 @@
 										<div class="absolute -top-4 -right-4">
 											<IconAlertTriangle class="h-5 w-5 text-orange-400 opacity-50" />
 										</div>
-										<div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2">
+										<div class="absolute -bottom-4 left-1/2 -translate-x-1/2 transform">
 											<IconAlertTriangle class="h-5 w-5 text-orange-400 opacity-60" />
 										</div>
-										
+
 										<!-- Detection waves -->
-										<div class="absolute h-32 w-32 rounded-full border border-orange-200 opacity-20 animate-pulse"></div>
-										<div class="absolute h-40 w-40 rounded-full border border-orange-200 opacity-10 animate-pulse" style="animation-delay: 0.5s;"></div>
+										<div
+											class="absolute h-32 w-32 animate-pulse rounded-full border border-orange-200 opacity-20"
+										></div>
+										<div
+											class="absolute h-40 w-40 animate-pulse rounded-full border border-orange-200 opacity-10"
+											style="animation-delay: 0.5s;"
+										></div>
 									</div>
 								{/if}
 							</div>
@@ -132,7 +174,7 @@
 								<h3 class="text-title3 font-semibold text-gray-900">
 									{prop.title}
 								</h3>
-								
+
 								<p class="text-callout leading-relaxed text-gray-600">
 									{prop.description}
 								</p>
@@ -142,6 +184,5 @@
 				{/each}
 			</div>
 		</div>
-
 	</div>
 </section>

@@ -121,7 +121,7 @@
 </script>
 
 <section class="bg-white">
-	<div class="section-px section-py container mx-auto">
+	<div class="section-px section-py container-sm mx-auto">
 		<div class="mx-auto grid place-items-center text-center">
 			<SectionHeader
 				title="What it's like to work with Sentra"
@@ -328,14 +328,17 @@
 										<div class="w-full space-y-3">
 											<div class="bg-background border-border rounded-lg border p-4">
 												<div class="mb-2 flex items-center justify-between">
-													<span class="text-caption font-medium">Follow up with client by Friday</span>
+													<span class="text-caption font-medium"
+														>Follow up with client by Friday</span
+													>
 													<span
 														class="rounded-full bg-red-100 px-2 py-1 text-xs font-medium text-red-800"
 														>Due tomorrow</span
 													>
 												</div>
 												<div class="flex items-center justify-between">
-													<span class="text-footnote text-muted-foreground">From: Team standup</span>
+													<span class="text-footnote text-muted-foreground">From: Team standup</span
+													>
 													<span class="text-footnote text-muted-foreground">High priority</span>
 												</div>
 											</div>
@@ -348,25 +351,32 @@
 													>
 												</div>
 												<div class="flex items-center justify-between">
-													<span class="text-footnote text-muted-foreground">From: Leadership meeting</span>
+													<span class="text-footnote text-muted-foreground"
+														>From: Leadership meeting</span
+													>
 													<span class="text-footnote text-muted-foreground">Medium priority</span>
 												</div>
 											</div>
 											<div class="bg-background border-border rounded-lg border p-4">
 												<div class="mb-2 flex items-center justify-between">
-													<span class="text-caption font-medium">Update security documentation</span>
+													<span class="text-caption font-medium">Update security documentation</span
+													>
 													<span
 														class="rounded-full bg-green-100 px-2 py-1 text-xs font-medium text-green-800"
 														>Completed</span
 													>
 												</div>
 												<div class="flex items-center justify-between">
-													<span class="text-footnote text-muted-foreground">From: Security review</span>
+													<span class="text-footnote text-muted-foreground"
+														>From: Security review</span
+													>
 													<span class="text-footnote text-muted-foreground">Low priority</span>
 												</div>
 											</div>
 											<div class="bg-muted border-border rounded-lg border p-3 text-left">
-												<span class="text-footnote text-muted-foreground">3 more tasks tracked automatically</span>
+												<span class="text-footnote text-muted-foreground"
+													>3 more tasks tracked automatically</span
+												>
 											</div>
 										</div>
 									{:else if step.visual === "contact-history"}
@@ -405,7 +415,9 @@
 												</div>
 											</div>
 											<div class="bg-muted border-border rounded-lg border p-3 text-left">
-												<span class="text-footnote text-muted-foreground">12 more contact interactions tracked</span>
+												<span class="text-footnote text-muted-foreground"
+													>12 more contact interactions tracked</span
+												>
 											</div>
 										</div>
 									{:else if step.visual === "key-alerts"}
@@ -461,7 +473,9 @@
 															<span class="text-caption font-medium">Project X initiated</span>
 															<span class="text-footnote text-muted-foreground">3 months ago</span>
 														</div>
-														<p class="text-footnote text-muted-foreground mt-1">Initial planning and team formation</p>
+														<p class="text-footnote text-muted-foreground mt-1">
+															Initial planning and team formation
+														</p>
 													</div>
 												</div>
 											</div>
@@ -478,7 +492,9 @@
 															<span class="text-caption font-medium">Architecture decision</span>
 															<span class="text-footnote text-muted-foreground">2 months ago</span>
 														</div>
-														<p class="text-footnote text-muted-foreground mt-1">Technical stack and infrastructure choices</p>
+														<p class="text-footnote text-muted-foreground mt-1">
+															Technical stack and infrastructure choices
+														</p>
 													</div>
 												</div>
 											</div>
@@ -494,7 +510,9 @@
 															<span class="text-caption font-medium">Scope refinement</span>
 															<span class="text-footnote text-muted-foreground">1 month ago</span>
 														</div>
-														<p class="text-footnote text-muted-foreground mt-1">Feature prioritization and timeline adjustment</p>
+														<p class="text-footnote text-muted-foreground mt-1">
+															Feature prioritization and timeline adjustment
+														</p>
 													</div>
 												</div>
 											</div>

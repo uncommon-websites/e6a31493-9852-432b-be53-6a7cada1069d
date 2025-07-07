@@ -65,7 +65,7 @@
 </script>
 
 <div
-	class="section-my section-px relative container mx-auto flex flex-col items-start gap-8 text-pretty lg:grid xl:flex-row"
+	class="section-my section-px container-sm relative mx-auto flex flex-col items-start gap-8 text-pretty lg:grid xl:flex-row"
 	bind:this={containerElement}
 	class:lg:grid-cols-[1fr_2fr]={!!title}
 	{...rest}

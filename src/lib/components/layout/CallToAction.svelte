@@ -66,7 +66,7 @@
 </script>
 
 <div class="" {...rest}>
-	<section class="section-px section-py container mx-auto">
+	<section class="section-px section-py container-sm mx-auto">
 		<div
 			class="bg-card border-border grid content-start items-center justify-between gap-(--gap) rounded-(--radius) border p-(--gap) text-balance [--gap:--spacing(8)] [--inner-radius:calc(var(--radius)-var(--gap))] [--radius:var(--radius-xl)] lg:grid-cols-[2fr_1fr]"
 		>
@@ -79,7 +79,7 @@
 					<p class="text-headline text-emphasis-low">
 						{description}
 					</p>
-					<div class="flex flex-col md:flex-row md:flex-wrap gap-2 w-full">
+					<div class="flex w-full flex-col gap-2 md:flex-row md:flex-wrap">
 						{#each callsToAction as cta}
 							<Button class="w-full md:w-auto" href={cta.href} variant={cta.variant || "primary"}
 								>{cta.label}</Button

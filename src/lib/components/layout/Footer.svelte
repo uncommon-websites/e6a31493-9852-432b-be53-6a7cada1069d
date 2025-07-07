@@ -17,7 +17,7 @@
 	{...props}
 >
 	<div
-		class="section-px relative z-10 container mx-auto grid h-full content-between items-start gap-16 gap-x-32 pt-10 lg:grid-cols-2 lg:gap-32"
+		class="section-px container-sm relative z-10 mx-auto grid h-full content-between items-start gap-16 gap-x-32 pt-10 lg:grid-cols-2 lg:gap-32"
 	>
 		<!-- Navigation sections with editorial styling -->
 		<ul class="grid grid-cols-2 gap-8 gap-y-16 lg:grid-cols-3">
@@ -48,9 +48,7 @@
 		</ul>
 
 		<!-- Footer bottom section -->
-		<div
-			class="col-span-full border-t py-6 border-border text-muted-foreground"
-		>
+		<div class="border-border text-muted-foreground col-span-full border-t py-6">
 			<div class="grid grid-cols-2 items-start justify-between gap-4 gap-x-32 text-sm">
 				<div>
 					&copy; {CONFIG.companyName}
@@ -68,7 +66,7 @@
 	@reference '../../../app.css';
 
 	a {
-		@apply inline-block underline decoration-transparent transition-all duration-300 ease-out text-foreground;
+		@apply text-foreground inline-block underline decoration-transparent transition-all duration-300 ease-out;
 
 		&:hover {
 			@apply text-muted-foreground;
