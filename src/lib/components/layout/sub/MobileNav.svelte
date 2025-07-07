@@ -18,7 +18,7 @@
 	let isMenuOpen = $state(false);
 	let scrollBarWidth: number = $state(0);
 	let themeColor: string = $state("");
-	let originalThemeColor: string | null = $state(null);
+	let originalThemeColor: string | null | undefined = $state(null);
 
 	$effect(() => {
 		scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
@@ -26,7 +26,7 @@
 
 	$effect(() => {
 		const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-		originalThemeColor = metaThemeColor?.getAttribute("content");
+		originalThemeColor = metaThemeColor?.getAttribute("content") || null;
 	});
 
 	$effect(() => {
