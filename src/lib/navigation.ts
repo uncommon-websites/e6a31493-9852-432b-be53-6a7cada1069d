@@ -74,6 +74,12 @@ export const navigation: NavItem[] = [
 		showInFooter: false
 	},
 	{
+		label: "Security",
+		href: "/security",
+		showInNav: true,
+		showInFooter: true
+	},
+	{
 		label: "Company",
 		showInNav: false,
 		showInFooter: true,
