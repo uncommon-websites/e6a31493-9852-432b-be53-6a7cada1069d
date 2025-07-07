@@ -60,24 +60,43 @@ export const navigation: NavItem[] = [
 	// 	showInNav: true,
 	// 	showInFooter: false
 	// },
+
 	{
 		label: "About",
 		href: "/about",
 		showInNav: true,
-		showInFooter: true
+		showInFooter: false
 	},
 	{
 		label: "Manifesto",
 		href: "/manifesto",
 		showInNav: true,
-		showInFooter: true
+		showInFooter: false
 	},
-
 	{
-		label: "Contact",
-		href: "/contact",
+		label: "Company",
 		showInNav: false,
-		showInFooter: true
+		showInFooter: true,
+		children: [
+			{
+				label: "About",
+				href: "/about",
+				showInNav: false,
+				showInFooter: true
+			},
+			{
+				label: "Manifesto",
+				href: "/manifesto",
+				showInNav: false,
+				showInFooter: true
+			},
+			{
+				label: "Contact",
+				href: "/contact",
+				showInNav: false,
+				showInFooter: true
+			}
+		]
 	},
 	{
 		label: "Legal",
