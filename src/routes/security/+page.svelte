@@ -45,6 +45,148 @@
 			message = '';
 		}, 3000);
 	}
+
+	// Handle whitepaper download
+	async function handleWhitepaperDownload() {
+		if (!email || !company) return;
+		
+		isSubmitting = true;
+		
+		// Simulate download preparation
+		await new Promise(resolve => setTimeout(resolve, 1500));
+		
+		formSubmitted = true;
+		isSubmitting = false;
+		
+		// Reset form after 3 seconds
+		setTimeout(() => {
+			formSubmitted = false;
+			email = '';
+			company = '';
+		}, 3000);
+	}
+
+	// Sub-processors data
+	const subProcessors = [
+		{
+			name: "Amazon Web Services (AWS)",
+			description: "Cloud infrastructure and hosting services"
+		},
+		{
+			name: "OpenAI",
+			description: "AI language model services for organizational intelligence"
+		},
+		{
+			name: "Stripe",
+			description: "Payment processing and billing services"
+		},
+		{
+			name: "SendGrid",
+			description: "Email delivery and communication services"
+		}
+	];
+
+	// FAQ data and state
+	let openFaq = $state<number | null>(null);
+	
+	const faqs = [
+		{
+			question: "How does Sentra protect my organization's data?",
+			answer: "Sentra uses enterprise-grade encryption (AES-256 at rest, TLS 1.3 in transit), operates on AWS's secure infrastructure, and implements strict access controls. For private deployments, all data remains within your own secure environment."
+		},
+		{
+			question: "What compliance certifications does Sentra have?",
+			answer: "Sentra is SOC-2 Type I certified and currently undergoing SOC-2 Type II certification. We also maintain compliance with GDPR, CCPA, and other relevant data protection regulations."
+		},
+		{
+			question: "Can Sentra be deployed in my private cloud?",
+			answer: "Yes, Sentra offers private deployment options that keep all data processing within your own secure infrastructure. This ensures complete data sovereignty and meets the strictest security requirements."
+		},
+		{
+			question: "How often do you conduct security audits?",
+			answer: "We conduct comprehensive penetration testing annually with third-party security firms, perform automated security scans weekly, and maintain continuous monitoring of our infrastructure 24/7."
+		},
+		{
+			question: "What happens to my data if I stop using Sentra?",
+			answer: "Upon contract termination, all customer data is securely deleted within 30 days according to our data retention policy. We provide data export options before deletion to ensure you retain access to your information."
+		}
+	];
+
+	// Toggle FAQ function
+	function toggleFaq(index: number) {
+		openFaq = openFaq === index ? null : index;
+	}
+
+	// Handle whitepaper download
+	async function handleWhitepaperDownload() {
+		if (!email || !company) return;
+		
+		isSubmitting = true;
+		
+		// Simulate download preparation
+		await new Promise(resolve => setTimeout(resolve, 1500));
+		
+		formSubmitted = true;
+		isSubmitting = false;
+		
+		// Reset form after 3 seconds
+		setTimeout(() => {
+			formSubmitted = false;
+			email = '';
+			company = '';
+		}, 3000);
+	}
+
+	// Sub-processors data
+	const subProcessors = [
+		{
+			name: "Amazon Web Services (AWS)",
+			description: "Cloud infrastructure and hosting services"
+		},
+		{
+			name: "OpenAI",
+			description: "AI language model services for organizational intelligence"
+		},
+		{
+			name: "Stripe",
+			description: "Payment processing and billing services"
+		},
+		{
+			name: "SendGrid",
+			description: "Email delivery and communication services"
+		}
+	];
+
+	// FAQ data and state
+	let openFaq = $state<number | null>(null);
+	
+	const faqs = [
+		{
+			question: "How does Sentra protect my organization's data?",
+			answer: "Sentra uses enterprise-grade encryption (AES-256 at rest, TLS 1.3 in transit), operates on AWS's secure infrastructure, and implements strict access controls. For private deployments, all data remains within your own secure environment."
+		},
+		{
+			question: "What compliance certifications does Sentra have?",
+			answer: "Sentra is SOC-2 Type I certified and currently undergoing SOC-2 Type II certification. We also maintain compliance with GDPR, CCPA, and other relevant data protection regulations."
+		},
+		{
+			question: "Can Sentra be deployed in my private cloud?",
+			answer: "Yes, Sentra offers private deployment options that keep all data processing within your own secure infrastructure. This ensures complete data sovereignty and meets the strictest security requirements."
+		},
+		{
+			question: "How often do you conduct security audits?",
+			answer: "We conduct comprehensive penetration testing annually with third-party security firms, perform automated security scans weekly, and maintain continuous monitoring of our infrastructure 24/7."
+		},
+		{
+			question: "What happens to my data if I stop using Sentra?",
+			answer: "Upon contract termination, all customer data is securely deleted within 30 days according to our data retention policy. We provide data export options before deletion to ensure you retain access to your information."
+		}
+	];
+
+	// Toggle FAQ function
+	function toggleFaq(index: number) {
+		openFaq = openFaq === index ? null : index;
+	}
 </script>
 
 <svelte:head>
