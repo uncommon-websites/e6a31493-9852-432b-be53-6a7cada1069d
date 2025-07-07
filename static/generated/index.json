@@ -138,5 +138,33 @@
   {
     "prompt": "A close-up shot of hands in motion, reaching or folding papers, with a softly blurred backdrop. The image conveys a sense of connection and subtle tension, set in an environment with natural textures and soft, muted tones. The lighting is gentle and directional, emphasizing the hands and creating a calm, reflective mood.",
     "filename": "/generated/image-a-close-up-shot-of-hands-in-motion-reach.webp"
+  },
+  {
+    "prompt": "A group of professionals engaged in a thoughtful discussion in a modern office setting. The room is softly lit with gentle directional lighting, creating an atmosphere of calm and focus. The individuals are dressed in soft neutrals, darker indigos, and linen whites, reflecting clarity and groundedness. The office environment features natural textures and muted colors, with a background that suggests a hybrid work environment. The focus is on the human interaction, capturing micro-expressions and moments of listening, without any visible technology or devices.",
+    "filename": "/generated/image-a-group-of-professionals-engaged-in-a-th.webp"
+  },
+  {
+    "prompt": "A serene office scene depicting a team of professionals in a collaborative discussion. The environment is softly lit, with natural ambient tones reminiscent of an overcast morning. The individuals are captured in candid moments, wearing elegant attire with subtle accents of Neural Purple and Signal Cyan. The setting is a hybrid workspace with natural textures, where the emphasis is on human presence and connection. The image evokes a sense of calm and psychological intimacy, with no visible screens or technology.",
+    "filename": "/generated/image-a-serene-office-scene-depicting-a-team-o.webp"
+  },
+  {
+    "prompt": "An intimate portrait of a professional in a modern office, captured in a moment of quiet reflection. The lighting is gentle and creates low-contrast shadows, enhancing the natural skin tones and wardrobe of soft neutrals. The background is softly blurred, suggesting an environment that blends work and living spaces. The individual appears thoughtful and grounded, with eyes cast off-frame, suggesting contemplation. The image maintains a sense of stillness and subtle tension, with no devices or tech in view.",
+    "filename": "/generated/image-an-intimate-portrait-of-a-professional-i.webp"
+  },
+  {
+    "prompt": "A professional business team engaged in a collaborative meeting in a modern office environment. The team is gathered around a large wooden table, surrounded by large windows letting in soft, natural light. They are engaged in thoughtful conversation, with one person gesturing gently while others listen attentively. The overall color palette is softly cool, with wardrobe accents in Neural Purple and Signal Cyan, reflecting the light subtly. The scene captures a candid moment of interaction, with natural skin tones, slate gray, and off-whites creating a grounded and elegant atmosphere. The setting is a hybrid work environment, combining elements of a living room and a shared workspace, with subtle textures and natural materials visible in the background. There are no screens or devices visible, emphasizing the human connection and interaction. The lighting is gentle and directional, with low-contrast shadows, evoking a sense of calm reflection and psychological intimacy. The composition uses negative space to create an open and inviting feeling, allowing the scene to breathe and convey a sense of possibility.",
+    "filename": "/generated/image-a-professional-business-team-engaged-in-.webp"
+  },
+  {
+    "prompt": "professional business team collaboration meeting office",
+    "filename": "/generated/image-professional-business-team-collaboration.webp"
+  },
+  {
+    "prompt": "A professional business team engaged in a calm and thoughtful discussion about a business strategy. The environment is a contemporary shared workspace with soft, natural lighting. The team is diverse, reflecting various ages and backgrounds, and they are dressed in soft neutrals, darker indigos, and linen whites. The setting includes a wooden table with a few papers and pens, but no electronic devices. The background features a comfortable, lived-in ambiance with natural textures and a hint of greenery. The mood is serene, with individuals making eye contact and listening intently, reflecting a sense of psychological intimacy and grounded presence. The composition uses the rule of thirds, with ample negative space to create an open and anticipatory atmosphere.",
+    "filename": "/generated/image-a-professional-business-team-engaged-in-.webp"
+  },
+  {
+    "prompt": "professional business team discussing security solutions",
+    "filename": "/generated/image-professional-business-team-discussing-se.webp"
   }
 ]

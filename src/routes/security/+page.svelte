@@ -2,157 +2,139 @@
 	import AnimateText from '$lib/components/animation/AnimateText.svelte';
 	import Button from '$lib/components/ui/Button.svelte';
 
-	// State for the whitepaper form
+	// Contact form state
+	let firstName = $state('');
+	let lastName = $state('');
 	let email = $state('');
 	let company = $state('');
+	let phone = $state('');
+	let employees = $state('');
+	let message = $state('');
 	let isSubmitting = $state(false);
 	let formSubmitted = $state(false);
 
-	// FAQ state
-	let openFaq = $state<number | null>(null);
-
-	function toggleFaq(index: number) {
-		openFaq = openFaq === index ? null : index;
+	// Smooth scroll to contact form
+	function scrollToContact() {
+		const contactSection = document.getElementById('contact-form');
+		if (contactSection) {
+			contactSection.scrollIntoView({ behavior: 'smooth' });
+		}
 	}
 
-	async function handleWhitepaperDownload() {
-		if (!email || !company) return;
+	// Handle contact form submission
+	async function handleContactSubmit() {
+		if (!firstName || !lastName || !email || !company) return;
 		
 		isSubmitting = true;
 		
 		// Simulate form submission
-		await new Promise(resolve => setTimeout(resolve, 1000));
+		await new Promise(resolve => setTimeout(resolve, 1500));
 		
-		// In a real implementation, this would trigger the PDF download
-		// For now, we'll just show a success message
 		formSubmitted = true;
 		isSubmitting = false;
 		
 		// Reset form after 3 seconds
 		setTimeout(() => {
 			formSubmitted = false;
+			firstName = '';
+			lastName = '';
 			email = '';
 			company = '';
+			phone = '';
+			employees = '';
+			message = '';
 		}, 3000);
 	}
-
-	const faqs = [
-		{
-			question: "How does Sentra comply with SOC-2?",
-			answer: "Sentra maintains SOC 2 Type I compliance and is currently undergoing SOC 2 Type II certification. Our controls cover security, availability, processing integrity, confidentiality, and privacy. We undergo annual third-party audits to ensure continuous compliance with these rigorous standards."
-		},
-		{
-			question: "What level of access does Sentra need to connect key systems?",
-			answer: "Sentra operates with minimal, read-only access to your systems. We only access public channels in communication tools like Slack, meeting metadata (not recordings), and project management data. We never access private messages, personal files, or sensitive documents without explicit permission."
-		},
-		{
-			question: "Does Sentra conduct penetration testing?",
-			answer: "Yes, Sentra undergoes comprehensive penetration testing by independent security firms at least annually. We also conduct continuous automated security scans and vulnerability assessments to ensure our infrastructure remains secure against emerging threats."
-		},
-		{
-			question: "How does Sentra use AI within the product?",
-			answer: "Sentra uses AI to analyze organizational patterns and detect potential misalignment issues. All AI processing happens within our secure, compliant infrastructure. We never train our models on your specific data, and all insights are generated using privacy-preserving techniques that protect individual privacy."
-		},
-		{
-			question: "How does Sentra comply with GDPR?",
-			answer: "Sentra is fully GDPR compliant. We implement data minimization principles, provide clear consent mechanisms, enable data portability, and honor all data subject rights including the right to erasure. Our privacy-by-design approach ensures GDPR compliance is built into every aspect of our platform."
-		},
-		{
-			question: "How does Sentra comply with CCPA?",
-			answer: "Sentra complies with the California Consumer Privacy Act by providing transparent data collection practices, enabling users to know what personal information is collected, allowing deletion of personal information, and providing opt-out mechanisms for data sales (though we never sell personal data)."
-		}
-	];
-
-	const subProcessors = [
-		{
-			name: "Amazon Web Services",
-			description: "Sentra uses AWS for secure cloud hosting and database infrastructure."
-		},
-		{
-			name: "OpenAI",
-			description: "Sentra uses OpenAI's enterprise APIs for AI processing with enhanced security and privacy controls."
-		},
-		{
-			name: "Anthropic",
-			description: "Sentra uses Anthropic's Claude for additional AI capabilities with strict data handling agreements."
-		},
-		{
-			name: "Stripe",
-			description: "Sentra uses Stripe for secure payment processing and billing management."
-		},
-		{
-			name: "Postmark",
-			description: "Sentra uses Postmark for transactional email delivery and notifications."
-		}
-	];
 </script>
 
 <svelte:head>
-	<title>Security & Trust Center - Sentra</title>
-	<meta name="description" content="Learn about Sentra's commitment to data security, privacy, and compliance. SOC 2, GDPR, and CCPA certified." />
+	<title>Private Deployments - Sentra</title>
+	<meta name="description" content="Deploy Sentra privately for ultimate security and data sovereignty. Completely private, fully customizable organizational intelligence." />
 </svelte:head>
 
 <main class="min-h-screen bg-background">
-	<!-- Hero Section -->
+	<!-- Section 1: Hero Section -->
 	<section class="section-px section-py">
-		<div class="container mx-auto max-w-4xl text-center">
-			<h1 class="text-display mb-6">
-				<AnimateText text="Sentra Trust Center" />
-			</h1>
-			<p class="text-title3 text-muted-foreground mb-8 max-w-2xl mx-auto">
-				Sentra is committed to protecting the data of our customers and employees. We began laying our security and compliance foundations from our earliest days.
-			</p>
+		<div class="container mx-auto max-w-6xl">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+				<!-- Left column - Text content -->
+				<div class="space-y-8">
+					<div class="space-y-6">
+						<h1 class="text-display">
+							<AnimateText text="Private Deployments" />
+						</h1>
+						<h2 class="text-title2 text-muted-foreground">
+							Deploy Sentra privately for ultimate security and data sovereignty.
+						</h2>
+					</div>
+					<div>
+						<Button size="lg" onclick={scrollToContact}>
+							Talk to Sales
+						</Button>
+					</div>
+				</div>
+				
+				<!-- Right column - Security graphic -->
+				<div class="relative">
+					<img 
+						src="/generated/image-a-professional-business-team-engaged-in-.webp" 
+						alt="Secure cloud infrastructure protecting organizational data"
+						class="w-full h-auto rounded-(--radius-lg)"
+					/>
+					<!-- Overlay security elements -->
+					<div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-(--radius-lg)"></div>
+					<div class="absolute bottom-4 left-4 right-4">
+						<div class="bg-white/90 backdrop-blur-sm rounded-(--radius-md) p-4 border border-white/20">
+							<div class="flex items-center gap-3">
+								<div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+								<span class="text-sm font-medium text-gray-900">Secure deployment active</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 
-	<!-- Certifications Section -->
-	<section class="section-px section-py-sm">
+	<!-- Section 2: Organizational Intelligence -->
+	<section class="section-px section-py bg-card">
 		<div class="container mx-auto max-w-6xl">
-			<div class="text-center mb-12">
-				<h2 class="text-title2 mb-4">Certifications</h2>
-				<p class="text-body text-muted-foreground max-w-3xl mx-auto">
-					Sentra adheres to industry-standard compliance frameworks, including SOC 2 Type I, GDPR, and CCPA. This ensures that our internal controls and processes meet and exceed industry practices in security & reliability.
-				</p>
+			<div class="text-center mb-16">
+				<h1 class="text-display mb-6">
+					Sentra's Organizational Intelligence <br/>
+					<span class="text-muted-foreground">without exposure risks</span>
+				</h1>
+				<h2 class="text-title3 text-muted-foreground max-w-4xl mx-auto">
+					Keep all your data within your own private environment for maximum security and compliance.
+				</h2>
 			</div>
 			
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-				<div class="bg-card border border-border rounded-(--radius-lg) p-8 text-center">
-					<div class="w-20 h-20 mx-auto mb-4 bg-primary/10 rounded-(--radius-lg) flex items-center justify-center">
-						<svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-						</svg>
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+				<!-- Completely private card -->
+				<div class="bg-background border border-border rounded-(--radius-lg) p-8">
+					<div class="w-16 h-16 mb-6 bg-primary/10 rounded-(--radius-lg) flex items-center justify-center">
+						<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+					</svg>
 					</div>
-					<h3 class="text-headline font-medium mb-2">SOC 2 Type I</h3>
-					<p class="text-caption text-muted-foreground mb-4">Currently in observation for Type II certification</p>
-					<Button variant="outline" size="sm">
-						View Details
-					</Button>
+					<h3 class="text-title3 font-medium mb-4">Completely private</h3>
+					<p class="text-body text-muted-foreground">
+						All of Sentra's memories and interactions occur within your secure infrastructure. Your sensitive company data never leaves your dedicated systems.
+					</p>
 				</div>
 				
-				<div class="bg-card border border-border rounded-(--radius-lg) p-8 text-center">
-					<div class="w-20 h-20 mx-auto mb-4 bg-primary/10 rounded-(--radius-lg) flex items-center justify-center">
-						<svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
-						</svg>
+				<!-- Fully customizable card -->
+				<div class="bg-background border border-border rounded-(--radius-lg) p-8">
+					<div class="w-16 h-16 mb-6 bg-primary/10 rounded-(--radius-lg) flex items-center justify-center">
+						<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+					</svg>
 					</div>
-					<h3 class="text-headline font-medium mb-2">GDPR</h3>
-					<p class="text-caption text-muted-foreground mb-4">Full compliance with European data protection regulations</p>
-					<Button variant="outline" size="sm">
-						View Details
-					</Button>
-				</div>
-				
-				<div class="bg-card border border-border rounded-(--radius-lg) p-8 text-center">
-					<div class="w-20 h-20 mx-auto mb-4 bg-primary/10 rounded-(--radius-lg) flex items-center justify-center">
-						<svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-						</svg>
-					</div>
-					<h3 class="text-headline font-medium mb-2">CCPA</h3>
-					<p class="text-caption text-muted-foreground mb-4">California Consumer Privacy Act compliant</p>
-					<Button variant="outline" size="sm">
-						View Details
-					</Button>
+					<h3 class="text-title3 font-medium mb-4">Fully customizable</h3>
+					<p class="text-body text-muted-foreground">
+						Customize the level of privacy with a dedicated solutions engineer. Scale and configure Sentra to your organization's exact needs and preferences.
+					</p>
 				</div>
 			</div>
 		</div>
@@ -212,7 +194,7 @@
 						<p class="text-caption text-muted-foreground">Your security whitepaper download should begin shortly.</p>
 					</div>
 				{:else}
-					<form class="max-w-md mx-auto space-y-4" on:submit|preventDefault={handleWhitepaperDownload}>
+					<form class="max-w-md mx-auto space-y-4" onsubmit={(e) => { e.preventDefault(); handleWhitepaperDownload(); }}>
 						<div>
 							<label for="email" class="block text-caption font-medium mb-2">Work Email</label>
 							<input
@@ -380,7 +362,7 @@
 					<div class="bg-card border border-border rounded-(--radius-lg) overflow-hidden">
 						<button
 							class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-card-hover transition-colors"
-							on:click={() => toggleFaq(index)}
+							onclick={() => toggleFaq(index)}
 						>
 							<span class="text-headline font-medium">{faq.question}</span>
 							<svg 
