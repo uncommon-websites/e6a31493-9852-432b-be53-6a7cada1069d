@@ -20,6 +20,8 @@
 		imageAspect = "16/9",
 		class: customClass = ""
 	}: Props = $props();
+
+	let Icon = $derived(icon);
 </script>
 
 <article
@@ -39,16 +41,15 @@
 						class="absolute top-3 left-3 bg-white/90 p-1.5 backdrop-blur-sm"
 						style="border-radius: max(2px, calc(var(--radius) - 1.25rem));"
 					>
-						<svelte:component
-							this={icon}
+						<Icon
 							class="size-4 {iconClass.includes('text-')
 								? iconClass.split(' ').find((c) => c.startsWith('text-'))
 								: 'text-primary'}"
 						/>
 					</div>
 				</div>
-			{:else if icon}
-				<svelte:component this={icon} class={iconClass} />
+			{:else if Icon}
+				<icon class={iconClass} />
 			{:else if imageSrc}
 				<img
 					src={imageSrc}
