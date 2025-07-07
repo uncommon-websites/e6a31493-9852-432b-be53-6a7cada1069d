@@ -42,7 +42,7 @@
 		const wordElements = Array.from(containerElement.querySelectorAll(".word"));
 
 		scroll(animate(wordElements, {
-			y: ["1em", 0],
+			transform: ["translateY(1em)", "translateY(0)"],
 			filter: ["blur(12px)", "blur(8px) brightness(250%)", "blur(0px)"]
 		}, {
 			at: "0",
