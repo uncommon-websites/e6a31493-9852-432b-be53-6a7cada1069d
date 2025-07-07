@@ -1,5 +1,8 @@
 <script lang="ts">
 	import SectionHeader from "./SectionHeader.svelte";
+	import IconTarget from "~icons/lucide/target";
+	import IconRadar from "~icons/lucide/radar";
+	import IconAlertTriangle from "~icons/lucide/alert-triangle";
 
 	const valueProps = [
 		{
@@ -145,7 +148,7 @@
 											<IconAlertTriangle class="h-5 w-5 text-orange-400 opacity-50" />
 										</div>
 										<div class="absolute -bottom-4 left-1/2 -translate-x-1/2 transform">
-											<IconAlertTriangle class="h-5 w-5 text-orange-400 opacity-60" />
+											<div class="h-5 w-5 bg-orange-400 opacity-60 rounded"></div>
 										</div>
 
 										<!-- Detection waves -->
