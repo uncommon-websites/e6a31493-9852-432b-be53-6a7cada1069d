@@ -53,29 +53,29 @@
 										<div
 											class="bg-primary-100 text-primary-600 relative z-10 flex h-16 w-16 items-center justify-center rounded-full"
 										>
-											<div class="h-8 w-8 rounded bg-current opacity-20"></div>
+											<IconTarget class="h-8 w-8" />
 										</div>
 
 										<!-- Connected nodes around it -->
 										<div
 											class="absolute -top-6 -left-12 flex h-6 w-6 items-center justify-center rounded-lg bg-gray-200 opacity-60"
 										>
-											<div class="h-4 w-4 rounded bg-gray-500 opacity-60"></div>
+											<IconTarget class="h-4 w-4 text-gray-500 opacity-60" />
 										</div>
 										<div
 											class="absolute -top-6 -right-12 flex h-6 w-6 items-center justify-center rounded-lg bg-gray-200 opacity-60"
 										>
-											<div class="h-4 w-4 rounded bg-gray-500 opacity-60"></div>
+											<IconTarget class="h-4 w-4 text-gray-500 opacity-60" />
 										</div>
 										<div
 											class="absolute bottom-2 -left-12 flex h-6 w-6 items-center justify-center rounded-lg bg-gray-200 opacity-60"
 										>
-											<div class="h-4 w-4 rounded bg-gray-500 opacity-60"></div>
+											<IconTarget class="h-4 w-4 text-gray-500 opacity-60" />
 										</div>
 										<div
 											class="absolute -right-12 bottom-2 flex h-6 w-6 items-center justify-center rounded-lg bg-gray-200 opacity-60"
 										>
-											<div class="h-4 w-4 rounded bg-gray-500 opacity-60"></div>
+											<IconTarget class="h-4 w-4 text-gray-500 opacity-60" />
 										</div>
 
 										<!-- Connection lines -->
@@ -99,7 +99,7 @@
 										<div
 											class="bg-secondary-100 text-secondary-600 relative z-10 flex h-16 w-16 items-center justify-center rounded-full"
 										>
-											<div class="h-8 w-8 rounded bg-current opacity-20"></div>
+											<IconTarget class="h-8 w-8" />
 										</div>
 
 										<!-- Concentric circles representing layers of understanding -->

@@ -40,8 +40,8 @@
 						style="border-radius: max(2px, calc(var(--radius) - 1.25rem));"
 					>
 						{#if icon}
-							{@const IconComponent = icon}
-							<IconComponent
+							<svelte:component
+								this={icon}
 								class="size-4 {iconClass.includes('text-')
 									? iconClass.split(' ').find((c) => c.startsWith('text-'))
 									: 'text-primary'}"
@@ -50,8 +50,7 @@
 					</div>
 				</div>
 			{:else if icon}
-				{@const IconComponent = icon}
-				<IconComponent class={iconClass} />
+				<svelte:component this={icon} class={iconClass} />
 			{:else if imageSrc}
 				<img
 					src={imageSrc}
