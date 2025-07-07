@@ -6,11 +6,11 @@
 	import { scrollY } from "svelte/reactivity/window";
 	import { fade, fly } from "svelte/transition";
 
-	let heroContainer = $state();
+	let heroContainer = $state<HTMLElement>();
 	let currentSlide = $derived.by(() => {
-		if (!heroContainer) return 0;
+		if (!heroContainer || !scrollY) return 0;
 
-		return scrollY.current > heroContainer.offsetHeight / 1.5 ? 1 : 0;
+		return scrollY > (heroContainer.offsetHeight || 0) / 1.5 ? 1 : 0;
 	});
 </script>
 

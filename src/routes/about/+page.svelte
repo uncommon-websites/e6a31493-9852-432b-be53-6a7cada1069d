@@ -89,10 +89,10 @@
 
 	<!-- The Future of Autonomous Enterprise - Unified Essay -->
 	<section
-		class="section-py section-px container mx-auto"
+		class="section-py section-px container-sm mx-auto"
 		style="background-color: var(--color-background);"
 	>
-		<div class="max-w-prose mx-auto">
+		<div class="mx-auto max-w-prose">
 			<h2 class="text-title1 section-mb-sm" style="color: var(--color-foreground);">
 				The future of autonomous enterprise
 			</h2>

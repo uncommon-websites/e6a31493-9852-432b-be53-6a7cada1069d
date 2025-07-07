@@ -43,6 +43,8 @@
 							border: 1px solid var(--color-border);
 							transition: border-color 0.2s ease;
 						"
+						role="button"
+						tabindex="0"
 						onmouseenter={(e) => e.currentTarget.style.borderColor = 'var(--color-primary)'}
 						onmouseleave={(e) => e.currentTarget.style.borderColor = 'var(--color-border)'}
 					>

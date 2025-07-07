@@ -49,7 +49,7 @@
 					</div>
 				</div>
 			{:else if Icon}
-				<icon class={iconClass} />
+				<Icon class={iconClass} />
 			{:else if imageSrc}
 				<img
 					src={imageSrc}

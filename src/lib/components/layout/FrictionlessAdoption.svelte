@@ -145,6 +145,7 @@
 							{#each steps as step}
 								<button
 									onclick={() => selectStep(step.id)}
+									aria-label="Go to step {step.id}: {step.title}"
 									class={[
 										"h-2 w-2 rounded-full transition-all duration-300",
 										activeStep === step.id ? "bg-primary w-8" : "bg-gray-300 hover:bg-gray-400"

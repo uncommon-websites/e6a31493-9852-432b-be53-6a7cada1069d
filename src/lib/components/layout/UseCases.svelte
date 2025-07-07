@@ -70,8 +70,8 @@
 					<p class="text-body text-gray-500">{useCases[current].description}</p>
 					{#if useCases[current]?.link}
 						<div class="mt-6">
-							<Button href={useCases[current].link.href} variant="secondary">
-								{useCases[current].link.label}
+							<Button href={useCases[current].link?.href} variant="secondary">
+								{useCases[current].link?.label}
 							</Button>
 						</div>
 					{/if}
