@@ -8,7 +8,7 @@
 
 	// State
 	let activeImageIndex = $state(0);
-	let hasImages = $derived(item.children.some((child: any) => child.image));
+	let hasImages = $derived(item.children.some((child) => child.image));
 
 	function setActiveImageIndex(index: number) {
 		activeImageIndex = index;

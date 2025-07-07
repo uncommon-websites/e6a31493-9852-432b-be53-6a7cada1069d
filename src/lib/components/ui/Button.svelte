@@ -4,7 +4,7 @@
 	import type { ButtonRootProps } from "bits-ui";
 	import { Button } from "bits-ui";
 
-	type Variant = "primary" | "secondary" | "ghost" | "outline";
+	type Variant = "primary" | "secondary" | "ghost";
 	type Size = "sm" | "md" | "lg";
 
 	type Props = ButtonRootProps & {
@@ -35,8 +35,7 @@
 	const variants: Record<Variant, string> = {
 		primary: "",
 		secondary: "",
-		ghost: "",
-		outline: ""
+		ghost: ""
 	};
 
 	const sizes: Record<Size, string> = $derived({

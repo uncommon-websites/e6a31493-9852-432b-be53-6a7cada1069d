@@ -35,14 +35,12 @@ export type NavItem = {
 	label: string;
 	href?: string;
 	image?: string;
-	target?: string;
 	showInNav?: boolean;
 	showInFooter?: boolean;
 
 	children?: (Omit<NavItem, "children" | "image"> & {
 		image?: string;
 		description?: string;
-		target?: string;
 		showInNav?: boolean;
 		showInFooter?: boolean;
 	})[];

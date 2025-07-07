@@ -39,14 +39,12 @@
 						class="absolute top-3 left-3 bg-white/90 p-1.5 backdrop-blur-sm"
 						style="border-radius: max(2px, calc(var(--radius) - 1.25rem));"
 					>
-						{#if icon}
-							<svelte:component
-								this={icon}
-								class="size-4 {iconClass.includes('text-')
-									? iconClass.split(' ').find((c) => c.startsWith('text-'))
-									: 'text-primary'}"
-							/>
-						{/if}
+						<svelte:component
+							this={icon}
+							class="size-4 {iconClass.includes('text-')
+								? iconClass.split(' ').find((c) => c.startsWith('text-'))
+								: 'text-primary'}"
+						/>
 					</div>
 				</div>
 			{:else if icon}
