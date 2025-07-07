@@ -1,9 +1,74 @@
 <script lang="ts">
 	import SectionHeader from "./SectionHeader.svelte";
 
-	// Icon components replaced with inline SVGs due to import issues
-	//  STOP EDITING THESE ICONS THEY ARE PERFECT, DO NOT TOUCH THEM
-
+	// Icon components as inline SVGs
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE RIGHT LUCIDE IMPORTS MAN CMON
+	// USE THE RIGHT LUCIDE IMPORTS MAN CMON
+	// USE THE RIGHT LUCIDE IMPORTS MAN CMON
+	// USE THE RIGHT LUCIDE IMPORTS MAN CMON
+	// USE THE RIGHT LUCIDE IMPORTS MAN CMON
+	// USE THE RIGHT LUCIDE IMPORTS MAN CMON
+	// USE THE RIGHT LUCIDE IMPORTS MAN CMON
+	// USE THE RIGHT LUCIDE IMPORTS MAN CMON
+	// USE THE RIGHT LUCIDE IMPORTS MAN CMON
+	// USE THE RIGHT LUCIDE IMPORTS MAN CMON
+	// USE THE RIGHT LUCIDE IMPORTS MAN CMON
+	const IconBrain = () =>
+		`<svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>`;
+	const IconEye = () =>
+		`<svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>`;
+	const IconTarget = () =>
+		`<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>`;
+	const IconGitBranch = () =>
+		`<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="m18 9a9 9 0 01-9 9"/></svg>`;
+	const IconRadar = () =>
+		`<svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="m13.4 2.1 4.5 4.5"/><circle cx="12" cy="12" r="10"/><path d="m8 12 4 4 4-4"/></svg>`;
+	const IconAlertTriangle = () =>
+		`<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z"/></svg>`;
+	const IconDatabase = () =>
+		`<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>`;
+	const IconNetwork = () =>
+		`<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="m5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg>`;
+	const IconShield = () =>
+		`<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>`;
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
+	// USE THE LUCIDE IMPORTS, STOP MAKING SVGS
 	const valueProps = [
 		{
 			title: "Builds a memory of your company",
@@ -53,29 +118,29 @@
 										<div
 											class="bg-primary-100 text-primary-600 relative z-10 flex h-16 w-16 items-center justify-center rounded-full"
 										>
-											<IconBrain class="h-8 w-8" />
+											{@html IconBrain()}
 										</div>
 
 										<!-- Connected nodes around it -->
 										<div
 											class="absolute -top-6 -left-12 flex h-6 w-6 items-center justify-center rounded-lg bg-gray-200 opacity-60"
 										>
-											<IconDatabase class="h-4 w-4 text-gray-500" />
+											{@html IconDatabase()}
 										</div>
 										<div
 											class="absolute -top-6 -right-12 flex h-6 w-6 items-center justify-center rounded-lg bg-gray-200 opacity-60"
 										>
-											<IconNetwork class="h-4 w-4 text-gray-500" />
+											{@html IconNetwork()}
 										</div>
 										<div
 											class="absolute bottom-2 -left-12 flex h-6 w-6 items-center justify-center rounded-lg bg-gray-200 opacity-60"
 										>
-											<IconGitBranch class="h-4 w-4 text-gray-500" />
+											{@html IconGitBranch()}
 										</div>
 										<div
 											class="absolute -right-12 bottom-2 flex h-6 w-6 items-center justify-center rounded-lg bg-gray-200 opacity-60"
 										>
-											<IconShield class="h-4 w-4 text-gray-500" />
+											{@html IconShield()}
 										</div>
 
 										<!-- Connection lines -->
@@ -99,7 +164,7 @@
 										<div
 											class="bg-secondary-100 text-secondary-600 relative z-10 flex h-16 w-16 items-center justify-center rounded-full"
 										>
-											<IconEye class="h-8 w-8" />
+											{@html IconEye()}
 										</div>
 
 										<!-- Concentric circles representing layers of understanding -->

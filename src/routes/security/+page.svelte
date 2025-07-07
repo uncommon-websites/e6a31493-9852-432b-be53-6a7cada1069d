@@ -46,7 +46,88 @@
 		}, 3000);
 	}
 
-	// Duplicate section removed
+	// Handle whitepaper download
+	async function handleWhitepaperDownload() {
+		if (!email || !company) return;
+		
+		isSubmitting = true;
+		
+		// Simulate download preparation
+		await new Promise(resolve => setTimeout(resolve, 1500));
+		
+		// Simulate file download
+		const link = document.createElement('a');
+		link.href = '/static/sentra-security-whitepaper.pdf';
+		link.download = 'sentra-security-whitepaper.pdf';
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
+		
+		formSubmitted = true;
+		isSubmitting = false;
+		
+		// Reset form after 3 seconds
+		setTimeout(() => {
+			formSubmitted = false;
+			email = '';
+			company = '';
+		}, 3000);
+	}
+
+	// Sub-processors data
+	const subProcessors = [
+		{
+			name: 'Amazon Web Services (AWS)',
+			description: 'Cloud infrastructure and hosting services'
+		},
+		{
+			name: 'Stripe',
+			description: 'Payment processing and billing services'
+		},
+		{
+			name: 'SendGrid',
+			description: 'Email delivery and communication services'
+		},
+		{
+			name: 'Mixpanel',
+			description: 'Analytics and user behavior tracking'
+		}
+	];
+
+	// FAQ data and state
+	let openFaq = $state<number | null>(null);
+	
+	const faqs = [
+		{
+			question: 'How does Sentra protect my company data?',
+			answer: 'Sentra uses enterprise-grade encryption (AES-256 at rest, TLS 1.3 in transit), operates on AWS secure infrastructure, and follows strict data isolation practices. All data is encrypted and access is logged and monitored.'
+		},
+		{
+			question: 'Is Sentra SOC 2 compliant?',
+			answer: 'Yes, Sentra has completed SOC 2 Type I certification and is currently undergoing SOC 2 Type II certification. We maintain comprehensive security controls and undergo regular third-party audits.'
+		},
+		{
+			question: 'Can I deploy Sentra in my own private cloud?',
+			answer: 'Yes, Sentra offers private deployment options for organizations with specific security requirements. Contact our sales team to discuss your private deployment needs and configuration options.'
+		},
+		{
+			question: 'What data does Sentra access?',
+			answer: 'Sentra only accesses the data you explicitly grant permission to, such as public Slack channels, calendar events, and project management tools. We never access private messages or sensitive documents without explicit authorization.'
+		},
+		{
+			question: 'How long is data retained?',
+			answer: 'Data retention periods are configurable based on your organization\'s needs and compliance requirements. By default, we retain operational data for 90 days and can accommodate longer or shorter retention periods as needed.'
+		},
+		{
+			question: 'Can I delete my data?',
+			answer: 'Yes, you have full control over your data. You can request data deletion at any time, and we will permanently remove all associated data within 30 days of your request.'
+		}
+	];
+
+	// Toggle FAQ function
+	function toggleFaq(index: number) {
+		openFaq = openFaq === index ? null : index;
+	}
 </script>
 
 <svelte:head>
