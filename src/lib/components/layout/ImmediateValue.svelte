@@ -2,10 +2,10 @@
 	import SectionHeader from "./SectionHeader.svelte";
 	import IconBrain from "~icons/lucide/brain";
 	import IconEye from "~icons/lucide/eye";
-	import SimpleIcon name="target" from "~icons/lucide/target";
+	import IconTarget from "~icons/lucide/target";
 	import IconGitBranch from "~icons/lucide/git-branch";
-	import SimpleIcon name="radar" from "~icons/lucide/radar";
-	import SimpleIcon name="alert-triangle" from "~icons/lucide/alert-triangle";
+	import IconRadar from "~icons/lucide/radar";
+	import IconAlertTriangle from "~icons/lucide/alert-triangle";
 	import IconDatabase from "~icons/lucide/database";
 	import IconNetwork from "~icons/lucide/network";
 	import IconShield from "~icons/lucide/shield";
@@ -121,10 +121,10 @@
 
 										<!-- Target points -->
 										<div class="absolute -top-6 left-1/2 -translate-x-1/2 transform">
-											<SimpleIcon name="target" class="text-secondary-400 h-4 w-4 opacity-60" />
+											<IconTarget class="text-secondary-400 h-4 w-4 opacity-60" />
 										</div>
 										<div class="absolute -bottom-6 left-1/2 -translate-x-1/2 transform">
-											<SimpleIcon name="target" class="text-secondary-400 h-4 w-4 opacity-60" />
+											<IconTarget class="text-secondary-400 h-4 w-4 opacity-60" />
 										</div>
 									</div>
 								{:else if prop.visualization === "detection"}
@@ -134,7 +134,7 @@
 										<div
 											class="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-orange-100 text-orange-600"
 										>
-											<SimpleIcon name="radar" class="h-8 w-8" />
+											<IconRadar class="h-8 w-8" />
 										</div>
 
 										<!-- Radar sweep animation -->
@@ -148,13 +148,13 @@
 
 										<!-- Warning indicators at different positions -->
 										<div class="absolute -top-4 -left-4">
-											<SimpleIcon name="alert-triangle" class="h-5 w-5 text-orange-400 opacity-70" />
+											<IconAlertTriangle class="h-5 w-5 text-orange-400 opacity-70" />
 										</div>
 										<div class="absolute -top-4 -right-4">
-											<SimpleIcon name="alert-triangle" class="h-5 w-5 text-orange-400 opacity-50" />
+											<IconAlertTriangle class="h-5 w-5 text-orange-400 opacity-50" />
 										</div>
 										<div class="absolute -bottom-4 left-1/2 -translate-x-1/2 transform">
-											<SimpleIcon name="alert-triangle" class="h-5 w-5 text-orange-400 opacity-60" />
+											<IconAlertTriangle class="h-5 w-5 text-orange-400 opacity-60" />
 										</div>
 
 										<!-- Detection waves -->
