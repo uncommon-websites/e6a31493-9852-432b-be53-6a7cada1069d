@@ -1,14 +1,5 @@
 <script lang="ts">
 	import SectionHeader from "./SectionHeader.svelte";
-	import IconBrain from "~icons/lucide/brain";
-	import IconEye from "~icons/lucide/eye";
-	import IconTarget from "~icons/lucide/target";
-	import IconGitBranch from "~icons/lucide/git-branch";
-	import IconRadar from "~icons/lucide/radar";
-	import IconAlertTriangle from "~icons/lucide/alert-triangle";
-	import IconDatabase from "~icons/lucide/database";
-	import IconNetwork from "~icons/lucide/network";
-	import IconShield from "~icons/lucide/shield";
 
 	const valueProps = [
 		{
@@ -59,29 +50,29 @@
 										<div
 											class="bg-primary-100 text-primary-600 relative z-10 flex h-16 w-16 items-center justify-center rounded-full"
 										>
-											<IconBrain class="h-8 w-8" />
+											<div class="h-8 w-8 bg-current opacity-20 rounded"></div>
 										</div>
 
 										<!-- Connected nodes around it -->
 										<div
 											class="absolute -top-6 -left-12 flex h-6 w-6 items-center justify-center rounded-lg bg-gray-200 opacity-60"
 										>
-											<IconDatabase class="h-4 w-4 text-gray-500" />
+											<div class="h-4 w-4 bg-gray-500 opacity-60 rounded"></div>
 										</div>
 										<div
 											class="absolute -top-6 -right-12 flex h-6 w-6 items-center justify-center rounded-lg bg-gray-200 opacity-60"
 										>
-											<IconNetwork class="h-4 w-4 text-gray-500" />
+											<div class="h-4 w-4 bg-gray-500 opacity-60 rounded"></div>
 										</div>
 										<div
 											class="absolute bottom-2 -left-12 flex h-6 w-6 items-center justify-center rounded-lg bg-gray-200 opacity-60"
 										>
-											<IconGitBranch class="h-4 w-4 text-gray-500" />
+											<div class="h-4 w-4 bg-gray-500 opacity-60 rounded"></div>
 										</div>
 										<div
 											class="absolute -right-12 bottom-2 flex h-6 w-6 items-center justify-center rounded-lg bg-gray-200 opacity-60"
 										>
-											<IconShield class="h-4 w-4 text-gray-500" />
+											<div class="h-4 w-4 bg-gray-500 opacity-60 rounded"></div>
 										</div>
 
 										<!-- Connection lines -->
@@ -105,7 +96,7 @@
 										<div
 											class="bg-secondary-100 text-secondary-600 relative z-10 flex h-16 w-16 items-center justify-center rounded-full"
 										>
-											<IconEye class="h-8 w-8" />
+											<div class="h-8 w-8 bg-current opacity-20 rounded"></div>
 										</div>
 
 										<!-- Concentric circles representing layers of understanding -->
@@ -148,7 +139,7 @@
 
 										<!-- Warning indicators at different positions -->
 										<div class="absolute -top-4 -left-4">
-											<IconAlertTriangle class="h-5 w-5 text-orange-400 opacity-70" />
+											<div class="h-5 w-5 bg-orange-400 opacity-70 rounded"></div>
 										</div>
 										<div class="absolute -top-4 -right-4">
 											<IconAlertTriangle class="h-5 w-5 text-orange-400 opacity-50" />
@@ -183,6 +174,10 @@
 					</div>
 				{/each}
 			</div>
+		</div>
+	</div>
+</section>
+iv>
 		</div>
 	</div>
 </section>

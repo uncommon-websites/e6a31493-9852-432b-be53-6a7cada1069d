@@ -48,11 +48,10 @@
 				filter: ["blur(12px)", "blur(8px) brightness(250%)", "blur(0px)"]
 			},
 			{
-				at: "0",
 				delay: stagger(0.015),
 				ease: "easeInOut"
 			}
-		];
+		] as any;
 
 		scroll(animate(sequence), {
 			target: containerElement,
