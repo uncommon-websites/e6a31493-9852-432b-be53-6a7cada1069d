@@ -53,29 +53,29 @@
 										<div
 											class="bg-primary-100 text-primary-600 relative z-10 flex h-16 w-16 items-center justify-center rounded-full"
 										>
-											<div class="h-8 w-8 bg-current opacity-20 rounded"></div>
+											<div class="h-8 w-8 rounded bg-current opacity-20"></div>
 										</div>
 
 										<!-- Connected nodes around it -->
 										<div
 											class="absolute -top-6 -left-12 flex h-6 w-6 items-center justify-center rounded-lg bg-gray-200 opacity-60"
 										>
-											<div class="h-4 w-4 bg-gray-500 opacity-60 rounded"></div>
+											<div class="h-4 w-4 rounded bg-gray-500 opacity-60"></div>
 										</div>
 										<div
 											class="absolute -top-6 -right-12 flex h-6 w-6 items-center justify-center rounded-lg bg-gray-200 opacity-60"
 										>
-											<div class="h-4 w-4 bg-gray-500 opacity-60 rounded"></div>
+											<div class="h-4 w-4 rounded bg-gray-500 opacity-60"></div>
 										</div>
 										<div
 											class="absolute bottom-2 -left-12 flex h-6 w-6 items-center justify-center rounded-lg bg-gray-200 opacity-60"
 										>
-											<div class="h-4 w-4 bg-gray-500 opacity-60 rounded"></div>
+											<div class="h-4 w-4 rounded bg-gray-500 opacity-60"></div>
 										</div>
 										<div
 											class="absolute -right-12 bottom-2 flex h-6 w-6 items-center justify-center rounded-lg bg-gray-200 opacity-60"
 										>
-											<div class="h-4 w-4 bg-gray-500 opacity-60 rounded"></div>
+											<div class="h-4 w-4 rounded bg-gray-500 opacity-60"></div>
 										</div>
 
 										<!-- Connection lines -->
@@ -99,7 +99,7 @@
 										<div
 											class="bg-secondary-100 text-secondary-600 relative z-10 flex h-16 w-16 items-center justify-center rounded-full"
 										>
-											<div class="h-8 w-8 bg-current opacity-20 rounded"></div>
+											<div class="h-8 w-8 rounded bg-current opacity-20"></div>
 										</div>
 
 										<!-- Concentric circles representing layers of understanding -->
@@ -142,13 +142,13 @@
 
 										<!-- Warning indicators at different positions -->
 										<div class="absolute -top-4 -left-4">
-											<div class="h-5 w-5 bg-orange-400 opacity-70 rounded"></div>
+											<div class="h-5 w-5 rounded bg-orange-400 opacity-70"></div>
 										</div>
 										<div class="absolute -top-4 -right-4">
 											<IconAlertTriangle class="h-5 w-5 text-orange-400 opacity-50" />
 										</div>
 										<div class="absolute -bottom-4 left-1/2 -translate-x-1/2 transform">
-											<div class="h-5 w-5 bg-orange-400 opacity-60 rounded"></div>
+											<div class="h-5 w-5 rounded bg-orange-400 opacity-60"></div>
 										</div>
 
 										<!-- Detection waves -->
@@ -177,10 +177,6 @@
 					</div>
 				{/each}
 			</div>
-		</div>
-	</div>
-</section>
-iv>
 		</div>
 	</div>
 </section>
