@@ -40,19 +40,15 @@
 		// Get all word elements as an array
 		const wordElements = Array.from(containerElement.querySelectorAll(".word"));
 
-		const sequence = [
-			wordElements, {
-				opacity: [0, 0, 1],
-				y: ["1em", 0],
-				filter: ["blur(12px)", "blur(8px) brightness(250%)", "blur(0px)"]
-			}, {
-				at: "0",
-				delay: stagger(0.015),
-				ease: "easeInOut"
-			}
-		];
-
-		scroll(animate(sequence), {
+		scroll(animate(wordElements, {
+			opacity: [0, 0, 1],
+			y: ["1em", 0],
+			filter: ["blur(12px)", "blur(8px) brightness(250%)", "blur(0px)"]
+		}, {
+			at: "0",
+			delay: stagger(0.015),
+			ease: "easeInOut"
+		}), {
 			target: containerElement,
 			offset: ["start end", "center center"]
 		});

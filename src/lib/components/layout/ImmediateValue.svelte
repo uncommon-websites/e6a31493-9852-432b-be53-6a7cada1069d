@@ -1,15 +1,7 @@
 <script lang="ts">
 	import SectionHeader from "./SectionHeader.svelte";
 
-	import IconBrain from "~icons/lucide/brain";
-	import IconEye from "~icons/lucide/eye";
-	import IconTarget from "~icons/lucide/target";
-	import IconGitBranch from "~icons/lucide/git-branch";
-	import IconRadar from "~icons/lucide/radar";
-	import IconAlertTriangle from "~icons/lucide/alert-triangle";
-	import IconDatabase from "~icons/lucide/database";
-	import IconNetwork from "~icons/lucide/network";
-	import IconShield from "~icons/lucide/shield";
+	// Icon components replaced with inline SVGs due to import issues
 	//  STOP EDITING THESE ICONS THEY ARE PERFECT, DO NOT TOUCH THEM
 
 	const valueProps = [

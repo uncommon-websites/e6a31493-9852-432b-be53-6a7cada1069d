@@ -42,7 +42,6 @@
 		const wordElements = Array.from(containerElement.querySelectorAll(".word"));
 
 		scroll(animate(wordElements, {
-			opacity: [0, 0, 1],
 			y: ["1em", 0],
 			filter: ["blur(12px)", "blur(8px) brightness(250%)", "blur(0px)"]
 		}, {

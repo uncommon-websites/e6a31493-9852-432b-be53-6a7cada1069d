@@ -9,7 +9,7 @@
 	let heroContainer = $state<HTMLElement>();
 	let currentSlide = $derived.by(() => {
 		if (!heroContainer) return 0;
-		const currentScrollY = scrollY || 0;
+		const currentScrollY = Number(scrollY) || 0;
 		return currentScrollY > (heroContainer.offsetHeight || 0) / 1.5 ? 1 : 0;
 	});
 </script>
