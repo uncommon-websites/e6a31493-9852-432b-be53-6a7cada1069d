@@ -4,8 +4,7 @@
 
 	// Components
 	import Button from "$lib/components/ui/Button.svelte";
-	import IconMenu from "~icons/lucide/menu";
-	import IconChevronRight from "~icons/lucide/chevron-right";
+	import SimpleIcon from "../icons/SimpleIcon.svelte";
 
 	// Utils
 	import { cta, navigation } from "$lib/navigation";

@@ -337,7 +337,7 @@ Please update features according to the company's product offering. Do not remov
 									<td class="py-3">
 										{#if typeof feature.tiers[tierName] === "boolean"}
 											{#if feature.tiers[tierName]}
-												<IconCheck class="text-primary-900 dark:text-primary-400 size-5" />
+												<SimpleIcon name="check" class="text-primary-900 dark:text-primary-400 size-5" />
 											{:else}
 												<IconX class="size-5 text-gray-400" />
 											{/if}
