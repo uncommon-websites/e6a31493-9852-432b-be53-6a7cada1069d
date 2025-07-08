@@ -1,69 +1,6 @@
 <script lang="ts">
-	import CompactTeam from "$lib/components/layout/CompactTeam.svelte";
 	import SecondaryHero from "$lib/components/layout/hero-sections/SecondaryHero.svelte";
 	import CallToAction from "$lib/components/layout/CallToAction.svelte";
-
-	// Team data with placeholder URLs
-	const teamMembers = [
-		{
-			name: "Jae Gwan Park",
-			position: "Co-founder, CEO",
-			description:
-				"AI engineer, MIT research, international AI hackathon winner, previous ecommerce founder",
-			image: "https://placehold.net/avatar.svg"
-		},
-		{
-			name: "Andrey Starenky",
-			position: "Co-founder, CTO",
-			description:
-				"AI infrastructure at IBM WatsonX, defense contracting, previous mobile app founder (acquired)",
-			image: "https://placehold.net/avatar.svg"
-		},
-		{
-			name: "Ashwin Gopinath",
-			position: "Co-founder, Advisor",
-			description: "MIT professor, Caltech & Google X alum, successful biotech founder (acquired)",
-			image: "https://placehold.net/avatar.svg"
-		}
-	];
-
-	// Advisors data with placeholder URLs
-	const advisors = [
-		{
-			name: "Lakshmi Sankar",
-			position: "Advisor",
-			description: "Former VP Google, former Chief of Staff Twitter",
-			image: "https://placehold.net/avatar.svg"
-		},
-		{
-			name: "Sanjay Jha",
-			position: "Advisor",
-			description: "Former COO Qualcomm, former CEO Motorola",
-			image: "https://placehold.net/avatar.svg"
-		}
-	];
-
-	// Early supporters data with placeholder URLs
-	const supporters = [
-		{
-			name: "Anne Lee Skates",
-			position: "Parable VC",
-			description: "Former A16Z",
-			image: "https://placehold.net/avatar.svg"
-		},
-		{
-			name: "Shaad Khan",
-			position: "Seven Story Capital",
-			description: "Investment Partner",
-			image: "https://placehold.net/avatar.svg"
-		},
-		{
-			name: "Alex Yang",
-			position: "Principal PM",
-			description: "Microsoft",
-			image: "https://placehold.net/avatar.svg"
-		}
-	];
 </script>
 
 <svelte:head>
@@ -80,29 +17,8 @@
 		title="Autonomous Enterprise"
 		subtitle="The future of organizational intelligence"
 	/>
-	<!-- Press Inquiries Section -->
-	<section
-		class="section-py section-px container-sm mx-auto"
-		style="background-color: var(--color-background);"
-	>
-		<div class="mx-auto max-w-prose text-center">
-			<h1 class="text-title1 section-mb-sm" style="color: var(--color-foreground);">
-				Press Inquiries
-			</h1>
-			<p class="text-body" style="color: var(--color-muted-foreground);">
-				Contact us at <a href="mailto:contact@sentra.app" style="color: var(--color-primary); text-decoration: underline;">contact@sentra.app</a>
-			</p>
-		</div>
-	</section>
 
-	<!-- Team Section -->
-	<CompactTeam
-		title="Who we are"
-		subtitle="The team building the future of organizational intelligence"
-		members={teamMembers}
-	/>
-
-	<!-- Company Story and Vision -->
+	<!-- Main Content Section -->
 	<section
 		class="section-py section-px container-sm mx-auto"
 		style="background-color: var(--color-background);"
@@ -166,19 +82,20 @@
 		</div>
 	</section>
 
-	<!-- Advisors Section -->
-	<CompactTeam
-		title="Advisors"
-		subtitle="Management experts and enterprise leaders guiding our mission"
-		members={advisors}
-	/>
-
-	<!-- Early Supporters Section -->
-	<CompactTeam
-		title="Our earliest supporters"
-		subtitle="Investors and partners who believe in our vision"
-		members={supporters}
-	/>
+	<!-- Press Inquiries Section -->
+	<section
+		class="section-py section-px container-sm mx-auto"
+		style="background-color: var(--color-background);"
+	>
+		<div class="mx-auto max-w-prose text-center">
+			<h1 class="text-title1 section-mb-sm" style="color: var(--color-foreground);">
+				Press Inquiries
+			</h1>
+			<p class="text-body" style="color: var(--color-muted-foreground);">
+				Contact us at <a href="mailto:contact@sentra.app" style="color: var(--color-primary); text-decoration: underline;">contact@sentra.app</a>
+			</p>
+		</div>
+	</section>
 </main>
 
 <CallToAction />

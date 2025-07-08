@@ -1,13 +1,12 @@
-# Task: Update About Page with New Content Structure
+# Task: Restructure About Page Content
 
-- [x] Update SecondaryHero title to "Autonomous Enterprise" and subtitle to "The future of organizational intelligence"
-- [x] Replace the current essay section with comprehensive new story about MIT research and AI progression
-- [x] Add detailed L1-L3 AI progression explanation
-- [x] Include company vision statement about large companies running at small company speed
-- [x] Add Press Inquiries section with contact information
-- [x] Ensure proper header hierarchy and styling throughout
-- [x] Keep existing team sections (founders, advisors, supporters) intact
-- [x] Maintain CTA banner at bottom
+- [x] Update about page with new content structure following exact order
+- [x] Keep SecondaryHero with correct titles (already matches)
+- [x] Replace all content sections with user-specified content
+- [x] Add main content section with ChatGPT/MIT story and AI progression levels
+- [x] Move Press Inquiries section to after main content
+- [x] Remove team, advisors, and supporters sections
+- [x] Keep CallToAction at the end
 - [x] Final design system compliance check - verify design system classes prioritized over Tailwind, NO shadows, NO custom CSS, NO arbitrary values, check theme.css, app.css and typography.css
 
 ## Design System Compliance Verification:
