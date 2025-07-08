@@ -166,14 +166,14 @@
 		<!-- Logo scroller at bottom of hero -->
 		<div class="mt-16 lg:mt-20">
 			<LogoScroller
-				label="Backed by industry leaders"
+				label="Shaped and backed by former leaders of:"
 				logoUrls={[
-					"https://cdn.brandfetch.io/microsoft.com/w/400/h/400/logo?c=1id_elLz2Bd5Ej-dWo7",
-					"https://cdn.brandfetch.io/notion.so/w/400/h/400/logo?c=1id_elLz2Bd5Ej-dWo7",
-					"https://cdn.brandfetch.io/figma.com/w/400/h/400/logo?c=1id_elLz2Bd5Ej-dWo7",
-					"https://cdn.brandfetch.io/airtable.com/w/400/h/400/logo?c=1id_elLz2Bd5Ej-dWo7",
-					"https://cdn.brandfetch.io/linear.app/w/400/h/400/logo?c=1id_elLz2Bd5Ej-dWo7",
-					"https://cdn.brandfetch.io/slack.com/w/400/h/400/logo?c=1id_elLz2Bd5Ej-dWo7"
+					"https://logo.clearbit.com/google.com",
+					"https://logo.clearbit.com/microsoft.com",
+					"https://logo.clearbit.com/twitter.com",
+					"https://logo.clearbit.com/qualcomm.com",
+					"https://logo.clearbit.com/instacart.com",
+					"https://logo.clearbit.com/motorola.com"
 				]}
 			/>
 		</div>

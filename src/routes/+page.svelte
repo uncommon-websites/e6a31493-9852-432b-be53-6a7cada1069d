@@ -17,8 +17,8 @@
 </script>
 
 <SplitHero
-	title="Scale companies effectively with Sentra"
-	subtitle="Sentra is an AI teammate that improves alignment across your organization by proactively sensing when problems may occur and allowing leaders to intervene to intercept them."
+	title="Teams Move Faster with Sentra"
+	subtitle="Sentra is your AI teammate that listens, learns, and alerts you when your company drifts — before you even notice. It creates a memory of your company's institutional knowledge, memorializing and documenting details everyone forgets."
 />
 
 <Summary

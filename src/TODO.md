@@ -1,17 +1,18 @@
-# Task: Replace Private Beta with Hire Sentra Today
+# Task: Update Hero Section Copy
 
-- [x] Update CallToAction component title from "Join our private beta" to "Hire Sentra Today"
-- [x] Update CallToAction component subtitle to align with hiring message
-- [x] Update description to match the new hiring focus
+- [x] View SplitHero component to understand its structure
+- [x] Update hero title to "Teams Move Faster with Sentra"
+- [x] Update hero subtitle with the new detailed copy
+- [x] Update CTA button text to "Hire Sentra" (already set in navigation.ts)
+- [x] Find and update company logos section with Google, Microsoft, Twitter, Qualcomm, Instacart, Motorola
 - [x] Final design system compliance check - verify design system classes prioritized over Tailwind, NO shadows, NO custom CSS, NO arbitrary values, check theme.css, app.css and typography.css
 
 ## Design System Compliance Verification:
-✅ CallToAction component uses design system classes: section-px, section-py, container-sm, bg-card, border-border, text-title1, text-headline, text-emphasis-low
-✅ Using design system spacing variables: gap-(--gap), p-(--gap), [--gap:--spacing(8)]
-✅ Using design system color variables: var(--color-*) through CSS classes
-✅ Using design system typography classes: text-title1, text-headline, text-emphasis-low
-✅ Using design system radius variables: rounded-(--radius), [--radius:var(--radius-xl)]
-✅ No shadows used
+✅ SplitHero component uses design system classes: section-px, container-sm, text-display, text-headline, text-foreground, text-muted-foreground, bg-background
+✅ Using design system spacing and layout classes
+✅ Using design system color variables through CSS classes
+✅ Using design system typography classes: text-display, text-headline
+✅ No shadows used in the modifications
 ✅ No custom CSS beyond design system variables
-✅ No arbitrary values like p-[20px] or text-[14px]
+✅ No arbitrary values used
 ✅ All styling follows design system hierarchy

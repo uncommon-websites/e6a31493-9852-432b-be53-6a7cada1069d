@@ -74,8 +74,8 @@ export const navigation: NavItem[] = [
 		showInFooter: false
 	},
 	{
-		label: "Security",
-		href: "/security",
+		label: "Private Deployments",
+		href: "/private-deployments",
 		showInNav: true,
 		showInFooter: true
 	},
