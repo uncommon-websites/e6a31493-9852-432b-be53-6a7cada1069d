@@ -52,7 +52,7 @@
 	const {
 		title = "Hire Sentra Today",
 		subtitle = "Transform your organization",
-		description = "Ready to transform how your organization stays aligned? Join fast-growing companies who are already using Sentra to proactively detect and resolve misalignments before they become costly problems.",
+		description = "Our first cohort of users saw a 15% reduction in meeting time, 90% org-wide adoption rate, and N information search hours saved.",
 		imageSrc = "/generated/image-a-professional-business-person-with-a-wa.webp",
 		callsToAction = [cta],
 		...rest

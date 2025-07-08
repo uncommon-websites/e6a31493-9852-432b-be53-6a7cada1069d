@@ -5,71 +5,35 @@
 	let timelineContainer: HTMLElement = $state()!;
 	let observerRef: IntersectionObserver;
 
-	// Timeline data - extracted from HowItWorks_enhanced.svelte
+	// Feature cards data for frictionless adoption
 	const steps = [
 		{
 			id: 1,
-			title: "Add Sentra to platforms your company uses",
+			title: "Share your calendar",
 			description:
-				"Connect Sentra to your existing tools like Slack, Teams, Zoom, Google Meet, and Google Calendar to start building organizational awareness.",
-			badges: ["Leaders"],
-			visual: "platform-selection"
+				"Sentra attends your meetings to capture context, decisions, and commitments — without clogging up your inbox. Get pre-meeting briefs powered by company memory.",
+			visual: "image-a-group-of-professionals-gathered-in-a-s"
 		},
 		{
 			id: 2,
-			title: "Share your calendars",
+			title: "Add to your workspace",
 			description:
-				"Allow Sentra to access team calendars to understand meeting patterns and organizational rhythms.",
-			badges: ["Leaders"],
-			visual: "calendar-sharing"
+				"Sentra lives where you already live. No licensing, no installations, no context switching. Unifies workspace activity with meetings.",
+			visual: "image-a-cozy-workspace-where-a-team-collaborat"
 		},
 		{
 			id: 3,
-			title: "Get briefed for every upcoming event",
+			title: "Sentra introduces herself",
 			description:
-				"Receive intelligent pre-meeting briefings with relevant context, user research, and personalized agendas based on participants and recent work.",
-			badges: ["Everyone"],
-			visual: "meeting-briefing"
+				"Sentra introduces herself to everyone on the team, guiding each person individually and adjusting to their workflows.",
+			visual: "image-two-colleagues-introducing-themselves-in"
 		},
 		{
 			id: 4,
-			title: "Never forget what you said you'd do",
+			title: "Starts building memory from day one",
 			description:
-				"Sentra automatically tracks commitments made in meetings and conversations, creating actionable TODO items and sending timely reminders.",
-			badges: ["Everyone"],
-			visual: "todo-tracking"
-		},
-		{
-			id: 5,
-			title: "Remember who your company's already met",
-			description:
-				"Get context about previous interactions with external contacts, including past meetings, NDAs, and relationship history.",
-			badges: ["Everyone"],
-			visual: "contact-history"
-		},
-		{
-			id: 6,
-			title: "Get alerted of key information you need to be aware of",
-			description:
-				"Stay informed about important decisions, deadline changes, and organizational updates, even from meetings you couldn't attend.",
-			badges: ["Everyone"],
-			visual: "key-alerts"
-		},
-		{
-			id: 7,
-			title: "Ask about the history of your org, with company memory",
-			description:
-				"Access a timeline of decisions, understand the reasoning behind project choices, and explore the evolution of your organization's thinking.",
-			badges: ["Everyone"],
-			visual: "company-memory"
-		},
-		{
-			id: 8,
-			title: "Sentra checks in with everyone",
-			description:
-				"Regular one-on-one conversations with Sentra help maintain alignment and surface potential issues before they become problems.",
-			badges: ["Everyone"],
-			visual: "check-ins"
+				"Sentra quietly gets to work in the background to build company memory.",
+			visual: "image-a-serene-home-office-setup-where-an-indi"
 		}
 	];
 
@@ -131,8 +95,8 @@
 	<div class="section-px section-py container-sm mx-auto">
 		<div class="mx-auto grid place-items-center text-center">
 			<SectionHeader
-				title="What it's like to work with Sentra"
-				subtitle="Keeping everything together"
+				title="Frictionless adoption"
+				subtitle="Simple self-service onboarding. Setup takes less than 4 minutes."
 			/>
 		</div>
 
@@ -196,7 +160,7 @@
 							<div class="aspect-square w-full">
 								{#key activeStep}
 									<img
-										src={`/generated/${currentStep.visual}.png`}
+										src={`/generated/${currentStep.visual}.webp`}
 										alt={currentStep.title}
 										class="h-full w-full object-cover transition-all duration-500 ease-out"
 									/>
