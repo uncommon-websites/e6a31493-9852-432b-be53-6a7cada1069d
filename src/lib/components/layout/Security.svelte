@@ -26,6 +26,25 @@
 	}: {
 		title?: string;
 	} = $props();
+
+	// Compliance data
+	const complianceItems = [
+		{
+			name: "SOC2 II",
+			status: "In Observation",
+			logoUrl: "https://trust.delve.co/new-compliance-logos/SOC2_Type2.svg"
+		},
+		{
+			name: "GDPR",
+			status: "Compliant",
+			logoUrl: "https://trust.delve.co/new-compliance-logos/GDPR.svg"
+		},
+		{
+			name: "ISO 27001",
+			status: "Pending",
+			logoUrl: "https://trust.delve.co/new-compliance-logos/ISO_27001.svg"
+		}
+	];
 </script>
 
 <div class="" {...rest}>
