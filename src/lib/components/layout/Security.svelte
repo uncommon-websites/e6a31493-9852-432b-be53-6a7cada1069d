@@ -22,17 +22,9 @@
 	// Props
 	const {
 		title = "Ultimate data security, control, and sovereignty",
-		description = "We care about your data. Sentra is SOC2 Type 1 compliant and currently in observation for Type 2 certification. We are also ISO and GDPR compliant, ensuring the highest standards of data protection and privacy.",
-		onPremText = "For companies handling sensitive data, we offer on-premise deployments of Sentra to ensure your data never leaves your infrastructure.",
-		linkHref = "https://trust.delve.co/sentra",
-		linkLabel = "Visit our Security & Trust Center",
 		...rest
 	}: {
 		title?: string;
-		description?: string;
-		onPremText?: string;
-		linkHref?: string;
-		linkLabel?: string;
 	} = $props();
 </script>
 
@@ -108,8 +100,7 @@
 					<div>
 						<h3 class="text-headline mb-3 font-medium">Enterprise-grade security</h3>
 						<p class="text-body text-muted-foreground">
-							Your data security is our top priority. Sentra maintains SOC2 Type 1 compliance and is
-							currently in the observation for SOC2 Type 2. We adhere to ISO standards and GDPR regulations, ensuring the highest levels of data protection and privacy for your organization.
+							Your data security is our top priority. Sentra maintains SOC2 Type 1 compliance and is currently in the observation for SOC2 Type 2. We adhere to ISO standards and GDPR regulations, ensuring the highest levels of data protection and privacy for your organization.
 						</p>
 					</div>
 
@@ -138,12 +129,12 @@
 
 					<div class="pt-2">
 						<a
-							href={linkHref}
+							href="https://trust.delve.co/sentra"
 							class="text-primary hover:text-primary/80 text-body inline-flex items-center gap-1 font-medium transition-colors duration-200"
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							{linkLabel}
+							Visit our Security & Trust Center
 							<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path
 									stroke-linecap="round"
