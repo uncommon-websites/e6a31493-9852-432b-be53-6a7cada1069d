@@ -211,7 +211,7 @@
 				<!-- Completely private -->
 				<div class="space-y-6">
 					<div
-						class="flex h-16 w-16 items-center justify-center"
+						class="flex size-8 items-center justify-center"
 						style="border-radius: var(--radius-lg);"
 					>
 						<svg
@@ -238,7 +238,7 @@
 				<!-- Fully customizable -->
 				<div class="space-y-6">
 					<div
-						class="flex h-16 w-16 items-center justify-center"
+						class="flex size-8 items-center justify-center"
 						style="border-radius: var(--radius-lg);"
 					>
 						<svg
@@ -272,7 +272,7 @@
 	</section>
 
 	<!-- Resources Section -->
-	<section class="section-px section-py-sm">
+	<section class="section-px section-py-sm bg-muted">
 		<div class="container-sm section-px mx-auto max-w-4xl">
 			<div class="mb-12">
 				<h2 class="text-title2 mb-4">Resources</h2>
@@ -624,10 +624,13 @@
 
 			{#if formSubmitted}
 				<div class="py-8 text-center">
-					<div
-						class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full"
-					>
-						<svg class="text-primary-900 h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full">
+						<svg
+							class="text-primary-900 h-8 w-8"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
 							<path
 								stroke-linecap="round"
 								stroke-linejoin="round"
