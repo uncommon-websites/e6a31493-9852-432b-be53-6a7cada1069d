@@ -184,6 +184,43 @@
 						<div class="h-full w-full rounded-full bg-primary-400 opacity-60 animate-ping"></div>
 					</div>
 				</div>
+			{:else if visualization === 'misalignment'}
+				<!-- Stay Ahead of Misalignment - Simple Single Icon Visualization -->
+				<div class="relative flex items-center justify-center">
+					<!-- Central radar icon with enhanced presence -->
+					<div class="relative z-10 flex h-20 w-20 items-center justify-center rounded-full bg-orange-100 text-orange-600 ring-2 ring-orange-50">
+						<IconRadar class="h-10 w-10" />
+						
+						<!-- Subtle scanning animation -->
+						<div class="absolute inset-0 rounded-full bg-orange-200 opacity-20 animate-pulse"></div>
+					</div>
+
+					<!-- "Ahead" visualization - Timeline concept -->
+					<!-- Past (left) - faded -->
+					<div class="absolute -left-16 top-1/2 -translate-y-1/2 transform">
+						<div class="h-2 w-2 rounded-full bg-gray-300 opacity-40"></div>
+					</div>
+					
+					<!-- Present (center) - current position -->
+					<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
+						<div class="h-1 w-1 rounded-full bg-orange-500 opacity-80"></div>
+					</div>
+					
+					<!-- Future (right) - where problems would occur -->
+					<div class="absolute -right-16 top-1/2 -translate-y-1/2 transform">
+						<div class="h-3 w-3 rounded-full bg-red-400 opacity-60 animate-pulse"></div>
+						<!-- Small warning indicator -->
+						<div class="absolute -top-1 -right-1 h-2 w-2 rounded-full bg-red-500 opacity-40"></div>
+					</div>
+
+					<!-- Detection beam - showing radar "seeing ahead" -->
+					<div class="absolute top-1/2 left-1/2 h-px w-20 -translate-y-1/2 transform bg-gradient-to-r from-orange-400 to-red-400 opacity-50"></div>
+					
+					<!-- Scanning arc - subtle indicator of proactive detection -->
+					<div class="absolute top-1/2 left-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 transform">
+						<div class="h-full w-full rounded-full border-r-2 border-orange-300 opacity-30 animate-spin" style="animation-duration: 3s;"></div>
+					</div>
+				</div>
 			{:else}
 				<!-- Default visualization for other types -->
 				<div class="relative flex items-center justify-center">
