@@ -20,10 +20,10 @@
 
 	<!-- Main Content Section -->
 	<section class="section-py section-px container-sm mx-auto">
-		<div class="mx-auto max-w-prose">
+		<div class="max-w-prose">
 			<div class="space-y-8">
 				<div>
-					<p class="text-body" style="color: var(--color-muted-foreground);">
+					<p class="text-body">
 						3 years ago when ChatGPT first released, we realized models were amnesic, and that a
 						robust memory model would be the most impactful invention to supercharge AI. We started
 						work at MIT which stemmed from an early chain of thought framework into a stateful
@@ -35,7 +35,7 @@
 				</div>
 
 				<div>
-					<p class="text-body" style="color: var(--color-muted-foreground);">
+					<p class="text-body">
 						Since 2022, AI in the workplace has followed a clear progression, much like the SAE
 						standards for autonomous vehicles. We see several distinct levels, each representing a
 						fundamental shift in how technology integrates with human organizations.
@@ -43,7 +43,7 @@
 				</div>
 
 				<div>
-					<p class="text-body" style="color: var(--color-muted-foreground);">
+					<p class="text-body">
 						<strong>L1</strong> AI were the generic chatbots and task agents that help save seconds
 						and minutes of a person's work. These tools enhance individual productivity but require
 						constant human oversight. <strong>L2 role agents</strong> began to emerge in 2024 to automate
@@ -53,7 +53,7 @@
 				</div>
 
 				<div>
-					<p class="text-body" style="color: var(--color-muted-foreground);">
+					<p class="text-body">
 						<strong>L3 is where Sentra operates today</strong> - the first goal agents working toward
 						continuous business mandates. Unlike discrete task completion, these work toward unbounded
 						metrics: "team never misaligned," "always legally compliant," "employees happy." This autonomy
@@ -62,7 +62,7 @@
 				</div>
 
 				<div>
-					<p class="text-body" style="color: var(--color-muted-foreground);">
+					<p class="text-body">
 						What makes this progression inevitable is the same dynamic we see in autonomous
 						vehicles: the first company to reach the next level dominates the entire market.
 						Products stuck in previous eras become quickly commoditized. Every car has cruise
@@ -74,7 +74,7 @@
 				</div>
 
 				<div>
-					<p class="text-body" style="color: var(--color-muted-foreground);">
+					<p class="text-body">
 						The challenge from L2 to L3 isn't solely technological. L3 adoption marks the first time
 						a single AI has direct impact on the entire organization at once, requiring careful
 						consideration of cooperation mechanisms and human incentives.
@@ -82,7 +82,7 @@
 				</div>
 
 				<div>
-					<p class="text-body" style="color: var(--color-muted-foreground);">
+					<p class="text-body">
 						Sentra is part of us building towards a world where organizations self-heal,
 						self-reflect, and maintain perfect alignment as they scale. We believe there are a
 						unique set of problems within organizations that only AI can solve.
@@ -90,7 +90,7 @@
 				</div>
 
 				<div>
-					<p class="text-body" style="color: var(--color-muted-foreground);">
+					<p class="text-body">
 						Our vision is simple yet profound: <strong
 							>"Sentra will let a large company run at the speed of a small company."</strong
 						> This is the future of autonomous enterprise - organizations that think, learn, and evolve
@@ -99,9 +99,7 @@
 				</div>
 
 				<div class="text-center">
-					<p class="text-body" style="color: var(--color-muted-foreground);">
-						— Jae, Andrey, and Ashwin
-					</p>
+					<p class="text-body">— Jae, Andrey, and Ashwin</p>
 				</div>
 			</div>
 		</div>
@@ -112,13 +110,10 @@
 		class="section-py-sm section-px container-sm mx-auto"
 		style="background-color: var(--color-background);"
 	>
-		<div class="mx-auto max-w-prose text-center">
-			<h1 class="text-title1 mb-4" style="color: var(--color-foreground);">Press Inquiries</h1>
-			<p class="text-body" style="color: var(--color-muted-foreground);">
-				Contact us at <a
-					href="mailto:contact@sentra.app"
-					style="color: var(--color-primary); text-decoration: underline;">contact@sentra.app</a
-				>
+		<div class=" max-w-prose">
+			<h1 class="text-title1 mb-4">Press Inquiries</h1>
+			<p class="text-body">
+				Contact us at <a href="mailto:contact@sentra.app" class="underline">contact@sentra.app</a>
 			</p>
 		</div>
 	</section>
