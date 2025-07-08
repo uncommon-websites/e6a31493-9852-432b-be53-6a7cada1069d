@@ -21,10 +21,10 @@
 
 	// Props
 	const {
-		title = "Security and Privacy",
+		title = "Ultimate data security, control, and sovereignty",
 		description = "We care about your data. Sentra is SOC2 Type 1 compliant and currently in observation for Type 2 certification. We are also ISO and GDPR compliant, ensuring the highest standards of data protection and privacy.",
 		onPremText = "For companies handling sensitive data, we offer on-premise deployments of Sentra to ensure your data never leaves your infrastructure.",
-		linkHref = "/security",
+		linkHref = "https://trust.delve.co/sentra",
 		linkLabel = "Visit our Security & Trust Center",
 		...rest
 	}: {
@@ -109,19 +109,31 @@
 						<h3 class="text-headline mb-3 font-medium">Enterprise-grade security</h3>
 						<p class="text-body text-muted-foreground">
 							Your data security is our top priority. Sentra maintains SOC2 Type 1 compliance and is
-							currently undergoing SOC2 Type 2 certification. We also adhere to ISO standards and
-							GDPR regulations, ensuring the highest levels of data protection and privacy for your
-							organization.
+							currently in the observation for SOC2 Type 2. We adhere to ISO standards and GDPR regulations, ensuring the highest levels of data protection and privacy for your organization.
 						</p>
 					</div>
 
 					<div>
-						<h3 class="text-headline mb-3 font-medium">On-premise deployment options</h3>
+						<h3 class="text-headline mb-3 font-medium">Private deployments</h3>
 						<p class="text-body text-muted-foreground">
-							For organizations with sensitive data requirements, we offer dedicated on-premise
-							deployments. This ensures your data never leaves your infrastructure while still
-							providing the full power of Sentra's AI-driven organizational intelligence.
+							For organizations with sensitive data requirements, we offer dedicated isolated VPC or on-premise air-gapped deployments. This flexibility ensures your data never leaves your infrastructure while still providing the full power of Sentra's AI-driven organizational intelligence.
 						</p>
+						<div class="mt-4">
+							<a
+								href="/private-deployments"
+								class="text-primary hover:text-primary/80 text-body inline-flex items-center gap-1 font-medium transition-colors duration-200"
+							>
+								Learn more
+								<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+									/>
+								</svg>
+							</a>
+						</div>
 					</div>
 
 					<div class="pt-2">
