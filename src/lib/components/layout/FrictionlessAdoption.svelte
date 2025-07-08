@@ -131,8 +131,8 @@
 	<div class="section-px section-py container-sm mx-auto">
 		<div class="mx-auto grid place-items-center text-center">
 			<SectionHeader
-				title="Frictionless adoption"
-				subtitle="It's not another piece of software, but like another entity in the company"
+				title="What it's like to work with Sentra"
+				subtitle="Keeping everything together"
 			/>
 		</div>
 
