@@ -168,12 +168,12 @@
 			<LogoScroller
 				label="Shaped and backed by former leaders of:"
 				logoUrls={[
-					"https://img.brandfetch.io/google.com",
-					"https://img.brandfetch.io/microsoft.com",
-					"https://img.brandfetch.io/twitter.com",
-					"https://img.brandfetch.io/qualcomm.com",
-					"https://img.brandfetch.io/instacart.com",
-					"https://img.brandfetch.io/motorola.com"
+					"https://cdn.brandfetch.io/google.com/w/400/h/400/logo?c=1id_elLz2Bd5Ej-dWo7",
+					"https://cdn.brandfetch.io/microsoft.com/w/400/h/400/logo?c=1id_elLz2Bd5Ej-dWo7",
+					"https://cdn.brandfetch.io/twitter.com/w/400/h/400/logo?c=1id_elLz2Bd5Ej-dWo7",
+					"https://cdn.brandfetch.io/qualcomm.com/w/400/h/400/logo?c=1id_elLz2Bd5Ej-dWo7",
+					"https://cdn.brandfetch.io/instacart.com/w/400/h/400/logo?c=1id_elLz2Bd5Ej-dWo7",
+					"https://cdn.brandfetch.io/motorola.com/w/400/h/400/logo?c=1id_elLz2Bd5Ej-dWo7"
 				]}
 			/>
 		</div>
