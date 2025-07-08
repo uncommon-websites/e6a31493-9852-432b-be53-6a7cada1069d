@@ -94,6 +94,34 @@
 		}
 	];
 
+	// Resources data
+	const resources = [
+		{
+			title: "Information Security Policy",
+			description: "Comprehensive overview of our security practices and procedures",
+			buttonText: "Download PDF",
+			buttonAction: "download"
+		},
+		{
+			title: "SOC-2 Type I Report",
+			description: "Independent audit report of our security controls",
+			buttonText: "Request Access",
+			buttonAction: "request"
+		},
+		{
+			title: "SOC-2 Type II In-Progress Letter",
+			description: "Documentation of our ongoing Type II certification process",
+			buttonText: "Download PDF",
+			buttonAction: "download"
+		},
+		{
+			title: "Most Recent Pentest Report",
+			description: "Latest penetration testing results and remediation status",
+			buttonText: "Request Access",
+			buttonAction: "request"
+		}
+	];
+
 	// FAQ data and state
 	let openFaq = $state<number | null>(null);
 
@@ -282,37 +310,15 @@
 			</div>
 
 			<div class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2">
-				<div class="space-y-4">
-					<h3 class="text-headline font-medium">Information Security Policy</h3>
-					<p class="text-caption text-muted-foreground">
-						Comprehensive overview of our security practices and procedures
-					</p>
-					<Button variant="outline" size="sm">Download PDF</Button>
-				</div>
-
-				<div class="space-y-4">
-					<h3 class="text-headline font-medium">SOC-2 Type I Report</h3>
-					<p class="text-caption text-muted-foreground">
-						Independent audit report of our security controls
-					</p>
-					<Button variant="outline" size="sm">Request Access</Button>
-				</div>
-
-				<div class="space-y-4">
-					<h3 class="text-headline font-medium">SOC-2 Type II In-Progress Letter</h3>
-					<p class="text-caption text-muted-foreground">
-						Documentation of our ongoing Type II certification process
-					</p>
-					<Button variant="outline" size="sm">Download PDF</Button>
-				</div>
-
-				<div class="space-y-4">
-					<h3 class="text-headline font-medium">Most Recent Pentest Report</h3>
-					<p class="text-caption text-muted-foreground">
-						Latest penetration testing results and remediation status
-					</p>
-					<Button variant="outline" size="sm">Request Access</Button>
-				</div>
+				{#each resources as resource}
+					<div class="space-y-4">
+						<h3 class="text-headline font-medium">{resource.title}</h3>
+						<p class="text-caption text-muted-foreground">
+							{resource.description}
+						</p>
+						<Button variant="outline" size="sm">{resource.buttonText}</Button>
+					</div>
+				{/each}
 			</div>
 
 			<!-- Whitepaper Download Form -->
