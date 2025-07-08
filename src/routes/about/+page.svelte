@@ -20,7 +20,7 @@
 
 	<!-- Main Content Section -->
 	<section
-		class="section-py section-px container-sm mx-auto"
+		class="section-pt section-px container-sm mx-auto"
 		style="background-color: var(--color-background);"
 	>
 		<div class="mx-auto max-w-prose">
