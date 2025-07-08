@@ -194,29 +194,23 @@
 	</section>
 
 	<!-- Section 2: Organizational Intelligence -->
-	<section class="section-px section-py bg-card">
+	<section class="section-px section-py">
 		<div class="container-sm section-px mx-auto max-w-6xl">
-			<div class="mb-16 text-center">
+			<div class="mb-16">
 				<h2 class="text-title1 mb-6">
 					Sentra's Organizational Intelligence <br />
 					<span class="text-muted-foreground">without exposure risks</span>
 				</h2>
-				<h3 class="text-title3 text-muted-foreground mx-auto max-w-4xl">
+				<h3 class="text-title3 text-muted-foreground max-w-4xl">
 					Keep all your data within your own private environment for maximum security and
 					compliance.
 				</h3>
 			</div>
 
 			<div class="grid grid-cols-1 gap-12 lg:grid-cols-2">
-				<!-- Completely private card -->
-				<div
-					class="bg-background border-border border p-8"
-					style="border-radius: var(--radius-lg);"
-				>
-					<div
-						class="bg-primary/10 mb-6 flex h-16 w-16 items-center justify-center"
-						style="border-radius: var(--radius-lg);"
-					>
+				<!-- Completely private -->
+				<div class="space-y-6">
+					<div class="bg-primary/10 flex h-16 w-16 items-center justify-center" style="border-radius: var(--radius-lg);">
 						<svg class="text-primary h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path
 								stroke-linecap="round"
@@ -226,22 +220,16 @@
 							/>
 						</svg>
 					</div>
-					<h3 class="text-title3 mb-4 font-medium">Completely private</h3>
+					<h3 class="text-title3 font-medium">Completely private</h3>
 					<p class="text-body text-muted-foreground">
 						All of Sentra's memories and interactions occur within your secure infrastructure. Your
 						sensitive company data never leaves your dedicated systems.
 					</p>
 				</div>
 
-				<!-- Fully customizable card -->
-				<div
-					class="bg-background border-border border p-8"
-					style="border-radius: var(--radius-lg);"
-				>
-					<div
-						class="bg-primary/10 mb-6 flex h-16 w-16 items-center justify-center"
-						style="border-radius: var(--radius-lg);"
-					>
+				<!-- Fully customizable -->
+				<div class="space-y-6">
+					<div class="bg-primary/10 flex h-16 w-16 items-center justify-center" style="border-radius: var(--radius-lg);">
 						<svg class="text-primary h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path
 								stroke-linecap="round"
@@ -257,7 +245,7 @@
 							/>
 						</svg>
 					</div>
-					<h3 class="text-title3 mb-4 font-medium">Fully customizable</h3>
+					<h3 class="text-title3 font-medium">Fully customizable</h3>
 					<p class="text-body text-muted-foreground">
 						Customize the level of privacy with a dedicated solutions engineer. Scale and configure
 						Sentra to your organization's exact needs and preferences.
@@ -268,55 +256,43 @@
 	</section>
 
 	<!-- Resources Section -->
-	<section class="section-px section-py-sm bg-card">
+	<section class="section-px section-py-sm">
 		<div class="container-sm section-px mx-auto max-w-4xl">
-			<div class="mb-12 text-center">
+			<div class="mb-12">
 				<h2 class="text-title2 mb-4">Resources</h2>
 				<p class="text-body text-muted-foreground">
 					Access our security documentation and compliance reports
 				</p>
 			</div>
 
-			<div class="mb-12 grid grid-cols-1 gap-6 md:grid-cols-2">
-				<div
-					class="bg-background border-border border p-6"
-					style="border-radius: var(--radius-lg);"
-				>
-					<h3 class="text-headline mb-2 font-medium">Information Security Policy</h3>
-					<p class="text-caption text-muted-foreground mb-4">
+			<div class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2">
+				<div class="space-y-4">
+					<h3 class="text-headline font-medium">Information Security Policy</h3>
+					<p class="text-caption text-muted-foreground">
 						Comprehensive overview of our security practices and procedures
 					</p>
 					<Button variant="outline" size="sm">Download PDF</Button>
 				</div>
 
-				<div
-					class="bg-background border-border border p-6"
-					style="border-radius: var(--radius-lg);"
-				>
-					<h3 class="text-headline mb-2 font-medium">SOC-2 Type I Report</h3>
-					<p class="text-caption text-muted-foreground mb-4">
+				<div class="space-y-4">
+					<h3 class="text-headline font-medium">SOC-2 Type I Report</h3>
+					<p class="text-caption text-muted-foreground">
 						Independent audit report of our security controls
 					</p>
 					<Button variant="outline" size="sm">Request Access</Button>
 				</div>
 
-				<div
-					class="bg-background border-border border p-6"
-					style="border-radius: var(--radius-lg);"
-				>
-					<h3 class="text-headline mb-2 font-medium">SOC-2 Type II In-Progress Letter</h3>
-					<p class="text-caption text-muted-foreground mb-4">
+				<div class="space-y-4">
+					<h3 class="text-headline font-medium">SOC-2 Type II In-Progress Letter</h3>
+					<p class="text-caption text-muted-foreground">
 						Documentation of our ongoing Type II certification process
 					</p>
 					<Button variant="outline" size="sm">Download PDF</Button>
 				</div>
 
-				<div
-					class="bg-background border-border border p-6"
-					style="border-radius: var(--radius-lg);"
-				>
-					<h3 class="text-headline mb-2 font-medium">Most Recent Pentest Report</h3>
-					<p class="text-caption text-muted-foreground mb-4">
+				<div class="space-y-4">
+					<h3 class="text-headline font-medium">Most Recent Pentest Report</h3>
+					<p class="text-caption text-muted-foreground">
 						Latest penetration testing results and remediation status
 					</p>
 					<Button variant="outline" size="sm">Request Access</Button>
@@ -324,8 +300,8 @@
 			</div>
 
 			<!-- Whitepaper Download Form -->
-			<div class="bg-background border-border border p-8" style="border-radius: var(--radius-lg);">
-				<div class="mb-6 text-center">
+			<div class="space-y-6">
+				<div>
 					<h3 class="text-title3 mb-2">Security at Sentra</h3>
 					<p class="text-body text-muted-foreground">
 						Download our comprehensive security whitepaper
@@ -421,9 +397,9 @@
 	<!-- Security Practices Section -->
 	<section class="section-px section-py">
 		<div class="container-sm section-px mx-auto max-w-6xl">
-			<div class="mb-12 text-center">
+			<div class="mb-12">
 				<h2 class="text-title2 mb-4">Security is fundamental to our culture and process</h2>
-				<p class="text-body text-muted-foreground mx-auto max-w-3xl">
+				<p class="text-body text-muted-foreground max-w-3xl">
 					The way we build incorporates security measures from the outset, ensuring that our
 					products, procedures, and practices surpass industry standards.
 				</p>
@@ -431,129 +407,121 @@
 
 			<div class="grid grid-cols-1 gap-12 lg:grid-cols-2">
 				<div class="space-y-8">
-					<div>
-						<div class="flex items-start space-x-4">
-							<div
-								class="bg-primary/10 flex h-12 w-12 flex-shrink-0 items-center justify-center"
-								style="border-radius: var(--radius-lg);"
+					<div class="flex items-start space-x-4">
+						<div
+							class="bg-primary/10 flex h-12 w-12 flex-shrink-0 items-center justify-center"
+							style="border-radius: var(--radius-lg);"
+						>
+							<svg
+								class="text-primary h-6 w-6"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
 							>
-								<svg
-									class="text-primary h-6 w-6"
-									fill="none"
-									stroke="currentColor"
-									viewBox="0 0 24 24"
-								>
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-									/>
-								</svg>
-							</div>
-							<div>
-								<h3 class="text-headline mb-2 font-medium">Encryption protects your data</h3>
-								<p class="text-body text-muted-foreground">
-									We implement cutting-edge encryption protocols to safeguard your information. Our
-									infrastructure uses AES-256 at rest and TLS 1.3 in transit to encrypt and
-									safeguard your data.
-								</p>
-							</div>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+								/>
+							</svg>
+						</div>
+						<div>
+							<h3 class="text-headline mb-2 font-medium">Encryption protects your data</h3>
+							<p class="text-body text-muted-foreground">
+								We implement cutting-edge encryption protocols to safeguard your information. Our
+								infrastructure uses AES-256 at rest and TLS 1.3 in transit to encrypt and
+								safeguard your data.
+							</p>
 						</div>
 					</div>
 
-					<div>
-						<div class="flex items-start space-x-4">
-							<div
-								class="bg-primary/10 flex h-12 w-12 flex-shrink-0 items-center justify-center"
-								style="border-radius: var(--radius-lg);"
+					<div class="flex items-start space-x-4">
+						<div
+							class="bg-primary/10 flex h-12 w-12 flex-shrink-0 items-center justify-center"
+							style="border-radius: var(--radius-lg);"
+						>
+							<svg
+								class="text-primary h-6 w-6"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
 							>
-								<svg
-									class="text-primary h-6 w-6"
-									fill="none"
-									stroke="currentColor"
-									viewBox="0 0 24 24"
-								>
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
-									/>
-								</svg>
-							</div>
-							<div>
-								<h3 class="text-headline mb-2 font-medium">Secure cloud infrastructure</h3>
-								<p class="text-body text-muted-foreground">
-									Sentra operates on AWS' industry-leading cloud platform, benefiting from years of
-									security enhancements to guarantee optimal performance, resilience, and rapid
-									deployment.
-								</p>
-							</div>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
+								/>
+							</svg>
+						</div>
+						<div>
+							<h3 class="text-headline mb-2 font-medium">Secure cloud infrastructure</h3>
+							<p class="text-body text-muted-foreground">
+								Sentra operates on AWS' industry-leading cloud platform, benefiting from years of
+								security enhancements to guarantee optimal performance, resilience, and rapid
+								deployment.
+							</p>
 						</div>
 					</div>
 				</div>
 
 				<div class="space-y-8">
-					<div>
-						<div class="flex items-start space-x-4">
-							<div
-								class="bg-primary/10 flex h-12 w-12 flex-shrink-0 items-center justify-center"
-								style="border-radius: var(--radius-lg);"
+					<div class="flex items-start space-x-4">
+						<div
+							class="bg-primary/10 flex h-12 w-12 flex-shrink-0 items-center justify-center"
+							style="border-radius: var(--radius-lg);"
+						>
+							<svg
+								class="text-primary h-6 w-6"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
 							>
-								<svg
-									class="text-primary h-6 w-6"
-									fill="none"
-									stroke="currentColor"
-									viewBox="0 0 24 24"
-								>
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-									/>
-								</svg>
-							</div>
-							<div>
-								<h3 class="text-headline mb-2 font-medium">Continuous monitoring and testing</h3>
-								<p class="text-body text-muted-foreground">
-									Sentra's infrastructure is continuously monitored using industry-leading intrusion
-									detection systems. Security consultants conduct penetration testing at least every
-									year, and our internal team conducts automated scans weekly.
-								</p>
-							</div>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+								/>
+							</svg>
+						</div>
+						<div>
+							<h3 class="text-headline mb-2 font-medium">Continuous monitoring and testing</h3>
+							<p class="text-body text-muted-foreground">
+								Sentra's infrastructure is continuously monitored using industry-leading intrusion
+								detection systems. Security consultants conduct penetration testing at least every
+								year, and our internal team conducts automated scans weekly.
+							</p>
 						</div>
 					</div>
 
-					<div>
-						<div class="flex items-start space-x-4">
-							<div
-								class="bg-primary/10 flex h-12 w-12 flex-shrink-0 items-center justify-center"
-								style="border-radius: var(--radius-lg);"
+					<div class="flex items-start space-x-4">
+						<div
+							class="bg-primary/10 flex h-12 w-12 flex-shrink-0 items-center justify-center"
+							style="border-radius: var(--radius-lg);"
+						>
+							<svg
+								class="text-primary h-6 w-6"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
 							>
-								<svg
-									class="text-primary h-6 w-6"
-									fill="none"
-									stroke="currentColor"
-									viewBox="0 0 24 24"
-								>
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-									/>
-								</svg>
-							</div>
-							<div>
-								<h3 class="text-headline mb-2 font-medium">Security-focused workforce</h3>
-								<p class="text-body text-muted-foreground">
-									Sentra fosters a robust security-focused environment, equipping all staff members
-									with necessary training, resources, and tools to operate securely. Every employee
-									adheres to strict confidentiality protocols.
-								</p>
-							</div>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+								/>
+							</svg>
+						</div>
+						<div>
+							<h3 class="text-headline mb-2 font-medium">Security-focused workforce</h3>
+							<p class="text-body text-muted-foreground">
+								Sentra fosters a robust security-focused environment, equipping all staff members
+								with necessary training, resources, and tools to operate securely. Every employee
+								adheres to strict confidentiality protocols.
+							</p>
 						</div>
 					</div>
 				</div>
@@ -562,27 +530,20 @@
 	</section>
 
 	<!-- Sub-processors Section -->
-	<section class="section-px section-py-sm bg-card">
+	<section class="section-px section-py-sm">
 		<div class="container-sm section-px mx-auto max-w-4xl">
-			<div class="mb-12 text-center">
+			<div class="mb-12">
 				<h2 class="text-title2 mb-4">Sub-processors</h2>
 				<p class="text-body text-muted-foreground">
 					Trusted partners that help us deliver secure and reliable service
 				</p>
 			</div>
 
-			<div class="space-y-4">
+			<div class="space-y-8">
 				{#each subProcessors as processor}
-					<div
-						class="bg-background border-border border p-6"
-						style="border-radius: var(--radius-lg);"
-					>
-						<div class="flex items-center justify-between">
-							<div>
-								<h3 class="text-headline mb-1 font-medium">{processor.name}</h3>
-								<p class="text-caption text-muted-foreground">{processor.description}</p>
-							</div>
-						</div>
+					<div>
+						<h3 class="text-headline mb-1 font-medium">{processor.name}</h3>
+						<p class="text-caption text-muted-foreground">{processor.description}</p>
 					</div>
 				{/each}
 			</div>
@@ -592,27 +553,24 @@
 	<!-- FAQ Section -->
 	<section class="section-px section-py">
 		<div class="container-sm section-px mx-auto max-w-4xl">
-			<div class="mb-12 text-center">
+			<div class="mb-12">
 				<h2 class="text-title2 mb-4">Frequently Asked Questions</h2>
 				<p class="text-body text-muted-foreground">
 					Common questions about Sentra's security and compliance practices
 				</p>
 			</div>
 
-			<div class="space-y-4">
+			<div class="space-y-6">
 				{#each faqs as faq, index}
-					<div
-						class="bg-card border-border overflow-hidden border"
-						style="border-radius: var(--radius-lg);"
-					>
+					<div class="border-b border-border pb-6">
 						<button
-							class="hover:bg-card-hover flex w-full items-center justify-between px-6 py-4 text-left transition-colors"
+							class="flex w-full items-center justify-between text-left transition-colors"
 							onclick={() => toggleFaq(index)}
 						>
 							<span class="text-headline font-medium">{faq.question}</span>
 							<svg
 								class={[
-									"text-muted-foreground h-5 w-5 transition-transform",
+									"text-muted-foreground h-5 w-5 transition-transform flex-shrink-0 ml-4",
 									openFaq === index ? "rotate-180" : ""
 								]}
 								fill="none"
@@ -629,7 +587,7 @@
 						</button>
 
 						{#if openFaq === index}
-							<div class="px-6 pb-4">
+							<div class="mt-4">
 								<p class="text-body text-muted-foreground">{faq.answer}</p>
 							</div>
 						{/if}
@@ -640,9 +598,9 @@
 	</section>
 
 	<!-- Contact Form Section -->
-	<section id="contact-form" class="section-px section-py bg-card">
+	<section id="contact-form" class="section-px section-py">
 		<div class="container-sm section-px mx-auto max-w-2xl">
-			<div class="mb-8 text-center">
+			<div class="mb-8">
 				<h2 class="text-title2 mb-4">Talk to Sales</h2>
 				<p class="text-body text-muted-foreground">
 					Ready to deploy Sentra privately? Get in touch with our sales team to discuss your
@@ -808,8 +766,8 @@
 	</section>
 
 	<!-- Contact Section -->
-	<section class="section-px section-py-sm bg-background">
-		<div class="container-sm section-px mx-auto max-w-2xl text-center">
+	<section class="section-px section-py-sm">
+		<div class="container-sm section-px mx-auto max-w-2xl">
 			<h2 class="text-title3 mb-4">Questions about our security practices?</h2>
 			<p class="text-body text-muted-foreground mb-6">
 				Our security team is here to help. Reach out with any questions about our compliance,
