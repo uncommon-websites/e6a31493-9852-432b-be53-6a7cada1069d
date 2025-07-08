@@ -76,9 +76,7 @@
 						// First 2 cards: 3 columns each
 						index === 0 || index === 1 ? "lg:col-span-3" : "",
 						// Next 3 cards: 2 columns each
-						index === 2 || index === 3 || index === 4 ? "lg:col-span-2" : "",
-						// Last card: full width
-						index === benefits.length - 1 ? "lg:col-span-6" : ""
+						index === 2 || index === 3 || index === 4 ? "lg:col-span-2" : ""
 					]}
 				/>
 			{/each}
