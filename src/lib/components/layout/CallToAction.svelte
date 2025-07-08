@@ -50,8 +50,8 @@
 
 	// Props
 	const {
-		title = "Join our private beta",
-		subtitle = "Be among the first",
+		title = "Hire Sentra Today",
+		subtitle = "Transform your organization",
 		description = "Ready to transform how your organization stays aligned? Join fast-growing companies who are already using Sentra to proactively detect and resolve misalignments before they become costly problems.",
 		imageSrc = "/generated/image-a-professional-business-person-with-a-wa.webp",
 		callsToAction = [cta],

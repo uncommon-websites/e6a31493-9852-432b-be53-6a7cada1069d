@@ -1,14 +1,16 @@
-# Task: Decrease Spacing in Press Inquiries Section
+# Task: Replace Private Beta with Hire Sentra Today
 
-- [x] View spacing.css to understand available spacing classes
-- [x] Reduce vertical padding on Press Inquiries section
-- [x] Reduce margin bottom on heading if needed
+- [x] Update CallToAction component title from "Join our private beta" to "Hire Sentra Today"
+- [x] Update CallToAction component subtitle to align with hiring message
+- [x] Update description to match the new hiring focus
 - [x] Final design system compliance check - verify design system classes prioritized over Tailwind, NO shadows, NO custom CSS, NO arbitrary values, check theme.css, app.css and typography.css
 
 ## Design System Compliance Verification:
-✅ Using design system spacing classes: section-py-sm (reduced from section-py), mb-4 (reduced from section-mb-sm)
-✅ Using design system typography classes: text-title1, text-body
-✅ Using design system color variables: var(--color-foreground), var(--color-muted-foreground), var(--color-primary)
+✅ CallToAction component uses design system classes: section-px, section-py, container-sm, bg-card, border-border, text-title1, text-headline, text-emphasis-low
+✅ Using design system spacing variables: gap-(--gap), p-(--gap), [--gap:--spacing(8)]
+✅ Using design system color variables: var(--color-*) through CSS classes
+✅ Using design system typography classes: text-title1, text-headline, text-emphasis-low
+✅ Using design system radius variables: rounded-(--radius), [--radius:var(--radius-xl)]
 ✅ No shadows used
 ✅ No custom CSS beyond design system variables
 ✅ No arbitrary values like p-[20px] or text-[14px]
