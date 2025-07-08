@@ -99,7 +99,7 @@
 		<!-- Visualization Container -->
 		<div class="mb-8 flex aspect-video items-center justify-center">
 			{#if visualization === 'visibility'}
-				<!-- Enhanced Organizational Visibility Visualization -->
+				<!-- Organizational Visibility Visualization - Center Eye Only -->
 				<div class="relative flex h-full w-full items-center justify-center">
 					<!-- Central Eye with Enhanced Design -->
 					<div class="relative z-20 flex h-20 w-20 items-center justify-center rounded-full bg-primary-100 text-primary-600 ring-4 ring-primary-50">
@@ -112,77 +112,6 @@
 					<div class="absolute h-32 w-32 rounded-full border-2 border-primary-200 opacity-30"></div>
 					<div class="absolute h-44 w-44 rounded-full border border-primary-200 opacity-20"></div>
 					<div class="absolute h-56 w-56 rounded-full border border-primary-200 opacity-10"></div>
-
-					<!-- Team/Department Nodes - Positioned around the eye -->
-					<div class="absolute -top-8 left-1/2 -translate-x-1/2 transform">
-						<div class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 text-blue-600 ring-2 ring-blue-50">
-							<IconUsers class="h-5 w-5" />
-						</div>
-						<div class="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-green-400 animate-pulse"></div>
-					</div>
-
-					<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 transform">
-						<div class="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 text-purple-600 ring-2 ring-purple-50">
-							<IconDatabase class="h-5 w-5" />
-						</div>
-						<div class="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-green-400 animate-pulse"></div>
-					</div>
-
-					<div class="absolute -left-8 top-1/2 -translate-y-1/2 transform">
-						<div class="flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-600 ring-2 ring-green-50">
-							<IconNetwork class="h-5 w-5" />
-						</div>
-						<div class="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-green-400 animate-pulse"></div>
-					</div>
-
-					<div class="absolute -right-8 top-1/2 -translate-y-1/2 transform">
-						<div class="flex h-10 w-10 items-center justify-center rounded-full bg-orange-100 text-orange-600 ring-2 ring-orange-50">
-							<IconShield class="h-5 w-5" />
-						</div>
-						<div class="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-green-400 animate-pulse"></div>
-					</div>
-
-					<!-- Information Flow Nodes - Centered below eye icon -->
-					<div class="absolute top-20 left-1/2 -translate-x-1/2 transform">
-						<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-gray-100 text-gray-600">
-							<IconMessageSquare class="h-4 w-4" />
-						</div>
-					</div>
-
-					<div class="absolute -top-4 -right-6">
-						<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-gray-100 text-gray-600">
-							<IconFileText class="h-4 w-4" />
-						</div>
-					</div>
-
-					<div class="absolute -bottom-4 -left-6">
-						<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-gray-100 text-gray-600">
-							<IconActivity class="h-4 w-4" />
-						</div>
-					</div>
-
-					<div class="absolute -bottom-4 -right-6">
-						<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-gray-100 text-gray-600">
-							<IconLayers class="h-4 w-4" />
-						</div>
-					</div>
-
-					<!-- Enhanced Connection Lines with Gradients -->
-					<div class="absolute top-1/2 -left-8 h-px w-8 -translate-y-1/2 transform bg-gradient-to-r from-primary-400 to-green-400 opacity-60"></div>
-					<div class="absolute top-1/2 -right-8 h-px w-8 -translate-y-1/2 transform bg-gradient-to-l from-primary-400 to-orange-400 opacity-60"></div>
-					<div class="absolute -top-8 left-1/2 h-8 w-px -translate-x-1/2 transform bg-gradient-to-b from-primary-400 to-blue-400 opacity-60"></div>
-					<div class="absolute -bottom-8 left-1/2 h-8 w-px -translate-x-1/2 transform bg-gradient-to-t from-primary-400 to-purple-400 opacity-60"></div>
-
-					<!-- Diagonal connections for information flow -->
-					<div class="absolute top-1/4 left-1/4 h-px w-12 rotate-45 transform bg-gradient-to-r from-primary-300 to-transparent opacity-40"></div>
-					<div class="absolute top-1/4 right-1/4 h-px w-12 -rotate-45 transform bg-gradient-to-l from-primary-300 to-transparent opacity-40"></div>
-					<div class="absolute bottom-1/4 left-1/4 h-px w-12 -rotate-45 transform bg-gradient-to-r from-primary-300 to-transparent opacity-40"></div>
-					<div class="absolute bottom-1/4 right-1/4 h-px w-12 rotate-45 transform bg-gradient-to-l from-primary-300 to-transparent opacity-40"></div>
-
-					<!-- Data Flow Indicators -->
-					<div class="absolute top-1/2 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 transform">
-						<div class="h-full w-full rounded-full bg-primary-400 opacity-60 animate-ping"></div>
-					</div>
 				</div>
 			{:else if visualization === 'misalignment'}
 				<!-- Stay Ahead of Misalignment - Simple Single Icon Visualization -->
