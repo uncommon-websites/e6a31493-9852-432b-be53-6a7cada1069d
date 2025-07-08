@@ -14,6 +14,7 @@
 	import Security from "$lib/components/layout/Security.svelte";
 	import FrictionlessAdoption from "$lib/components/layout/FrictionlessAdoption.svelte";
 	import ImmediateValue from "$lib/components/layout/ImmediateValue.svelte";
+	import Benefits from "$lib/components/layout/Benefits.svelte";
 </script>
 
 <SplitHero
@@ -127,5 +128,6 @@
 
 <AboutTeaser />
 <FrictionlessAdoption />
+<Benefits />
 <Security />
 <CallToAction />
