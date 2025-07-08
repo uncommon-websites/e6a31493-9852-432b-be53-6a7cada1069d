@@ -210,8 +210,16 @@
 			<div class="grid grid-cols-1 gap-12 lg:grid-cols-2">
 				<!-- Completely private -->
 				<div class="space-y-6">
-					<div class="bg-primary/10 flex h-16 w-16 items-center justify-center" style="border-radius: var(--radius-lg);">
-						<svg class="text-primary h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<div
+						class="flex h-16 w-16 items-center justify-center"
+						style="border-radius: var(--radius-lg);"
+					>
+						<svg
+							class="text-primary-900 h-8 w-8"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
 							<path
 								stroke-linecap="round"
 								stroke-linejoin="round"
@@ -229,8 +237,16 @@
 
 				<!-- Fully customizable -->
 				<div class="space-y-6">
-					<div class="bg-primary/10 flex h-16 w-16 items-center justify-center" style="border-radius: var(--radius-lg);">
-						<svg class="text-primary h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<div
+						class="flex h-16 w-16 items-center justify-center"
+						style="border-radius: var(--radius-lg);"
+					>
+						<svg
+							class="text-primary-900 h-8 w-8"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
 							<path
 								stroke-linecap="round"
 								stroke-linejoin="round"
@@ -310,11 +326,9 @@
 
 				{#if formSubmitted}
 					<div class="py-8 text-center">
-						<div
-							class="bg-primary/10 mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full"
-						>
+						<div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full">
 							<svg
-								class="text-primary h-8 w-8"
+								class="text-primary-900 h-8 w-8"
 								fill="none"
 								stroke="currentColor"
 								viewBox="0 0 24 24"
@@ -395,7 +409,7 @@
 	</section>
 
 	<!-- Security Practices Section -->
-	<section class="section-px section-py">
+	<!-- <section class="section-px section-py">
 		<div class="container-sm section-px mx-auto max-w-6xl">
 			<div class="mb-12">
 				<h2 class="text-title2 mb-4">Security is fundamental to our culture and process</h2>
@@ -409,11 +423,11 @@
 				<div class="space-y-8">
 					<div class="flex items-start space-x-4">
 						<div
-							class="bg-primary/10 flex h-12 w-12 flex-shrink-0 items-center justify-center"
+							class="flex h-12 w-12 flex-shrink-0 items-center justify-center"
 							style="border-radius: var(--radius-lg);"
 						>
 							<svg
-								class="text-primary h-6 w-6"
+								class="text-primary-900 h-6 w-6"
 								fill="none"
 								stroke="currentColor"
 								viewBox="0 0 24 24"
@@ -430,19 +444,19 @@
 							<h3 class="text-headline mb-2 font-medium">Encryption protects your data</h3>
 							<p class="text-body text-muted-foreground">
 								We implement cutting-edge encryption protocols to safeguard your information. Our
-								infrastructure uses AES-256 at rest and TLS 1.3 in transit to encrypt and
-								safeguard your data.
+								infrastructure uses AES-256 at rest and TLS 1.3 in transit to encrypt and safeguard
+								your data.
 							</p>
 						</div>
 					</div>
 
 					<div class="flex items-start space-x-4">
 						<div
-							class="bg-primary/10 flex h-12 w-12 flex-shrink-0 items-center justify-center"
+							class="flex h-12 w-12 flex-shrink-0 items-center justify-center"
 							style="border-radius: var(--radius-lg);"
 						>
 							<svg
-								class="text-primary h-6 w-6"
+								class="text-primary-900 h-6 w-6"
 								fill="none"
 								stroke="currentColor"
 								viewBox="0 0 24 24"
@@ -469,11 +483,11 @@
 				<div class="space-y-8">
 					<div class="flex items-start space-x-4">
 						<div
-							class="bg-primary/10 flex h-12 w-12 flex-shrink-0 items-center justify-center"
+							class="flex h-12 w-12 flex-shrink-0 items-center justify-center"
 							style="border-radius: var(--radius-lg);"
 						>
 							<svg
-								class="text-primary h-6 w-6"
+								class="text-primary-900 h-6 w-6"
 								fill="none"
 								stroke="currentColor"
 								viewBox="0 0 24 24"
@@ -498,11 +512,11 @@
 
 					<div class="flex items-start space-x-4">
 						<div
-							class="bg-primary/10 flex h-12 w-12 flex-shrink-0 items-center justify-center"
+							class="flex h-12 w-12 flex-shrink-0 items-center justify-center"
 							style="border-radius: var(--radius-lg);"
 						>
 							<svg
-								class="text-primary h-6 w-6"
+								class="text-primary-900 h-6 w-6"
 								fill="none"
 								stroke="currentColor"
 								viewBox="0 0 24 24"
@@ -527,10 +541,10 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 
 	<!-- Sub-processors Section -->
-	<section class="section-px section-py-sm">
+	<!-- <section class="section-px section-py-sm">
 		<div class="container-sm section-px mx-auto max-w-4xl">
 			<div class="mb-12">
 				<h2 class="text-title2 mb-4">Sub-processors</h2>
@@ -548,7 +562,7 @@
 				{/each}
 			</div>
 		</div>
-	</section>
+	</section> -->
 
 	<!-- FAQ Section -->
 	<section class="section-px section-py">
@@ -562,7 +576,7 @@
 
 			<div class="space-y-6">
 				{#each faqs as faq, index}
-					<div class="border-b border-border pb-6">
+					<div class="border-border border-b pb-6">
 						<button
 							class="flex w-full items-center justify-between text-left transition-colors"
 							onclick={() => toggleFaq(index)}
@@ -570,7 +584,7 @@
 							<span class="text-headline font-medium">{faq.question}</span>
 							<svg
 								class={[
-									"text-muted-foreground h-5 w-5 transition-transform flex-shrink-0 ml-4",
+									"text-muted-foreground ml-4 h-5 w-5 flex-shrink-0 transition-transform",
 									openFaq === index ? "rotate-180" : ""
 								]}
 								fill="none"
@@ -611,9 +625,9 @@
 			{#if formSubmitted}
 				<div class="py-8 text-center">
 					<div
-						class="bg-primary/10 mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full"
+						class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full"
 					>
-						<svg class="text-primary h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<svg class="text-primary-900 h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path
 								stroke-linecap="round"
 								stroke-linejoin="round"

@@ -1,17 +1,11 @@
-# Task: Make Private Deployments Page Cleaner and Left-Aligned
+# Task: Remove Icon Backgrounds and Change Icon Color
 
-- [x] Remove alternating background colors (bg-card) - keep consistent bg-background
-- [x] Remove card borders and backgrounds to reduce "boxy" appearance
-- [x] Change text alignment from center to left throughout the page
-- [x] Simplify visual hierarchy by removing unnecessary visual containers
-- [x] Update hero section to be left-aligned while maintaining layout
-- [x] Update organizational intelligence section - remove cards, left-align
-- [x] Update resources section - remove card styling, left-align
-- [x] Update security practices section - left-align content
-- [x] Update sub-processors section - remove card styling, left-align
-- [x] Update FAQ section - left-align content
-- [x] Update contact form section - left-align content
-- [x] Update final contact section - left-align content
+- [x] Remove `bg-primary/10` from first icon container (lock icon)
+- [x] Change first icon from `text-primary` to `text-primary-900`
+- [x] Remove `bg-primary/10` from second icon container (settings icon)
+- [x] Change second icon from `text-primary` to `text-primary-900`
+- [x] Remove `bg-primary/10` from security practices section icon containers
+- [x] Change security practices section icons from `text-primary` to `text-primary-900`
 - [x] Final design system compliance check - verify design system classes prioritized over Tailwind, NO shadows, NO custom CSS, NO arbitrary values, check theme.css, app.css and typography.css
 
 ## Design System Compliance Verification:
