@@ -84,11 +84,11 @@
 
 	<!-- Press Inquiries Section -->
 	<section
-		class="section-py section-px container-sm mx-auto"
+		class="section-py-sm section-px container-sm mx-auto"
 		style="background-color: var(--color-background);"
 	>
 		<div class="mx-auto max-w-prose text-center">
-			<h1 class="text-title1 section-mb-sm" style="color: var(--color-foreground);">
+			<h1 class="text-title1 mb-4" style="color: var(--color-foreground);">
 				Press Inquiries
 			</h1>
 			<p class="text-body" style="color: var(--color-muted-foreground);">
