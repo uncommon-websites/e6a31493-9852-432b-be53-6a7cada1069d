@@ -142,8 +142,8 @@
 						<div class="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-green-400 animate-pulse"></div>
 					</div>
 
-					<!-- Information Flow Nodes - Outer layer -->
-					<div class="absolute -top-4 -left-6">
+					<!-- Information Flow Nodes - Centered below eye icon -->
+					<div class="absolute top-20 left-1/2 -translate-x-1/2 transform">
 						<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-gray-100 text-gray-600">
 							<IconMessageSquare class="h-4 w-4" />
 						</div>
