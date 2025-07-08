@@ -1,126 +1,132 @@
 <script lang="ts">
-	import AnimateText from '$lib/components/animation/AnimateText.svelte';
-	import Button from '$lib/components/ui/Button.svelte';
+	import AnimateText from "$lib/components/animation/AnimateText.svelte";
+	import Button from "$lib/components/ui/Button.svelte";
 
 	// Contact form state
-	let firstName = $state('');
-	let lastName = $state('');
-	let email = $state('');
-	let company = $state('');
-	let phone = $state('');
-	let employees = $state('');
-	let message = $state('');
+	let firstName = $state("");
+	let lastName = $state("");
+	let email = $state("");
+	let company = $state("");
+	let phone = $state("");
+	let employees = $state("");
+	let message = $state("");
 	let isSubmitting = $state(false);
 	let formSubmitted = $state(false);
 
 	// Smooth scroll to contact form
 	function scrollToContact() {
-		const contactSection = document.getElementById('contact-form');
+		const contactSection = document.getElementById("contact-form");
 		if (contactSection) {
-			contactSection.scrollIntoView({ behavior: 'smooth' });
+			contactSection.scrollIntoView({ behavior: "smooth" });
 		}
 	}
 
 	// Handle contact form submission
 	async function handleContactSubmit() {
 		if (!firstName || !lastName || !email || !company) return;
-		
+
 		isSubmitting = true;
-		
+
 		// Simulate form submission
-		await new Promise(resolve => setTimeout(resolve, 1500));
-		
+		await new Promise((resolve) => setTimeout(resolve, 1500));
+
 		formSubmitted = true;
 		isSubmitting = false;
-		
+
 		// Reset form after 3 seconds
 		setTimeout(() => {
 			formSubmitted = false;
-			firstName = '';
-			lastName = '';
-			email = '';
-			company = '';
-			phone = '';
-			employees = '';
-			message = '';
+			firstName = "";
+			lastName = "";
+			email = "";
+			company = "";
+			phone = "";
+			employees = "";
+			message = "";
 		}, 3000);
 	}
 
 	// Handle whitepaper download
 	async function handleWhitepaperDownload() {
 		if (!email || !company) return;
-		
+
 		isSubmitting = true;
-		
+
 		// Simulate download preparation
-		await new Promise(resolve => setTimeout(resolve, 1500));
-		
+		await new Promise((resolve) => setTimeout(resolve, 1500));
+
 		// Simulate file download
-		const link = document.createElement('a');
-		link.href = '/static/sentra-security-whitepaper.pdf';
-		link.download = 'sentra-security-whitepaper.pdf';
+		const link = document.createElement("a");
+		link.href = "/static/sentra-security-whitepaper.pdf";
+		link.download = "sentra-security-whitepaper.pdf";
 		document.body.appendChild(link);
 		link.click();
 		document.body.removeChild(link);
-		
+
 		formSubmitted = true;
 		isSubmitting = false;
-		
+
 		// Reset form after 3 seconds
 		setTimeout(() => {
 			formSubmitted = false;
-			email = '';
-			company = '';
+			email = "";
+			company = "";
 		}, 3000);
 	}
 
 	// Sub-processors data
 	const subProcessors = [
 		{
-			name: 'Amazon Web Services (AWS)',
-			description: 'Cloud infrastructure and hosting services'
+			name: "Amazon Web Services (AWS)",
+			description: "Cloud infrastructure and hosting services"
 		},
 		{
-			name: 'Stripe',
-			description: 'Payment processing and billing services'
+			name: "Stripe",
+			description: "Payment processing and billing services"
 		},
 		{
-			name: 'SendGrid',
-			description: 'Email delivery and communication services'
+			name: "SendGrid",
+			description: "Email delivery and communication services"
 		},
 		{
-			name: 'Mixpanel',
-			description: 'Analytics and user behavior tracking'
+			name: "Mixpanel",
+			description: "Analytics and user behavior tracking"
 		}
 	];
 
 	// FAQ data and state
 	let openFaq = $state<number | null>(null);
-	
+
 	const faqs = [
 		{
-			question: 'How does Sentra protect my company data?',
-			answer: 'Sentra uses enterprise-grade encryption (AES-256 at rest, TLS 1.3 in transit), operates on AWS secure infrastructure, and follows strict data isolation practices. All data is encrypted and access is logged and monitored.'
+			question: "How does Sentra protect my company data?",
+			answer:
+				"Sentra uses enterprise-grade encryption (AES-256 at rest, TLS 1.3 in transit), operates on AWS secure infrastructure, and follows strict data isolation practices. All data is encrypted and access is logged and monitored."
 		},
 		{
-			question: 'Is Sentra SOC 2 compliant?',
-			answer: 'Yes, Sentra has completed SOC 2 Type I certification and is currently undergoing SOC 2 Type II certification. We maintain comprehensive security controls and undergo regular third-party audits.'
+			question: "Is Sentra SOC 2 compliant?",
+			answer:
+				"Yes, Sentra has completed SOC 2 Type I certification and is currently undergoing SOC 2 Type II certification. We maintain comprehensive security controls and undergo regular third-party audits."
 		},
 		{
-			question: 'Can I deploy Sentra in my own private cloud?',
-			answer: 'Yes, Sentra offers private deployment options for organizations with specific security requirements. Contact our sales team to discuss your private deployment needs and configuration options.'
+			question: "Can I deploy Sentra in my own private cloud?",
+			answer:
+				"Yes, Sentra offers private deployment options for organizations with specific security requirements. Contact our sales team to discuss your private deployment needs and configuration options."
 		},
 		{
-			question: 'What data does Sentra access?',
-			answer: 'Sentra only accesses the data you explicitly grant permission to, such as public Slack channels, calendar events, and project management tools. We never access private messages or sensitive documents without explicit authorization.'
+			question: "What data does Sentra access?",
+			answer:
+				"Sentra only accesses the data you explicitly grant permission to, such as public Slack channels, calendar events, and project management tools. We never access private messages or sensitive documents without explicit authorization."
 		},
 		{
-			question: 'How long is data retained?',
-			answer: 'Data retention periods are configurable based on your organization\'s needs and compliance requirements. By default, we retain operational data for 90 days and can accommodate longer or shorter retention periods as needed.'
+			question: "How long is data retained?",
+			answer:
+				"Data retention periods are configurable based on your organization's needs and compliance requirements. By default, we retain operational data for 90 days and can accommodate longer or shorter retention periods as needed."
 		},
 		{
-			question: 'Can I delete my data?',
-			answer: 'Yes, you have full control over your data. You can request data deletion at any time, and we will permanently remove all associated data within 30 days of your request.'
+			question: "Can I delete my data?",
+			answer:
+				"Yes, you have full control over your data. You can request data deletion at any time, and we will permanently remove all associated data within 30 days of your request."
 		}
 	];
 
@@ -132,14 +138,17 @@
 
 <svelte:head>
 	<title>Private Deployments - Sentra</title>
-	<meta name="description" content="Deploy Sentra privately for ultimate security and data sovereignty. Completely private, fully customizable organizational intelligence." />
+	<meta
+		name="description"
+		content="Deploy Sentra privately for ultimate security and data sovereignty. Completely private, fully customizable organizational intelligence."
+	/>
 </svelte:head>
 
-<main class="min-h-screen bg-background">
+<main class="bg-background min-h-screen">
 	<!-- Section 1: Hero Section -->
 	<section class="section-px section-py">
-		<div class="container mx-auto max-w-6xl">
-			<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+		<div class="container-sm section-px mx-auto max-w-6xl">
+			<div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
 				<!-- Left column - Text content -->
 				<div class="space-y-8">
 					<div class="space-y-6">
@@ -151,26 +160,30 @@
 						</h2>
 					</div>
 					<div>
-						<Button size="lg" onclick={scrollToContact}>
-							Talk to Sales
-						</Button>
+						<Button size="lg" onclick={scrollToContact}>Talk to Sales</Button>
 					</div>
 				</div>
-				
+
 				<!-- Right column - Security graphic -->
 				<div class="relative">
-					<img 
-						src="/generated/image-a-professional-business-team-engaged-in-.webp" 
+					<img
+						src="/generated/image-a-professional-business-team-engaged-in-.webp"
 						alt="Secure cloud infrastructure protecting organizational data"
-						class="w-full h-auto"
+						class="h-auto w-full"
 						style="border-radius: var(--radius-lg);"
 					/>
 					<!-- Overlay security elements -->
-					<div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" style="border-radius: var(--radius-lg);"></div>
-					<div class="absolute bottom-4 left-4 right-4">
-						<div class="bg-white/90 backdrop-blur-sm p-4 border border-white/20" style="border-radius: var(--radius-md);">
+					<div
+						class="from-primary/20 absolute inset-0 bg-gradient-to-t to-transparent"
+						style="border-radius: var(--radius-lg);"
+					></div>
+					<div class="absolute right-4 bottom-4 left-4">
+						<div
+							class="border border-white/20 bg-white/90 p-4 backdrop-blur-sm"
+							style="border-radius: var(--radius-md);"
+						>
 							<div class="flex items-center gap-3">
-								<div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+								<div class="h-3 w-3 animate-pulse rounded-full bg-green-500"></div>
 								<span class="text-sm font-medium text-gray-900">Secure deployment active</span>
 							</div>
 						</div>
@@ -182,42 +195,72 @@
 
 	<!-- Section 2: Organizational Intelligence -->
 	<section class="section-px section-py bg-card">
-		<div class="container mx-auto max-w-6xl">
-			<div class="text-center mb-16">
-				<h1 class="text-display mb-6">
-					Sentra's Organizational Intelligence <br/>
+		<div class="container-sm section-px mx-auto max-w-6xl">
+			<div class="mb-16 text-center">
+				<h2 class="text-title1 mb-6">
+					Sentra's Organizational Intelligence <br />
 					<span class="text-muted-foreground">without exposure risks</span>
-				</h1>
-				<h2 class="text-title3 text-muted-foreground max-w-4xl mx-auto">
-					Keep all your data within your own private environment for maximum security and compliance.
 				</h2>
+				<h3 class="text-title3 text-muted-foreground mx-auto max-w-4xl">
+					Keep all your data within your own private environment for maximum security and
+					compliance.
+				</h3>
 			</div>
-			
-			<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+			<div class="grid grid-cols-1 gap-12 lg:grid-cols-2">
 				<!-- Completely private card -->
-				<div class="bg-background border border-border p-8" style="border-radius: var(--radius-lg);">
-					<div class="w-16 h-16 mb-6 bg-primary/10 flex items-center justify-center" style="border-radius: var(--radius-lg);">
-						<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-					</svg>
+				<div
+					class="bg-background border-border border p-8"
+					style="border-radius: var(--radius-lg);"
+				>
+					<div
+						class="bg-primary/10 mb-6 flex h-16 w-16 items-center justify-center"
+						style="border-radius: var(--radius-lg);"
+					>
+						<svg class="text-primary h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+							/>
+						</svg>
 					</div>
-					<h3 class="text-title3 font-medium mb-4">Completely private</h3>
+					<h3 class="text-title3 mb-4 font-medium">Completely private</h3>
 					<p class="text-body text-muted-foreground">
-						All of Sentra's memories and interactions occur within your secure infrastructure. Your sensitive company data never leaves your dedicated systems.
+						All of Sentra's memories and interactions occur within your secure infrastructure. Your
+						sensitive company data never leaves your dedicated systems.
 					</p>
 				</div>
-				
+
 				<!-- Fully customizable card -->
-				<div class="bg-background border border-border p-8" style="border-radius: var(--radius-lg);">
-					<div class="w-16 h-16 mb-6 bg-primary/10 flex items-center justify-center" style="border-radius: var(--radius-lg);">
-						<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-					</svg>
+				<div
+					class="bg-background border-border border p-8"
+					style="border-radius: var(--radius-lg);"
+				>
+					<div
+						class="bg-primary/10 mb-6 flex h-16 w-16 items-center justify-center"
+						style="border-radius: var(--radius-lg);"
+					>
+						<svg class="text-primary h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+							/>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+							/>
+						</svg>
 					</div>
-					<h3 class="text-title3 font-medium mb-4">Fully customizable</h3>
+					<h3 class="text-title3 mb-4 font-medium">Fully customizable</h3>
 					<p class="text-body text-muted-foreground">
-						Customize the level of privacy with a dedicated solutions engineer. Scale and configure Sentra to your organization's exact needs and preferences.
+						Customize the level of privacy with a dedicated solutions engineer. Scale and configure
+						Sentra to your organization's exact needs and preferences.
 					</p>
 				</div>
 			</div>
@@ -226,94 +269,143 @@
 
 	<!-- Resources Section -->
 	<section class="section-px section-py-sm bg-card">
-		<div class="container mx-auto max-w-4xl">
-			<div class="text-center mb-12">
+		<div class="container-sm section-px mx-auto max-w-4xl">
+			<div class="mb-12 text-center">
 				<h2 class="text-title2 mb-4">Resources</h2>
 				<p class="text-body text-muted-foreground">
 					Access our security documentation and compliance reports
 				</p>
 			</div>
-			
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-				<div class="bg-background border border-border p-6" style="border-radius: var(--radius-lg);">
-					<h3 class="text-headline font-medium mb-2">Information Security Policy</h3>
-					<p class="text-caption text-muted-foreground mb-4">Comprehensive overview of our security practices and procedures</p>
+
+			<div class="mb-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+				<div
+					class="bg-background border-border border p-6"
+					style="border-radius: var(--radius-lg);"
+				>
+					<h3 class="text-headline mb-2 font-medium">Information Security Policy</h3>
+					<p class="text-caption text-muted-foreground mb-4">
+						Comprehensive overview of our security practices and procedures
+					</p>
 					<Button variant="outline" size="sm">Download PDF</Button>
 				</div>
-				
-				<div class="bg-background border border-border p-6" style="border-radius: var(--radius-lg);">
-					<h3 class="text-headline font-medium mb-2">SOC-2 Type I Report</h3>
-					<p class="text-caption text-muted-foreground mb-4">Independent audit report of our security controls</p>
+
+				<div
+					class="bg-background border-border border p-6"
+					style="border-radius: var(--radius-lg);"
+				>
+					<h3 class="text-headline mb-2 font-medium">SOC-2 Type I Report</h3>
+					<p class="text-caption text-muted-foreground mb-4">
+						Independent audit report of our security controls
+					</p>
 					<Button variant="outline" size="sm">Request Access</Button>
 				</div>
-				
-				<div class="bg-background border border-border p-6" style="border-radius: var(--radius-lg);">
-					<h3 class="text-headline font-medium mb-2">SOC-2 Type II In-Progress Letter</h3>
-					<p class="text-caption text-muted-foreground mb-4">Documentation of our ongoing Type II certification process</p>
+
+				<div
+					class="bg-background border-border border p-6"
+					style="border-radius: var(--radius-lg);"
+				>
+					<h3 class="text-headline mb-2 font-medium">SOC-2 Type II In-Progress Letter</h3>
+					<p class="text-caption text-muted-foreground mb-4">
+						Documentation of our ongoing Type II certification process
+					</p>
 					<Button variant="outline" size="sm">Download PDF</Button>
 				</div>
-				
-				<div class="bg-background border border-border p-6" style="border-radius: var(--radius-lg);">
-					<h3 class="text-headline font-medium mb-2">Most Recent Pentest Report</h3>
-					<p class="text-caption text-muted-foreground mb-4">Latest penetration testing results and remediation status</p>
+
+				<div
+					class="bg-background border-border border p-6"
+					style="border-radius: var(--radius-lg);"
+				>
+					<h3 class="text-headline mb-2 font-medium">Most Recent Pentest Report</h3>
+					<p class="text-caption text-muted-foreground mb-4">
+						Latest penetration testing results and remediation status
+					</p>
 					<Button variant="outline" size="sm">Request Access</Button>
 				</div>
 			</div>
 
 			<!-- Whitepaper Download Form -->
-			<div class="bg-background border border-border p-8" style="border-radius: var(--radius-lg);">
-				<div class="text-center mb-6">
+			<div class="bg-background border-border border p-8" style="border-radius: var(--radius-lg);">
+				<div class="mb-6 text-center">
 					<h3 class="text-title3 mb-2">Security at Sentra</h3>
-					<p class="text-body text-muted-foreground">Download our comprehensive security whitepaper</p>
+					<p class="text-body text-muted-foreground">
+						Download our comprehensive security whitepaper
+					</p>
 				</div>
-				
+
 				{#if formSubmitted}
-					<div class="text-center py-8">
-						<div class="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
-							<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+					<div class="py-8 text-center">
+						<div
+							class="bg-primary/10 mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full"
+						>
+							<svg
+								class="text-primary h-8 w-8"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M5 13l4 4L19 7"
+								/>
 							</svg>
 						</div>
-						<h4 class="text-headline font-medium mb-2">Download Started</h4>
-						<p class="text-caption text-muted-foreground">Your security whitepaper download should begin shortly.</p>
+						<h4 class="text-headline mb-2 font-medium">Download Started</h4>
+						<p class="text-caption text-muted-foreground">
+							Your security whitepaper download should begin shortly.
+						</p>
 					</div>
 				{:else}
-					<form class="max-w-md mx-auto space-y-4" onsubmit={(e) => { e.preventDefault(); handleWhitepaperDownload(); }}>
+					<form
+						class="mx-auto max-w-md space-y-4"
+						onsubmit={(e) => {
+							e.preventDefault();
+							handleWhitepaperDownload();
+						}}
+					>
 						<div>
-							<label for="email" class="block text-caption font-medium mb-2">Work Email</label>
+							<label for="email" class="text-caption mb-2 block font-medium">Work Email</label>
 							<input
 								id="email"
 								type="email"
 								bind:value={email}
 								required
-								class="w-full px-4 py-3 border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+								class="border-border bg-background focus:ring-primary/20 focus:border-primary w-full border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
 								style="border-radius: var(--radius-md);"
 								placeholder="you@company.com"
 							/>
 						</div>
-						
+
 						<div>
-							<label for="company" class="block text-caption font-medium mb-2">Company</label>
+							<label for="company" class="text-caption mb-2 block font-medium">Company</label>
 							<input
 								id="company"
 								type="text"
 								bind:value={company}
 								required
-								class="w-full px-4 py-3 border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+								class="border-border bg-background focus:ring-primary/20 focus:border-primary w-full border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
 								style="border-radius: var(--radius-md);"
 								placeholder="Your Company"
 							/>
 						</div>
-						
-						<Button 
-							type="submit" 
-							class="w-full" 
-							disabled={isSubmitting || !email || !company}
-						>
+
+						<Button type="submit" class="w-full" disabled={isSubmitting || !email || !company}>
 							{#if isSubmitting}
-								<svg class="animate-spin -ml-1 mr-3 h-4 w-4" fill="none" viewBox="0 0 24 24">
-									<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-									<path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+								<svg class="mr-3 -ml-1 h-4 w-4 animate-spin" fill="none" viewBox="0 0 24 24">
+									<circle
+										class="opacity-25"
+										cx="12"
+										cy="12"
+										r="10"
+										stroke="currentColor"
+										stroke-width="4"
+									></circle>
+									<path
+										class="opacity-75"
+										fill="currentColor"
+										d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+									></path>
 								</svg>
 								Preparing Download...
 							{:else}
@@ -328,77 +420,138 @@
 
 	<!-- Security Practices Section -->
 	<section class="section-px section-py">
-		<div class="container mx-auto max-w-6xl">
-			<div class="text-center mb-12">
+		<div class="container-sm section-px mx-auto max-w-6xl">
+			<div class="mb-12 text-center">
 				<h2 class="text-title2 mb-4">Security is fundamental to our culture and process</h2>
-				<p class="text-body text-muted-foreground max-w-3xl mx-auto">
-					The way we build incorporates security measures from the outset, ensuring that our products, procedures, and practices surpass industry standards.
+				<p class="text-body text-muted-foreground mx-auto max-w-3xl">
+					The way we build incorporates security measures from the outset, ensuring that our
+					products, procedures, and practices surpass industry standards.
 				</p>
 			</div>
-			
-			<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+			<div class="grid grid-cols-1 gap-12 lg:grid-cols-2">
 				<div class="space-y-8">
 					<div>
 						<div class="flex items-start space-x-4">
-							<div class="w-12 h-12 bg-primary/10 flex items-center justify-center flex-shrink-0" style="border-radius: var(--radius-lg);">
-								<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+							<div
+								class="bg-primary/10 flex h-12 w-12 flex-shrink-0 items-center justify-center"
+								style="border-radius: var(--radius-lg);"
+							>
+								<svg
+									class="text-primary h-6 w-6"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+									/>
 								</svg>
 							</div>
 							<div>
-								<h3 class="text-headline font-medium mb-2">Encryption protects your data</h3>
+								<h3 class="text-headline mb-2 font-medium">Encryption protects your data</h3>
 								<p class="text-body text-muted-foreground">
-									We implement cutting-edge encryption protocols to safeguard your information. Our infrastructure uses AES-256 at rest and TLS 1.3 in transit to encrypt and safeguard your data.
+									We implement cutting-edge encryption protocols to safeguard your information. Our
+									infrastructure uses AES-256 at rest and TLS 1.3 in transit to encrypt and
+									safeguard your data.
 								</p>
 							</div>
 						</div>
 					</div>
-					
+
 					<div>
 						<div class="flex items-start space-x-4">
-							<div class="w-12 h-12 bg-primary/10 flex items-center justify-center flex-shrink-0" style="border-radius: var(--radius-lg);">
-								<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+							<div
+								class="bg-primary/10 flex h-12 w-12 flex-shrink-0 items-center justify-center"
+								style="border-radius: var(--radius-lg);"
+							>
+								<svg
+									class="text-primary h-6 w-6"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
+									/>
 								</svg>
 							</div>
 							<div>
-								<h3 class="text-headline font-medium mb-2">Secure cloud infrastructure</h3>
+								<h3 class="text-headline mb-2 font-medium">Secure cloud infrastructure</h3>
 								<p class="text-body text-muted-foreground">
-									Sentra operates on AWS' industry-leading cloud platform, benefiting from years of security enhancements to guarantee optimal performance, resilience, and rapid deployment.
+									Sentra operates on AWS' industry-leading cloud platform, benefiting from years of
+									security enhancements to guarantee optimal performance, resilience, and rapid
+									deployment.
 								</p>
 							</div>
 						</div>
 					</div>
 				</div>
-				
+
 				<div class="space-y-8">
 					<div>
 						<div class="flex items-start space-x-4">
-							<div class="w-12 h-12 bg-primary/10 flex items-center justify-center flex-shrink-0" style="border-radius: var(--radius-lg);">
-								<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+							<div
+								class="bg-primary/10 flex h-12 w-12 flex-shrink-0 items-center justify-center"
+								style="border-radius: var(--radius-lg);"
+							>
+								<svg
+									class="text-primary h-6 w-6"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+									/>
 								</svg>
 							</div>
 							<div>
-								<h3 class="text-headline font-medium mb-2">Continuous monitoring and testing</h3>
+								<h3 class="text-headline mb-2 font-medium">Continuous monitoring and testing</h3>
 								<p class="text-body text-muted-foreground">
-									Sentra's infrastructure is continuously monitored using industry-leading intrusion detection systems. Security consultants conduct penetration testing at least every year, and our internal team conducts automated scans weekly.
+									Sentra's infrastructure is continuously monitored using industry-leading intrusion
+									detection systems. Security consultants conduct penetration testing at least every
+									year, and our internal team conducts automated scans weekly.
 								</p>
 							</div>
 						</div>
 					</div>
-					
+
 					<div>
 						<div class="flex items-start space-x-4">
-							<div class="w-12 h-12 bg-primary/10 flex items-center justify-center flex-shrink-0" style="border-radius: var(--radius-lg);">
-								<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+							<div
+								class="bg-primary/10 flex h-12 w-12 flex-shrink-0 items-center justify-center"
+								style="border-radius: var(--radius-lg);"
+							>
+								<svg
+									class="text-primary h-6 w-6"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+									/>
 								</svg>
 							</div>
 							<div>
-								<h3 class="text-headline font-medium mb-2">Security-focused workforce</h3>
+								<h3 class="text-headline mb-2 font-medium">Security-focused workforce</h3>
 								<p class="text-body text-muted-foreground">
-									Sentra fosters a robust security-focused environment, equipping all staff members with necessary training, resources, and tools to operate securely. Every employee adheres to strict confidentiality protocols.
+									Sentra fosters a robust security-focused environment, equipping all staff members
+									with necessary training, resources, and tools to operate securely. Every employee
+									adheres to strict confidentiality protocols.
 								</p>
 							</div>
 						</div>
@@ -410,20 +563,23 @@
 
 	<!-- Sub-processors Section -->
 	<section class="section-px section-py-sm bg-card">
-		<div class="container mx-auto max-w-4xl">
-			<div class="text-center mb-12">
+		<div class="container-sm section-px mx-auto max-w-4xl">
+			<div class="mb-12 text-center">
 				<h2 class="text-title2 mb-4">Sub-processors</h2>
 				<p class="text-body text-muted-foreground">
 					Trusted partners that help us deliver secure and reliable service
 				</p>
 			</div>
-			
+
 			<div class="space-y-4">
 				{#each subProcessors as processor}
-					<div class="bg-background border border-border p-6" style="border-radius: var(--radius-lg);">
+					<div
+						class="bg-background border-border border p-6"
+						style="border-radius: var(--radius-lg);"
+					>
 						<div class="flex items-center justify-between">
 							<div>
-								<h3 class="text-headline font-medium mb-1">{processor.name}</h3>
+								<h3 class="text-headline mb-1 font-medium">{processor.name}</h3>
 								<p class="text-caption text-muted-foreground">{processor.description}</p>
 							</div>
 						</div>
@@ -435,32 +591,43 @@
 
 	<!-- FAQ Section -->
 	<section class="section-px section-py">
-		<div class="container mx-auto max-w-4xl">
-			<div class="text-center mb-12">
+		<div class="container-sm section-px mx-auto max-w-4xl">
+			<div class="mb-12 text-center">
 				<h2 class="text-title2 mb-4">Frequently Asked Questions</h2>
 				<p class="text-body text-muted-foreground">
 					Common questions about Sentra's security and compliance practices
 				</p>
 			</div>
-			
+
 			<div class="space-y-4">
 				{#each faqs as faq, index}
-					<div class="bg-card border border-border overflow-hidden" style="border-radius: var(--radius-lg);">
+					<div
+						class="bg-card border-border overflow-hidden border"
+						style="border-radius: var(--radius-lg);"
+					>
 						<button
-							class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-card-hover transition-colors"
+							class="hover:bg-card-hover flex w-full items-center justify-between px-6 py-4 text-left transition-colors"
 							onclick={() => toggleFaq(index)}
 						>
 							<span class="text-headline font-medium">{faq.question}</span>
-							<svg 
-								class={['w-5 h-5 text-muted-foreground transition-transform', openFaq === index ? 'rotate-180' : '']}
-								fill="none" 
-								stroke="currentColor" 
+							<svg
+								class={[
+									"text-muted-foreground h-5 w-5 transition-transform",
+									openFaq === index ? "rotate-180" : ""
+								]}
+								fill="none"
+								stroke="currentColor"
 								viewBox="0 0 24 24"
 							>
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M19 9l-7 7-7-7"
+								/>
 							</svg>
 						</button>
-						
+
 						{#if openFaq === index}
 							<div class="px-6 pb-4">
 								<p class="text-body text-muted-foreground">{faq.answer}</p>
@@ -474,98 +641,115 @@
 
 	<!-- Contact Form Section -->
 	<section id="contact-form" class="section-px section-py bg-card">
-		<div class="container mx-auto max-w-2xl">
-			<div class="text-center mb-8">
+		<div class="container-sm section-px mx-auto max-w-2xl">
+			<div class="mb-8 text-center">
 				<h2 class="text-title2 mb-4">Talk to Sales</h2>
 				<p class="text-body text-muted-foreground">
-					Ready to deploy Sentra privately? Get in touch with our sales team to discuss your specific requirements and security needs.
+					Ready to deploy Sentra privately? Get in touch with our sales team to discuss your
+					specific requirements and security needs.
 				</p>
 			</div>
-			
+
 			{#if formSubmitted}
-				<div class="text-center py-8">
-					<div class="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
-						<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+				<div class="py-8 text-center">
+					<div
+						class="bg-primary/10 mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full"
+					>
+						<svg class="text-primary h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M5 13l4 4L19 7"
+							/>
 						</svg>
 					</div>
 					<h3 class="text-title3 mb-2">Thank you for your interest!</h3>
-					<p class="text-body text-muted-foreground">Our sales team will be in touch within 24 hours to discuss your private deployment needs.</p>
+					<p class="text-body text-muted-foreground">
+						Our sales team will be in touch within 24 hours to discuss your private deployment
+						needs.
+					</p>
 				</div>
 			{:else}
-				<form class="space-y-6" onsubmit={(e) => { e.preventDefault(); handleContactSubmit(); }}>
-					<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+				<form
+					class="space-y-6"
+					onsubmit={(e) => {
+						e.preventDefault();
+						handleContactSubmit();
+					}}
+				>
+					<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
 						<div>
-							<label for="firstName" class="block text-caption font-medium mb-2">First Name</label>
+							<label for="firstName" class="text-caption mb-2 block font-medium">First Name</label>
 							<input
 								id="firstName"
 								type="text"
 								bind:value={firstName}
 								required
-								class="w-full px-4 py-3 border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+								class="border-border bg-background focus:ring-primary/20 focus:border-primary w-full border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
 								style="border-radius: var(--radius-md);"
 								placeholder="John"
 							/>
 						</div>
-						
+
 						<div>
-							<label for="lastName" class="block text-caption font-medium mb-2">Last Name</label>
+							<label for="lastName" class="text-caption mb-2 block font-medium">Last Name</label>
 							<input
 								id="lastName"
 								type="text"
 								bind:value={lastName}
 								required
-								class="w-full px-4 py-3 border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+								class="border-border bg-background focus:ring-primary/20 focus:border-primary w-full border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
 								style="border-radius: var(--radius-md);"
 								placeholder="Doe"
 							/>
 						</div>
 					</div>
-					
+
 					<div>
-						<label for="contactEmail" class="block text-caption font-medium mb-2">Work Email</label>
+						<label for="contactEmail" class="text-caption mb-2 block font-medium">Work Email</label>
 						<input
 							id="contactEmail"
 							type="email"
 							bind:value={email}
 							required
-							class="w-full px-4 py-3 border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+							class="border-border bg-background focus:ring-primary/20 focus:border-primary w-full border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
 							style="border-radius: var(--radius-md);"
 							placeholder="john@company.com"
 						/>
 					</div>
-					
+
 					<div>
-						<label for="contactCompany" class="block text-caption font-medium mb-2">Company</label>
+						<label for="contactCompany" class="text-caption mb-2 block font-medium">Company</label>
 						<input
 							id="contactCompany"
 							type="text"
 							bind:value={company}
 							required
-							class="w-full px-4 py-3 border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+							class="border-border bg-background focus:ring-primary/20 focus:border-primary w-full border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
 							style="border-radius: var(--radius-md);"
 							placeholder="Your Company"
 						/>
 					</div>
-					
+
 					<div>
-						<label for="phone" class="block text-caption font-medium mb-2">Phone (Optional)</label>
+						<label for="phone" class="text-caption mb-2 block font-medium">Phone (Optional)</label>
 						<input
 							id="phone"
 							type="tel"
 							bind:value={phone}
-							class="w-full px-4 py-3 border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+							class="border-border bg-background focus:ring-primary/20 focus:border-primary w-full border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
 							style="border-radius: var(--radius-md);"
 							placeholder="+1 (555) 123-4567"
 						/>
 					</div>
-					
+
 					<div>
-						<label for="employees" class="block text-caption font-medium mb-2">Company Size</label>
+						<label for="employees" class="text-caption mb-2 block font-medium">Company Size</label>
 						<select
 							id="employees"
 							bind:value={employees}
-							class="w-full px-4 py-3 border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+							class="border-border bg-background focus:ring-primary/20 focus:border-primary w-full border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
 							style="border-radius: var(--radius-md);"
 						>
 							<option value="">Select company size</option>
@@ -576,29 +760,42 @@
 							<option value="1000+">1000+ employees</option>
 						</select>
 					</div>
-					
+
 					<div>
-						<label for="message" class="block text-caption font-medium mb-2">Message (Optional)</label>
+						<label for="message" class="text-caption mb-2 block font-medium"
+							>Message (Optional)</label
+						>
 						<textarea
 							id="message"
 							bind:value={message}
 							rows="4"
-							class="w-full px-4 py-3 border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors resize-none"
+							class="border-border bg-background focus:ring-primary/20 focus:border-primary w-full resize-none border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
 							style="border-radius: var(--radius-md);"
 							placeholder="Tell us about your specific security requirements or any questions you have about private deployments..."
 						></textarea>
 					</div>
-					
-					<Button 
-						type="submit" 
+
+					<Button
+						type="submit"
 						size="lg"
-						class="w-full" 
+						class="w-full"
 						disabled={isSubmitting || !firstName || !lastName || !email || !company}
 					>
 						{#if isSubmitting}
-							<svg class="animate-spin -ml-1 mr-3 h-4 w-4" fill="none" viewBox="0 0 24 24">
-								<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-								<path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+							<svg class="mr-3 -ml-1 h-4 w-4 animate-spin" fill="none" viewBox="0 0 24 24">
+								<circle
+									class="opacity-25"
+									cx="12"
+									cy="12"
+									r="10"
+									stroke="currentColor"
+									stroke-width="4"
+								></circle>
+								<path
+									class="opacity-75"
+									fill="currentColor"
+									d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+								></path>
 							</svg>
 							Sending Message...
 						{:else}
@@ -612,14 +809,13 @@
 
 	<!-- Contact Section -->
 	<section class="section-px section-py-sm bg-background">
-		<div class="container mx-auto max-w-2xl text-center">
+		<div class="container-sm section-px mx-auto max-w-2xl text-center">
 			<h2 class="text-title3 mb-4">Questions about our security practices?</h2>
 			<p class="text-body text-muted-foreground mb-6">
-				Our security team is here to help. Reach out with any questions about our compliance, security measures, or data protection practices.
+				Our security team is here to help. Reach out with any questions about our compliance,
+				security measures, or data protection practices.
 			</p>
-			<Button>
-				Contact Security Team
-			</Button>
+			<Button>Contact Security Team</Button>
 		</div>
 	</section>
 </main>
