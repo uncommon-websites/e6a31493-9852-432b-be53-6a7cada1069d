@@ -168,12 +168,12 @@
 			<LogoScroller
 				label="Shaped and backed by former leaders of:"
 				logoUrls={[
-					"https://logo.clearbit.com/google.com",
-					"https://logo.clearbit.com/microsoft.com",
-					"https://logo.clearbit.com/twitter.com",
-					"https://logo.clearbit.com/qualcomm.com",
-					"https://logo.clearbit.com/instacart.com",
-					"https://logo.clearbit.com/motorola.com"
+					"https://img.brandfetch.io/google.com",
+					"https://img.brandfetch.io/microsoft.com",
+					"https://img.brandfetch.io/twitter.com",
+					"https://img.brandfetch.io/qualcomm.com",
+					"https://img.brandfetch.io/instacart.com",
+					"https://img.brandfetch.io/motorola.com"
 				]}
 			/>
 		</div>
