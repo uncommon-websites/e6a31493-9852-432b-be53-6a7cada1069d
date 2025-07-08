@@ -61,7 +61,7 @@
 </script>
 
 <div class="bg-background relative overflow-hidden" {...rest}>
-	<header class="section-px container-sm relative z-20 mx-auto py-12 pt-24">
+	<header class="section-px relative z-20 mx-auto max-w-6xl py-12 pt-24">
 		<!-- Background glow -->
 		<div class="absolute inset-0 z-0">
 			<div
@@ -99,7 +99,7 @@
 						class="from-primary-700 to-primary-400 absolute inset-0 rounded-2xl bg-radial from-40%"
 					></div>
 
-					<!-- Notification cards container -->
+					<!-- Notification cards max-w-6xl-->
 					<div class="relative z-10 w-full max-w-sm space-y-4">
 						{#each notifications as notification, index}
 							<div

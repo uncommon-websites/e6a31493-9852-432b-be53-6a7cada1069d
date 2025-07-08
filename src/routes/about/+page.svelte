@@ -19,7 +19,7 @@
 	/>
 
 	<!-- Main Content Section -->
-	<section class="section-py section-px container-sm mx-auto">
+	<section class="section-py section-px mx-auto max-w-6xl">
 		<div class="max-w-prose">
 			<div class="space-y-8">
 				<div>
@@ -107,7 +107,7 @@
 
 	<!-- Press Inquiries Section -->
 	<section
-		class="section-py-sm section-px container-sm mx-auto"
+		class="section-py-sm section-px mx-auto max-w-6xl"
 		style="background-color: var(--color-background);"
 	>
 		<div class=" max-w-prose">

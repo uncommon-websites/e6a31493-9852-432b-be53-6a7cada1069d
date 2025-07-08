@@ -28,7 +28,7 @@ A minimalist teaser for the about page.
 </script>
 
 <section bind:this={sectionRef} {...props}>
-	<div class="section-px section-py container-sm mx-auto">
+	<div class="section-px section-py mx-auto max-w-6xl">
 		<div class="relative mx-auto grid max-w-2xl place-items-center gap-16">
 			<ScrollText
 				class="text-title1 text-center"

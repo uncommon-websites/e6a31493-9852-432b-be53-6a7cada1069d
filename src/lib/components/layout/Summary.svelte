@@ -41,22 +41,29 @@
 		// Get all word elements as an array
 		const wordElements = Array.from(containerElement.querySelectorAll(".word"));
 
-		scroll(animate(wordElements, {
-			transform: ["translateY(1em)", "translateY(0)"],
-			filter: ["blur(12px)", "blur(8px) brightness(250%)", "blur(0px)"]
-		}, {
-			at: "0",
-			delay: stagger(0.015),
-			ease: "easeInOut"
-		}), {
-			target: containerElement,
-			offset: ["start end", "center center"]
-		});
+		scroll(
+			animate(
+				wordElements,
+				{
+					transform: ["translateY(1em)", "translateY(0)"],
+					filter: ["blur(12px)", "blur(8px) brightness(250%)", "blur(0px)"]
+				},
+				{
+					at: "0",
+					delay: stagger(0.015),
+					ease: "easeInOut"
+				}
+			),
+			{
+				target: containerElement,
+				offset: ["start end", "center center"]
+			}
+		);
 	});
 </script>
 
 <div
-	class="section-my section-px container-sm relative mx-auto flex flex-col items-start gap-8 text-pretty lg:grid xl:flex-row"
+	class="section-my section-px relative mx-auto flex max-w-6xl flex-col items-start gap-8 text-pretty lg:grid xl:flex-row"
 	bind:this={containerElement}
 	class:lg:grid-cols-[1fr_2fr]={!!title}
 	{...rest}
@@ -65,7 +72,7 @@
 		<p class="text-emphasis-dim word">{title}</p>
 	{/if}
 
-	<div class="text-title1 container-sm gap relative mx-auto grid">
+	<div class="text-title1 gap relative mx-auto grid max-w-6xl">
 		{#each segments as paragraph, i}
 			<p class="mb-[1.5em] last:mb-0">
 				{#each paragraph.split(" ").filter(Boolean) as word}

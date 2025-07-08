@@ -121,7 +121,7 @@
 </script>
 
 <section class="bg-white">
-	<div class="section-px section-py container-sm mx-auto">
+	<div class="section-px section-py mx-auto max-w-6xl">
 		<div class="mx-auto grid place-items-center text-center">
 			<SectionHeader
 				title="What it's like to work with Sentra"
@@ -130,7 +130,7 @@
 		</div>
 		<!-- Tab navigation removed - only showing organization content -->
 
-		<!-- Timeline Container -->
+		<!-- Timeline max-w-6xl-->
 		<div
 			class="relative mx-auto max-w-prose py-4 text-balance md:py-8"
 			bind:this={timelineContainer}

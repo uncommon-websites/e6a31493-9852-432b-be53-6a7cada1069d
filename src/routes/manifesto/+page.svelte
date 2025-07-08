@@ -12,7 +12,7 @@
 <main class="bg-background min-h-screen">
 	<!-- Letter Format Manifesto -->
 	<section class="section-pt section-px section-pb">
-		<div class="container-sm container mx-auto">
+		<div class="max-w-6xlmx-auto max-w-6xl">
 			<!-- Letter Header -->
 			<div class="mb-16 text-center text-balance">
 				<h1 class="text-display text-foreground mb-4">

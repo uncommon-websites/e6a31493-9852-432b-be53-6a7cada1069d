@@ -32,7 +32,7 @@
 </script>
 
 <section class="bg-gray-50">
-	<div class="section-px section-py container-sm mx-auto">
+	<div class="section-px section-py mx-auto max-w-6xl">
 		<div class="text-left">
 			<SectionHeader
 				title="Keep everyone on the same page"
@@ -41,15 +41,15 @@
 		</div>
 
 		<!-- Value Propositions Grid -->
-		<div class="mx-auto max-w-7xl">
+		<div class="mx-auto max-w-6xl">
 			<div class="grid grid-cols-1 gap-4 md:grid-cols-3">
 				{#each valueProps as prop, index}
 					<div class="group flex">
-						<!-- Card Container -->
+						<!-- Card max-w-6xl-->
 						<div
 							class="relative flex min-h-[400px] w-full flex-col overflow-hidden rounded-3xl bg-white p-10"
 						>
-							<!-- Visualization Container -->
+							<!-- Visualization max-w-6xl-->
 							<div class="mb-8 flex aspect-video items-center justify-center">
 								{#if prop.visualization === "memory"}
 									<!-- Memory/Timeline Visualization -->

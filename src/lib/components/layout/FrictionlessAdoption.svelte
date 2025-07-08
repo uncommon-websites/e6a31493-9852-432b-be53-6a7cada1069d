@@ -31,8 +31,7 @@
 		{
 			id: 4,
 			title: "Starts building memory from day one",
-			description:
-				"Sentra quietly gets to work in the background to build company memory.",
+			description: "Sentra quietly gets to work in the background to build company memory.",
 			visual: "image-a-serene-home-office-setup-where-an-indi"
 		}
 	];
@@ -92,7 +91,7 @@
 </script>
 
 <section class="bg-white">
-	<div class="section-px section-py container-sm mx-auto">
+	<div class="section-px section-py mx-auto max-w-6xl">
 		<div class="mx-auto grid place-items-center text-center">
 			<SectionHeader
 				title="Frictionless adoption"
@@ -101,7 +100,7 @@
 		</div>
 
 		<!-- Main Content Grid -->
-		<div class="container-sm mx-auto">
+		<div class="mx-auto max-w-6xl">
 			<div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
 				<!-- Left Side - Step Navigation -->
 				<div class="space-y-6">
@@ -155,7 +154,7 @@
 				<!-- Right Side - Visual Content -->
 				<div class="flex items-center justify-center">
 					<div class="relative w-full max-w-lg">
-						<!-- Main Visual Container -->
+						<!-- Main Visual max-w-6xl-->
 						<div class="relative overflow-hidden rounded-3xl border border-gray-200 bg-white">
 							<div class="aspect-square w-full">
 								{#key activeStep}
