@@ -1,40 +1,80 @@
 <script lang="ts">
+	import { onMount } from "svelte";
 	import SectionHeader from "./SectionHeader.svelte";
 
-	// State for active step
-	let activeStep = $state(1);
+	let timelineContainer: HTMLElement = $state()!;
+	let observerRef: IntersectionObserver;
 
-	// Step data
+	// Timeline data - extracted from HowItWorks_enhanced.svelte
 	const steps = [
 		{
 			id: 1,
-			title: "Connect your calendar",
+			title: "Add Sentra to platforms your company uses",
 			description:
-				"Sentra attends your meetings to capture context, decisions, and commitments—without clogging up inboxes or chasing notes across tools.",
-			image: "/generated/image-a-group-of-colleagues-engaged-in-a-refle.webp"
+				"Connect Sentra to your existing tools like Slack, Teams, Zoom, Google Meet, and Google Calendar to start building organizational awareness.",
+			badges: ["Leaders"],
+			visual: "platform-selection"
 		},
 		{
 			id: 2,
-			title: "Add your tools",
+			title: "Share your calendars",
 			description:
-				"Connect Slack and your existing systems so Sentra can surface breaks in context—without ever surveilling individuals.",
-			image: "/generated/image-a-group-of-colleagues-engaged-in-a-refle.webp"
+				"Allow Sentra to access team calendars to understand meeting patterns and organizational rhythms.",
+			badges: ["Leaders"],
+			visual: "calendar-sharing"
 		},
 		{
 			id: 3,
-			title: "Stay ahead of misalignment",
+			title: "Get briefed for every upcoming event",
 			description:
-				"Sentra checks in proactively when it spots drift, surfacing the signal leaders need to guide teams before friction spreads.",
-			image: "/generated/image-a-professional-coaching-session-between-.webp"
+				"Receive intelligent pre-meeting briefings with relevant context, user research, and personalized agendas based on participants and recent work.",
+			badges: ["Everyone"],
+			visual: "meeting-briefing"
 		},
 		{
 			id: 4,
-			title: "Quietly working in the background",
+			title: "Never forget what you said you'd do",
 			description:
-				"Sentra listens across the company in real time. No micro-tracking—just a second brain for your org that helps you course-correct early.",
-			image: "/generated/image-an-individual-working-alone-in-a-serene-.webp"
+				"Sentra automatically tracks commitments made in meetings and conversations, creating actionable TODO items and sending timely reminders.",
+			badges: ["Everyone"],
+			visual: "todo-tracking"
+		},
+		{
+			id: 5,
+			title: "Remember who your company's already met",
+			description:
+				"Get context about previous interactions with external contacts, including past meetings, NDAs, and relationship history.",
+			badges: ["Everyone"],
+			visual: "contact-history"
+		},
+		{
+			id: 6,
+			title: "Get alerted of key information you need to be aware of",
+			description:
+				"Stay informed about important decisions, deadline changes, and organizational updates, even from meetings you couldn't attend.",
+			badges: ["Everyone"],
+			visual: "key-alerts"
+		},
+		{
+			id: 7,
+			title: "Ask about the history of your org, with company memory",
+			description:
+				"Access a timeline of decisions, understand the reasoning behind project choices, and explore the evolution of your organization's thinking.",
+			badges: ["Everyone"],
+			visual: "company-memory"
+		},
+		{
+			id: 8,
+			title: "Sentra checks in with everyone",
+			description:
+				"Regular one-on-one conversations with Sentra help maintain alignment and surface potential issues before they become problems.",
+			badges: ["Everyone"],
+			visual: "check-ins"
 		}
 	];
+
+	// State for active step
+	let activeStep = $state(1);
 
 	// Get current step
 	let currentStep = $derived(steps.find((step) => step.id === activeStep) || steps[0]);
@@ -42,16 +82,59 @@
 	function selectStep(stepId: number) {
 		activeStep = stepId;
 	}
+
+	// Intersection observer for timeline animations and scaling
+	onMount(() => {
+		if (!timelineContainer) return;
+
+		observerRef = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					const card = entry.target.querySelector(".timeline-content");
+					const visual = entry.target.querySelector(".visual-placeholder");
+					if (entry.isIntersecting) {
+						entry.target.classList.remove("opacity-0", "translate-y-8");
+						entry.target.classList.add("opacity-100", "translate-y-0");
+						visual?.classList.add("scale-105");
+						// Scale to 100% when in center of screen
+						if (entry.intersectionRatio > 0.7) {
+							card?.classList.remove("scale-75");
+							card?.classList.add("scale-100");
+						} else {
+							card?.classList.remove("scale-100");
+							card?.classList.add("scale-75");
+						}
+					} else {
+						card?.classList.remove("scale-100");
+						card?.classList.add("scale-75");
+						visual?.classList.remove("scale-105");
+					}
+				});
+			},
+			{
+				threshold: [0.3, 0.7, 1.0],
+				rootMargin: "-20% 0px -20% 0px"
+			}
+		);
+
+		// Observe all timeline items
+		const timelineItems = timelineContainer.querySelectorAll(".timeline-item");
+		timelineItems.forEach((item) => observerRef.observe(item));
+
+		return () => {
+			observerRef?.disconnect();
+		};
+	});
 </script>
 
 <section class="bg-white">
 	<div class="section-px section-py container-sm mx-auto">
-		<!-- <div class="mx-auto grid place-items-center text-center"> -->
-		<SectionHeader
-			title="Frictionless adoption"
-			subtitle="It's not another piece of software, but like another entity in the company"
-		/>
-		<!-- </div> -->
+		<div class="mx-auto grid place-items-center text-center">
+			<SectionHeader
+				title="Frictionless adoption"
+				subtitle="It's not another piece of software, but like another entity in the company"
+			/>
+		</div>
 
 		<!-- Main Content Grid -->
 		<div class="container-sm mx-auto">
@@ -113,7 +196,7 @@
 							<div class="aspect-square w-full">
 								{#key activeStep}
 									<img
-										src={currentStep.image}
+										src={`/generated/${currentStep.visual}.png`}
 										alt={currentStep.title}
 										class="h-full w-full object-cover transition-all duration-500 ease-out"
 									/>

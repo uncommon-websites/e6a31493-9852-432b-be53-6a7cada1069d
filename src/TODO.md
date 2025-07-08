@@ -1,33 +1,9 @@
-# Task: Transform Security Page to Private Deployments Page
+# Task: Move "What's it like to work with Sentra" cards to "Frictionless adoption" section
 
-- [ ] DO NOT TOUCH ANY ICON COMPONENTS!!!!!!!!!!!
-- [ ] DO NOT TOUCH ANY ICON COMPONENTS!!!!!!!!!!!
-- [ ] DO NOT TOUCH ANY ICON COMPONENTS!!!!!!!!!!!
-- [ ] DO NOT TOUCH ANY ICON COMPONENTS!!!!!!!!!!!
-- [ ] DO NOT TOUCH ANY ICON COMPONENTS!!!!!!!!!!!
-- [ ] DO NOT TOUCH ANY ICON COMPONENTS!!!!!!!!!!!
-- [ ] DO NOT TOUCH ANY ICON COMPONENTS!!!!!!!!!!!
-- [ ] DO NOT TOUCH ANY ICON COMPONENTS!!!!!!!!!!!
-- [ ] DO NOT TOUCH ANY ICON COMPONENTS!!!!!!!!!!!
-- [ ] DO NOT TOUCH ANY ICON COMPONENTS!!!!!!!!!!!
-- [ ] DO NOT TOUCH ANY ICON COMPONENTS!!!!!!!!!!!
-- [ ] DO NOT TOUCH ANY ICON COMPONENTS!!!!!!!!!!!
-- [ ] DO NOT TOUCH ANY ICON COMPONENTS!!!!!!!!!!!
-- [ ] DO NOT TOUCH ANY ICON COMPONENTS!!!!!!!!!!!
-- [ ] DO NOT TOUCH ANY ICON COMPONENTS!!!!!!!!!!!
-- [ ] DO NOT TOUCH ANY ICON COMPONENTS!!!!!!!!!!!
-- [ ] DO NOT TOUCH ANY ICON COMPONENTS!!!!!!!!!!!
-- [ ] DO NOT TOUCH ANY ICON COMPONENTS!!!!!!!!!!!
-- [ ] DO NOT TOUCH ANY ICON COMPONENTS!!!!!!!!!!!
-- [ ] DO NOT TOUCH ANY ICON COMPONENTS!!!!!!!!!!!
-- [ ] DO NOT TOUCH ANY ICON COMPONENTS!!!!!!!!!!!
-- [ ] DO NOT TOUCH ANY ICON COMPONENTS!!!!!!!!!!!
-- [ ] Replace entire security page content with new 3-section structure
-- [ ] Section 1: Create hero with left/right columns, H1 "Private Deployments", H2 subtitle, Talk to Sales button
-- [ ] Section 2: Create organizational intelligence section with H1 and 2 cards (Completely private, Fully customizable)
-- [ ] Section 3: Create contact form section inspired by reference image
-- [ ] Ensure only one H1 on the page (in section 1)
-- [ ] Change all containers to 'container-sm'
-- [ ] Update page title and meta description
+- [ ] Extract the 8 detailed cards from HowItWorks_enhanced.svelte
+- [ ] Replace the current 4 steps in FrictionlessAdoption.svelte with the extracted card content
+- [ ] Update the section header and subtitle to match the new content
+- [ ] Ensure the interactive functionality works with the new card content
+- [ ] Test that all visual components render correctly
+- [ ] Remove any unused code or imports
 - [ ] Final design system compliance check - verify design system classes prioritized over Tailwind, NO shadows, NO custom CSS, NO arbitrary values, check theme.css, app.css and typography.css
-- [ ] DO NOT TOUCH ANY ICON COMPONENTS!!!!!!!!!!!
