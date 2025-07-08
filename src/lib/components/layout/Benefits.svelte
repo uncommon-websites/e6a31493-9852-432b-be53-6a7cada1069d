@@ -66,17 +66,19 @@
 		</div>
 
 		<!-- Benefits Grid -->
-		<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+		<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-6">
 			{#each benefits as benefit, index}
 				<BenefitCard
 					title={benefit.title}
 					description={benefit.description}
 					visualization={benefit.visualization}
 					class={[
-						// Make first card span 2 columns on larger screens
-						index === 0 ? "lg:col-span-2" : "",
-						// Make last card span 2 columns on larger screens
-						index === benefits.length - 1 ? "lg:col-span-2" : ""
+						// First 2 cards: 3 columns each
+						index === 0 || index === 1 ? "lg:col-span-3" : "",
+						// Next 3 cards: 2 columns each
+						index === 2 || index === 3 || index === 4 ? "lg:col-span-2" : "",
+						// Last card: full width
+						index === benefits.length - 1 ? "lg:col-span-6" : ""
 					]}
 				/>
 			{/each}
