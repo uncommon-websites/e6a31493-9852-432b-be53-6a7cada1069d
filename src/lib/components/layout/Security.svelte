@@ -58,24 +58,17 @@
 				<!-- Trust indicators with actual compliance logos -->
 				<div class="border-border mb-8 flex justify-center border-b pb-6">
 					<div class="grid max-w-2xl grid-cols-1 gap-8 md:grid-cols-3 md:gap-16">
-						<div class="flex w-full flex-col items-center justify-center space-y-4">
-							<div class="flex flex-col-reverse items-center justify-between gap-2">
-								<p class="text-center">SOC2 II (In Observation)</p>
-								<img src="https://trust.delve.co/new-compliance-logos/SOC2_Type2.svg" alt="" />
+						{#each complianceItems as item}
+							<div class="flex w-full flex-col items-center justify-center space-y-4">
+								<div class="flex flex-col-reverse items-center justify-between gap-2">
+									<div class="text-center">
+										<p class="text-body font-medium">{item.name}</p>
+										<p class="text-caption text-muted-foreground mt-1">{item.status}</p>
+									</div>
+									<img src={item.logoUrl} alt={item.name} />
+								</div>
 							</div>
-						</div>
-						<div class="flex w-full flex-col items-center justify-center space-y-4">
-							<div class="flex flex-col-reverse items-center justify-between gap-2">
-								<p class="text-center">GDPR</p>
-								<img src="https://trust.delve.co/new-compliance-logos/GDPR.svg" alt="" />
-							</div>
-						</div>
-						<div class="flex w-full flex-col items-center justify-center space-y-4">
-							<div class="flex flex-col-reverse items-center justify-between gap-2">
-								<p class="text-center">ISO 27001 (Pending)</p>
-								<img src="https://trust.delve.co/new-compliance-logos/ISO_27001.svg" alt="" />
-							</div>
-						</div>
+						{/each}
 					</div>
 				</div>
 
