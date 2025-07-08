@@ -75,7 +75,7 @@
 
 				<div class="text-center">
 					<p class="text-body" style="color: var(--color-muted-foreground);">
-						- Jae, Andrey, and Ashwin
+						— Jae, Andrey, and Ashwin
 					</p>
 				</div>
 			</div>
