@@ -49,12 +49,6 @@
 					"Sentra's memory makes new hires understand where and how they fit into the current initiatives quickly.",
 				visualization: "onboarding" as const
 			}
-			// {
-			// 	title: "Prepare for the future",
-			// 	description:
-			// 		"Context makes AI useful. Start memorializing your company's work today to build a unified context layer for the future.",
-			// 	visualization: "future" as const
-			// }
 		]
 	}: Props = $props()
 </script>

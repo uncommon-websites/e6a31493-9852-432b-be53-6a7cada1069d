@@ -86,7 +86,6 @@ It should ALWAYS have between 3 and 5 customers!
 				class={[
 					"text-muted-foreground text-headline block  max-w-[45ch] text-pretty transition duration-500 ease-out",
 					centered && "mx-auto"
-					// isTitleComplete ? "opacity-100" : "translate-y-2 opacity-0 blur-sm"
 				]}
 			>
 				{subtitle}

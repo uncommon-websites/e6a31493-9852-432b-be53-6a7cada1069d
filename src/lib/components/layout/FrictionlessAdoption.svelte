@@ -154,7 +154,6 @@
 				<!-- Right Side - Visual Content -->
 				<div class="flex items-center justify-center">
 					<div class="relative w-full max-w-lg">
-						<!-- Main Visual max-w-6xl-->
 						<div class="relative overflow-hidden rounded-3xl border border-gray-200 bg-white">
 							<div class="aspect-square w-full">
 								{#key activeStep}

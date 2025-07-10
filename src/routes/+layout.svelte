@@ -7,15 +7,11 @@
 	import Footer from "$lib/components/layout/Footer.svelte"
 
 	// Utils
-	import { onMount } from "svelte"
-	import { animate, inView, stagger } from "motion"
-
 	import { MediaQuery } from "svelte/reactivity"
-	import { browser } from "$app/environment"
-	import { page } from "$app/state"
 	import { CONFIG } from "$lib/content"
 	import { navHeight } from "$lib/state/nav.svelte"
 
+	// State
 	const isTouchDevice = new MediaQuery("(pointer: coarse)")
 
 	// Props

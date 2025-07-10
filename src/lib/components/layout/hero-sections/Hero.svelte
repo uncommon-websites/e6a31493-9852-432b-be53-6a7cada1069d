@@ -104,7 +104,6 @@
 					data-enter
 					class={[
 						"text-muted-foreground text-headline mx-auto block max-w-[45ch] transition duration-500 ease-out"
-						// isTitleComplete ? "opacity-100" : "translate-y-2 opacity-0 blur-sm"
 					]}
 				>
 					{subtitle}
@@ -131,6 +130,4 @@
 			</div>
 		{/if}
 	</header>
-
-	<!-- Notification system removed as requested -->
 </div>
