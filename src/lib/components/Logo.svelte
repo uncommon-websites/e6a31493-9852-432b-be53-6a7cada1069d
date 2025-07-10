@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { HTMLAttributes } from "svelte/elements";
-	const props: HTMLAttributes<SVGSVGElement> = $props();
+	import type { HTMLAttributes } from "svelte/elements"
+	const props: HTMLAttributes<SVGSVGElement> = $props()
 </script>
 
 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="" {...props}>

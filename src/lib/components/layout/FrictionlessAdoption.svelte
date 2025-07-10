@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { onMount } from "svelte";
-	import SectionHeader from "./SectionHeader.svelte";
+	import { onMount } from "svelte"
+	import SectionHeader from "./SectionHeader.svelte"
 
-	let timelineContainer: HTMLElement = $state()!;
-	let observerRef: IntersectionObserver;
+	let timelineContainer: HTMLElement = $state()!
+	let observerRef: IntersectionObserver
 
 	// Feature cards data for frictionless adoption
 	const steps = [
@@ -34,60 +34,60 @@
 			description: "Sentra quietly gets to work in the background to build company memory.",
 			visual: "image-a-serene-home-office-setup-where-an-indi"
 		}
-	];
+	]
 
 	// State for active step
-	let activeStep = $state(1);
+	let activeStep = $state(1)
 
 	// Get current step
-	let currentStep = $derived(steps.find((step) => step.id === activeStep) || steps[0]);
+	let currentStep = $derived(steps.find((step) => step.id === activeStep) || steps[0])
 
 	function selectStep(stepId: number) {
-		activeStep = stepId;
+		activeStep = stepId
 	}
 
 	// Intersection observer for timeline animations and scaling
 	onMount(() => {
-		if (!timelineContainer) return;
+		if (!timelineContainer) return
 
 		observerRef = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
-					const card = entry.target.querySelector(".timeline-content");
-					const visual = entry.target.querySelector(".visual-placeholder");
+					const card = entry.target.querySelector(".timeline-content")
+					const visual = entry.target.querySelector(".visual-placeholder")
 					if (entry.isIntersecting) {
-						entry.target.classList.remove("opacity-0", "translate-y-8");
-						entry.target.classList.add("opacity-100", "translate-y-0");
-						visual?.classList.add("scale-105");
+						entry.target.classList.remove("opacity-0", "translate-y-8")
+						entry.target.classList.add("opacity-100", "translate-y-0")
+						visual?.classList.add("scale-105")
 						// Scale to 100% when in center of screen
 						if (entry.intersectionRatio > 0.7) {
-							card?.classList.remove("scale-75");
-							card?.classList.add("scale-100");
+							card?.classList.remove("scale-75")
+							card?.classList.add("scale-100")
 						} else {
-							card?.classList.remove("scale-100");
-							card?.classList.add("scale-75");
+							card?.classList.remove("scale-100")
+							card?.classList.add("scale-75")
 						}
 					} else {
-						card?.classList.remove("scale-100");
-						card?.classList.add("scale-75");
-						visual?.classList.remove("scale-105");
+						card?.classList.remove("scale-100")
+						card?.classList.add("scale-75")
+						visual?.classList.remove("scale-105")
 					}
-				});
+				})
 			},
 			{
 				threshold: [0.3, 0.7, 1.0],
 				rootMargin: "-20% 0px -20% 0px"
 			}
-		);
+		)
 
 		// Observe all timeline items
-		const timelineItems = timelineContainer.querySelectorAll(".timeline-item");
-		timelineItems.forEach((item) => observerRef.observe(item));
+		const timelineItems = timelineContainer.querySelectorAll(".timeline-item")
+		timelineItems.forEach((item) => observerRef.observe(item))
 
 		return () => {
-			observerRef?.disconnect();
-		};
-	});
+			observerRef?.disconnect()
+		}
+	})
 </script>
 
 <section class="bg-white">

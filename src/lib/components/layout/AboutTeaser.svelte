@@ -5,26 +5,26 @@ A minimalist teaser for the about page.
 <script lang="ts">
 	// Types
 	type TeamMember = {
-		name: string;
-		role: string;
-		image: string;
-	};
+		name: string
+		role: string
+		image: string
+	}
 
 	// Components
-	import Button from "../ui/Button.svelte";
-	import ScrollText from "./sub/ScrollText.svelte";
+	import Button from "../ui/Button.svelte"
+	import ScrollText from "./sub/ScrollText.svelte"
 
 	// State
-	let sectionRef: HTMLElement;
+	let sectionRef: HTMLElement
 
-	let props = $props();
+	let props = $props()
 
 	// Data
 	const teamMember: TeamMember = {
 		name: "Jae Park",
 		role: "Co-founder & CEO",
 		image: "https://pbs.twimg.com/profile_images/1918915681229152256/RuRjBmDu_400x400.jpg"
-	};
+	}
 </script>
 
 <section bind:this={sectionRef} {...props}>

@@ -1,17 +1,17 @@
 <script lang="ts">
-	import { browser } from "$app/environment";
-	import AnimateText from "$lib/components/animation/AnimateText.svelte";
-	import { onMount, onDestroy } from "svelte";
-	import { cubicOut } from "svelte/easing";
-	import { scrollY } from "svelte/reactivity/window";
-	import { fade, fly } from "svelte/transition";
+	import { browser } from "$app/environment"
+	import AnimateText from "$lib/components/animation/AnimateText.svelte"
+	import { onMount, onDestroy } from "svelte"
+	import { cubicOut } from "svelte/easing"
+	import { scrollY } from "svelte/reactivity/window"
+	import { fade, fly } from "svelte/transition"
 
-	let heroContainer = $state<HTMLElement>();
+	let heroContainer = $state<HTMLElement>()
 	let currentSlide = $derived.by(() => {
-		if (!heroContainer) return 0;
-		const currentScrollY = Number(scrollY) || 0;
-		return currentScrollY > (heroContainer.offsetHeight || 0) / 1.5 ? 1 : 0;
-	});
+		if (!heroContainer) return 0
+		const currentScrollY = Number(scrollY) || 0
+		return currentScrollY > (heroContainer.offsetHeight || 0) / 1.5 ? 1 : 0
+	})
 </script>
 
 <section

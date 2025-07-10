@@ -1,24 +1,24 @@
 <script lang="ts">
-	import Card from "../ui/Card.svelte";
+	import Card from "../ui/Card.svelte"
 
 	// Types
-	import type { ComponentType } from "svelte";
-	
+	import type { ComponentType } from "svelte"
+
 	type Feature = {
-		title: string;
-		description: string;
-		icon?: ComponentType;
-		iconClass?: string;
-		imageSrc?: string;
-		imageAspect?: "16/9" | "9/16";
+		title: string
+		description: string
+		icon?: ComponentType
+		iconClass?: string
+		imageSrc?: string
+		imageAspect?: "16/9" | "9/16"
 		link?: {
-			href: string;
-			label: string;
-		};
-	};
+			href: string
+			label: string
+		}
+	}
 
 	// Components
-	import SectionHeader from "./SectionHeader.svelte";
+	import SectionHeader from "./SectionHeader.svelte"
 
 	// Props
 	const {
@@ -26,11 +26,11 @@
 		subtitle,
 		features = [],
 		...rest
-	}: { title: string; subtitle: string; features: Feature[] } = $props();
+	}: { title: string; subtitle: string; features: Feature[] } = $props()
 
 	let featureCountClass = $derived(
 		features.length <= 6 ? `feature-count-${features.length}` : "feature-count-many"
-	);
+	)
 </script>
 
 <section class="[--gap:--spacing(2)]" {...rest}>

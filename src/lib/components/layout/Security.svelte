@@ -16,16 +16,16 @@
 
 <script lang="ts">
 	// Components
-	import AnimateText from "../animation/AnimateText.svelte";
-	import Button from "../ui/Button.svelte";
+	import AnimateText from "../animation/AnimateText.svelte"
+	import Button from "../ui/Button.svelte"
 
 	// Props
 	const {
 		title = "Ultimate data security, control, and sovereignty",
 		...rest
 	}: {
-		title?: string;
-	} = $props();
+		title?: string
+	} = $props()
 
 	// Compliance data
 	const complianceItems = [
@@ -44,7 +44,7 @@
 			status: "Pending",
 			logoUrl: "https://trust.delve.co/new-compliance-logos/ISO_27001.svg"
 		}
-	];
+	]
 </script>
 
 <div class="" {...rest}>

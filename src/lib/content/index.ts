@@ -4,4 +4,4 @@ export const CONFIG = {
 	image: "/og.png",
 	url: "https://example.com",
 	fontFamily: "Inter Variable"
-};
+}

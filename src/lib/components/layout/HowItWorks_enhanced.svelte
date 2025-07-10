@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { onMount } from "svelte";
-	import SectionHeader from "./SectionHeader.svelte";
-	import Button from "../ui/Button.svelte";
+	import { onMount } from "svelte"
+	import SectionHeader from "./SectionHeader.svelte"
+	import Button from "../ui/Button.svelte"
 
-	let timelineContainer: HTMLElement;
-	let observerRef: IntersectionObserver;
+	let timelineContainer: HTMLElement
+	let observerRef: IntersectionObserver
 
 	// Timeline data
 	const steps = [
@@ -72,7 +72,7 @@
 			badges: ["Everyone"],
 			visual: "check-ins"
 		}
-	];
+	]
 
 	// No longer needed - removed individual steps and tab switching logic
 
@@ -82,42 +82,42 @@
 			observerRef = new IntersectionObserver(
 				(entries) => {
 					entries.forEach((entry) => {
-						const card = entry.target.querySelector(".timeline-content");
-						const visual = entry.target.querySelector(".visual-placeholder");
+						const card = entry.target.querySelector(".timeline-content")
+						const visual = entry.target.querySelector(".visual-placeholder")
 						if (entry.isIntersecting) {
-							entry.target.classList.remove("opacity-0", "translate-y-8");
-							entry.target.classList.add("opacity-100", "translate-y-0");
-							visual?.classList.add("scale-105");
+							entry.target.classList.remove("opacity-0", "translate-y-8")
+							entry.target.classList.add("opacity-100", "translate-y-0")
+							visual?.classList.add("scale-105")
 							// Scale to 100% when in center of screen
 							if (entry.intersectionRatio > 0.7) {
-								card?.classList.remove("scale-75");
-								card?.classList.add("scale-100");
+								card?.classList.remove("scale-75")
+								card?.classList.add("scale-100")
 							} else {
-								card?.classList.remove("scale-100");
-								card?.classList.add("scale-75");
+								card?.classList.remove("scale-100")
+								card?.classList.add("scale-75")
 							}
 						} else {
-							card?.classList.remove("scale-100");
-							card?.classList.add("scale-75");
-							visual?.classList.remove("scale-105");
+							card?.classList.remove("scale-100")
+							card?.classList.add("scale-75")
+							visual?.classList.remove("scale-105")
 						}
-					});
+					})
 				},
 				{
 					threshold: [0.3, 0.7, 1.0],
 					rootMargin: "-20% 0px -20% 0px"
 				}
-			);
+			)
 
 			// Observe all timeline items
-			const timelineItems = timelineContainer?.querySelectorAll(".timeline-item");
-			timelineItems?.forEach((item) => observerRef.observe(item));
+			const timelineItems = timelineContainer?.querySelectorAll(".timeline-item")
+			timelineItems?.forEach((item) => observerRef.observe(item))
 		}
 
 		return () => {
-			observerRef?.disconnect();
-		};
-	});
+			observerRef?.disconnect()
+		}
+	})
 </script>
 
 <section class="bg-white">

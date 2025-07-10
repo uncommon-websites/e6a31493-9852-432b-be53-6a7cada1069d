@@ -1,31 +1,31 @@
 <script module lang="ts">
 	export type JobOpening = {
-		title: string;
-		department: string;
-		location: string;
-		type: string;
-		url: string;
-	};
+		title: string
+		department: string
+		location: string
+		type: string
+		url: string
+	}
 </script>
 
 <script lang="ts">
 	// Types
 
 	// Components
-	import IconArrowUpRight from "~icons/lucide/arrow-up-right";
+	import IconArrowUpRight from "~icons/lucide/arrow-up-right"
 
 	// Utils
 
 	// Props
-	const { openings }: { openings: JobOpening[] } = $props();
+	const { openings }: { openings: JobOpening[] } = $props()
 
 	let openingsByDepartment = $derived.by(() => {
-		const departments = new Set(openings.map((opening) => opening.department));
+		const departments = new Set(openings.map((opening) => opening.department))
 		return Array.from(departments).map((department) => ({
 			department,
 			openings: openings.filter((opening) => opening.department === department)
-		}));
-	});
+		}))
+	})
 </script>
 
 <div class="grid gap-8">

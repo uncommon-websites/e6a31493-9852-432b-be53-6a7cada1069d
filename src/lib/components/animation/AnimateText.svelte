@@ -1,7 +1,7 @@
 <script lang="ts">
 	// Utils
-	import { inView } from "motion";
-	import { onMount } from "svelte";
+	import { inView } from "motion"
+	import { onMount } from "svelte"
 
 	// Props
 	let {
@@ -9,17 +9,17 @@
 		oncomplete = () => {},
 		delay = 0,
 		show = $bindable(true)
-	}: { text: string; show?: boolean; oncomplete?: () => void; delay?: number } = $props();
+	}: { text: string; show?: boolean; oncomplete?: () => void; delay?: number } = $props()
 
 	// State
-	let words = $derived(text.split(" "));
-	let element: HTMLElement | null = null;
+	let words = $derived(text.split(" "))
+	let element: HTMLElement | null = null
 
 	function handleWordIntroEnd(index: number) {
 		if (index + 1 === words.length) {
 			setTimeout(() => {
-				oncomplete();
-			}, 500);
+				oncomplete()
+			}, 500)
 		}
 	}
 

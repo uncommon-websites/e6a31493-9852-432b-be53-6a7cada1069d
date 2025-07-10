@@ -1,6 +1,6 @@
 <script lang="ts">
 	// Components
-	import AnimateText from "$lib/components/animation/AnimateText.svelte";
+	import AnimateText from "$lib/components/animation/AnimateText.svelte"
 
 	// Props
 	let {
@@ -9,11 +9,11 @@
 		oncomplete = () => {},
 		size = "sm"
 	}: {
-		title: string;
-		subtitle: string;
-		oncomplete?: () => void;
-		size?: "sm" | "lg";
-	} = $props();
+		title: string
+		subtitle: string
+		oncomplete?: () => void
+		size?: "sm" | "lg"
+	} = $props()
 </script>
 
 <div

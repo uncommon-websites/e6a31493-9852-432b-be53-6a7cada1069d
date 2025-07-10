@@ -1,14 +1,14 @@
 <script lang="ts">
-	import type { ComponentType } from "svelte";
+	import type { ComponentType } from "svelte"
 
 	interface Props {
-		title?: string;
-		description?: string;
-		icon?: ComponentType;
-		iconClass?: string;
-		imageSrc?: string;
-		imageAspect?: "16/9" | "9/16";
-		class?: string;
+		title?: string
+		description?: string
+		icon?: ComponentType
+		iconClass?: string
+		imageSrc?: string
+		imageAspect?: "16/9" | "9/16"
+		class?: string
 	}
 
 	let {
@@ -19,9 +19,9 @@
 		imageSrc,
 		imageAspect = "16/9",
 		class: customClass = ""
-	}: Props = $props();
+	}: Props = $props()
 
-	let Icon = $derived(icon);
+	let Icon = $derived(icon)
 </script>
 
 <article

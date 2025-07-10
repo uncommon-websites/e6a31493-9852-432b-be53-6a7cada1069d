@@ -1,16 +1,16 @@
 <script lang="ts">
 	// Types
-	import type { Snippet } from "svelte";
+	import type { Snippet } from "svelte"
 
 	// Utils
-	import { fade } from "svelte/transition";
+	import { fade } from "svelte/transition"
 
 	// Props
 	const {
 		children
 	}: {
-		children: Snippet;
-	} = $props();
+		children: Snippet
+	} = $props()
 </script>
 
 <div class="h-full px-7" in:fade>

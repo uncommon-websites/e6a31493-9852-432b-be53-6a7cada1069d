@@ -17,8 +17,8 @@
 
 <script lang="ts">
 	// Utils
-	import { scroll, animate, stagger } from "motion";
-	import { onMount } from "svelte";
+	import { scroll, animate, stagger } from "motion"
+	import { onMount } from "svelte"
 
 	// Props
 	const {
@@ -26,20 +26,20 @@
 		text,
 		...rest
 	}: {
-		title?: string;
-		text: string;
-	} = $props();
+		title?: string
+		text: string
+	} = $props()
 
 	// State
-	let segments = $derived(text.split("\n\n"));
-	let containerElement: HTMLDivElement;
+	let segments = $derived(text.split("\n\n"))
+	let containerElement: HTMLDivElement
 
 	onMount(() => {
-		if (!containerElement) return;
-		if (window.self !== window.top) return;
+		if (!containerElement) return
+		if (window.self !== window.top) return
 
 		// Get all word elements as an array
-		const wordElements = Array.from(containerElement.querySelectorAll(".word"));
+		const wordElements = Array.from(containerElement.querySelectorAll(".word"))
 
 		scroll(
 			animate(
@@ -58,8 +58,8 @@
 				target: containerElement,
 				offset: ["start end", "center center"]
 			}
-		);
-	});
+		)
+	})
 </script>
 
 <div

@@ -9,33 +9,33 @@ It should ALWAYS have between 3 and 5 customers!
 
 <script lang="ts">
 	// Components
-	import AnimateText from "$lib/components/animation/AnimateText.svelte";
-	import Button from "$lib/components/ui/Button.svelte";
+	import AnimateText from "$lib/components/animation/AnimateText.svelte"
+	import Button from "$lib/components/ui/Button.svelte"
 
 	// Constants
-	import { cta } from "$lib/navigation";
-	import { onMount } from "svelte";
-	import StakeholderCard from "../sub/StakeholderCard.svelte";
-	import { animate, stagger } from "motion";
-	import { page } from "$app/state";
+	import { cta } from "$lib/navigation"
+	import { onMount } from "svelte"
+	import StakeholderCard from "../sub/StakeholderCard.svelte"
+	import { animate, stagger } from "motion"
+	import { page } from "$app/state"
 
-	let cards: HTMLElement[] = $state([]);
+	let cards: HTMLElement[] = $state([])
 
 	// Types
 	type Props = {
-		centered?: boolean;
-		title: string;
-		subtitle: string;
+		centered?: boolean
+		title: string
+		subtitle: string
 		customers: Array<{
-			name: string;
-			position?: string;
-			imageSrc: string;
-		}>;
+			name: string
+			position?: string
+			imageSrc: string
+		}>
 		callsToAction?: Array<{
-			href: string;
-			label: string;
-		}>; // A maximum of two calls to action, with the first one being primary and the second one being secondary
-	};
+			href: string
+			label: string
+		}> // A maximum of two calls to action, with the first one being primary and the second one being secondary
+	}
 
 	let {
 		title,
@@ -44,10 +44,10 @@ It should ALWAYS have between 3 and 5 customers!
 		callsToAction = [cta],
 		centered = false,
 		...rest
-	}: Props = $props();
+	}: Props = $props()
 
 	onMount(() => {
-		if (window.self !== window.top) return;
+		if (window.self !== window.top) return
 		animate(
 			cards,
 			{
@@ -64,8 +64,8 @@ It should ALWAYS have between 3 and 5 customers!
 					ease: "easeInOut"
 				})
 			}
-		);
-	});
+		)
+	})
 </script>
 
 <div class="bg-background" {...rest}>

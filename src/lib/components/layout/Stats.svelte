@@ -1,14 +1,14 @@
 <script lang="ts">
 	// Types
-	import Clock from "~icons/lucide/clock";
-	import Laptop from "~icons/lucide/laptop";
-	import Building from "~icons/lucide/building";
+	import Clock from "~icons/lucide/clock"
+	import Laptop from "~icons/lucide/laptop"
+	import Building from "~icons/lucide/building"
 
 	type StatItem = {
-		value: string;
-		description: string;
-		icon: typeof Clock;
-	};
+		value: string
+		description: string
+		icon: typeof Clock
+	}
 
 	// Props
 	const {
@@ -30,7 +30,7 @@
 			}
 		],
 		class: classes = ""
-	}: { stats?: StatItem[]; class?: string } = $props();
+	}: { stats?: StatItem[]; class?: string } = $props()
 </script>
 
 <section class="w-full py-16 md:py-24 {classes}">

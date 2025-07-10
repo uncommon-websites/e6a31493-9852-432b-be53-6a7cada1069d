@@ -32,26 +32,26 @@
 
 // Types
 export type NavItem = {
-	label: string;
-	href?: string;
-	image?: string;
-	target?: string;
-	showInNav?: boolean;
-	showInFooter?: boolean;
+	label: string
+	href?: string
+	image?: string
+	target?: string
+	showInNav?: boolean
+	showInFooter?: boolean
 
 	children?: (Omit<NavItem, "children" | "image"> & {
-		image?: string;
-		description?: string;
-		target?: string;
-		showInNav?: boolean;
-		showInFooter?: boolean;
-	})[];
-};
+		image?: string
+		description?: string
+		target?: string
+		showInNav?: boolean
+		showInFooter?: boolean
+	})[]
+}
 
 export const cta = {
 	label: "Hire Sentra",
 	href: "/"
-};
+}
 
 export const navigation: NavItem[] = [
 	// {
@@ -143,5 +143,5 @@ export const navigation: NavItem[] = [
 	// 		// Social media might be handled differently, not typically a nav item
 	// 	]
 	// }
-];
+]
 // .sort((a, b) => (b.children?.length || 0) - (a.children?.length || 0));

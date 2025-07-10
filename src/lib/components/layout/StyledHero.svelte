@@ -30,29 +30,29 @@
 
 <script lang="ts">
 	// Components
-	import AnimateText from "../animation/AnimateText.svelte";
-	import Button from "$lib/components/ui/Button.svelte";
+	import AnimateText from "../animation/AnimateText.svelte"
+	import Button from "$lib/components/ui/Button.svelte"
 
 	// Constants
-	import { cta } from "$lib/navigation";
+	import { cta } from "$lib/navigation"
 
 	function handleImageError(e: Event) {
-		const target = e.currentTarget as HTMLImageElement;
-		target.src = "https://placehold.co/800x600/f8fafc/64748b?text=Hero+image";
+		const target = e.currentTarget as HTMLImageElement
+		target.src = "https://placehold.co/800x600/f8fafc/64748b?text=Hero+image"
 	}
 
 	// Types
 	type Props = {
-		title: string;
-		subtitle: string;
-		imageSrc?: string;
+		title: string
+		subtitle: string
+		imageSrc?: string
 		callsToAction?: Array<{
-			href: string;
-			label: string;
-		}>; // A maximum of two calls to action, with the first one being primary and the second one being secondary
-	};
+			href: string
+			label: string
+		}> // A maximum of two calls to action, with the first one being primary and the second one being secondary
+	}
 
-	let { title, subtitle, imageSrc, callsToAction = [cta] }: Props = $props();
+	let { title, subtitle, imageSrc, callsToAction = [cta] }: Props = $props()
 </script>
 
 <div class="w-full bg-[var(--color-bg-secondary)]">

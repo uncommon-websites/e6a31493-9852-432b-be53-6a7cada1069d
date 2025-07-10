@@ -1,15 +1,15 @@
 <script lang="ts">
 	// Types
-	import type { PageProps } from "./$types";
+	import type { PageProps } from "./$types"
 
 	// Components
-	import Features from "$lib/components/layout/Features.svelte";
-	import Testimonials from "$lib/components/layout/Testimonials.svelte";
-	import CallToAction from "$lib/components/layout/CallToAction.svelte";
-	import Pricing from "$lib/components/layout/Pricing.svelte";
+	import Features from "$lib/components/layout/Features.svelte"
+	import Testimonials from "$lib/components/layout/Testimonials.svelte"
+	import CallToAction from "$lib/components/layout/CallToAction.svelte"
+	import Pricing from "$lib/components/layout/Pricing.svelte"
 
 	// Props
-	const { data }: PageProps = $props();
+	const { data }: PageProps = $props()
 </script>
 
 <Pricing />

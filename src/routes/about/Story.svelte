@@ -1,12 +1,12 @@
 <script lang="ts">
 	// Components
-	import Summary from "$lib/components/layout/Summary.svelte";
+	import Summary from "$lib/components/layout/Summary.svelte"
 
 	let {
 		paragraphs = []
 	}: {
-		paragraphs: string[];
-	} = $props();
+		paragraphs: string[]
+	} = $props()
 </script>
 
 <div class="">

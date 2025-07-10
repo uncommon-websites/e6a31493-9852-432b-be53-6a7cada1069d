@@ -1,14 +1,14 @@
 <script lang="ts">
-	import type { Snippet } from "svelte";
+	import type { Snippet } from "svelte"
 
 	type Props = {
-		speed?: number;
-		shadow?: boolean;
-		children?: Snippet;
-		class?: string;
-	};
+		speed?: number
+		shadow?: boolean
+		children?: Snippet
+		class?: string
+	}
 
-	let { children, class: classes }: Props = $props();
+	let { children, class: classes }: Props = $props()
 </script>
 
 <div class="relative flex w-full max-w-full items-center {classes}">

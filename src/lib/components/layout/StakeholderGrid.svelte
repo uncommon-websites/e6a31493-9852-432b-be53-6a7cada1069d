@@ -1,16 +1,16 @@
 <script lang="ts">
-	import SectionHeader from "$lib/components/layout/SectionHeader.svelte";
-	import Button from "$lib/components/ui/Button.svelte";
-	import { animate, stagger } from "motion";
-	import { onMount } from "svelte";
+	import SectionHeader from "$lib/components/layout/SectionHeader.svelte"
+	import Button from "$lib/components/ui/Button.svelte"
+	import { animate, stagger } from "motion"
+	import { onMount } from "svelte"
 
 	// Types
 	type Stakeholder = {
-		name: string;
-		position?: string;
-		bio?: string;
-		image: string;
-	};
+		name: string
+		position?: string
+		bio?: string
+		image: string
+	}
 
 	// Props
 	const {
@@ -19,16 +19,16 @@
 		subtitle,
 		stakeholders
 	}: {
-		stakeholders: Stakeholder[];
-		title: string;
-		subtitle: string;
-		stakeholderType?: "team" | "investor";
-	} = $props();
+		stakeholders: Stakeholder[]
+		title: string
+		subtitle: string
+		stakeholderType?: "team" | "investor"
+	} = $props()
 
-	let cards: HTMLElement[] = $state([]);
+	let cards: HTMLElement[] = $state([])
 
 	onMount(() => {
-		if (window.self !== window.top) return;
+		if (window.self !== window.top) return
 		animate(
 			cards,
 			{
@@ -43,8 +43,8 @@
 					ease: "easeInOut"
 				})
 			}
-		);
-	});
+		)
+	})
 </script>
 
 <section class="">
@@ -63,10 +63,10 @@
 					image,
 					type = "team"
 				}: {
-					name: string;
-					position?: string;
-					image: string;
-					type?: "team" | "join";
+					name: string
+					position?: string
+					image: string
+					type?: "team" | "join"
 				},
 				index: number
 			)}

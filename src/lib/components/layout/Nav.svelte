@@ -1,34 +1,34 @@
 <script lang="ts">
 	// Components
-	import MobileNav from "./sub/MobileNav.svelte";
-	import DesktopNav from "./sub/DesktopNav.svelte";
-	import Logo from "../Logo.svelte";
+	import MobileNav from "./sub/MobileNav.svelte"
+	import DesktopNav from "./sub/DesktopNav.svelte"
+	import Logo from "../Logo.svelte"
 
 	// Utils
-	import { MediaQuery } from "svelte/reactivity";
-	import { navHeight } from "$lib/state/nav.svelte";
-	import { scrollY } from "svelte/reactivity/window";
-	import { CONFIG } from "$lib/content";
-	import { navigation } from "$lib/navigation";
+	import { MediaQuery } from "svelte/reactivity"
+	import { navHeight } from "$lib/state/nav.svelte"
+	import { scrollY } from "svelte/reactivity/window"
+	import { CONFIG } from "$lib/content"
+	import { navigation } from "$lib/navigation"
 
 	// State
-	const touch = new MediaQuery("(hover: none) and (pointer: coarse)");
-	const mobile = new MediaQuery("(max-width: 1024px)");
+	const touch = new MediaQuery("(hover: none) and (pointer: coarse)")
+	const mobile = new MediaQuery("(max-width: 1024px)")
 
-	const DURATION = 500;
+	const DURATION = 500
 
 	const navItems = $derived(
 		navigation
 			.filter((item) => item.showInNav)
 			.map((item) => {
-				if (!item.children) return item;
+				if (!item.children) return item
 
 				return {
 					...item,
 					children: item.children.filter((child) => child.showInNav !== false)
-				};
+				}
 			})
-	);
+	)
 </script>
 
 <div

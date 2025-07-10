@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Button from "$lib/components/ui/Button.svelte";
+	import Button from "$lib/components/ui/Button.svelte"
 
 	const {
 		name = "",
@@ -10,14 +10,14 @@
 		index = 0,
 		cards = $bindable([])
 	}: {
-		name?: string;
-		position?: string;
-		imageSrc?: string;
-		type?: "team" | "join";
-		stakeholderType?: "team" | "investor";
-		index?: number;
-		cards?: HTMLElement[];
-	} = $props();
+		name?: string
+		position?: string
+		imageSrc?: string
+		type?: "team" | "join"
+		stakeholderType?: "team" | "investor"
+		index?: number
+		cards?: HTMLElement[]
+	} = $props()
 </script>
 
 <div

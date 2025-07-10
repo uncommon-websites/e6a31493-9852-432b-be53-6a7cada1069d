@@ -1,77 +1,77 @@
 <script lang="ts">
-	import AnimateText from "$lib/components/animation/AnimateText.svelte";
-	import Button from "$lib/components/ui/Button.svelte";
+	import AnimateText from "$lib/components/animation/AnimateText.svelte"
+	import Button from "$lib/components/ui/Button.svelte"
 
 	// Contact form state
-	let firstName = $state("");
-	let lastName = $state("");
-	let email = $state("");
-	let company = $state("");
-	let phone = $state("");
-	let employees = $state("");
-	let message = $state("");
-	let isSubmitting = $state(false);
-	let formSubmitted = $state(false);
+	let firstName = $state("")
+	let lastName = $state("")
+	let email = $state("")
+	let company = $state("")
+	let phone = $state("")
+	let employees = $state("")
+	let message = $state("")
+	let isSubmitting = $state(false)
+	let formSubmitted = $state(false)
 
 	// Smooth scroll to contact form
 	function scrollToContact() {
-		const contactSection = document.getElementById("contact-form");
+		const contactSection = document.getElementById("contact-form")
 		if (contactSection) {
-			contactSection.scrollIntoView({ behavior: "smooth" });
+			contactSection.scrollIntoView({ behavior: "smooth" })
 		}
 	}
 
 	// Handle contact form submission
 	async function handleContactSubmit() {
-		if (!firstName || !lastName || !email || !company) return;
+		if (!firstName || !lastName || !email || !company) return
 
-		isSubmitting = true;
+		isSubmitting = true
 
 		// Simulate form submission
-		await new Promise((resolve) => setTimeout(resolve, 1500));
+		await new Promise((resolve) => setTimeout(resolve, 1500))
 
-		formSubmitted = true;
-		isSubmitting = false;
+		formSubmitted = true
+		isSubmitting = false
 
 		// Reset form after 3 seconds
 		setTimeout(() => {
-			formSubmitted = false;
-			firstName = "";
-			lastName = "";
-			email = "";
-			company = "";
-			phone = "";
-			employees = "";
-			message = "";
-		}, 3000);
+			formSubmitted = false
+			firstName = ""
+			lastName = ""
+			email = ""
+			company = ""
+			phone = ""
+			employees = ""
+			message = ""
+		}, 3000)
 	}
 
 	// Handle whitepaper download
 	async function handleWhitepaperDownload() {
-		if (!email || !company) return;
+		if (!email || !company) return
 
-		isSubmitting = true;
+		isSubmitting = true
 
 		// Simulate download preparation
-		await new Promise((resolve) => setTimeout(resolve, 1500));
+		await new Promise((resolve) => setTimeout(resolve, 1500))
 
 		// Simulate file download
-		const link = document.createElement("a");
-		link.href = "/static/sentra-security-whitepaper.pdf";
-		link.download = "sentra-security-whitepaper.pdf";
-		document.body.appendChild(link);
-		link.click();
-		document.body.removeChild(link);
+		const link = document.createElement("a")
+		link.href = "/static/sentra-security-whitepaper.pdf"
+		link.download = "sentra-security-whitepaper.pdf"
+		document.body.appendChild(link)
+		link.click()
+		document.body.removeChild(link)
 
-		formSubmitted = true;
-		isSubmitting = false;
+		formSubmitted = true
+		isSubmitting = false
 
 		// Reset form after 3 seconds
 		setTimeout(() => {
-			formSubmitted = false;
-			email = "";
-			company = "";
-		}, 3000);
+			formSubmitted = false
+			email = ""
+			company = ""
+		}, 3000)
 	}
 
 	// Sub-processors data
@@ -92,7 +92,7 @@
 			name: "Mixpanel",
 			description: "Analytics and user behavior tracking"
 		}
-	];
+	]
 
 	// Resources data
 	const resources = [
@@ -120,10 +120,10 @@
 			buttonText: "Request Access",
 			buttonAction: "request"
 		}
-	];
+	]
 
 	// FAQ data and state
-	let openFaq = $state<number | null>(null);
+	let openFaq = $state<number | null>(null)
 
 	const faqs = [
 		{
@@ -156,11 +156,11 @@
 			answer:
 				"Yes, you have full control over your data. You can request data deletion at any time, and we will permanently remove all associated data within 30 days of your request."
 		}
-	];
+	]
 
 	// Toggle FAQ function
 	function toggleFaq(index: number) {
-		openFaq = openFaq === index ? null : index;
+		openFaq = openFaq === index ? null : index
 	}
 </script>
 
@@ -356,8 +356,8 @@
 					<form
 						class="mx-auto max-w-md space-y-4"
 						onsubmit={(e) => {
-							e.preventDefault();
-							handleWhitepaperDownload();
+							e.preventDefault()
+							handleWhitepaperDownload()
 						}}
 					>
 						<div>
@@ -655,8 +655,8 @@
 				<form
 					class="space-y-6"
 					onsubmit={(e) => {
-						e.preventDefault();
-						handleContactSubmit();
+						e.preventDefault()
+						handleContactSubmit()
 					}}
 				>
 					<div class="grid grid-cols-1 gap-6 md:grid-cols-2">

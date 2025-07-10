@@ -1,18 +1,18 @@
 <script lang="ts">
 	// Props
 	type Props = {
-		title: string;
+		title: string
 		levels: Array<{
-			level: string;
-			name: string;
-			description: string;
-			roi: string;
-			scope: string;
-			involvement: string;
-			examples?: string;
-		}>;
-	};
-	let { title, levels }: Props = $props();
+			level: string
+			name: string
+			description: string
+			roi: string
+			scope: string
+			involvement: string
+			examples?: string
+		}>
+	}
+	let { title, levels }: Props = $props()
 </script>
 
 <section class="section-py" style="background-color: var(--color-muted);">
@@ -40,12 +40,12 @@
 					"
 					role="article"
 					onmouseenter={(e) => {
-						e.currentTarget.style.borderColor = "var(--color-primary)";
-						e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.1)";
+						e.currentTarget.style.borderColor = "var(--color-primary)"
+						e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.1)"
 					}}
 					onmouseleave={(e) => {
-						e.currentTarget.style.borderColor = "var(--color-border)";
-						e.currentTarget.style.boxShadow = "none";
+						e.currentTarget.style.borderColor = "var(--color-border)"
+						e.currentTarget.style.boxShadow = "none"
 					}}
 				>
 					<div class="flex flex-col gap-6 lg:flex-row lg:items-start">

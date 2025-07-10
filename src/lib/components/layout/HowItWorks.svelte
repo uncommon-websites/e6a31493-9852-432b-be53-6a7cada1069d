@@ -1,167 +1,186 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import SectionHeader from './SectionHeader.svelte';
-	import Button from '../ui/Button.svelte';
+	import { onMount } from "svelte"
+	import SectionHeader from "./SectionHeader.svelte"
+	import Button from "../ui/Button.svelte"
 
 	// State for tab switching
-	let activeTab = $state('organizations');
-	let timelineContainer: HTMLElement;
-	let observerRef: IntersectionObserver;
+	let activeTab = $state("organizations")
+	let timelineContainer: HTMLElement
+	let observerRef: IntersectionObserver
 
 	// Timeline data for organizations
 	const organizationSteps = [
 		{
 			id: 1,
 			title: "Add Sentra to platforms your company use",
-			description: "Connect Sentra to your existing tools like Slack, Teams, Zoom, Google Meet, and Google Calendar to start building organizational awareness.",
+			description:
+				"Connect Sentra to your existing tools like Slack, Teams, Zoom, Google Meet, and Google Calendar to start building organizational awareness.",
 			badges: ["Leaders"],
 			visual: "platform-selection"
 		},
 		{
 			id: 2,
 			title: "Share your calendars",
-			description: "Allow Sentra to access team calendars to understand meeting patterns and organizational rhythms.",
+			description:
+				"Allow Sentra to access team calendars to understand meeting patterns and organizational rhythms.",
 			badges: ["Leaders"],
 			visual: "calendar-sharing"
 		},
 		{
 			id: 3,
 			title: "Get briefed for every upcoming event",
-			description: "Receive intelligent pre-meeting briefings with relevant context, user research, and personalized agendas based on participants and recent work.",
+			description:
+				"Receive intelligent pre-meeting briefings with relevant context, user research, and personalized agendas based on participants and recent work.",
 			badges: ["Everyone"],
 			visual: "meeting-briefing"
 		},
 		{
 			id: 4,
 			title: "Never forget what you said you'd do",
-			description: "Sentra automatically tracks commitments made in meetings and conversations, creating actionable TODO items and sending timely reminders.",
+			description:
+				"Sentra automatically tracks commitments made in meetings and conversations, creating actionable TODO items and sending timely reminders.",
 			badges: ["Everyone"],
 			visual: "todo-tracking"
 		},
 		{
 			id: 5,
 			title: "Remember who your company's already met",
-			description: "Get context about previous interactions with external contacts, including past meetings, NDAs, and relationship history.",
+			description:
+				"Get context about previous interactions with external contacts, including past meetings, NDAs, and relationship history.",
 			badges: ["Everyone"],
 			visual: "contact-history"
 		},
 		{
 			id: 6,
 			title: "Get alerted of key information you need to be aware of",
-			description: "Stay informed about important decisions, deadline changes, and organizational updates, even from meetings you couldn't attend.",
+			description:
+				"Stay informed about important decisions, deadline changes, and organizational updates, even from meetings you couldn't attend.",
 			badges: ["Everyone"],
 			visual: "key-alerts"
 		},
 		{
 			id: 7,
 			title: "Ask about the history of your org, with company memory",
-			description: "Access a timeline of decisions, understand the reasoning behind project choices, and explore the evolution of your organization's thinking.",
+			description:
+				"Access a timeline of decisions, understand the reasoning behind project choices, and explore the evolution of your organization's thinking.",
 			badges: ["Everyone"],
 			visual: "company-memory"
 		},
 		{
 			id: 8,
 			title: "Sentra checks in with everyone",
-			description: "Regular one-on-one conversations with Sentra help maintain alignment and surface potential issues before they become problems.",
+			description:
+				"Regular one-on-one conversations with Sentra help maintain alignment and surface potential issues before they become problems.",
 			badges: ["Everyone"],
 			visual: "check-ins"
 		}
-	];
+	]
 
 	// Timeline data for individuals
 	const individualSteps = [
 		{
 			id: 1,
 			title: "Connect your calendar, and get a dedicated phone number for Sentra",
-			description: "Set up your personal connection to Sentra through calendar integration and direct communication access.",
+			description:
+				"Set up your personal connection to Sentra through calendar integration and direct communication access.",
 			badges: ["You"],
 			visual: "personal-setup"
 		},
 		{
 			id: 2,
 			title: "Get briefed for every upcoming event",
-			description: "Receive personalized meeting briefings based on your conversation history and relationships with participants.",
+			description:
+				"Receive personalized meeting briefings based on your conversation history and relationships with participants.",
 			badges: ["You"],
 			visual: "personal-briefing"
 		},
 		{
 			id: 3,
 			title: "Never forget what you said you'd do",
-			description: "Sentra tracks your commitments and sends proactive text reminders to help you stay on top of your responsibilities.",
+			description:
+				"Sentra tracks your commitments and sends proactive text reminders to help you stay on top of your responsibilities.",
 			badges: ["You"],
 			visual: "personal-todos"
 		},
 		{
 			id: 4,
 			title: "Tell Sentra the personal goals you're chasing",
-			description: "Share your objectives and aspirations so Sentra can help align your daily activities with your bigger picture goals.",
+			description:
+				"Share your objectives and aspirations so Sentra can help align your daily activities with your bigger picture goals.",
 			badges: ["You"],
 			visual: "goal-setting"
 		},
 		{
 			id: 5,
 			title: "Sentra will call you to guide you through daily reflections",
-			description: "Regular reflection calls help you process your day, celebrate wins, and plan for continuous improvement.",
+			description:
+				"Regular reflection calls help you process your day, celebrate wins, and plan for continuous improvement.",
 			badges: ["You"],
 			visual: "daily-reflections"
 		}
-	];
+	]
 
 	// Get current steps based on active tab
-	let currentSteps = $derived(activeTab === 'organizations' ? organizationSteps : individualSteps);
+	let currentSteps = $derived(activeTab === "organizations" ? organizationSteps : individualSteps)
 
 	// Handle tab switching
 	function switchTab(tab: string) {
-		activeTab = tab;
+		activeTab = tab
 	}
 
 	// Intersection observer for timeline animations
 	onMount(() => {
-		if (typeof window !== 'undefined') {
+		if (typeof window !== "undefined") {
 			observerRef = new IntersectionObserver(
 				(entries) => {
 					entries.forEach((entry) => {
 						if (entry.isIntersecting) {
-							entry.target.classList.add('animate-in');
+							entry.target.classList.add("animate-in")
 						}
-					});
+					})
 				},
 				{
 					threshold: 0.3,
-					rootMargin: '-10% 0px -10% 0px'
+					rootMargin: "-10% 0px -10% 0px"
 				}
-			);
+			)
 
 			// Observe all timeline items
-			const timelineItems = timelineContainer?.querySelectorAll('.timeline-item');
-			timelineItems?.forEach((item) => observerRef.observe(item));
+			const timelineItems = timelineContainer?.querySelectorAll(".timeline-item")
+			timelineItems?.forEach((item) => observerRef.observe(item))
 		}
 
 		return () => {
-			observerRef?.disconnect();
-		};
-	});
+			observerRef?.disconnect()
+		}
+	})
 </script>
 
 <section class="bg-background">
 	<div class="section-px section-py container mx-auto">
-		<SectionHeader 
-			title="What it's like to work with Sentra" 
+		<SectionHeader
+			title="What it's like to work with Sentra"
 			subtitle="Keeping everything together"
 		/>
 
 		<!-- Tab Navigation -->
 		<div class="mb-8 flex justify-center">
-			<div class="inline-flex items-center rounded-full bg-muted p-0.5 gap-0.5">
+			<div class="bg-muted inline-flex items-center gap-0.5 rounded-full p-0.5">
 				<button
-					class="rounded-full px-4 py-1.5 text-sm font-semibold transition-all duration-200 {activeTab === 'organizations' ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}"
-					onclick={() => switchTab('organizations')}
+					class="rounded-full px-4 py-1.5 text-sm font-semibold transition-all duration-200 {activeTab ===
+					'organizations'
+						? 'bg-background text-foreground shadow-sm'
+						: 'text-muted-foreground hover:text-foreground'}"
+					onclick={() => switchTab("organizations")}
 				>
 					For organizations
 				</button>
 				<button
-					class="rounded-full px-4 py-1.5 text-sm font-semibold transition-all duration-200 {activeTab === 'individuals' ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}"
-					onclick={() => switchTab('individuals')}
+					class="rounded-full px-4 py-1.5 text-sm font-semibold transition-all duration-200 {activeTab ===
+					'individuals'
+						? 'bg-background text-foreground shadow-sm'
+						: 'text-muted-foreground hover:text-foreground'}"
+					onclick={() => switchTab("individuals")}
 				>
 					For individuals
 				</button>
@@ -186,7 +205,7 @@
 						<div class="step-visual">
 							<div class="visual-placeholder {step.visual}">
 								<div class="visual-content">
-									{#if step.visual === 'platform-selection'}
+									{#if step.visual === "platform-selection"}
 										<div class="platform-grid">
 											<div class="platform-item selected">Slack</div>
 											<div class="platform-item selected">Teams</div>
@@ -195,7 +214,7 @@
 											<div class="platform-item">Calendar</div>
 											<div class="platform-item selected">Gmail</div>
 										</div>
-									{:else if step.visual === 'meeting-briefing'}
+									{:else if step.visual === "meeting-briefing"}
 										<div class="briefing-card">
 											<div class="briefing-header">
 												<span class="briefing-title text-caption font-medium">Meeting Brief</span>
@@ -206,25 +225,31 @@
 												<p class="text-caption">Last discussed: Q4 roadmap priorities</p>
 											</div>
 										</div>
-									{:else if step.visual === 'todo-tracking'}
+									{:else if step.visual === "todo-tracking"}
 										<div class="todo-card">
 											<div class="todo-item">
-												<span class="todo-text text-caption font-medium">Follow up with client by Friday</span>
+												<span class="todo-text text-caption font-medium"
+													>Follow up with client by Friday</span
+												>
 												<span class="todo-source text-footnote">From: Team standup</span>
 											</div>
 											<div class="reminder-notification">
 												<span class="text-footnote">Reminder: Due tomorrow</span>
 											</div>
 										</div>
-									{:else if step.visual === 'company-memory'}
+									{:else if step.visual === "company-memory"}
 										<div class="memory-timeline">
 											<div class="memory-item">
 												<span class="memory-date text-footnote">3 months ago</span>
-												<span class="memory-event text-caption font-medium">Project X initiated</span>
+												<span class="memory-event text-caption font-medium"
+													>Project X initiated</span
+												>
 											</div>
 											<div class="memory-item">
 												<span class="memory-date text-footnote">2 months ago</span>
-												<span class="memory-event text-caption font-medium">Architecture decision</span>
+												<span class="memory-event text-caption font-medium"
+													>Architecture decision</span
+												>
 											</div>
 											<div class="memory-item">
 												<span class="memory-date text-footnote">1 month ago</span>
@@ -246,10 +271,13 @@
 
 		<!-- CTA Section -->
 		<div class="section-mt bg-card rounded-lg p-8 text-center">
-			{#if activeTab === 'organizations'}
+			{#if activeTab === "organizations"}
 				<div class="org-cta">
 					<h2 class="text-title2 text-foreground mb-4">Catch misalignment before it costs you</h2>
-					<p class="text-body text-emphasis-medium mb-8 max-w-2xl mx-auto">Sentra is your AI teammate that listens, learns, and alerts you when your company drifts — before you even notice.</p>
+					<p class="text-body text-emphasis-medium mx-auto mb-8 max-w-2xl">
+						Sentra is your AI teammate that listens, learns, and alerts you when your company drifts
+						— before you even notice.
+					</p>
 					<div class="notification-demo">
 						<div class="notification-item urgent">
 							<div class="notification-content">
@@ -261,14 +289,18 @@
 						<div class="notification-item warning">
 							<div class="notification-content">
 								<span class="notification-title">Redundant work in progress</span>
-								<span class="notification-subtitle">Two teams implementing the same user settings flow separately</span>
+								<span class="notification-subtitle"
+									>Two teams implementing the same user settings flow separately</span
+								>
 							</div>
 							<span class="notification-time">15m ago</span>
 						</div>
 						<div class="notification-item info">
 							<div class="notification-content">
 								<span class="notification-title">Team velocity dropping</span>
-								<span class="notification-subtitle">Frontend team missed sprint goals 2x in a row</span>
+								<span class="notification-subtitle"
+									>Frontend team missed sprint goals 2x in a row</span
+								>
 							</div>
 							<span class="notification-time">15m ago</span>
 						</div>
@@ -278,7 +310,10 @@
 			{:else}
 				<div class="individual-cta">
 					<h2 class="text-title2 text-foreground mb-4">Organize your life towards your goals</h2>
-					<p class="text-body text-emphasis-medium mb-8 max-w-2xl mx-auto">Let Sentra provide a sense of order to your busy life, helping you stay aligned with what matters most.</p>
+					<p class="text-body text-emphasis-medium mx-auto mb-8 max-w-2xl">
+						Let Sentra provide a sense of order to your busy life, helping you stay aligned with
+						what matters most.
+					</p>
 					<div class="life-organization-visual">
 						<div class="goal-item">Launch side project</div>
 						<div class="goal-item">Read 12 books this year</div>

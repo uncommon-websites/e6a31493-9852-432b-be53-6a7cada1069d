@@ -1,22 +1,22 @@
 <script lang="ts">
-	import SectionHeader from "$lib/components/layout/SectionHeader.svelte";
-	import { animate, stagger } from "motion";
-	import { onMount } from "svelte";
+	import SectionHeader from "$lib/components/layout/SectionHeader.svelte"
+	import { animate, stagger } from "motion"
+	import { onMount } from "svelte"
 
 	// Types
 	export type Value = {
-		title: string;
-		description: string;
-	};
+		title: string
+		description: string
+	}
 
 	// Props
-	const { values = [] }: { values: Value[] } = $props();
+	const { values = [] }: { values: Value[] } = $props()
 
-	let cards: HTMLElement[] = $state([]);
+	let cards: HTMLElement[] = $state([])
 
 	onMount(() => {
-		if (!cards.length) return;
-		if (window.self !== window.top) return;
+		if (!cards.length) return
+		if (window.self !== window.top) return
 
 		animate(
 			cards,
@@ -32,8 +32,8 @@
 					ease: "easeInOut"
 				})
 			}
-		);
-	});
+		)
+	})
 </script>
 
 <section class="bg-white dark:bg-gray-950">

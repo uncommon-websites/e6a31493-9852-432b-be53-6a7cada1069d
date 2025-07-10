@@ -1,11 +1,11 @@
 <script lang="ts">
 	// Props
 	type Props = {
-		title: string;
-		content: string;
-		imageSrc?: string;
-	};
-	let { title, content, imageSrc }: Props = $props();
+		title: string
+		content: string
+		imageSrc?: string
+	}
+	let { title, content, imageSrc }: Props = $props()
 </script>
 
 <section class="section-py" style="background-color: var(--color-background);">

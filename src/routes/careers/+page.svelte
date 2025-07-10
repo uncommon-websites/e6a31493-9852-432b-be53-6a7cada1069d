@@ -2,25 +2,25 @@
 	// Types
 
 	// Components
-	import SectionHeader from "$lib/components/layout/SectionHeader.svelte";
-	import Culture from "$lib/components/layout/Culture.svelte";
-	import Testimonials from "$lib/components/layout/Testimonials.svelte";
-	import SecondaryHero from "$lib/components/layout/hero-sections/SecondaryHero.svelte";
-	import Card from "$lib/components/ui/Card.svelte";
-	import JobList, { type JobOpening } from "./JobList.svelte";
+	import SectionHeader from "$lib/components/layout/SectionHeader.svelte"
+	import Culture from "$lib/components/layout/Culture.svelte"
+	import Testimonials from "$lib/components/layout/Testimonials.svelte"
+	import SecondaryHero from "$lib/components/layout/hero-sections/SecondaryHero.svelte"
+	import Card from "$lib/components/ui/Card.svelte"
+	import JobList, { type JobOpening } from "./JobList.svelte"
 
 	// Icons
-	import IconBriefcase from "~icons/lucide/briefcase";
-	import IconUsers from "~icons/lucide/users";
-	import IconHeart from "~icons/lucide/heart";
-	import IconGlobe from "~icons/lucide/globe";
+	import IconBriefcase from "~icons/lucide/briefcase"
+	import IconUsers from "~icons/lucide/users"
+	import IconHeart from "~icons/lucide/heart"
+	import IconGlobe from "~icons/lucide/globe"
 
 	// Constants
-	const SECTION_BASE_CLASSES = "section-py section-px container mx-auto";
+	const SECTION_BASE_CLASSES = "section-py section-px container mx-auto"
 	const GRADIENT_BG_CLASSES =
-		"bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800";
+		"bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800"
 	const ICON_CONTAINER_CLASSES =
-		"bg-primary-50 text-primary-600 dark:bg-primary-950 dark:text-primary-400 flex items-center justify-center rounded-full";
+		"bg-primary-50 text-primary-600 dark:bg-primary-950 dark:text-primary-400 flex items-center justify-center rounded-full"
 
 	const benefits = [
 		{
@@ -38,7 +38,7 @@
 			description: "Health coverage, retirement plans, and generous paid time off.",
 			icon: IconHeart
 		}
-	];
+	]
 
 	const openings: JobOpening[] = [
 		// Engineering
@@ -118,7 +118,7 @@
 			type: "Full-time",
 			url: "#"
 		}
-	];
+	]
 
 	const employeeTestimonials = [
 		{
@@ -148,7 +148,7 @@
 			image:
 				"https://images.unsplash.com/photo-1531384441138-2736e62e0919?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
 		}
-	];
+	]
 
 	const processSteps = [
 		{
@@ -167,7 +167,7 @@
 			title: "Welcome aboard",
 			description: "Join our team and start your journey building the future with us."
 		}
-	];
+	]
 
 	const values = [
 		{
@@ -185,7 +185,7 @@
 			title: "Global Impact",
 			description: "We're committed to making a positive impact on the world."
 		}
-	];
+	]
 </script>
 
 <!-- Hero Section -->

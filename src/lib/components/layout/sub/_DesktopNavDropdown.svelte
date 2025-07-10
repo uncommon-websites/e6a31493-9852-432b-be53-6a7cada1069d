@@ -1,17 +1,17 @@
 <script lang="ts">
 	// Components
-	import { NavigationMenu } from "bits-ui";
-	import IconChevronDown from "~icons/lucide/chevron-down";
+	import { NavigationMenu } from "bits-ui"
+	import IconChevronDown from "~icons/lucide/chevron-down"
 
 	// Props
-	const { item } = $props();
+	const { item } = $props()
 
 	// State
-	let activeImageIndex = $state(0);
-	let hasImages = $derived(item.children.some((child: any) => child.image));
+	let activeImageIndex = $state(0)
+	let hasImages = $derived(item.children.some((child: any) => child.image))
 
 	function setActiveImageIndex(index: number) {
-		activeImageIndex = index;
+		activeImageIndex = index
 	}
 </script>
 

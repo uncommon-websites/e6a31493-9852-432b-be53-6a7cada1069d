@@ -18,24 +18,24 @@
 
 <script lang="ts">
 	// Components
-	import AnimateText from "$lib/components/animation/AnimateText.svelte";
-	import Button from "$lib/components/ui/Button.svelte";
-	import LogoScroller from "$lib/components/layout/LogoScroller.svelte";
+	import AnimateText from "$lib/components/animation/AnimateText.svelte"
+	import Button from "$lib/components/ui/Button.svelte"
+	import LogoScroller from "$lib/components/layout/LogoScroller.svelte"
 
 	// Constants
-	import { cta } from "$lib/navigation";
+	import { cta } from "$lib/navigation"
 
 	// Types
 	type Props = {
-		title: string;
-		subtitle: string;
+		title: string
+		subtitle: string
 		callsToAction?: Array<{
-			href: string;
-			label: string;
-		}>;
-	};
+			href: string
+			label: string
+		}>
+	}
 
-	let { title, subtitle, callsToAction = [cta], ...rest }: Props = $props();
+	let { title, subtitle, callsToAction = [cta], ...rest }: Props = $props()
 
 	// Notification data for the right side
 	const notifications = [
@@ -57,7 +57,7 @@
 			time: "1h ago",
 			type: "info"
 		}
-	];
+	]
 </script>
 
 <div class="bg-background relative overflow-hidden" {...rest}>

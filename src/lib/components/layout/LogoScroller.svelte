@@ -1,6 +1,6 @@
 <script lang="ts">
 	// Components
-	import Marquee from "./sub/Marquee.svelte";
+	import Marquee from "./sub/Marquee.svelte"
 
 	// Props
 	const {
@@ -16,12 +16,12 @@
 		],
 		...rest
 	}: {
-		paused?: boolean;
-		label?: string;
-		layout?: "horizontal" | "vertical";
-		mode?: "light" | "dark";
-		logoUrls?: string[];
-	} = $props();
+		paused?: boolean
+		label?: string
+		layout?: "horizontal" | "vertical"
+		mode?: "light" | "dark"
+		logoUrls?: string[]
+	} = $props()
 </script>
 
 <div

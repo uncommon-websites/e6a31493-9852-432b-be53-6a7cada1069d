@@ -1,24 +1,24 @@
 <script lang="ts">
 	type Props = {
-		title: string;
-		subtitle?: string;
+		title: string
+		subtitle?: string
 		founders: Array<{
-			name: string;
-			role: string;
-			bio: string;
-		}>;
+			name: string
+			role: string
+			bio: string
+		}>
 		advisors: Array<{
-			name: string;
-			role: string;
-			bio: string;
-		}>;
+			name: string
+			role: string
+			bio: string
+		}>
 		supporters: Array<{
-			name: string;
-			role: string;
-			bio: string;
-		}>;
-	};
-	let { title, subtitle, founders, advisors, supporters }: Props = $props();
+			name: string
+			role: string
+			bio: string
+		}>
+	}
+	let { title, subtitle, founders, advisors, supporters }: Props = $props()
 </script>
 
 <section class="section-py" style="background-color: var(--color-background);">

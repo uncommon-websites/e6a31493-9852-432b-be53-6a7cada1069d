@@ -1,6 +1,6 @@
 <script lang="ts">
-	import SecondaryHero from "$lib/components/layout/hero-sections/SecondaryHero.svelte";
-	import CallToAction from "$lib/components/layout/CallToAction.svelte";
+	import SecondaryHero from "$lib/components/layout/hero-sections/SecondaryHero.svelte"
+	import CallToAction from "$lib/components/layout/CallToAction.svelte"
 </script>
 
 <svelte:head>

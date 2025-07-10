@@ -70,14 +70,14 @@ const legal = {
 			]
 		}
 	}
-};
+}
 
 // Types
-import type { PageServerLoad } from "./$types";
+import type { PageServerLoad } from "./$types"
 
 export const load: PageServerLoad = async ({ params }) => {
-	const { type } = params as { type: keyof typeof legal };
-	const content = legal[type];
+	const { type } = params as { type: keyof typeof legal }
+	const content = legal[type]
 
-	return content;
-};
+	return content
+}

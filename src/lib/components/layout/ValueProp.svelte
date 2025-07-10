@@ -4,7 +4,7 @@
 		title,
 		content,
 		imageSrc = ""
-	}: { title: string; content: string; imageSrc?: string } = $props();
+	}: { title: string; content: string; imageSrc?: string } = $props()
 </script>
 
 <section class="px container mx-auto grid gap-12 py-40">

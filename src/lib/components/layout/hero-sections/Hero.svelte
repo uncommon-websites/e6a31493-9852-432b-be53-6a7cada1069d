@@ -30,30 +30,30 @@
 
 <script lang="ts">
 	// Components
-	import AnimateText from "$lib/components/animation/AnimateText.svelte";
-	import Button from "$lib/components/ui/Button.svelte";
+	import AnimateText from "$lib/components/animation/AnimateText.svelte"
+	import Button from "$lib/components/ui/Button.svelte"
 
 	// Constants
-	import { cta } from "$lib/navigation";
+	import { cta } from "$lib/navigation"
 
 	// Removed notification functionality as requested
 
 	function handleImageError(e: Event) {
-		const target = e.currentTarget as HTMLImageElement;
-		target.src = "https://placehold.co/800x600/f8fafc/64748b?text=Hero+image";
+		const target = e.currentTarget as HTMLImageElement
+		target.src = "https://placehold.co/800x600/f8fafc/64748b?text=Hero+image"
 	}
 
 	// Types
 	type Props = {
-		centered?: boolean;
-		title: string;
-		subtitle: string;
-		imageSrc?: string;
+		centered?: boolean
+		title: string
+		subtitle: string
+		imageSrc?: string
 		callsToAction?: Array<{
-			href: string;
-			label: string;
-		}>; // A maximum of two calls to action, with the first one being primary and the second one being secondary
-	};
+			href: string
+			label: string
+		}> // A maximum of two calls to action, with the first one being primary and the second one being secondary
+	}
 
 	let {
 		title,
@@ -62,15 +62,17 @@
 		callsToAction = [cta],
 		centered = false,
 		...rest
-	}: Props = $props();
+	}: Props = $props()
 </script>
 
 <div class="bg-background relative overflow-hidden" {...rest}>
 	<!-- Background glow - all the way in the background -->
 	<div class="absolute inset-0 z-0">
-		<div class="absolute inset-0 bg-gradient-radial from-primary-500/20 via-primary-600/10 to-transparent"></div>
+		<div
+			class="bg-gradient-radial from-primary-500/20 via-primary-600/10 absolute inset-0 to-transparent"
+		></div>
 	</div>
-	
+
 	{#if imageSrc}
 		<div class="absolute inset-0 z-10" data-enter>
 			<img
@@ -84,13 +86,13 @@
 
 	<header
 		class={[
-			"section-px container mx-auto grid items-center gap-16 gap-y-9 py-12 pt-24 text-balance relative z-20 min-h-[70vh]",
+			"section-px relative z-20 container mx-auto grid min-h-[70vh] items-center gap-16 gap-y-9 py-12 pt-24 text-balance",
 			centered ? "place-items-center text-center" : " xl:grid-cols-[1fr_auto]"
 		]}
 		data-enter-container
 	>
 		<div class="grid gap-6" class:max-w-prose={centered}>
-			<h1 class="text-display w-full text-foreground" data-enter>
+			<h1 class="text-display text-foreground w-full" data-enter>
 				<span class="block"><AnimateText text={title} /></span>
 				{#if !centered}
 					<span class="text-emphasis-dim block"><AnimateText text={subtitle} /></span>

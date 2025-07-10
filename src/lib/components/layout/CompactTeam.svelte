@@ -1,18 +1,18 @@
 <script lang="ts">
 	type TeamMember = {
-		name: string;
-		position: string;
-		description: string;
-		image: string;
-	};
+		name: string
+		position: string
+		description: string
+		image: string
+	}
 
 	type Props = {
-		title: string;
-		subtitle?: string;
-		members: TeamMember[];
-	};
+		title: string
+		subtitle?: string
+		members: TeamMember[]
+	}
 
-	let { title, subtitle, members }: Props = $props();
+	let { title, subtitle, members }: Props = $props()
 </script>
 
 <section class="section-py section-px bg-background container mx-auto">

@@ -1,127 +1,127 @@
 <script lang="ts">
 	// Types
 	type Testimonial = {
-		name: string;
-		position: string;
-		company: string;
-		quote: string;
-		image: string; // a 9/16 portrait image of a person
-	};
+		name: string
+		position: string
+		company: string
+		quote: string
+		image: string // a 9/16 portrait image of a person
+	}
 
 	// Props
-	let { testimonials, ...rest }: { testimonials: Testimonial[] } = $props();
+	let { testimonials, ...rest }: { testimonials: Testimonial[] } = $props()
 
 	// State
-	let current = $state(0);
-	let scrollProgress = $state(0);
-	let wrapperRef: HTMLElement;
-	let carouselRef: HTMLElement;
-	let maxScrollDistance = $state(0);
+	let current = $state(0)
+	let scrollProgress = $state(0)
+	let wrapperRef: HTMLElement
+	let carouselRef: HTMLElement
+	let maxScrollDistance = $state(0)
 
-	import { onMount } from "svelte";
+	import { onMount } from "svelte"
 
 	onMount(() => {
 		// Preload images
 		testimonials.forEach((testimonial) => {
 			if (testimonial.image) {
-				const img = new Image();
-				img.loading = "lazy";
-				img.src = testimonial.image;
+				const img = new Image()
+				img.loading = "lazy"
+				img.src = testimonial.image
 			}
-		});
+		})
 
 		// Calculate the max scroll distance for translation
 		const updateDimensions = () => {
-			if (!carouselRef) return;
+			if (!carouselRef) return
 
 			// Get all cards and container measurements
-			const cards = Array.from(carouselRef.querySelectorAll("article"));
-			if (!cards.length) return;
+			const cards = Array.from(carouselRef.querySelectorAll("article"))
+			if (!cards.length) return
 
 			// Get the total width of all content including gaps
-			const carouselWidth = carouselRef.scrollWidth;
+			const carouselWidth = carouselRef.scrollWidth
 			// Get the viewport width
-			const viewportWidth = window.innerWidth;
+			const viewportWidth = window.innerWidth
 			// Get the width of the last card
-			const lastCard = cards[cards.length - 1];
-			const lastCardWidth = lastCard.offsetWidth;
+			const lastCard = cards[cards.length - 1]
+			const lastCardWidth = lastCard.offsetWidth
 
 			// Get computed styles to account for gaps and padding
-			const style = getComputedStyle(carouselRef);
-			const gapStr = style.gap || style.columnGap || "0px";
-			const gapValue = parseInt(gapStr, 10) || 0;
+			const style = getComputedStyle(carouselRef)
+			const gapStr = style.gap || style.columnGap || "0px"
+			const gapValue = parseInt(gapStr, 10) || 0
 
 			// To ensure the last card is fully visible at the end of the scroll,
 			// we need to make sure the last card's right edge aligns with the viewport's right edge
 			// This means the maximum distance we need to translate is:
 			// (total carousel width - viewport width)
 			// If this value is negative or zero, no scrolling is needed
-			maxScrollDistance = Math.max(0, carouselWidth - viewportWidth);
+			maxScrollDistance = Math.max(0, carouselWidth - viewportWidth)
 
 			// Ensure we can see the last card fully
 			// This extra adjustment ensures the last card is properly positioned at the end of the scroll
 			if (maxScrollDistance > 0) {
 				// Add a larger buffer for more breathing room at the right edge
 				// This accounts for any padding or margin that might affect positioning
-				const buffer = 0; // 4rem buffer instead of 1rem
-				maxScrollDistance += buffer;
+				const buffer = 0 // 4rem buffer instead of 1rem
+				maxScrollDistance += buffer
 			}
 
 			if (maxScrollDistance <= 0) {
-				console.info("Content fits in viewport, no scrolling needed");
+				console.info("Content fits in viewport, no scrolling needed")
 			}
-		};
+		}
 
 		// Track vertical scroll position and convert to horizontal scroll
-		let ticking = false;
+		let ticking = false
 		const handleScroll = () => {
-			if (ticking) return;
-			ticking = true;
+			if (ticking) return
+			ticking = true
 
 			requestAnimationFrame(() => {
-				if (!wrapperRef) return;
+				if (!wrapperRef) return
 
-				const rect = wrapperRef.getBoundingClientRect();
-				const sectionHeight = rect.height;
-				const viewportHeight = window.innerHeight;
+				const rect = wrapperRef.getBoundingClientRect()
+				const sectionHeight = rect.height
+				const viewportHeight = window.innerHeight
 
 				// Calculate progress (0-1)
-				let progress = 0;
+				let progress = 0
 				if (rect.top <= 0) {
-					progress = Math.min(Math.abs(rect.top) / (sectionHeight - viewportHeight), 1);
+					progress = Math.min(Math.abs(rect.top) / (sectionHeight - viewportHeight), 1)
 				}
 
-				scrollProgress = progress;
-				current = Math.min(Math.floor(progress * testimonials.length), testimonials.length - 1);
-				ticking = false;
-			});
-		};
+				scrollProgress = progress
+				current = Math.min(Math.floor(progress * testimonials.length), testimonials.length - 1)
+				ticking = false
+			})
+		}
 
 		// Debounce resize handler for better performance
-		let resizeTimer: number;
+		let resizeTimer: number
 		const handleResize = () => {
-			clearTimeout(resizeTimer);
+			clearTimeout(resizeTimer)
 			resizeTimer = setTimeout(() => {
-				updateDimensions();
-				handleScroll();
-			}, 100);
-		};
+				updateDimensions()
+				handleScroll()
+			}, 100)
+		}
 
 		// Initialize and set up listeners
-		updateDimensions();
-		window.addEventListener("resize", handleResize);
-		window.addEventListener("scroll", handleScroll);
+		updateDimensions()
+		window.addEventListener("resize", handleResize)
+		window.addEventListener("scroll", handleScroll)
 		setTimeout(() => {
-			updateDimensions(); // Run once more after DOM is settled
-			handleScroll();
-		}, 100);
+			updateDimensions() // Run once more after DOM is settled
+			handleScroll()
+		}, 100)
 
 		return () => {
-			window.removeEventListener("resize", handleResize);
-			window.removeEventListener("scroll", handleScroll);
-			clearTimeout(resizeTimer);
-		};
-	});
+			window.removeEventListener("resize", handleResize)
+			window.removeEventListener("scroll", handleScroll)
+			clearTimeout(resizeTimer)
+		}
+	})
 </script>
 
 <section

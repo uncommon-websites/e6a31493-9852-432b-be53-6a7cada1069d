@@ -1,18 +1,18 @@
 <script lang="ts">
 	// Types
 	type UseCase = {
-		title: string;
-		description: string;
-		image: string;
-		uniqeSellingPoints?: string[];
+		title: string
+		description: string
+		image: string
+		uniqeSellingPoints?: string[]
 		link?: {
-			href: string;
-			label: string;
-		};
-	};
+			href: string
+			label: string
+		}
+	}
 
 	// Components
-	import Button from "$lib/components/ui/Button.svelte";
+	import Button from "$lib/components/ui/Button.svelte"
 
 	// Props
 	const {
@@ -20,27 +20,27 @@
 		subtitle,
 		useCases = [],
 		...rest
-	}: { title: string; subtitle: string; useCases: UseCase[] } = $props();
+	}: { title: string; subtitle: string; useCases: UseCase[] } = $props()
 
-	let current = $state(0);
+	let current = $state(0)
 
-	import { onMount } from "svelte";
-	import SectionHeader from "./SectionHeader.svelte";
-	import { fade } from "svelte/transition";
-	import { cubicInOut, cubicOut } from "svelte/easing";
+	import { onMount } from "svelte"
+	import SectionHeader from "./SectionHeader.svelte"
+	import { fade } from "svelte/transition"
+	import { cubicInOut, cubicOut } from "svelte/easing"
 
 	// Preload images lazily
 	onMount(() => {
 		if (useCases.length) {
 			useCases.forEach((useCase, index) => {
 				if (index !== current && useCase.image) {
-					const img = new Image();
-					img.loading = "lazy";
-					img.src = useCase.image;
+					const img = new Image()
+					img.loading = "lazy"
+					img.src = useCase.image
 				}
-			});
+			})
 		}
-	});
+	})
 </script>
 
 <section class="[--gap:--spacing(4)] [--inner-radius:calc(var(--radius)-var(--gap))]" {...rest}>

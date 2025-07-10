@@ -1,9 +1,9 @@
 <script lang="ts">
 	// Components
-	import { CONFIG } from "$lib/content";
+	import { CONFIG } from "$lib/content"
 
 	// Props
-	let { data } = $props();
+	let { data } = $props()
 </script>
 
 <svelte:head>

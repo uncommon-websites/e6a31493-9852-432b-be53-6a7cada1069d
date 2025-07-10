@@ -34,19 +34,19 @@
 
 <script lang="ts">
 	// Types
-	import type { ComponentProps } from "svelte";
+	import type { ComponentProps } from "svelte"
 
 	// Components
-	import Button from "../ui/Button.svelte";
-	import AnimateText from "../animation/AnimateText.svelte";
-	import { cta } from "$lib/navigation";
+	import Button from "../ui/Button.svelte"
+	import AnimateText from "../animation/AnimateText.svelte"
+	import { cta } from "$lib/navigation"
 
 	// Types
 	type CTA = {
-		href: string;
-		label: string;
-		variant?: ComponentProps<typeof Button>["variant"];
-	};
+		href: string
+		label: string
+		variant?: ComponentProps<typeof Button>["variant"]
+	}
 
 	// Props
 	const {
@@ -57,12 +57,12 @@
 		callsToAction = [cta],
 		...rest
 	}: {
-		title?: string;
-		subtitle?: string;
-		description?: string;
-		imageSrc?: string;
-		callsToAction?: CTA[];
-	} = $props();
+		title?: string
+		subtitle?: string
+		description?: string
+		imageSrc?: string
+		callsToAction?: CTA[]
+	} = $props()
 </script>
 
 <div class="" {...rest}>

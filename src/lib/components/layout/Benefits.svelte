@@ -1,20 +1,20 @@
 <script lang="ts">
-	import BenefitCard from "$lib/components/ui/BenefitCard.svelte";
+	import BenefitCard from "$lib/components/ui/BenefitCard.svelte"
 
 	type Props = {
-		title?: string;
+		title?: string
 		benefits?: Array<{
-			title: string;
-			description: string;
+			title: string
+			description: string
 			visualization:
 				| "visibility"
 				| "misalignment"
 				| "culture"
 				| "meetings"
 				| "onboarding"
-				| "future";
-		}>;
-	};
+				| "future"
+		}>
+	}
 
 	let {
 		title = "Grow your company effortlessly",
@@ -56,7 +56,7 @@
 			// 	visualization: "future" as const
 			// }
 		]
-	}: Props = $props();
+	}: Props = $props()
 </script>
 
 <section class="section-py bg-muted">

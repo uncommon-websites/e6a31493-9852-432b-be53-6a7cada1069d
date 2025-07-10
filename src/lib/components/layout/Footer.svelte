@@ -1,14 +1,14 @@
 <script lang="ts">
 	// Types
-	import type { HTMLAttributes } from "svelte/elements";
-	import { navigation } from "$lib/navigation";
+	import type { HTMLAttributes } from "svelte/elements"
+	import { navigation } from "$lib/navigation"
 
 	// Components
-	import { CONFIG } from "$lib/content";
-	import Signature from "./Signature.svelte";
+	import { CONFIG } from "$lib/content"
+	import Signature from "./Signature.svelte"
 
 	// Props
-	const props: HTMLAttributes<HTMLElement> = $props();
+	const props: HTMLAttributes<HTMLElement> = $props()
 </script>
 
 <footer

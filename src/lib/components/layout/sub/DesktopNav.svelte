@@ -1,18 +1,18 @@
 <script lang="ts">
 	type Props = {
-		items: typeof navigation;
-	};
+		items: typeof navigation
+	}
 
 	// Components
-	import Button from "$lib/components/ui/Button.svelte";
-	import { NavigationMenu } from "bits-ui";
-	import DesktopNavDropdown from "./_DesktopNavDropdown.svelte";
+	import Button from "$lib/components/ui/Button.svelte"
+	import { NavigationMenu } from "bits-ui"
+	import DesktopNavDropdown from "./_DesktopNavDropdown.svelte"
 
 	// Utils
-	import { cta, navigation } from "$lib/navigation";
+	import { cta, navigation } from "$lib/navigation"
 
 	// Props
-	const { items }: Props = $props();
+	const { items }: Props = $props()
 </script>
 
 <div

@@ -1,6 +1,6 @@
 // Types
-import { CONFIG } from "$lib/content";
-import type { LayoutServerLoad } from "./$types";
+import { CONFIG } from "$lib/content"
+import type { LayoutServerLoad } from "./$types"
 
 export const load: LayoutServerLoad = async () => {
 	return {
@@ -11,5 +11,5 @@ export const load: LayoutServerLoad = async () => {
 			url: CONFIG.url,
 			companyName: CONFIG.companyName
 		}
-	};
-};
+	}
+}

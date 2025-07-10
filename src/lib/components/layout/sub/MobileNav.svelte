@@ -1,90 +1,90 @@
 <script lang="ts">
 	// Types
-	import type { NavItem } from "$lib/navigation";
+	import type { NavItem } from "$lib/navigation"
 
 	// Components
-	import Button from "$lib/components/ui/Button.svelte";
-	import IconMenu from "~icons/lucide/menu";
-	import IconChevronRight from "~icons/lucide/chevron-right";
+	import Button from "$lib/components/ui/Button.svelte"
+	import IconMenu from "~icons/lucide/menu"
+	import IconChevronRight from "~icons/lucide/chevron-right"
 
 	// Utils
-	import { cta, navigation } from "$lib/navigation";
-	import { beforeNavigate } from "$app/navigation";
+	import { cta, navigation } from "$lib/navigation"
+	import { beforeNavigate } from "$app/navigation"
 
 	// Props
-	const { items = [] }: { items: typeof navigation } = $props();
+	const { items = [] }: { items: typeof navigation } = $props()
 
 	// State
-	let isMenuOpen = $state(false);
-	let scrollBarWidth: number = $state(0);
-	let themeColor: string = $state("");
-	let originalThemeColor: string | null | undefined = $state(null);
+	let isMenuOpen = $state(false)
+	let scrollBarWidth: number = $state(0)
+	let themeColor: string = $state("")
+	let originalThemeColor: string | null | undefined = $state(null)
 
 	$effect(() => {
-		scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
-	});
+		scrollBarWidth = window.innerWidth - document.documentElement.clientWidth
+	})
 
 	$effect(() => {
-		const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-		originalThemeColor = metaThemeColor?.getAttribute("content");
-	});
+		const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+		originalThemeColor = metaThemeColor?.getAttribute("content")
+	})
 
 	$effect(() => {
 		try {
 			// Handle body scroll locking when menu is open
 			if (isMenuOpen) {
 				// Get accurate scrollbar width - recalculate to handle viewport changes
-				scrollBarWidth = Math.max(0, window.innerWidth - document.documentElement.clientWidth);
+				scrollBarWidth = Math.max(0, window.innerWidth - document.documentElement.clientWidth)
 
 				// Lock body scroll with padding to prevent layout shift
 				if (document.body) {
-					document.body.style.overflow = "hidden";
-					document.body.style.paddingRight = `${scrollBarWidth}px`;
+					document.body.style.overflow = "hidden"
+					document.body.style.paddingRight = `${scrollBarWidth}px`
 				}
 
 				// Get computed background style for theme-color meta tag
-				const navElement = document.getElementById("nav") || document.querySelector("#nav");
+				const navElement = document.getElementById("nav") || document.querySelector("#nav")
 
 				if (navElement) {
 					// Use computed style for accurate color
-					const computedStyle = window.getComputedStyle(navElement);
-					themeColor = computedStyle.backgroundColor || computedStyle.background;
+					const computedStyle = window.getComputedStyle(navElement)
+					themeColor = computedStyle.backgroundColor || computedStyle.background
 				} else {
 					// Fallback with theme-aware default
 					themeColor = document.documentElement.classList.contains("dark")
 						? "hsl(var(--background))" // dark mode fallback using CSS variable
-						: "hsl(var(--background))"; // light mode fallback using CSS variable
+						: "hsl(var(--background))" // light mode fallback using CSS variable
 				}
 			} else {
 				// Restore normal scrolling
 				if (document.body) {
-					document.body.style.overflow = "";
-					document.body.style.paddingRight = "";
+					document.body.style.overflow = ""
+					document.body.style.paddingRight = ""
 				}
 
 				// Restore original theme color
-				themeColor = originalThemeColor || "";
+				themeColor = originalThemeColor || ""
 			}
 		} catch (_) {
 			// Ensure body scroll is restored in case of error
 			if (document.body) {
-				document.body.style.overflow = "";
-				document.body.style.paddingRight = "";
+				document.body.style.overflow = ""
+				document.body.style.paddingRight = ""
 			}
 		}
-	});
+	})
 
 	beforeNavigate(() => {
 		if (isMenuOpen) {
-			isMenuOpen = false;
+			isMenuOpen = false
 		}
-	});
+	})
 </script>
 
 <svelte:window
 	onkeydown={(e) => {
 		if (e.key === "Escape" && isMenuOpen) {
-			isMenuOpen = false;
+			isMenuOpen = false
 		}
 	}}
 />

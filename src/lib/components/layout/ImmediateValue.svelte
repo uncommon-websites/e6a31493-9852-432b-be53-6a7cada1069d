@@ -1,14 +1,14 @@
 <script lang="ts">
-	import SectionHeader from "./SectionHeader.svelte";
-	import IconBrain from "~icons/lucide/brain";
-	import IconEye from "~icons/lucide/eye";
-	import IconTarget from "~icons/lucide/target";
-	import IconGitBranch from "~icons/lucide/git-branch";
-	import IconRadar from "~icons/lucide/radar";
-	import IconAlertTriangle from "~icons/lucide/alert-triangle";
-	import IconDatabase from "~icons/lucide/database";
-	import IconNetwork from "~icons/lucide/network";
-	import IconShield from "~icons/lucide/shield";
+	import SectionHeader from "./SectionHeader.svelte"
+	import IconBrain from "~icons/lucide/brain"
+	import IconEye from "~icons/lucide/eye"
+	import IconTarget from "~icons/lucide/target"
+	import IconGitBranch from "~icons/lucide/git-branch"
+	import IconRadar from "~icons/lucide/radar"
+	import IconAlertTriangle from "~icons/lucide/alert-triangle"
+	import IconDatabase from "~icons/lucide/database"
+	import IconNetwork from "~icons/lucide/network"
+	import IconShield from "~icons/lucide/shield"
 	const valueProps = [
 		{
 			title: "Builds a memory of your company",
@@ -28,7 +28,7 @@
 				"With real-time awareness, Sentra identifies conflicts and breakdowns before they become problems.",
 			visualization: "detection"
 		}
-	];
+	]
 </script>
 
 <section class="bg-gray-50">

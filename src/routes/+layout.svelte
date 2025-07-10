@@ -1,56 +1,25 @@
 <script lang="ts">
 	// Styles
-	import "../app.css";
+	import "../app.css"
 
 	// Components
-	import Logo from "$lib/components/Logo.svelte";
-	import Nav from "$lib/components/layout/Nav.svelte";
-	import Footer from "$lib/components/layout/Footer.svelte";
+	import Nav from "$lib/components/layout/Nav.svelte"
+	import Footer from "$lib/components/layout/Footer.svelte"
 
 	// Utils
-	import { onMount } from "svelte";
-	import { animate, inView, stagger } from "motion";
+	import { onMount } from "svelte"
+	import { animate, inView, stagger } from "motion"
 
-	import { MediaQuery } from "svelte/reactivity";
-	import { browser } from "$app/environment";
-	import { page } from "$app/state";
-	import { CONFIG } from "$lib/content";
-	import { navHeight } from "$lib/state/nav.svelte";
+	import { MediaQuery } from "svelte/reactivity"
+	import { browser } from "$app/environment"
+	import { page } from "$app/state"
+	import { CONFIG } from "$lib/content"
+	import { navHeight } from "$lib/state/nav.svelte"
 
-	const isTouchDevice = new MediaQuery("(pointer: coarse)");
+	const isTouchDevice = new MediaQuery("(pointer: coarse)")
 
 	// Props
-	let { data, children } = $props();
-
-	// onMount(() => {
-	// 	if (!browser) return;
-	// 	const enterContainers = document.querySelectorAll("[data-enter-container]");
-
-	// 	enterContainers?.forEach((container) => {
-	// 		const elements = container.querySelectorAll("[data-enter]");
-
-	// 		elements.forEach((element) => {
-	// 			(element as HTMLElement).style.opacity = "0";
-	// 		});
-	// 	});
-
-	// 	inView("[data-enter-container]", (e) => {
-	// 		animate(
-	// 			e.querySelectorAll("[data-enter]"),
-	// 			{
-	// 				opacity: [0, 1],
-	// 				y: ["2rem", 0]
-	// 			},
-	// 			{
-	// 				duration: 0.4,
-	// 				ease: "circOut",
-	// 				delay: stagger(0.15, {
-	// 					ease: "easeInOut"
-	// 				})
-	// 			}
-	// 		);
-	// 	});
-	// });
+	let { data, children } = $props()
 </script>
 
 <svelte:head>
@@ -72,12 +41,7 @@
 
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-	<!-- <link
-		href="https://fonts.googleapis.com/css2?family={encodeURIComponent(
-			page.data.meta.fontFamily
-		)}:ital,wght@0,400..800;1,400..800&display=swap"
-		rel="stylesheet"
-	/> -->
+
 	<link
 		href="https://fonts.googleapis.com/css2?family={encodeURIComponent(
 			CONFIG.fontFamily

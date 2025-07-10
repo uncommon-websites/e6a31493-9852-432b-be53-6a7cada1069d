@@ -1,5 +1,5 @@
 <script lang="ts">
-	import SectionHeader from "$lib/components/layout/SectionHeader.svelte";
+	import SectionHeader from "$lib/components/layout/SectionHeader.svelte"
 
 	let {
 		title,
@@ -7,10 +7,10 @@
 		imageSrc,
 		...rest
 	}: {
-		title: string;
-		subtitle: string;
-		imageSrc?: string;
-	} = $props();
+		title: string
+		subtitle: string
+		imageSrc?: string
+	} = $props()
 </script>
 
 <header class="border-b border-gray-100 dark:border-gray-900" {...rest}>

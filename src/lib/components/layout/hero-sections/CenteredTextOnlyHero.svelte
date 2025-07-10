@@ -8,22 +8,22 @@ Takes up the full viewport height and centers content vertically.
 
 <script lang="ts">
 	// Components
-	import AnimateText from "$lib/components/animation/AnimateText.svelte";
-	import Button from "$lib/components/ui/Button.svelte";
+	import AnimateText from "$lib/components/animation/AnimateText.svelte"
+	import Button from "$lib/components/ui/Button.svelte"
 
 	// Constants
-	import { cta } from "$lib/navigation";
+	import { cta } from "$lib/navigation"
 
 	// Types
 	type Props = {
-		title: string;
-		subtitle: string;
-		imageSrc: string;
+		title: string
+		subtitle: string
+		imageSrc: string
 		callsToAction?: Array<{
-			href: string;
-			label: string;
-		}>; // A maximum of two calls to action, with the first one being primary and the second one being secondary
-	};
+			href: string
+			label: string
+		}> // A maximum of two calls to action, with the first one being primary and the second one being secondary
+	}
 
 	let {
 		title,
@@ -31,7 +31,7 @@ Takes up the full viewport height and centers content vertically.
 		callsToAction = [cta],
 		imageSrc = "/sample.png",
 		...rest
-	}: Props = $props();
+	}: Props = $props()
 </script>
 
 <div class="grid h-[calc(100vh-var(--nav-height))] grid-rows-[1fr_auto]" {...rest}>

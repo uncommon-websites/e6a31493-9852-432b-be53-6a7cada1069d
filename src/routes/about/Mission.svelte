@@ -1,14 +1,14 @@
 <script lang="ts">
 	// Props
 	type Props = {
-		title: string;
-		subtitle?: string;
+		title: string
+		subtitle?: string
 		bets: Array<{
-			title: string;
-			description: string;
-		}>;
-	};
-	let { title, subtitle, bets }: Props = $props();
+			title: string
+			description: string
+		}>
+	}
+	let { title, subtitle, bets }: Props = $props()
 </script>
 
 <section class="section-py" style="background-color: var(--color-muted);">

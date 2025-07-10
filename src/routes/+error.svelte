@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { page } from "$app/state";
+	import { page } from "$app/state"
 
-	import Button from "$lib/components/ui/Button.svelte";
+	import Button from "$lib/components/ui/Button.svelte"
 </script>
 
 <div class="flex min-h-screen flex-col items-center justify-center">
