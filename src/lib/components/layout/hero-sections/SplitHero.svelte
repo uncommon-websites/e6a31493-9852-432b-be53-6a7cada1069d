@@ -37,7 +37,7 @@
 
 	let { title, subtitle, callsToAction = [cta], ...rest }: Props = $props()
 
-	// Notification data for the right side
+	// Expanded notification data for infinite scrolling
 	const notifications = [
 		{
 			title: "Goal alignment detected",
@@ -54,6 +54,48 @@
 		{
 			title: "Team pulse check",
 			subtitle: "Weekly alignment score: 94%",
+			time: "1h ago",
+			type: "info"
+		},
+		{
+			title: "Cross-team dependency resolved",
+			subtitle: "Product & Engineering roadmap aligned",
+			time: "3m ago",
+			type: "success"
+		},
+		{
+			title: "Communication gap detected",
+			subtitle: "Design handoff requires clarification",
+			time: "8m ago",
+			type: "warning"
+		},
+		{
+			title: "Milestone achievement",
+			subtitle: "Q4 OKRs tracking at 98% completion",
+			time: "15m ago",
+			type: "success"
+		},
+		{
+			title: "Resource allocation alert",
+			subtitle: "DevOps bandwidth may impact delivery",
+			time: "22m ago",
+			type: "warning"
+		},
+		{
+			title: "Team velocity update",
+			subtitle: "Sprint velocity increased by 23%",
+			time: "35m ago",
+			type: "info"
+		},
+		{
+			title: "Stakeholder alignment confirmed",
+			subtitle: "Leadership consensus on feature priority",
+			time: "45m ago",
+			type: "success"
+		},
+		{
+			title: "Knowledge gap identified",
+			subtitle: "New hire onboarding optimization needed",
 			time: "1h ago",
 			type: "info"
 		}
@@ -99,64 +141,47 @@
 						class="from-primary-700 to-primary-400 absolute inset-0 rounded-2xl bg-radial from-40%"
 					></div>
 
-					<!-- Notification cards max-w-6xl-->
-					<div class="relative z-10 w-full max-w-sm space-y-4">
-						{#each notifications as notification, index}
-							<div
-								class={[
-									"rounded-lg border border-white/20 bg-white/95 p-4 backdrop-blur-sm",
-									"transform transition-all duration-500 ease-out",
-									"hover:scale-105 hover:bg-white/100"
-								]}
-								style="animation-delay: {index * 200}ms"
-								data-enter
-							>
-								<div class="flex items-start justify-between gap-3">
-									<div class="min-w-0 flex-1">
-										<div class="mb-1 flex items-center gap-2">
-											<div
-												class={[
-													"h-2 w-2 rounded-full",
-													notification.type === "success"
-														? "bg-green-500"
-														: notification.type === "warning"
-															? "bg-yellow-500"
-															: "bg-blue-500"
-												]}
-											></div>
-											<h3 class="truncate text-sm font-medium text-gray-900">
-												{notification.title}
-											</h3>
+					<!-- Infinite scrolling notification cards -->
+					<div class="relative z-10 w-full max-w-sm">
+						<div class="notification-scroll-container h-[500px] overflow-hidden">
+							<div class="notification-scroll-content space-y-4">
+								{#each [...notifications, ...notifications] as notification, index}
+									<div
+										class={[
+											"rounded-lg border border-white/20 bg-white/95 p-4 backdrop-blur-sm",
+											"transform transition-all duration-500 ease-out",
+											"hover:scale-105 hover:bg-white/100"
+										]}
+										data-enter
+									>
+										<div class="flex items-start justify-between gap-3">
+											<div class="min-w-0 flex-1">
+												<div class="mb-1 flex items-center gap-2">
+													<div
+														class={[
+															"h-2 w-2 rounded-full",
+															notification.type === "success"
+																? "bg-green-500"
+																: notification.type === "warning"
+																	? "bg-yellow-500"
+																	: "bg-blue-500"
+														]}
+													></div>
+													<h3 class="truncate text-sm font-medium text-gray-900">
+														{notification.title}
+													</h3>
+												</div>
+												<p class="text-xs leading-relaxed text-gray-600">
+													{notification.subtitle}
+												</p>
+											</div>
+											<span class="text-xs whitespace-nowrap text-gray-500">
+												{notification.time}
+											</span>
 										</div>
-										<p class="text-xs leading-relaxed text-gray-600">
-											{notification.subtitle}
-										</p>
 									</div>
-									<span class="text-xs whitespace-nowrap text-gray-500">
-										{notification.time}
-									</span>
-								</div>
+								{/each}
 							</div>
-						{/each}
-
-						<!-- Add source card like in inspiration -->
-						<div class="mt-6 rounded-lg border border-white/20 bg-white/90 p-6 backdrop-blur-sm">
-							<div class="flex items-center justify-between">
-								<h4 class="mb-3 text-sm font-medium text-gray-700">Sources</h4>
-							</div>
-							<button
-								class="flex w-full items-center justify-center gap-2 rounded-lg border-2 border-dashed border-gray-300 px-4 py-3 text-gray-500 transition-colors hover:border-gray-400 hover:text-gray-600"
-							>
-								<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-									></path>
-								</svg>
-								<span class="text-sm">Add source</span>
-							</button>
 						</div>
 					</div>
 				</div>
@@ -192,7 +217,29 @@
 		}
 	}
 
+	@keyframes infiniteScroll {
+		0% {
+			transform: translateY(0);
+		}
+		100% {
+			transform: translateY(-50%);
+		}
+	}
+
 	[data-enter] {
 		animation: slideInUp 0.6s ease-out forwards;
+	}
+
+	.notification-scroll-container {
+		mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+		-webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+	}
+
+	.notification-scroll-content {
+		animation: infiniteScroll 30s linear infinite;
+	}
+
+	.notification-scroll-content:hover {
+		animation-play-state: paused;
 	}
 </style>
