@@ -37,6 +37,8 @@
 
 	let { title, subtitle, callsToAction = [cta], ...rest }: Props = $props()
 
+	title = "Teams move faster with Sentra "
+
 	// Expanded notification data for infinite scrolling
 	const notifications = [
 		{
