@@ -174,47 +174,45 @@
 					<!-- Left side: Individual user -->
 					<div class="absolute left-8 top-1/2 -translate-y-1/2 transform">
 						<div
-							class="relative z-10 flex h-12 w-12 items-center justify-center bg-blue-50 text-blue-600 ring-2 ring-blue-100"
+							class="relative z-10 flex h-12 w-12 items-center justify-center bg-blue-50 text-blue-600 ring-1 ring-blue-200"
 							style="border-radius: var(--radius-lg);"
 						>
-							<IconUsers class="h-6 w-6" />
+							<IconUsers class="h-5 w-5" />
 							<!-- Subtle accent to show "joining" -->
-							<div class="absolute inset-0 bg-blue-200 opacity-30" style="border-radius: var(--radius-lg);"></div>
+							<div class="absolute inset-0 bg-blue-200 opacity-25" style="border-radius: var(--radius-lg);"></div>
 						</div>
 					</div>
 
 					<!-- Right side: Organizational network -->
 					<div class="absolute right-8 top-1/2 -translate-y-1/2 transform">
 						<div
-							class="relative z-10 flex h-16 w-16 items-center justify-center bg-blue-100 text-blue-600 ring-2 ring-blue-50"
+							class="relative z-10 flex h-16 w-16 items-center justify-center bg-blue-100 text-blue-600 ring-1 ring-blue-100"
 							style="border-radius: var(--radius-xl);"
 						>
-							<IconNetwork class="h-8 w-8" />
+							<IconNetwork class="h-7 w-7" />
 							<!-- Network activity indicator -->
-							<div class="absolute inset-0 bg-blue-300 opacity-20" style="border-radius: var(--radius-xl);"></div>
+							<div class="absolute inset-0 bg-blue-300 opacity-15" style="border-radius: var(--radius-xl);"></div>
 						</div>
 					</div>
 
 					<!-- Connection bridge/beam -->
 					<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform">
-						<!-- Main connection line -->
+						<!-- Main connection line with enhanced gradient -->
 						<div
-							class="h-px w-32 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400 opacity-60"
+							class="h-px w-32 bg-gradient-to-r from-blue-300 via-blue-600 to-blue-300 opacity-70"
 						></div>
 						
-						<!-- Static data flow indicators -->
-						<div class="absolute top-0 left-4 h-px w-2 bg-blue-500 opacity-80"></div>
-						<div class="absolute top-0 left-12 h-px w-2 bg-blue-500 opacity-80"></div>
-						<div class="absolute top-0 left-20 h-px w-2 bg-blue-500 opacity-80"></div>
+						<!-- Refined data flow indicators with varied spacing -->
+						<div class="absolute top-0 left-3 h-px w-1.5 bg-blue-600 opacity-85"></div>
+						<div class="absolute top-0 left-8 h-px w-2.5 bg-blue-500 opacity-90"></div>
+						<div class="absolute top-0 left-15 h-px w-1.5 bg-blue-600 opacity-85"></div>
+						<div class="absolute top-0 left-22 h-px w-2 bg-blue-500 opacity-80"></div>
 						
-						<!-- Connection point in center -->
-						<div class="absolute top-1/2 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 transform bg-blue-500 opacity-70" style="border-radius: var(--radius-sm);"></div>
+						<!-- Enhanced connection point in center -->
+						<div class="absolute top-1/2 left-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 transform bg-blue-600 opacity-80" style="border-radius: var(--radius-sm);"></div>
 					</div>
 
-					<!-- Integration success indicator -->
-					<div class="absolute bottom-4 left-1/2 -translate-x-1/2 transform">
-						<div class="h-1 w-1 bg-green-500 opacity-60" style="border-radius: var(--radius-xs);"></div>
-					</div>
+					<!-- Integration success indicator removed -->
 				</div>
 			{:else if visualization === "meetings"}
 				<!-- Meetings: Signal Through Noise -->
