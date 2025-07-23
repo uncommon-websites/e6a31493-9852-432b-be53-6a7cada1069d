@@ -16,7 +16,7 @@
 	type Props = {
 		title: string
 		description: string
-		visualization: "visibility" | "misalignment" | "culture" | "meetings" | "onboarding" | "future"
+		visualization: "visibility" | "misalignment" | "culture" | "meetings" | "onboarding" | "future" | "memory" | "vision" | "detection" | "knowledge_assembly" | "strategic_compass" | "early_warning"
 		class?: string
 	}
 
@@ -414,7 +414,8 @@
 							<!-- Pulse animation ring for center -->
 							<div class="pointer-events-none absolute inset-0 flex items-center justify-center">
 								<div
-									class="h-24 w-24 animate-ping rounded-full border border-purple-300 opacity-20"
+									class="h-24 w-24 animate-ping border border-purple-300 opacity-20"
+									style="border-radius: var(--radius-full);"
 								></div>
 							</div>
 						</div>
@@ -642,6 +643,624 @@
 						</div>
 					</div>
 				</div>
+			{:else if visualization === "memory"}
+				<!-- Subtle radial gradient background -->
+				<div class="absolute inset-0">
+					<div
+						class="h-full w-full opacity-10"
+						style="background: radial-gradient(circle at center, #3b82f6 0%, transparent 70%);"
+					></div>
+				</div>
+				<!-- Memory Building Visualization -->
+				<div class="relative flex h-full w-full flex-col">
+					<!-- Main visual elements centered -->
+					<div class="flex flex-1 items-center justify-center">
+						<div class="relative">
+							<!-- Central memory core -->
+							<div class="relative flex items-center justify-center">
+								<div
+									class="relative h-14 w-14 bg-gradient-to-br from-blue-400 to-blue-600 shadow-lg shadow-blue-500/30 rounded-2xl"
+								>
+									<!-- Inner neural pattern -->
+									<div class="absolute inset-2 flex items-center justify-center">
+										<div class="grid grid-cols-3 gap-0.5">
+											{#each Array(9) as _, i}
+												<div
+													class="h-1 w-1 bg-white opacity-60"
+													style="border-radius: var(--radius-full);"
+												></div>
+											{/each}
+										</div>
+									</div>
+									<!-- Pulse effect -->
+									<div
+										class="absolute inset-0 animate-ping bg-blue-400 opacity-20 rounded-2xl"
+									></div>
+								</div>
+							</div>
+
+							<!-- Data streams flowing in -->
+							<div class="absolute inset-0">
+								<!-- Top left stream -->
+								<div class="absolute -top-4 -left-16">
+									<div class="flex items-center space-x-1">
+										<div class="flex space-x-0.5">
+											<div class="h-1.5 w-1.5 bg-blue-300 animate-pulse rounded-full" style=" animation-delay: 0s;"></div>
+											<div class="h-1.5 w-1.5 bg-blue-300 animate-pulse rounded-full" style=" animation-delay: 0.2s;"></div>
+											<div class="h-1.5 w-1.5 bg-blue-300 animate-pulse rounded-full" style=" animation-delay: 0.4s;"></div>
+										</div>
+										<div class="h-0.5 w-10 bg-gradient-to-r from-blue-300 to-blue-400"></div>
+										<div
+											class="h-6 w-6 bg-gradient-to-br from-blue-200 to-blue-400 shadow-sm shadow-blue-500/20 rounded-lg"
+										>
+											<div class="absolute inset-1 bg-white opacity-20" style="border-radius: var(--radius-sm);"></div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Top right stream -->
+								<div class="absolute -top-4 -right-16">
+									<div class="flex items-center space-x-1">
+										<div
+											class="h-6 w-6 bg-gradient-to-br from-blue-200 to-blue-400 shadow-sm shadow-blue-500/20 rounded-lg"
+										>
+											<div class="absolute inset-1 bg-white opacity-20" style="border-radius: var(--radius-sm);"></div>
+										</div>
+										<div class="h-0.5 w-10 bg-gradient-to-l from-blue-300 to-blue-400"></div>
+										<div class="flex space-x-0.5">
+											<div class="h-1.5 w-1.5 bg-blue-300 animate-pulse rounded-full" style=" animation-delay: 0.6s;"></div>
+											<div class="h-1.5 w-1.5 bg-blue-300 animate-pulse rounded-full" style=" animation-delay: 0.8s;"></div>
+											<div class="h-1.5 w-1.5 bg-blue-300 animate-pulse rounded-full" style=" animation-delay: 1s;"></div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Bottom left stream -->
+								<div class="absolute -bottom-4 -left-16">
+									<div class="flex items-center space-x-1">
+										<div class="flex space-x-0.5">
+											<div class="h-1.5 w-1.5 bg-blue-300 animate-pulse rounded-full" style=" animation-delay: 1.2s;"></div>
+											<div class="h-1.5 w-1.5 bg-blue-300 animate-pulse rounded-full" style=" animation-delay: 1.4s;"></div>
+											<div class="h-1.5 w-1.5 bg-blue-300 animate-pulse rounded-full" style=" animation-delay: 1.6s;"></div>
+										</div>
+										<div class="h-0.5 w-10 bg-gradient-to-r from-blue-300 to-blue-400"></div>
+										<div
+											class="h-6 w-6 bg-gradient-to-br from-blue-200 to-blue-400 shadow-sm shadow-blue-500/20 rounded-lg"
+										>
+											<div class="absolute inset-1 bg-white opacity-20" style="border-radius: var(--radius-sm);"></div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Bottom right stream -->
+								<div class="absolute -bottom-4 -right-16">
+									<div class="flex items-center space-x-1">
+										<div
+											class="h-6 w-6 bg-gradient-to-br from-blue-200 to-blue-400 shadow-sm shadow-blue-500/20 rounded-lg"
+										>
+											<div class="absolute inset-1 bg-white opacity-20" style="border-radius: var(--radius-sm);"></div>
+										</div>
+										<div class="h-0.5 w-10 bg-gradient-to-l from-blue-300 to-blue-400"></div>
+										<div class="flex space-x-0.5">
+											<div class="h-1.5 w-1.5 bg-blue-300 animate-pulse rounded-full" style=" animation-delay: 1.8s;"></div>
+											<div class="h-1.5 w-1.5 bg-blue-300 animate-pulse rounded-full" style=" animation-delay: 2s;"></div>
+											<div class="h-1.5 w-1.5 bg-blue-300 animate-pulse rounded-full" style=" animation-delay: 2.2s;"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Text at bottom -->
+					<div class="mt-6 pb-2 text-center">
+						<div class="mb-1 text-sm text-gray-500">Building knowledge</div>
+						<div
+							class="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-lg font-medium text-transparent"
+						>
+							Connected memory
+						</div>
+					</div>
+				</div>
+			{:else if visualization === "vision"}
+				<!-- Subtle radial gradient background -->
+				<div class="absolute inset-0">
+					<div
+						class="h-full w-full opacity-10"
+						style="background: radial-gradient(circle at center, #a855f7 0%, transparent 70%);"
+					></div>
+				</div>
+				<!-- Vision Clarification: Enhanced lens effect -->
+				<div class="relative flex h-full w-full flex-col">
+					<!-- Main visual elements centered -->
+					<div class="flex flex-1 items-center justify-center">
+						<div class="relative">
+							<!-- Lens system showing focus clarity -->
+							<div class="relative flex items-center justify-center">
+								<!-- Central focusing lens -->
+								<div
+									class="relative h-16 w-16 bg-gradient-to-br from-purple-400 to-purple-600 shadow-lg shadow-purple-500/30 rounded-full"
+								>
+									<!-- Inner lens reflection -->
+									<div
+										class="absolute inset-2 bg-white opacity-30"
+										style="border-radius: var(--radius-full);"
+									></div>
+									<!-- Center focus point -->
+									<div class="absolute inset-0 flex items-center justify-center">
+										<div
+											class="h-2 w-2 bg-white opacity-80"
+											style="border-radius: var(--radius-full);"
+										></div>
+									</div>
+									<!-- Lens rings -->
+									<div
+										class="absolute inset-0 border-2 border-white opacity-20"
+										style="border-radius: var(--radius-full);"
+									></div>
+									<div
+										class="absolute inset-1 border border-white opacity-15"
+										style="border-radius: var(--radius-full);"
+									></div>
+								</div>
+
+								<!-- Concentric vision layers -->
+								<div
+									class="absolute h-20 w-20 border-2 border-purple-300 opacity-30"
+									style="border-radius: var(--radius-full);"
+								></div>
+								<div
+									class="absolute h-28 w-28 border border-purple-300 opacity-20"
+									style="border-radius: var(--radius-full);"
+								></div>
+								<div
+									class="absolute h-36 w-36 border border-purple-300 opacity-10"
+									style="border-radius: var(--radius-full);"
+								></div>
+							</div>
+
+							<!-- Focus targets around the lens -->
+							<div class="absolute inset-0">
+								<!-- Top target -->
+								<div class="absolute -top-8 left-1/2 -translate-x-1/2">
+									<div class="relative">
+										<div
+											class="h-4 w-4 bg-gradient-to-br from-purple-300 to-purple-500 shadow-sm shadow-purple-500/25"
+											style="border-radius: var(--radius-md);"
+										>
+											<div class="absolute inset-0.5 bg-white opacity-30" style="border-radius: var(--radius-sm);"></div>
+										</div>
+										<!-- Focus beam -->
+										<div class="absolute top-4 left-1/2 h-4 w-0.5 -translate-x-1/2 bg-gradient-to-b from-purple-300 to-transparent"></div>
+									</div>
+								</div>
+
+								<!-- Bottom target -->
+								<div class="absolute -bottom-8 left-1/2 -translate-x-1/2">
+									<div class="relative">
+										<div
+											class="h-4 w-4 bg-gradient-to-br from-purple-300 to-purple-500 shadow-sm shadow-purple-500/25"
+											style="border-radius: var(--radius-md);"
+										>
+											<div class="absolute inset-0.5 bg-white opacity-30" style="border-radius: var(--radius-sm);"></div>
+										</div>
+										<!-- Focus beam -->
+										<div class="absolute bottom-4 left-1/2 h-4 w-0.5 -translate-x-1/2 bg-gradient-to-t from-purple-300 to-transparent"></div>
+									</div>
+								</div>
+
+								<!-- Left target -->
+								<div class="absolute -left-8 top-1/2 -translate-y-1/2">
+									<div class="relative">
+										<div
+											class="h-4 w-4 bg-gradient-to-br from-purple-300 to-purple-500 shadow-sm shadow-purple-500/25"
+											style="border-radius: var(--radius-md);"
+										>
+											<div class="absolute inset-0.5 bg-white opacity-30" style="border-radius: var(--radius-sm);"></div>
+										</div>
+										<!-- Focus beam -->
+										<div class="absolute left-4 top-1/2 h-0.5 w-4 -translate-y-1/2 bg-gradient-to-r from-purple-300 to-transparent"></div>
+									</div>
+								</div>
+
+								<!-- Right target -->
+								<div class="absolute -right-8 top-1/2 -translate-y-1/2">
+									<div class="relative">
+										<div
+											class="h-4 w-4 bg-gradient-to-br from-purple-300 to-purple-500 shadow-sm shadow-purple-500/25"
+											style="border-radius: var(--radius-md);"
+										>
+											<div class="absolute inset-0.5 bg-white opacity-30" style="border-radius: var(--radius-sm);"></div>
+										</div>
+										<!-- Focus beam -->
+										<div class="absolute right-4 top-1/2 h-0.5 w-4 -translate-y-1/2 bg-gradient-to-l from-purple-300 to-transparent"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Text at bottom -->
+					<div class="mt-6 pb-2 text-center">
+						<div class="mb-1 text-sm text-gray-500">Perfect clarity</div>
+						<div
+							class="bg-gradient-to-r from-purple-600 to-purple-500 bg-clip-text text-lg font-medium text-transparent"
+						>
+							Vision focused
+						</div>
+					</div>
+				</div>
+			{:else if visualization === "detection"}
+				<!-- Subtle radial gradient background -->
+				<div class="absolute inset-0">
+					<div
+						class="h-full w-full opacity-10"
+						style="background: radial-gradient(circle at center, #f59e0b 0%, transparent 70%);"
+					></div>
+				</div>
+				<!-- Radar Detection System -->
+				<div class="relative flex h-full w-full flex-col">
+					<!-- Main visual elements centered -->
+					<div class="flex flex-1 items-center justify-center">
+						<div class="relative">
+							<!-- Radar sweep visualization -->
+							<div class="relative flex items-center justify-center">
+								<!-- Central radar hub -->
+								<div
+									class="relative h-12 w-12 bg-gradient-to-br from-orange-400 to-orange-600 shadow-lg shadow-orange-500/30 rounded-full"
+								>
+									<!-- Pulse effect -->
+									<div
+										class="absolute inset-0 animate-ping bg-orange-400 opacity-20"
+										style="border-radius: var(--radius-full);"
+									></div>
+									<!-- Inner radar core -->
+									<div class="absolute inset-0 flex items-center justify-center">
+										<div
+											class="h-2 w-2 bg-white opacity-90"
+											style="border-radius: var(--radius-full);"
+										></div>
+									</div>
+								</div>
+
+								<!-- Radar rings -->
+								<div
+									class="absolute h-20 w-20 border-2 border-orange-300 opacity-30"
+									style="border-radius: var(--radius-full);"
+								></div>
+								<div
+									class="absolute h-32 w-32 border border-orange-300 opacity-20"
+									style="border-radius: var(--radius-full);"
+								></div>
+								<div
+									class="absolute h-44 w-44 border border-orange-300 opacity-10"
+									style="border-radius: var(--radius-full);"
+								></div>
+							</div>
+
+							<!-- Detection points -->
+							<div class="absolute inset-0">
+								<!-- Healthy signals (green) -->
+								<div class="absolute -top-6 -left-8">
+									<div
+										class="h-3 w-3 bg-gradient-to-br from-green-400 to-green-600 shadow-sm shadow-green-500/25 animate-pulse"
+										style="border-radius: var(--radius-full); animation-delay: 0.5s;"
+									></div>
+								</div>
+								<div class="absolute -bottom-4 -right-10">
+									<div
+										class="h-3 w-3 bg-gradient-to-br from-green-400 to-green-600 shadow-sm shadow-green-500/25 animate-pulse"
+										style="border-radius: var(--radius-full); animation-delay: 1.2s;"
+									></div>
+								</div>
+
+								<!-- Warning signals (amber) -->
+								<div class="absolute -top-2 right-12">
+									<div
+										class="h-3.5 w-3.5 bg-gradient-to-br from-amber-400 to-amber-600 shadow-md shadow-amber-500/30 animate-pulse"
+										style="border-radius: var(--radius-full); animation-delay: 0.8s;"
+									></div>
+								</div>
+
+								<!-- All clear indicator -->
+								<div class="absolute -bottom-12 left-1/2 -translate-x-1/2">
+									<div class="flex items-center space-x-1">
+										<div
+											class="h-2 w-2 bg-green-500 animate-pulse"
+											style="border-radius: var(--radius-full);"
+										></div>
+										<span class="text-xs font-medium text-green-600">Clear</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Text at bottom -->
+					<div class="mt-6 pb-2 text-center">
+						<div class="mb-1 text-sm text-gray-500">Early detection</div>
+						<div
+							class="bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-lg font-medium text-transparent"
+						>
+							Problems prevented
+						</div>
+					</div>
+				</div>
+			{:else if visualization === "knowledge_assembly"}
+				<!-- Knowledge Assembly: Simple data connection visualization -->
+				<div class="relative flex h-full w-full flex-col">
+					<!-- Main visual elements centered -->
+					<div class="flex flex-1 items-center justify-center">
+						<div class="relative">
+							<!-- Central memory unit -->
+							<div class="relative flex items-center justify-center">
+								<div
+									class="relative h-12 w-12 bg-white border-2 border-gray-300 shadow-lg"
+									style="border-radius: var(--radius-lg);"
+								>
+									<!-- Memory indicator -->
+									<div class="absolute inset-0 flex items-center justify-center">
+										<div
+											class="h-6 w-6 bg-gray-900 animate-pulse"
+											style="border-radius: var(--radius-sm); animation-duration: 2s;"
+										></div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Three data sources flowing in -->
+							<!-- Left input -->
+							<div class="absolute -left-12 top-1/2 -translate-y-1/2">
+								<div class="flex items-center space-x-1">
+									<div class="h-2 w-2 bg-gray-400 animate-pulse" style="border-radius: var(--radius-xs);"></div>
+									<div class="h-0.5 w-8 bg-gray-300"></div>
+								</div>
+							</div>
+
+							<!-- Top input -->
+							<div class="absolute -top-12 left-1/2 -translate-x-1/2">
+								<div class="flex flex-col items-center space-y-1">
+									<div class="h-2 w-2 bg-gray-400 animate-pulse" style="border-radius: var(--radius-xs); animation-delay: 0.3s;"></div>
+									<div class="w-0.5 h-8 bg-gray-300"></div>
+								</div>
+							</div>
+
+							<!-- Right input -->
+							<div class="absolute -right-12 top-1/2 -translate-y-1/2">
+								<div class="flex items-center space-x-1">
+									<div class="h-0.5 w-8 bg-gray-300"></div>
+									<div class="h-2 w-2 bg-gray-400 animate-pulse" style="border-radius: var(--radius-xs); animation-delay: 0.6s;"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Text at bottom -->
+					<div class="mt-6 pb-2 text-center">
+						<div class="mb-1 text-sm text-gray-500">Unified data layer</div>
+						<div class="text-lg font-medium text-gray-900">
+							Structured knowledge
+						</div>
+					</div>
+				</div>
+			{:else if visualization === "strategic_compass"}
+				<!-- Subtle radial gradient background -->
+				<div class="absolute inset-0">
+					<div
+						class="h-full w-full opacity-10"
+						style="background: radial-gradient(circle at center, #7c3aed 0%, transparent 70%);"
+					></div>
+				</div>
+				<!-- Strategic Compass: Navigation finding true direction -->
+				<div class="relative flex h-full w-full flex-col">
+					<!-- Main visual elements centered -->
+					<div class="flex flex-1 items-center justify-center">
+						<div class="relative">
+							<!-- Enhanced Compass -->
+							<div class="relative flex items-center justify-center">
+								<!-- Outer compass ring -->
+								<div
+									class="relative h-20 w-20 bg-gradient-to-br from-violet-300 to-violet-500 shadow-xl shadow-violet-500/40 rounded-full"
+								>
+									<!-- Inner compass face -->
+									<div
+										class="absolute inset-2 bg-gradient-to-br from-white to-gray-100 shadow-inner rounded-full"
+									></div>
+									
+									<!-- Compass markings -->
+									<div class="absolute inset-0">
+										<!-- Major direction markers -->
+										<div class="absolute top-1 left-1/2 h-3 w-0.5 -translate-x-1/2 bg-violet-600"></div>
+										<div class="absolute bottom-1 left-1/2 h-3 w-0.5 -translate-x-1/2 bg-violet-400"></div>
+										<div class="absolute right-1 top-1/2 h-0.5 w-3 -translate-y-1/2 bg-violet-400"></div>
+										<div class="absolute left-1 top-1/2 h-0.5 w-3 -translate-y-1/2 bg-violet-400"></div>
+										
+										<!-- Minor direction markers -->
+										<div class="absolute top-2 right-2 h-1.5 w-0.5 bg-violet-300 transform rotate-45"></div>
+										<div class="absolute top-2 left-2 h-1.5 w-0.5 bg-violet-300 transform -rotate-45"></div>
+										<div class="absolute bottom-2 right-2 h-1.5 w-0.5 bg-violet-300 transform -rotate-45"></div>
+										<div class="absolute bottom-2 left-2 h-1.5 w-0.5 bg-violet-300 transform rotate-45"></div>
+									</div>
+									
+									<!-- Compass needle -->
+									<div class="absolute inset-0 flex items-center justify-center">
+										<div class="relative">
+											<!-- North pointer (red) -->
+											<div
+												class="absolute -top-6 left-1/2 h-6 w-1 -translate-x-1/2 bg-gradient-to-t from-red-600 to-red-400 rounded-full shadow-sm"
+												style="animation: compass-settle 4s ease-out infinite;"
+											></div>
+											<!-- South pointer (white) -->
+											<div
+												class="absolute -bottom-6 left-1/2 h-6 w-1 -translate-x-1/2 bg-gradient-to-b from-white to-gray-300 rounded-full shadow-sm"
+												style="animation: compass-settle 4s ease-out infinite;"
+											></div>
+											<!-- Center pivot -->
+											<div
+												class="h-3 w-3 bg-gradient-to-br from-gray-600 to-gray-800 shadow-md rounded-full"
+											>
+												<div class="absolute inset-0.5 bg-white opacity-30 rounded-full"></div>
+											</div>
+										</div>
+									</div>
+
+									<!-- Compass directions -->
+									<div class="absolute inset-0">
+										<!-- N -->
+										<div class="absolute -top-2 left-1/2 -translate-x-1/2 text-sm font-bold text-violet-700">N</div>
+										<!-- S -->
+										<div class="absolute -bottom-2 left-1/2 -translate-x-1/2 text-sm font-bold text-violet-500 opacity-70">S</div>
+										<!-- E -->
+										<div class="absolute -right-2 top-1/2 -translate-y-1/2 text-sm font-bold text-violet-500 opacity-70">E</div>
+										<!-- W -->
+										<div class="absolute -left-2 top-1/2 -translate-y-1/2 text-sm font-bold text-violet-500 opacity-70">W</div>
+									</div>
+
+									<!-- Compass rose decorative elements -->
+									<div class="absolute inset-0">
+										<!-- Decorative star points -->
+										<div class="absolute top-0 left-1/2 h-1 w-0.5 -translate-x-1/2 bg-violet-400 opacity-60"></div>
+										<div class="absolute bottom-0 left-1/2 h-1 w-0.5 -translate-x-1/2 bg-violet-400 opacity-60"></div>
+										<div class="absolute right-0 top-1/2 h-0.5 w-1 -translate-y-1/2 bg-violet-400 opacity-60"></div>
+										<div class="absolute left-0 top-1/2 h-0.5 w-1 -translate-y-1/2 bg-violet-400 opacity-60"></div>
+									</div>
+								</div>
+
+								<!-- Direction lock indicator -->
+								<div class="absolute -bottom-16 left-1/2 -translate-x-1/2">
+									<div class="flex items-center space-x-1">
+										<div
+											class="h-2 w-2 bg-violet-500 animate-pulse rounded-full"
+										></div>
+										<span class="text-xs font-medium text-violet-600">Aligned</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Text at bottom -->
+					<div class="mt-6 pb-2 text-center">
+						<div class="mb-1 text-sm text-gray-500">True direction</div>
+						<div
+							class="bg-gradient-to-r from-violet-600 to-violet-500 bg-clip-text text-lg font-medium text-transparent"
+						>
+							Strategic clarity
+						</div>
+					</div>
+				</div>
+			{:else if visualization === "early_warning"}
+				<!-- Subtle radial gradient background -->
+				<div class="absolute inset-0">
+					<div
+						class="h-full w-full opacity-10"
+						style="background: radial-gradient(circle at center, #dc2626 0%, transparent 70%);"
+					></div>
+				</div>
+				<!-- Radar Scanner: Authentic radar detecting problems -->
+				<div class="relative flex h-full w-full flex-col">
+					<!-- Main visual elements centered -->
+					<div class="flex flex-1 items-center justify-center">
+						<div class="relative">
+							<!-- Radar scope -->
+							<div class="relative flex items-center justify-center">
+								<!-- Radar screen -->
+								<div
+									class="relative h-20 w-20 bg-gradient-to-br from-gray-900 to-gray-800 shadow-lg shadow-gray-900/50 rounded-full"
+								>
+									<!-- Radar grid lines -->
+									<div class="absolute inset-0">
+										<!-- Horizontal line -->
+										<div class="absolute top-1/2 inset-x-2 h-px bg-green-400/30"></div>
+										<!-- Vertical line -->
+										<div class="absolute left-1/2 inset-y-2 w-px bg-green-400/30"></div>
+									</div>
+									
+									<!-- Radar center dot -->
+									<div class="absolute inset-0 flex items-center justify-center">
+										<div
+											class="h-1.5 w-1.5 bg-green-400 rounded-full shadow-sm"
+										></div>
+									</div>
+									
+									<!-- Radar sweep bar -->
+									<div class="absolute inset-0 flex items-center justify-center">
+										<div 
+											class="absolute h-8 w-0.5 bg-gradient-to-t from-green-400 to-transparent"
+											style="transform-origin: bottom center; animation: radar-sweep 3s linear infinite;"
+										></div>
+									</div>
+								</div>
+
+								<!-- Radar range rings -->
+								<div
+									class="absolute h-24 w-24 border border-green-400/20 rounded-full"
+								></div>
+								<div
+									class="absolute h-32 w-32 border border-green-400/15 rounded-full"
+								></div>
+								<div
+									class="absolute h-40 w-40 border border-green-400/10 rounded-full"
+								></div>
+							</div>
+
+							<!-- Radar blips -->
+							<div class="absolute inset-0">
+								<!-- Critical blip (close) -->
+								<div class="absolute top-2 -right-6">
+									<div
+										class="h-2 w-2 bg-green-400 rounded-full animate-pulse shadow-sm"
+										style="animation-delay: 0.5s; animation-duration: 1s;"
+									></div>
+								</div>
+
+								<!-- Warning blip (medium) -->
+								<div class="absolute -top-4 left-8">
+									<div
+										class="h-1.5 w-1.5 bg-green-400 rounded-full animate-pulse shadow-sm"
+										style="animation-delay: 1.2s; animation-duration: 1s;"
+									></div>
+								</div>
+
+								<!-- Distant blip (far) -->
+								<div class="absolute -bottom-2 -left-12">
+									<div
+										class="h-1 w-1 bg-green-400 rounded-full animate-pulse shadow-sm opacity-80"
+										style="animation-delay: 2s; animation-duration: 1s;"
+									></div>
+								</div>
+
+								<!-- Minor blip -->
+								<div class="absolute bottom-4 right-10">
+									<div
+										class="h-1 w-1 bg-green-400 rounded-full animate-pulse shadow-sm opacity-60"
+										style="animation-delay: 2.8s; animation-duration: 1s;"
+									></div>
+								</div>
+							</div>
+
+							<!-- Status -->
+							<div class="absolute -bottom-14 left-1/2 -translate-x-1/2">
+								<div class="flex items-center space-x-1">
+									<div
+										class="h-1.5 w-1.5 bg-green-400 animate-pulse rounded-full"
+									></div>
+									<span class="text-xs font-medium text-green-600">Active</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Text at bottom -->
+					<div class="mt-6 pb-2 text-center">
+						<div class="mb-1 text-sm text-gray-500">Problems spotted</div>
+						<div
+							class="bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-lg font-medium text-transparent"
+						>
+							Before impact
+						</div>
+					</div>
+				</div>
 			{:else}
 				<!-- Default visualization for other types -->
 				<div class="relative flex items-center justify-center">
@@ -705,3 +1324,84 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	/* Animation keyframes for new visualizations */
+	@keyframes float {
+		0%, 100% { transform: translateY(0px); }
+		50% { transform: translateY(-4px); }
+	}
+
+	@keyframes settle {
+		0%, 100% { transform: rotate(-10deg); }
+		50% { transform: rotate(-5deg); }
+	}
+
+	@keyframes compass-settle {
+		0%, 100% { transform: rotate(0deg); }
+		25% { transform: rotate(2deg); }
+		75% { transform: rotate(-1deg); }
+	}
+
+	@keyframes pulse-input {
+		0%, 100% { opacity: 0.7; transform: scale(1); }
+		50% { opacity: 1; transform: scale(1.1); }
+	}
+
+	@keyframes lighthouse-sweep {
+		0% { transform: translateX(-50%) rotate(0deg); }
+		100% { transform: translateX(-50%) rotate(360deg); }
+	}
+
+	@keyframes storm-approach {
+		0%, 100% { transform: translateX(0px); }
+		50% { transform: translateX(-2px); }
+	}
+
+	@keyframes safe-passage {
+		0%, 100% { transform: translateX(0px); }
+		50% { transform: translateX(4px); }
+	}
+
+	@keyframes document-float {
+		0%, 100% { transform: translateY(0px) rotate(0deg); }
+		50% { transform: translateY(-2px) rotate(1deg); }
+	}
+
+	@keyframes matrix-pulse {
+		0%, 100% { opacity: 0.6; }
+		50% { opacity: 0.9; }
+	}
+
+	@keyframes node-healthy {
+		0%, 100% { transform: scale(1); }
+		50% { transform: scale(1.05); }
+	}
+
+	@keyframes node-warning {
+		0%, 100% { transform: scale(1); }
+		50% { transform: scale(1.1); }
+	}
+
+	@keyframes node-critical {
+		0%, 100% { transform: scale(1); }
+		25% { transform: scale(1.15); }
+		75% { transform: scale(1.05); }
+	}
+
+	@keyframes node-recovered {
+		0%, 100% { transform: scale(1); }
+		50% { transform: scale(1.02); }
+	}
+
+	@keyframes monitoring-sweep {
+		0% { transform: scale(0.8); opacity: 0.4; }
+		50% { transform: scale(1.2); opacity: 0.2; }
+		100% { transform: scale(1.6); opacity: 0; }
+	}
+
+	@keyframes radar-sweep {
+		0% { transform: rotate(0deg); }
+		100% { transform: rotate(360deg); }
+	}
+</style>
