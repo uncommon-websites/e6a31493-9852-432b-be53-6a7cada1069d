@@ -176,7 +176,7 @@
 <main class="bg-background min-h-screen">
 	<!-- Section 1: Hero Section -->
 	<section class="section-px section-py">
-		<div class="section-px mx-auto max-w-6xl">
+		<div class="section-px mx-auto max-w-7xl">
 			<div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
 				<!-- Left column - Text content -->
 				<div class="space-y-8">
@@ -452,7 +452,7 @@
 
 	<!-- Section 2: Organizational Intelligence -->
 	<section class="section-px section-py">
-		<div class="section-px mx-auto max-w-6xl">
+		<div class="section-px mx-auto max-w-7xl">
 			<div class="mb-16">
 				<h2 class="text-title1 mb-6">
 					Sentra's Organizational Intelligence <br />
@@ -530,7 +530,7 @@
 
 	<!-- Resources Section -->
 	<section class="section-px section-py-sm bg-muted">
-		<div class="section-px mx-auto max-w-4xl max-w-6xl">
+		<div class="section-px mx-auto max-w-4xl max-w-7xl">
 			<div class="mb-12">
 				<h2 class="text-title2 mb-4">Resources</h2>
 				<p class="text-body text-muted-foreground">
@@ -641,7 +641,7 @@
 
 	<!-- Security Practices Section -->
 	<!-- <section class="section-px section-py">
-		<div class="max-w-6xl section-px mx-auto max-w-6xl">
+		<div class="max-w-7xl section-px mx-auto max-w-7xl">
 			<div class="mb-12">
 				<h2 class="text-title2 mb-4">Security is fundamental to our culture and process</h2>
 				<p class="text-body text-muted-foreground max-w-3xl">
@@ -776,7 +776,7 @@
 
 	<!-- Sub-processors Section -->
 	<!-- <section class="section-px section-py-sm">
-		<div class="max-w-6xl section-px mx-auto max-w-4xl">
+		<div class="max-w-7xl section-px mx-auto max-w-4xl">
 			<div class="mb-12">
 				<h2 class="text-title2 mb-4">Sub-processors</h2>
 				<p class="text-body text-muted-foreground">
@@ -797,7 +797,7 @@
 
 	<!-- FAQ Section -->
 	<section class="section-px section-py hidden">
-		<div class="section-px mx-auto max-w-4xl max-w-6xl">
+		<div class="section-px mx-auto max-w-4xl max-w-7xl">
 			<div class="mb-12">
 				<h2 class="text-title2 mb-4">Frequently Asked Questions</h2>
 				<p class="text-body text-muted-foreground">
@@ -844,7 +844,7 @@
 
 	<!-- Contact Form Section -->
 	<section id="contact-form" class="section-px section-py">
-		<div class="section-px mx-auto max-w-6xl">
+		<div class="section-px mx-auto max-w-7xl">
 			<div class="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
 				<!-- Left column - Text content -->
 				<div class="space-y-4">
@@ -1001,7 +1001,7 @@
 
 	<!-- Contact Section -->
 	<section class="section-px section-py-sm">
-		<div class="section-px mx-auto max-w-2xl max-w-6xl">
+		<div class="section-px mx-auto max-w-2xl max-w-7xl">
 			<h2 class="text-title3 mb-4">Questions about our security practices?</h2>
 			<p class="text-body text-muted-foreground mb-6">
 				Our security team is here to help. Reach out with any questions about our compliance,

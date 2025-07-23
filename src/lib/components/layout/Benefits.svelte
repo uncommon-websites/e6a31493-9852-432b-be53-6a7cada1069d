@@ -54,7 +54,7 @@
 </script>
 
 <section class="section-py">
-	<div class="section-px mx-auto max-w-6xl">
+	<div class="section-px mx-auto max-w-7xl">
 		<div class="mb-12 text-center">
 			<h2 class="text-title1 mb-4">{title}</h2>
 		</div>

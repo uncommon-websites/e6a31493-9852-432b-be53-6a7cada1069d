@@ -22,7 +22,7 @@
 </script>
 
 <section class="section-py" style="background-color: var(--color-background);">
-	<div class="section-px mx-auto max-w-6xl">
+	<div class="section-px mx-auto max-w-7xl">
 		<div class="section-mb text-center">
 			<h2 class="text-title1 section-mb-sm" style="color: var(--color-foreground);">{title}</h2>
 			{#if subtitle}

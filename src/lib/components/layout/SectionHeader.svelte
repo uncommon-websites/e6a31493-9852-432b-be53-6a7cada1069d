@@ -18,7 +18,7 @@
 
 <div
 	class={[
-		"section-pb-sm grid max-w-6xl text-balance",
+		"section-pb-sm grid max-w-7xl text-balance",
 		size === "lg" ? "text-display" : "text-title2"
 	]}
 >

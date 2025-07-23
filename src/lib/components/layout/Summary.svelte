@@ -63,7 +63,7 @@
 </script>
 
 <div
-	class="section-my section-px relative mx-auto flex max-w-6xl flex-col items-start gap-8 text-pretty lg:grid xl:flex-row"
+	class="section-my section-px relative mx-auto flex max-w-7xl flex-col items-start gap-8 text-pretty lg:grid xl:flex-row"
 	bind:this={containerElement}
 	class:lg:grid-cols-[1fr_2fr]={!!title}
 	{...rest}
@@ -72,7 +72,7 @@
 		<p class="text-emphasis-dim word">{title}</p>
 	{/if}
 
-	<div class="text-title1 gap relative mx-auto grid max-w-6xl">
+	<div class="text-title1 gap relative mx-auto grid max-w-7xl">
 		{#each segments as paragraph, i}
 			<p class="mb-[1.5em] last:mb-0">
 				{#each paragraph.split(" ").filter(Boolean) as word}
