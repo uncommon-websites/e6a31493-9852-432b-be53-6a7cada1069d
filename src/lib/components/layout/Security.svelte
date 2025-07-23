@@ -55,7 +55,7 @@
 		<div class="bg-card rounded-(--radius-lg) p-12">
 			<div class="mx-auto">
 				<h2 class="text-title2 flex items-center gap-3">
-					<IconLock class="h-8 w-8 text-primary" />
+					<IconLock class="h-6 w-6 text-primary/80" />
 					<AnimateText text={title} />
 				</h2>
 
