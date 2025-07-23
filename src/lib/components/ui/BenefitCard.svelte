@@ -50,7 +50,7 @@
 				}
 			case "culture":
 				return {
-					icon: IconRadar,
+					icon: IconUsers,
 					bgColor: "bg-secondary-100",
 					textColor: "text-secondary-600",
 					supportIcons: [IconTrendingUp, IconTarget, IconBrain]
@@ -246,188 +246,6 @@
 					<div class="absolute top-1/3 right-1/4 h-1 w-1 animate-pulse rounded-full bg-orange-400 opacity-25" style="animation-delay: 1s; animation-duration: 4s;"></div>
 					<div class="absolute bottom-1/4 left-1/3 h-1 w-1 animate-pulse rounded-full bg-orange-400 opacity-20" style="animation-delay: 2s; animation-duration: 5s;"></div>
 				</div>
-			{:else if visualization === "culture"}
-				<!-- Culture: Organizational Seismograph - Premium Early Warning System -->
-				<div class="relative flex h-full w-full items-center justify-center">
-					<!-- Chart Background Grid (Sophisticated) -->
-					<div class="absolute inset-0 opacity-8">
-						<!-- Horizontal grid lines with golden ratio spacing -->
-						<div class="absolute top-[23.6%] left-0 right-0 h-px bg-gray-300"></div>
-						<div class="absolute top-[38.2%] left-0 right-0 h-px bg-gray-400"></div>
-						<div class="absolute top-1/2 left-0 right-0 h-px bg-gray-500"></div>
-						<div class="absolute top-[61.8%] left-0 right-0 h-px bg-gray-400"></div>
-						<div class="absolute top-[76.4%] left-0 right-0 h-px bg-gray-300"></div>
-						<!-- Vertical grid lines with golden ratio spacing -->
-						<div class="absolute top-0 bottom-0 left-[23.6%] w-px bg-gray-300"></div>
-						<div class="absolute top-0 bottom-0 left-[38.2%] w-px bg-gray-400"></div>
-						<div class="absolute top-0 bottom-0 left-1/2 w-px bg-gray-500"></div>
-						<div class="absolute top-0 bottom-0 left-[61.8%] w-px bg-gray-400"></div>
-						<div class="absolute top-0 bottom-0 left-[76.4%] w-px bg-gray-300"></div>
-					</div>
-
-					<!-- Central Radar Detection System (1 Icon Maximum) -->
-					<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform z-30">
-						<div class="relative flex h-20 w-20 items-center justify-center rounded-full bg-secondary-50 text-secondary-600 ring-4 ring-secondary-100">
-							<IconRadar class="h-10 w-10" />
-							<!-- Multi-layered scanning rings -->
-							<div class="absolute inset-0 animate-pulse rounded-full bg-secondary-200 opacity-40" style="animation-duration: 2s;"></div>
-							<div class="absolute inset-0 animate-ping rounded-full bg-secondary-300 opacity-25" style="animation-duration: 3s;"></div>
-							<div class="absolute inset-0 animate-pulse rounded-full bg-secondary-400 opacity-15" style="animation-duration: 4s;"></div>
-							<!-- Sophisticated rotating scan line -->
-							<div class="absolute inset-0 animate-spin rounded-full border-r-3 border-secondary-500 opacity-50" style="animation-duration: 3.5s;"></div>
-							<div class="absolute inset-0 animate-spin rounded-full border-r-2 border-secondary-600 opacity-30" style="animation-duration: 2.8s; animation-direction: reverse;"></div>
-						</div>
-					</div>
-
-					<!-- Premium Organizational Health Trend Line (Visual Element 1) -->
-					<div class="absolute inset-0 z-20">
-						<svg class="h-full w-full" viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg">
-							<!-- Healthy baseline trend (left side) -->
-							<path
-								d="M25 65 Q45 62 65 64 Q85 66 105 68 Q125 70 145 72"
-								stroke="url(#cultureHealthyGradient)"
-								stroke-width="4"
-								fill="none"
-								stroke-linecap="round"
-								opacity="0.9"
-							>
-								<animate attributeName="stroke-dasharray" values="0,1000;300,1000" dur="4s" repeatCount="indefinite" />
-							</path>
-							
-							<!-- Cultural decline detection (middle section) -->
-							<path
-								d="M145 72 Q165 76 185 85 Q205 98 225 118 Q240 135 250 148"
-								stroke="url(#cultureDecliningGradient)"
-								stroke-width="4"
-								fill="none"
-								stroke-linecap="round"
-								opacity="0.9"
-							>
-								<animate attributeName="stroke-dasharray" values="0,1000;250,1000" dur="3s" repeatCount="indefinite" begin="1s" />
-							</path>
-							
-							<!-- Proactive intervention & recovery (right side) -->
-							<path
-								d="M250 148 Q265 140 275 125 Q285 110 295 95 Q305 85 315 80"
-								stroke="url(#cultureRecoveryGradient)"
-								stroke-width="4"
-								fill="none"
-								stroke-linecap="round"
-								opacity="0.85"
-								stroke-dasharray="8,4"
-							>
-								<animate attributeName="stroke-dasharray" values="8,4;12,6;8,4" dur="2s" repeatCount="indefinite" begin="2s" />
-							</path>
-
-							<!-- Sophisticated gradient definitions -->
-							<defs>
-								<linearGradient id="cultureHealthyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-									<stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
-									<stop offset="50%" style="stop-color:#059669;stop-opacity:1" />
-									<stop offset="100%" style="stop-color:#047857;stop-opacity:1" />
-								</linearGradient>
-								<linearGradient id="cultureDecliningGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-									<stop offset="0%" style="stop-color:#047857;stop-opacity:1" />
-									<stop offset="30%" style="stop-color:#f59e0b;stop-opacity:1" />
-									<stop offset="70%" style="stop-color:#dc2626;stop-opacity:1" />
-									<stop offset="100%" style="stop-color:#991b1b;stop-opacity:1" />
-								</linearGradient>
-								<linearGradient id="cultureRecoveryGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-									<stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
-									<stop offset="50%" style="stop-color:#10b981;stop-opacity:1" />
-									<stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
-								</linearGradient>
-								<!-- Ambient glow effects -->
-								<filter id="glow">
-									<feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-									<feMerge> 
-										<feMergeNode in="coloredBlur"/>
-										<feMergeNode in="SourceGraphic"/>
-									</feMerge>
-								</filter>
-							</defs>
-
-							<!-- Premium data points with organic animations -->
-							<circle cx="65" cy="64" r="2.5" fill="#10b981" opacity="0.8" filter="url(#glow)">
-								<animate attributeName="r" values="2.5;3.5;2.5" dur="3s" repeatCount="indefinite" />
-								<animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" />
-							</circle>
-							<circle cx="105" cy="68" r="2.5" fill="#059669" opacity="0.8" filter="url(#glow)">
-								<animate attributeName="r" values="2.5;3.5;2.5" dur="3s" repeatCount="indefinite" begin="0.6s" />
-								<animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" begin="0.6s" />
-							</circle>
-							<circle cx="145" cy="72" r="2.5" fill="#047857" opacity="0.8" filter="url(#glow)">
-								<animate attributeName="r" values="2.5;3.5;2.5" dur="3s" repeatCount="indefinite" begin="1.2s" />
-								<animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" begin="1.2s" />
-							</circle>
-							<circle cx="185" cy="85" r="3" fill="#f59e0b" opacity="0.9" filter="url(#glow)">
-								<animate attributeName="r" values="3;4;3" dur="2.5s" repeatCount="indefinite" begin="1.8s" />
-								<animate attributeName="opacity" values="0.9;1;0.9" dur="2.5s" repeatCount="indefinite" begin="1.8s" />
-							</circle>
-							<circle cx="225" cy="118" r="3" fill="#dc2626" opacity="0.9" filter="url(#glow)">
-								<animate attributeName="r" values="3;4;3" dur="2s" repeatCount="indefinite" begin="2.4s" />
-								<animate attributeName="opacity" values="0.9;1;0.9" dur="2s" repeatCount="indefinite" begin="2.4s" />
-							</circle>
-							
-							<!-- Critical Detection Point (Visual Element 2) -->
-							<circle cx="250" cy="148" r="5" fill="#991b1b" opacity="1" filter="url(#glow)">
-								<animate attributeName="r" values="5;7;5" dur="1.5s" repeatCount="indefinite" />
-								<animate attributeName="opacity" values="1;0.7;1" dur="1.5s" repeatCount="indefinite" />
-								<!-- Ripple effect -->
-								<animate attributeName="stroke-width" values="0;3;0" dur="2s" repeatCount="indefinite" />
-								<animate attributeName="stroke-opacity" values="0;0.6;0" dur="2s" repeatCount="indefinite" />
-							</circle>
-							
-							<!-- Recovery trajectory points -->
-							<circle cx="275" cy="125" r="2.5" fill="#10b981" opacity="0.7" filter="url(#glow)">
-								<animate attributeName="r" values="2.5;3.5;2.5" dur="2.5s" repeatCount="indefinite" begin="3s" />
-								<animate attributeName="opacity" values="0.7;0.9;0.7" dur="2.5s" repeatCount="indefinite" begin="3s" />
-							</circle>
-							<circle cx="295" cy="95" r="2.5" fill="#059669" opacity="0.7" filter="url(#glow)">
-								<animate attributeName="r" values="2.5;3.5;2.5" dur="2.5s" repeatCount="indefinite" begin="3.6s" />
-								<animate attributeName="opacity" values="0.7;0.9;0.7" dur="2.5s" repeatCount="indefinite" begin="3.6s" />
-							</circle>
-						</svg>
-					</div>
-
-					<!-- Critical Detection Alert Indicator -->
-					<div class="absolute right-6 top-[60%] transform z-25">
-						<div class="relative">
-							<!-- Multi-layered alert pulse -->
-							<div class="h-4 w-4 animate-pulse rounded-full bg-red-500 opacity-90"></div>
-							<div class="absolute inset-0 animate-ping rounded-full bg-red-400 opacity-50" style="animation-duration: 1.5s;"></div>
-							<div class="absolute inset-0 animate-ping rounded-full bg-red-300 opacity-30" style="animation-duration: 2s;"></div>
-							<!-- Premium alert text indicator -->
-							<div class="absolute -top-7 -left-10 text-xs font-semibold text-red-600 opacity-80 tracking-wide">
-								DETECTED
-							</div>
-							<!-- Alert connection line -->
-							<div class="absolute top-1/2 -left-8 h-px w-8 bg-red-400 opacity-60"></div>
-						</div>
-					</div>
-
-					<!-- Success Prevention Indicator -->
-					<div class="absolute right-2 top-[35%] transform z-25">
-						<div class="relative">
-							<div class="h-3 w-3 animate-pulse rounded-full bg-green-500 opacity-70"></div>
-							<div class="absolute inset-0 animate-ping rounded-full bg-green-400 opacity-40" style="animation-duration: 2.5s;"></div>
-							<!-- Success text indicator -->
-							<div class="absolute -top-6 -left-8 text-xs font-semibold text-green-600 opacity-70 tracking-wide">
-								PREVENTED
-							</div>
-						</div>
-					</div>
-
-					<!-- Ambient organizational monitoring particles -->
-					<div class="absolute top-[20%] left-[15%] h-1.5 w-1.5 animate-pulse rounded-full bg-secondary-400 opacity-40" style="animation-delay: 0s; animation-duration: 4s;"></div>
-					<div class="absolute top-[30%] right-[20%] h-1 w-1 animate-pulse rounded-full bg-secondary-400 opacity-35" style="animation-delay: 1.5s; animation-duration: 5s;"></div>
-					<div class="absolute bottom-[25%] left-[25%] h-1.5 w-1.5 animate-pulse rounded-full bg-secondary-400 opacity-30" style="animation-delay: 3s; animation-duration: 6s;"></div>
-					<div class="absolute top-[70%] left-[80%] h-1 w-1 animate-pulse rounded-full bg-secondary-400 opacity-25" style="animation-delay: 2s; animation-duration: 4.5s;"></div>
-
-					<!-- Sophisticated depth layers -->
-					<div class="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-secondary-50 opacity-10 z-5"></div>
-					<div class="absolute inset-0 bg-gradient-to-tl from-transparent via-transparent to-white opacity-20 z-5"></div>
-				</div>
 			{:else if visualization === "onboarding"}
 				<!-- Onboarding: Connecting to Organizational Network -->
 				<div class="relative flex h-full w-full items-center justify-center">
@@ -475,48 +293,56 @@
 					</div>
 				</div>
 			{:else if visualization === "meetings"}
-				<!-- Meetings: Efficient Meeting Intelligence -->
+				<!-- Meetings: Signal Through Noise -->
 				<div class="relative flex h-full w-full items-center justify-center">
-					<!-- Central Calendar with Intelligence -->
-					<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
+					<!-- Left side: Radar (Primary - Proactive Detection) -->
+					<div class="absolute left-8 top-1/2 -translate-y-1/2 transform">
 						<div
 							class="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-green-50 text-green-600 ring-2 ring-green-100"
 						>
-							<IconCalendarX class="h-8 w-8" />
-							<!-- Optimization pulse -->
+							<IconRadar class="h-8 w-8" />
+							<!-- Scanning animation -->
 							<div class="absolute inset-0 animate-pulse rounded-full bg-green-200 opacity-30"></div>
+							<!-- Rotating scan line -->
+							<div class="absolute inset-0 animate-spin rounded-full border-r-2 border-green-400 opacity-40" style="animation-duration: 2s;"></div>
 						</div>
 					</div>
 
-					<!-- Surrounding efficiency indicators -->
-					<div class="absolute left-8 top-1/3 transform">
-						<div class="relative flex h-8 w-8 items-center justify-center rounded-lg bg-green-100 text-green-600 opacity-70">
-							<IconBrain class="h-4 w-4" />
-							<div class="absolute inset-0 animate-pulse rounded-lg bg-green-200 opacity-40"></div>
+					<!-- Right side: Target (Secondary - Focused Alignment) -->
+					<div class="absolute right-8 top-1/2 -translate-y-1/2 transform">
+						<div
+							class="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-green-100 text-green-600 ring-2 ring-green-50"
+						>
+							<IconTarget class="h-6 w-6" />
+							<!-- Target lock animation -->
+							<div class="absolute inset-0 animate-ping rounded-full bg-green-300 opacity-20"></div>
 						</div>
 					</div>
 
-					<div class="absolute right-8 top-1/3 transform">
-						<div class="relative flex h-8 w-8 items-center justify-center rounded-lg bg-green-100 text-green-600 opacity-70">
-							<IconTarget class="h-4 w-4" />
-							<div class="absolute inset-0 animate-pulse rounded-lg bg-green-200 opacity-40"></div>
-						</div>
-					</div>
-
-					<div class="absolute bottom-4 left-1/2 -translate-x-1/2 transform">
-						<div class="relative flex h-6 w-6 items-center justify-center rounded-lg bg-green-100 text-green-600 opacity-60">
-							<IconZap class="h-3 w-3" />
-						</div>
-					</div>
-
-					<!-- Connection lines showing optimization -->
+					<!-- Signal beam connecting radar to target -->
 					<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform">
-						<!-- Left connection -->
-						<div class="absolute top-1/2 -left-16 h-px w-16 bg-gradient-to-r from-transparent to-green-400 opacity-50"></div>
-						<!-- Right connection -->
-						<div class="absolute top-1/2 left-8 h-px w-16 bg-gradient-to-l from-transparent to-green-400 opacity-50"></div>
-						<!-- Bottom connection -->
-						<div class="absolute top-8 left-1/2 h-8 w-px bg-gradient-to-t from-transparent to-green-400 opacity-50"></div>
+						<!-- Main signal beam -->
+						<div
+							class="h-px w-32 bg-gradient-to-r from-green-400 via-green-500 to-green-600 opacity-70"
+						></div>
+						
+						<!-- Signal pulses showing detection -->
+						<div class="absolute top-0 left-6 h-px w-3 animate-pulse bg-green-500 opacity-90" style="animation-delay: 0s;"></div>
+						<div class="absolute top-0 left-14 h-px w-3 animate-pulse bg-green-500 opacity-90" style="animation-delay: 0.3s;"></div>
+						<div class="absolute top-0 left-22 h-px w-3 animate-pulse bg-green-500 opacity-90" style="animation-delay: 0.6s;"></div>
+						
+						<!-- Signal lock point -->
+						<div class="absolute top-1/2 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 transform animate-pulse rounded-full bg-green-600 opacity-80"></div>
+					</div>
+
+					<!-- Noise clearing indicators (subtle scattered elements being organized) -->
+					<!-- First dot removed -->
+					<!-- Second dot removed -->
+					<!-- Third dot removed -->
+
+					<!-- Success indicator - clear signal achieved -->
+					<div class="absolute bottom-4 left-1/2 -translate-x-1/2 transform">
+						<div class="h-1 w-1 animate-pulse rounded-full bg-green-600 opacity-70"></div>
 					</div>
 				</div>
 			{:else}
