@@ -796,7 +796,7 @@
 									id="employees"
 									bind:value={employees}
 									class="border-border bg-background focus:ring-primary/20 focus:border-primary w-full border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
-									style="border-radius: var(--radius-md);"
+									style="border-radius: var(--radius-lg);"
 								>
 									<option value="">Select company size</option>
 									<option value="1-10">1-10 employees</option>
@@ -814,7 +814,7 @@
 									bind:value={message}
 									rows="4"
 									class="border-border bg-background focus:ring-primary/20 focus:border-primary w-full resize-none border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
-									style="border-radius: var(--radius-md);"
+									style="border-radius: var(--radius-lg);"
 									placeholder="Tell us about your specific security requirements or any questions you have about private deployments..."
 								></textarea>
 							</div>
