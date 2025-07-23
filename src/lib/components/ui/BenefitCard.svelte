@@ -168,6 +168,52 @@
 						></div>
 					</div>
 				</div>
+			{:else if visualization === "culture"}
+				<!-- Culture at Scale: Central Community Expanding -->
+				<div class="relative flex h-full w-full items-center justify-center">
+					<!-- Central culture core - the heart of company culture -->
+					<div
+						class="relative z-10 flex h-16 w-16 items-center justify-center bg-secondary-100 text-secondary-600 ring-2 ring-secondary-50"
+						style="border-radius: var(--radius-xl);"
+					>
+						<IconUsers class="h-8 w-8" />
+						<!-- Culture vitality indicator -->
+						<div class="absolute inset-0 bg-secondary-200 opacity-30" style="border-radius: var(--radius-xl);"></div>
+					</div>
+
+					<!-- Scaling rings - showing culture expansion -->
+					<div class="absolute inset-0 flex items-center justify-center">
+						<!-- Inner expansion ring -->
+						<div 
+							class="h-24 w-24 border-2 border-secondary-300 opacity-40"
+							style="border-radius: var(--radius-2xl);"
+						></div>
+						<!-- Middle expansion ring -->
+						<div 
+							class="absolute h-32 w-32 border border-secondary-300 opacity-25"
+							style="border-radius: var(--radius-3xl);"
+						></div>
+						<!-- Outer expansion ring -->
+						<div 
+							class="absolute h-40 w-40 border border-secondary-300 opacity-15"
+							style="border-radius: var(--radius-4xl);"
+						></div>
+					</div>
+
+					<!-- Culture touchpoints - minimal indicators of scaled impact -->
+					<div class="absolute top-4 left-1/2 -translate-x-1/2 transform">
+						<div class="h-2 w-2 bg-secondary-400 opacity-60" style="border-radius: var(--radius-sm);"></div>
+					</div>
+					<div class="absolute bottom-4 left-1/2 -translate-x-1/2 transform">
+						<div class="h-2 w-2 bg-secondary-400 opacity-60" style="border-radius: var(--radius-sm);"></div>
+					</div>
+					<div class="absolute top-1/2 left-4 -translate-y-1/2 transform">
+						<div class="h-2 w-2 bg-secondary-400 opacity-60" style="border-radius: var(--radius-sm);"></div>
+					</div>
+					<div class="absolute top-1/2 right-4 -translate-y-1/2 transform">
+						<div class="h-2 w-2 bg-secondary-400 opacity-60" style="border-radius: var(--radius-sm);"></div>
+					</div>
+				</div>
 			{:else if visualization === "onboarding"}
 				<!-- Onboarding: Connecting to Organizational Network -->
 				<div class="relative flex h-full w-full items-center justify-center">
