@@ -55,6 +55,24 @@ export const cta = {
 
 export const navigation: NavItem[] = [
 	{
+		label: "About",
+		href: "/about",
+		showInNav: true,
+		showInFooter: false
+	},
+	{
+		label: "Manifesto",
+		href: "/manifesto",
+		showInNav: true,
+		showInFooter: false
+	},
+	{
+		label: "Private Deployments",
+		href: "/private-deployments",
+		showInNav: true,
+		showInFooter: false
+	},
+	{
 		label: "Company",
 		showInNav: false,
 		showInFooter: true,
