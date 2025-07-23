@@ -39,7 +39,6 @@
 					icon: IconEye,
 					bgColor: "bg-primary-100",
 					textColor: "text-primary-600",
-					cardBgColor: "bg-primary-50",
 					supportIcons: [IconDatabase, IconNetwork, IconUsers, IconShield]
 				}
 			case "misalignment":
@@ -47,7 +46,6 @@
 					icon: IconRadar,
 					bgColor: "bg-orange-100",
 					textColor: "text-orange-600",
-					cardBgColor: "bg-orange-50",
 					supportIcons: [IconAlertTriangle, IconTarget, IconZap]
 				}
 			case "culture":
@@ -55,7 +53,6 @@
 					icon: IconUsers,
 					bgColor: "bg-secondary-100",
 					textColor: "text-secondary-600",
-					cardBgColor: "bg-secondary-50",
 					supportIcons: [IconTrendingUp, IconTarget, IconBrain]
 				}
 			case "meetings":
@@ -63,7 +60,6 @@
 					icon: IconCalendarX,
 					bgColor: "bg-green-100",
 					textColor: "text-green-600",
-					cardBgColor: "bg-green-50",
 					supportIcons: [IconDatabase, IconBrain, IconNetwork]
 				}
 			case "onboarding":
@@ -71,7 +67,6 @@
 					icon: IconUserPlus,
 					bgColor: "bg-blue-100",
 					textColor: "text-blue-600",
-					cardBgColor: "bg-blue-50",
 					supportIcons: [IconBrain, IconDatabase, IconGitBranch]
 				}
 			case "future":
@@ -79,7 +74,6 @@
 					icon: IconTrendingUp,
 					bgColor: "bg-purple-50",
 					textColor: "text-purple-600",
-					cardBgColor: "bg-purple-50",
 					supportIcons: [IconBrain, IconDatabase, IconNetwork, IconShield]
 				}
 			default:
@@ -87,7 +81,6 @@
 					icon: IconBrain,
 					bgColor: "bg-primary-50",
 					textColor: "text-primary-600",
-					cardBgColor: "bg-primary-50",
 					supportIcons: [IconDatabase, IconNetwork, IconShield]
 				}
 		}
@@ -100,10 +93,7 @@
 <div class={["group flex", customClass]}>
 	<!-- Card Container -->
 	<div
-		class={[
-			"relative flex min-h-[400px] w-full flex-col overflow-hidden rounded-3xl p-10",
-			visualConfig.cardBgColor
-		]}
+		class="relative flex min-h-[400px] w-full flex-col overflow-hidden rounded-3xl p-10 bg-white border border-gray-200"
 	>
 		<!-- Visualization Container -->
 		<div class="mb-8 flex aspect-video items-center justify-center">

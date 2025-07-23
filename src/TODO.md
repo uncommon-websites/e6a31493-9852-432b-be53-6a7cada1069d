@@ -1,6 +1,8 @@
-# Task: Add color-50 variant backgrounds to benefit cards
+# Task: Change Benefit Cards to White Background with Outline
 
-- [x] Update getVisualization function to include cardBgColor property for each visualization type
-- [x] Replace bg-white with dynamic background color in card container
-- [x] Test that all cards now have appropriate color-50 backgrounds
+- [x] View current BenefitCard component to understand structure
+- [x] Update card background from colored to white
+- [x] Add outline/border styling to cards
+- [x] Ensure visual hierarchy is maintained with white backgrounds
+- [x] Test that all card variations look good with new styling
 - [x] Final design system compliance check - verify design system classes prioritized over Tailwind, NO shadows, NO custom CSS, NO arbitrary values, check theme.css, app.css and typography.css
