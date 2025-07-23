@@ -1,26 +1,11 @@
 <script lang="ts">
-	import type { ComponentType } from "svelte"
-
 	// Icons
-	import IconBrain from "~icons/lucide/brain"
 	import IconEye from "~icons/lucide/eye"
-	import IconTarget from "~icons/lucide/target"
-	import IconGitBranch from "~icons/lucide/git-branch"
 	import IconRadar from "~icons/lucide/radar"
-	import IconAlertTriangle from "~icons/lucide/alert-triangle"
-	import IconDatabase from "~icons/lucide/database"
-	import IconNetwork from "~icons/lucide/network"
-	import IconShield from "~icons/lucide/shield"
 	import IconUsers from "~icons/lucide/users"
 	import IconCalendarX from "~icons/lucide/calendar-x"
-	import IconUserPlus from "~icons/lucide/user-plus"
 	import IconTrendingUp from "~icons/lucide/trending-up"
-	import IconZap from "~icons/lucide/zap"
-	import IconMessageSquare from "~icons/lucide/message-square"
-	import IconFileText from "~icons/lucide/file-text"
-	import IconGlobe from "~icons/lucide/globe"
-	import IconLayers from "~icons/lucide/layers"
-	import IconActivity from "~icons/lucide/activity"
+	import IconArrowRight from "~icons/lucide/arrow-right"
 
 	type Props = {
 		title: string
@@ -31,57 +16,43 @@
 
 	let { title, description, visualization, class: customClass = "" }: Props = $props()
 
-	// Define visualization components based on type
+	// Simple visualization config
 	const getVisualization = (type: string) => {
 		switch (type) {
 			case "visibility":
 				return {
 					icon: IconEye,
-					bgColor: "bg-primary-100",
-					textColor: "text-primary-600",
-					supportIcons: [IconDatabase, IconNetwork, IconUsers, IconShield]
+					color: "text-blue-600"
 				}
 			case "misalignment":
 				return {
 					icon: IconRadar,
-					bgColor: "bg-orange-100",
-					textColor: "text-orange-600",
-					supportIcons: [IconAlertTriangle, IconTarget, IconZap]
+					color: "text-orange-600"
 				}
 			case "culture":
 				return {
 					icon: IconUsers,
-					bgColor: "bg-secondary-100",
-					textColor: "text-secondary-600",
-					supportIcons: [IconTrendingUp, IconTarget, IconBrain]
+					color: "text-green-600"
 				}
 			case "meetings":
 				return {
 					icon: IconCalendarX,
-					bgColor: "bg-green-100",
-					textColor: "text-green-600",
-					supportIcons: [IconDatabase, IconBrain, IconNetwork]
+					color: "text-purple-600"
 				}
 			case "onboarding":
 				return {
 					icon: IconUsers,
-					bgColor: "bg-blue-100",
-					textColor: "text-blue-600",
-					supportIcons: [IconNetwork]
+					color: "text-blue-600"
 				}
 			case "future":
 				return {
 					icon: IconTrendingUp,
-					bgColor: "bg-purple-50",
-					textColor: "text-purple-600",
-					supportIcons: [IconBrain, IconDatabase, IconNetwork, IconShield]
+					color: "text-indigo-600"
 				}
 			default:
 				return {
-					icon: IconBrain,
-					bgColor: "bg-primary-50",
-					textColor: "text-primary-600",
-					supportIcons: [IconDatabase, IconNetwork, IconShield]
+					icon: IconEye,
+					color: "text-gray-600"
 				}
 		}
 	}
