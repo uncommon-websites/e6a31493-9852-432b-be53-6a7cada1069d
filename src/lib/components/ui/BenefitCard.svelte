@@ -117,24 +117,70 @@
 					<div class="border-primary-200 absolute h-56 w-56 border opacity-10" style="border-radius: var(--radius-4xl);"></div>
 				</div>
 			{:else if visualization === "misalignment"}
-				<!-- Early Detection - Minimal Smoke Before Fire -->
-				<div class="relative flex items-center justify-center">
-					<!-- Central vigilant eye - the detector -->
-					<div
-						class="relative z-10 flex h-20 w-20 items-center justify-center bg-orange-50 text-orange-600 ring-2 ring-orange-100"
-						style="border-radius: var(--radius-xl);"
-					>
-						<IconEye class="h-10 w-10" />
+				<!-- Proactive Detection: Spotting Smoke Before Fire -->
+				<div class="relative flex h-full w-full items-center justify-center">
+					<!-- Left: Early warning signals (the "smoke") -->
+					<div class="absolute left-6 top-1/2 -translate-y-1/2 transform">
+						<!-- Three ascending smoke particles showing escalation -->
+						<div class="relative">
+							<!-- Small initial signal -->
+							<div class="absolute -top-2 left-0">
+								<div class="h-1.5 w-1.5 bg-gray-400 opacity-40" style="border-radius: var(--radius-xs);"></div>
+							</div>
+							<!-- Medium growing signal -->
+							<div class="absolute top-1 left-1">
+								<div class="h-2 w-2 bg-gray-500 opacity-50" style="border-radius: var(--radius-sm);"></div>
+							</div>
+							<!-- Larger concerning signal -->
+							<div class="absolute top-4 left-2">
+								<div class="h-2.5 w-2.5 bg-gray-600 opacity-60" style="border-radius: var(--radius-sm);"></div>
+							</div>
+						</div>
 					</div>
 
-					<!-- Single smoke wisp - the early warning sign -->
-					<div class="absolute top-1/2 -left-8 -translate-y-1/2 transform">
-						<div class="h-2 w-2 bg-gray-400 opacity-50" style="border-radius: var(--radius-sm);"></div>
+					<!-- Center: Sentra's vigilant detection system -->
+					<div class="relative z-10">
+						<div
+							class="flex h-20 w-20 items-center justify-center bg-orange-50 text-orange-600 ring-2 ring-orange-100"
+							style="border-radius: var(--radius-xl);"
+						>
+							<IconRadar class="h-10 w-10" />
+							<!-- Detection pulse indicator -->
+							<div class="absolute inset-0 bg-orange-200 opacity-20" style="border-radius: var(--radius-xl);"></div>
+						</div>
+						
+						<!-- Detection beam reaching toward the signals -->
+						<div class="absolute top-1/2 -left-12 -translate-y-1/2 transform">
+							<div class="h-px w-12 bg-gradient-to-r from-transparent to-orange-400 opacity-60"></div>
+							<!-- Detection points along the beam -->
+							<div class="absolute top-0 right-2 h-px w-1 bg-orange-500 opacity-80"></div>
+							<div class="absolute top-0 right-4 h-px w-1 bg-orange-500 opacity-80"></div>
+						</div>
 					</div>
 
-					<!-- Detection line - showing early intervention -->
-					<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform">
-						<div class="h-px w-16 bg-orange-400 opacity-40"></div>
+					<!-- Right: Prevention barrier (what doesn't happen) -->
+					<div class="absolute right-6 top-1/2 -translate-y-1/2 transform">
+						<!-- Shield representing prevention -->
+						<div
+							class="flex h-12 w-12 items-center justify-center bg-green-50 text-green-600 ring-1 ring-green-100"
+							style="border-radius: var(--radius-lg);"
+						>
+							<IconShield class="h-6 w-6" />
+							<!-- Success indicator -->
+							<div class="absolute inset-0 bg-green-200 opacity-30" style="border-radius: var(--radius-lg);"></div>
+						</div>
+					</div>
+
+					<!-- Intervention arrow showing proactive action -->
+					<div class="absolute top-1/2 right-20 -translate-y-1/2 transform">
+						<div class="h-px w-8 bg-gradient-to-r from-orange-400 to-green-400 opacity-50"></div>
+						<!-- Arrow tip -->
+						<div class="absolute top-0 right-0 h-0 w-0 border-l-2 border-t border-b border-transparent border-l-green-400 opacity-50"></div>
+					</div>
+
+					<!-- Subtle cost savings indicator -->
+					<div class="absolute bottom-2 left-1/2 -translate-x-1/2 transform">
+						<div class="h-1 w-8 bg-green-400 opacity-30" style="border-radius: var(--radius-xs);"></div>
 					</div>
 				</div>
 			{:else if visualization === "culture"}
