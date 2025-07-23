@@ -2,6 +2,14 @@
 @layer utilities {
 	/* Typography Scale */
 
+	.text-display,
+	.text-title1,
+	.text-title2,
+	.text-title3,
+	.text-headline {
+		@apply font-medium;
+	}
+
 	.text-display {
 		@apply text-[2.025rem] leading-[1.1] font-normal lg:text-[3.25rem];
 		letter-spacing: -0.0055em;
