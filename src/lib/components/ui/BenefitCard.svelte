@@ -103,46 +103,48 @@
 				<div class="relative flex h-full w-full items-center justify-center">
 					<!-- Central Eye with Enhanced Design -->
 					<div
-						class="bg-primary-100 text-primary-600 ring-primary-50 relative z-20 flex h-20 w-20 items-center justify-center rounded-full ring-4"
+						class="bg-primary-100 text-primary-600 ring-primary-50 relative z-20 flex h-20 w-20 items-center justify-center ring-4"
+						style="border-radius: var(--radius-xl);"
 					>
 						<IconEye class="h-10 w-10" />
 						<!-- Subtle pulse animation -->
-						<div class="bg-primary-200 absolute inset-0 animate-ping rounded-full opacity-20"></div>
+						<div class="bg-primary-200 absolute inset-0 animate-ping opacity-20" style="border-radius: var(--radius-xl);"></div>
 					</div>
 
 					<!-- Organizational Layers - Concentric Circles -->
-					<div class="border-primary-200 absolute h-32 w-32 rounded-full border-2 opacity-30"></div>
-					<div class="border-primary-200 absolute h-44 w-44 rounded-full border opacity-20"></div>
-					<div class="border-primary-200 absolute h-56 w-56 rounded-full border opacity-10"></div>
+					<div class="border-primary-200 absolute h-32 w-32 border-2 opacity-30" style="border-radius: var(--radius-2xl);"></div>
+					<div class="border-primary-200 absolute h-44 w-44 border opacity-20" style="border-radius: var(--radius-3xl);"></div>
+					<div class="border-primary-200 absolute h-56 w-56 border opacity-10" style="border-radius: var(--radius-4xl);"></div>
 				</div>
 			{:else if visualization === "misalignment"}
 				<!-- Smoke Before Fire - Vigilant Eye Detection -->
 				<div class="relative flex items-center justify-center">
 					<!-- Central eye icon - vigilant observer -->
 					<div
-						class="relative z-10 flex h-20 w-20 items-center justify-center rounded-full bg-orange-50 text-orange-600 ring-2 ring-orange-100"
+						class="relative z-10 flex h-20 w-20 items-center justify-center bg-orange-50 text-orange-600 ring-2 ring-orange-100"
+						style="border-radius: var(--radius-xl);"
 					>
 						<IconEye class="h-10 w-10" />
 						<!-- Vigilant monitoring pulse -->
-						<div class="absolute inset-0 animate-pulse rounded-full bg-orange-200 opacity-25"></div>
+						<div class="absolute inset-0 animate-pulse bg-orange-200 opacity-25" style="border-radius: var(--radius-xl);"></div>
 					</div>
 
 					<!-- Smoke wisp - early warning signs (left side) -->
 					<div class="absolute top-1/2 -left-12 -translate-y-1/2 transform">
 						<!-- Main smoke particle -->
 						<div class="relative">
-							<div class="h-3 w-3 animate-pulse rounded-full bg-gray-400 opacity-40"></div>
+							<div class="h-3 w-3 animate-pulse bg-gray-400 opacity-40" style="border-radius: var(--radius);"></div>
 							<!-- Smaller smoke particles rising -->
-							<div class="absolute -top-2 left-1 h-1 w-1 animate-pulse rounded-full bg-gray-300 opacity-30" style="animation-delay: 0.5s;"></div>
-							<div class="absolute -top-4 -left-1 h-1 w-1 animate-pulse rounded-full bg-gray-200 opacity-20" style="animation-delay: 1s;"></div>
+							<div class="absolute -top-2 left-1 h-1 w-1 animate-pulse bg-gray-300 opacity-30" style="animation-delay: 0.5s; border-radius: var(--radius-xs);"></div>
+							<div class="absolute -top-4 -left-1 h-1 w-1 animate-pulse bg-gray-200 opacity-20" style="animation-delay: 1s; border-radius: var(--radius-xs);"></div>
 						</div>
 					</div>
 
 					<!-- Clarity zone - prevention success (right side) -->
 					<div class="absolute top-1/2 -right-12 -translate-y-1/2 transform">
-						<div class="h-4 w-4 animate-pulse rounded-full bg-green-400 opacity-50"></div>
+						<div class="h-4 w-4 animate-pulse bg-green-400 opacity-50" style="border-radius: var(--radius);"></div>
 						<!-- Success indicator -->
-						<div class="absolute -top-1 -right-1 h-2 w-2 rounded-full bg-green-500 opacity-30"></div>
+						<div class="absolute -top-1 -right-1 h-2 w-2 bg-green-500 opacity-30" style="border-radius: var(--radius-sm);"></div>
 					</div>
 
 					<!-- Detection beam - from smoke to clarity -->
@@ -153,7 +155,7 @@
 						></div>
 						
 						<!-- Detection point in center -->
-						<div class="absolute top-1/2 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 transform animate-pulse rounded-full bg-orange-500 opacity-70"></div>
+						<div class="absolute top-1/2 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 transform animate-pulse bg-orange-500 opacity-70" style="border-radius: var(--radius-sm);"></div>
 					</div>
 
 					<!-- Watchful monitoring arc -->
@@ -161,8 +163,8 @@
 						class="absolute top-1/2 left-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 transform"
 					>
 						<div
-							class="h-full w-full animate-spin rounded-full border-r-2 border-orange-300 opacity-20"
-							style="animation-duration: 4s;"
+							class="h-full w-full animate-spin border-r-2 border-orange-300 opacity-20"
+							style="animation-duration: 4s; border-radius: var(--radius-2xl);"
 						></div>
 					</div>
 				</div>
@@ -172,22 +174,24 @@
 					<!-- Left side: Individual user -->
 					<div class="absolute left-8 top-1/2 -translate-y-1/2 transform">
 						<div
-							class="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-blue-600 ring-2 ring-blue-100"
+							class="relative z-10 flex h-12 w-12 items-center justify-center bg-blue-50 text-blue-600 ring-2 ring-blue-100"
+							style="border-radius: var(--radius-lg);"
 						>
 							<IconUsers class="h-6 w-6" />
 							<!-- Subtle pulse to show "joining" -->
-							<div class="absolute inset-0 animate-pulse rounded-full bg-blue-200 opacity-30"></div>
+							<div class="absolute inset-0 animate-pulse bg-blue-200 opacity-30" style="border-radius: var(--radius-lg);"></div>
 						</div>
 					</div>
 
 					<!-- Right side: Organizational network -->
 					<div class="absolute right-8 top-1/2 -translate-y-1/2 transform">
 						<div
-							class="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 text-blue-600 ring-2 ring-blue-50"
+							class="relative z-10 flex h-16 w-16 items-center justify-center bg-blue-100 text-blue-600 ring-2 ring-blue-50"
+							style="border-radius: var(--radius-xl);"
 						>
 							<IconNetwork class="h-8 w-8" />
 							<!-- Network activity indicator -->
-							<div class="absolute inset-0 animate-ping rounded-full bg-blue-300 opacity-20"></div>
+							<div class="absolute inset-0 animate-ping bg-blue-300 opacity-20" style="border-radius: var(--radius-xl);"></div>
 						</div>
 					</div>
 
@@ -204,12 +208,12 @@
 						<div class="absolute top-0 left-20 h-px w-2 animate-pulse bg-blue-500 opacity-80" style="animation-delay: 1s;"></div>
 						
 						<!-- Connection point in center -->
-						<div class="absolute top-1/2 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 transform animate-pulse rounded-full bg-blue-500 opacity-70"></div>
+						<div class="absolute top-1/2 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 transform animate-pulse bg-blue-500 opacity-70" style="border-radius: var(--radius-sm);"></div>
 					</div>
 
 					<!-- Integration success indicator -->
 					<div class="absolute bottom-4 left-1/2 -translate-x-1/2 transform">
-						<div class="h-1 w-1 animate-pulse rounded-full bg-green-500 opacity-60"></div>
+						<div class="h-1 w-1 animate-pulse bg-green-500 opacity-60" style="border-radius: var(--radius-xs);"></div>
 					</div>
 				</div>
 			{:else if visualization === "meetings"}
@@ -218,24 +222,26 @@
 					<!-- Left side: Radar (Primary - Proactive Detection) -->
 					<div class="absolute left-8 top-1/2 -translate-y-1/2 transform">
 						<div
-							class="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-green-50 text-green-600 ring-2 ring-green-100"
+							class="relative z-10 flex h-16 w-16 items-center justify-center bg-green-50 text-green-600 ring-2 ring-green-100"
+							style="border-radius: var(--radius-xl);"
 						>
 							<IconRadar class="h-8 w-8" />
 							<!-- Scanning animation -->
-							<div class="absolute inset-0 animate-pulse rounded-full bg-green-200 opacity-30"></div>
+							<div class="absolute inset-0 animate-pulse bg-green-200 opacity-30" style="border-radius: var(--radius-xl);"></div>
 							<!-- Rotating scan line -->
-							<div class="absolute inset-0 animate-spin rounded-full border-r-2 border-green-400 opacity-40" style="animation-duration: 2s;"></div>
+							<div class="absolute inset-0 animate-spin border-r-2 border-green-400 opacity-40" style="animation-duration: 2s; border-radius: var(--radius-xl);"></div>
 						</div>
 					</div>
 
 					<!-- Right side: Target (Secondary - Focused Alignment) -->
 					<div class="absolute right-8 top-1/2 -translate-y-1/2 transform">
 						<div
-							class="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-green-100 text-green-600 ring-2 ring-green-50"
+							class="relative z-10 flex h-12 w-12 items-center justify-center bg-green-100 text-green-600 ring-2 ring-green-50"
+							style="border-radius: var(--radius-lg);"
 						>
 							<IconTarget class="h-6 w-6" />
 							<!-- Target lock animation -->
-							<div class="absolute inset-0 animate-ping rounded-full bg-green-300 opacity-20"></div>
+							<div class="absolute inset-0 animate-ping bg-green-300 opacity-20" style="border-radius: var(--radius-lg);"></div>
 						</div>
 					</div>
 
@@ -252,7 +258,7 @@
 						<div class="absolute top-0 left-22 h-px w-3 animate-pulse bg-green-500 opacity-90" style="animation-delay: 0.6s;"></div>
 						
 						<!-- Signal lock point -->
-						<div class="absolute top-1/2 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 transform animate-pulse rounded-full bg-green-600 opacity-80"></div>
+						<div class="absolute top-1/2 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 transform animate-pulse bg-green-600 opacity-80" style="border-radius: var(--radius-sm);"></div>
 					</div>
 
 					<!-- Noise clearing indicators (subtle scattered elements being organized) -->
@@ -262,7 +268,7 @@
 
 					<!-- Success indicator - clear signal achieved -->
 					<div class="absolute bottom-4 left-1/2 -translate-x-1/2 transform">
-						<div class="h-1 w-1 animate-pulse rounded-full bg-green-600 opacity-70"></div>
+						<div class="h-1 w-1 animate-pulse bg-green-600 opacity-70" style="border-radius: var(--radius-xs);"></div>
 					</div>
 				</div>
 			{:else}
@@ -271,10 +277,11 @@
 					<!-- Central icon -->
 					<div
 						class={[
-							"relative z-10 flex h-16 w-16 items-center justify-center rounded-full",
+							"relative z-10 flex h-16 w-16 items-center justify-center",
 							visualConfig.bgColor,
 							visualConfig.textColor
 						]}
+						style="border-radius: var(--radius-xl);"
 					>
 						<MainIcon class="h-8 w-8" />
 					</div>
@@ -289,9 +296,10 @@
 						]}
 						<div
 							class={[
-								"absolute flex h-6 w-6 items-center justify-center rounded-lg bg-gray-200 opacity-60",
+								"absolute flex h-6 w-6 items-center justify-center bg-gray-200 opacity-60",
 								positions[index] || positions[0]
 							]}
+							style="border-radius: var(--radius-md);"
 						>
 							<SupportIcon class="h-4 w-4" />
 						</div>
