@@ -93,7 +93,8 @@
 <div class={["group flex", customClass]}>
 	<!-- Card Container -->
 	<div
-		class="relative flex min-h-[400px] w-full flex-col overflow-hidden rounded-3xl p-10 bg-white border border-gray-200"
+		class="relative flex min-h-[400px] w-full flex-col overflow-hidden p-10 bg-white border border-gray-200"
+		style="border-radius: var(--radius-2xl);"
 	>
 		<!-- Visualization Container -->
 		<div class="mb-8 flex aspect-video items-center justify-center">
