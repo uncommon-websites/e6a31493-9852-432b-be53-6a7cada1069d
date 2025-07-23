@@ -129,35 +129,35 @@
 									</div>
 								{:else if prop.visualization === "detection"}
 									<!-- Prevention Flow Visualization -->
-									<div class="relative flex items-center justify-center space-x-8">
+									<div class="relative flex items-center justify-center space-x-4">
 										<!-- Step 1: Healthy -->
 										<div class="flex flex-col items-center space-y-2">
 											<div class="flex h-12 w-12 items-center justify-center rounded-full bg-green-100 text-green-600">
 												<IconCheck class="h-6 w-6" />
 											</div>
-											<span class="text-xs font-medium text-green-600">Healthy</span>
+											<span class="text-xs font-medium text-green-600 text-center">Healthy</span>
 										</div>
 
 										<!-- Arrow 1 -->
-										<div class="h-px w-6 bg-gray-300"></div>
+										<div class="h-px w-4 bg-gray-300"></div>
 
 										<!-- Step 2: Attention needed -->
 										<div class="flex flex-col items-center space-y-2">
 											<div class="flex h-12 w-12 items-center justify-center rounded-full bg-orange-100 text-orange-600">
 												<IconAlertTriangle class="h-6 w-6" />
 											</div>
-											<span class="text-xs font-medium text-orange-600">Attention needed</span>
+											<span class="text-xs font-medium text-orange-600 text-center">Attention</span>
 										</div>
 
 										<!-- Arrow 2 -->
-										<div class="h-px w-6 bg-gray-300"></div>
+										<div class="h-px w-4 bg-gray-300"></div>
 
 										<!-- Step 3: Prevented -->
 										<div class="flex flex-col items-center space-y-2">
 											<div class="flex h-12 w-12 items-center justify-center rounded-full bg-green-100 text-green-600">
 												<IconCheck class="h-6 w-6" />
 											</div>
-											<span class="text-xs font-medium text-green-600">Prevented</span>
+											<span class="text-xs font-medium text-green-600 text-center">Prevented</span>
 										</div>
 									</div>
 								{/if}
