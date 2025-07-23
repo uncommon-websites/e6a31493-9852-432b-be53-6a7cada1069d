@@ -12,10 +12,10 @@
 <main class="bg-background min-h-screen">
 	<!-- Letter Format Manifesto -->
 	<section class="section-pt section-px section-pb">
-		<div class="max-w-6xlmx-auto max-w-6xl">
+		<div class="mx-auto max-w-6xl">
 			<!-- Letter Header -->
 			<div class="mb-16 text-center text-balance">
-				<h1 class="text-display text-foreground mb-4">
+				<h1 class="text-display text-foreground mb-4 text-balance">
 					A new contract between humans and technology
 				</h1>
 				<p class="text-body text-muted-foreground italic">From the team at Sentra</p>
