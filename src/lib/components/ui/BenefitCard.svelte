@@ -1,11 +1,8 @@
 <script lang="ts">
-	import type { ComponentType } from "svelte"
-
 	// Icons
 	import IconBrain from "~icons/lucide/brain"
 	import IconEye from "~icons/lucide/eye"
 	import IconTarget from "~icons/lucide/target"
-	import IconGitBranch from "~icons/lucide/git-branch"
 	import IconRadar from "~icons/lucide/radar"
 	import IconAlertTriangle from "~icons/lucide/alert-triangle"
 	import IconDatabase from "~icons/lucide/database"
@@ -13,14 +10,8 @@
 	import IconShield from "~icons/lucide/shield"
 	import IconUsers from "~icons/lucide/users"
 	import IconCalendarX from "~icons/lucide/calendar-x"
-	import IconUserPlus from "~icons/lucide/user-plus"
 	import IconTrendingUp from "~icons/lucide/trending-up"
 	import IconZap from "~icons/lucide/zap"
-	import IconMessageSquare from "~icons/lucide/message-square"
-	import IconFileText from "~icons/lucide/file-text"
-	import IconGlobe from "~icons/lucide/globe"
-	import IconLayers from "~icons/lucide/layers"
-	import IconActivity from "~icons/lucide/activity"
 
 	type Props = {
 		title: string
@@ -93,7 +84,7 @@
 <div class={["group flex", customClass]}>
 	<!-- Card Container -->
 	<div
-		class="relative flex min-h-[400px] w-full flex-col overflow-hidden p-10 bg-white border border-gray-200"
+		class="relative flex min-h-[400px] w-full flex-col overflow-hidden border border-gray-200 bg-white p-10"
 		style="border-radius: var(--radius-2xl);"
 	>
 		<!-- Visualization Container -->
@@ -108,32 +99,53 @@
 					>
 						<IconEye class="h-10 w-10" />
 						<!-- Subtle background accent -->
-						<div class="bg-primary-200 absolute inset-0 opacity-20" style="border-radius: var(--radius-xl);"></div>
+						<div
+							class="bg-primary-200 absolute inset-0 opacity-20"
+							style="border-radius: var(--radius-xl);"
+						></div>
 					</div>
 
 					<!-- Organizational Layers - Concentric Circles -->
-					<div class="border-primary-200 absolute h-32 w-32 border-2 opacity-30" style="border-radius: var(--radius-2xl);"></div>
-					<div class="border-primary-200 absolute h-44 w-44 border opacity-20" style="border-radius: var(--radius-3xl);"></div>
-					<div class="border-primary-200 absolute h-56 w-56 border opacity-10" style="border-radius: var(--radius-4xl);"></div>
+					<div
+						class="border-primary-200 absolute h-32 w-32 border-2 opacity-30"
+						style="border-radius: var(--radius-2xl);"
+					></div>
+					<div
+						class="border-primary-200 absolute h-44 w-44 border opacity-20"
+						style="border-radius: var(--radius-3xl);"
+					></div>
+					<div
+						class="border-primary-200 absolute h-56 w-56 border opacity-10"
+						style="border-radius: var(--radius-4xl);"
+					></div>
 				</div>
 			{:else if visualization === "misalignment"}
 				<!-- Proactive Detection: Spotting Smoke Before Fire -->
 				<div class="relative flex h-full w-full items-center justify-center">
 					<!-- Left: Early warning signals (the "smoke") -->
-					<div class="absolute left-6 top-1/2 -translate-y-1/2 transform">
+					<div class="absolute top-1/2 left-6 -translate-y-1/2 transform">
 						<!-- Three ascending smoke particles showing escalation -->
 						<div class="relative">
 							<!-- Small initial signal -->
 							<div class="absolute -top-2 left-0">
-								<div class="h-1.5 w-1.5 bg-gray-400 opacity-40" style="border-radius: var(--radius-xs);"></div>
+								<div
+									class="h-1.5 w-1.5 bg-gray-400 opacity-40"
+									style="border-radius: var(--radius-xs);"
+								></div>
 							</div>
 							<!-- Medium growing signal -->
 							<div class="absolute top-1 left-1">
-								<div class="h-2 w-2 bg-gray-500 opacity-50" style="border-radius: var(--radius-sm);"></div>
+								<div
+									class="h-2 w-2 bg-gray-500 opacity-50"
+									style="border-radius: var(--radius-sm);"
+								></div>
 							</div>
 							<!-- Larger concerning signal -->
 							<div class="absolute top-4 left-2">
-								<div class="h-2.5 w-2.5 bg-gray-600 opacity-60" style="border-radius: var(--radius-sm);"></div>
+								<div
+									class="h-2.5 w-2.5 bg-gray-600 opacity-60"
+									style="border-radius: var(--radius-sm);"
+								></div>
 							</div>
 						</div>
 					</div>
@@ -146,12 +158,17 @@
 						>
 							<IconRadar class="h-10 w-10" />
 							<!-- Detection pulse indicator -->
-							<div class="absolute inset-0 bg-orange-200 opacity-20" style="border-radius: var(--radius-xl);"></div>
+							<div
+								class="absolute inset-0 bg-orange-200 opacity-20"
+								style="border-radius: var(--radius-xl);"
+							></div>
 						</div>
-						
+
 						<!-- Detection beam reaching toward the signals -->
 						<div class="absolute top-1/2 -left-12 -translate-y-1/2 transform">
-							<div class="h-px w-12 bg-gradient-to-r from-transparent to-orange-400 opacity-60"></div>
+							<div
+								class="h-px w-12 bg-gradient-to-r from-transparent to-orange-400 opacity-60"
+							></div>
 							<!-- Detection points along the beam -->
 							<div class="absolute top-0 right-2 h-px w-1 bg-orange-500 opacity-80"></div>
 							<div class="absolute top-0 right-4 h-px w-1 bg-orange-500 opacity-80"></div>
@@ -159,7 +176,7 @@
 					</div>
 
 					<!-- Right: Prevention barrier (what doesn't happen) -->
-					<div class="absolute right-6 top-1/2 -translate-y-1/2 transform">
+					<div class="absolute top-1/2 right-6 -translate-y-1/2 transform">
 						<!-- Shield representing prevention -->
 						<div
 							class="flex h-12 w-12 items-center justify-center bg-green-50 text-green-600 ring-1 ring-green-100"
@@ -167,7 +184,10 @@
 						>
 							<IconShield class="h-6 w-6" />
 							<!-- Success indicator -->
-							<div class="absolute inset-0 bg-green-200 opacity-30" style="border-radius: var(--radius-lg);"></div>
+							<div
+								class="absolute inset-0 bg-green-200 opacity-30"
+								style="border-radius: var(--radius-lg);"
+							></div>
 						</div>
 					</div>
 
@@ -175,12 +195,17 @@
 					<div class="absolute top-1/2 right-20 -translate-y-1/2 transform">
 						<div class="h-px w-8 bg-gradient-to-r from-orange-400 to-green-400 opacity-50"></div>
 						<!-- Arrow tip -->
-						<div class="absolute top-0 right-0 h-0 w-0 border-l-2 border-t border-b border-transparent border-l-green-400 opacity-50"></div>
+						<div
+							class="absolute top-0 right-0 h-0 w-0 border-t border-b border-l-2 border-transparent border-l-green-400 opacity-50"
+						></div>
 					</div>
 
 					<!-- Subtle cost savings indicator -->
 					<div class="absolute bottom-2 left-1/2 -translate-x-1/2 transform">
-						<div class="h-1 w-8 bg-green-400 opacity-30" style="border-radius: var(--radius-xs);"></div>
+						<div
+							class="h-1 w-8 bg-green-400 opacity-30"
+							style="border-radius: var(--radius-xs);"
+						></div>
 					</div>
 				</div>
 			{:else if visualization === "culture"}
@@ -188,71 +213,87 @@
 				<div class="relative flex h-full w-full items-center justify-center">
 					<!-- Central culture core - the heart of company culture -->
 					<div
-						class="relative z-10 flex h-16 w-16 items-center justify-center bg-secondary-100 text-secondary-600 ring-2 ring-secondary-50"
+						class="bg-secondary-100 text-secondary-600 ring-secondary-50 relative z-10 flex h-16 w-16 items-center justify-center ring-2"
 						style="border-radius: var(--radius-xl);"
 					>
 						<IconUsers class="h-8 w-8" />
-						<!-- Culture vitality indicator -->
-						<div class="absolute inset-0 bg-secondary-200 opacity-30" style="border-radius: var(--radius-xl);"></div>
 					</div>
 
 					<!-- Scaling rings - showing culture expansion -->
 					<div class="absolute inset-0 flex items-center justify-center">
 						<!-- Inner expansion ring -->
-						<div 
-							class="h-24 w-24 border-2 border-secondary-300 opacity-40"
+						<div
+							class="border-secondary-300 h-24 w-24 border-2 opacity-40"
 							style="border-radius: var(--radius-2xl);"
 						></div>
 						<!-- Middle expansion ring -->
-						<div 
-							class="absolute h-32 w-32 border border-secondary-300 opacity-25"
+						<div
+							class="border-secondary-300 absolute h-32 w-32 border opacity-25"
 							style="border-radius: var(--radius-3xl);"
 						></div>
 						<!-- Outer expansion ring -->
-						<div 
-							class="absolute h-40 w-40 border border-secondary-300 opacity-15"
+						<div
+							class="border-secondary-300 absolute h-40 w-40 border opacity-15"
 							style="border-radius: var(--radius-4xl);"
 						></div>
 					</div>
 
 					<!-- Culture touchpoints - minimal indicators of scaled impact -->
-					<div class="absolute top-4 left-1/2 -translate-x-1/2 transform">
-						<div class="h-2 w-2 bg-secondary-400 opacity-60" style="border-radius: var(--radius-sm);"></div>
+					<!-- <div class="absolute top-4 left-1/2 -translate-x-1/2 transform">
+						<div
+							class="bg-secondary-400 h-2 w-2 opacity-60"
+							style="border-radius: var(--radius-sm);"
+						></div>
 					</div>
 					<div class="absolute bottom-4 left-1/2 -translate-x-1/2 transform">
-						<div class="h-2 w-2 bg-secondary-400 opacity-60" style="border-radius: var(--radius-sm);"></div>
+						<div
+							class="bg-secondary-400 h-2 w-2 opacity-60"
+							style="border-radius: var(--radius-sm);"
+						></div>
 					</div>
 					<div class="absolute top-1/2 left-4 -translate-y-1/2 transform">
-						<div class="h-2 w-2 bg-secondary-400 opacity-60" style="border-radius: var(--radius-sm);"></div>
+						<div
+							class="bg-secondary-400 h-2 w-2 opacity-60"
+							style="border-radius: var(--radius-sm);"
+						></div>
 					</div>
 					<div class="absolute top-1/2 right-4 -translate-y-1/2 transform">
-						<div class="h-2 w-2 bg-secondary-400 opacity-60" style="border-radius: var(--radius-sm);"></div>
-					</div>
+						<div
+							class="bg-secondary-400 h-2 w-2 opacity-60"
+							style="border-radius: var(--radius-sm);"
+						></div>
+					</div> -->
 				</div>
 			{:else if visualization === "onboarding"}
 				<!-- Onboarding: Connecting to Organizational Network -->
 				<div class="relative flex h-full w-full items-center justify-center">
 					<!-- Left side: Individual user -->
-					<div class="absolute left-8 top-1/2 -translate-y-1/2 transform">
+					<div class="absolute top-1/2 left-8 -translate-y-1/2 transform">
 						<div
 							class="relative z-10 flex h-12 w-12 items-center justify-center bg-blue-50 text-blue-600 ring-2 ring-blue-100"
 							style="border-radius: var(--radius-lg);"
 						>
 							<IconUsers class="h-6 w-6" />
 							<!-- Subtle accent to show "joining" -->
-							<div class="absolute inset-0 bg-blue-200 opacity-30" style="border-radius: var(--radius-lg);"></div>
+							<div
+								class="absolute inset-0 bg-blue-200 opacity-30"
+								style="border-radius: var(--radius-lg);"
+							></div>
 						</div>
 					</div>
 
 					<!-- Right side: Organizational network -->
-					<div class="absolute right-8 top-1/2 -translate-y-1/2 transform">
+					<div class="absolute top-1/2 right-8 -translate-y-1/2 transform">
 						<div
 							class="relative z-10 flex h-16 w-16 items-center justify-center bg-blue-100 text-blue-600 ring-2 ring-blue-50"
 							style="border-radius: var(--radius-xl);"
 						>
 							<IconNetwork class="h-8 w-8" />
 							<!-- Network activity indicator -->
-							<div class="absolute inset-0 bg-blue-300 opacity-20" style="border-radius: var(--radius-xl);"></div>
+							<div
+								class="absolute inset-0 bg-blue-300 opacity-20"
+								style="border-radius: var(--radius-xl);"
+							></div>
 						</div>
 					</div>
 
@@ -262,47 +303,62 @@
 						<div
 							class="h-px w-32 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400 opacity-60"
 						></div>
-						
+
 						<!-- Static data flow indicators -->
 						<div class="absolute top-0 left-4 h-px w-2 bg-blue-500 opacity-80"></div>
 						<div class="absolute top-0 left-12 h-px w-2 bg-blue-500 opacity-80"></div>
 						<div class="absolute top-0 left-20 h-px w-2 bg-blue-500 opacity-80"></div>
-						
+
 						<!-- Connection point in center -->
-						<div class="absolute top-1/2 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 transform bg-blue-500 opacity-70" style="border-radius: var(--radius-sm);"></div>
+						<div
+							class="absolute top-1/2 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 transform bg-blue-500 opacity-70"
+							style="border-radius: var(--radius-sm);"
+						></div>
 					</div>
 
 					<!-- Integration success indicator -->
 					<div class="absolute bottom-4 left-1/2 -translate-x-1/2 transform">
-						<div class="h-1 w-1 bg-green-500 opacity-60" style="border-radius: var(--radius-xs);"></div>
+						<div
+							class="h-1 w-1 bg-green-500 opacity-60"
+							style="border-radius: var(--radius-xs);"
+						></div>
 					</div>
 				</div>
 			{:else if visualization === "meetings"}
 				<!-- Meetings: Signal Through Noise -->
 				<div class="relative flex h-full w-full items-center justify-center">
 					<!-- Left side: Radar (Primary - Proactive Detection) -->
-					<div class="absolute left-8 top-1/2 -translate-y-1/2 transform">
+					<div class="absolute top-1/2 left-8 -translate-y-1/2 transform">
 						<div
 							class="relative z-10 flex h-16 w-16 items-center justify-center bg-green-50 text-green-600 ring-2 ring-green-100"
 							style="border-radius: var(--radius-xl);"
 						>
 							<IconRadar class="h-8 w-8" />
 							<!-- Static background accent -->
-							<div class="absolute inset-0 bg-green-200 opacity-30" style="border-radius: var(--radius-xl);"></div>
+							<div
+								class="absolute inset-0 bg-green-200 opacity-30"
+								style="border-radius: var(--radius-xl);"
+							></div>
 							<!-- Static scan line -->
-							<div class="absolute inset-0 border-r-2 border-green-400 opacity-40" style="border-radius: var(--radius-xl);"></div>
+							<div
+								class="absolute inset-0 border-r-2 border-green-400 opacity-40"
+								style="border-radius: var(--radius-xl);"
+							></div>
 						</div>
 					</div>
 
 					<!-- Right side: Target (Secondary - Focused Alignment) -->
-					<div class="absolute right-8 top-1/2 -translate-y-1/2 transform">
+					<div class="absolute top-1/2 right-8 -translate-y-1/2 transform">
 						<div
 							class="relative z-10 flex h-12 w-12 items-center justify-center bg-green-100 text-green-600 ring-2 ring-green-50"
 							style="border-radius: var(--radius-lg);"
 						>
 							<IconTarget class="h-6 w-6" />
 							<!-- Static target accent -->
-							<div class="absolute inset-0 bg-green-300 opacity-20" style="border-radius: var(--radius-lg);"></div>
+							<div
+								class="absolute inset-0 bg-green-300 opacity-20"
+								style="border-radius: var(--radius-lg);"
+							></div>
 						</div>
 					</div>
 
@@ -312,14 +368,17 @@
 						<div
 							class="h-px w-32 bg-gradient-to-r from-green-400 via-green-500 to-green-600 opacity-70"
 						></div>
-						
+
 						<!-- Static signal indicators -->
 						<div class="absolute top-0 left-6 h-px w-3 bg-green-500 opacity-90"></div>
 						<div class="absolute top-0 left-14 h-px w-3 bg-green-500 opacity-90"></div>
 						<div class="absolute top-0 left-22 h-px w-3 bg-green-500 opacity-90"></div>
-						
+
 						<!-- Signal lock point -->
-						<div class="absolute top-1/2 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 transform bg-green-600 opacity-80" style="border-radius: var(--radius-sm);"></div>
+						<div
+							class="absolute top-1/2 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 transform bg-green-600 opacity-80"
+							style="border-radius: var(--radius-sm);"
+						></div>
 					</div>
 
 					<!-- Noise clearing indicators (subtle scattered elements being organized) -->

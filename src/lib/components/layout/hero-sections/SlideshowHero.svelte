@@ -28,7 +28,7 @@
 			<div
 				out:fly={{ y: "-2em", delay: 0, duration: 500, easing: cubicOut }}
 				in:fly={{ y: "2em", delay: 500, duration: 500, easing: cubicOut }}
-				class="col-start-1 col-end-1 row-start-1 row-end-1 mx-auto w-full max-w-4xl px-8"
+				class="col-start-1 col-end-1 row-start-1 row-end-1 mx-auto w-full px-8"
 			>
 				<h1 class="text-display text-balance">
 					<AnimateText
@@ -44,7 +44,7 @@
 			<div
 				in:fly={{ y: "2em", delay: 500, duration: 500, easing: cubicOut }}
 				out:fly={{ y: "-2em", delay: 0, duration: 500, easing: cubicOut }}
-				class="col-start-1 col-end-1 row-start-1 row-end-1 mx-auto w-full max-w-4xl px-8"
+				class="col-start-1 col-end-1 row-start-1 row-end-1 mx-auto w-full px-8"
 			>
 				<div class="grid gap-4">
 					<h1 class="text-display text-balance">
@@ -189,7 +189,7 @@
 		position: relative;
 		display: inline-block;
 	}
-	/* 
+	/*
 	.small-text {
 		font-size: clamp(1.25rem, 2.5vw, 1.75rem);
 		font-weight: 400;

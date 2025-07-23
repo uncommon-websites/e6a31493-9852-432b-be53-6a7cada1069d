@@ -15,7 +15,7 @@
 		<div class="mx-auto max-w-7xl">
 			<!-- Letter Header -->
 			<div class="mb-16 text-center text-balance">
-				<h1 class="text-display text-foreground mb-4 text-balance">
+				<h1 class="text-display text-foreground mx-auto mb-4 max-w-xl text-balance">
 					A new contract between humans and technology
 				</h1>
 				<p class="text-body text-muted-foreground italic">From the team at Sentra</p>
