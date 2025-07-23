@@ -194,12 +194,106 @@
 
 				<!-- Right column - Security graphic -->
 				<div class="relative">
-					<img
-						src="/generated/image-a-professional-business-team-engaged-in-.webp"
-						alt="Secure cloud infrastructure protecting organizational data"
-						class="h-auto w-full"
+					<!-- Custom SVG illustration -->
+					<div
+						class="bg-gradient-to-br from-primary/5 to-primary/10 flex h-96 w-full items-center justify-center"
 						style="border-radius: var(--radius-lg);"
-					/>
+					>
+						<svg
+							viewBox="0 0 400 300"
+							class="h-full w-full max-h-80"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<!-- Database 1 (top left) -->
+							<g transform="translate(60, 60)">
+								<ellipse cx="30" cy="10" rx="25" ry="8" fill="currentColor" class="text-primary/20" />
+								<rect x="5" y="10" width="50" height="30" fill="currentColor" class="text-primary/20" />
+								<ellipse cx="30" cy="40" rx="25" ry="8" fill="currentColor" class="text-primary/30" />
+								<ellipse cx="30" cy="20" rx="25" ry="8" fill="currentColor" class="text-primary/25" />
+								<ellipse cx="30" cy="30" rx="25" ry="8" fill="currentColor" class="text-primary/25" />
+								<!-- Database icon -->
+								<svg x="20" y="15" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+									<ellipse cx="12" cy="5" rx="9" ry="3"/>
+									<path d="m3 5 0 14c0 3 4 3 9 3s9 0 9-3V5"/>
+									<path d="m3 12c0 3 4 3 9 3s9 0 9-3"/>
+								</svg>
+							</g>
+
+							<!-- Database 2 (top right) -->
+							<g transform="translate(280, 60)">
+								<ellipse cx="30" cy="10" rx="25" ry="8" fill="currentColor" class="text-primary/20" />
+								<rect x="5" y="10" width="50" height="30" fill="currentColor" class="text-primary/20" />
+								<ellipse cx="30" cy="40" rx="25" ry="8" fill="currentColor" class="text-primary/30" />
+								<ellipse cx="30" cy="20" rx="25" ry="8" fill="currentColor" class="text-primary/25" />
+								<ellipse cx="30" cy="30" rx="25" ry="8" fill="currentColor" class="text-primary/25" />
+								<!-- Database icon -->
+								<svg x="20" y="15" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+									<ellipse cx="12" cy="5" rx="9" ry="3"/>
+									<path d="m3 5 0 14c0 3 4 3 9 3s9 0 9-3V5"/>
+									<path d="m3 12c0 3 4 3 9 3s9 0 9-3"/>
+								</svg>
+							</g>
+
+							<!-- Database 3 (bottom center) -->
+							<g transform="translate(170, 180)">
+								<ellipse cx="30" cy="10" rx="25" ry="8" fill="currentColor" class="text-primary/20" />
+								<rect x="5" y="10" width="50" height="30" fill="currentColor" class="text-primary/20" />
+								<ellipse cx="30" cy="40" rx="25" ry="8" fill="currentColor" class="text-primary/30" />
+								<ellipse cx="30" cy="20" rx="25" ry="8" fill="currentColor" class="text-primary/25" />
+								<ellipse cx="30" cy="30" rx="25" ry="8" fill="currentColor" class="text-primary/25" />
+								<!-- Database icon -->
+								<svg x="20" y="15" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+									<ellipse cx="12" cy="5" rx="9" ry="3"/>
+									<path d="m3 5 0 14c0 3 4 3 9 3s9 0 9-3V5"/>
+									<path d="m3 12c0 3 4 3 9 3s9 0 9-3"/>
+								</svg>
+							</g>
+
+							<!-- Central Lock -->
+							<g transform="translate(180, 120)">
+								<circle cx="20" cy="20" r="30" fill="currentColor" class="text-primary/10" />
+								<circle cx="20" cy="20" r="25" fill="currentColor" class="text-primary/5" />
+								<!-- Lock icon -->
+								<svg x="8" y="8" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-primary">
+									<rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+									<path d="m7 11V7a5 5 0 0 1 10 0v4"/>
+								</svg>
+							</g>
+
+							<!-- Dotted lines connecting databases to lock -->
+							<!-- Database 1 to Lock -->
+							<path
+								d="M 120 90 Q 150 105 180 140"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-dasharray="4,4"
+								fill="none"
+								class="text-primary/40"
+							/>
+
+							<!-- Database 2 to Lock -->
+							<path
+								d="M 280 90 Q 250 105 220 140"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-dasharray="4,4"
+								fill="none"
+								class="text-primary/40"
+							/>
+
+							<!-- Database 3 to Lock -->
+							<path
+								d="M 200 180 Q 200 165 200 150"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-dasharray="4,4"
+								fill="none"
+								class="text-primary/40"
+							/>
+						</svg>
+					</div>
+
 					<!-- Overlay security elements -->
 					<div
 						class="from-primary/20 absolute inset-0 bg-gradient-to-t to-transparent"
