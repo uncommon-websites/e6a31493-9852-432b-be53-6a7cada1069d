@@ -202,18 +202,18 @@
 							class="h-px w-32 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400 opacity-60"
 						></div>
 						
-						<!-- Data flow indicators -->
-						<div class="absolute top-0 left-4 h-px w-2 animate-pulse bg-blue-500 opacity-80" style="animation-delay: 0s;"></div>
-						<div class="absolute top-0 left-12 h-px w-2 animate-pulse bg-blue-500 opacity-80" style="animation-delay: 0.5s;"></div>
-						<div class="absolute top-0 left-20 h-px w-2 animate-pulse bg-blue-500 opacity-80" style="animation-delay: 1s;"></div>
+						<!-- Static data flow indicators -->
+						<div class="absolute top-0 left-4 h-px w-2 bg-blue-500 opacity-80"></div>
+						<div class="absolute top-0 left-12 h-px w-2 bg-blue-500 opacity-80"></div>
+						<div class="absolute top-0 left-20 h-px w-2 bg-blue-500 opacity-80"></div>
 						
 						<!-- Connection point in center -->
-						<div class="absolute top-1/2 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 transform animate-pulse bg-blue-500 opacity-70" style="border-radius: var(--radius-sm);"></div>
+						<div class="absolute top-1/2 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 transform bg-blue-500 opacity-70" style="border-radius: var(--radius-sm);"></div>
 					</div>
 
 					<!-- Integration success indicator -->
 					<div class="absolute bottom-4 left-1/2 -translate-x-1/2 transform">
-						<div class="h-1 w-1 animate-pulse bg-green-500 opacity-60" style="border-radius: var(--radius-xs);"></div>
+						<div class="h-1 w-1 bg-green-500 opacity-60" style="border-radius: var(--radius-xs);"></div>
 					</div>
 				</div>
 			{:else if visualization === "meetings"}
@@ -226,10 +226,10 @@
 							style="border-radius: var(--radius-xl);"
 						>
 							<IconRadar class="h-8 w-8" />
-							<!-- Scanning animation -->
-							<div class="absolute inset-0 animate-pulse bg-green-200 opacity-30" style="border-radius: var(--radius-xl);"></div>
-							<!-- Rotating scan line -->
-							<div class="absolute inset-0 animate-spin border-r-2 border-green-400 opacity-40" style="animation-duration: 2s; border-radius: var(--radius-xl);"></div>
+							<!-- Static background accent -->
+							<div class="absolute inset-0 bg-green-200 opacity-30" style="border-radius: var(--radius-xl);"></div>
+							<!-- Static scan line -->
+							<div class="absolute inset-0 border-r-2 border-green-400 opacity-40" style="border-radius: var(--radius-xl);"></div>
 						</div>
 					</div>
 
@@ -240,8 +240,8 @@
 							style="border-radius: var(--radius-lg);"
 						>
 							<IconTarget class="h-6 w-6" />
-							<!-- Target lock animation -->
-							<div class="absolute inset-0 animate-ping bg-green-300 opacity-20" style="border-radius: var(--radius-lg);"></div>
+							<!-- Static target accent -->
+							<div class="absolute inset-0 bg-green-300 opacity-20" style="border-radius: var(--radius-lg);"></div>
 						</div>
 					</div>
 
@@ -252,13 +252,13 @@
 							class="h-px w-32 bg-gradient-to-r from-green-400 via-green-500 to-green-600 opacity-70"
 						></div>
 						
-						<!-- Signal pulses showing detection -->
-						<div class="absolute top-0 left-6 h-px w-3 animate-pulse bg-green-500 opacity-90" style="animation-delay: 0s;"></div>
-						<div class="absolute top-0 left-14 h-px w-3 animate-pulse bg-green-500 opacity-90" style="animation-delay: 0.3s;"></div>
-						<div class="absolute top-0 left-22 h-px w-3 animate-pulse bg-green-500 opacity-90" style="animation-delay: 0.6s;"></div>
+						<!-- Static signal indicators -->
+						<div class="absolute top-0 left-6 h-px w-3 bg-green-500 opacity-90"></div>
+						<div class="absolute top-0 left-14 h-px w-3 bg-green-500 opacity-90"></div>
+						<div class="absolute top-0 left-22 h-px w-3 bg-green-500 opacity-90"></div>
 						
 						<!-- Signal lock point -->
-						<div class="absolute top-1/2 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 transform animate-pulse bg-green-600 opacity-80" style="border-radius: var(--radius-sm);"></div>
+						<div class="absolute top-1/2 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 transform bg-green-600 opacity-80" style="border-radius: var(--radius-sm);"></div>
 					</div>
 
 					<!-- Noise clearing indicators (subtle scattered elements being organized) -->
@@ -268,7 +268,7 @@
 
 					<!-- Success indicator - clear signal achieved -->
 					<div class="absolute bottom-4 left-1/2 -translate-x-1/2 transform">
-						<div class="h-1 w-1 animate-pulse bg-green-600 opacity-70" style="border-radius: var(--radius-xs);"></div>
+						<div class="h-1 w-1 bg-green-600 opacity-70" style="border-radius: var(--radius-xs);"></div>
 					</div>
 				</div>
 			{:else}
