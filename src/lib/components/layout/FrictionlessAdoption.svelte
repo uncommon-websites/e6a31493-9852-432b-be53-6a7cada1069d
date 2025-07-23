@@ -111,9 +111,10 @@
 							onclick={() => selectStep(step.id)}
 							class={[
 								"group w-full text-left transition-all duration-300 ease-out",
-								"rounded-2xl p-6",
+								"p-6",
 								activeStep === step.id ? "bg-primary-50" : "bg-white hover:bg-gray-50"
 							]}
+							style="border-radius: var(--radius-lg)"
 						>
 							<div class="flex gap-4">
 								<!-- Step Content with Dot aligned to heading -->
@@ -156,7 +157,7 @@
 				<!-- Right Side - Visual Content -->
 				<div class="flex items-center justify-center">
 					<div class="relative w-full max-w-lg">
-						<div class="relative overflow-hidden rounded-3xl border border-gray-200 bg-white">
+						<div class="relative overflow-hidden border border-gray-200 bg-white" style="border-radius: var(--radius-xl)">
 							<div class="grid aspect-square w-full">
 								{#key activeStep}
 									<img
@@ -175,7 +176,7 @@
 							<!-- Step Indicator -->
 							<div class="absolute right-6 bottom-6 left-6">
 								{#key activeStep}
-									<div class="rounded-xl bg-white/90 p-4 backdrop-blur-sm">
+									<div class="bg-white/90 p-4 backdrop-blur-sm" style="border-radius: var(--radius-md)">
 										<div class="flex items-center gap-3">
 											<div
 												class="bg-primary text-footnote flex h-6 w-6 items-center justify-center rounded-full font-bold !text-white"
