@@ -49,7 +49,7 @@
 
 <div class="bg-gray-50" {...rest}>
 	<section class="section-px section-py-sm mx-auto max-w-6xl">
-		<div class="bg-card border-border rounded-(--radius-lg) border p-8">
+		<div class="bg-card rounded-(--radius-lg) p-8">
 			<div class="mx-auto max-w-prose">
 				<h2 class="text-title2 mb-8 text-center">
 					<AnimateText text={title} />
