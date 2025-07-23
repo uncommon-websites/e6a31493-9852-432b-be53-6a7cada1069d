@@ -34,6 +34,6 @@
 			"border-border bg-background focus:ring-primary/20 focus:border-primary w-full border px-4 py-3 transition-colors focus:ring-2 focus:outline-none",
 			classes
 		]}
-		style="border-radius: var(--radius-md);"
+		style="border-radius: var(--radius-lg);"
 	/>
 </div>
