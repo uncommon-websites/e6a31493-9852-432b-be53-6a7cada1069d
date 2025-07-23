@@ -1,6 +1,7 @@
 <script lang="ts">
 	import AnimateText from "$lib/components/animation/AnimateText.svelte"
 	import Button from "$lib/components/ui/Button.svelte"
+	import Input from "$lib/components/ui/Input.svelte"
 
 	// Contact form state
 	let firstName = $state("")
@@ -406,94 +407,90 @@
 			</div>
 
 			<!-- Whitepaper Download Form -->
-			<div class="space-y-6">
-				<div>
-					<h3 class="text-title3 mb-2">Security at Sentra</h3>
+			<div class="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
+				<!-- Left column - Text content -->
+				<div class="space-y-4">
+					<h3 class="text-title3">Security at Sentra</h3>
 					<p class="text-body text-muted-foreground">
 						Download our comprehensive security whitepaper
 					</p>
 				</div>
 
-				{#if formSubmitted}
-					<div class="py-8 text-center">
-						<div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full">
-							<svg
-								class="text-primary-900 h-8 w-8"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M5 13l4 4L19 7"
-								/>
-							</svg>
+				<!-- Right column - Form -->
+				<div>
+					{#if formSubmitted}
+						<div class="py-8 text-center">
+							<div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full">
+								<svg
+									class="text-primary-900 h-8 w-8"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M5 13l4 4L19 7"
+									/>
+								</svg>
+							</div>
+							<h4 class="text-headline mb-2 font-medium">Download Started</h4>
+							<p class="text-caption text-muted-foreground">
+								Your security whitepaper download should begin shortly.
+							</p>
 						</div>
-						<h4 class="text-headline mb-2 font-medium">Download Started</h4>
-						<p class="text-caption text-muted-foreground">
-							Your security whitepaper download should begin shortly.
-						</p>
-					</div>
-				{:else}
-					<form
-						class="mx-auto max-w-md space-y-4"
-						onsubmit={(e) => {
-							e.preventDefault()
-							handleWhitepaperDownload()
-						}}
-					>
-						<div>
-							<label for="email" class="text-caption mb-2 block font-medium">Work Email</label>
-							<input
+					{:else}
+						<form
+							class="space-y-4"
+							onsubmit={(e) => {
+								e.preventDefault()
+								handleWhitepaperDownload()
+							}}
+						>
+							<Input
 								id="email"
 								type="email"
 								bind:value={email}
-								required
-								class="border-border bg-background focus:ring-primary/20 focus:border-primary w-full border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
-								style="border-radius: var(--radius-md);"
+								label="Work Email"
 								placeholder="you@company.com"
+								required
 							/>
-						</div>
 
-						<div>
-							<label for="company" class="text-caption mb-2 block font-medium">Company</label>
-							<input
+							<Input
 								id="company"
 								type="text"
 								bind:value={company}
-								required
-								class="border-border bg-background focus:ring-primary/20 focus:border-primary w-full border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
-								style="border-radius: var(--radius-md);"
+								label="Company"
 								placeholder="Your Company"
+								required
 							/>
-						</div>
 
-						<Button type="submit" class="w-full" disabled={isSubmitting || !email || !company}>
-							{#if isSubmitting}
-								<svg class="mr-3 -ml-1 h-4 w-4 animate-spin" fill="none" viewBox="0 0 24 24">
-									<circle
-										class="opacity-25"
-										cx="12"
-										cy="12"
-										r="10"
-										stroke="currentColor"
-										stroke-width="4"
-									></circle>
-									<path
-										class="opacity-75"
-										fill="currentColor"
-										d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-									></path>
-								</svg>
-								Preparing Download...
-							{:else}
-								Download Whitepaper
-							{/if}
-						</Button>
-					</form>
-				{/if}
+							<Button type="submit" class="w-full" disabled={isSubmitting || !email || !company}>
+								{#if isSubmitting}
+									<svg class="mr-3 -ml-1 h-4 w-4 animate-spin" fill="none" viewBox="0 0 24 24">
+										<circle
+											class="opacity-25"
+											cx="12"
+											cy="12"
+											r="10"
+											stroke="currentColor"
+											stroke-width="4"
+										></circle>
+										<path
+											class="opacity-75"
+											fill="currentColor"
+											d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+										></path>
+									</svg>
+									Preparing Download...
+								{:else}
+									Download Whitepaper
+								{/if}
+							</Button>
+						</form>
+					{/if}
+				</div>
 			</div>
 		</div>
 	</section>
@@ -703,172 +700,156 @@
 
 	<!-- Contact Form Section -->
 	<section id="contact-form" class="section-px section-py">
-		<div class="section-px mx-auto max-w-2xl max-w-6xl">
-			<div class="mb-8">
-				<h2 class="text-title2 mb-4">Talk to Sales</h2>
-				<p class="text-body text-muted-foreground">
-					Ready to deploy Sentra privately? Get in touch with our sales team to discuss your
-					specific requirements and security needs.
-				</p>
-			</div>
-
-			{#if formSubmitted}
-				<div class="py-8 text-center">
-					<div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full">
-						<svg
-							class="text-primary-900 h-8 w-8"
-							fill="none"
-							stroke="currentColor"
-							viewBox="0 0 24 24"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M5 13l4 4L19 7"
-							/>
-						</svg>
-					</div>
-					<h3 class="text-title3 mb-2">Thank you for your interest!</h3>
-					<p class="text-body text-muted-foreground">
-						Our sales team will be in touch within 24 hours to discuss your private deployment
-						needs.
+		<div class="section-px mx-auto max-w-6xl">
+			<div class="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
+				<!-- Left column - Text content -->
+				<div class="space-y-4">
+					<h2 class="text-title2">Talk to Sales</h2>
+					<p class="text-body text-muted-foreground max-w-prose">
+						Ready to deploy Sentra privately? Get in touch with our sales team to discuss your
+						specific requirements and security needs.
 					</p>
 				</div>
-			{:else}
-				<form
-					class="space-y-6"
-					onsubmit={(e) => {
-						e.preventDefault()
-						handleContactSubmit()
-					}}
-				>
-					<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-						<div>
-							<label for="firstName" class="text-caption mb-2 block font-medium">First Name</label>
-							<input
-								id="firstName"
-								type="text"
-								bind:value={firstName}
-								required
-								class="border-border bg-background focus:ring-primary/20 focus:border-primary w-full border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
-								style="border-radius: var(--radius-md);"
-								placeholder="John"
-							/>
-						</div>
 
-						<div>
-							<label for="lastName" class="text-caption mb-2 block font-medium">Last Name</label>
-							<input
-								id="lastName"
-								type="text"
-								bind:value={lastName}
-								required
-								class="border-border bg-background focus:ring-primary/20 focus:border-primary w-full border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
-								style="border-radius: var(--radius-md);"
-								placeholder="Doe"
-							/>
-						</div>
-					</div>
-
-					<div>
-						<label for="contactEmail" class="text-caption mb-2 block font-medium">Work Email</label>
-						<input
-							id="contactEmail"
-							type="email"
-							bind:value={email}
-							required
-							class="border-border bg-background focus:ring-primary/20 focus:border-primary w-full border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
-							style="border-radius: var(--radius-md);"
-							placeholder="john@company.com"
-						/>
-					</div>
-
-					<div>
-						<label for="contactCompany" class="text-caption mb-2 block font-medium">Company</label>
-						<input
-							id="contactCompany"
-							type="text"
-							bind:value={company}
-							required
-							class="border-border bg-background focus:ring-primary/20 focus:border-primary w-full border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
-							style="border-radius: var(--radius-md);"
-							placeholder="Your Company"
-						/>
-					</div>
-
-					<div>
-						<label for="phone" class="text-caption mb-2 block font-medium">Phone (Optional)</label>
-						<input
-							id="phone"
-							type="tel"
-							bind:value={phone}
-							class="border-border bg-background focus:ring-primary/20 focus:border-primary w-full border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
-							style="border-radius: var(--radius-md);"
-							placeholder="+1 (555) 123-4567"
-						/>
-					</div>
-
-					<div>
-						<label for="employees" class="text-caption mb-2 block font-medium">Company Size</label>
-						<select
-							id="employees"
-							bind:value={employees}
-							class="border-border bg-background focus:ring-primary/20 focus:border-primary w-full border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
-							style="border-radius: var(--radius-md);"
-						>
-							<option value="">Select company size</option>
-							<option value="1-10">1-10 employees</option>
-							<option value="11-50">11-50 employees</option>
-							<option value="51-200">51-200 employees</option>
-							<option value="201-1000">201-1000 employees</option>
-							<option value="1000+">1000+ employees</option>
-						</select>
-					</div>
-
-					<div>
-						<label for="message" class="text-caption mb-2 block font-medium"
-							>Message (Optional)</label
-						>
-						<textarea
-							id="message"
-							bind:value={message}
-							rows="4"
-							class="border-border bg-background focus:ring-primary/20 focus:border-primary w-full resize-none border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
-							style="border-radius: var(--radius-md);"
-							placeholder="Tell us about your specific security requirements or any questions you have about private deployments..."
-						></textarea>
-					</div>
-
-					<Button
-						type="submit"
-						size="lg"
-						class="w-full"
-						disabled={isSubmitting || !firstName || !lastName || !email || !company}
-					>
-						{#if isSubmitting}
-							<svg class="mr-3 -ml-1 h-4 w-4 animate-spin" fill="none" viewBox="0 0 24 24">
-								<circle
-									class="opacity-25"
-									cx="12"
-									cy="12"
-									r="10"
+				<!-- Right column - Form -->
+				<div class="max-w-prose">
+					{#if formSubmitted}
+						<div class="py-8 text-center">
+							<div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full">
+								<svg
+									class="text-primary-900 h-8 w-8"
+									fill="none"
 									stroke="currentColor"
-									stroke-width="4"
-								></circle>
-								<path
-									class="opacity-75"
-									fill="currentColor"
-									d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-								></path>
-							</svg>
-							Sending Message...
-						{:else}
-							Get Started with Private Deployment
-						{/if}
-					</Button>
-				</form>
-			{/if}
+									viewBox="0 0 24 24"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M5 13l4 4L19 7"
+									/>
+								</svg>
+							</div>
+							<h3 class="text-title3 mb-2">Thank you for your interest!</h3>
+							<p class="text-body text-muted-foreground">
+								Our sales team will be in touch within 24 hours to discuss your private deployment
+								needs.
+							</p>
+						</div>
+					{:else}
+						<form
+							class="space-y-6"
+							onsubmit={(e) => {
+								e.preventDefault()
+								handleContactSubmit()
+							}}
+						>
+							<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+								<Input
+									id="firstName"
+									type="text"
+									bind:value={firstName}
+									label="First Name"
+									placeholder="John"
+									required
+								/>
+
+								<Input
+									id="lastName"
+									type="text"
+									bind:value={lastName}
+									label="Last Name"
+									placeholder="Doe"
+									required
+								/>
+							</div>
+
+							<Input
+								id="contactEmail"
+								type="email"
+								bind:value={email}
+								label="Work Email"
+								placeholder="john@company.com"
+								required
+							/>
+
+							<Input
+								id="contactCompany"
+								type="text"
+								bind:value={company}
+								label="Company"
+								placeholder="Your Company"
+								required
+							/>
+
+							<Input
+								id="phone"
+								type="tel"
+								bind:value={phone}
+								label="Phone (Optional)"
+								placeholder="+1 (555) 123-4567"
+							/>
+
+							<div class="space-y-2">
+								<label for="employees" class="text-caption block font-medium">Company Size</label>
+								<select
+									id="employees"
+									bind:value={employees}
+									class="border-border bg-background focus:ring-primary/20 focus:border-primary w-full border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
+									style="border-radius: var(--radius-md);"
+								>
+									<option value="">Select company size</option>
+									<option value="1-10">1-10 employees</option>
+									<option value="11-50">11-50 employees</option>
+									<option value="51-200">51-200 employees</option>
+									<option value="201-1000">201-1000 employees</option>
+									<option value="1000+">1000+ employees</option>
+								</select>
+							</div>
+
+							<div class="space-y-2">
+								<label for="message" class="text-caption block font-medium">Message (Optional)</label>
+								<textarea
+									id="message"
+									bind:value={message}
+									rows="4"
+									class="border-border bg-background focus:ring-primary/20 focus:border-primary w-full resize-none border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
+									style="border-radius: var(--radius-md);"
+									placeholder="Tell us about your specific security requirements or any questions you have about private deployments..."
+								></textarea>
+							</div>
+
+							<Button
+								type="submit"
+								size="lg"
+								class="w-full"
+								disabled={isSubmitting || !firstName || !lastName || !email || !company}
+							>
+								{#if isSubmitting}
+									<svg class="mr-3 -ml-1 h-4 w-4 animate-spin" fill="none" viewBox="0 0 24 24">
+										<circle
+											class="opacity-25"
+											cx="12"
+											cy="12"
+											r="10"
+											stroke="currentColor"
+											stroke-width="4"
+										></circle>
+										<path
+											class="opacity-75"
+											fill="currentColor"
+											d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+										></path>
+									</svg>
+									Sending Message...
+								{:else}
+									Get Started with Private Deployment
+								{/if}
+							</Button>
+						</form>
+					{/if}
+				</div>
+			</div>
 		</div>
 	</section>
 
