@@ -32,7 +32,7 @@
 	]
 </script>
 
-<section class="bg-gray-50">
+<section>
 	<div class="section-px section-py mx-auto max-w-6xl">
 		<div class="text-left">
 			<SectionHeader
@@ -48,7 +48,7 @@
 					<div class="group flex">
 						<!-- Card max-w-6xl-->
 						<div
-							class="relative flex min-h-[400px] w-full flex-col overflow-hidden rounded-3xl bg-white p-10"
+							class="relative flex min-h-[400px] w-full flex-col overflow-hidden rounded-3xl bg-white border border-gray-200 p-10"
 						>
 							<!-- Visualization max-w-6xl-->
 							<div class="mb-8 flex aspect-video items-center justify-center">
