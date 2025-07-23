@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { onMount } from "svelte"
 	import SectionHeader from "./SectionHeader.svelte"
+	import { fade } from "svelte/transition"
+	import { cubicOut, cubicIn } from "svelte/easing"
 
 	let timelineContainer: HTMLElement = $state()!
 	let observerRef: IntersectionObserver
@@ -155,12 +157,14 @@
 				<div class="flex items-center justify-center">
 					<div class="relative w-full max-w-lg">
 						<div class="relative overflow-hidden rounded-3xl border border-gray-200 bg-white">
-							<div class="aspect-square w-full">
+							<div class="grid aspect-square w-full">
 								{#key activeStep}
 									<img
+										in:fade={{ duration: 300, easing: cubicIn }}
+										out:fade={{ duration: 300, easing: cubicOut }}
 										src={`/generated/${currentStep.visual}.webp`}
 										alt={currentStep.title}
-										class="h-full w-full object-cover transition-all duration-500 ease-out"
+										class="grid-center h-full w-full object-cover transition-all duration-500 ease-out"
 									/>
 								{/key}
 							</div>
@@ -170,18 +174,20 @@
 
 							<!-- Step Indicator -->
 							<div class="absolute right-6 bottom-6 left-6">
-								<div class="rounded-xl bg-white/90 p-4 backdrop-blur-sm">
-									<div class="flex items-center gap-3">
-										<div
-											class="bg-primary text-footnote flex h-6 w-6 items-center justify-center rounded-full font-bold text-white"
-										>
-											{activeStep}
+								{#key activeStep}
+									<div class="rounded-xl bg-white/90 p-4 backdrop-blur-sm">
+										<div class="flex items-center gap-3">
+											<div
+												class="bg-primary text-footnote flex h-6 w-6 items-center justify-center rounded-full font-bold !text-white"
+											>
+												{activeStep}
+											</div>
+											<span class="text-caption font-medium text-gray-900">
+												{currentStep.title}
+											</span>
 										</div>
-										<span class="text-caption font-medium text-gray-900">
-											{currentStep.title}
-										</span>
 									</div>
-								</div>
+								{/key}
 							</div>
 						</div>
 
