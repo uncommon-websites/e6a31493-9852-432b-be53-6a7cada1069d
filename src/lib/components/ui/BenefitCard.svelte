@@ -255,9 +255,9 @@
 					</div>
 
 					<!-- Noise clearing indicators (subtle scattered elements being organized) -->
-					<div class="absolute top-4 left-12 h-1 w-1 animate-pulse rounded-full bg-gray-400 opacity-30" style="animation-delay: 0.2s;"></div>
-					<div class="absolute top-6 right-16 h-1 w-1 animate-pulse rounded-full bg-gray-400 opacity-20" style="animation-delay: 0.8s;"></div>
-					<div class="absolute bottom-6 left-16 h-1 w-1 animate-pulse rounded-full bg-gray-400 opacity-25" style="animation-delay: 1.2s;"></div>
+					<!-- First dot removed -->
+					<!-- Second dot removed -->
+					<!-- Third dot removed -->
 
 					<!-- Success indicator - clear signal achieved -->
 					<div class="absolute bottom-4 left-1/2 -translate-x-1/2 transform">
