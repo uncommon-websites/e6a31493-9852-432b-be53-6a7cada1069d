@@ -299,17 +299,7 @@
 						class="from-primary/20 absolute inset-0 bg-gradient-to-t to-transparent"
 						style="border-radius: var(--radius-lg);"
 					></div>
-					<div class="absolute right-4 bottom-4 left-4">
-						<div
-							class="border border-white/20 bg-white/90 p-4 backdrop-blur-sm"
-							style="border-radius: var(--radius-md);"
-						>
-							<div class="flex items-center gap-3">
-								<div class="h-3 w-3 animate-pulse rounded-full bg-green-500"></div>
-								<span class="text-sm font-medium text-gray-900">Secure deployment active</span>
-							</div>
-						</div>
-					</div>
+				
 				</div>
 			</div>
 		</div>
