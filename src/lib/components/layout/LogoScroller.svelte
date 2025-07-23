@@ -5,7 +5,7 @@
 	// Props
 	const {
 		paused,
-		label = "Scaling companies like yours",
+		label = "",
 		layout = "vertical",
 		mode = "light",
 		logoUrls = [
