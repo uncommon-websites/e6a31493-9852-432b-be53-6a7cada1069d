@@ -211,7 +211,10 @@
 						<div class="absolute top-1/2 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 transform bg-blue-500 opacity-70" style="border-radius: var(--radius-sm);"></div>
 					</div>
 
-					<!-- Integration success indicator removed -->
+					<!-- Integration success indicator -->
+					<div class="absolute bottom-4 left-1/2 -translate-x-1/2 transform">
+						<div class="h-1 w-1 bg-green-500 opacity-60" style="border-radius: var(--radius-xs);"></div>
+					</div>
 				</div>
 			{:else if visualization === "meetings"}
 				<!-- Meetings: Signal Through Noise -->
