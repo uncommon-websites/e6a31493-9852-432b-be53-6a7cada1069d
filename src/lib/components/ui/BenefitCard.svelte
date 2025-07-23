@@ -72,14 +72,14 @@
 			case "future":
 				return {
 					icon: IconTrendingUp,
-					bgColor: "bg-purple-100",
+					bgColor: "bg-purple-50",
 					textColor: "text-purple-600",
 					supportIcons: [IconBrain, IconDatabase, IconNetwork, IconShield]
 				}
 			default:
 				return {
 					icon: IconBrain,
-					bgColor: "bg-primary-100",
+					bgColor: "bg-primary-50",
 					textColor: "text-primary-600",
 					supportIcons: [IconDatabase, IconNetwork, IconShield]
 				}
@@ -119,7 +119,7 @@
 				<div class="relative flex items-center justify-center">
 					<!-- Central radar icon with enhanced presence -->
 					<div
-						class="relative z-10 flex h-20 w-20 items-center justify-center rounded-full bg-orange-100 text-orange-600 ring-2 ring-orange-50"
+						class="relative z-10 flex h-20 w-20 items-center justify-center rounded-full bg-orange-50 text-orange-600 ring-2 ring-orange-50"
 					>
 						<IconRadar class="h-10 w-10" />
 
