@@ -117,55 +117,24 @@
 					<div class="border-primary-200 absolute h-56 w-56 border opacity-10" style="border-radius: var(--radius-4xl);"></div>
 				</div>
 			{:else if visualization === "misalignment"}
-				<!-- Smoke Before Fire - Vigilant Eye Detection -->
+				<!-- Early Detection - Minimal Smoke Before Fire -->
 				<div class="relative flex items-center justify-center">
-					<!-- Central eye icon - vigilant observer -->
+					<!-- Central vigilant eye - the detector -->
 					<div
 						class="relative z-10 flex h-20 w-20 items-center justify-center bg-orange-50 text-orange-600 ring-2 ring-orange-100"
 						style="border-radius: var(--radius-xl);"
 					>
 						<IconEye class="h-10 w-10" />
-						<!-- Vigilant monitoring accent -->
-						<div class="absolute inset-0 bg-orange-200 opacity-25" style="border-radius: var(--radius-xl);"></div>
 					</div>
 
-					<!-- Smoke wisp - early warning signs (left side) -->
-					<div class="absolute top-1/2 -left-12 -translate-y-1/2 transform">
-						<!-- Main smoke particle -->
-						<div class="relative">
-							<div class="h-3 w-3 bg-gray-400 opacity-40" style="border-radius: var(--radius);"></div>
-							<!-- Smaller smoke particles rising -->
-							<div class="absolute -top-2 left-1 h-1 w-1 bg-gray-300 opacity-30" style="border-radius: var(--radius-xs);"></div>
-							<div class="absolute -top-4 -left-1 h-1 w-1 bg-gray-200 opacity-20" style="border-radius: var(--radius-xs);"></div>
-						</div>
+					<!-- Single smoke wisp - the early warning sign -->
+					<div class="absolute top-1/2 -left-8 -translate-y-1/2 transform">
+						<div class="h-2 w-2 bg-gray-400 opacity-50" style="border-radius: var(--radius-sm);"></div>
 					</div>
 
-					<!-- Clarity zone - prevention success (right side) -->
-					<div class="absolute top-1/2 -right-12 -translate-y-1/2 transform">
-						<div class="h-4 w-4 bg-green-400 opacity-50" style="border-radius: var(--radius);"></div>
-						<!-- Success indicator -->
-						<div class="absolute -top-1 -right-1 h-2 w-2 bg-green-500 opacity-30" style="border-radius: var(--radius-sm);"></div>
-					</div>
-
-					<!-- Detection beam - from smoke to clarity -->
+					<!-- Detection line - showing early intervention -->
 					<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform">
-						<!-- Gradient showing transformation from problem to solution -->
-						<div
-							class="h-px w-24 bg-gradient-to-r from-gray-400 via-orange-400 to-green-400 opacity-60"
-						></div>
-						
-						<!-- Detection point in center -->
-						<div class="absolute top-1/2 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 transform bg-orange-500 opacity-70" style="border-radius: var(--radius-sm);"></div>
-					</div>
-
-					<!-- Watchful monitoring arc -->
-					<div
-						class="absolute top-1/2 left-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 transform"
-					>
-						<div
-							class="h-full w-full border-r-2 border-orange-300 opacity-20"
-							style="border-radius: var(--radius-2xl);"
-						></div>
+						<div class="h-px w-16 bg-orange-400 opacity-40"></div>
 					</div>
 				</div>
 			{:else if visualization === "culture"}
