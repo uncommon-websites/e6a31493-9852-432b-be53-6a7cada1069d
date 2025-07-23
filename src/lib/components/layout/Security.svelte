@@ -47,7 +47,7 @@
 	]
 </script>
 
-<div class="" {...rest}>
+<div class="bg-gray-50" {...rest}>
 	<section class="section-px section-py-sm mx-auto max-w-6xl">
 		<div class="bg-card border-border rounded-(--radius-lg) border p-8">
 			<div class="mx-auto max-w-prose">
