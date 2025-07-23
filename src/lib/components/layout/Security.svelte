@@ -49,99 +49,81 @@
 
 <div class="" {...rest}>
 	<section class="section-px section-py-sm mx-auto max-w-6xl">
-		<div class="bg-card border-border rounded-(--radius-lg) border overflow-hidden">
-			<!-- Header Section -->
-			<div class="px-12 pt-12 pb-8">
-				<div class="mx-auto max-w-2xl text-center">
-					<h2 class="text-title2 mb-4">
-						<AnimateText text={title} />
-					</h2>
-				</div>
-			</div>
+		<div class="bg-card border-border rounded-(--radius-lg) border p-8">
+			<div class="mx-auto max-w-prose">
+				<h2 class="text-title2 mb-8 text-center">
+					<AnimateText text={title} />
+				</h2>
 
-			<!-- Trust Indicators -->
-			<div class="px-12 pb-12">
-				<div class="mx-auto max-w-4xl">
-					<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+				<!-- Trust indicators with actual compliance logos -->
+				<div class="border-border mb-8 flex justify-center border-b pb-6">
+					<div class="grid max-w-2xl grid-cols-1 gap-8 md:grid-cols-3 md:gap-16">
 						{#each complianceItems as item}
-							<div class="flex flex-col items-center text-center group">
-								<div class="mb-6 transition-transform duration-300 group-hover:scale-105">
-									<img 
-										src={item.logoUrl} 
-										alt={item.name}
-										class="h-16 w-auto mx-auto"
-									/>
-								</div>
-								<div class="space-y-1">
-									<p class="text-body font-semibold">{item.name}</p>
-									<p class="text-caption text-muted-foreground">{item.status}</p>
+							<div class="flex w-full flex-col items-center justify-center space-y-4">
+								<div class="flex flex-col-reverse items-center justify-between gap-2">
+									<div class="text-center">
+										<p class="text-body font-medium">{item.name}</p>
+										<p class="text-caption text-muted-foreground mt-1">{item.status}</p>
+									</div>
+									<img src={item.logoUrl} alt={item.name} />
 								</div>
 							</div>
 						{/each}
 					</div>
 				</div>
-			</div>
 
-			<!-- Content Sections -->
-			<div class="bg-muted/30 px-12 py-12">
-				<div class="mx-auto max-w-4xl">
-					<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-						<div class="space-y-6">
-							<div class="space-y-4">
-								<h3 class="text-title3 font-semibold">Enterprise-grade security</h3>
-								<p class="text-body text-muted-foreground leading-relaxed">
-									Your data security is our top priority. Sentra maintains SOC2 Type 1 compliance and is
-									currently in the observation for SOC2 Type 2. We adhere to ISO standards and GDPR
-									regulations, ensuring the highest levels of data protection and privacy for your
-									organization.
-								</p>
-							</div>
-							<div>
-								<a
-									href="https://trust.delve.co/sentra"
-									class="text-primary hover:text-primary/80 text-body inline-flex items-center gap-2 font-medium transition-all duration-200 hover:gap-3"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									Visit our Security & Trust Center
-									<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											stroke-width="2"
-											d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-										/>
-									</svg>
-								</a>
-							</div>
+				<div class="space-y-6 text-left">
+					<div>
+						<h3 class="text-headline mb-3 font-medium">Enterprise-grade security</h3>
+						<p class="text-body text-muted-foreground">
+							Your data security is our top priority. Sentra maintains SOC2 Type 1 compliance and is
+							currently in the observation for SOC2 Type 2. We adhere to ISO standards and GDPR
+							regulations, ensuring the highest levels of data protection and privacy for your
+							organization.
+						</p>
+						<div class="mt-4">
+							<a
+								href="https://trust.delve.co/sentra"
+								class="text-primary hover:text-primary/80 text-body inline-flex items-center gap-1 font-medium transition-colors duration-200"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								Visit our Security & Trust Center
+								<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+									/>
+								</svg>
+							</a>
 						</div>
+					</div>
 
-						<div class="space-y-6">
-							<div class="space-y-4">
-								<h3 class="text-title3 font-semibold">Private deployments</h3>
-								<p class="text-body text-muted-foreground leading-relaxed">
-									For organizations with sensitive data requirements, we offer dedicated isolated VPC or
-									on-premise air-gapped deployments. This flexibility ensures your data never leaves
-									your infrastructure while still providing the full power of Sentra's AI-driven
-									organizational intelligence.
-								</p>
-							</div>
-							<div>
-								<a
-									href="/private-deployments"
-									class="text-primary hover:text-primary/80 text-body inline-flex items-center gap-2 font-medium transition-all duration-200 hover:gap-3"
-								>
-									Learn more
-									<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											stroke-width="2"
-											d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-										/>
-									</svg>
-									</a>
-							</div>
+					<div>
+						<h3 class="text-headline mb-3 font-medium">Private deployments</h3>
+						<p class="text-body text-muted-foreground">
+							For organizations with sensitive data requirements, we offer dedicated isolated VPC or
+							on-premise air-gapped deployments. This flexibility ensures your data never leaves
+							your infrastructure while still providing the full power of Sentra's AI-driven
+							organizational intelligence.
+						</p>
+						<div class="mt-4">
+							<a
+								href="/private-deployments"
+								class="text-primary hover:text-primary/80 text-body inline-flex items-center gap-1 font-medium transition-colors duration-200"
+							>
+								Learn more
+								<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+									/>
+								</svg>
+							</a>
 						</div>
 					</div>
 				</div>
