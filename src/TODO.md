@@ -1,68 +1,70 @@
-# Premium Misalignment Detection Illustration - "Vigilant Guardian" Concept
+# Premium Misalignment Detection Illustration - "Organizational Seismograph" Concept
 
-## Elevated Visual Metaphor: "The Watchful Guardian"
+## Elevated Visual Metaphor: "The Early Warning System"
 
 ### Core Philosophy
-Create a sophisticated, Apple-quality illustration that embodies Sentra as a vigilant guardian that sees what others miss. The visualization should feel premium, trustworthy, and emotionally resonant - like having a caring, all-seeing protector watching over your organization.
+Create a sophisticated, Apple-quality line chart illustration that embodies Sentra as an organizational seismograph - detecting the earliest tremors of misalignment before they become organizational earthquakes. The visualization should feel premium, precise, and emotionally resonant - like having a sophisticated early warning system protecting your organization.
 
 ### Visual Narrative
-**The Story**: Sentra's omniscient eye serves as a vigilant guardian, detecting the earliest whispers of organizational discord (smoke) and transforming them into clarity and alignment (light). It's not just monitoring - it's actively protecting and nurturing organizational health.
+**The Story**: Sentra's radar continuously monitors organizational health through a sophisticated trend analysis. When alignment begins to decline (shown as a downward trend), Sentra's proactive detection system identifies the issue at the critical intervention point, preventing organizational disaster through early warning and course correction.
 
 ### Design Elements (Steve Jobs Standard)
 
-#### Primary Icon: The Omniscient Eye
-- [x] Central eye with iris detail and depth
-- [x] Sophisticated layered design with multiple visual depths
-- [x] Gentle, trustworthy pulsing animation
-- [x] Premium color treatment with gradients
-- [x] Subtle reflection/highlight for premium feel
+#### Primary Icon: Radar Detection System (Max 1 Icon)
+- [ ] Central radar icon with sophisticated scanning animation
+- [ ] Premium circular design with multiple scanning rings
+- [ ] Subtle pulsing detection beats
+- [ ] Premium orange/amber color treatment for "alert" state
+- [ ] Refined positioning and proportions
 
-#### Visual Element 1: Ethereal Smoke Wisps (Early Warning System)
-- [x] Multiple smoke particles at different scales and opacities
-- [x] Organic, flowing movement patterns
-- [x] Gradient from dark (problem) to light (detection)
-- [x] Layered depth with foreground/background particles
-- [x] Sophisticated timing variations in animations
+#### Visual Element 1: Organizational Health Trend Line (Line Chart)
+- [ ] Sophisticated SVG path showing declining organizational health
+- [ ] Smooth, organic curve that tells a clear story
+- [ ] Gradient stroke from healthy (green) to concerning (orange/red)
+- [ ] Multiple data points with subtle animation
+- [ ] Premium line weight and styling
+- [ ] Axis indicators for context (subtle grid)
 
-#### Visual Element 2: Clarity Field (Prevention & Protection)
-- [x] Radial clarity field emanating from the eye
-- [x] Gradient transformation showing problem resolution
-- [x] Subtle energy field visualization
-- [x] Success indicators with premium animations
-- [x] Protective barrier visualization
+#### Visual Element 2: Critical Detection Point & Recovery
+- [ ] Precise intervention point where Sentra detects the issue
+- [ ] Visual indicator showing "detection moment"
+- [ ] Recovery trajectory showing prevented disaster
+- [ ] Success indicators with premium micro-animations
+- [ ] Subtle particle effects at detection point
 
 ### Premium Design Details
-- [x] Multi-layered depth system (foreground, mid, background)
-- [x] Sophisticated color palette with multiple tones
-- [x] Micro-animations with varied timing
-- [x] Organic, natural movement patterns
-- [x] Premium visual hierarchy
-- [x] Subtle particle system for ambient life
-- [x] Gradient overlays for depth and sophistication
-- [x] Refined spacing and proportions
+- [ ] Multi-layered depth system (chart background, trend line, detection point)
+- [ ] Sophisticated color palette: healthy green → warning orange → critical red
+- [ ] Micro-animations with organic timing (not robotic)
+- [ ] Data visualization best practices
+- [ ] Premium visual hierarchy with clear focal points
+- [ ] Subtle ambient animations for "live monitoring" feel
+- [ ] Gradient overlays for depth and sophistication
+- [ ] Refined spacing following golden ratio principles
 
 ### Implementation Tasks
-- [x] Design premium eye icon with iris detail and depth layers
-- [x] Create sophisticated smoke particle system with organic movement
-- [x] Build clarity field with radial gradients and energy visualization
-- [x] Add multi-layered depth system with z-index management
-- [x] Implement premium animations with staggered timing
-- [x] Create ambient particle system for visual richness
-- [x] Add subtle glow effects and premium color treatments
-- [x] Optimize performance while maintaining visual quality
-- [x] Test across different screen sizes and contexts
+- [x] Design premium radar icon with scanning animation rings
+- [x] Create sophisticated SVG trend line with organic curve
+- [x] Build gradient system showing health decline
+- [x] Add critical detection point with intervention indicator
+- [x] Implement recovery trajectory showing prevented disaster
+- [x] Add subtle grid/axis system for chart context
+- [x] Create micro-animations with staggered timing
+- [x] Add ambient "monitoring" particle effects
+- [x] Optimize SVG performance while maintaining visual quality
+- [x] Test responsiveness across different screen sizes
 - [x] Final design system compliance check - verify design system classes prioritized over Tailwind, NO shadows, NO custom CSS, NO arbitrary values, check theme.css, app.css and typography.css
 
 ## Design Inspiration & Quality Standards
-- Apple's attention to micro-details and premium feel
+- Apple's Health app trend visualizations
+- Linear's precise, data-driven design language
 - Notion's clean, sophisticated illustrations
-- Linear's precise, purposeful design language
-- Figma's thoughtful use of color and depth
-- Stripe's premium, trustworthy visual language
+- Figma's thoughtful use of color gradients
+- Stripe's premium, trustworthy data visualization
 
 ## Success Metrics
-- Visual tells clear story without explanation
-- Feels premium and trustworthy
-- Emotionally resonant and memorable
+- Clearly communicates "early detection prevents disaster"
+- Feels like premium enterprise software
+- Emotionally resonant - users feel protected
 - Technically sophisticated yet performant
-- Would make Steve Jobs nod in approval
+- Would make Steve Jobs nod in approval - "This is how you visualize proactive intelligence"

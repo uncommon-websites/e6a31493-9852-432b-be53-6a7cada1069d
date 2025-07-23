@@ -116,55 +116,135 @@
 					<div class="border-primary-200 absolute h-56 w-56 rounded-full border opacity-10"></div>
 				</div>
 			{:else if visualization === "misalignment"}
-				<!-- Smoke Before Fire - Vigilant Eye Detection -->
-				<div class="relative flex items-center justify-center">
-					<!-- Central eye icon - vigilant observer -->
-					<div
-						class="relative z-10 flex h-20 w-20 items-center justify-center rounded-full bg-orange-50 text-orange-600 ring-2 ring-orange-100"
-					>
-						<IconEye class="h-10 w-10" />
-						<!-- Vigilant monitoring pulse -->
-						<div class="absolute inset-0 animate-pulse rounded-full bg-orange-200 opacity-25"></div>
+				<!-- Organizational Seismograph - Early Warning System -->
+				<div class="relative flex h-full w-full items-center justify-center">
+					<!-- Chart Background Grid (Subtle) -->
+					<div class="absolute inset-0 opacity-10">
+						<!-- Horizontal grid lines -->
+						<div class="absolute top-1/4 left-0 right-0 h-px bg-gray-300"></div>
+						<div class="absolute top-1/2 left-0 right-0 h-px bg-gray-400"></div>
+						<div class="absolute top-3/4 left-0 right-0 h-px bg-gray-300"></div>
+						<!-- Vertical grid lines -->
+						<div class="absolute top-0 bottom-0 left-1/4 w-px bg-gray-300"></div>
+						<div class="absolute top-0 bottom-0 left-1/2 w-px bg-gray-400"></div>
+						<div class="absolute top-0 bottom-0 left-3/4 w-px bg-gray-300"></div>
 					</div>
 
-					<!-- Smoke wisp - early warning signs (left side) -->
-					<div class="absolute top-1/2 -left-12 -translate-y-1/2 transform">
-						<!-- Main smoke particle -->
-						<div class="relative">
-							<div class="h-3 w-3 animate-pulse rounded-full bg-gray-400 opacity-40"></div>
-							<!-- Smaller smoke particles rising -->
-							<div class="absolute -top-2 left-1 h-1 w-1 animate-pulse rounded-full bg-gray-300 opacity-30" style="animation-delay: 0.5s;"></div>
-							<div class="absolute -top-4 -left-1 h-1 w-1 animate-pulse rounded-full bg-gray-200 opacity-20" style="animation-delay: 1s;"></div>
+					<!-- Central Radar Detection System -->
+					<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform z-20">
+						<div class="relative flex h-16 w-16 items-center justify-center rounded-full bg-orange-50 text-orange-600 ring-2 ring-orange-100">
+							<IconRadar class="h-8 w-8" />
+							<!-- Scanning rings -->
+							<div class="absolute inset-0 animate-pulse rounded-full bg-orange-200 opacity-30"></div>
+							<div class="absolute inset-0 animate-ping rounded-full bg-orange-300 opacity-20" style="animation-duration: 2s;"></div>
+							<!-- Rotating scan line -->
+							<div class="absolute inset-0 animate-spin rounded-full border-r-2 border-orange-500 opacity-40" style="animation-duration: 3s;"></div>
 						</div>
 					</div>
 
-					<!-- Clarity zone - prevention success (right side) -->
-					<div class="absolute top-1/2 -right-12 -translate-y-1/2 transform">
-						<div class="h-4 w-4 animate-pulse rounded-full bg-green-400 opacity-50"></div>
-						<!-- Success indicator -->
-						<div class="absolute -top-1 -right-1 h-2 w-2 rounded-full bg-green-500 opacity-30"></div>
+					<!-- Organizational Health Trend Line (SVG) -->
+					<div class="absolute inset-0 z-10">
+						<svg class="h-full w-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+							<!-- Healthy trend (left side) -->
+							<path
+								d="M20 80 Q60 70 100 75 Q120 78 140 82"
+								stroke="url(#healthyGradient)"
+								stroke-width="3"
+								fill="none"
+								stroke-linecap="round"
+								opacity="0.8"
+							/>
+							
+							<!-- Declining trend (middle to detection point) -->
+							<path
+								d="M140 82 Q160 88 180 100 Q200 115 220 135"
+								stroke="url(#decliningGradient)"
+								stroke-width="3"
+								fill="none"
+								stroke-linecap="round"
+								opacity="0.8"
+							/>
+							
+							<!-- Recovery trend (after detection) -->
+							<path
+								d="M220 135 Q240 125 260 110 Q275 100 285 95"
+								stroke="url(#recoveryGradient)"
+								stroke-width="3"
+								fill="none"
+								stroke-linecap="round"
+								opacity="0.8"
+								stroke-dasharray="5,3"
+							/>
+
+							<!-- Gradient definitions -->
+							<defs>
+								<linearGradient id="healthyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+									<stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+									<stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+								</linearGradient>
+								<linearGradient id="decliningGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+									<stop offset="0%" style="stop-color:#059669;stop-opacity:1" />
+									<stop offset="50%" style="stop-color:#f59e0b;stop-opacity:1" />
+									<stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+								</linearGradient>
+								<linearGradient id="recoveryGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+									<stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+									<stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+								</linearGradient>
+							</defs>
+
+							<!-- Data points -->
+							<circle cx="100" cy="75" r="2" fill="#10b981" opacity="0.7">
+								<animate attributeName="r" values="2;3;2" dur="2s" repeatCount="indefinite" />
+							</circle>
+							<circle cx="140" cy="82" r="2" fill="#059669" opacity="0.7">
+								<animate attributeName="r" values="2;3;2" dur="2s" repeatCount="indefinite" begin="0.5s" />
+							</circle>
+							<circle cx="180" cy="100" r="2" fill="#f59e0b" opacity="0.8">
+								<animate attributeName="r" values="2;3;2" dur="2s" repeatCount="indefinite" begin="1s" />
+							</circle>
+							
+							<!-- Critical Detection Point -->
+							<circle cx="220" cy="135" r="4" fill="#dc2626" opacity="0.9">
+								<animate attributeName="r" values="4;6;4" dur="1.5s" repeatCount="indefinite" />
+								<animate attributeName="opacity" values="0.9;1;0.9" dur="1.5s" repeatCount="indefinite" />
+							</circle>
+							
+							<!-- Recovery points -->
+							<circle cx="260" cy="110" r="2" fill="#10b981" opacity="0.6">
+								<animate attributeName="r" values="2;3;2" dur="2s" repeatCount="indefinite" begin="1.5s" />
+							</circle>
+						</svg>
 					</div>
 
-					<!-- Detection beam - from smoke to clarity -->
-					<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform">
-						<!-- Gradient showing transformation from problem to solution -->
-						<div
-							class="h-px w-24 bg-gradient-to-r from-gray-400 via-orange-400 to-green-400 opacity-60"
-						></div>
-						
-						<!-- Detection point in center -->
-						<div class="absolute top-1/2 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 transform animate-pulse rounded-full bg-orange-500 opacity-70"></div>
+					<!-- Detection Alert Indicator -->
+					<div class="absolute right-8 top-1/2 -translate-y-1/2 transform z-15">
+						<div class="relative">
+							<!-- Alert pulse -->
+							<div class="h-3 w-3 animate-pulse rounded-full bg-red-500 opacity-80"></div>
+							<div class="absolute inset-0 animate-ping rounded-full bg-red-400 opacity-40"></div>
+							<!-- Alert text indicator -->
+							<div class="absolute -top-6 -left-8 text-xs font-medium text-red-600 opacity-70">
+								DETECTED
+							</div>
+						</div>
 					</div>
 
-					<!-- Watchful monitoring arc -->
-					<div
-						class="absolute top-1/2 left-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 transform"
-					>
-						<div
-							class="h-full w-full animate-spin rounded-full border-r-2 border-orange-300 opacity-20"
-							style="animation-duration: 4s;"
-						></div>
+					<!-- Success Recovery Indicator -->
+					<div class="absolute right-4 top-1/3 transform z-15">
+						<div class="relative">
+							<div class="h-2 w-2 animate-pulse rounded-full bg-green-500 opacity-60"></div>
+							<!-- Recovery text indicator -->
+							<div class="absolute -top-5 -left-6 text-xs font-medium text-green-600 opacity-60">
+								PREVENTED
+							</div>
+						</div>
 					</div>
+
+					<!-- Ambient monitoring particles -->
+					<div class="absolute top-1/4 left-1/4 h-1 w-1 animate-pulse rounded-full bg-orange-400 opacity-30" style="animation-delay: 0s; animation-duration: 3s;"></div>
+					<div class="absolute top-1/3 right-1/4 h-1 w-1 animate-pulse rounded-full bg-orange-400 opacity-25" style="animation-delay: 1s; animation-duration: 4s;"></div>
+					<div class="absolute bottom-1/4 left-1/3 h-1 w-1 animate-pulse rounded-full bg-orange-400 opacity-20" style="animation-delay: 2s; animation-duration: 5s;"></div>
 				</div>
 			{:else if visualization === "onboarding"}
 				<!-- Onboarding: Connecting to Organizational Network -->
