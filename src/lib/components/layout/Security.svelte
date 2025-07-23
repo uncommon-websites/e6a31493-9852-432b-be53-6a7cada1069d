@@ -81,24 +81,7 @@
 							regulations, ensuring the highest levels of data protection and privacy for your
 							organization.
 						</p>
-						<div class="mt-4">
-							<a
-								href="https://trust.delve.co/sentra"
-								class="text-primary hover:text-primary/80 text-body inline-flex items-center gap-1 font-medium transition-colors duration-200"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								Visit our Security & Trust Center
-								<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-									/>
-								</svg>
-							</a>
-						</div>
+						
 					</div>
 
 					<div>
