@@ -15,6 +15,9 @@
 -->
 
 <script lang="ts">
+	// Icons
+	import IconLock from "~icons/lucide/lock"
+	
 	// Components
 	import AnimateText from "../animation/AnimateText.svelte"
 	import Button from "../ui/Button.svelte"
@@ -51,7 +54,8 @@
 	<section class="section-px section-py-sm mx-auto max-w-7xl">
 		<div class="bg-card rounded-(--radius-lg) p-12">
 			<div class="mx-auto">
-				<h2 class="text-title2">
+				<h2 class="text-title2 flex items-center gap-3">
+					<IconLock class="h-8 w-8 text-primary" />
 					<AnimateText text={title} />
 				</h2>
 
