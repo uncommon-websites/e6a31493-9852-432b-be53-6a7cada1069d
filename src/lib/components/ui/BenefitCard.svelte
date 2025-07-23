@@ -115,48 +115,53 @@
 					<div class="border-primary-200 absolute h-56 w-56 rounded-full border opacity-10"></div>
 				</div>
 			{:else if visualization === "misalignment"}
-				<!-- Stay Ahead of Misalignment - Simple Single Icon Visualization -->
+				<!-- Smoke Before Fire - Vigilant Eye Detection -->
 				<div class="relative flex items-center justify-center">
-					<!-- Central radar icon with enhanced presence -->
+					<!-- Central eye icon - vigilant observer -->
 					<div
-						class="relative z-10 flex h-20 w-20 items-center justify-center rounded-full bg-orange-50 text-orange-600 ring-2 ring-orange-50"
+						class="relative z-10 flex h-20 w-20 items-center justify-center rounded-full bg-orange-50 text-orange-600 ring-2 ring-orange-100"
 					>
-						<IconRadar class="h-10 w-10" />
-
-						<!-- Subtle scanning animation -->
-						<div class="absolute inset-0 animate-pulse rounded-full bg-orange-200 opacity-20"></div>
+						<IconEye class="h-10 w-10" />
+						<!-- Vigilant monitoring pulse -->
+						<div class="absolute inset-0 animate-pulse rounded-full bg-orange-200 opacity-25"></div>
 					</div>
 
-					<!-- "Ahead" visualization - Timeline concept -->
-					<!-- Past (left) - faded -->
-					<div class="absolute top-1/2 -left-16 -translate-y-1/2 transform">
-						<div class="h-2 w-2 rounded-full bg-gray-300 opacity-40"></div>
+					<!-- Smoke wisp - early warning signs (left side) -->
+					<div class="absolute top-1/2 -left-12 -translate-y-1/2 transform">
+						<!-- Main smoke particle -->
+						<div class="relative">
+							<div class="h-3 w-3 animate-pulse rounded-full bg-gray-400 opacity-40"></div>
+							<!-- Smaller smoke particles rising -->
+							<div class="absolute -top-2 left-1 h-1 w-1 animate-pulse rounded-full bg-gray-300 opacity-30" style="animation-delay: 0.5s;"></div>
+							<div class="absolute -top-4 -left-1 h-1 w-1 animate-pulse rounded-full bg-gray-200 opacity-20" style="animation-delay: 1s;"></div>
+						</div>
 					</div>
 
-					<!-- Present (center) - current position -->
+					<!-- Clarity zone - prevention success (right side) -->
+					<div class="absolute top-1/2 -right-12 -translate-y-1/2 transform">
+						<div class="h-4 w-4 animate-pulse rounded-full bg-green-400 opacity-50"></div>
+						<!-- Success indicator -->
+						<div class="absolute -top-1 -right-1 h-2 w-2 rounded-full bg-green-500 opacity-30"></div>
+					</div>
+
+					<!-- Detection beam - from smoke to clarity -->
 					<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform">
-						<div class="h-1 w-1 rounded-full bg-orange-500 opacity-80"></div>
+						<!-- Gradient showing transformation from problem to solution -->
+						<div
+							class="h-px w-24 bg-gradient-to-r from-gray-400 via-orange-400 to-green-400 opacity-60"
+						></div>
+						
+						<!-- Detection point in center -->
+						<div class="absolute top-1/2 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 transform animate-pulse rounded-full bg-orange-500 opacity-70"></div>
 					</div>
 
-					<!-- Future (right) - where problems would occur -->
-					<div class="absolute top-1/2 -right-16 -translate-y-1/2 transform">
-						<div class="h-3 w-3 animate-pulse rounded-full bg-red-400 opacity-60"></div>
-						<!-- Small warning indicator -->
-						<div class="absolute -top-1 -right-1 h-2 w-2 rounded-full bg-red-500 opacity-40"></div>
-					</div>
-
-					<!-- Detection beam - showing radar "seeing ahead" -->
-					<div
-						class="absolute top-1/2 left-1/2 h-px w-20 -translate-y-1/2 transform bg-gradient-to-r from-orange-400 to-red-400 opacity-50"
-					></div>
-
-					<!-- Scanning arc - subtle indicator of proactive detection -->
+					<!-- Watchful monitoring arc -->
 					<div
 						class="absolute top-1/2 left-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 transform"
 					>
 						<div
-							class="h-full w-full animate-spin rounded-full border-r-2 border-orange-300 opacity-30"
-							style="animation-duration: 3s;"
+							class="h-full w-full animate-spin rounded-full border-r-2 border-orange-300 opacity-20"
+							style="animation-duration: 4s;"
 						></div>
 					</div>
 				</div>

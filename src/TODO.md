@@ -1,49 +1,52 @@
-# New Meeting Optimization Illustration Design
+# New Misalignment Detection Illustration Design
 
-## Visual Metaphor Concept: "Signal Through Noise"
+## Visual Metaphor Concept: "Smoke Before Fire"
 
 ### Core Idea
-Transform the meetings visualization from a simple "cancelled meeting" concept to a powerful "signal clarity" metaphor. This represents how Sentra cuts through the noise of misaligned meetings to provide clear organizational signals and prevent wasted time before it happens.
+Transform the misalignment visualization to embody the powerful metaphor from the card's description: "Sentra spots the smoke before the house burns down." This represents Sentra's ability to detect early warning signs of organizational misalignment before they become costly problems.
 
 ### Visual Metaphor Details
-**Primary Icon**: Radar (representing Sentra's proactive detection)
-**Secondary Icon**: Target (representing focused, aligned outcomes)
+**Primary Icon**: Eye (representing vigilant observation and early detection)
+**Visual Element 1**: Subtle smoke wisp (representing early warning signs)
+**Visual Element 2**: Gradient transition from smoke to clarity (showing prevention)
 
-**The Story**: Sentra's radar cuts through meeting chaos to identify and target the real issues, transforming scattered organizational noise into focused, actionable signals.
+**The Story**: Sentra's watchful eye detects the first wisps of organizational "smoke" (misalignment signals) and intervenes before they become a destructive "fire" (costly misalignment).
 
 ### Design Elements
-- [ ] Primary: Radar icon (center, prominent) - represents proactive detection
-- [ ] Secondary: Target icon (positioned to show "locking onto" alignment) 
-- [ ] Signal beam: Visual connection showing radar "detecting" and "targeting" alignment
-- [ ] Noise visualization: Subtle scattered elements being organized/clarified
-- [ ] Clean transformation from chaos to clarity
-- [ ] Minimal design with just these 2 key elements plus signal visualization
+- [ ] Primary: Eye icon (center, prominent) - represents vigilant detection
+- [ ] Smoke element: Subtle wispy visual showing early warning signs
+- [ ] Clarity gradient: Visual showing transformation from potential problem to clarity
+- [ ] Early warning system: Pulsing animations showing proactive monitoring
+- [ ] Prevention emphasis: Visual flow from detection to intervention
+- [ ] Clean, minimal design with just eye + smoke + clarity elements
 
 ### Implementation Tasks
-- [x] Update BenefitCard.svelte meetings case
-- [x] Replace current calendar-x + support icons with radar + target design
-- [x] Add signal beam connecting radar to target
-- [x] Include subtle "noise clearing" animation effect
-- [x] Position target to show successful "lock-on" to alignment
+- [x] Update BenefitCard.svelte misalignment case
+- [x] Replace current radar timeline with eye + smoke metaphor
+- [x] Add subtle smoke wisp element showing early detection
+- [x] Include clarity gradient showing prevention success
+- [x] Position eye as central vigilant observer
+- [x] Add gentle pulsing to show continuous monitoring
 - [x] Test visual hierarchy and metaphor clarity
 - [x] Final design system compliance check - verify design system classes prioritized over Tailwind, NO shadows, NO custom CSS, NO arbitrary values, check theme.css, app.css and typography.css
 
 ## ✅ IMPLEMENTATION COMPLETE
 
-The new meeting optimization illustration has been successfully implemented with:
-- **Primary Icon**: Radar icon (left side) representing Sentra's proactive detection capabilities
-- **Secondary Icon**: Target icon (right side) representing focused, aligned outcomes
-- **Signal Beam**: Animated gradient beam showing radar "detecting" and "targeting" alignment
-- **Noise Clearing**: Subtle scattered elements showing organizational noise being organized
-- **Lock-On Animation**: Pulsing animations showing successful alignment targeting
-- **Clean Design**: Minimal 2-icon layout following design system principles
+The new misalignment detection illustration has been successfully implemented with:
+- **Primary Icon**: Eye icon (center) representing vigilant observation and early detection
+- **Smoke Element**: Subtle wispy particles (left) showing early warning signs with rising animation
+- **Clarity Zone**: Green success indicator (right) showing prevention achievement
+- **Detection Beam**: Gradient line from gray (smoke) through orange (detection) to green (clarity)
+- **Monitoring Arc**: Slow rotating arc showing continuous vigilant observation
+- **Clean Design**: Minimal layout with just eye + smoke + clarity elements
 
-The visualization perfectly captures the "Signal Through Noise" metaphor, showing how Sentra cuts through meeting chaos to provide clear organizational signals and prevent wasted time before it happens.
+The visualization perfectly captures the "Smoke Before Fire" metaphor from the card's description, showing how Sentra's vigilant eye spots early warning signs of misalignment before they become costly organizational problems.
 
-### Why This Works
-- Shows proactive detection (radar) rather than reactive cancellation
-- Target represents successful alignment achievement
-- Signal beam shows the connection between detection and solution
-- Aligns with Sentra's "proactive organizational intelligence" positioning
-- Visual metaphor of "cutting through noise" resonates with meeting efficiency
-- Emphasizes prevention and optimization over just problem identification
+## Why This New Metaphor Works Better
+- Directly connects to the card's "smoke before fire" copy
+- Eye represents human-like vigilance and care
+- Smoke element is subtle but meaningful
+- Shows prevention rather than just detection
+- More emotionally resonant than technical radar metaphor
+- Aligns with Sentra's protective, caring AI positioning
+- Visual story of "watching out for you" builds trust
