@@ -68,7 +68,7 @@
 <div class="" {...rest}>
 	<section class="section-px section-py mx-auto max-w-7xl">
 		<div
-			class="bg-card border-border grid content-start items-center justify-between gap-(--gap) rounded-(--radius) border p-(--gap) text-balance [--gap:--spacing(8)] [--inner-radius:calc(var(--radius)-var(--gap))] [--radius:var(--radius-xl)] lg:grid-cols-[2fr_1fr]"
+			class="bg-card grid content-start items-center justify-between gap-(--gap) rounded-(--radius) p-(--gap) text-balance [--gap:--spacing(8)] [--inner-radius:calc(var(--radius)-var(--gap))] [--radius:var(--radius-xl)] lg:grid-cols-[2fr_1fr]"
 		>
 			<div class="items-between grid h-full content-between gap-16">
 				<h2 class="text-title1 mb-3 flex flex-col">
