@@ -9,6 +9,7 @@
 	import IconDatabase from "~icons/lucide/database"
 	import IconNetwork from "~icons/lucide/network"
 	import IconShield from "~icons/lucide/shield"
+	import IconCheck from "~icons/lucide/check"
 	const valueProps = [
 		{
 			title: "Builds a memory of your company",
@@ -127,43 +128,37 @@
 										</div>
 									</div>
 								{:else if prop.visualization === "detection"}
-									<!-- Detection/Radar Visualization -->
-									<div class="relative flex items-center justify-center">
-										<!-- Central radar icon -->
-										<div
-											class="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-orange-100 text-orange-600"
-										>
-											<IconRadar class="h-8 w-8" />
+									<!-- Prevention Flow Visualization -->
+									<div class="relative flex items-center justify-center space-x-8">
+										<!-- Step 1: Healthy -->
+										<div class="flex flex-col items-center space-y-2">
+											<div class="flex h-12 w-12 items-center justify-center rounded-full bg-green-100 text-green-600">
+												<IconCheck class="h-6 w-6" />
+											</div>
+											<span class="text-xs font-medium text-green-600">Healthy</span>
 										</div>
 
-										<!-- Radar sweep animation -->
-										<div
-											class="absolute h-24 w-24 rounded-full border-2 border-orange-200 opacity-40"
-										>
-											<div
-												class="absolute top-0 left-1/2 h-12 w-px -translate-x-1/2 transform animate-pulse bg-gradient-to-b from-orange-400 to-transparent opacity-60"
-											></div>
+										<!-- Arrow 1 -->
+										<div class="h-px w-6 bg-gray-300"></div>
+
+										<!-- Step 2: Attention needed -->
+										<div class="flex flex-col items-center space-y-2">
+											<div class="flex h-12 w-12 items-center justify-center rounded-full bg-orange-100 text-orange-600">
+												<IconAlertTriangle class="h-6 w-6" />
+											</div>
+											<span class="text-xs font-medium text-orange-600">Attention needed</span>
 										</div>
 
-										<!-- Warning indicators at different positions -->
-										<div class="absolute -top-4 -left-4">
-											<IconAlertTriangle class="h-5 w-5 text-orange-400 opacity-70" />
-										</div>
-										<div class="absolute -top-4 -right-4">
-											<IconAlertTriangle class="h-5 w-5 text-orange-400 opacity-50" />
-										</div>
-										<div class="absolute -bottom-4 left-1/2 -translate-x-1/2 transform">
-											<IconAlertTriangle class="h-5 w-5 text-orange-400 opacity-60" />
-										</div>
+										<!-- Arrow 2 -->
+										<div class="h-px w-6 bg-gray-300"></div>
 
-										<!-- Detection waves -->
-										<div
-											class="absolute h-32 w-32 animate-pulse rounded-full border border-orange-200 opacity-20"
-										></div>
-										<div
-											class="absolute h-40 w-40 animate-pulse rounded-full border border-orange-200 opacity-10"
-											style="animation-delay: 0.5s;"
-										></div>
+										<!-- Step 3: Prevented -->
+										<div class="flex flex-col items-center space-y-2">
+											<div class="flex h-12 w-12 items-center justify-center rounded-full bg-green-100 text-green-600">
+												<IconCheck class="h-6 w-6" />
+											</div>
+											<span class="text-xs font-medium text-green-600">Prevented</span>
+										</div>
 									</div>
 								{/if}
 							</div>
