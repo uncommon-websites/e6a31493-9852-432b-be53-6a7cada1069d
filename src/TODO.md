@@ -1,6 +1,5 @@
-# Task: Add White Background to Resource Cards
+# Task: Decrease Gap and Update Button Variant
 
-- [x] View current resources section structure
-- [x] Add white background and card styling to resource cards
-- [x] Ensure proper padding and border radius for card appearance
+- [x] Decrease grid gap in resources section from gap-8 to smaller value
+- [x] Change button variant from "outline" to better variant for white backgrounds  
 - [x] Final design system compliance check - verify design system classes prioritized over Tailwind, NO shadows, NO custom CSS, NO arbitrary values, check theme.css, app.css and typography.css
