@@ -571,7 +571,7 @@
 	</section> -->
 
 	<!-- FAQ Section -->
-	<section class="section-px section-py">
+	<section class="section-px section-py hidden">
 		<div class="section-px mx-auto max-w-4xl max-w-6xl">
 			<div class="mb-12">
 				<h2 class="text-title2 mb-4">Frequently Asked Questions</h2>
