@@ -107,8 +107,8 @@
 						style="border-radius: var(--radius-xl);"
 					>
 						<IconEye class="h-10 w-10" />
-						<!-- Subtle pulse animation -->
-						<div class="bg-primary-200 absolute inset-0 animate-ping opacity-20" style="border-radius: var(--radius-xl);"></div>
+						<!-- Subtle background accent -->
+						<div class="bg-primary-200 absolute inset-0 opacity-20" style="border-radius: var(--radius-xl);"></div>
 					</div>
 
 					<!-- Organizational Layers - Concentric Circles -->
@@ -125,24 +125,24 @@
 						style="border-radius: var(--radius-xl);"
 					>
 						<IconEye class="h-10 w-10" />
-						<!-- Vigilant monitoring pulse -->
-						<div class="absolute inset-0 animate-pulse bg-orange-200 opacity-25" style="border-radius: var(--radius-xl);"></div>
+						<!-- Vigilant monitoring accent -->
+						<div class="absolute inset-0 bg-orange-200 opacity-25" style="border-radius: var(--radius-xl);"></div>
 					</div>
 
 					<!-- Smoke wisp - early warning signs (left side) -->
 					<div class="absolute top-1/2 -left-12 -translate-y-1/2 transform">
 						<!-- Main smoke particle -->
 						<div class="relative">
-							<div class="h-3 w-3 animate-pulse bg-gray-400 opacity-40" style="border-radius: var(--radius);"></div>
+							<div class="h-3 w-3 bg-gray-400 opacity-40" style="border-radius: var(--radius);"></div>
 							<!-- Smaller smoke particles rising -->
-							<div class="absolute -top-2 left-1 h-1 w-1 animate-pulse bg-gray-300 opacity-30" style="animation-delay: 0.5s; border-radius: var(--radius-xs);"></div>
-							<div class="absolute -top-4 -left-1 h-1 w-1 animate-pulse bg-gray-200 opacity-20" style="animation-delay: 1s; border-radius: var(--radius-xs);"></div>
+							<div class="absolute -top-2 left-1 h-1 w-1 bg-gray-300 opacity-30" style="border-radius: var(--radius-xs);"></div>
+							<div class="absolute -top-4 -left-1 h-1 w-1 bg-gray-200 opacity-20" style="border-radius: var(--radius-xs);"></div>
 						</div>
 					</div>
 
 					<!-- Clarity zone - prevention success (right side) -->
 					<div class="absolute top-1/2 -right-12 -translate-y-1/2 transform">
-						<div class="h-4 w-4 animate-pulse bg-green-400 opacity-50" style="border-radius: var(--radius);"></div>
+						<div class="h-4 w-4 bg-green-400 opacity-50" style="border-radius: var(--radius);"></div>
 						<!-- Success indicator -->
 						<div class="absolute -top-1 -right-1 h-2 w-2 bg-green-500 opacity-30" style="border-radius: var(--radius-sm);"></div>
 					</div>
@@ -155,7 +155,7 @@
 						></div>
 						
 						<!-- Detection point in center -->
-						<div class="absolute top-1/2 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 transform animate-pulse bg-orange-500 opacity-70" style="border-radius: var(--radius-sm);"></div>
+						<div class="absolute top-1/2 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 transform bg-orange-500 opacity-70" style="border-radius: var(--radius-sm);"></div>
 					</div>
 
 					<!-- Watchful monitoring arc -->
@@ -163,8 +163,8 @@
 						class="absolute top-1/2 left-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 transform"
 					>
 						<div
-							class="h-full w-full animate-spin border-r-2 border-orange-300 opacity-20"
-							style="animation-duration: 4s; border-radius: var(--radius-2xl);"
+							class="h-full w-full border-r-2 border-orange-300 opacity-20"
+							style="border-radius: var(--radius-2xl);"
 						></div>
 					</div>
 				</div>
@@ -178,8 +178,8 @@
 							style="border-radius: var(--radius-lg);"
 						>
 							<IconUsers class="h-6 w-6" />
-							<!-- Subtle pulse to show "joining" -->
-							<div class="absolute inset-0 animate-pulse bg-blue-200 opacity-30" style="border-radius: var(--radius-lg);"></div>
+							<!-- Subtle accent to show "joining" -->
+							<div class="absolute inset-0 bg-blue-200 opacity-30" style="border-radius: var(--radius-lg);"></div>
 						</div>
 					</div>
 
@@ -191,7 +191,7 @@
 						>
 							<IconNetwork class="h-8 w-8" />
 							<!-- Network activity indicator -->
-							<div class="absolute inset-0 animate-ping bg-blue-300 opacity-20" style="border-radius: var(--radius-xl);"></div>
+							<div class="absolute inset-0 bg-blue-300 opacity-20" style="border-radius: var(--radius-xl);"></div>
 						</div>
 					</div>
 
