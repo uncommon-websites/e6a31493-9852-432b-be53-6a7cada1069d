@@ -64,10 +64,10 @@
 				}
 			case "onboarding":
 				return {
-					icon: IconUserPlus,
+					icon: IconUsers,
 					bgColor: "bg-blue-100",
 					textColor: "text-blue-600",
-					supportIcons: [IconBrain, IconDatabase, IconGitBranch]
+					supportIcons: [IconNetwork]
 				}
 			case "future":
 				return {
@@ -158,6 +158,52 @@
 							class="h-full w-full animate-spin rounded-full border-r-2 border-orange-300 opacity-30"
 							style="animation-duration: 3s;"
 						></div>
+					</div>
+				</div>
+			{:else if visualization === "onboarding"}
+				<!-- Onboarding: Connecting to Organizational Network -->
+				<div class="relative flex h-full w-full items-center justify-center">
+					<!-- Left side: Individual user -->
+					<div class="absolute left-8 top-1/2 -translate-y-1/2 transform">
+						<div
+							class="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-blue-600 ring-2 ring-blue-100"
+						>
+							<IconUsers class="h-6 w-6" />
+							<!-- Subtle pulse to show "joining" -->
+							<div class="absolute inset-0 animate-pulse rounded-full bg-blue-200 opacity-30"></div>
+						</div>
+					</div>
+
+					<!-- Right side: Organizational network -->
+					<div class="absolute right-8 top-1/2 -translate-y-1/2 transform">
+						<div
+							class="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 text-blue-600 ring-2 ring-blue-50"
+						>
+							<IconNetwork class="h-8 w-8" />
+							<!-- Network activity indicator -->
+							<div class="absolute inset-0 animate-ping rounded-full bg-blue-300 opacity-20"></div>
+						</div>
+					</div>
+
+					<!-- Connection bridge/beam -->
+					<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform">
+						<!-- Main connection line -->
+						<div
+							class="h-px w-32 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400 opacity-60"
+						></div>
+						
+						<!-- Data flow indicators -->
+						<div class="absolute top-0 left-4 h-px w-2 animate-pulse bg-blue-500 opacity-80" style="animation-delay: 0s;"></div>
+						<div class="absolute top-0 left-12 h-px w-2 animate-pulse bg-blue-500 opacity-80" style="animation-delay: 0.5s;"></div>
+						<div class="absolute top-0 left-20 h-px w-2 animate-pulse bg-blue-500 opacity-80" style="animation-delay: 1s;"></div>
+						
+						<!-- Connection point in center -->
+						<div class="absolute top-1/2 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 transform animate-pulse rounded-full bg-blue-500 opacity-70"></div>
+					</div>
+
+					<!-- Integration success indicator -->
+					<div class="absolute bottom-4 left-1/2 -translate-x-1/2 transform">
+						<div class="h-1 w-1 animate-pulse rounded-full bg-green-500 opacity-60"></div>
 					</div>
 				</div>
 			{:else}
