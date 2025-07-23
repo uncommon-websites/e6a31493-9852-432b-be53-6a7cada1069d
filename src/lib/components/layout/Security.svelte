@@ -47,16 +47,16 @@
 	]
 </script>
 
-<div class="bg-gray-50" {...rest}>
-	<section class="section-px section-py-sm mx-auto max-w-6xl">
-		<div class="bg-card rounded-(--radius-lg) p-8">
-			<div class="mx-auto max-w-prose">
-				<h2 class="text-title2 mb-8 text-center">
+<div {...rest}>
+	<section class="section-px section-py-sm mx-auto max-w-7xl">
+		<div class="bg-card rounded-(--radius-lg) p-12">
+			<div class="mx-auto">
+				<h2 class="text-title2">
 					<AnimateText text={title} />
 				</h2>
 
 				<!-- Trust indicators with actual compliance logos -->
-				<div class="border-border mb-8 flex justify-center border-b pb-6">
+				<div class="border-border my-16 flex justify-start border-b pb-16">
 					<div class="grid max-w-2xl grid-cols-1 gap-8 md:grid-cols-3 md:gap-16">
 						{#each complianceItems as item}
 							<div class="flex w-full flex-col items-center justify-center space-y-4">
@@ -72,18 +72,7 @@
 					</div>
 				</div>
 
-				<div class="space-y-6 text-left">
-					<div>
-						<h3 class="text-headline mb-3 font-medium">Enterprise-grade security</h3>
-						<p class="text-body text-muted-foreground">
-							Your data security is our top priority. Sentra maintains SOC2 Type 1 compliance and is
-							currently in the observation for SOC2 Type 2. We adhere to ISO standards and GDPR
-							regulations, ensuring the highest levels of data protection and privacy for your
-							organization.
-						</p>
-						
-					</div>
-
+				<div class="grid gap-12 text-left lg:grid-cols-2">
 					<div>
 						<h3 class="text-headline mb-3 font-medium">Private deployments</h3>
 						<p class="text-body text-muted-foreground">
@@ -108,6 +97,16 @@
 								</svg>
 							</a>
 						</div>
+					</div>
+
+					<div>
+						<h3 class="text-headline mb-3 font-medium">Enterprise-grade security</h3>
+						<p class="text-body text-muted-foreground">
+							Your data security is our top priority. Sentra maintains SOC2 Type 1 compliance and is
+							currently in the observation for SOC2 Type 2. We adhere to ISO standards and GDPR
+							regulations, ensuring the highest levels of data protection and privacy for your
+							organization.
+						</p>
 					</div>
 				</div>
 			</div>

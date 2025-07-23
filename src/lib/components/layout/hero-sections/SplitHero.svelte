@@ -234,7 +234,13 @@
 
 	.notification-scroll-container {
 		mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
-		-webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+		-webkit-mask-image: linear-gradient(
+			to bottom,
+			transparent 0%,
+			black 10%,
+			black 90%,
+			transparent 100%
+		);
 	}
 
 	.notification-scroll-content {

@@ -17,7 +17,7 @@
 	{...props}
 >
 	<div
-		class="section-px relative z-10 mx-auto grid h-full max-w-6xl content-between items-start gap-16 gap-x-32 pt-10 lg:grid-cols-2 lg:gap-32"
+		class="section-px relative z-10 mx-auto grid h-full max-w-7xl content-between items-start gap-16 gap-x-32 pt-10 lg:grid-cols-2 lg:gap-32"
 	>
 		<!-- Navigation sections with editorial styling -->
 		<ul class="grid grid-cols-2 gap-8 gap-y-16 lg:grid-cols-3">

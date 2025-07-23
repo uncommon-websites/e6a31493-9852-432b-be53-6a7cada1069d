@@ -93,7 +93,7 @@
 </script>
 
 <section class="bg-white">
-	<div class="section-px section-py mx-auto max-w-6xl">
+	<div class="section-px section-py mx-auto max-w-7xl">
 		<div class="mx-auto grid place-items-center text-center">
 			<SectionHeader
 				title="Frictionless adoption"
@@ -102,7 +102,7 @@
 		</div>
 
 		<!-- Main Content Grid -->
-		<div class="mx-auto max-w-6xl">
+		<div class="mx-auto max-w-7xl">
 			<div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
 				<!-- Left Side - Step Navigation -->
 				<div class="space-y-6">
