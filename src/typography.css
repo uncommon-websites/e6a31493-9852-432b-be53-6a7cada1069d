@@ -7,7 +7,7 @@
 	.text-title2,
 	.text-title3,
 	.text-headline {
-		@apply font-medium;
+		@apply !font-medium;
 	}
 
 	.text-display {
