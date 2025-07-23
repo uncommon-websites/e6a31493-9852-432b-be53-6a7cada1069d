@@ -206,6 +206,59 @@
 						<div class="h-1 w-1 animate-pulse rounded-full bg-green-500 opacity-60"></div>
 					</div>
 				</div>
+			{:else if visualization === "meetings"}
+				<!-- Meetings: Signal Through Noise -->
+				<div class="relative flex h-full w-full items-center justify-center">
+					<!-- Left side: Radar (Primary - Proactive Detection) -->
+					<div class="absolute left-8 top-1/2 -translate-y-1/2 transform">
+						<div
+							class="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-green-50 text-green-600 ring-2 ring-green-100"
+						>
+							<IconRadar class="h-8 w-8" />
+							<!-- Scanning animation -->
+							<div class="absolute inset-0 animate-pulse rounded-full bg-green-200 opacity-30"></div>
+							<!-- Rotating scan line -->
+							<div class="absolute inset-0 animate-spin rounded-full border-r-2 border-green-400 opacity-40" style="animation-duration: 2s;"></div>
+						</div>
+					</div>
+
+					<!-- Right side: Target (Secondary - Focused Alignment) -->
+					<div class="absolute right-8 top-1/2 -translate-y-1/2 transform">
+						<div
+							class="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-green-100 text-green-600 ring-2 ring-green-50"
+						>
+							<IconTarget class="h-6 w-6" />
+							<!-- Target lock animation -->
+							<div class="absolute inset-0 animate-ping rounded-full bg-green-300 opacity-20"></div>
+						</div>
+					</div>
+
+					<!-- Signal beam connecting radar to target -->
+					<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform">
+						<!-- Main signal beam -->
+						<div
+							class="h-px w-32 bg-gradient-to-r from-green-400 via-green-500 to-green-600 opacity-70"
+						></div>
+						
+						<!-- Signal pulses showing detection -->
+						<div class="absolute top-0 left-6 h-px w-3 animate-pulse bg-green-500 opacity-90" style="animation-delay: 0s;"></div>
+						<div class="absolute top-0 left-14 h-px w-3 animate-pulse bg-green-500 opacity-90" style="animation-delay: 0.3s;"></div>
+						<div class="absolute top-0 left-22 h-px w-3 animate-pulse bg-green-500 opacity-90" style="animation-delay: 0.6s;"></div>
+						
+						<!-- Signal lock point -->
+						<div class="absolute top-1/2 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 transform animate-pulse rounded-full bg-green-600 opacity-80"></div>
+					</div>
+
+					<!-- Noise clearing indicators (subtle scattered elements being organized) -->
+					<div class="absolute top-4 left-12 h-1 w-1 animate-pulse rounded-full bg-gray-400 opacity-30" style="animation-delay: 0.2s;"></div>
+					<div class="absolute top-6 right-16 h-1 w-1 animate-pulse rounded-full bg-gray-400 opacity-20" style="animation-delay: 0.8s;"></div>
+					<div class="absolute bottom-6 left-16 h-1 w-1 animate-pulse rounded-full bg-gray-400 opacity-25" style="animation-delay: 1.2s;"></div>
+
+					<!-- Success indicator - clear signal achieved -->
+					<div class="absolute bottom-4 left-1/2 -translate-x-1/2 transform">
+						<div class="h-1 w-1 animate-pulse rounded-full bg-green-600 opacity-70"></div>
+					</div>
+				</div>
 			{:else}
 				<!-- Default visualization for other types -->
 				<div class="relative flex items-center justify-center">
