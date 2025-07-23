@@ -55,24 +55,6 @@ export const cta = {
 
 export const navigation: NavItem[] = [
 	{
-		label: "About",
-		href: "/about",
-		showInNav: true,
-		showInFooter: false
-	},
-	{
-		label: "Manifesto",
-		href: "/manifesto",
-		showInNav: true,
-		showInFooter: false
-	},
-	{
-		label: "Private Deployments",
-		href: "/private-deployments",
-		showInNav: true,
-		showInFooter: true
-	},
-	{
 		label: "Company",
 		showInNav: false,
 		showInFooter: true,
@@ -80,42 +62,42 @@ export const navigation: NavItem[] = [
 			{
 				label: "About",
 				href: "/about",
-				showInNav: false,
+				showInNav: true,
 				showInFooter: true
 			},
 			{
 				label: "Manifesto",
 				href: "/manifesto",
-				showInNav: false,
+				showInNav: true,
 				showInFooter: true
 			},
 			{
-				label: "Contact",
-				href: "/contact",
-				showInNav: false,
-				showInFooter: true
-			}
-		]
-	},
-	{
-		label: "Legal",
-		showInNav: false,
-		showInFooter: true,
-		children: [
-			{
-				label: "Privacy policy",
-				href: "/legal/privacy",
-				showInNav: false,
-				showInFooter: true
-			},
-			{
-				label: "Terms of service",
-				href: "/legal/terms",
-				showInNav: false,
+				label: "Private Deployments",
+				href: "/private-deployments",
+				showInNav: true,
 				showInFooter: true
 			}
 		]
 	}
+	// {
+	// 	label: "Legal",
+	// 	showInNav: false,
+	// 	showInFooter: true,
+	// 	children: [
+	// 		{
+	// 			label: "Privacy policy",
+	// 			href: "/legal/privacy",
+	// 			showInNav: false,
+	// 			showInFooter: true
+	// 		},
+	// 		{
+	// 			label: "Terms of service",
+	// 			href: "/legal/terms",
+	// 			showInNav: false,
+	// 			showInFooter: true
+	// 		}
+	// 	]
+	// }
 	// {
 	// 	label: "More",
 	// 	showInNav: false,
