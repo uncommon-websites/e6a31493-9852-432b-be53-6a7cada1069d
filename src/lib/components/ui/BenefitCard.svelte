@@ -266,10 +266,7 @@
 					<!-- Second dot removed -->
 					<!-- Third dot removed -->
 
-					<!-- Success indicator - clear signal achieved -->
-					<div class="absolute bottom-4 left-1/2 -translate-x-1/2 transform">
-						<div class="h-1 w-1 bg-green-600 opacity-70" style="border-radius: var(--radius-xs);"></div>
-					</div>
+					<!-- Success indicator removed -->
 				</div>
 			{:else}
 				<!-- Default visualization for other types -->
