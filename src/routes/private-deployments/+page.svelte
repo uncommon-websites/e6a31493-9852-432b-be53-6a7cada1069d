@@ -395,7 +395,7 @@
 
 			<div class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2">
 				{#each resources as resource}
-					<div class="space-y-4">
+					<div class="bg-background space-y-4 p-6" style="border-radius: var(--radius-lg);">
 						<h3 class="text-headline font-medium">{resource.title}</h3>
 						<p class="text-caption text-muted-foreground">
 							{resource.description}
