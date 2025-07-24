@@ -2,7 +2,7 @@
 	// Components
 	import Summary from "$lib/components/layout/Summary.svelte"
 	import CallToAction from "$lib/components/layout/CallToAction.svelte"
-	import SlideshowHero from "$lib/components/layout/hero-sections/SlideshowHero.svelte"
+	// import SlideshowHero from "$lib/components/layout/hero-sections/SlideshowHero.svelte"
 	import SplitHero from "$lib/components/layout/hero-sections/SplitHero.svelte"
 	import Security from "$lib/components/layout/Security.svelte"
 	import FrictionlessAdoption from "$lib/components/layout/FrictionlessAdoption.svelte"
@@ -20,7 +20,7 @@
 	text="Sentra is building an AI teammate that improves alignment across an organization by proactively sensing when problems may occur and allowing leaders to intervene to intercept them."
 />
 
-<SlideshowHero />
+<!-- <SlideshowHero /> -->
 <ImmediateValue />
 <FrictionlessAdoption />
 <Benefits />
