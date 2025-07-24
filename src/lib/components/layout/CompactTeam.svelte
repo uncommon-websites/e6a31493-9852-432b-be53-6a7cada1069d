@@ -16,7 +16,7 @@
 </script>
 
 <section class="section-py section-px bg-background container mx-auto">
-	<div class="mx-auto max-w-4xl">
+	<div class="mx-auto">
 		<div class="section-mb-sm text-center">
 			<h2 class="text-title1 text-foreground mb-4">{title}</h2>
 			{#if subtitle}

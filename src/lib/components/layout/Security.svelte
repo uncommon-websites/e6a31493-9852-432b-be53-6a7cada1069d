@@ -17,10 +17,9 @@
 <script lang="ts">
 	// Icons
 	import IconLock from "~icons/lucide/lock"
-	
+
 	// Components
 	import AnimateText from "../animation/AnimateText.svelte"
-	import Button from "../ui/Button.svelte"
 
 	// Props
 	const {
@@ -54,29 +53,32 @@
 	<section class="section-px section-py-sm mx-auto max-w-7xl">
 		<div class="bg-card rounded-(--radius-lg) p-12">
 			<div class="mx-auto">
-				<h2 class="text-title2 flex items-center gap-3">
-					<IconLock class="h-6 w-6 text-primary/80" />
-					<AnimateText text={title} />
-				</h2>
+				<div
+					class="border-border mb-8 grid grid-cols-2 items-start justify-between gap-12 border-b pb-8"
+				>
+					<!-- Left column - Title -->
+					<div>
+						<h2 class="text-title2 flex items-baseline gap-3">
+							<IconLock class="text-primary/80 h-6 w-6" />
+							<AnimateText text={title} />
+						</h2>
+					</div>
 
-				<!-- Trust indicators with actual compliance logos -->
-				<div class="border-border my-16 flex justify-start border-b pb-16">
-					<div class="grid max-w-2xl grid-cols-1 gap-8 md:grid-cols-3 md:gap-16">
+					<!-- Right column - Compliance logos horizontal -->
+					<div class="flex gap-12">
 						{#each complianceItems as item}
-							<div class="flex w-full flex-col items-center justify-center space-y-4">
-								<div class="flex flex-col-reverse items-center justify-between gap-2">
-									<div class="text-center">
-										<p class="text-body font-medium">{item.name}</p>
-										<p class="text-caption text-muted-foreground mt-1">{item.status}</p>
-									</div>
-									<img src={item.logoUrl} alt={item.name} />
+							<div class="flex items-center gap-3">
+								<img src={item.logoUrl} alt={item.name} class="h-12" />
+								<div>
+									<p class="text-body font-medium">{item.name}</p>
+									<p class="text-caption text-muted-foreground">{item.status}</p>
 								</div>
 							</div>
 						{/each}
 					</div>
 				</div>
 
-				<div class="grid gap-12 text-left lg:grid-cols-2">
+				<div class="grid gap-16 text-left lg:grid-cols-2">
 					<div>
 						<h3 class="text-headline mb-3 font-medium">Private deployments</h3>
 						<p class="text-body text-muted-foreground">

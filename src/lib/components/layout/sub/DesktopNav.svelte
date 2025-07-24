@@ -19,7 +19,7 @@
 	class={[
 		"relative flex items-center justify-end gap-5",
 		"rounded-(--outer-radius) [--outer-radius:var(--radius)]",
-		"[--gap:--spacing(1))]",
+		"[--gap:--spacing(1)]",
 		"[--inner-radius:calc(var(--outer-radius)-var(--gap))]"
 	]}
 >
