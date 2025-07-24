@@ -39,23 +39,23 @@
 		<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border-2 border-dashed border-blue-200 rounded-full opacity-40"></div>
 		
 		<!-- Central shield at top -->
-		<div class="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-16 bg-white border-2 border-blue-200 rounded-xl flex items-center justify-center shadow-lg z-10">
+		<div class="absolute top-16 left-1/2 -translate-x-1/2 w-16 h-16 bg-white border-2 border-blue-200 rounded-xl flex items-center justify-center shadow-lg z-10">
 			<IconShield class="h-8 w-8 text-blue-600" />
 		</div>
 
 		<!-- Vertical line down from shield -->
-		<div class="absolute left-1/2 -translate-x-1/2 top-20 w-0.5 h-16 {isActive(0) || isActive(1) || isActive(2) ? 'bg-blue-500' : 'bg-gray-300'} z-10"></div>
+		<div class="absolute left-1/2 -translate-x-1/2 top-32 w-0.5 h-8 bg-blue-500 z-10"></div>
 
 		<!-- Horizontal line -->
-		<div class="absolute left-1/2 -translate-x-1/2 top-36 w-32 h-0.5 {isActive(0) || isActive(1) || isActive(2) ? 'bg-blue-500' : 'bg-gray-300'} z-10"></div>
+		<div class="absolute left-1/2 -translate-x-1/2 top-40 w-40 h-0.5 bg-blue-500 z-10"></div>
 
 		<!-- Three vertical lines to bottom icons - properly aligned -->
-		<div class="absolute top-36 w-0.5 h-20 {isActive(0) ? 'bg-blue-500' : 'bg-gray-300'} z-10" style="left: 6rem;"></div>
-		<div class="absolute left-1/2 -translate-x-1/2 top-36 w-0.5 h-20 {isActive(1) ? 'bg-blue-500' : 'bg-gray-300'} z-10"></div>
-		<div class="absolute top-36 w-0.5 h-20 {isActive(2) ? 'bg-blue-500' : 'bg-gray-300'} z-10" style="right: 6rem;"></div>
+		<div class="absolute top-40 w-0.5 h-12 bg-blue-500 z-10" style="left: calc(50% - 5rem);"></div>
+		<div class="absolute left-1/2 -translate-x-1/2 top-40 w-0.5 h-12 bg-blue-500 z-10"></div>
+		<div class="absolute top-40 w-0.5 h-12 bg-blue-500 z-10" style="right: calc(50% - 5rem);"></div>
 
 		<!-- Three icons at bottom - aligned with lines -->
-		<div class="absolute bottom-16 w-12 h-12 bg-white border-2 {isActive(0) ? 'border-blue-400' : 'border-gray-200'} rounded-lg flex items-center justify-center shadow-sm z-10" style="left: calc(6rem - 1.5rem);">
+		<div class="absolute bottom-16 w-12 h-12 bg-white border-2 {isActive(0) ? 'border-blue-400' : 'border-gray-200'} rounded-lg flex items-center justify-center shadow-sm z-10" style="left: calc(50% - 6.5rem);">
 			<svelte:component this={securityElements[0].icon} class="h-6 w-6 {isActive(0) ? 'text-blue-500' : 'text-gray-400'}" />
 		</div>
 
@@ -63,7 +63,7 @@
 			<svelte:component this={securityElements[1].icon} class="h-6 w-6 {isActive(1) ? 'text-blue-500' : 'text-gray-400'}" />
 		</div>
 
-		<div class="absolute bottom-16 w-12 h-12 bg-white border-2 {isActive(2) ? 'border-blue-400' : 'border-gray-200'} rounded-lg flex items-center justify-center shadow-sm z-10" style="right: calc(6rem - 1.5rem);">
+		<div class="absolute bottom-16 w-12 h-12 bg-white border-2 {isActive(2) ? 'border-blue-400' : 'border-gray-200'} rounded-lg flex items-center justify-center shadow-sm z-10" style="right: calc(50% - 6.5rem);">
 			<svelte:component this={securityElements[2].icon} class="h-6 w-6 {isActive(2) ? 'text-blue-500' : 'text-gray-400'}" />
 		</div>
 	</div>
