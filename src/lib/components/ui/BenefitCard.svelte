@@ -25,7 +25,19 @@
 	type Props = {
 		title: string
 		description: string
-		visualization: "visibility" | "misalignment" | "culture" | "meetings" | "onboarding" | "future" | "memory" | "vision" | "detection" | "knowledge_assembly" | "strategic_compass" | "early_warning"
+		visualization:
+			| "visibility"
+			| "misalignment"
+			| "culture"
+			| "meetings"
+			| "onboarding"
+			| "future"
+			| "memory"
+			| "vision"
+			| "detection"
+			| "knowledge_assembly"
+			| "strategic_compass"
+			| "early_warning"
 		class?: string
 	}
 
@@ -112,7 +124,7 @@
 					<div class="flex flex-1 items-center justify-center">
 						<div class="relative">
 							<!-- Organization tree structure -->
-							<div class="flex flex-col items-center space-y-4">
+							<div class="flex flex-col items-center space-y-2">
 								<!-- Top level with glow -->
 								<div class="relative flex items-center justify-center">
 									<div
@@ -133,12 +145,12 @@
 								</div>
 
 								<!-- Enhanced connections -->
-								<div class="relative flex h-8 w-full items-center justify-center">
+								<div class="relative flex h-4 w-full items-center justify-center">
 									<div
 										class="absolute h-0.5 w-32 bg-gradient-to-r from-transparent via-blue-400 to-transparent"
 									></div>
 									<div
-										class="absolute left-1/2 h-8 w-0.5 -translate-x-1/2 bg-gradient-to-b from-blue-400 to-blue-300"
+										class="absolute left-1/2 h-4 w-0.5 -translate-x-1/2 bg-gradient-to-b from-blue-400 to-blue-300"
 									></div>
 									<!-- Connection nodes -->
 									<div
@@ -186,8 +198,8 @@
 								<div class="flex items-start space-x-12">
 									{#each Array(3) as _}
 										<div class="flex flex-col items-center">
-											<div class="h-4 w-0.5 bg-gradient-to-b from-blue-300 to-blue-200"></div>
-											<div class="mt-1 flex space-x-4">
+											<div class="h-2 w-0.5 bg-gradient-to-b from-blue-300 to-blue-200"></div>
+											<div class="flex space-x-4">
 												<div
 													class="h-2.5 w-2.5 bg-gradient-to-br from-blue-200 to-blue-400 shadow-sm shadow-blue-500/15"
 													style="border-radius: var(--radius-sm);"
@@ -577,7 +589,10 @@
 									class="inline-flex items-center space-x-4 bg-gray-50 px-3 py-1"
 									style="border-radius: var(--radius-lg);"
 								>
-									<div class="h-2 w-2 bg-green-500" style="border-radius: var(--radius-full);"></div>
+									<div
+										class="h-2 w-2 bg-green-500"
+										style="border-radius: var(--radius-full);"
+									></div>
 									<span class="text-xs font-medium text-gray-600">Meeting Optimization</span>
 								</div>
 							</div>
@@ -668,7 +683,7 @@
 							<!-- Central memory core -->
 							<div class="relative flex items-center justify-center">
 								<div
-									class="relative h-14 w-14 bg-gradient-to-br from-blue-400 to-blue-600 shadow-lg shadow-blue-500/30 rounded-2xl"
+									class="relative h-14 w-14 rounded-2xl bg-gradient-to-br from-blue-400 to-blue-600 shadow-lg shadow-blue-500/30"
 								>
 									<!-- Inner neural pattern -->
 									<div class="absolute inset-2 flex items-center justify-center">
@@ -683,7 +698,7 @@
 									</div>
 									<!-- Pulse effect -->
 									<div
-										class="absolute inset-0 animate-ping bg-blue-400 opacity-20 rounded-2xl"
+										class="absolute inset-0 animate-ping rounded-2xl bg-blue-400 opacity-20"
 									></div>
 								</div>
 							</div>
@@ -694,15 +709,27 @@
 								<div class="absolute -top-4 -left-16">
 									<div class="flex items-center space-x-1">
 										<div class="flex space-x-0.5">
-											<div class="h-1.5 w-1.5 bg-blue-300 animate-pulse rounded-full" style=" animation-delay: 0s;"></div>
-											<div class="h-1.5 w-1.5 bg-blue-300 animate-pulse rounded-full" style=" animation-delay: 0.2s;"></div>
-											<div class="h-1.5 w-1.5 bg-blue-300 animate-pulse rounded-full" style=" animation-delay: 0.4s;"></div>
+											<div
+												class="h-1.5 w-1.5 animate-pulse rounded-full bg-blue-300"
+												style=" animation-delay: 0s;"
+											></div>
+											<div
+												class="h-1.5 w-1.5 animate-pulse rounded-full bg-blue-300"
+												style=" animation-delay: 0.2s;"
+											></div>
+											<div
+												class="h-1.5 w-1.5 animate-pulse rounded-full bg-blue-300"
+												style=" animation-delay: 0.4s;"
+											></div>
 										</div>
 										<div class="h-0.5 w-10 bg-gradient-to-r from-blue-300 to-blue-400"></div>
 										<div
-											class="h-6 w-6 bg-gradient-to-br from-blue-200 to-blue-400 shadow-sm shadow-blue-500/20 rounded-lg"
+											class="h-6 w-6 rounded-lg bg-gradient-to-br from-blue-200 to-blue-400 shadow-sm shadow-blue-500/20"
 										>
-											<div class="absolute inset-1 bg-white opacity-20" style="border-radius: var(--radius-sm);"></div>
+											<div
+												class="absolute inset-1 bg-white opacity-20"
+												style="border-radius: var(--radius-sm);"
+											></div>
 										</div>
 									</div>
 								</div>
@@ -711,15 +738,27 @@
 								<div class="absolute -top-4 -right-16">
 									<div class="flex items-center space-x-1">
 										<div
-											class="h-6 w-6 bg-gradient-to-br from-blue-200 to-blue-400 shadow-sm shadow-blue-500/20 rounded-lg"
+											class="h-6 w-6 rounded-lg bg-gradient-to-br from-blue-200 to-blue-400 shadow-sm shadow-blue-500/20"
 										>
-											<div class="absolute inset-1 bg-white opacity-20" style="border-radius: var(--radius-sm);"></div>
+											<div
+												class="absolute inset-1 bg-white opacity-20"
+												style="border-radius: var(--radius-sm);"
+											></div>
 										</div>
 										<div class="h-0.5 w-10 bg-gradient-to-l from-blue-300 to-blue-400"></div>
 										<div class="flex space-x-0.5">
-											<div class="h-1.5 w-1.5 bg-blue-300 animate-pulse rounded-full" style=" animation-delay: 0.6s;"></div>
-											<div class="h-1.5 w-1.5 bg-blue-300 animate-pulse rounded-full" style=" animation-delay: 0.8s;"></div>
-											<div class="h-1.5 w-1.5 bg-blue-300 animate-pulse rounded-full" style=" animation-delay: 1s;"></div>
+											<div
+												class="h-1.5 w-1.5 animate-pulse rounded-full bg-blue-300"
+												style=" animation-delay: 0.6s;"
+											></div>
+											<div
+												class="h-1.5 w-1.5 animate-pulse rounded-full bg-blue-300"
+												style=" animation-delay: 0.8s;"
+											></div>
+											<div
+												class="h-1.5 w-1.5 animate-pulse rounded-full bg-blue-300"
+												style=" animation-delay: 1s;"
+											></div>
 										</div>
 									</div>
 								</div>
@@ -728,32 +767,56 @@
 								<div class="absolute -bottom-4 -left-16">
 									<div class="flex items-center space-x-1">
 										<div class="flex space-x-0.5">
-											<div class="h-1.5 w-1.5 bg-blue-300 animate-pulse rounded-full" style=" animation-delay: 1.2s;"></div>
-											<div class="h-1.5 w-1.5 bg-blue-300 animate-pulse rounded-full" style=" animation-delay: 1.4s;"></div>
-											<div class="h-1.5 w-1.5 bg-blue-300 animate-pulse rounded-full" style=" animation-delay: 1.6s;"></div>
+											<div
+												class="h-1.5 w-1.5 animate-pulse rounded-full bg-blue-300"
+												style=" animation-delay: 1.2s;"
+											></div>
+											<div
+												class="h-1.5 w-1.5 animate-pulse rounded-full bg-blue-300"
+												style=" animation-delay: 1.4s;"
+											></div>
+											<div
+												class="h-1.5 w-1.5 animate-pulse rounded-full bg-blue-300"
+												style=" animation-delay: 1.6s;"
+											></div>
 										</div>
 										<div class="h-0.5 w-10 bg-gradient-to-r from-blue-300 to-blue-400"></div>
 										<div
-											class="h-6 w-6 bg-gradient-to-br from-blue-200 to-blue-400 shadow-sm shadow-blue-500/20 rounded-lg"
+											class="h-6 w-6 rounded-lg bg-gradient-to-br from-blue-200 to-blue-400 shadow-sm shadow-blue-500/20"
 										>
-											<div class="absolute inset-1 bg-white opacity-20" style="border-radius: var(--radius-sm);"></div>
+											<div
+												class="absolute inset-1 bg-white opacity-20"
+												style="border-radius: var(--radius-sm);"
+											></div>
 										</div>
 									</div>
 								</div>
 
 								<!-- Bottom right stream -->
-								<div class="absolute -bottom-4 -right-16">
+								<div class="absolute -right-16 -bottom-4">
 									<div class="flex items-center space-x-1">
 										<div
-											class="h-6 w-6 bg-gradient-to-br from-blue-200 to-blue-400 shadow-sm shadow-blue-500/20 rounded-lg"
+											class="h-6 w-6 rounded-lg bg-gradient-to-br from-blue-200 to-blue-400 shadow-sm shadow-blue-500/20"
 										>
-											<div class="absolute inset-1 bg-white opacity-20" style="border-radius: var(--radius-sm);"></div>
+											<div
+												class="absolute inset-1 bg-white opacity-20"
+												style="border-radius: var(--radius-sm);"
+											></div>
 										</div>
 										<div class="h-0.5 w-10 bg-gradient-to-l from-blue-300 to-blue-400"></div>
 										<div class="flex space-x-0.5">
-											<div class="h-1.5 w-1.5 bg-blue-300 animate-pulse rounded-full" style=" animation-delay: 1.8s;"></div>
-											<div class="h-1.5 w-1.5 bg-blue-300 animate-pulse rounded-full" style=" animation-delay: 2s;"></div>
-											<div class="h-1.5 w-1.5 bg-blue-300 animate-pulse rounded-full" style=" animation-delay: 2.2s;"></div>
+											<div
+												class="h-1.5 w-1.5 animate-pulse rounded-full bg-blue-300"
+												style=" animation-delay: 1.8s;"
+											></div>
+											<div
+												class="h-1.5 w-1.5 animate-pulse rounded-full bg-blue-300"
+												style=" animation-delay: 2s;"
+											></div>
+											<div
+												class="h-1.5 w-1.5 animate-pulse rounded-full bg-blue-300"
+												style=" animation-delay: 2.2s;"
+											></div>
 										</div>
 									</div>
 								</div>
@@ -788,7 +851,7 @@
 							<div class="relative flex items-center justify-center">
 								<!-- Central focusing lens -->
 								<div
-									class="relative h-16 w-16 bg-gradient-to-br from-purple-400 to-purple-600 shadow-lg shadow-purple-500/30 rounded-full"
+									class="relative h-16 w-16 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 shadow-lg shadow-purple-500/30"
 								>
 									<!-- Inner lens reflection -->
 									<div
@@ -837,10 +900,15 @@
 											class="h-4 w-4 bg-gradient-to-br from-purple-300 to-purple-500 shadow-sm shadow-purple-500/25"
 											style="border-radius: var(--radius-md);"
 										>
-											<div class="absolute inset-0.5 bg-white opacity-30" style="border-radius: var(--radius-sm);"></div>
+											<div
+												class="absolute inset-0.5 bg-white opacity-30"
+												style="border-radius: var(--radius-sm);"
+											></div>
 										</div>
 										<!-- Focus beam -->
-										<div class="absolute top-4 left-1/2 h-4 w-0.5 -translate-x-1/2 bg-gradient-to-b from-purple-300 to-transparent"></div>
+										<div
+											class="absolute top-4 left-1/2 h-4 w-0.5 -translate-x-1/2 bg-gradient-to-b from-purple-300 to-transparent"
+										></div>
 									</div>
 								</div>
 
@@ -851,38 +919,53 @@
 											class="h-4 w-4 bg-gradient-to-br from-purple-300 to-purple-500 shadow-sm shadow-purple-500/25"
 											style="border-radius: var(--radius-md);"
 										>
-											<div class="absolute inset-0.5 bg-white opacity-30" style="border-radius: var(--radius-sm);"></div>
+											<div
+												class="absolute inset-0.5 bg-white opacity-30"
+												style="border-radius: var(--radius-sm);"
+											></div>
 										</div>
 										<!-- Focus beam -->
-										<div class="absolute bottom-4 left-1/2 h-4 w-0.5 -translate-x-1/2 bg-gradient-to-t from-purple-300 to-transparent"></div>
+										<div
+											class="absolute bottom-4 left-1/2 h-4 w-0.5 -translate-x-1/2 bg-gradient-to-t from-purple-300 to-transparent"
+										></div>
 									</div>
 								</div>
 
 								<!-- Left target -->
-								<div class="absolute -left-8 top-1/2 -translate-y-1/2">
+								<div class="absolute top-1/2 -left-8 -translate-y-1/2">
 									<div class="relative">
 										<div
 											class="h-4 w-4 bg-gradient-to-br from-purple-300 to-purple-500 shadow-sm shadow-purple-500/25"
 											style="border-radius: var(--radius-md);"
 										>
-											<div class="absolute inset-0.5 bg-white opacity-30" style="border-radius: var(--radius-sm);"></div>
+											<div
+												class="absolute inset-0.5 bg-white opacity-30"
+												style="border-radius: var(--radius-sm);"
+											></div>
 										</div>
 										<!-- Focus beam -->
-										<div class="absolute left-4 top-1/2 h-0.5 w-4 -translate-y-1/2 bg-gradient-to-r from-purple-300 to-transparent"></div>
+										<div
+											class="absolute top-1/2 left-4 h-0.5 w-4 -translate-y-1/2 bg-gradient-to-r from-purple-300 to-transparent"
+										></div>
 									</div>
 								</div>
 
 								<!-- Right target -->
-								<div class="absolute -right-8 top-1/2 -translate-y-1/2">
+								<div class="absolute top-1/2 -right-8 -translate-y-1/2">
 									<div class="relative">
 										<div
 											class="h-4 w-4 bg-gradient-to-br from-purple-300 to-purple-500 shadow-sm shadow-purple-500/25"
 											style="border-radius: var(--radius-md);"
 										>
-											<div class="absolute inset-0.5 bg-white opacity-30" style="border-radius: var(--radius-sm);"></div>
+											<div
+												class="absolute inset-0.5 bg-white opacity-30"
+												style="border-radius: var(--radius-sm);"
+											></div>
 										</div>
 										<!-- Focus beam -->
-										<div class="absolute right-4 top-1/2 h-0.5 w-4 -translate-y-1/2 bg-gradient-to-l from-purple-300 to-transparent"></div>
+										<div
+											class="absolute top-1/2 right-4 h-0.5 w-4 -translate-y-1/2 bg-gradient-to-l from-purple-300 to-transparent"
+										></div>
 									</div>
 								</div>
 							</div>
@@ -916,7 +999,7 @@
 							<div class="relative flex items-center justify-center">
 								<!-- Central radar hub -->
 								<div
-									class="relative h-12 w-12 bg-gradient-to-br from-orange-400 to-orange-600 shadow-lg shadow-orange-500/30 rounded-full"
+									class="relative h-12 w-12 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 shadow-lg shadow-orange-500/30"
 								>
 									<!-- Pulse effect -->
 									<div
@@ -952,13 +1035,13 @@
 								<!-- Healthy signals (green) -->
 								<div class="absolute -top-6 -left-8">
 									<div
-										class="h-3 w-3 bg-gradient-to-br from-green-400 to-green-600 shadow-sm shadow-green-500/25 animate-pulse"
+										class="h-3 w-3 animate-pulse bg-gradient-to-br from-green-400 to-green-600 shadow-sm shadow-green-500/25"
 										style="border-radius: var(--radius-full); animation-delay: 0.5s;"
 									></div>
 								</div>
-								<div class="absolute -bottom-4 -right-10">
+								<div class="absolute -right-10 -bottom-4">
 									<div
-										class="h-3 w-3 bg-gradient-to-br from-green-400 to-green-600 shadow-sm shadow-green-500/25 animate-pulse"
+										class="h-3 w-3 animate-pulse bg-gradient-to-br from-green-400 to-green-600 shadow-sm shadow-green-500/25"
 										style="border-radius: var(--radius-full); animation-delay: 1.2s;"
 									></div>
 								</div>
@@ -966,7 +1049,7 @@
 								<!-- Warning signals (amber) -->
 								<div class="absolute -top-2 right-12">
 									<div
-										class="h-3.5 w-3.5 bg-gradient-to-br from-amber-400 to-amber-600 shadow-md shadow-amber-500/30 animate-pulse"
+										class="h-3.5 w-3.5 animate-pulse bg-gradient-to-br from-amber-400 to-amber-600 shadow-md shadow-amber-500/30"
 										style="border-radius: var(--radius-full); animation-delay: 0.8s;"
 									></div>
 								</div>
@@ -975,7 +1058,7 @@
 								<div class="absolute -bottom-12 left-1/2 -translate-x-1/2">
 									<div class="flex items-center space-x-1">
 										<div
-											class="h-2 w-2 bg-green-500 animate-pulse"
+											class="h-2 w-2 animate-pulse bg-green-500"
 											style="border-radius: var(--radius-full);"
 										></div>
 										<span class="text-xs font-medium text-green-600">Clear</span>
@@ -1014,46 +1097,62 @@
 							<div class="relative flex items-center justify-center">
 								<!-- Outer compass ring -->
 								<div
-									class="relative h-20 w-20 bg-gradient-to-br from-violet-300 to-violet-500 shadow-xl shadow-violet-500/40 rounded-full"
+									class="relative h-20 w-20 rounded-full bg-gradient-to-br from-violet-300 to-violet-500 shadow-xl shadow-violet-500/40"
 								>
 									<!-- Inner compass face -->
 									<div
-										class="absolute inset-2 bg-gradient-to-br from-white to-gray-100 shadow-inner rounded-full"
+										class="absolute inset-2 rounded-full bg-gradient-to-br from-white to-gray-100 shadow-inner"
 									></div>
-									
+
 									<!-- Compass markings -->
 									<div class="absolute inset-0">
 										<!-- Major direction markers -->
-										<div class="absolute top-1 left-1/2 h-3 w-0.5 -translate-x-1/2 bg-violet-600"></div>
-										<div class="absolute bottom-1 left-1/2 h-3 w-0.5 -translate-x-1/2 bg-violet-400"></div>
-										<div class="absolute right-1 top-1/2 h-0.5 w-3 -translate-y-1/2 bg-violet-400"></div>
-										<div class="absolute left-1 top-1/2 h-0.5 w-3 -translate-y-1/2 bg-violet-400"></div>
-										
+										<div
+											class="absolute top-1 left-1/2 h-3 w-0.5 -translate-x-1/2 bg-violet-600"
+										></div>
+										<div
+											class="absolute bottom-1 left-1/2 h-3 w-0.5 -translate-x-1/2 bg-violet-400"
+										></div>
+										<div
+											class="absolute top-1/2 right-1 h-0.5 w-3 -translate-y-1/2 bg-violet-400"
+										></div>
+										<div
+											class="absolute top-1/2 left-1 h-0.5 w-3 -translate-y-1/2 bg-violet-400"
+										></div>
+
 										<!-- Minor direction markers -->
-										<div class="absolute top-2 right-2 h-1.5 w-0.5 bg-violet-300 transform rotate-45"></div>
-										<div class="absolute top-2 left-2 h-1.5 w-0.5 bg-violet-300 transform -rotate-45"></div>
-										<div class="absolute bottom-2 right-2 h-1.5 w-0.5 bg-violet-300 transform -rotate-45"></div>
-										<div class="absolute bottom-2 left-2 h-1.5 w-0.5 bg-violet-300 transform rotate-45"></div>
+										<div
+											class="absolute top-2 right-2 h-1.5 w-0.5 rotate-45 transform bg-violet-300"
+										></div>
+										<div
+											class="absolute top-2 left-2 h-1.5 w-0.5 -rotate-45 transform bg-violet-300"
+										></div>
+										<div
+											class="absolute right-2 bottom-2 h-1.5 w-0.5 -rotate-45 transform bg-violet-300"
+										></div>
+										<div
+											class="absolute bottom-2 left-2 h-1.5 w-0.5 rotate-45 transform bg-violet-300"
+										></div>
 									</div>
-									
+
 									<!-- Compass needle -->
 									<div class="absolute inset-0 flex items-center justify-center">
 										<div class="relative">
 											<!-- North pointer (red) -->
 											<div
-												class="absolute -top-6 left-1/2 h-6 w-1 -translate-x-1/2 bg-gradient-to-t from-red-600 to-red-400 rounded-full shadow-sm"
+												class="absolute -top-6 left-1/2 h-6 w-1 -translate-x-1/2 rounded-full bg-gradient-to-t from-red-600 to-red-400 shadow-sm"
 												style="animation: compass-settle 4s ease-out infinite;"
 											></div>
 											<!-- South pointer (white) -->
 											<div
-												class="absolute -bottom-6 left-1/2 h-6 w-1 -translate-x-1/2 bg-gradient-to-b from-white to-gray-300 rounded-full shadow-sm"
+												class="absolute -bottom-6 left-1/2 h-6 w-1 -translate-x-1/2 rounded-full bg-gradient-to-b from-white to-gray-300 shadow-sm"
 												style="animation: compass-settle 4s ease-out infinite;"
 											></div>
 											<!-- Center pivot -->
 											<div
-												class="h-3 w-3 bg-gradient-to-br from-gray-600 to-gray-800 shadow-md rounded-full"
+												class="h-3 w-3 rounded-full bg-gradient-to-br from-gray-600 to-gray-800 shadow-md"
 											>
-												<div class="absolute inset-0.5 bg-white opacity-30 rounded-full"></div>
+												<div class="absolute inset-0.5 rounded-full bg-white opacity-30"></div>
 											</div>
 										</div>
 									</div>
@@ -1061,32 +1160,46 @@
 									<!-- Compass directions -->
 									<div class="absolute inset-0">
 										<!-- N -->
-										<div class="absolute -top-2 left-1/2 -translate-x-1/2 text-sm font-bold text-violet-700">N</div>
+										<div
+											class="absolute -top-6 left-1/2 -translate-x-1/2 text-sm font-bold text-violet-700"
+										>
+											N
+										</div>
 										<!-- S -->
-										<div class="absolute -bottom-2 left-1/2 -translate-x-1/2 text-sm font-bold text-violet-500 opacity-70">S</div>
+										<div
+											class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-sm font-bold text-violet-500 opacity-70"
+										>
+											S
+										</div>
 										<!-- E -->
-										<div class="absolute -right-2 top-1/2 -translate-y-1/2 text-sm font-bold text-violet-500 opacity-70">E</div>
+										<div
+											class="absolute top-1/2 -right-6 -translate-y-1/2 text-sm font-bold text-violet-500 opacity-70"
+										>
+											E
+										</div>
 										<!-- W -->
-										<div class="absolute -left-2 top-1/2 -translate-y-1/2 text-sm font-bold text-violet-500 opacity-70">W</div>
+										<div
+											class="absolute top-1/2 -left-6 -translate-y-1/2 text-sm font-bold text-violet-500 opacity-70"
+										>
+											W
+										</div>
 									</div>
 
 									<!-- Compass rose decorative elements -->
 									<div class="absolute inset-0">
 										<!-- Decorative star points -->
-										<div class="absolute top-0 left-1/2 h-1 w-0.5 -translate-x-1/2 bg-violet-400 opacity-60"></div>
-										<div class="absolute bottom-0 left-1/2 h-1 w-0.5 -translate-x-1/2 bg-violet-400 opacity-60"></div>
-										<div class="absolute right-0 top-1/2 h-0.5 w-1 -translate-y-1/2 bg-violet-400 opacity-60"></div>
-										<div class="absolute left-0 top-1/2 h-0.5 w-1 -translate-y-1/2 bg-violet-400 opacity-60"></div>
-									</div>
-								</div>
-
-								<!-- Direction lock indicator -->
-								<div class="absolute -bottom-16 left-1/2 -translate-x-1/2">
-									<div class="flex items-center space-x-1">
 										<div
-											class="h-2 w-2 bg-violet-500 animate-pulse rounded-full"
+											class="absolute top-0 left-1/2 h-1 w-0.5 -translate-x-1/2 bg-violet-400 opacity-60"
 										></div>
-										<span class="text-xs font-medium text-violet-600">Aligned</span>
+										<div
+											class="absolute bottom-0 left-1/2 h-1 w-0.5 -translate-x-1/2 bg-violet-400 opacity-60"
+										></div>
+										<div
+											class="absolute top-1/2 right-0 h-0.5 w-1 -translate-y-1/2 bg-violet-400 opacity-60"
+										></div>
+										<div
+											class="absolute top-1/2 left-0 h-0.5 w-1 -translate-y-1/2 bg-violet-400 opacity-60"
+										></div>
 									</div>
 								</div>
 							</div>
@@ -1095,11 +1208,11 @@
 
 					<!-- Text at bottom -->
 					<div class="mt-6 pb-2 text-center">
-						<div class="mb-1 text-sm text-gray-500">True direction</div>
+						<div class="mb-1 text-sm text-gray-500">Through conversations</div>
 						<div
 							class="bg-gradient-to-r from-violet-600 to-violet-500 bg-clip-text text-lg font-medium text-transparent"
 						>
-							Strategic clarity
+							Aligned with your goals
 						</div>
 					</div>
 				</div>
@@ -1111,107 +1224,95 @@
 						style="background: radial-gradient(circle at center, #dc2626 0%, transparent 70%);"
 					></div>
 				</div>
-				<!-- Radar Scanner: Authentic radar detecting problems -->
+				<!-- Simple Radar Scanner -->
 				<div class="relative flex h-full w-full flex-col">
 					<!-- Main visual elements centered -->
 					<div class="flex flex-1 items-center justify-center">
 						<div class="relative">
 							<!-- Radar scope -->
 							<div class="relative flex items-center justify-center">
-								<!-- Radar screen -->
-								<div
-									class="relative h-20 w-20 bg-gradient-to-br from-gray-900 to-gray-800 shadow-lg shadow-gray-900/50 rounded-full"
-								>
-									<!-- Radar grid lines -->
-									<div class="absolute inset-0">
-										<!-- Horizontal line -->
-										<div class="absolute top-1/2 inset-x-2 h-px bg-green-400/30"></div>
-										<!-- Vertical line -->
-										<div class="absolute left-1/2 inset-y-2 w-px bg-green-400/30"></div>
-									</div>
-									
-									<!-- Radar center dot -->
-									<div class="absolute inset-0 flex items-center justify-center">
-										<div
-											class="h-1.5 w-1.5 bg-green-400 rounded-full shadow-sm"
-										></div>
-									</div>
-									
-									<!-- Radar sweep bar -->
-									<div class="absolute inset-0 flex items-center justify-center">
-										<div 
-											class="absolute h-8 w-0.5 bg-gradient-to-t from-green-400 to-transparent"
-											style="transform-origin: bottom center; animation: radar-sweep 3s linear infinite;"
-										></div>
-									</div>
-								</div>
+								<!-- Transparent radar rings -->
+								<div class="absolute h-32 w-32 rounded-full border-2 border-red-300/30"></div>
+								<div class="absolute h-24 w-24 rounded-full border border-red-300/40"></div>
+								<div class="absolute h-16 w-16 rounded-full border border-red-300/50"></div>
 
-								<!-- Radar range rings -->
+								<!-- Center dot -->
 								<div
-									class="absolute h-24 w-24 border border-green-400/20 rounded-full"
+									class="absolute top-1/2 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-500"
 								></div>
+
+								<style>
+									:root {
+										--radar-duration: 8s;
+									}
+								</style>
+
+								<!-- Diagonal radar sweep line -->
 								<div
-									class="absolute h-32 w-32 border border-green-400/15 rounded-full"
+									class="absolute bottom-1/2 left-1/2 h-16 w-0.5 -translate-x-1/2 bg-gradient-to-t from-red-500 to-transparent"
+									style="transform-origin: bottom; animation: spin var(--radar-duration) linear infinite;"
 								></div>
-								<div
-									class="absolute h-40 w-40 border border-green-400/10 rounded-full"
-								></div>
-							</div>
 
-							<!-- Radar blips -->
-							<div class="absolute inset-0">
-								<!-- Critical blip (close) -->
-								<div class="absolute top-2 -right-6">
+								<!-- Radar detection dots -->
+								<!-- Dot 1 - at 45 degrees (top-right) -->
+								<div class="absolute top-6 right-6">
 									<div
-										class="h-2 w-2 bg-green-400 rounded-full animate-pulse shadow-sm"
-										style="animation-delay: 0.5s; animation-duration: 1s;"
+										class="size-1 origin-center rounded-full bg-red-500 opacity-0 shadow-lg shadow-red-500/50"
+										style="animation: radar-detect var(--radar-duration) var(--ease-out) infinite; animation-delay: calc(var(--radar-duration) /1.65);"
 									></div>
 								</div>
 
-								<!-- Warning blip (medium) -->
-								<div class="absolute -top-4 left-8">
+								<!-- Dot 2 - at 135 degrees (bottom-right) -->
+								<div class="absolute right-6 bottom-6">
 									<div
-										class="h-1.5 w-1.5 bg-green-400 rounded-full animate-pulse shadow-sm"
-										style="animation-delay: 1.2s; animation-duration: 1s;"
+										class="size-1 origin-center rounded-full bg-red-500 opacity-0 shadow-lg shadow-red-500/50"
+										style="animation: radar-detect var(--radar-duration) var(--ease-out) infinite; animation-delay: calc(var(--radar-duration) /1.15);"
 									></div>
 								</div>
 
-								<!-- Distant blip (far) -->
-								<div class="absolute -bottom-2 -left-12">
+								<!-- Dot 3 - at 225 degrees (bottom-left) -->
+								<div class="absolute bottom-6 left-6">
 									<div
-										class="h-1 w-1 bg-green-400 rounded-full animate-pulse shadow-sm opacity-80"
-										style="animation-delay: 2s; animation-duration: 1s;"
+										class="size-1 origin-center rounded-full bg-red-500 opacity-0 shadow-lg shadow-red-500/50"
+										style="animation: radar-detect var(--radar-duration) var(--ease-out) infinite; animation-delay: calc(var(--radar-duration) /.9);"
 									></div>
 								</div>
 
-								<!-- Minor blip -->
-								<div class="absolute bottom-4 right-10">
-									<div
-										class="h-1 w-1 bg-green-400 rounded-full animate-pulse shadow-sm opacity-60"
-										style="animation-delay: 2.8s; animation-duration: 1s;"
-									></div>
-								</div>
-							</div>
-
-							<!-- Status -->
-							<div class="absolute -bottom-14 left-1/2 -translate-x-1/2">
-								<div class="flex items-center space-x-1">
-									<div
-										class="h-1.5 w-1.5 bg-green-400 animate-pulse rounded-full"
-									></div>
-									<span class="text-xs font-medium text-green-600">Active</span>
-								</div>
+								<style>
+									@keyframes radar-detect {
+										0% {
+											opacity: 0;
+											transform: scale(1);
+										}
+										3% {
+											opacity: 1;
+											transform: scale(1.2);
+										}
+										6% {
+											opacity: 0.8;
+											transform: scale(1);
+										}
+										10% {
+											opacity: 0;
+											transform: scale(1);
+										}
+										100% {
+											opacity: 0;
+											transform: scale(1);
+										}
+									}
+								</style>
 							</div>
 						</div>
 					</div>
 
 					<!-- Text at bottom -->
 					<div class="mt-6 pb-2 text-center">
-						<div class="mb-1 text-sm text-gray-500">Problems spotted</div>
+						<div class="mb-1 text-sm text-gray-500">Real-time awareness</div>
 						<div
 							class="bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-lg font-medium text-transparent"
 						>
-							Before impact
+							Conflicts spotted
 						</div>
 					</div>
 				</div>
@@ -1282,81 +1383,164 @@
 <style>
 	/* Animation keyframes for new visualizations */
 	@keyframes float {
-		0%, 100% { transform: translateY(0px); }
-		50% { transform: translateY(-4px); }
+		0%,
+		100% {
+			transform: translateY(0px);
+		}
+		50% {
+			transform: translateY(-4px);
+		}
 	}
 
 	@keyframes settle {
-		0%, 100% { transform: rotate(-10deg); }
-		50% { transform: rotate(-5deg); }
+		0%,
+		100% {
+			transform: rotate(-10deg);
+		}
+		50% {
+			transform: rotate(-5deg);
+		}
 	}
 
 	@keyframes compass-settle {
-		0%, 100% { transform: rotate(0deg); }
-		25% { transform: rotate(2deg); }
-		75% { transform: rotate(-1deg); }
+		0%,
+		100% {
+			transform: rotate(0deg);
+		}
+		25% {
+			transform: rotate(2deg);
+		}
+		75% {
+			transform: rotate(-1deg);
+		}
 	}
 
 	@keyframes pulse-input {
-		0%, 100% { opacity: 0.7; transform: scale(1); }
-		50% { opacity: 1; transform: scale(1.1); }
+		0%,
+		100% {
+			opacity: 0.7;
+			transform: scale(1);
+		}
+		50% {
+			opacity: 1;
+			transform: scale(1.1);
+		}
 	}
 
 	@keyframes lighthouse-sweep {
-		0% { transform: translateX(-50%) rotate(0deg); }
-		100% { transform: translateX(-50%) rotate(360deg); }
+		0% {
+			transform: translateX(-50%) rotate(0deg);
+		}
+		100% {
+			transform: translateX(-50%) rotate(360deg);
+		}
 	}
 
 	@keyframes storm-approach {
-		0%, 100% { transform: translateX(0px); }
-		50% { transform: translateX(-2px); }
+		0%,
+		100% {
+			transform: translateX(0px);
+		}
+		50% {
+			transform: translateX(-2px);
+		}
 	}
 
 	@keyframes safe-passage {
-		0%, 100% { transform: translateX(0px); }
-		50% { transform: translateX(4px); }
+		0%,
+		100% {
+			transform: translateX(0px);
+		}
+		50% {
+			transform: translateX(4px);
+		}
 	}
 
 	@keyframes document-float {
-		0%, 100% { transform: translateY(0px) rotate(0deg); }
-		50% { transform: translateY(-2px) rotate(1deg); }
+		0%,
+		100% {
+			transform: translateY(0px) rotate(0deg);
+		}
+		50% {
+			transform: translateY(-2px) rotate(1deg);
+		}
 	}
 
 	@keyframes matrix-pulse {
-		0%, 100% { opacity: 0.6; }
-		50% { opacity: 0.9; }
+		0%,
+		100% {
+			opacity: 0.6;
+		}
+		50% {
+			opacity: 0.9;
+		}
 	}
 
 	@keyframes node-healthy {
-		0%, 100% { transform: scale(1); }
-		50% { transform: scale(1.05); }
+		0%,
+		100% {
+			transform: scale(1);
+		}
+		50% {
+			transform: scale(1.05);
+		}
 	}
 
 	@keyframes node-warning {
-		0%, 100% { transform: scale(1); }
-		50% { transform: scale(1.1); }
+		0%,
+		100% {
+			transform: scale(1);
+		}
+		50% {
+			transform: scale(1.1);
+		}
 	}
 
 	@keyframes node-critical {
-		0%, 100% { transform: scale(1); }
-		25% { transform: scale(1.15); }
-		75% { transform: scale(1.05); }
+		0%,
+		100% {
+			transform: scale(1);
+		}
+		25% {
+			transform: scale(1.15);
+		}
+		75% {
+			transform: scale(1.05);
+		}
 	}
 
 	@keyframes node-recovered {
-		0%, 100% { transform: scale(1); }
-		50% { transform: scale(1.02); }
+		0%,
+		100% {
+			transform: scale(1);
+		}
+		50% {
+			transform: scale(1.02);
+		}
 	}
 
 	@keyframes monitoring-sweep {
-		0% { transform: scale(0.8); opacity: 0.4; }
-		50% { transform: scale(1.2); opacity: 0.2; }
-		100% { transform: scale(1.6); opacity: 0; }
+		0% {
+			transform: scale(0.8);
+			opacity: 0.4;
+		}
+		50% {
+			transform: scale(1.2);
+			opacity: 0.2;
+		}
+		100% {
+			transform: scale(1.6);
+			opacity: 0;
+		}
 	}
 
 	@keyframes radar-sweep {
-		0% { transform: rotate(0deg); }
-		100% { transform: rotate(360deg); }
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
 	}
 
 	/* Active states for data aggregation animation */
@@ -1368,24 +1552,24 @@
 		background: rgb(59 130 246); /* blue-500 */
 		overflow: hidden;
 	}
-	
+
 	.line-active-up {
 		background: rgb(59 130 246); /* blue-500 */
 		overflow: hidden;
 	}
-	
+
 	.line-active-left {
 		background: rgb(59 130 246); /* blue-500 */
 		overflow: hidden;
 	}
-	
+
 	.line-active-right {
 		background: rgb(59 130 246); /* blue-500 */
 		overflow: hidden;
 	}
 
 	.line-active-down::after {
-		content: '';
+		content: "";
 		position: absolute;
 		top: -100%;
 		left: 0;
@@ -1396,7 +1580,7 @@
 	}
 
 	.line-active-up::after {
-		content: '';
+		content: "";
 		position: absolute;
 		bottom: -100%;
 		left: 0;
@@ -1407,7 +1591,7 @@
 	}
 
 	.line-active-left::after {
-		content: '';
+		content: "";
 		position: absolute;
 		right: -100%;
 		top: 0;
@@ -1418,7 +1602,7 @@
 	}
 
 	.line-active-right::after {
-		content: '';
+		content: "";
 		position: absolute;
 		left: -100%;
 		top: 0;
@@ -1429,141 +1613,323 @@
 	}
 
 	@keyframes flow-down {
-		0% { transform: translateY(0%); }
-		100% { transform: translateY(200%); }
+		0% {
+			transform: translateY(0%);
+		}
+		100% {
+			transform: translateY(200%);
+		}
 	}
 
 	@keyframes flow-up {
-		0% { transform: translateY(0%); }
-		100% { transform: translateY(-200%); }
+		0% {
+			transform: translateY(0%);
+		}
+		100% {
+			transform: translateY(-200%);
+		}
 	}
 
 	@keyframes flow-left {
-		0% { transform: translateX(0%); }
-		100% { transform: translateX(-200%); }
+		0% {
+			transform: translateX(0%);
+		}
+		100% {
+			transform: translateX(-200%);
+		}
 	}
 
 	@keyframes flow-right {
-		0% { transform: translateX(0%); }
-		100% { transform: translateX(200%); }
+		0% {
+			transform: translateX(0%);
+		}
+		100% {
+			transform: translateX(200%);
+		}
 	}
 
 	/* Cycling animation classes */
-	.calendar-active { animation: activate-calendar 24s infinite; }
-	.github-active { animation: activate-github 24s infinite; }
-	.jira-active { animation: activate-jira 24s infinite; }
-	.notion-active { animation: activate-notion 24s infinite; }
-	.slack-active { animation: activate-slack 24s infinite; }
-	.docs-active { animation: activate-docs 24s infinite; }
-	.linear-active { animation: activate-linear 24s infinite; }
-	.email-active { animation: activate-email 24s infinite; }
+	.calendar-active {
+		animation: activate-calendar 24s infinite;
+	}
+	.github-active {
+		animation: activate-github 24s infinite;
+	}
+	.jira-active {
+		animation: activate-jira 24s infinite;
+	}
+	.notion-active {
+		animation: activate-notion 24s infinite;
+	}
+	.slack-active {
+		animation: activate-slack 24s infinite;
+	}
+	.docs-active {
+		animation: activate-docs 24s infinite;
+	}
+	.linear-active {
+		animation: activate-linear 24s infinite;
+	}
+	.email-active {
+		animation: activate-email 24s infinite;
+	}
 
 	/* Line activation classes */
-	.calendar-line { animation: activate-line-calendar 24s infinite; }
-	.github-line { animation: activate-line-github 24s infinite; }
-	.jira-line { animation: activate-line-jira 24s infinite; }
-	.notion-line { animation: activate-line-notion 24s infinite; }
-	.slack-line { animation: activate-line-slack 24s infinite; }
-	.docs-line { animation: activate-line-docs 24s infinite; }
-	.linear-line { animation: activate-line-linear 24s infinite; }
-	.email-line { animation: activate-line-email 24s infinite; }
+	.calendar-line {
+		animation: activate-line-calendar 24s infinite;
+	}
+	.github-line {
+		animation: activate-line-github 24s infinite;
+	}
+	.jira-line {
+		animation: activate-line-jira 24s infinite;
+	}
+	.notion-line {
+		animation: activate-line-notion 24s infinite;
+	}
+	.slack-line {
+		animation: activate-line-slack 24s infinite;
+	}
+	.docs-line {
+		animation: activate-line-docs 24s infinite;
+	}
+	.linear-line {
+		animation: activate-line-linear 24s infinite;
+	}
+	.email-line {
+		animation: activate-line-email 24s infinite;
+	}
 
 	@keyframes activate-calendar {
-		0%, 8.33% { 
+		0%,
+		8.33% {
 			color: rgb(59 130 246);
 		}
-		8.34%, 100% { 
+		8.34%,
+		100% {
 			color: rgb(156 163 175);
 		}
 	}
 
 	@keyframes activate-github {
-		0%, 12.49% { color: rgb(156 163 175); }
-		12.5%, 20.83% { color: rgb(59 130 246); }
-		20.84%, 100% { color: rgb(156 163 175); }
+		0%,
+		12.49% {
+			color: rgb(156 163 175);
+		}
+		12.5%,
+		20.83% {
+			color: rgb(59 130 246);
+		}
+		20.84%,
+		100% {
+			color: rgb(156 163 175);
+		}
 	}
 
 	@keyframes activate-jira {
-		0%, 24.99% { color: rgb(156 163 175); }
-		25%, 33.33% { color: rgb(59 130 246); }
-		33.34%, 100% { color: rgb(156 163 175); }
+		0%,
+		24.99% {
+			color: rgb(156 163 175);
+		}
+		25%,
+		33.33% {
+			color: rgb(59 130 246);
+		}
+		33.34%,
+		100% {
+			color: rgb(156 163 175);
+		}
 	}
 
 	@keyframes activate-notion {
-		0%, 37.49% { color: rgb(156 163 175); }
-		37.5%, 45.83% { color: rgb(59 130 246); }
-		45.84%, 100% { color: rgb(156 163 175); }
+		0%,
+		37.49% {
+			color: rgb(156 163 175);
+		}
+		37.5%,
+		45.83% {
+			color: rgb(59 130 246);
+		}
+		45.84%,
+		100% {
+			color: rgb(156 163 175);
+		}
 	}
 
 	@keyframes activate-slack {
-		0%, 49.99% { color: rgb(156 163 175); }
-		50%, 58.33% { color: rgb(59 130 246); }
-		58.34%, 100% { color: rgb(156 163 175); }
+		0%,
+		49.99% {
+			color: rgb(156 163 175);
+		}
+		50%,
+		58.33% {
+			color: rgb(59 130 246);
+		}
+		58.34%,
+		100% {
+			color: rgb(156 163 175);
+		}
 	}
 
 	@keyframes activate-docs {
-		0%, 62.49% { color: rgb(156 163 175); }
-		62.5%, 70.83% { color: rgb(59 130 246); }
-		70.84%, 100% { color: rgb(156 163 175); }
+		0%,
+		62.49% {
+			color: rgb(156 163 175);
+		}
+		62.5%,
+		70.83% {
+			color: rgb(59 130 246);
+		}
+		70.84%,
+		100% {
+			color: rgb(156 163 175);
+		}
 	}
 
 	@keyframes activate-linear {
-		0%, 74.99% { color: rgb(156 163 175); }
-		75%, 83.33% { color: rgb(59 130 246); }
-		83.34%, 100% { color: rgb(156 163 175); }
+		0%,
+		74.99% {
+			color: rgb(156 163 175);
+		}
+		75%,
+		83.33% {
+			color: rgb(59 130 246);
+		}
+		83.34%,
+		100% {
+			color: rgb(156 163 175);
+		}
 	}
 
 	@keyframes activate-email {
-		0%, 87.49% { color: rgb(156 163 175); }
-		87.5%, 95.83% { color: rgb(59 130 246); }
-		95.84%, 100% { color: rgb(156 163 175); }
+		0%,
+		87.49% {
+			color: rgb(156 163 175);
+		}
+		87.5%,
+		95.83% {
+			color: rgb(59 130 246);
+		}
+		95.84%,
+		100% {
+			color: rgb(156 163 175);
+		}
 	}
 
 	/* Line activation keyframes */
 	@keyframes activate-line-calendar {
-		0%, 8.33% { background: rgb(59 130 246); }
-		8.34%, 100% { background: rgb(209 213 219); }
+		0%,
+		8.33% {
+			background: rgb(59 130 246);
+		}
+		8.34%,
+		100% {
+			background: rgb(209 213 219);
+		}
 	}
 
 	@keyframes activate-line-github {
-		0%, 12.49% { background: rgb(209 213 219); }
-		12.5%, 20.83% { background: rgb(59 130 246); }
-		20.84%, 100% { background: rgb(209 213 219); }
+		0%,
+		12.49% {
+			background: rgb(209 213 219);
+		}
+		12.5%,
+		20.83% {
+			background: rgb(59 130 246);
+		}
+		20.84%,
+		100% {
+			background: rgb(209 213 219);
+		}
 	}
 
 	@keyframes activate-line-jira {
-		0%, 24.99% { background: rgb(209 213 219); }
-		25%, 33.33% { background: rgb(59 130 246); }
-		33.34%, 100% { background: rgb(209 213 219); }
+		0%,
+		24.99% {
+			background: rgb(209 213 219);
+		}
+		25%,
+		33.33% {
+			background: rgb(59 130 246);
+		}
+		33.34%,
+		100% {
+			background: rgb(209 213 219);
+		}
 	}
 
 	@keyframes activate-line-notion {
-		0%, 37.49% { background: rgb(209 213 219); }
-		37.5%, 45.83% { background: rgb(59 130 246); }
-		45.84%, 100% { background: rgb(209 213 219); }
+		0%,
+		37.49% {
+			background: rgb(209 213 219);
+		}
+		37.5%,
+		45.83% {
+			background: rgb(59 130 246);
+		}
+		45.84%,
+		100% {
+			background: rgb(209 213 219);
+		}
 	}
 
 	@keyframes activate-line-slack {
-		0%, 49.99% { background: rgb(209 213 219); }
-		50%, 58.33% { background: rgb(59 130 246); }
-		58.34%, 100% { background: rgb(209 213 219); }
+		0%,
+		49.99% {
+			background: rgb(209 213 219);
+		}
+		50%,
+		58.33% {
+			background: rgb(59 130 246);
+		}
+		58.34%,
+		100% {
+			background: rgb(209 213 219);
+		}
 	}
 
 	@keyframes activate-line-docs {
-		0%, 62.49% { background: rgb(209 213 219); }
-		62.5%, 70.83% { background: rgb(59 130 246); }
-		70.84%, 100% { background: rgb(209 213 219); }
+		0%,
+		62.49% {
+			background: rgb(209 213 219);
+		}
+		62.5%,
+		70.83% {
+			background: rgb(59 130 246);
+		}
+		70.84%,
+		100% {
+			background: rgb(209 213 219);
+		}
 	}
 
 	@keyframes activate-line-linear {
-		0%, 74.99% { background: rgb(209 213 219); }
-		75%, 83.33% { background: rgb(59 130 246); }
-		83.34%, 100% { background: rgb(209 213 219); }
+		0%,
+		74.99% {
+			background: rgb(209 213 219);
+		}
+		75%,
+		83.33% {
+			background: rgb(59 130 246);
+		}
+		83.34%,
+		100% {
+			background: rgb(209 213 219);
+		}
 	}
 
 	@keyframes activate-line-email {
-		0%, 87.49% { background: rgb(209 213 219); }
-		87.5%, 95.83% { background: rgb(59 130 246); }
-		95.84%, 100% { background: rgb(209 213 219); }
+		0%,
+		87.49% {
+			background: rgb(209 213 219);
+		}
+		87.5%,
+		95.83% {
+			background: rgb(59 130 246);
+		}
+		95.84%,
+		100% {
+			background: rgb(209 213 219);
+		}
 	}
 </style>

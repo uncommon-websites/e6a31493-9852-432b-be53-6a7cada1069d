@@ -17,10 +17,9 @@
 <script lang="ts">
 	// Icons
 	import IconLock from "~icons/lucide/lock"
-	
+
 	// Components
 	import AnimateText from "../animation/AnimateText.svelte"
-	import Button from "../ui/Button.svelte"
 
 	// Props
 	const {
@@ -54,20 +53,22 @@
 	<section class="section-px section-py-sm mx-auto max-w-7xl">
 		<div class="bg-card rounded-(--radius-lg) p-12">
 			<div class="mx-auto">
-				<div class="border-border grid grid-cols-2 gap-12 border-b pb-8 mb-8 justify-between items-baseline">
+				<div
+					class="border-border mb-8 grid grid-cols-2 items-start justify-between gap-12 border-b pb-8"
+				>
 					<!-- Left column - Title -->
 					<div>
 						<h2 class="text-title2 flex items-baseline gap-3">
-							<IconLock class="h-6 w-6 text-primary/80" />
+							<IconLock class="text-primary/80 h-6 w-6" />
 							<AnimateText text={title} />
 						</h2>
 					</div>
 
-					<!-- Right column - Compliance logos stacked -->
-					<div class="flex flex-col gap-6">
+					<!-- Right column - Compliance logos horizontal -->
+					<div class="flex gap-12">
 						{#each complianceItems as item}
-							<div class="flex items-center gap-4">
-								<img src={item.logoUrl} alt={item.name} class="h-8" />
+							<div class="flex items-center gap-3">
+								<img src={item.logoUrl} alt={item.name} class="h-12" />
 								<div>
 									<p class="text-body font-medium">{item.name}</p>
 									<p class="text-caption text-muted-foreground">{item.status}</p>
