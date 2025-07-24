@@ -12,6 +12,15 @@
 	import IconCalendarX from "~icons/lucide/calendar-x"
 	import IconTrendingUp from "~icons/lucide/trending-up"
 	import IconZap from "~icons/lucide/zap"
+	import IconCalendar from "~icons/lucide/calendar"
+	import IconGithub from "~icons/lucide/github"
+	import IconClipboardList from "~icons/lucide/clipboard-list"
+	import IconFileText from "~icons/lucide/file-text"
+	import IconMessageSquare from "~icons/lucide/message-square"
+	import IconBookOpen from "~icons/lucide/book-open"
+	import IconRocket from "~icons/lucide/rocket"
+	import IconMail from "~icons/lucide/mail"
+	import DataAggregationAnimation from "./DataAggregationAnimation.svelte"
 
 	type Props = {
 		title: string
@@ -178,7 +187,7 @@
 									{#each Array(3) as _}
 										<div class="flex flex-col items-center">
 											<div class="h-4 w-0.5 bg-gradient-to-b from-blue-300 to-blue-200"></div>
-											<div class="mt-1 flex space-x-2">
+											<div class="mt-1 flex space-x-4">
 												<div
 													class="h-2.5 w-2.5 bg-gradient-to-br from-blue-200 to-blue-400 shadow-sm shadow-blue-500/15"
 													style="border-radius: var(--radius-sm);"
@@ -222,7 +231,7 @@
 							<div class="flex items-center justify-center space-x-10">
 								<!-- Left side: Misaligned state with enhanced visuals -->
 								<div class="relative">
-									<div class="space-y-2">
+									<div class="space-y-4">
 										<!-- Team members drifting apart with gradients and shadows -->
 										<div class="flex space-x-1">
 											<div
@@ -291,7 +300,7 @@
 
 								<!-- Right side: Aligned state with enhanced visuals -->
 								<div class="relative">
-									<div class="space-y-2">
+									<div class="space-y-4">
 										<!-- Team members perfectly aligned with gradients -->
 										<div class="flex space-x-1.5">
 											<div
@@ -365,7 +374,7 @@
 					<div class="flex flex-1 items-center justify-center">
 						<div class="relative">
 							<!-- Culture pulse visualization with enhanced visuals -->
-							<div class="flex h-32 items-end justify-center space-x-2">
+							<div class="flex h-32 items-end justify-center space-x-4">
 								{#each Array(9) as _, i}
 									{@const heights = [20, 40, 60, 80, 100, 80, 60, 40, 20]}
 									{@const isCenter = i === 4}
@@ -565,7 +574,7 @@
 							<!-- Calendar header -->
 							<div class="mb-2 text-center">
 								<div
-									class="inline-flex items-center space-x-2 bg-gray-50 px-3 py-1"
+									class="inline-flex items-center space-x-4 bg-gray-50 px-3 py-1"
 									style="border-radius: var(--radius-lg);"
 								>
 									<div class="h-2 w-2 bg-green-500" style="border-radius: var(--radius-full);"></div>
@@ -630,7 +639,7 @@
 					<!-- Text at bottom -->
 					<div class="mt-6 pb-2 text-center">
 						<div class="mb-1 text-sm text-gray-500">Time reclaimed</div>
-						<div class="inline-flex items-center space-x-2">
+						<div class="inline-flex items-center space-x-4">
 							<div
 								class="bg-gradient-to-r from-green-600 to-green-500 bg-clip-text text-lg font-medium text-transparent"
 							>
@@ -987,62 +996,7 @@
 					</div>
 				</div>
 			{:else if visualization === "knowledge_assembly"}
-				<!-- Knowledge Assembly: Simple data connection visualization -->
-				<div class="relative flex h-full w-full flex-col">
-					<!-- Main visual elements centered -->
-					<div class="flex flex-1 items-center justify-center">
-						<div class="relative">
-							<!-- Central memory unit -->
-							<div class="relative flex items-center justify-center">
-								<div
-									class="relative h-12 w-12 bg-white border-2 border-gray-300 shadow-lg"
-									style="border-radius: var(--radius-lg);"
-								>
-									<!-- Memory indicator -->
-									<div class="absolute inset-0 flex items-center justify-center">
-										<div
-											class="h-6 w-6 bg-gray-900 animate-pulse"
-											style="border-radius: var(--radius-sm); animation-duration: 2s;"
-										></div>
-									</div>
-								</div>
-							</div>
-
-							<!-- Three data sources flowing in -->
-							<!-- Left input -->
-							<div class="absolute -left-12 top-1/2 -translate-y-1/2">
-								<div class="flex items-center space-x-1">
-									<div class="h-2 w-2 bg-gray-400 animate-pulse" style="border-radius: var(--radius-xs);"></div>
-									<div class="h-0.5 w-8 bg-gray-300"></div>
-								</div>
-							</div>
-
-							<!-- Top input -->
-							<div class="absolute -top-12 left-1/2 -translate-x-1/2">
-								<div class="flex flex-col items-center space-y-1">
-									<div class="h-2 w-2 bg-gray-400 animate-pulse" style="border-radius: var(--radius-xs); animation-delay: 0.3s;"></div>
-									<div class="w-0.5 h-8 bg-gray-300"></div>
-								</div>
-							</div>
-
-							<!-- Right input -->
-							<div class="absolute -right-12 top-1/2 -translate-y-1/2">
-								<div class="flex items-center space-x-1">
-									<div class="h-0.5 w-8 bg-gray-300"></div>
-									<div class="h-2 w-2 bg-gray-400 animate-pulse" style="border-radius: var(--radius-xs); animation-delay: 0.6s;"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- Text at bottom -->
-					<div class="mt-6 pb-2 text-center">
-						<div class="mb-1 text-sm text-gray-500">Unified data layer</div>
-						<div class="text-lg font-medium text-gray-900">
-							Structured knowledge
-						</div>
-					</div>
-				</div>
+				<DataAggregationAnimation />
 			{:else if visualization === "strategic_compass"}
 				<!-- Subtle radial gradient background -->
 				<div class="absolute inset-0">
@@ -1403,5 +1357,213 @@
 	@keyframes radar-sweep {
 		0% { transform: rotate(0deg); }
 		100% { transform: rotate(360deg); }
+	}
+
+	/* Active states for data aggregation animation */
+	.icon-active {
+		color: rgb(59 130 246) !important; /* blue-500 */
+	}
+
+	.line-active-down {
+		background: rgb(59 130 246); /* blue-500 */
+		overflow: hidden;
+	}
+	
+	.line-active-up {
+		background: rgb(59 130 246); /* blue-500 */
+		overflow: hidden;
+	}
+	
+	.line-active-left {
+		background: rgb(59 130 246); /* blue-500 */
+		overflow: hidden;
+	}
+	
+	.line-active-right {
+		background: rgb(59 130 246); /* blue-500 */
+		overflow: hidden;
+	}
+
+	.line-active-down::after {
+		content: '';
+		position: absolute;
+		top: -100%;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(to bottom, transparent, rgb(59 130 246), transparent);
+		animation: flow-down 2s ease-in-out infinite;
+	}
+
+	.line-active-up::after {
+		content: '';
+		position: absolute;
+		bottom: -100%;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(to top, transparent, rgb(59 130 246), transparent);
+		animation: flow-up 2s ease-in-out infinite;
+	}
+
+	.line-active-left::after {
+		content: '';
+		position: absolute;
+		right: -100%;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(to left, transparent, rgb(59 130 246), transparent);
+		animation: flow-left 2s ease-in-out infinite;
+	}
+
+	.line-active-right::after {
+		content: '';
+		position: absolute;
+		left: -100%;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(to right, transparent, rgb(59 130 246), transparent);
+		animation: flow-right 2s ease-in-out infinite;
+	}
+
+	@keyframes flow-down {
+		0% { transform: translateY(0%); }
+		100% { transform: translateY(200%); }
+	}
+
+	@keyframes flow-up {
+		0% { transform: translateY(0%); }
+		100% { transform: translateY(-200%); }
+	}
+
+	@keyframes flow-left {
+		0% { transform: translateX(0%); }
+		100% { transform: translateX(-200%); }
+	}
+
+	@keyframes flow-right {
+		0% { transform: translateX(0%); }
+		100% { transform: translateX(200%); }
+	}
+
+	/* Cycling animation classes */
+	.calendar-active { animation: activate-calendar 24s infinite; }
+	.github-active { animation: activate-github 24s infinite; }
+	.jira-active { animation: activate-jira 24s infinite; }
+	.notion-active { animation: activate-notion 24s infinite; }
+	.slack-active { animation: activate-slack 24s infinite; }
+	.docs-active { animation: activate-docs 24s infinite; }
+	.linear-active { animation: activate-linear 24s infinite; }
+	.email-active { animation: activate-email 24s infinite; }
+
+	/* Line activation classes */
+	.calendar-line { animation: activate-line-calendar 24s infinite; }
+	.github-line { animation: activate-line-github 24s infinite; }
+	.jira-line { animation: activate-line-jira 24s infinite; }
+	.notion-line { animation: activate-line-notion 24s infinite; }
+	.slack-line { animation: activate-line-slack 24s infinite; }
+	.docs-line { animation: activate-line-docs 24s infinite; }
+	.linear-line { animation: activate-line-linear 24s infinite; }
+	.email-line { animation: activate-line-email 24s infinite; }
+
+	@keyframes activate-calendar {
+		0%, 8.33% { 
+			color: rgb(59 130 246);
+		}
+		8.34%, 100% { 
+			color: rgb(156 163 175);
+		}
+	}
+
+	@keyframes activate-github {
+		0%, 12.49% { color: rgb(156 163 175); }
+		12.5%, 20.83% { color: rgb(59 130 246); }
+		20.84%, 100% { color: rgb(156 163 175); }
+	}
+
+	@keyframes activate-jira {
+		0%, 24.99% { color: rgb(156 163 175); }
+		25%, 33.33% { color: rgb(59 130 246); }
+		33.34%, 100% { color: rgb(156 163 175); }
+	}
+
+	@keyframes activate-notion {
+		0%, 37.49% { color: rgb(156 163 175); }
+		37.5%, 45.83% { color: rgb(59 130 246); }
+		45.84%, 100% { color: rgb(156 163 175); }
+	}
+
+	@keyframes activate-slack {
+		0%, 49.99% { color: rgb(156 163 175); }
+		50%, 58.33% { color: rgb(59 130 246); }
+		58.34%, 100% { color: rgb(156 163 175); }
+	}
+
+	@keyframes activate-docs {
+		0%, 62.49% { color: rgb(156 163 175); }
+		62.5%, 70.83% { color: rgb(59 130 246); }
+		70.84%, 100% { color: rgb(156 163 175); }
+	}
+
+	@keyframes activate-linear {
+		0%, 74.99% { color: rgb(156 163 175); }
+		75%, 83.33% { color: rgb(59 130 246); }
+		83.34%, 100% { color: rgb(156 163 175); }
+	}
+
+	@keyframes activate-email {
+		0%, 87.49% { color: rgb(156 163 175); }
+		87.5%, 95.83% { color: rgb(59 130 246); }
+		95.84%, 100% { color: rgb(156 163 175); }
+	}
+
+	/* Line activation keyframes */
+	@keyframes activate-line-calendar {
+		0%, 8.33% { background: rgb(59 130 246); }
+		8.34%, 100% { background: rgb(209 213 219); }
+	}
+
+	@keyframes activate-line-github {
+		0%, 12.49% { background: rgb(209 213 219); }
+		12.5%, 20.83% { background: rgb(59 130 246); }
+		20.84%, 100% { background: rgb(209 213 219); }
+	}
+
+	@keyframes activate-line-jira {
+		0%, 24.99% { background: rgb(209 213 219); }
+		25%, 33.33% { background: rgb(59 130 246); }
+		33.34%, 100% { background: rgb(209 213 219); }
+	}
+
+	@keyframes activate-line-notion {
+		0%, 37.49% { background: rgb(209 213 219); }
+		37.5%, 45.83% { background: rgb(59 130 246); }
+		45.84%, 100% { background: rgb(209 213 219); }
+	}
+
+	@keyframes activate-line-slack {
+		0%, 49.99% { background: rgb(209 213 219); }
+		50%, 58.33% { background: rgb(59 130 246); }
+		58.34%, 100% { background: rgb(209 213 219); }
+	}
+
+	@keyframes activate-line-docs {
+		0%, 62.49% { background: rgb(209 213 219); }
+		62.5%, 70.83% { background: rgb(59 130 246); }
+		70.84%, 100% { background: rgb(209 213 219); }
+	}
+
+	@keyframes activate-line-linear {
+		0%, 74.99% { background: rgb(209 213 219); }
+		75%, 83.33% { background: rgb(59 130 246); }
+		83.34%, 100% { background: rgb(209 213 219); }
+	}
+
+	@keyframes activate-line-email {
+		0%, 87.49% { background: rgb(209 213 219); }
+		87.5%, 95.83% { background: rgb(59 130 246); }
+		95.84%, 100% { background: rgb(209 213 219); }
 	}
 </style>
