@@ -7,19 +7,19 @@
 			title: "Builds a memory of your company",
 			description:
 				"Sentra connects to your existing tools, creating a unified timeline of decisions and commitments.",
-			visualization: "knowledge_assembly" as const
+			visualization: "memory" as const
 		},
 		{
 			title: "Deeply understands your vision",
 			description:
 				"Through conversations with your team, Sentra learns your priorities and strategic context.",
-			visualization: "strategic_compass" as const
+			visualization: "alignment" as const
 		},
 		{
 			title: "Spots misalignment before it spreads",
 			description:
 				"With real-time awareness, Sentra identifies conflicts and breakdowns before they become problems.",
-			visualization: "early_warning" as const
+			visualization: "preferences" as const
 		}
 	]
 </script>
