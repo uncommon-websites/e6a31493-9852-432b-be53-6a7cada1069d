@@ -58,6 +58,26 @@
 			response: "I'll monitor all client touchpoints and alert you to potential concerns."
 		}
 	]
+
+	// Animation state
+	let currentIndex = $state(0)
+	let showResponse = $state(false)
+
+	// Auto-advance conversation
+	$effect(() => {
+		const interval = setInterval(() => {
+			if (!showResponse) {
+				// Show response after 1.5s
+				showResponse = true
+			} else {
+				// Move to next conversation after 5s total
+				showResponse = false
+				currentIndex = (currentIndex + 1) % conversations.length
+			}
+		}, showResponse ? 3500 : 1500) // 1.5s for response, 3.5s more for next item
+
+		return () => clearInterval(interval)
+	})
 </script>
 
 <div class="bg-background relative overflow-hidden" {...rest}>
@@ -92,33 +112,44 @@
 			<div class="relative" data-enter>
 				<!-- Clean background matching inspiration -->
 				<div class="relative rounded-2xl bg-card p-8 lg:p-12 min-h-[500px] max-h-full">
-					<!-- Conversation cards -->
-					<div class="space-y-6">
-						{#each conversations as conversation}
-							<!-- User request card -->
-							<div class="bg-background rounded-lg p-6 border border-border">
-								<h3 class="text-sm text-foreground mb-3 font-medium">
-									{conversation.role}
-								</h3>
-								<div class="border-l-4 border-border pl-4">
-									<p class="text-xs text-muted-foreground">
-										{conversation.request}
-									</p>
-								</div>
+					<!-- Animated conversation cards -->
+					<div class="space-y-3">
+						<!-- User request card -->
+						<div 
+							class={[
+								"bg-background rounded-lg p-6 border border-border transition-all duration-500",
+								"animate-fadeInUp"
+							]}
+							key={currentIndex}
+						>
+							<h3 class="text-sm text-foreground mb-3 font-medium">
+								{conversations[currentIndex].role}
+							</h3>
+							<div class="border-l-4 border-border pl-4">
+								<p class="text-xs text-muted-foreground">
+									{conversations[currentIndex].request}
+								</p>
 							</div>
+						</div>
 
-							<!-- AI response card -->
-							<div class="bg-background rounded-lg p-4 border border-border ml-8">
+						<!-- AI response card -->
+						{#if showResponse}
+							<div 
+								class={[
+									"bg-background rounded-lg p-4 border border-border ml-8 transition-all duration-500",
+									"animate-fadeInUp"
+								]}
+							>
 								<div class="flex items-start gap-3">
 									<div class="text-primary mt-0.5">
 										<Logo class="w-4 h-4" />
 									</div>
 									<p class="text-xs text-foreground font-medium">
-										{conversation.response}
+										{conversations[currentIndex].response}
 									</p>
 								</div>
 							</div>
-						{/each}
+						{/if}
 					</div>
 				</div>
 			</div>
@@ -153,7 +184,37 @@
 		}
 	}
 
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(15px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes fadeOut {
+		from {
+			opacity: 1;
+			transform: translateY(0);
+		}
+		to {
+			opacity: 0;
+			transform: translateY(-15px);
+		}
+	}
+
 	[data-enter] {
 		animation: slideInUp 0.6s ease-out forwards;
+	}
+
+	.animate-fadeInUp {
+		animation: fadeInUp 0.4s ease-out forwards;
+	}
+
+	.animate-fadeOut {
+		animation: fadeOut 0.3s ease-out forwards;
 	}
 </style>
