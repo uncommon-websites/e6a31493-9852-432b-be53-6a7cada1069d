@@ -96,7 +96,7 @@
 	<div class="section-px section-py mx-auto max-w-7xl">
 		<div class="mx-auto grid place-items-center text-center">
 			<SectionHeader
-				title="Frictionless adoption"
+				title="Our customers’ favorite use cases"
 				subtitle="Simple self-service onboarding. Setup takes less than 4 minutes."
 			/>
 		</div>
