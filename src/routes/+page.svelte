@@ -8,6 +8,7 @@
 	import FrictionlessAdoption from "$lib/components/layout/FrictionlessAdoption.svelte"
 	import ImmediateValue from "$lib/components/layout/ImmediateValue.svelte"
 	import Benefits from "$lib/components/layout/Benefits.svelte"
+	import MarqueeBanner from "$lib/components/ui/MarqueeBanner.svelte"
 </script>
 
 <SplitHero
@@ -23,6 +24,7 @@
 <SlideshowHero />
 <ImmediateValue />
 <FrictionlessAdoption />
+<MarqueeBanner />
 <Benefits />
 <Security />
 <CallToAction />
