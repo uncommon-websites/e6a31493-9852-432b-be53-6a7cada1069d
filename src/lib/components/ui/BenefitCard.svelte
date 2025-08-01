@@ -44,7 +44,9 @@
 	const sources = {
 		'memory': 'uploaded/unified-knowledge.svg',
 		'alignment': 'uploaded/alignment.svg',
-		'preferences': 'uploaded/action-log.svg'
+		'preferences': 'uploaded/action-log.svg',
+		'meetings': 'uploaded/meetings.svg',
+		'onboarding': 'uploaded/onboarding.svg'
 	}
 
 	
