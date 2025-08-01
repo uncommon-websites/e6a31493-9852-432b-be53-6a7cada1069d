@@ -21,6 +21,7 @@
 	import AnimateText from "$lib/components/animation/AnimateText.svelte"
 	import Button from "$lib/components/ui/Button.svelte"
 	import LogoScroller from "$lib/components/layout/LogoScroller.svelte"
+	import Logo from "$lib/components/Logo.svelte"
 
 	// Constants
 	import { cta } from "$lib/navigation"
@@ -90,17 +91,17 @@
 			<!-- Right side - Conversation cards -->
 			<div class="relative" data-enter>
 				<!-- Clean background matching inspiration -->
-				<div class="relative rounded-2xl bg-card p-8 lg:p-12 min-h-[500px]">
+				<div class="relative rounded-2xl bg-card p-8 lg:p-12 min-h-[500px] max-h-full">
 					<!-- Conversation cards -->
 					<div class="space-y-6">
 						{#each conversations as conversation}
 							<!-- User request card -->
 							<div class="bg-background rounded-lg p-6 border border-border">
-								<h3 class="text-headline text-foreground mb-3">
+								<h3 class="text-sm text-foreground mb-3 font-medium">
 									{conversation.role}
 								</h3>
 								<div class="border-l-4 border-border pl-4">
-									<p class="text-body text-muted-foreground">
+									<p class="text-xs text-muted-foreground">
 										{conversation.request}
 									</p>
 								</div>
@@ -110,11 +111,9 @@
 							<div class="bg-background rounded-lg p-4 border border-border ml-8">
 								<div class="flex items-start gap-3">
 									<div class="text-primary mt-0.5">
-										<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-											<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-										</svg>
+										<Logo class="w-4 h-4" />
 									</div>
-									<p class="text-body text-foreground font-medium">
+									<p class="text-xs text-foreground font-medium">
 										{conversation.response}
 									</p>
 								</div>
