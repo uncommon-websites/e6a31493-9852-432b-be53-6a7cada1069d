@@ -20,7 +20,7 @@
 	import IconBookOpen from "~icons/lucide/book-open"
 	import IconRocket from "~icons/lucide/rocket"
 	import IconMail from "~icons/lucide/mail"
-	import DataAggregationAnimation from "./DataAggregationAnimation.svelte"
+	// DataAggregationAnimation component removed - using SVG instead
 
 	type Props = {
 		title: string
@@ -1079,7 +1079,28 @@
 					</div>
 				</div>
 			{:else if visualization === "knowledge_assembly"}
-				<DataAggregationAnimation />
+				<!-- SVG Illustration -->
+				<div class="relative flex h-full w-full flex-col">
+					<div class="flex flex-1 items-center justify-center">
+						<div class="relative">
+							<img 
+								src="/uploaded/unified-knowledge.svg" 
+								alt="Unified knowledge visualization" 
+								class="h-32 w-auto"
+							/>
+						</div>
+					</div>
+					
+					<!-- Text at bottom -->
+					<div class="mt-6 pb-2 text-center">
+						<div class="mb-1 text-sm text-gray-500">Unified data layer</div>
+						<div
+							class="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-lg font-medium text-transparent"
+						>
+							Structured knowledge
+						</div>
+					</div>
+				</div>
 			{:else if visualization === "strategic_compass"}
 				<!-- Subtle radial gradient background -->
 				<div class="absolute inset-0">
