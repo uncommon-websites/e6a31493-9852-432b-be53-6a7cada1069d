@@ -39,69 +39,56 @@
 
 	title = "Teams Move Faster with Sentra  "
 
-	// Expanded notification data for infinite scrolling
+	// Role-based notification cards for stack animation
 	const notifications = [
 		{
-			title: "Goal alignment detected",
-			subtitle: "Marketing & Sales teams synchronized",
-			time: "2m ago",
-			type: "success"
+			role: "VP of Product",
+			request: "10min before every meeting, send me a brief with context on who/what/why",
+			icon: "💼"
 		},
 		{
-			title: "Potential friction identified",
-			subtitle: "Engineering sprint planning needs attention",
-			time: "5m ago",
-			type: "warning"
+			role: "Engineering Manager",
+			request: "Alert me when cross-team dependencies might cause sprint delays",
+			icon: "⚙️"
 		},
 		{
-			title: "Team pulse check",
-			subtitle: "Weekly alignment score: 94%",
-			time: "1h ago",
-			type: "info"
+			role: "Head of Sales",
+			request: "Keep me updated on product roadmap changes that affect customer commitments",
+			icon: "📈"
 		},
 		{
-			title: "Cross-team dependency resolved",
-			subtitle: "Product & Engineering roadmap aligned",
-			time: "3m ago",
-			type: "success"
+			role: "Design Lead",
+			request: "Notify me when design decisions need stakeholder alignment",
+			icon: "🎨"
 		},
 		{
-			title: "Communication gap detected",
-			subtitle: "Design handoff requires clarification",
-			time: "8m ago",
-			type: "warning"
+			role: "CEO",
+			request: "Weekly pulse on team alignment and potential friction points",
+			icon: "🎯"
 		},
 		{
-			title: "Milestone achievement",
-			subtitle: "Q4 OKRs tracking at 98% completion",
-			time: "15m ago",
-			type: "success"
-		},
-		{
-			title: "Resource allocation alert",
-			subtitle: "DevOps bandwidth may impact delivery",
-			time: "22m ago",
-			type: "warning"
-		},
-		{
-			title: "Team velocity update",
-			subtitle: "Sprint velocity increased by 23%",
-			time: "35m ago",
-			type: "info"
-		},
-		{
-			title: "Stakeholder alignment confirmed",
-			subtitle: "Leadership consensus on feature priority",
-			time: "45m ago",
-			type: "success"
-		},
-		{
-			title: "Knowledge gap identified",
-			subtitle: "New hire onboarding optimization needed",
-			time: "1h ago",
-			type: "info"
+			role: "Marketing Director",
+			request: "Flag when product messaging doesn't align with actual capabilities",
+			icon: "📢"
 		}
 	]
+
+	// Animation state
+	let currentIndex = $state(0)
+	let isAnimating = $state(false)
+
+	// 5-second interval animation
+	$effect(() => {
+		const interval = setInterval(() => {
+			isAnimating = true
+			setTimeout(() => {
+				currentIndex = (currentIndex + 1) % notifications.length
+				isAnimating = false
+			}, 300) // Animation duration
+		}, 5000)
+
+		return () => clearInterval(interval)
+	})
 </script>
 
 <div class="bg-background relative overflow-hidden" {...rest}>
@@ -143,46 +130,53 @@
 						class="from-primary-700 to-primary-400 absolute inset-0 rounded-2xl bg-radial from-40%"
 					></div>
 
-					<!-- Infinite scrolling notification cards -->
+					<!-- Stacked notification cards -->
 					<div class="relative z-10 w-full max-w-sm">
-						<div class="notification-scroll-container h-[500px] overflow-hidden">
-							<div class="notification-scroll-content space-y-4">
-								{#each [...notifications, ...notifications] as notification, index}
-									<div
-										class={[
-											"rounded-lg border border-white/20 bg-white/95 p-4 backdrop-blur-sm",
-											"transform transition-all duration-500 ease-out",
-											"hover:scale-105 hover:bg-white/100"
-										]}
-										data-enter
-									>
-										<div class="flex items-start justify-between gap-3">
-											<div class="min-w-0 flex-1">
-												<div class="mb-1 flex items-center gap-2">
-													<div
-														class={[
-															"h-2 w-2 rounded-full",
-															notification.type === "success"
-																? "bg-green-500"
-																: notification.type === "warning"
-																	? "bg-yellow-500"
-																	: "bg-blue-500"
-														]}
-													></div>
-													<h3 class="truncate text-sm font-medium text-gray-900">
-														{notification.title}
-													</h3>
-												</div>
-												<p class="text-xs leading-relaxed text-gray-600">
-													{notification.subtitle}
-												</p>
-											</div>
-											<span class="text-xs whitespace-nowrap text-gray-500">
-												{notification.time}
-											</span>
+						<div class="card-stack-container relative h-[400px]">
+							{#each notifications as notification, index}
+								{@const isVisible = index >= currentIndex && index < currentIndex + 3}
+								{@const stackIndex = index - currentIndex}
+								<div
+									class={[
+										"card-item absolute inset-x-0 rounded-xl bg-white p-6 shadow-sm border border-gray-100",
+										"transition-all duration-300 ease-out",
+										isVisible ? "opacity-100" : "opacity-0",
+										isAnimating ? "animate-slide" : ""
+									]}
+									style={`
+										transform: translateY(${stackIndex * 20}px) scale(${1 - stackIndex * 0.05});
+										z-index: ${10 - stackIndex};
+									`}
+								>
+									<div class="flex items-start gap-4">
+										<div class="text-2xl">{notification.icon}</div>
+										<div class="min-w-0 flex-1">
+											<h3 class="text-sm font-semibold text-gray-900 mb-2">
+												{notification.role}
+											</h3>
+											<p class="text-sm text-gray-600 leading-relaxed">
+												{notification.request}
+											</p>
 										</div>
 									</div>
-								{/each}
+								</div>
+							{/each}
+							
+							<!-- Response card (always visible at bottom) -->
+							<div 
+								class="absolute inset-x-0 bottom-0 rounded-xl bg-blue-50 border border-blue-200 p-4"
+								style="transform: translateY(80px); z-index: 1;"
+							>
+								<div class="flex items-center gap-3">
+									<div class="text-blue-600">
+										<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+											<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+										</svg>
+									</div>
+									<p class="text-sm font-medium text-blue-900">
+										On every meeting, I'll send you a debrief
+									</p>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -219,12 +213,15 @@
 		}
 	}
 
-	@keyframes infiniteScroll {
+	@keyframes slideStack {
 		0% {
-			transform: translateY(0);
+			transform: translateY(0) scale(1);
+		}
+		50% {
+			transform: translateY(-10px) scale(0.98);
 		}
 		100% {
-			transform: translateY(-50%);
+			transform: translateY(0) scale(1);
 		}
 	}
 
@@ -232,22 +229,20 @@
 		animation: slideInUp 0.6s ease-out forwards;
 	}
 
-	.notification-scroll-container {
-		mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
-		-webkit-mask-image: linear-gradient(
-			to bottom,
-			transparent 0%,
-			black 10%,
-			black 90%,
-			transparent 100%
-		);
+	.card-stack-container {
+		perspective: 1000px;
 	}
 
-	.notification-scroll-content {
-		animation: infiniteScroll 30s linear infinite;
+	.card-item {
+		transform-origin: center top;
 	}
 
-	.notification-scroll-content:hover {
-		animation-play-state: paused;
+	.animate-slide {
+		animation: slideStack 0.3s ease-out;
+	}
+
+	.card-item:hover {
+		transform: translateY(var(--stack-offset, 0)) scale(var(--stack-scale, 1)) translateZ(10px) !important;
+		transition: all 0.2s ease-out;
 	}
 </style>
