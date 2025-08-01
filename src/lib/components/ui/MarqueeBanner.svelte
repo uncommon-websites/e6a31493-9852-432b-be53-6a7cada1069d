@@ -8,14 +8,14 @@
 </script>
 
 <button
-	class="w-full bg-primary-500 text-white py-8 overflow-hidden cursor-pointer hover:bg-primary-600 transition-colors duration-200"
+	class="w-full bg-primary-100 text-primary-950 py-4 overflow-hidden cursor-pointer hover:bg-primary-200 transition-colors duration-200 rotate-1"
 	{onclick}
 	type="button"
 >
 	<div class="marquee-container">
 		<div class="marquee-content">
 			{#each Array(20) as _, i}
-				<span class="marquee-text text-lg font-medium whitespace-nowrap">
+				<span class="marquee-text type-title3 whitespace-nowrap">
 					{text}
 				</span>
 			{/each}
@@ -31,7 +31,7 @@
 
 	.marquee-content {
 		display: flex;
-		animation: marquee 30s linear infinite;
+		animation: marquee 60s linear infinite;
 		gap: 3rem;
 	}
 
