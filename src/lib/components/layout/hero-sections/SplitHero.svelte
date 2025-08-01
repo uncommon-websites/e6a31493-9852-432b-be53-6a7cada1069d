@@ -135,7 +135,7 @@
 						<!-- User request card -->
 						<div 
 							class={[
-								"bg-background rounded-lg p-6 border border-border transition-all duration-300",
+								"bg-background rounded-lg p-4 border border-border transition-all duration-300",
 								isTransitioning ? "animate-fadeOut" : "animate-fadeInUp"
 							]}
 							key={`request-${currentIndex}`}
@@ -144,7 +144,7 @@
 								{conversations[currentIndex].role}
 							</h3>
 							<div class="border-l-2 border-border pl-4">
-								<p class="text-xs text-muted-foreground">
+								<p class="text-sm text-muted-foreground">
 									{conversations[currentIndex].request}
 								</p>
 							</div>
@@ -154,7 +154,7 @@
 						{#if showResponse}
 							<div 
 								class={[
-									"bg-background rounded-lg p-4 border border-border ml-8 transition-all duration-300",
+									"bg-background rounded-lg p-3 border border-border ml-8 transition-all duration-300",
 									isTransitioning ? "animate-fadeOut" : "animate-fadeInUp"
 								]}
 								key={`response-${currentIndex}`}
