@@ -125,9 +125,9 @@
 				<div
 					class="relative flex min-h-[500px] items-center justify-center rounded-2xl p-8 lg:p-12"
 				>
-					<!-- Gradient background -->
+					<!-- Clean background inspired by the reference -->
 					<div
-						class="from-primary-700 to-primary-400 absolute inset-0 rounded-2xl bg-radial from-40%"
+						class="absolute inset-0 rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-100"
 					></div>
 
 					<!-- Stacked notification cards -->
