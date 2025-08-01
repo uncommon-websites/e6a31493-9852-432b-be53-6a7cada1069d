@@ -11,28 +11,28 @@
 	const steps = [
 		{
 			id: 1,
-			title: "Share your calendar",
+			title: "Connect your workspace tools",
 			description:
 				"Sentra attends your meetings to capture context, decisions, and commitments — without clogging up your inbox. Get pre-meeting briefs powered by company memory.",
 			visual: "image-a-group-of-professionals-gathered-in-a-s"
 		},
 		{
 			id: 2,
-			title: "Add to your workspace",
+			title: "Sentra meets you where you are",
 			description:
 				"Sentra lives where you already live. No licensing, no installations, no context switching. Unifies workspace activity with meetings.",
 			visual: "image-a-cozy-workspace-where-a-team-collaborat"
 		},
 		{
 			id: 3,
-			title: "Sentra introduces herself",
+			title: "Assign her jobs that fit YOUR needs",
 			description:
 				"Sentra introduces herself to everyone on the team, guiding each person individually and adjusting to their workflows.",
 			visual: "image-two-colleagues-introducing-themselves-in"
 		},
 		{
 			id: 4,
-			title: "Starts building memory from day one",
+			title: "Sentra works 24/7",
 			description: "Sentra quietly gets to work in the background to build company memory.",
 			visual: "image-a-serene-home-office-setup-where-an-indi"
 		}
