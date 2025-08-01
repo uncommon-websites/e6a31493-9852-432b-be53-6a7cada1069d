@@ -111,9 +111,9 @@
 			<!-- Right side - Conversation cards -->
 			<div class="relative" data-enter>
 				<!-- Clean background matching inspiration -->
-				<div class="relative rounded-2xl bg-card p-8 lg:p-12 min-h-[500px] max-h-full">
+				<div class="relative rounded-2xl bg-card p-8 lg:p-12 min-h-[500px] max-h-full flex items-center">
 					<!-- Animated conversation cards -->
-					<div class="space-y-3">
+					<div class="space-y-3 w-full">
 						<!-- User request card -->
 						<div 
 							class={[
@@ -125,7 +125,7 @@
 							<h3 class="text-sm text-foreground mb-3 font-medium">
 								{conversations[currentIndex].role}
 							</h3>
-							<div class="border-l-4 border-border pl-4">
+							<div class="border-l-2 border-border pl-4">
 								<p class="text-xs text-muted-foreground">
 									{conversations[currentIndex].request}
 								</p>
