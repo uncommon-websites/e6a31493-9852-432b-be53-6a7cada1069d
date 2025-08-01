@@ -21,7 +21,6 @@
 	text="Sentra is building an AI teammate that improves alignment across an organization by proactively sensing when problems may occur and allowing leaders to intervene to intercept them."
 />
 
-<SlideshowHero />
 <ImmediateValue />
 <FrictionlessAdoption />
 <MarqueeBanner />
