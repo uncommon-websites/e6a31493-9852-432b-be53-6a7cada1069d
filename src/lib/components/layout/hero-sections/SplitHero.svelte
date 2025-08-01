@@ -62,21 +62,39 @@
 	// Animation state
 	let currentIndex = $state(0)
 	let showResponse = $state(false)
+	let isTransitioning = $state(false)
 
-	// Auto-advance conversation
+	// Auto-advance conversation with proper timing
 	$effect(() => {
-		const interval = setInterval(() => {
-			if (!showResponse) {
-				// Show response after 1.5s
-				showResponse = true
-			} else {
-				// Move to next conversation after 5s total
-				showResponse = false
-				currentIndex = (currentIndex + 1) % conversations.length
-			}
-		}, showResponse ? 3500 : 1500) // 1.5s for response, 3.5s more for next item
+		let timeoutId: number
 
-		return () => clearInterval(interval)
+		const scheduleNext = () => {
+			if (!showResponse) {
+				// Show response after 1.5s delay
+				timeoutId = setTimeout(() => {
+					showResponse = true
+					scheduleNext()
+				}, 1500)
+			} else {
+				// After showing response, wait 3.5s more then transition to next
+				timeoutId = setTimeout(() => {
+					isTransitioning = true
+					// Start fade out, then after fade completes, change content
+					setTimeout(() => {
+						showResponse = false
+						currentIndex = (currentIndex + 1) % conversations.length
+						isTransitioning = false
+						scheduleNext()
+					}, 300) // Match fade out duration
+				}, 3500)
+			}
+		}
+
+		scheduleNext()
+
+		return () => {
+			if (timeoutId) clearTimeout(timeoutId)
+		}
 	})
 </script>
 
@@ -117,10 +135,10 @@
 						<!-- User request card -->
 						<div 
 							class={[
-								"bg-background rounded-lg p-6 border border-border transition-all duration-500",
-								"animate-fadeInUp"
+								"bg-background rounded-lg p-6 border border-border transition-all duration-300",
+								isTransitioning ? "animate-fadeOut" : "animate-fadeInUp"
 							]}
-							key={currentIndex}
+							key={`request-${currentIndex}`}
 						>
 							<h3 class="text-sm text-foreground mb-3 font-medium">
 								{conversations[currentIndex].role}
@@ -136,9 +154,10 @@
 						{#if showResponse}
 							<div 
 								class={[
-									"bg-background rounded-lg p-4 border border-border ml-8 transition-all duration-500",
-									"animate-fadeInUp"
+									"bg-background rounded-lg p-4 border border-border ml-8 transition-all duration-300",
+									isTransitioning ? "animate-fadeOut" : "animate-fadeInUp"
 								]}
+								key={`response-${currentIndex}`}
 							>
 								<div class="flex items-start gap-3">
 									<div class="text-primary mt-0.5">
