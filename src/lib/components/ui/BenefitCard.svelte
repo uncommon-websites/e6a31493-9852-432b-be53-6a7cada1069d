@@ -1079,28 +1079,12 @@
 					</div>
 				</div>
 			{:else if visualization === "knowledge_assembly"}
-				<!-- SVG Illustration -->
-				<div class="relative flex h-full w-full flex-col">
-					<div class="flex flex-1 items-center justify-center">
-						<div class="relative">
-							<img 
-								src="/uploaded/unified-knowledge.svg" 
-								alt="Unified knowledge visualization" 
-								class="h-32 w-auto"
-							/>
-						</div>
-					</div>
-					
-					<!-- Text at bottom -->
-					<div class="mt-6 pb-2 text-center">
-						<div class="mb-1 text-sm text-gray-500">Unified data layer</div>
-						<div
-							class="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-lg font-medium text-transparent"
-						>
-							Structured knowledge
-						</div>
-					</div>
-				</div>
+				<!-- SVG Only -->
+				<img 
+					src="/uploaded/unified-knowledge.svg" 
+					alt="Unified knowledge visualization" 
+					class="h-32 w-auto"
+				/>
 			{:else if visualization === "strategic_compass"}
 				<!-- Subtle radial gradient background -->
 				<div class="absolute inset-0">
