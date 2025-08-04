@@ -10,7 +10,7 @@
 			visualization: "memory" as const
 		},
 		{
-			title: "Deeply understands your vision",
+			title: "Combat misalignment in real time",
 			description:
 				"Through conversations with your team, Sentra learns your priorities and strategic context.",
 			visualization: "alignment" as const
