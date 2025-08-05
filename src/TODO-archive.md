@@ -1,6 +1,5 @@
 # Todo Archive
 
-
 ## Session: 2025-08-01T14:51:24.671Z
 
 <!-- DO NOT EDIT - Managed by todo_list tool -->

@@ -25,31 +25,25 @@
 	type Props = {
 		title: string
 		description: string
-		visualization:
-			| "visibility"
-			| "misalignment"
-			| "culture"
-			| "meetings"
-			| "onboarding"
-			| "future"
-			| "memory"
-			| "vision"
-			| "detection"
-			| "knowledge_assembly"
-			| "strategic_compass"
-			| "early_warning"
+		visualization: keyof typeof sources
 		class?: string
 	}
 
 	const sources = {
-		'memory': 'uploaded/unified-knowledge.svg',
-		'alignment': 'uploaded/alignment.svg',
-		'preferences': 'uploaded/action-log.svg',
-		'meetings': 'uploaded/meetings.svg',
-		'onboarding': 'uploaded/onboarding.svg'
+		memory: "uploaded/unified-knowledge.svg",
+		alignment: "uploaded/alignment.svg",
+		preferences: "uploaded/action-log.svg",
+		meetings: "uploaded/meetings.svg",
+		onboarding: "uploaded/onboarding.svg",
+		integrations: "uploaded/integrations.svg",
+		"always-working": "uploaded/always-working.svg",
+		"assign-jobs": "uploaded/assign-jobs.svg",
+		"where-you-are": "uploaded/where-you-are.svg",
+		"misalignment-radar": "uploaded/misalignment-radar.svg",
+		"memorized-institutional-knowledge": "uploaded/memorized-institutional-knowledge.svg",
+		"founder-support": "uploaded/founder-support.svg"
 	}
 
-	
 	let { title, description, visualization, class: customClass = "" }: Props = $props()
 	let src = $derived(sources[visualization] ?? null)
 </script>
@@ -61,7 +55,7 @@
 		style="border-radius: var(--radius-2xl);"
 	>
 		<!-- Visualization Container -->
-		<img src="{src}" alt="">
+		<img {src} alt="" class="mx-auto" />
 
 		<!-- Content -->
 		<div class="flex-1 space-y-6 p-10">

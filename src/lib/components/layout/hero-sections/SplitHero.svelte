@@ -49,7 +49,8 @@
 		},
 		{
 			role: "Employee going on vacation",
-			request: "I'm on vacation for 2 weeks. Keep track of all stuff that moves, take my meetings for me, and debrief me once I'm back.",
+			request:
+				"I'm on vacation for 2 weeks. Keep track of all stuff that moves, take my meetings for me, and debrief me once I'm back.",
 			response: "I will keep things running and debrief you once you're back."
 		},
 		{
@@ -129,22 +130,24 @@
 			<!-- Right side - Conversation cards -->
 			<div class="relative" data-enter>
 				<!-- Clean background matching inspiration -->
-				<div class="relative rounded-2xl bg-card p-8 lg:p-12 min-h-[500px] max-h-full flex items-center">
+				<div
+					class="bg-card relative flex max-h-full min-h-[500px] items-center rounded-2xl p-8 lg:p-12"
+				>
 					<!-- Animated conversation cards -->
-					<div class="space-y-3 w-full">
+					<div class="w-full space-y-3">
 						<!-- User request card -->
-						<div 
+						<div
 							class={[
-								"bg-background rounded-lg p-4 border border-border transition-all duration-300",
+								"bg-background border-border rounded-lg border p-4 transition-all duration-300",
 								isTransitioning ? "animate-fadeOut" : "animate-fadeInUp"
 							]}
 							key={`request-${currentIndex}`}
 						>
-							<h3 class="text-sm text-foreground mb-3 font-medium">
+							<h3 class="text-foreground mb-3 text-sm font-medium">
 								{conversations[currentIndex].role}
 							</h3>
-							<div class="border-l-2 border-border pl-4">
-								<p class="text-sm text-muted-foreground">
+							<div class="border-border border-l-2 pl-4">
+								<p class="text-muted-foreground text-sm">
 									{conversations[currentIndex].request}
 								</p>
 							</div>
@@ -152,18 +155,18 @@
 
 						<!-- AI response card -->
 						{#if showResponse}
-							<div 
+							<div
 								class={[
-									"bg-background rounded-lg p-3 border border-border ml-8 transition-all duration-300",
+									"bg-background border-border ml-8 rounded-lg border p-3 transition-all duration-300",
 									isTransitioning ? "animate-fadeOut" : "animate-fadeInUp"
 								]}
 								key={`response-${currentIndex}`}
 							>
 								<div class="flex items-start gap-3">
 									<div class="text-primary mt-0.5">
-										<Logo class="w-4 h-4" />
+										<Logo class="h-4 w-4" />
 									</div>
-									<p class="text-xs text-foreground font-medium">
+									<p class="text-foreground text-xs font-medium">
 										{conversations[currentIndex].response}
 									</p>
 								</div>

@@ -8,7 +8,7 @@
 </script>
 
 <button
-	class="w-full bg-primary-100 text-primary-950 py-4 overflow-hidden cursor-pointer hover:bg-primary-200 transition-colors duration-200 rotate-1"
+	class="bg-primary-100 text-primary-950 hover:bg-primary-200 w-full rotate-1 cursor-pointer overflow-hidden py-4 transition-colors duration-200"
 	{onclick}
 	type="button"
 >

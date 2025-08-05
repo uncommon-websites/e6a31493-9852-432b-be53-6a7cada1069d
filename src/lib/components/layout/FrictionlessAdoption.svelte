@@ -14,27 +14,27 @@
 			title: "Connect your workspace tools",
 			description:
 				"Sentra attends your meetings to capture context, decisions, and commitments — without clogging up your inbox. Get pre-meeting briefs powered by company memory.",
-			visual: "image-a-group-of-professionals-gathered-in-a-s"
+			visual: "integrations"
 		},
 		{
 			id: 2,
 			title: "Sentra meets you where you are",
 			description:
 				"Sentra lives where you already live. No licensing, no installations, no context switching. Unifies workspace activity with meetings.",
-			visual: "image-a-cozy-workspace-where-a-team-collaborat"
+			visual: "where-you-are"
 		},
 		{
 			id: 3,
 			title: "Assign her jobs that fit YOUR needs",
 			description:
 				"Sentra introduces herself to everyone on the team, guiding each person individually and adjusting to their workflows.",
-			visual: "image-two-colleagues-introducing-themselves-in"
+			visual: "assign-jobs"
 		},
 		{
 			id: 4,
 			title: "Sentra works 24/7",
 			description: "Sentra quietly gets to work in the background to build company memory.",
-			visual: "image-a-serene-home-office-setup-where-an-indi"
+			visual: "always-working"
 		}
 	]
 
@@ -103,7 +103,7 @@
 
 		<!-- Main Content Grid -->
 		<div class="mx-auto max-w-7xl">
-			<div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
+			<div class="grid grid-cols-1 lg:grid-cols-2">
 				<!-- Left Side - Step Navigation -->
 				<div class="space-y-6">
 					{#each steps as step, index}
@@ -157,13 +157,16 @@
 				<!-- Right Side - Visual Content -->
 				<div class="flex items-center justify-center">
 					<div class="relative w-full max-w-lg">
-						<div class="relative overflow-hidden border border-gray-200 bg-white" style="border-radius: var(--radius-xl);">
-							<div class="grid aspect-square w-full">
+						<div
+							class="relative overflow-hidden border border-gray-200/0 bg-white"
+							style="border-radius: var(--radius-xl);"
+						>
+							<div class="grid aspect-video w-full">
 								{#key activeStep}
 									<img
 										in:fade={{ duration: 300, easing: cubicIn }}
 										out:fade={{ duration: 300, easing: cubicOut }}
-										src={`/generated/${currentStep.visual}.webp`}
+										src={`/uploaded/${currentStep.visual}.svg`}
 										alt={currentStep.title}
 										class="grid-center h-full w-full object-cover transition-all duration-500 ease-out"
 									/>
@@ -171,10 +174,10 @@
 							</div>
 
 							<!-- Overlay Content -->
-							<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+							<!-- <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div> -->
 
 							<!-- Step Indicator -->
-							<div class="absolute right-6 bottom-6 left-6">
+							<!-- <div class="absolute right-6 bottom-6 left-6">
 								{#key activeStep}
 									<div class="bg-white/90 p-4 backdrop-blur-sm" style="border-radius: var(--radius-lg);">
 										<div class="flex items-center gap-3">
@@ -189,7 +192,7 @@
 										</div>
 									</div>
 								{/key}
-							</div>
+							</div> -->
 						</div>
 
 						<!-- Progress Dots -->

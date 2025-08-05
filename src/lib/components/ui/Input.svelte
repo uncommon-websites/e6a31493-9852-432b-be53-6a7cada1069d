@@ -9,7 +9,7 @@
 		class?: string
 	}
 
-	let { 
+	let {
 		id,
 		type = "text",
 		value = $bindable(""),

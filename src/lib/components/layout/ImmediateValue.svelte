@@ -1,13 +1,13 @@
 <script lang="ts">
 	import SectionHeader from "./SectionHeader.svelte"
 	import BenefitCard from "$lib/components/ui/BenefitCard.svelte"
-	
+
 	const valueProps = [
 		{
 			title: "Builds a memory of your company",
 			description:
 				"Sentra connects to your existing tools, creating a unified timeline of decisions and commitments.",
-			visualization: "memory" as const
+			visualization: "memorized-institutional-knowledge" as const
 		},
 		{
 			title: "Combat misalignment in real time",

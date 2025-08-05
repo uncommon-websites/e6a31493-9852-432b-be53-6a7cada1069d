@@ -8,7 +8,7 @@
 			description: string
 			visualization:
 				| "visibility"
-				| "misalignment"
+				| "misalignment-radar"
 				| "culture"
 				| "meetings"
 				| "onboarding"
@@ -29,7 +29,7 @@
 				title: "Stay ahead of misalignment",
 				description:
 					"A team of engineers working on the wrong tasks for a week can cost 100k+ every year. Sentra spots the smoke before the house burns down.",
-				visualization: "misalignment" as const
+				visualization: "misalignment-radar" as const
 			},
 			{
 				title: "Drive company culture at scale",

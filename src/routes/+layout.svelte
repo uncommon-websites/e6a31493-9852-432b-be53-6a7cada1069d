@@ -58,7 +58,7 @@
 
 <div
 	style:--nav-height="{navHeight.current}px"
-	class="isolate bg-inherit"
+	class="isolate overflow-x-hidden bg-inherit"
 	class:touch={isTouchDevice.current === true}
 	class:no-touch={isTouchDevice.current !== true}
 >

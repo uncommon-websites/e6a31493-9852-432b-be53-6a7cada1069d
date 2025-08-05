@@ -1080,9 +1080,9 @@
 				</div>
 			{:else if visualization === "knowledge_assembly"}
 				<!-- SVG Only -->
-				<img 
-					src="/uploaded/unified-knowledge.svg" 
-					alt="Unified knowledge visualization" 
+				<img
+					src="/uploaded/unified-knowledge.svg"
+					alt="Unified knowledge visualization"
 					class="h-32 w-auto"
 				/>
 			{:else if visualization === "strategic_compass"}
