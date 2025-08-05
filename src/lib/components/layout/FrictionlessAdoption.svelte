@@ -35,6 +35,12 @@
 			title: "Sentra works 24/7",
 			description: "Sentra quietly gets to work in the background to build company memory.",
 			visual: "always-working"
+		},
+		{
+			id: 5,
+			title: "Get 1:1 support from the founders",
+			description: "We're committed to supercharging your productivity.",
+			visual: "founder-support"
 		}
 	]
 
