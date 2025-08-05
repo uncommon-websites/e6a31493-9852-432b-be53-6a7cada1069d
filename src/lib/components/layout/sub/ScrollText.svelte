@@ -66,7 +66,9 @@
 	<span class="inline-block">
 		{#each words as word}
 			<span>
-				<span class="word relative inline-block transition duration-150 ease-out opacity-0">{word}</span>{" "}
+				<span class="word relative inline-block opacity-0 transition duration-150 ease-out"
+					>{word}</span
+				>{" "}
 			</span>
 		{/each}
 	</span>

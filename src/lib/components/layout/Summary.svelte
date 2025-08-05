@@ -40,8 +40,5 @@
 		<p class="text-emphasis-dim">{title}</p>
 	{/if}
 
-	<ScrollText 
-		{text}
-		class="text-title1 relative mx-auto max-w-7xl"
-	/>
+	<ScrollText {text} class="text-title1 relative mx-auto max-w-7xl" />
 </div>
