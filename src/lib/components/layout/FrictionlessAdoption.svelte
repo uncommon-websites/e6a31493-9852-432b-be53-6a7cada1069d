@@ -111,7 +111,7 @@
 		<div class="mx-auto max-w-7xl">
 			<div class="grid grid-cols-1 lg:grid-cols-2">
 				<!-- Left Side - Step Navigation -->
-				<div class="space-y-6">
+				<div class="space-y-2">
 					{#each steps as step, index}
 						<button
 							onclick={() => selectStep(step.id)}

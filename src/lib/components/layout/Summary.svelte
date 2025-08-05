@@ -16,9 +16,8 @@
 -->
 
 <script lang="ts">
-	// Utils
-	import { scroll, animate, stagger } from "motion"
-	import { onMount } from "svelte"
+	// Components
+	import ScrollText from "./sub/ScrollText.svelte"
 
 	// Props
 	const {
@@ -28,58 +27,21 @@
 	}: {
 		title?: string
 		text: string
+		[key: string]: unknown
 	} = $props()
-
-	// State
-	let segments = $derived(text.split("\n\n"))
-	let containerElement: HTMLDivElement
-
-	onMount(() => {
-		if (!containerElement) return
-		if (window.self !== window.top) return
-
-		// Get all word elements as an array
-		const wordElements = Array.from(containerElement.querySelectorAll(".word"))
-
-		scroll(
-			animate(
-				wordElements,
-				{
-					transform: ["translateY(1em)", "translateY(0)"],
-					filter: ["blur(12px)", "blur(8px) brightness(250%)", "blur(0px)"]
-				},
-				{
-					at: "0",
-					delay: stagger(0.015),
-					ease: "easeInOut"
-				}
-			),
-			{
-				target: containerElement,
-				offset: ["start end", "center center"]
-			}
-		)
-	})
 </script>
 
 <div
 	class="section-my section-px relative mx-auto flex max-w-7xl flex-col items-start gap-8 text-pretty lg:grid xl:flex-row"
-	bind:this={containerElement}
 	class:lg:grid-cols-[1fr_2fr]={!!title}
 	{...rest}
 >
 	{#if title}
-		<p class="text-emphasis-dim word">{title}</p>
+		<p class="text-emphasis-dim">{title}</p>
 	{/if}
 
-	<div class="text-title1 gap relative mx-auto grid max-w-7xl">
-		{#each segments as paragraph, i}
-			<p class="mb-[1.5em] last:mb-0">
-				{#each paragraph.split(" ").filter(Boolean) as word}
-					<span class="word relative inline-block transition duration-150 ease-out">{word}</span
-					>{" "}
-				{/each}
-			</p>
-		{/each}
-	</div>
+	<ScrollText 
+		{text}
+		class="text-title1 relative mx-auto max-w-7xl"
+	/>
 </div>

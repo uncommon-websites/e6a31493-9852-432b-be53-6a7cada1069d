@@ -1,6 +1,4 @@
 <script lang="ts">
-
-
 	type Props = {
 		title: string
 		description: string
@@ -25,9 +23,7 @@
 	}
 
 	let { title, description, visualization, class: customClass = "" }: Props = $props()
-
 	let src = $derived(sources[visualization] ?? null)
-	$inspect(visualization, src)
 </script>
 
 <div class={["group flex", customClass]}>

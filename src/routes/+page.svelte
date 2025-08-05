@@ -9,6 +9,7 @@
 	import ImmediateValue from "$lib/components/layout/ImmediateValue.svelte"
 	import Benefits from "$lib/components/layout/Benefits.svelte"
 	import MarqueeBanner from "$lib/components/ui/MarqueeBanner.svelte"
+	import ScrollStorytelling from "$lib/components/sections/ScrollStorytelling.svelte"
 </script>
 
 <SplitHero
@@ -20,6 +21,7 @@
 	title="What we do"
 	text="Sentra is building an AI teammate that improves alignment across an organization by proactively sensing when problems may occur and allowing leaders to intervene to intercept them."
 />
+<ScrollStorytelling />
 
 <ImmediateValue />
 <FrictionlessAdoption />

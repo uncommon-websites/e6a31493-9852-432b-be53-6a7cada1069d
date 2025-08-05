@@ -17,7 +17,7 @@
 
 <script lang="ts">
 	// Utils
-	import { scroll, animate, stagger } from "motion"
+	import { inView, animate, stagger } from "motion"
 	import { onMount } from "svelte"
 
 	// Props
@@ -40,24 +40,24 @@
 		// Get all word elements as an array
 		const wordElements = Array.from(containerElement.querySelectorAll(".word"))
 
-		scroll(
-			animate(
-				wordElements,
-				{
-					opacity: [0, 0, 1],
-					transform: ["translateY(1em)", "translateY(0)"],
-					filter: ["blur(12px)", "blur(8px) brightness(250%)", "blur(0px)"]
-				},
-				{
-					at: "0",
-					delay: stagger(0.015),
-					ease: "easeInOut"
-				}
-			),
-			{
-				target: containerElement,
-				offset: ["start end", "center center"]
-			}
+		inView(
+			containerElement,
+			() => {
+				animate(
+					wordElements,
+					{
+						opacity: [0, 1],
+						transform: ["translateY(1em)", "translateY(0)"],
+						filter: ["blur(12px)", "blur(0px)"]
+					},
+					{
+						delay: stagger(0.015),
+						ease: "easeInOut",
+						duration: 0.8
+					}
+				)
+			},
+			{ margin: "0px 0px -50% 0px" }
 		)
 	})
 </script>
@@ -66,7 +66,7 @@
 	<span class="inline-block">
 		{#each words as word}
 			<span>
-				<span class="word relative inline-block transition duration-150 ease-out">{word}</span>{" "}
+				<span class="word relative inline-block transition duration-150 ease-out opacity-0">{word}</span>{" "}
 			</span>
 		{/each}
 	</span>
