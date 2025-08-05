@@ -96,8 +96,8 @@
 	<div class="section-px section-py mx-auto max-w-7xl">
 		<div class="mx-auto grid place-items-center text-center">
 			<SectionHeader
-				title="Our customers’ favorite use cases"
-				subtitle="Simple self-service onboarding. Setup takes less than 4 minutes."
+				title="Fast, frictionless setup"
+				subtitle="Get started in under 4 minutes—no meetings, no hand-holding, no blockers."
 			/>
 		</div>
 
