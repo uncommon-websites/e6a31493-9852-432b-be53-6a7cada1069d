@@ -23,7 +23,7 @@
 				title: "Organizational Visibility",
 				description:
 					"Sentra's unified memory promotes clarity across teams, reducing blindspots and second-guessing.",
-				visualization: "visibility" as const
+				visualization: "memorized-institutional-knowledge" as const
 			},
 			{
 				title: "Stay ahead of misalignment",
@@ -32,10 +32,10 @@
 				visualization: "misalignment-radar" as const
 			},
 			{
-				title: "Drive company culture at scale",
+				title: "Reminders for things you forget",
 				description:
-					"Get real time insights on sentiment, engagement, and questions you have for your team.",
-				visualization: "culture" as const
+					"Copy",
+				visualization: "reminders" as const
 			},
 			{
 				title: "Reduce unnecessary meetings",

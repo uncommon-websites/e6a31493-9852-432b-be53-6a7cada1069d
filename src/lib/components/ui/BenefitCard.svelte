@@ -30,12 +30,13 @@
 	}
 
 	const sources = {
-		memory: "uploaded/unified-knowledge.svg",
+		"unified-knowledge": "uploaded/unified-knowledge.svg",
 		alignment: "uploaded/alignment.svg",
 		preferences: "uploaded/action-log.svg",
 		meetings: "uploaded/meetings.svg",
 		onboarding: "uploaded/onboarding.svg",
 		integrations: "uploaded/integrations.svg",
+		reminders: "uploaded/reminders.svg",
 		"always-working": "uploaded/always-working.svg",
 		"assign-jobs": "uploaded/assign-jobs.svg",
 		"where-you-are": "uploaded/where-you-are.svg",
@@ -45,7 +46,9 @@
 	}
 
 	let { title, description, visualization, class: customClass = "" }: Props = $props()
+
 	let src = $derived(sources[visualization] ?? null)
+	$inspect(visualization, src)
 </script>
 
 <div class={["group flex", customClass]}>

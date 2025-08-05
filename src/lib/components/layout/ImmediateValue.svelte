@@ -7,7 +7,7 @@
 			title: "Builds a memory of your company",
 			description:
 				"Sentra connects to your existing tools, creating a unified timeline of decisions and commitments.",
-			visualization: "memorized-institutional-knowledge" as const
+			visualization: "unified-knowledge" as const
 		},
 		{
 			title: "Combat misalignment in real time",
