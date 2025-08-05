@@ -34,7 +34,7 @@
 			{
 				title: "Reminders for things you forget",
 				description:
-					"Copy",
+					"Sentra proactively reminds you of follow-ups and commitments you might miss, like sending design edits or action items from meetings.",
 				visualization: "reminders" as const
 			},
 			{
