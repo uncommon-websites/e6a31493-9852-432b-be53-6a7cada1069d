@@ -1,26 +1,5 @@
 <script lang="ts">
-	// Icons
-	import IconBrain from "~icons/lucide/brain"
-	import IconEye from "~icons/lucide/eye"
-	import IconTarget from "~icons/lucide/target"
-	import IconRadar from "~icons/lucide/radar"
-	import IconAlertTriangle from "~icons/lucide/alert-triangle"
-	import IconDatabase from "~icons/lucide/database"
-	import IconNetwork from "~icons/lucide/network"
-	import IconShield from "~icons/lucide/shield"
-	import IconUsers from "~icons/lucide/users"
-	import IconCalendarX from "~icons/lucide/calendar-x"
-	import IconTrendingUp from "~icons/lucide/trending-up"
-	import IconZap from "~icons/lucide/zap"
-	import IconCalendar from "~icons/lucide/calendar"
-	import IconGithub from "~icons/lucide/github"
-	import IconClipboardList from "~icons/lucide/clipboard-list"
-	import IconFileText from "~icons/lucide/file-text"
-	import IconMessageSquare from "~icons/lucide/message-square"
-	import IconBookOpen from "~icons/lucide/book-open"
-	import IconRocket from "~icons/lucide/rocket"
-	import IconMail from "~icons/lucide/mail"
-	// DataAggregationAnimation component removed - using SVG instead
+
 
 	type Props = {
 		title: string
