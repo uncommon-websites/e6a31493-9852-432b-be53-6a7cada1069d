@@ -17,7 +17,7 @@
 	}
 
 	let {
-		title = "Grow your company effortlessly",
+		title = "Our customers’ favorite use cases",
 		benefits = [
 			{
 				title: "Organizational Visibility",
